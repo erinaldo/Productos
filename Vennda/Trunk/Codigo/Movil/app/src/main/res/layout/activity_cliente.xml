@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".9"
+        android:orientation="vertical">
+
+        <SearchView
+            android:id="@+id/busquedaClientes"
+            android:color="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lvCliente" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".1"
+        android:gravity="center|bottom"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnAgregarCliente"
+            android:text="@string/btnAgregarCliente"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/boton"
+            android:textSize="@dimen/textos"
+            android:textAllCaps="false"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+    </LinearLayout>
+
+
+</LinearLayout>
+

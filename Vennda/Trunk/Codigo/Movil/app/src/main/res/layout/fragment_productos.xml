@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        class="com.elephantworks.movilvennda.Fragments.FragmentListadoCategorias"
+        android:id="@+id/frgListadoCategorias"
+        android:layout_weight="40"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_listado_categorias" />
+
+    <fragment
+        class="com.elephantworks.movilvennda.Fragments.FragmentListaProductos"
+        android:id="@+id/frgListadoProductos"
+        android:layout_weight="60"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_lista_productos" />
+
+</LinearLayout>

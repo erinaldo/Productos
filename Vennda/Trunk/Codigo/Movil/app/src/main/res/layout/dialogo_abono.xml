@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/dialogo_bordes">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".9"
+        android:padding="@dimen/dialog_body"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtSaldoAbono"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/titulos"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtSaldoAbono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$500.00"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/titulos"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/rbContadoAbono"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbContadoAbono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtEfectivo"
+                    android:textSize="@dimen/textos"
+                    android:paddingRight="50dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbCreditoAbono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txtTarjeta"
+                    android:textSize="@dimen/textos"/>
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtReferenciaAbono"
+                android:textSize="@dimen/textos"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/etReferenciaAbono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:selectAllOnFocus="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtMontoAbono"
+                android:textSize="@dimen/textos"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/etMontoAbono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:selectAllOnFocus="true"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".1"
+        android:gravity="center|bottom"
+        android:background="@color/colorVennda"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnAceptarAbonoDlg"
+            android:text="@string/btnAceptar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/boton"
+            android:textSize="@dimen/textos"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlanco"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+    </LinearLayout>
+
+</LinearLayout>

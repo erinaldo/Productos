@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TiempoLaboral">
+  <DataContextMoniker Name="/TiempoLaboralDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bb70f79a-14ae-40cf-b24c-2bdbe311c5f2" absoluteBounds="7.125, 0.5, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/TiempoLaboralDataContext/JornadaLaboral" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e841776f-f9df-4479-be51-bad28a80d001" absoluteBounds="7.14, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2333d07d-0a81-439b-afa3-468562ded903" absoluteBounds="4.625, 1.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TiempoLaboralDataContext/ValorReferencia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fee709b8-d4db-4fc9-8007-9da2985b78a0" absoluteBounds="4.64, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="219f2b5c-8145-48bf-bb7f-592ab13969c7" absoluteBounds="7.625, 2.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/TiempoLaboralDataContext/AreaActividad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e2f576a-3e9b-4e87-887e-7a27b20fc420" absoluteBounds="7.64, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.625 : 2.50564697265625); (7.625 : 2.50564697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TiempoLaboralDataContext/ValorReferencia/ValorReferencia_AreaActividad" />
+      <nodes>
+        <classShapeMoniker Id="2333d07d-0a81-439b-afa3-468562ded903" />
+        <classShapeMoniker Id="219f2b5c-8145-48bf-bb7f-592ab13969c7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.625 : 2.31532348632813); (7.625 : 2.31532348632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TiempoLaboralDataContext/ValorReferencia/ValorReferencia_AreaActividad1" />
+      <nodes>
+        <classShapeMoniker Id="2333d07d-0a81-439b-afa3-468562ded903" />
+        <classShapeMoniker Id="219f2b5c-8145-48bf-bb7f-592ab13969c7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f4915c31-1334-4229-ae29-62030773788a" absoluteBounds="1.125, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/TiempoLaboralDataContext/RegistroTiempos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="886e9d94-27b5-4c45-ac63-48163079af99" absoluteBounds="1.1400000000000001, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.625 : 2.06814697265625); (3.125 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiempoLaboralDataContext/ValorReferencia/ValorReferencia_RegistroTiempos" />
+      <nodes>
+        <classShapeMoniker Id="2333d07d-0a81-439b-afa3-468562ded903" />
+        <classShapeMoniker Id="f4915c31-1334-4229-ae29-62030773788a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 0.90625); (3.125 : 0.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiempoLaboralDataContext/JornadaLaboral/JornadaLaboral_RegistroTiempos" />
+      <nodes>
+        <classShapeMoniker Id="bb70f79a-14ae-40cf-b24c-2bdbe311c5f2" />
+        <classShapeMoniker Id="f4915c31-1334-4229-ae29-62030773788a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 1.65907348632813); (3.125 : 1.65907348632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiempoLaboralDataContext/ValorReferencia/ValorReferencia_RegistroTiempos1" />
+      <nodes>
+        <classShapeMoniker Id="2333d07d-0a81-439b-afa3-468562ded903" />
+        <classShapeMoniker Id="f4915c31-1334-4229-ae29-62030773788a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 2.47722045898438); (3.125 : 2.47722045898438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiempoLaboralDataContext/ValorReferencia/ValorReferencia_RegistroTiempos2" />
+      <nodes>
+        <classShapeMoniker Id="2333d07d-0a81-439b-afa3-468562ded903" />
+        <classShapeMoniker Id="f4915c31-1334-4229-ae29-62030773788a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 2.27268371582031); (3.125 : 2.27268371582031)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiempoLaboralDataContext/ValorReferencia/ValorReferencia_RegistroTiempos3" />
+      <nodes>
+        <classShapeMoniker Id="2333d07d-0a81-439b-afa3-468562ded903" />
+        <classShapeMoniker Id="f4915c31-1334-4229-ae29-62030773788a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b0000e70-6cce-456b-929d-94751c5066e4" absoluteBounds="1.25, 4.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/TiempoLaboralDataContext/PermisoUsuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69a3d31d-15a4-41ae-9cd4-f42b68b15db4" absoluteBounds="1.2650000000000001, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23d36c4d-c52f-4248-a5c1-74f292a78488" absoluteBounds="4.75, 3.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TiempoLaboralDataContext/CostoUsuarioHora" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60af8f80-35ff-4364-b2ef-ca475c448cb0" absoluteBounds="4.765, 3.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#48BFE6</color>
+    <color name="colorPrimaryDark">#48BFE6</color>
+    <color name="colorAccent">#48BFE6</color>
+    <color name="colorVennda">#48BFE6</color>
+    <color name="colorBlanco">#FFF</color>
+    <color name="fondoLista">#F0F0F0</color>
+    <color name="azulBajito">#F0F8FF</color>
+    <color name="colorListas">#B8EEFF</color>
+    <color name="colorRojoBajito">#FFADAD</color>
+</resources>

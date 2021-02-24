@@ -1,0 +1,160 @@
+﻿body
+{
+	font-family: Arial;
+	font-size:small;
+}
+td.loginTitle1
+{
+	height: 20px;
+	border: 1px solid #002D96;
+	background-image: url(../../Images/fondo.gif);
+	background-repeat: repeat-x;
+
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 5px;
+	padding-right: 0px;
+	padding-top: 0px;
+	
+}
+table.loginTitle1
+{
+border-collapse:collapse;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+tr.loginTitle1
+{
+border-collapse:collapse;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+td.loginTitle2
+{
+	  height:20px;
+	border: 1px solid #002D96;
+	background-image: url(../../Images/fondoo.gif);
+	background-repeat: repeat-x;
+	font-weight: bold;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-left: 5px;
+	padding-right: 0px;
+	padding-top: 0px;
+	color:white;
+}
+
+td.loginContenido
+{
+	border: 1px solid #002D96;
+	
+}
+
+div.todo
+{
+	width:100%;
+	clear :both;
+	
+}
+
+div.Cabezera
+{
+	
+	clear :both;
+	text-align:center;
+}
+
+div.Detalle
+{
+	width: 100%;
+	clear :both;
+	
+}
+div.RadioButtonCentrado
+{
+	width: 100%;
+	text-align: center;
+	}
+
+div.login
+{
+	width: 100%;
+	text-align: right;
+	background-color:#507CD1;
+	
+}
+
+
+table.Cabezera {
+	border-width: 4px 4px 4px 4px;
+	border-spacing: 3px;
+	border-style: solid solid solid solid;
+	border-collapse: collapse;
+border-color: white;
+}
+table.Cabezera th {
+	border-width: 4px 4px 4px 4px;
+	padding: 5px 5px 5px 5px;
+	border-style: solid solid solid solid;
+border-color: white;
+	background-color: white;
+
+}
+table.Cabezera td {
+	border-width: 4px 4px 4px 4px;
+	padding: 5px 5px 5px 5px;
+	border-style: solid solid solid solid;
+	border-color: white;
+	background-color: white;
+	text-align:center;
+}
+
+
+  .modalBackground {
+        background-color:#fff;
+        filter:alpha(opacity=70);
+        opacity:0.7px;
+        }
+
+        .modalPopup {
+        background-color:#fff;
+        border:solid 3px #ccc;
+        padding:5px;
+        }
+
+.FilaGrid
+{
+	background-color:#a5c2f6;
+	background-image:url(../../images/fondo.gif);
+	background-repeat:repeat-x;
+		
+}
+
+.FilaGrid2
+{
+	background-color:White;
+	background-image:none;
+
+}
+
+
+.CabezeraGrid
+{
+	background-color:Navy;
+	background-image: url(../../images/fondoo.gif);
+	background-repeat:repeat-x;
+	color:White;
+		
+}
+
+.Menu
+{
+
+vertical-align:bottom;
+	}

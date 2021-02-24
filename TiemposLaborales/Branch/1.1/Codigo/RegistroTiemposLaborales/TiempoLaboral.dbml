@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="TiemposLaborales" Class="TiempoLaboralDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=192.168.0.4\sql2005;Initial Catalog=TiemposLaborales;Persist Security Info=True;User ID=root" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TiemposLaboralesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.JornadaLaboral" Member="JornadaLaboral">
+    <Type Name="JornadaLaboral">
+      <Column Name="FechaInicioJornada" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="JornadaLaboral_RegistroTiempos" Member="RegistroTiempos" ThisKey="FechaInicioJornada" OtherKey="FechaInicioJornada" Type="RegistroTiempos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ValorReferencia" Member="ValorReferencia">
+    <Type Name="ValorReferencia">
+      <Column Name="Clave" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="ValorReferencia_AreaActividad" Member="AreaActividad" ThisKey="Clave" OtherKey="Area" Type="AreaActividad" />
+      <Association Name="ValorReferencia_AreaActividad1" Member="AreaActividad1" ThisKey="Clave" OtherKey="Actividad" Type="AreaActividad" />
+      <Association Name="ValorReferencia_RegistroTiempos" Member="RegistroTiempos" ThisKey="Clave" OtherKey="Cliente" Type="RegistroTiempos" />
+      <Association Name="ValorReferencia_RegistroTiempos1" Member="RegistroTiempos1" ThisKey="Clave" OtherKey="Proyecto" Type="RegistroTiempos" />
+      <Association Name="ValorReferencia_RegistroTiempos2" Member="RegistroTiempos2" ThisKey="Clave" OtherKey="Actividad" Type="RegistroTiempos" />
+      <Association Name="ValorReferencia_RegistroTiempos3" Member="RegistroTiempos3" ThisKey="Clave" OtherKey="Area" Type="RegistroTiempos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AreaActividad" Member="AreaActividad">
+    <Type Name="AreaActividad">
+      <Column Name="Area" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Actividad" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="ValorReferencia_AreaActividad" Member="ValorReferencia" ThisKey="Area" OtherKey="Clave" Type="ValorReferencia" IsForeignKey="true" />
+      <Association Name="ValorReferencia_AreaActividad1" Member="ValorReferencia1" ThisKey="Actividad" OtherKey="Clave" Type="ValorReferencia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegistroTiempos" Member="RegistroTiempos">
+    <Type Name="RegistroTiempos">
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaHoraInicial" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaInicioJornada" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Proyecto" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Actividad" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Area" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Horas" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CostoTotal" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="ValorReferencia_RegistroTiempos" Member="ValorReferencia" ThisKey="Cliente" OtherKey="Clave" Type="ValorReferencia" IsForeignKey="true" />
+      <Association Name="JornadaLaboral_RegistroTiempos" Member="JornadaLaboral" ThisKey="FechaInicioJornada" OtherKey="FechaInicioJornada" Type="JornadaLaboral" IsForeignKey="true" />
+      <Association Name="ValorReferencia_RegistroTiempos1" Member="ValorReferencia1" ThisKey="Proyecto" OtherKey="Clave" Type="ValorReferencia" IsForeignKey="true" />
+      <Association Name="ValorReferencia_RegistroTiempos2" Member="ValorReferencia2" ThisKey="Actividad" OtherKey="Clave" Type="ValorReferencia" IsForeignKey="true" />
+      <Association Name="ValorReferencia_RegistroTiempos3" Member="ValorReferencia3" ThisKey="Area" OtherKey="Clave" Type="ValorReferencia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PermisoUsuario" Member="PermisoUsuario">
+    <Type Name="PermisoUsuario">
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Usuario2" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CostoUsuarioHora" Member="CostoUsuarioHora">
+    <Type Name="CostoUsuarioHora">
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Costo" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="HorasSemanales" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
