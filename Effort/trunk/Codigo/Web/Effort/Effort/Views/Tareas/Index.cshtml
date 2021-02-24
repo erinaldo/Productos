@@ -1,0 +1,209 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+@using Effort.Models
+
+<div class="container">
+
+    <div class="container">
+        <h2>Tareas</h2>
+         @if (ViewBag.Success != null)
+         {
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                @ViewBag.Success
+            </div>
+         }
+    </div>
+    
+    <form role="form" method="get" autocomplete="off" action="~/Tareas/index"> 
+        <div class="row">
+             <div class="col-md-3">              
+                 @if (((Equipo)HttpContext.Current.Session["Login"]).perfil.Equals("Administrador")){
+                    <a class="btn btn-primary" href="~/Tareas/Create" >Crear Tarea</a>
+                 }
+             </div>
+    
+            <div class="col-md-3">
+                <br />
+                <div class="input-group">
+                  <span class="input-group-addon">Busqueda</span>
+                  <input type="text" id="buscador" name="buscador" class="form-control"/>
+                </div>
+
+            </div>
+
+            
+            <div class="col-md-3">
+                <br />
+                 <div class="input-group">
+                    <span class="input-group-addon">Campo</span>
+                    <select id="buscarCampo" name="buscarCampo" class="form-control">
+                         <option value="0">Elija una opción...</option>
+                         <option value="titulo">Titulo</option>
+                         <option value="proyecto">Proyecto</option>
+                         <option value="estado">Estado</option>
+                    </select>
+                  </div>
+                 
+             </div>
+            <div class="col-md-3" >
+                <br />
+                <button class="btn btn-primary" type="submit" id="btnBuscar">Buscar</button>
+            </div>
+        </div>
+    </form>
+
+    <br />   <br />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Proyecto</th>
+                <th>Estado</th>
+                <th>Presupuesto en horas</th>
+                <th>Horas estimadas por dia</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de fin</th>
+                <th>Avance</th>
+                @if (((Equipo)HttpContext.Current.Session["Login"]).perfil.Equals("Administrador"))
+                {
+                    <th>Equipo</th>
+                }
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (@ViewBag.Count > 0)
+            {
+
+                foreach (var item in @Model)
+                {
+                  
+                <tr>
+                     @if (((Equipo)HttpContext.Current.Session["Login"]).perfil.Equals("Usuario"))
+                     {
+                         <td> <button style="border:none; background-color: transparent;" onclick="mostrarDescripcion('@item.descripcion');"> @item.idTarea</button></td> 
+                     }
+                     else
+                     {
+                        <td><a href="~/Tareas/Edit?id=@item.idTarea"> @item.idTarea</a></td> 
+                     }
+                   <td>@item.tituloTarea</td>                
+                   <td>@item.nombreProyecto</td>
+                   <td>@item.estadoDesc</td>
+                   <td>@item.presupuesto</td>                
+                   <td>@item.horas_estimadas_dia</td>
+                   <td>@item.fecha_inicio.ToString("dd/MM/yyyy")</td>
+                    <td>@item.fecha_fin.ToString("dd/MM/yyyy")</td>
+                    <td>@item.avance</td>
+                    @if (((Equipo)HttpContext.Current.Session["Login"]).perfil.Equals("Administrador"))
+                    {
+                        <td>@item.idEquipo</td>
+                    }
+                   <td><a href="~/Esfuerzo/Create?idTarea=@item.idTarea"> Agregar esfuerzo</a></td> 
+                   <td><a href='~/Esfuerzo/Index?idTarea=@item.idTarea'>Listado de esfuerzos </a></td>
+                </tr>
+                }
+
+            }
+       
+        </tbody>
+    </table>
+    <div class="modal fade" id="descripcionModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Descripcion</h4>
+                        </div>
+                        <div class="modal-body" id="modalBody">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <nav>
+        <ul class="pagination">
+            @if (ViewBag.Page > 0)
+            {
+                <li>
+
+                    <a href="@Url.Action("Index", new { page = ViewBag.Page - 1, buscarCampo = ViewBag.BuscarCampo, buscador = ViewBag.Buscador })" aria-label="Previous" onclick="activePage(@ViewBag.Page);">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            }
+            @for (var i = 1; i < @ViewBag.MaxPage + 1; i++)
+            {
+                <li id="page_@i" ><a href="@Url.Action("Index", new { page = i - 1, buscarCampo = ViewBag.BuscarCampo, buscador = ViewBag.Buscador })">@i</a></li>
+            }
+            @if (ViewBag.Page < ViewBag.MaxPage - 1)
+            {
+                <li>
+                    <a href="@Url.Action("Index", new { page = ViewBag.Page + 1, buscarCampo = ViewBag.BuscarCampo, buscador = ViewBag.Buscador })" aria-label="Next" onclick="activePage(@ViewBag.Page);">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+    <div id="chart_div"></div>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var contador = @ViewBag.Page +1;
+        $("#page_"+contador).addClass("active");
+    });
+
+    function mostrarDescripcion(descripcion) {
+        $('#modalBody').text(descripcion);
+        $('#descripcionModal').modal({ show: true });
+    }
+    var jsonData = $.ajax({
+        url: "./Proyecto/TareasPorProyecto",
+        dataType: "json",
+        async: false
+    }).responseJSON;
+
+    google.load('visualization', '1.1', { 'packages': ['bar'] });
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Proyecto");
+        data.addColumn("number", "En Curso");
+        data.addColumn("number", "Pendientes");
+        data.addColumn("number", "Completadas");
+        data.addColumn("number", "Canceladas");
+
+
+        $.each(jsonData, function (i, item) {
+            data.addRow([item.nombreProyecto, item.tareasEnCurso, item.tareasPendientes, item.tareasCompletadas, item.tareasCanceladas]);
+
+        });
+
+        var options = {
+            chart: {
+                title: 'Duxstar',
+                subtitle: 'Tareas por Proyecto',
+            },
+            bars: 'vertical',
+            vAxis: { format: 'decimal' },
+            height: 400
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+
+</script>

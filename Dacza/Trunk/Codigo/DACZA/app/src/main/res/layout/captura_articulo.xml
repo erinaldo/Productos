@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0" >
+
+        <TextView
+            android:id="@+id/lblArticulo"
+            style="@style/DarkGrayStyleClient"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.20"
+            android:gravity="center_vertical"
+            android:text="Medium Text"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <com.duxstar.dacza.controles.TextBoxScanner
+            android:id="@+id/textBoxScanner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.64" >
+        </com.duxstar.dacza.controles.TextBoxScanner>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.16"
+            android:gravity="center|center_horizontal|center_vertical" >
+
+            <ImageButton
+                android:id="@+id/btnBuscarArticulo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:src="@drawable/ic_btn_search" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            style="@style/MisClientes_RedTextBackgroudGray"
+            android:weightSum="1.0" >
+
+            <TextView
+                android:id="@+id/lblArtDescripcion"
+                style="@style/MisClientes_RedTextBackgroudGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0" >
+
+        <TextView
+            android:id="@+id/lblCantidad"
+            style="@style/DarkGrayStyleClient"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.20"
+            android:gravity="center_vertical"
+            android:text="Medium Text"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.65"
+            android:gravity="center_vertical"
+            android:weightSum="1.0" >
+
+            <EditText
+                android:id="@+id/txtCantidad"
+                style="@style/GeneralEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.35"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblArtExistencia"
+                style="@style/DarkGrayStyleClient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.35"
+                android:gravity="left"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <ImageButton
+                android:id="@+id/btnAgregar"
+                style="@style/imageButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_input_add" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

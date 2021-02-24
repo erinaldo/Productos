@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+@model Effort.Models.Riesgos
+<style>
+    .ui-autocomplete
+    {
+        height: 200px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    b
+    {
+        float:right
+    }
+</style>
+
+<div class="container">
+
+    <h2>Crear Riesgo</h2>
+    <form role="form" method="post" autocomplete="off" action="~/Riesgos/Create">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="proyecto">Selecciona un proyecto:</label> 
+                @Html.DropDownList("idProyecto", null, new { @class = "form-control",@onchange = "updateTareas(this.value)" })
+                <p>@Html.ValidationMessageFor(model => model.idProyecto)</p>
+                <label for="tarea">Tarea relacionada:</label> 
+                            @Html.DropDownList("idTarea",
+                            null,
+                            new { @class = "form-control" })
+                <p>@ViewBag.Error</p>
+                <label for="descripcion">Descripción:</label> 
+                @Html.TextArea("descripcion", null, new { @class = "form-control" })
+               <p> @Html.ValidationMessageFor(model => model.descripcion)</p>
+                <label for="responsable">Responsable:</label> 
+                @Html.DropDownList("responsable",
+                            null,
+                            new { @class = "form-control" })
+                <p>@Html.ValidationMessageFor(model => model.responsable)</p>
+                <label for="EstadoProyecto">Estado:</label> 
+                @Html.DropDownList("idEstado", null, new { @class = "form-control" })
+                <p> @Html.ValidationMessageFor(model => model.idEstado)</p>
+
+            </div>
+            <div class="col-md-6">
+                <label>Criticidad:</label>
+                @Html.DropDownList("criticidad", null, new { @class = "form-control" })
+               <p> @Html.ValidationMessageFor(model => model.criticidad)</p>
+                <label>Probabilidad:</label> 
+                @Html.DropDownList("probabilidad", null, new { @class = "form-control" })
+                <p>@Html.ValidationMessageFor(model => model.probabilidad)</p>
+                <label>Impacto:</label>  
+                @Html.DropDownList("impacto", null, new { @class = "form-control" })
+                <p>@Html.ValidationMessageFor(model => model.impacto)</p>
+                <label for="mitigacion">Mitigación:</label>  
+                @Html.TextArea("mitigacion", null, new { @class = "form-control" })
+                <p>@Html.ValidationMessageFor(model => model.mitigacion)</p>
+                <label for="usr">Fecha seguimiento:</label> 
+                @Html.TextBox("fecha_seguimiento", null, new { @class = "form-control" })
+                <p>@Html.ValidationMessageFor(model => model.fecha_seguimiento)</p>
+                 
+
+                <br />
+                <button class="btn btn-primary" type="submit" style="float: right;" id="btnCrear">Crear</button>
+
+            </div>
+        </div>
+    </form>
+
+</div>
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+
+        $('#idProyecto').trigger('change');
+
+        $('#fecha_seguimiento').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            clearBtn: true,
+            language: "es",
+            todayHighlight: true
+
+        }).datepicker("setDate", "0");
+    });
+
+    function updateTareas(idProyecto) {
+
+        var selectTareas = $('#idTarea');
+
+        $.ajax({
+            url: '/Effort/Riesgos/updateTareas',
+            data: { idProyecto: idProyecto },
+            type: 'GET',
+            success: function (data) {
+                selectTareas.empty();
+                $.each(data, function (index, optiondata) {
+                    selectTareas.append("<option value='" + optiondata.Value + "'>" + optiondata.Text + "</option>");
+                });
+            }
+        });
+    }
+</script>

@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+@model Effort.Models.Proyecto
+<div class="container">
+
+    <div class="container">
+        <h2>Crear Proyecto</h2>
+         @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                @ViewBag.Error
+            </div>
+        }
+    </div>
+
+    <form role="form" method="post" action="@Url.Action("Create", "Proyecto")">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Identificador del proyecto:</label>
+                        <input type="text" class="form-control" id="idProyecto" name="idProyecto">
+                        @Html.ValidationMessageFor(model => model.idProyecto)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Nombre del proyecto:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                        @Html.ValidationMessageFor(model => model.nombre)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Fecha:</label>
+                        <input type="text" class="form-control" id="fechaInicio" name="fechaInicio">
+                        @Html.ValidationMessageFor(model => model.fechaInicio)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Duracion en días:</label>
+                        <input type="number" class="form-control" id="duracion" name="duracion" onkeypress="return soloNumeros(event);">
+                        @Html.ValidationMessageFor(model => model.duracion)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Presupuesto en horas:</label>
+                        <input type="number" class="form-control" id="presupuesto_hrs" name="presupuesto_hrs" onkeypress="return soloNumeros(event);">
+                        @Html.ValidationMessageFor(model => model.presupuesto_hrs)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Presupuesto(USD):</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+                                onkeypress="return SoloNumerosDecimales(event, '0.0', 4, 0);" id="presupuesto_precio" name="presupuesto_precio">
+                            @Html.ValidationMessageFor(model => model.presupuesto_precio)
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="sel1">Administrador:</label>
+                        @Html.DropDownList("administrador_proyecto",
+                        null,
+                        new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="sel1">Estado del proyecto:</label>
+                        @Html.DropDownList("EstadoProyecto",
+                        null,
+                        new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <button class="btn btn-primary" type="submit" class="btn btn-default">Crear</button>
+        </div>
+
+    </form>
+</div>
+
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+
+        $('#fechaInicio').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            clearBtn: true,
+            language: "es",
+            todayHighlight:true
+
+        }).datepicker("setDate","0");
+
+    });
+</script>
+

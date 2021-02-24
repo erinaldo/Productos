@@ -1,0 +1,203 @@
+﻿@model Effort.Models.Tarea
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+<div class="container">
+
+    <div class="container">
+        <h2>Crear Tarea</h2>
+        @if (ViewBag.Success != null)
+        {
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                @ViewBag.Success
+            </div>
+        }
+        
+    </div>
+    <form role="form" method="post" action="@Url.Action("Create", "Tareas")">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="sel1">Proyecto:</label>
+                            @Html.DropDownList("idProyecto",
+                            null,
+                            new { @class = "form-control",@onchange = "updateTareas(this.value)" })
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Titulo:</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo"
+                        @Html.ValidationMessageFor(model => model.titulo)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Descripcion:</label>
+                        <textarea type="text" class="form-control" id="descripcion" name="descripcion" ></textarea>
+                        @Html.ValidationMessageFor(model => model.descripcion)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Presupuesto total en horas:</label>
+                        <input type="text" class="form-control" id="presupuesto" name="presupuesto"  onkeypress="return SoloNumerosDecimales(event, '0.0', 4, 0);">
+                        @Html.ValidationMessageFor(model => model.presupuesto)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Horas invertidas por dia (ideal):</label>
+                        <input type="text" class="form-control" id="horas_estimadas_dia" name="horas_estimadas_dia"  onkeypress="return SoloNumerosDecimales(event, '0.0', 4, 0);">
+                        @Html.ValidationMessageFor(model => model.horas_estimadas_dia)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                     <div class="form-group">
+                        <label for="usr">Fecha inicio:</label>
+                        <input  type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                     <div class="form-group">
+                        <label for="usr">Fecha fin:</label>
+                        <input  type="text" class="form-control" id="fecha_fin" name="fecha_fin">
+                    </div>
+                   
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                     <div class="form-group">
+                        <label for="sel1">Tipo de tarea:</label>
+                            @Html.DropDownList("idTipo",
+                            null,
+                            new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                     <div class="form-group">
+                        <label for="sel1">Empleado:</label>
+                            @Html.DropDownList("idEquipo",
+                            null,
+                            new { @class = "form-control" })
+                    </div>
+                   
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                     <div class="form-group">
+                        <label for="sel1">Estado:</label>
+                            @Html.DropDownList("idEstado",
+                            null,
+                            new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                     <div class="form-group">
+                        <label for="sel1">Predecesora:</label>
+                            @Html.DropDownList("predecesora",
+                            null,
+                            new { @class = "form-control" })
+                    </div>
+                   
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                     <div class="form-group">
+                        <label for="sel1">Version:</label>
+                            @Html.DropDownList("idVersion",
+                            null,
+                            new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <button class="btn btn-primary" type="submit" class="btn btn-default">Crear</button>
+        </div>
+
+    <//form>
+</div>
+
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+
+        $('#idProyecto').trigger('change');
+
+        $('#fecha_inicio').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            clearBtn: true,
+            language: "es",
+            todayHighlight: true
+
+        }).datepicker("setDate", "0");
+
+        $('#fecha_fin').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            clearBtn: true,
+            language: "es",
+            todayHighlight: true
+
+        }).datepicker("setDate", "0");
+
+    });
+
+    function updateTareas(idProyecto) {
+
+        var selectTareas = $('#predecesora');
+
+        $.ajax({
+            url: '/Effort/Tareas/updateTareas',
+            data: { idProyecto: idProyecto },
+            type: 'GET',
+            success: function (data) {
+                selectTareas.empty();
+                $.each(data, function (index, optiondata) {
+                    selectTareas.append("<option value='" + optiondata.Value + "'>" + optiondata.Text + "</option>");
+                });
+            }
+        });
+    }
+</script>

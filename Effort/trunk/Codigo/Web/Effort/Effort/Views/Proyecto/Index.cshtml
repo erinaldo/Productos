@@ -1,0 +1,155 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+@model IEnumerable<Effort.Models.CustomProyecto>
+@using Effort.Models
+
+<div class="container">
+
+    <div class="container">
+        <h2>Proyectos</h2>
+         @if (ViewBag.Success != null)
+         {
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                @ViewBag.Success
+            </div>
+         }
+    </div>
+
+    @if (((Equipo)HttpContext.Current.Session["Login"]).perfil.Equals("Administrador"))
+    {
+        <a class="btn btn-primary" href="~/Proyecto/Create">Crear Proyecto</a>
+    }
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Fecha de Inicio</th>
+                <th>Duracion</th>
+                <th>Presupuesto en Horas</th>
+                <th>Presupuesto en Costo</th>
+                <th>Administrador</th>
+                <th>Estatus</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.Count > 0)
+            {
+                foreach (var item in @Model)
+                { 
+                <tr>
+                    @if (((Equipo)HttpContext.Current.Session["Login"]).perfil.Equals("Usuario"))
+                    {
+                        <td>@item.idProyecto</td>
+                    }
+                    else
+                    {
+                        <td><a href='~/Proyecto/Edit?id=@item.idProyecto'>@item.idProyecto </a></td>
+                    }              
+                    <td>@item.nombre</td>
+                    <td>@item.fechaInicio.Value.ToString("dd/MM/yyyy")</td>
+                    <td>@item.duracion</td>
+                    <td>@item.presupuesto_hrs</td>
+                    <td>@item.presupuesto_precio</td>
+                    <td>@item.administrador_proyecto</td>
+                    <td>@item.EstadoProyecto</td>
+                    @if (((Equipo)HttpContext.Current.Session["Login"]).perfil.Equals("Usuario"))
+                    {
+                        <td><a href="~/Tareas/CreateUsuario?idProyecto=@item.idProyecto"> Agregar tarea</a></td> 
+                    }
+                    
+
+                </tr>
+                }
+            }
+            
+
+        </tbody>
+    </table>
+    <nav>
+        <ul class="pagination">
+            @if (ViewBag.Page > 0)
+            {
+                <li>
+
+                    <a href="@Url.Action("Index", new { page = ViewBag.Page - 1 })" aria-label="Previous" onclick="activePage(@ViewBag.Page);">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            }
+            @for (var i = 1; i < @ViewBag.MaxPage + 1; i++)
+            {
+                <li id="page_@i" ><a href="@Url.Action("Index", new { page = i - 1 })">@i</a></li>
+            }
+            @if (ViewBag.Page < ViewBag.MaxPage - 1)
+            {
+                <li>
+                    <a href="@Url.Action("Index", new { page = ViewBag.Page + 1 })" aria-label="Next" onclick="activePage(@ViewBag.Page);">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+   
+       <div id="chart_div">
+
+       </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var contador = @ViewBag.Page +1;
+        $("#page_" + contador).addClass("active");
+    });
+
+        var jsonData = $.ajax({
+            url: "./Proyecto/TareasPorProyecto",
+            dataType: "json",
+            async: false
+        }).responseJSON;
+
+        google.load('visualization', '1.1', { 'packages': ['bar'] });
+        google.setOnLoadCallback(drawChart);
+        
+
+
+    
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Proyecto");
+        data.addColumn("number","En Curso");
+        data.addColumn("number", "Pendientes");
+        data.addColumn("number", "Completadas");
+        data.addColumn("number", "Canceladas");
+ 
+
+        $.each(jsonData, function (i, item) {
+            data.addRow([item.nombreProyecto,item.tareasEnCurso,item.tareasPendientes,item.tareasCompletadas,item.tareasCanceladas]);
+
+        });
+
+        var options = {
+            chart: {
+                title: 'Duxstar',
+                subtitle: 'Tareas por Proyecto',
+            },
+            bars: 'vertical',
+            vAxis: { format: 'decimal' },
+            height: 400
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+
+</script>

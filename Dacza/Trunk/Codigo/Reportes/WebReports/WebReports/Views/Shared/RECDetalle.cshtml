@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebReports.Models.RECDetalle>
+
+<table>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="width-25">
+            @if (@item.Articulo != null){
+                @Html.DisplayFor(modelItem => item.Articulo.Clave)
+            }else{
+                @Html.Encode("N/A")
+            }            
+        </td>
+        <td class="width-40">
+            @if (@item.Articulo != null){
+                @Html.DisplayFor(modelItem => item.Articulo.Descripcion)
+            }else{
+                @Html.DisplayFor(modelItem => item.ArticuloDesc)
+            }
+        </td>
+        <td class="width-20">
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </td>
+        <td class="width-15"> 
+            @if(item.Imagen != null && item.Imagen.Length > 1){
+                @Html.Raw("<input type=\"image\" src=\"" + @Url.Content("~/Content/images/picture.png") + "\" width=\"16\" height=\"16\" onclick=\"MostrarImagen('" + @item.DetalleId + "');\"  data-toggle=\"modal\" data-target=\"#myModal\" />")                                            
+            }
+        </td>
+    </tr>
+}
+
+</table>
+

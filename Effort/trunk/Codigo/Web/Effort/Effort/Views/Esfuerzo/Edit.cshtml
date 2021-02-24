@@ -1,0 +1,146 @@
+﻿@model Effort.Models.Esfuerzo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+<div class="container">
+
+     <div class="container">
+        <h2>Editar Esfuerzo</h2>
+    </div>
+
+    <form role="form" method="post" action="@Url.Action("Edit", "Esfuerzo")">
+    
+        <input type="hidden" id="idTarea" name="idTarea" value="@ViewBag.idTarea" />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="sel1">Proyecto:</label>
+                        <label for=""proyecto>@ViewBag.proyecto</label>
+                        
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="sel1">Tarea:</label>
+                        <label for=""proyecto>@ViewBag.titulo</label>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="sel1">Descripcion:</label>
+                        <label for=""proyecto>@ViewBag.descripcion</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="sel1">Presupuesto en horas estimadas:</label>
+                        <label for=""proyecto>@ViewBag.horas</label>
+                        
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="sel1">Tipo de tarea:</label>
+                        <label for=""proyecto>@ViewBag.tipo</label>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="sel1">Predecesora:</label>
+                        <label for=""proyecto>@ViewBag.predecesora</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="usr">Fecha:</label>
+                        <input  type="text" class="form-control" id="fecha_actual" name="fecha_actual" value="@Model.fecha_actual.ToString("dd/MM/yyyy")">
+                         @Html.ValidationMessageFor(model => model.fecha_actual)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="sel1">Estado de la tarea:</label>
+                        @Html.DropDownList("idEstado",
+                            null,
+                            new { @class = "form-control"})
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+         <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="usr">Consumo en horas:</label>
+                        <input  type="text" class="form-control" id="consumo_hrs" value="@Model.consumo_hrs" name="consumo_hrs" onkeypress="return SoloNumerosDecimales(event, '0.0', 4, 0);">
+                         @Html.ValidationMessageFor(model => model.consumo_hrs)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="sel1">Comentarios:</label>
+                        <textarea type="text" class="form-control" id="comentarios" name="comentarios" >@Model.comentarios</textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div class="form-group">
+                        <label for="usr">Avance:</label>
+                        <input  type="number" class="form-control" id="avanceTarea" value="@ViewBag.avance" min="0" max="100" name="avanceTarea" onkeypress="return soloNumeros(event);">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <button class="btn btn-primary" type="submit" class="btn btn-default">Actualizar</button>
+        </div>
+    
+    </form>
+</div>
+
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+
+        $('#fecha_actual').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            clearBtn: true,
+            language: "es"
+
+        });
+
+    });
+</script>

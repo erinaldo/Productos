@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Effort.Models.Equipo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+<div class="container">
+    <h2>Equipo</h2>
+    <a class="btn btn-primary" href="~/Equipo/Create" >Crear Equipo</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <th>Inversion de Horas</th>
+                <th>Costo por Hora</th>
+                <th>Perfil</th>
+                <th>Estado</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model) { 
+                <tr>
+                    <td><a href='~/Equipo/Edit?id=@item.idEquipo'> @item.idEquipo </a></td>
+                    <td>@item.nombre</td>
+                    <td>@item.correo</td>
+                    <td>@item.inversion_horas_dia</td>
+                    <td>@item.costo_hr</td>
+                    <td>@item.perfil</td>
+                    <td>@item.Estado</td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <nav>
+        <ul class="pagination">
+            @if (ViewBag.Page > 0)
+            {
+                <li>
+
+                    <a href="@Url.Action("Index", new { page = ViewBag.Page - 1 })" aria-label="Previous" onclick="activePage(@ViewBag.Page);">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            }
+            @for (var i = 1; i < @ViewBag.MaxPage + 1; i++)
+            {
+                <li id="page_@i" ><a href="@Url.Action("Index", new { page = i - 1 })">@i</a></li>
+            }
+            @if (ViewBag.Page < ViewBag.MaxPage-1)
+            {
+                <li>
+                    <a href="@Url.Action("Index", new { page = ViewBag.Page + 1 })" aria-label="Next" onclick="activePage(@ViewBag.Page);">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+    <div id="chart_div">
+
+       </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var contador = @ViewBag.Page +1;
+        $("#page_" + contador).addClass("active");
+    });
+
+
+    var jsonData = $.ajax({
+        url: "./Equipo/tareasPendientes",
+        dataType: "json",
+        async: false
+    }).responseJSON;
+
+    google.load('visualization', '1', { 'packages': ['corechart'] });
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Equipo");
+        data.addColumn("number", "Tareas pendientes");
+
+        $.each(jsonData, function (i, item) {
+            data.addRow([item.nombreEquipo, item.tareasPendientes]);
+
+        });
+
+        var options = {
+            title: 'Tareas pendientes',
+            height: 400
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+    }
+
+</script>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Dacza Reports</title>
+        <link href="@Url.Content("~/Content/images/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+        <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/bootstrap-theme.css")" rel="stylesheet" type="text/css" /> 
+        @*<link href="../../Content/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" /> *@
+        <link href="@Url.Content("~/Content/simple-sidebar.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/site.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Custom.css")" rel="stylesheet" type="text/css" />
+
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <div class="page">        
+        <header class="page-header">
+             <div class="clearfix content-heading">            
+           
+               <img class="pull-left" src="@Url.Content("~/Content/images/logo-wide.png")" alt="Dacza" height="78" width="325"/>
+                @*<h1 class="text-side-right">DACZA-INTERNATIONAL</h1>*@
+               
+                <div class="pull-right">
+                    @Html.Partial("_LoginPartial")
+                </div>
+               </div>
+                
+            </header>
+        </div>
+
+         <div id="wrapper">
+         <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">             
+                <li>@Html.Raw(@Html.ActionLink("[replacetext]", "FiltroOrdenes", "OrdenTrabajo").ToHtmlString().Replace("[replacetext]", "<img class=\"image-link\" src=\"" + @Url.Content("~/Content/images/OrdenesTrabajo.png") + "\" height=60px width=60px /><p class=\"text-link\">Ordenes de Trabajo</p>"))</li>
+                <li>@Html.Raw(@Html.ActionLink("[replacetext]", "FiltroRefacciones", "OrdenTrabajo").ToHtmlString().Replace("[replacetext]", "<img class=\"image-link\" src=\"" + @Url.Content("~/Content/images/Refacciones.png") + "\" height=60px width=60px /><p class=\"text-link\">Refacciones</p>"))</li>
+                <li>@Html.Raw(@Html.ActionLink("[replacetext]", "FiltroInventario", "Inventario").ToHtmlString().Replace("[replacetext]", "<img class=\"image-link\" src=\"" + @Url.Content("~/Content/images/InventarioTalleres.png") + "\" height=60px width=60px /><p class=\"text-link\">Inventario de Talleres</p>"))</li>
+                <li>@Html.Raw(@Html.ActionLink("[replacetext]", "FiltroRecargas", "Recarga").ToHtmlString().Replace("[replacetext]", "<img class=\"image-link\" src=\"" + @Url.Content("~/Content/images/SolicitudRecarga.png") + "\" height=60px width=60px /><p class=\"text-link\">Solicitudes de Recarga</p>"))</li>
+                <li>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "Taller").ToHtmlString().Replace("[replacetext]", "<img class=\"image-link\" src=\"" + @Url.Content("~/Content/images/Talleres.png") + "\" height=60px width=60px /><p class=\"text-link\">Talleres</p>"))</li>
+            </ul>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="body">
+                        @RenderSection("featured", required: false)
+                        <section class="content-wrapper main-content clear-fix">
+                            @RenderBody()
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+        </div>
+    </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

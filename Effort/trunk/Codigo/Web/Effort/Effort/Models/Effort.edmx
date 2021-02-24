@@ -1,0 +1,1080 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AdminEffortSCRUMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AdminEffortSCRUMModelStoreContainer">
+          <EntitySet Name="configCorreos" EntityType="AdminEffortSCRUMModel.Store.configCorreos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DiasNoHabiles" EntityType="AdminEffortSCRUMModel.Store.DiasNoHabiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Equipo" EntityType="AdminEffortSCRUMModel.Store.Equipo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Esfuerzo" EntityType="AdminEffortSCRUMModel.Store.Esfuerzo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Estados_tareas" EntityType="AdminEffortSCRUMModel.Store.Estados_tareas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Proyecto" EntityType="AdminEffortSCRUMModel.Store.Proyecto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Riesgos" EntityType="AdminEffortSCRUMModel.Store.Riesgos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tarea" EntityType="AdminEffortSCRUMModel.Store.Tarea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tipo_tarea" EntityType="AdminEffortSCRUMModel.Store.Tipo_tarea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Versiones" EntityType="AdminEffortSCRUMModel.Store.Versiones" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Esfuerzo__idTare__24927208" Association="AdminEffortSCRUMModel.Store.FK__Esfuerzo__idTare__24927208">
+            <End Role="Tarea" EntitySet="Tarea" />
+            <End Role="Esfuerzo" EntitySet="Esfuerzo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Riesgos__idEstad__276EDEB3" Association="AdminEffortSCRUMModel.Store.FK__Riesgos__idEstad__276EDEB3">
+            <End Role="Estados_tareas" EntitySet="Estados_tareas" />
+            <End Role="Riesgos" EntitySet="Riesgos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Riesgos__idProye__25869641" Association="AdminEffortSCRUMModel.Store.FK__Riesgos__idProye__25869641">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="Riesgos" EntitySet="Riesgos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Riesgos__idTarea__267ABA7A" Association="AdminEffortSCRUMModel.Store.FK__Riesgos__idTarea__267ABA7A">
+            <End Role="Tarea" EntitySet="Tarea" />
+            <End Role="Riesgos" EntitySet="Riesgos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idEquipo__21B6055D" Association="AdminEffortSCRUMModel.Store.FK__Tarea__idEquipo__21B6055D">
+            <End Role="Equipo" EntitySet="Equipo" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idEstado__22AA2996" Association="AdminEffortSCRUMModel.Store.FK__Tarea__idEstado__22AA2996">
+            <End Role="Estados_tareas" EntitySet="Estados_tareas" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idProyect__1FCDBCEB" Association="AdminEffortSCRUMModel.Store.FK__Tarea__idProyect__1FCDBCEB">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idTipo__20C1E124" Association="AdminEffortSCRUMModel.Store.FK__Tarea__idTipo__20C1E124">
+            <End Role="Tipo_tarea" EntitySet="Tipo_tarea" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idVersion__239E4DCF" Association="AdminEffortSCRUMModel.Store.FK__Tarea__idVersion__239E4DCF">
+            <End Role="Versiones" EntitySet="Versiones" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="configCorreos">
+          <Key>
+            <PropertyRef Name="idCorreo" />
+          </Key>
+          <Property Name="idCorreo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="contrasena" Type="varchar" MaxLength="50" />
+          <Property Name="smtp" Type="varchar" MaxLength="50" />
+          <Property Name="puerto" Type="int" />
+          <Property Name="seguridadSSL" Type="int" />
+          <Property Name="ruta" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DiasNoHabiles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Equipo">
+          <Key>
+            <PropertyRef Name="idEquipo" />
+          </Key>
+          <Property Name="idEquipo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" MaxLength="70" />
+          <Property Name="correo" Type="varchar" MaxLength="70" />
+          <Property Name="contrasena" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="inversion_horas_dia" Type="int" />
+          <Property Name="costo_hr" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="perfil" Type="varchar" MaxLength="50" />
+          <Property Name="Estado" Type="int" />
+        </EntityType>
+        <EntityType Name="Esfuerzo">
+          <Key>
+            <PropertyRef Name="idEsfuerzo" />
+          </Key>
+          <Property Name="idEsfuerzo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idTarea" Type="int" Nullable="false" />
+          <Property Name="fecha_actual" Type="date" />
+          <Property Name="consumo_hrs" Type="float" />
+          <Property Name="restantes" Type="float" />
+          <Property Name="hrs_reales" Type="float" />
+          <Property Name="costo_hrs" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="comentarios" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Estados_tareas">
+          <Key>
+            <PropertyRef Name="idEstado" />
+          </Key>
+          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="idProyecto" />
+          </Key>
+          <Property Name="idProyecto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="fechaInicio" Type="date" />
+          <Property Name="duracion" Type="int" />
+          <Property Name="presupuesto_hrs" Type="int" />
+          <Property Name="presupuesto_precio" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="administrador_proyecto" Type="varchar" MaxLength="50" />
+          <Property Name="EstadoProyecto" Type="int" />
+        </EntityType>
+        <EntityType Name="Riesgos">
+          <Key>
+            <PropertyRef Name="idRiesgos" />
+          </Key>
+          <Property Name="idRiesgos" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idProyecto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="idTarea" Type="int" Nullable="false" />
+          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="responsable" Type="varchar" MaxLength="50" />
+          <Property Name="criticidad" Type="int" />
+          <Property Name="probabilidad" Type="int" />
+          <Property Name="impacto" Type="int" />
+          <Property Name="mitigacion" Type="varchar" MaxLength="500" />
+          <Property Name="fecha_seguimiento" Type="date" />
+        </EntityType>
+        <EntityType Name="Tarea">
+          <Key>
+            <PropertyRef Name="idTarea" />
+          </Key>
+          <Property Name="idTarea" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="titulo" Type="varchar" MaxLength="30" />
+          <Property Name="descripcion" Type="varchar" MaxLength="300" />
+          <Property Name="presupuesto" Type="float" />
+          <Property Name="horas_estimadas_dia" Type="float" />
+          <Property Name="idTipo" Type="int" Nullable="false" />
+          <Property Name="idProyecto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="idEquipo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="idVersion" Type="int" Nullable="false" />
+          <Property Name="predecesora" Type="int" />
+          <Property Name="fecha_inicio" Type="date" />
+          <Property Name="fecha_fin" Type="date" />
+          <Property Name="avanceTarea" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipo_tarea">
+          <Key>
+            <PropertyRef Name="idTipo" />
+          </Key>
+          <Property Name="idTipo" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Versiones">
+          <Key>
+            <PropertyRef Name="idVersion" />
+          </Key>
+          <Property Name="idVersion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__Esfuerzo__idTare__24927208">
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Store.Tarea" Multiplicity="1" />
+          <End Role="Esfuerzo" Type="AdminEffortSCRUMModel.Store.Esfuerzo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tarea">
+              <PropertyRef Name="idTarea" />
+            </Principal>
+            <Dependent Role="Esfuerzo">
+              <PropertyRef Name="idTarea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Riesgos__idEstad__276EDEB3">
+          <End Role="Estados_tareas" Type="AdminEffortSCRUMModel.Store.Estados_tareas" Multiplicity="1" />
+          <End Role="Riesgos" Type="AdminEffortSCRUMModel.Store.Riesgos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados_tareas">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Riesgos">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Riesgos__idProye__25869641">
+          <End Role="Proyecto" Type="AdminEffortSCRUMModel.Store.Proyecto" Multiplicity="1" />
+          <End Role="Riesgos" Type="AdminEffortSCRUMModel.Store.Riesgos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="Riesgos">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Riesgos__idTarea__267ABA7A">
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Store.Tarea" Multiplicity="1" />
+          <End Role="Riesgos" Type="AdminEffortSCRUMModel.Store.Riesgos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tarea">
+              <PropertyRef Name="idTarea" />
+            </Principal>
+            <Dependent Role="Riesgos">
+              <PropertyRef Name="idTarea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idEquipo__21B6055D">
+          <End Role="Equipo" Type="AdminEffortSCRUMModel.Store.Equipo" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Store.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipo">
+              <PropertyRef Name="idEquipo" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idEquipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idEstado__22AA2996">
+          <End Role="Estados_tareas" Type="AdminEffortSCRUMModel.Store.Estados_tareas" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Store.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados_tareas">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idProyect__1FCDBCEB">
+          <End Role="Proyecto" Type="AdminEffortSCRUMModel.Store.Proyecto" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Store.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idTipo__20C1E124">
+          <End Role="Tipo_tarea" Type="AdminEffortSCRUMModel.Store.Tipo_tarea" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Store.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_tarea">
+              <PropertyRef Name="idTipo" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idVersion__239E4DCF">
+          <End Role="Versiones" Type="AdminEffortSCRUMModel.Store.Versiones" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Store.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Versiones">
+              <PropertyRef Name="idVersion" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idVersion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="equipoIU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idEquipo" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="inv_hrs_dia" Type="int" Mode="In" />
+          <Parameter Name="costo_hr" Type="decimal" Mode="In" />
+          <Parameter Name="perfil" Type="varchar" Mode="In" />
+          <Parameter Name="estado" Type="int" Mode="In" />
+        </Function>
+        <Function Name="insertarEsfuerzo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idEquipo" Type="varchar" Mode="In" />
+          <Parameter Name="idTarea" Type="int" Mode="In" />
+          <Parameter Name="consumoHrs" Type="float" Mode="In" />
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="comentarios" Type="varchar" Mode="In" />
+          <Parameter Name="idEstado" Type="int" Mode="In" />
+          <Parameter Name="avanceTarea" Type="int" Mode="In" />
+        </Function>
+        <Function Name="modificarEsfuerzo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTarea" Type="int" Mode="In" />
+          <Parameter Name="consumoHrs" Type="float" Mode="In" />
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="idEstado" Type="int" Mode="In" />
+          <Parameter Name="comentarios" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="proyectosIU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProyecto" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="duracion" Type="int" Mode="In" />
+          <Parameter Name="pre_hrs" Type="float" Mode="In" />
+          <Parameter Name="pre_precio" Type="decimal" Mode="In" />
+          <Parameter Name="administrador" Type="varchar" Mode="In" />
+          <Parameter Name="EstadoProyecto" Type="int" Mode="In" />
+        </Function>
+        <Function Name="reporte_comentarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idT" Type="int" Mode="In" />
+        </Function>
+        <Function Name="reporte_diagrama_gantt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idproyecto" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="reporte_equipo_proyecto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="reporte_esfuerzo_proyecto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idproyecto" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="reporte_esfuerzo_tarea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idT" Type="int" Mode="In" />
+        </Function>
+        <Function Name="reporte_Risk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProyecto" Type="varchar" Mode="In" />
+          <Parameter Name="desde" Type="date" Mode="In" />
+          <Parameter Name="hasta" Type="date" Mode="In" />
+        </Function>
+        <Function Name="reporte_timesheet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProyecto" Type="varchar" Mode="In" />
+          <Parameter Name="desde" Type="date" Mode="In" />
+          <Parameter Name="hasta" Type="date" Mode="In" />
+        </Function>
+        <Function Name="tareaIU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTarea" Type="int" Mode="In" />
+          <Parameter Name="titulo" Type="varchar" Mode="In" />
+          <Parameter Name="descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="presupuesto" Type="float" Mode="In" />
+          <Parameter Name="hrsEstimadaDia" Type="float" Mode="In" />
+          <Parameter Name="idTipo" Type="int" Mode="In" />
+          <Parameter Name="idProyecto" Type="varchar" Mode="In" />
+          <Parameter Name="idEquipo" Type="varchar" Mode="In" />
+          <Parameter Name="idEstado" Type="int" Mode="In" />
+          <Parameter Name="idVersion" Type="int" Mode="In" />
+          <Parameter Name="predecesora" Type="int" Mode="In" />
+          <Parameter Name="fecha_inicio" Type="date" Mode="In" />
+          <Parameter Name="fecha_fin" Type="date" Mode="In" />
+        </Function>
+        <Function Name="TareaPorEquipo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProyecto" Type="varchar" Mode="In" />
+          <Parameter Name="idEquipo" Type="varchar" Mode="In" />
+          <Parameter Name="idEstado" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdminEffortSCRUMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EffortEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="configCorreos" EntityType="AdminEffortSCRUMModel.configCorreos" />
+          <EntitySet Name="DiasNoHabiles" EntityType="AdminEffortSCRUMModel.DiasNoHabiles" />
+          <EntitySet Name="Equipo" EntityType="AdminEffortSCRUMModel.Equipo" />
+          <EntitySet Name="Esfuerzo" EntityType="AdminEffortSCRUMModel.Esfuerzo" />
+          <EntitySet Name="Estados_tareas" EntityType="AdminEffortSCRUMModel.Estados_tareas" />
+          <EntitySet Name="Proyecto" EntityType="AdminEffortSCRUMModel.Proyecto" />
+          <EntitySet Name="Riesgos" EntityType="AdminEffortSCRUMModel.Riesgos" />
+          <EntitySet Name="Tarea" EntityType="AdminEffortSCRUMModel.Tarea" />
+          <EntitySet Name="Tipo_tarea" EntityType="AdminEffortSCRUMModel.Tipo_tarea" />
+          <EntitySet Name="Versiones" EntityType="AdminEffortSCRUMModel.Versiones" />
+          <AssociationSet Name="FK__Tarea__idEquipo__21B6055D" Association="AdminEffortSCRUMModel.FK__Tarea__idEquipo__21B6055D">
+            <End Role="Equipo" EntitySet="Equipo" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Esfuerzo__idTare__24927208" Association="AdminEffortSCRUMModel.FK__Esfuerzo__idTare__24927208">
+            <End Role="Tarea" EntitySet="Tarea" />
+            <End Role="Esfuerzo" EntitySet="Esfuerzo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Riesgos__idEstad__276EDEB3" Association="AdminEffortSCRUMModel.FK__Riesgos__idEstad__276EDEB3">
+            <End Role="Estados_tareas" EntitySet="Estados_tareas" />
+            <End Role="Riesgos" EntitySet="Riesgos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idEstado__22AA2996" Association="AdminEffortSCRUMModel.FK__Tarea__idEstado__22AA2996">
+            <End Role="Estados_tareas" EntitySet="Estados_tareas" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Riesgos__idProye__25869641" Association="AdminEffortSCRUMModel.FK__Riesgos__idProye__25869641">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="Riesgos" EntitySet="Riesgos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idProyect__1FCDBCEB" Association="AdminEffortSCRUMModel.FK__Tarea__idProyect__1FCDBCEB">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Riesgos__idTarea__267ABA7A" Association="AdminEffortSCRUMModel.FK__Riesgos__idTarea__267ABA7A">
+            <End Role="Tarea" EntitySet="Tarea" />
+            <End Role="Riesgos" EntitySet="Riesgos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idTipo__20C1E124" Association="AdminEffortSCRUMModel.FK__Tarea__idTipo__20C1E124">
+            <End Role="Tipo_tarea" EntitySet="Tipo_tarea" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarea__idVersion__239E4DCF" Association="AdminEffortSCRUMModel.FK__Tarea__idVersion__239E4DCF">
+            <End Role="Versiones" EntitySet="Versiones" />
+            <End Role="Tarea" EntitySet="Tarea" />
+          </AssociationSet>
+          <FunctionImport Name="equipoIU">
+            <Parameter Name="idEquipo" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="inv_hrs_dia" Mode="In" Type="Int32" />
+            <Parameter Name="costo_hr" Mode="In" Type="Decimal" />
+            <Parameter Name="perfil" Mode="In" Type="String" />
+            <Parameter Name="estado" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="insertarEsfuerzo">
+            <Parameter Name="idEquipo" Mode="In" Type="String" />
+            <Parameter Name="idTarea" Mode="In" Type="Int32" />
+            <Parameter Name="consumoHrs" Mode="In" Type="Double" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="comentarios" Mode="In" Type="String" />
+            <Parameter Name="idEstado" Mode="In" Type="Int32" />
+            <Parameter Name="avanceTarea" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="modificarEsfuerzo">
+            <Parameter Name="idTarea" Mode="In" Type="Int32" />
+            <Parameter Name="consumoHrs" Mode="In" Type="Double" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="idEstado" Mode="In" Type="Int32" />
+            <Parameter Name="comentarios" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proyectosIU">
+            <Parameter Name="idProyecto" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="duracion" Mode="In" Type="Int32" />
+            <Parameter Name="pre_hrs" Mode="In" Type="Double" />
+            <Parameter Name="pre_precio" Mode="In" Type="Decimal" />
+            <Parameter Name="administrador" Mode="In" Type="String" />
+            <Parameter Name="EstadoProyecto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="reporte_comentarios" ReturnType="Collection(AdminEffortSCRUMModel.reporte_comentarios_Result)">
+          <Parameter Name="idT" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="reporte_diagrama_gantt" ReturnType="Collection(AdminEffortSCRUMModel.reporte_diagrama_gantt_Result)">
+          <Parameter Name="idproyecto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="reporte_equipo_proyecto" ReturnType="Collection(AdminEffortSCRUMModel.reporte_equipo_proyecto_Result)" />
+          <FunctionImport Name="reporte_esfuerzo_proyecto" ReturnType="Collection(AdminEffortSCRUMModel.reporte_esfuerzo_proyecto_Result)">
+          <Parameter Name="idproyecto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="reporte_esfuerzo_tarea" ReturnType="Collection(AdminEffortSCRUMModel.reporte_esfuerzo_tarea_Result)">
+          <Parameter Name="idT" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="reporte_Risk" ReturnType="Collection(AdminEffortSCRUMModel.reporte_Risk_Result)">
+            <Parameter Name="idProyecto" Mode="In" Type="String" />
+            <Parameter Name="desde" Mode="In" Type="DateTime" />
+            <Parameter Name="hasta" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="reporte_timesheet" ReturnType="Collection(AdminEffortSCRUMModel.reporte_timesheet_Result)">
+            <Parameter Name="idProyecto" Mode="In" Type="String" />
+            <Parameter Name="desde" Mode="In" Type="DateTime" />
+            <Parameter Name="hasta" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="tareaIU">
+            <Parameter Name="idTarea" Mode="In" Type="Int32" />
+            <Parameter Name="titulo" Mode="In" Type="String" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+            <Parameter Name="presupuesto" Mode="In" Type="Double" />
+            <Parameter Name="hrsEstimadaDia" Mode="In" Type="Double" />
+            <Parameter Name="idTipo" Mode="In" Type="Int32" />
+            <Parameter Name="idProyecto" Mode="In" Type="String" />
+            <Parameter Name="idEquipo" Mode="In" Type="String" />
+            <Parameter Name="idEstado" Mode="In" Type="Int32" />
+            <Parameter Name="idVersion" Mode="In" Type="Int32" />
+            <Parameter Name="predecesora" Mode="In" Type="Int32" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="TareaPorEquipo" ReturnType="Collection(AdminEffortSCRUMModel.TareaPorEquipo_Result)">
+            <Parameter Name="idProyecto" Mode="In" Type="String" />
+            <Parameter Name="idEquipo" Mode="In" Type="String" />
+            <Parameter Name="idEstado" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="configCorreos">
+          <Key>
+            <PropertyRef Name="idCorreo" />
+          </Key>
+          <Property Name="idCorreo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="correo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="contrasena" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="smtp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="puerto" Type="Int32" />
+          <Property Name="seguridadSSL" Type="Int32" />
+          <Property Name="ruta" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DiasNoHabiles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Equipo">
+          <Key>
+            <PropertyRef Name="idEquipo" />
+          </Key>
+          <Property Name="idEquipo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nombre" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="correo" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="contrasena" Type="String" MaxLength="200" Unicode="false" FixedLength="false" Nullable="false" />
+          <Property Name="inversion_horas_dia" Type="Int32" />
+          <Property Name="costo_hr" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="perfil" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="Int32" />
+          <NavigationProperty Name="Tarea" Relationship="AdminEffortSCRUMModel.FK__Tarea__idEquipo__21B6055D" FromRole="Equipo" ToRole="Tarea" />
+        </EntityType>
+        <EntityType Name="Esfuerzo">
+          <Key>
+            <PropertyRef Name="idEsfuerzo" />
+          </Key>
+          <Property Name="idEsfuerzo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idTarea" Type="Int32" Nullable="false" />
+          <Property Name="fecha_actual" Type="DateTime" Precision="0" />
+          <Property Name="consumo_hrs" Type="Double" />
+          <Property Name="restantes" Type="Double" />
+          <Property Name="hrs_reales" Type="Double" />
+          <Property Name="costo_hrs" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="comentarios" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Tarea" Relationship="AdminEffortSCRUMModel.FK__Esfuerzo__idTare__24927208" FromRole="Esfuerzo" ToRole="Tarea" />
+        </EntityType>
+        <EntityType Name="Estados_tareas">
+          <Key>
+            <PropertyRef Name="idEstado" />
+          </Key>
+          <Property Name="idEstado" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Riesgos" Relationship="AdminEffortSCRUMModel.FK__Riesgos__idEstad__276EDEB3" FromRole="Estados_tareas" ToRole="Riesgos" />
+          <NavigationProperty Name="Tarea" Relationship="AdminEffortSCRUMModel.FK__Tarea__idEstado__22AA2996" FromRole="Estados_tareas" ToRole="Tarea" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="idProyecto" />
+          </Key>
+          <Property Name="idProyecto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fechaInicio" Type="DateTime" Precision="0" />
+          <Property Name="duracion" Type="Int32" />
+          <Property Name="presupuesto_hrs" Type="Int32" />
+          <Property Name="presupuesto_precio" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="administrador_proyecto" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EstadoProyecto" Type="Int32" />
+          <NavigationProperty Name="Riesgos" Relationship="AdminEffortSCRUMModel.FK__Riesgos__idProye__25869641" FromRole="Proyecto" ToRole="Riesgos" />
+          <NavigationProperty Name="Tarea" Relationship="AdminEffortSCRUMModel.FK__Tarea__idProyect__1FCDBCEB" FromRole="Proyecto" ToRole="Tarea" />
+        </EntityType>
+        <EntityType Name="Riesgos">
+          <Key>
+            <PropertyRef Name="idRiesgos" />
+          </Key>
+          <Property Name="idRiesgos" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="idProyecto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="idTarea" Type="Int32" Nullable="false" />
+          <Property Name="idEstado" Type="Int32" Nullable="false" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="responsable" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="criticidad" Type="Int32" />
+          <Property Name="probabilidad" Type="Int32" />
+          <Property Name="impacto" Type="Int32" />
+          <Property Name="mitigacion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_seguimiento" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Estados_tareas" Relationship="AdminEffortSCRUMModel.FK__Riesgos__idEstad__276EDEB3" FromRole="Riesgos" ToRole="Estados_tareas" />
+          <NavigationProperty Name="Proyecto" Relationship="AdminEffortSCRUMModel.FK__Riesgos__idProye__25869641" FromRole="Riesgos" ToRole="Proyecto" />
+          <NavigationProperty Name="Tarea" Relationship="AdminEffortSCRUMModel.FK__Riesgos__idTarea__267ABA7A" FromRole="Riesgos" ToRole="Tarea" />
+        </EntityType>
+        <EntityType Name="Tarea">
+          <Key>
+            <PropertyRef Name="idTarea" />
+          </Key>
+          <Property Name="idTarea" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="titulo" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="presupuesto" Type="Double" />
+          <Property Name="horas_estimadas_dia" Type="Double" />
+          <Property Name="idTipo" Type="Int32" Nullable="false" />
+          <Property Name="idProyecto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="idEquipo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="idEstado" Type="Int32" Nullable="false" />
+          <Property Name="idVersion" Type="Int32" Nullable="false" />
+          <Property Name="predecesora" Type="Int32" />
+          <Property Name="fecha_inicio" Type="DateTime" Precision="0" />
+          <Property Name="fecha_fin" Type="DateTime" Precision="0" />
+          <Property Name="avanceTarea" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Equipo" Relationship="AdminEffortSCRUMModel.FK__Tarea__idEquipo__21B6055D" FromRole="Tarea" ToRole="Equipo" />
+          <NavigationProperty Name="Esfuerzo" Relationship="AdminEffortSCRUMModel.FK__Esfuerzo__idTare__24927208" FromRole="Tarea" ToRole="Esfuerzo" />
+          <NavigationProperty Name="Estados_tareas" Relationship="AdminEffortSCRUMModel.FK__Tarea__idEstado__22AA2996" FromRole="Tarea" ToRole="Estados_tareas" />
+          <NavigationProperty Name="Proyecto" Relationship="AdminEffortSCRUMModel.FK__Tarea__idProyect__1FCDBCEB" FromRole="Tarea" ToRole="Proyecto" />
+          <NavigationProperty Name="Riesgos" Relationship="AdminEffortSCRUMModel.FK__Riesgos__idTarea__267ABA7A" FromRole="Tarea" ToRole="Riesgos" />
+          <NavigationProperty Name="Tipo_tarea" Relationship="AdminEffortSCRUMModel.FK__Tarea__idTipo__20C1E124" FromRole="Tarea" ToRole="Tipo_tarea" />
+          <NavigationProperty Name="Versiones" Relationship="AdminEffortSCRUMModel.FK__Tarea__idVersion__239E4DCF" FromRole="Tarea" ToRole="Versiones" />
+        </EntityType>
+        <EntityType Name="Tipo_tarea">
+          <Key>
+            <PropertyRef Name="idTipo" />
+          </Key>
+          <Property Name="idTipo" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Tarea" Relationship="AdminEffortSCRUMModel.FK__Tarea__idTipo__20C1E124" FromRole="Tipo_tarea" ToRole="Tarea" />
+        </EntityType>
+        <EntityType Name="Versiones">
+          <Key>
+            <PropertyRef Name="idVersion" />
+          </Key>
+          <Property Name="idVersion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Tarea" Relationship="AdminEffortSCRUMModel.FK__Tarea__idVersion__239E4DCF" FromRole="Versiones" ToRole="Tarea" />
+        </EntityType>
+        <Association Name="FK__Tarea__idEquipo__21B6055D">
+          <End Role="Equipo" Type="AdminEffortSCRUMModel.Equipo" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipo">
+              <PropertyRef Name="idEquipo" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idEquipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Esfuerzo__idTare__24927208">
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Tarea" Multiplicity="1" />
+          <End Role="Esfuerzo" Type="AdminEffortSCRUMModel.Esfuerzo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tarea">
+              <PropertyRef Name="idTarea" />
+            </Principal>
+            <Dependent Role="Esfuerzo">
+              <PropertyRef Name="idTarea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Riesgos__idEstad__276EDEB3">
+          <End Role="Estados_tareas" Type="AdminEffortSCRUMModel.Estados_tareas" Multiplicity="1" />
+          <End Role="Riesgos" Type="AdminEffortSCRUMModel.Riesgos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados_tareas">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Riesgos">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idEstado__22AA2996">
+          <End Role="Estados_tareas" Type="AdminEffortSCRUMModel.Estados_tareas" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados_tareas">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Riesgos__idProye__25869641">
+          <End Role="Proyecto" Type="AdminEffortSCRUMModel.Proyecto" Multiplicity="1" />
+          <End Role="Riesgos" Type="AdminEffortSCRUMModel.Riesgos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="Riesgos">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idProyect__1FCDBCEB">
+          <End Role="Proyecto" Type="AdminEffortSCRUMModel.Proyecto" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Riesgos__idTarea__267ABA7A">
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Tarea" Multiplicity="1" />
+          <End Role="Riesgos" Type="AdminEffortSCRUMModel.Riesgos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tarea">
+              <PropertyRef Name="idTarea" />
+            </Principal>
+            <Dependent Role="Riesgos">
+              <PropertyRef Name="idTarea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idTipo__20C1E124">
+          <End Role="Tipo_tarea" Type="AdminEffortSCRUMModel.Tipo_tarea" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_tarea">
+              <PropertyRef Name="idTipo" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarea__idVersion__239E4DCF">
+          <End Role="Versiones" Type="AdminEffortSCRUMModel.Versiones" Multiplicity="1" />
+          <End Role="Tarea" Type="AdminEffortSCRUMModel.Tarea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Versiones">
+              <PropertyRef Name="idVersion" />
+            </Principal>
+            <Dependent Role="Tarea">
+              <PropertyRef Name="idVersion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="reporte_comentarios_Result">
+          <Property Type="String" Name="idEquipo" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fecha_actual" Nullable="true" />
+          <Property Type="String" Name="comentarios" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="reporte_diagrama_gantt_Result">
+          <Property Type="String" Name="Tipo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Tarea" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Responsable" Nullable="true" MaxLength="70" />
+          <Property Type="Double" Name="Avance" Nullable="true" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fecha_inicio" Nullable="true" />
+          <Property Type="DateTime" Name="fecha_fin" Nullable="true" />
+          <Property Type="DateTime" Name="fechaInicio" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="reporte_equipo_proyecto_Result">
+          <Property Type="String" Name="idEquipo" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Proyectos" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="reporte_esfuerzo_proyecto_Result">
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="presupuesto_hrs" Nullable="true" />
+          <Property Type="DateTime" Name="fechaInicio" Nullable="true" />
+          <Property Type="Decimal" Name="presupuesto_precio" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="String" Name="administrador_proyecto" Nullable="true" MaxLength="70" />
+          <Property Type="Int32" Name="idTarea" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="presupuesto" Nullable="true" />
+          <Property Type="DateTime" Name="Fecha_Inicio" Nullable="true" />
+          <Property Type="Double" Name="Total_hrs" Nullable="true" />
+          <Property Type="Decimal" Name="Total_costo" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="reporte_esfuerzo_tarea_Result">
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="titulo" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="presupuesto" Nullable="true" />
+          <Property Type="DateTime" Name="fecha_actual" Nullable="true" />
+          <Property Type="Double" Name="restantes" Nullable="true" />
+          <Property Type="Double" Name="hrs_reales" Nullable="true" />
+          <Property Type="Double" Name="consumo_hrs" Nullable="true" />
+          <Property Type="String" Name="Empleado" Nullable="true" MaxLength="70" />
+        </ComplexType>
+        <ComplexType Name="reporte_Risk_Result">
+          <Property Type="DateTime" Name="fecha_registro" Nullable="true" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="titulo" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="idRiesgos" Nullable="false" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="responsable" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="estado" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="criticidad" Nullable="true" />
+          <Property Type="Int32" Name="probabilidad" Nullable="true" />
+          <Property Type="Int32" Name="impacto" Nullable="true" />
+          <Property Type="String" Name="mitigacion" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="fecha_seguimiento" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="reporte_timesheet_Result">
+          <Property Type="String" Name="proyecto" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="70" />
+          <Property Type="DateTime" Name="fechaInicio" Nullable="true" />
+          <Property Type="String" Name="tipo_tarea" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="titulo" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="300" />
+          <Property Type="Int32" Name="trabajadas" Nullable="true" />
+          <Property Type="Double" Name="presupuesto" Nullable="true" />
+          <Property Type="Double" Name="restantes" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TareaPorEquipo_Result">
+          <Property Type="Int32" Name="idTarea" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="idProyecto" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Empleado" Nullable="true" MaxLength="70" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="100" />
+          <Property Type="Double" Name="presupuesto" Nullable="true" />
+          <Property Type="Double" Name="horas_estimadas_dia" Nullable="true" />
+          <Property Type="String" Name="Tipo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="10" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdminEffortSCRUMModelStoreContainer" CdmEntityContainer="EffortEntities">
+          <EntitySetMapping Name="configCorreos">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.configCorreos">
+              <MappingFragment StoreEntitySet="configCorreos">
+                <ScalarProperty Name="idCorreo" ColumnName="idCorreo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="smtp" ColumnName="smtp" />
+                <ScalarProperty Name="puerto" ColumnName="puerto" />
+                <ScalarProperty Name="seguridadSSL" ColumnName="seguridadSSL" />
+                <ScalarProperty Name="ruta" ColumnName="ruta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiasNoHabiles">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.DiasNoHabiles">
+              <MappingFragment StoreEntitySet="DiasNoHabiles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipo">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.Equipo">
+              <MappingFragment StoreEntitySet="Equipo">
+                <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="inversion_horas_dia" ColumnName="inversion_horas_dia" />
+                <ScalarProperty Name="costo_hr" ColumnName="costo_hr" />
+                <ScalarProperty Name="perfil" ColumnName="perfil" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Esfuerzo">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.Esfuerzo">
+              <MappingFragment StoreEntitySet="Esfuerzo">
+                <ScalarProperty Name="idEsfuerzo" ColumnName="idEsfuerzo" />
+                <ScalarProperty Name="idTarea" ColumnName="idTarea" />
+                <ScalarProperty Name="fecha_actual" ColumnName="fecha_actual" />
+                <ScalarProperty Name="consumo_hrs" ColumnName="consumo_hrs" />
+                <ScalarProperty Name="restantes" ColumnName="restantes" />
+                <ScalarProperty Name="hrs_reales" ColumnName="hrs_reales" />
+                <ScalarProperty Name="costo_hrs" ColumnName="costo_hrs" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estados_tareas">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.Estados_tareas">
+              <MappingFragment StoreEntitySet="Estados_tareas">
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proyecto">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.Proyecto">
+              <MappingFragment StoreEntitySet="Proyecto">
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="duracion" ColumnName="duracion" />
+                <ScalarProperty Name="presupuesto_hrs" ColumnName="presupuesto_hrs" />
+                <ScalarProperty Name="presupuesto_precio" ColumnName="presupuesto_precio" />
+                <ScalarProperty Name="administrador_proyecto" ColumnName="administrador_proyecto" />
+                <ScalarProperty Name="EstadoProyecto" ColumnName="EstadoProyecto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Riesgos">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.Riesgos">
+              <MappingFragment StoreEntitySet="Riesgos">
+                <ScalarProperty Name="idRiesgos" ColumnName="idRiesgos" />
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+                <ScalarProperty Name="idTarea" ColumnName="idTarea" />
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="responsable" ColumnName="responsable" />
+                <ScalarProperty Name="criticidad" ColumnName="criticidad" />
+                <ScalarProperty Name="probabilidad" ColumnName="probabilidad" />
+                <ScalarProperty Name="impacto" ColumnName="impacto" />
+                <ScalarProperty Name="mitigacion" ColumnName="mitigacion" />
+                <ScalarProperty Name="fecha_seguimiento" ColumnName="fecha_seguimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tarea">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.Tarea">
+              <MappingFragment StoreEntitySet="Tarea">
+                <ScalarProperty Name="idTarea" ColumnName="idTarea" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="presupuesto" ColumnName="presupuesto" />
+                <ScalarProperty Name="horas_estimadas_dia" ColumnName="horas_estimadas_dia" />
+                <ScalarProperty Name="idTipo" ColumnName="idTipo" />
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+                <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idVersion" ColumnName="idVersion" />
+                <ScalarProperty Name="predecesora" ColumnName="predecesora" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+                <ScalarProperty Name="avanceTarea" ColumnName="avanceTarea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_tarea">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.Tipo_tarea">
+              <MappingFragment StoreEntitySet="Tipo_tarea">
+                <ScalarProperty Name="idTipo" ColumnName="idTipo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Versiones">
+            <EntityTypeMapping TypeName="AdminEffortSCRUMModel.Versiones">
+              <MappingFragment StoreEntitySet="Versiones">
+                <ScalarProperty Name="idVersion" ColumnName="idVersion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="equipoIU" FunctionName="AdminEffortSCRUMModel.Store.equipoIU" />
+          <FunctionImportMapping FunctionImportName="insertarEsfuerzo" FunctionName="AdminEffortSCRUMModel.Store.insertarEsfuerzo" />
+          <FunctionImportMapping FunctionImportName="modificarEsfuerzo" FunctionName="AdminEffortSCRUMModel.Store.modificarEsfuerzo" />
+          <FunctionImportMapping FunctionImportName="proyectosIU" FunctionName="AdminEffortSCRUMModel.Store.proyectosIU" />
+          <FunctionImportMapping FunctionImportName="reporte_comentarios" FunctionName="AdminEffortSCRUMModel.Store.reporte_comentarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdminEffortSCRUMModel.reporte_comentarios_Result">
+                <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
+                <ScalarProperty Name="fecha_actual" ColumnName="fecha_actual" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="reporte_diagrama_gantt" FunctionName="AdminEffortSCRUMModel.Store.reporte_diagrama_gantt">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdminEffortSCRUMModel.reporte_diagrama_gantt_Result">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Tarea" ColumnName="Tarea" />
+                <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+                <ScalarProperty Name="Avance" ColumnName="Avance" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="reporte_equipo_proyecto" FunctionName="AdminEffortSCRUMModel.Store.reporte_equipo_proyecto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdminEffortSCRUMModel.reporte_equipo_proyecto_Result">
+                <ScalarProperty Name="idEquipo" ColumnName="idEquipo" />
+                <ScalarProperty Name="Proyectos" ColumnName="Proyectos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="reporte_esfuerzo_proyecto" FunctionName="AdminEffortSCRUMModel.Store.reporte_esfuerzo_proyecto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdminEffortSCRUMModel.reporte_esfuerzo_proyecto_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="presupuesto_hrs" ColumnName="presupuesto_hrs" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="presupuesto_precio" ColumnName="presupuesto_precio" />
+                <ScalarProperty Name="administrador_proyecto" ColumnName="administrador_proyecto" />
+                <ScalarProperty Name="idTarea" ColumnName="idTarea" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="presupuesto" ColumnName="presupuesto" />
+                <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+                <ScalarProperty Name="Total_hrs" ColumnName="Total_hrs" />
+                <ScalarProperty Name="Total_costo" ColumnName="Total_costo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="reporte_esfuerzo_tarea" FunctionName="AdminEffortSCRUMModel.Store.reporte_esfuerzo_tarea">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdminEffortSCRUMModel.reporte_esfuerzo_tarea_Result">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="presupuesto" ColumnName="presupuesto" />
+                <ScalarProperty Name="fecha_actual" ColumnName="fecha_actual" />
+                <ScalarProperty Name="restantes" ColumnName="restantes" />
+                <ScalarProperty Name="hrs_reales" ColumnName="hrs_reales" />
+                <ScalarProperty Name="consumo_hrs" ColumnName="consumo_hrs" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="reporte_Risk" FunctionName="AdminEffortSCRUMModel.Store.reporte_Risk">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdminEffortSCRUMModel.reporte_Risk_Result">
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="idRiesgos" ColumnName="idRiesgos" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="responsable" ColumnName="responsable" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="criticidad" ColumnName="criticidad" />
+                <ScalarProperty Name="probabilidad" ColumnName="probabilidad" />
+                <ScalarProperty Name="impacto" ColumnName="impacto" />
+                <ScalarProperty Name="mitigacion" ColumnName="mitigacion" />
+                <ScalarProperty Name="fecha_seguimiento" ColumnName="fecha_seguimiento" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="reporte_timesheet" FunctionName="AdminEffortSCRUMModel.Store.reporte_timesheet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdminEffortSCRUMModel.reporte_timesheet_Result">
+                <ScalarProperty Name="proyecto" ColumnName="proyecto" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="tipo_tarea" ColumnName="tipo_tarea" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="trabajadas" ColumnName="trabajadas" />
+                <ScalarProperty Name="presupuesto" ColumnName="presupuesto" />
+                <ScalarProperty Name="restantes" ColumnName="restantes" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="tareaIU" FunctionName="AdminEffortSCRUMModel.Store.tareaIU" />
+          <FunctionImportMapping FunctionImportName="TareaPorEquipo" FunctionName="AdminEffortSCRUMModel.Store.TareaPorEquipo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AdminEffortSCRUMModel.TareaPorEquipo_Result">
+                <ScalarProperty Name="idTarea" ColumnName="idTarea" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="presupuesto" ColumnName="presupuesto" />
+                <ScalarProperty Name="horas_estimadas_dia" ColumnName="horas_estimadas_dia" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

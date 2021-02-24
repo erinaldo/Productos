@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/todas" android:title="@string/Void"/>
+    <item android:id="@+id/captura" android:title="@string/Void"/>
+    <item android:id="@+id/canceladas" android:title="@string/Void"/>
+    <item android:id="@+id/cerradas" android:title="@string/Void"/>
+    <item android:id="@+id/enviadas" android:title="@string/Void"/>
+    <item android:id="@+id/surtidas" android:title="@string/Void"/>
+</menu>

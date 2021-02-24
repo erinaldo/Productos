@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a948085d53554519b6abf08db3fefd9d" Name="Diagrama1">
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.configCorreos" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.DiasNoHabiles" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.Equipo" Width="1.5" PointX="3.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.Esfuerzo" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.Estados_tareas" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.Proyecto" Width="1.5" PointX="3.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.Riesgos" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.Tarea" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.Tipo_tarea" Width="1.5" PointX="3.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminEffortSCRUMModel.Versiones" Width="1.5" PointX="3.75" PointY="19.25" IsExpanded="true" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Tarea__idEquipo__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Esfuerzo__idTare__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Riesgos__idEstad__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Tarea__idEstado__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Riesgos__idProye__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Tarea__idProyect__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Riesgos__idTarea__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Tarea__idTipo__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="AdminEffortSCRUMModel.FK__Tarea__idVersion__239E4DCF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

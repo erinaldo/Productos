@@ -1,0 +1,103 @@
+﻿@model Effort.Models.Equipo
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+
+<div class="container">
+
+    <div class="container">
+        <h2>Crear Equipo</h2>
+    </div>
+
+    <form role="form" method="post" action="@Url.Action("Create","Equipo")">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Identificador:</label>                       
+                        <input type="text" class="form-control" id="idEquipo" name="idEquipo">
+                         @Html.ValidationMessageFor(model => model.idEquipo)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                         @Html.ValidationMessageFor(model => model.nombre)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Correo electrónico:</label>
+                        <input  type="email" class="form-control" id="correo" name="correo">
+                         @Html.ValidationMessageFor(model => model.correo)
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Contraseña:</label>
+                        <input type="password" class="form-control" id="contrasena" name="contrasena">
+                         @Html.ValidationMessageFor(model => model.contrasena)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Inversion de Horas:</label>
+                        <input type="number" class="form-control" id="inversion_horas_dia" name="inversion_horas_dia">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="usr">Costo por Hora:</label>
+                        <input type="number" class="form-control" id="costo_hr" name="costo_hr">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="sel1">Perfil:</label>
+                        <select id="perfil" name="perfil" class="form-control">
+                            <option value="Administrador">Administrador</option>
+                            <option value="Usuario">Usuario</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="sel1">Estatus:</label>
+                        <select id="estado" name="estado" class="form-control">
+                            <option value=1>Activo</option>
+                            <option value=0>Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <button class="btn btn-primary" type="submit">Crear</button>
+        </div>
+
+    </form>
+</div>

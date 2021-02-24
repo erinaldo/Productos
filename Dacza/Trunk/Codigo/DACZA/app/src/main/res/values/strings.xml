@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DACZA</string>
+    <string name="title_activity_iniciar_dacza">Iniciar Dacza</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="inicio_txtVersion">Versión 1.0</string>
+
+
+    <string name="Void"></string>
+</resources>

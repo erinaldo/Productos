@@ -1,0 +1,32 @@
+﻿@model List<WebReports.Models.ViewModels.ViewRefacciones>
+    
+<div class="panel-body">                                                             
+        <table>                
+            <tr>
+                <th class="width-20">Folio</th>
+                <th class="width-15">Fecha</th>  
+                <th class="width-15">No. Parte</th> 
+                <th class="width-30">Descripcion</th>
+                <th class="width-20">Vin</th> 
+            </tr>
+            @foreach (var item in Model) { 
+                <tr>
+                    <td class="width-20">
+                        @Html.DisplayFor(modelItem => item.Folio)
+                    </td>
+                    <td class="width-15">
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td class="width-15">
+                        @Html.DisplayFor(modelItem => item.ClaveArticulo)
+                    </td>
+                    <td class="width-30">
+                        @Html.DisplayFor(modelItem => item.DescripcionArticulo)
+                    </td>
+                    <td class="width-20">
+                        @Html.DisplayFor(modelItem => item.Vin)
+                    </td>
+                </tr>
+            }
+        </table>        
+</div>

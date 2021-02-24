@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- GENERAL DIMEN -->
+    <!-- general botones on bottom -->
+    <dimen name="button_on_bottom_padding">30dp</dimen>
+    <dimen name="generalAccesoSistemaHeight">40dp</dimen>
+
+    <!-- dimes for general buttons -->
+    <dimen name="general_button_width">55dip</dimen>
+    <dimen name="general_button_height">55dip</dimen>
+    <!-- end of general dimes -->
+
+
+    <!-- spacer between sections ////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+    <!-- inicio_route_lite -->
+    <dimen name="inicio_route_lite_text2_textSize">15sp</dimen>
+
+    <!-- acceso_sistema -->
+    <dimen name="login_button_paddingTop">30dp</dimen>
+    <dimen name="login_button_paddingBottom">30dp</dimen>
+    <dimen name="login_button_marginTop">30dp</dimen>
+    <dimen name="login_button_marginBottom">30dp</dimen>
+    <dimen name="login_image_paggingTop">30dp</dimen>
+    <dimen name="login_image_paggingBottom">30dp</dimen>
+    <dimen name="login_image_marginTop">30dp</dimen>
+    <dimen name="login_image_marginBottom">30dp</dimen>
+
+    <!-- dimens for main screen -->
+    <dimen name="main_label_width">55dip</dimen>
+    <dimen name="main_label_height">55dip</dimen>
+    <dimen name="configuracion_terminal_allFonts_textSize">10sp</dimen>
+
+    <!-- **** ACTUALIZAR -->
+    <!-- solicitud_agenda_vendedor -->
+    <dimen name="solicitud_agenda_vendedor_lblFechaInicial_textSize">15sp</dimen>
+    <dimen name="solicitud_agenda_vendedor_lblFechaInicial_marginBottom">20dp</dimen>
+    <dimen name="solicitud_agenda_vendedor_lblFechaInicial_marginTop">30dp</dimen>
+    <dimen name="solicitud_agenda_vendedor_lblFechaFinal_textSize">15sp</dimen>
+    <dimen name="solicitud_agenda_vendedor_lblFechaFinal_marginBottom">20sp</dimen>
+    <dimen name="solicitud_agenda_vendedor_lblFechaFinal_marginTop">30sp</dimen>
+    <dimen name="solicitud_agenda_vendedor_dpFechaInicial_marginBottom">40sp</dimen>
+
+    <!-- END of ACTUALIZER section -->
+
+
+    <!-- **** MIS CLIENTES -->
+    <!-- seleccion_actividades_visita -->
+    <dimen name="seleccion_actividades_visita_labeltop_marginTOP">14dp</dimen>
+    <dimen name="seleccion_actividades_visita_labelBOTTOM_marginBottom">14dp</dimen>
+    <dimen name="seleccion_actividades_vista_lblsTitle_textSize">14sp</dimen>
+
+    <!-- elemento_imagen_text -->
+    <dimen name="elemento_imagen_texto_text1_textSize">22sp</dimen>
+    <dimen name="elemento_imagen_texto_txtItemDesc_textSize">11sp</dimen>
+    <dimen name="elemento_imagen_text_text1_paddingLeft">12dp</dimen>
+    <dimen name="elemento_imagen_text_txtItemDesc_paddingLeft">8dp</dimen>
+
+    <!-- seleccion_visita -->
+    <dimen name="seleccion_visita_lbls_textSize">8sp</dimen>
+
+    <!-- atencion a clientes -->
+    <dimen name="seleccion_clientes_lblsTitulos_textSize">16sp</dimen>
+    <dimen name="seleccion_clientes_lbls_textSize">14sp</dimen>
+    <dimen name="seleccion_clientes_lstview_textSize">12sp</dimen>
+    <dimen name="seleccion_visita_lbl_marginBOTTOM">10dp</dimen>
+    <dimen name="seleccion_visita_lbl_marginTOP">8dp</dimen>
+
+    <!-- lista_simple1 -->
+    <dimen name="lista_simple1_texto1_textSize">10sp</dimen>
+    <!-- end of MIS CLIENTES -->
+
+
+    <!-- acceso_dia_diferente -->
+    <dimen name="acceso_dia_diferente_lbls_textSize">10sp</dimen>
+    <dimen name="acceso_dia_diferente_lbls_width">120dp</dimen>
+    <dimen name="acceso_dia_diferente_txts_textSize">14sp</dimen>
+
+    <!-- nuevo_cliente -->
+    <dimen name="nuevo_cliente_lbls_textSize">14sp</dimen>
+    <dimen name="nuevo_cliente_lblDatosGenerales_textSize">14sp</dimen>
+    <dimen name="nuevo_cliente_lblDomicilio_textSize">14sp</dimen>
+    <dimen name="nuevo_cliente_lblPuntoEntrega_textSize">13sp</dimen>
+    <dimen name="nuevo_cliente_lblDomFiscal_textSize">13sp</dimen>
+    <!--  -->
+    <dimen name="nuevo_cliente_chkDesgloseImpuestos_width">300dp</dimen>
+    <dimen name="nuevo_cliente_txts_textSize">14sp</dimen>
+    <dimen name="nuevo_cliente_txts_width">300dp</dimen>
+
+    <!-- ((Seleccion Visitas)) -->
+
+
+    <!-- (Pedido) -->
+    <!-- seleccion_pedido -->
+    <dimen name="seleccion_pedido_lblCliente_textSize">14sp</dimen>
+    <dimen name="seleccion_pedido_lbls_rutaYdia_textSize">12sp</dimen>
+
+    <!-- actionbar -->
+    <dimen name="captura_pedido_lblitulo_textSize">15sp</dimen>
+    <dimen name="captura_pedido_lblsubtitulo_textSize">11sp</dimen>
+    <dimen name="captura_pedido_lblitulo_margin">8sp</dimen>
+    <dimen name="captura_pedido_lblitulo_height">35sp</dimen>
+
+    <!-- captura_pedido -->
+    <dimen name="captura_pedido_lblListaPrecios_textSize">12sp</dimen>
+    <dimen name="captura_pedido_lblListaPrecios_Variante_textSize">15sp</dimen>
+    <dimen name="captura_pedido_lblListaPrecios_Titulos_textSize">16sp</dimen>
+    <dimen name="captura_pedido_lblListaPrecios_marginBOTTOM">15dp</dimen>
+    <dimen name="captura_pedido_lbls_Totales_textSize">14sp</dimen>
+    <dimen name="captura_pedido_buttons_marginBOTTOM">5dp</dimen>
+
+    <!-- captura_producto -->
+    <dimen name="captura_producto_lblsCapturaProducto_textSize">14sp</dimen>
+
+    <!-- (Cobranza) -->
+    <!-- seleccion_transaccion -->
+    <dimen name="seleccion_transaccion_lblCliente_textSize">14sp</dimen>
+    <dimen name="seleccion_transaccion_lblsRutaDay">15sp</dimen>
+    <!-- Inflater -->
+    <!-- lista_div2_check -->
+    <dimen name="lista_div2_check_lblTitle">18sp</dimen>
+    <dimen name="lista_div2_check_otherText">14sp</dimen>
+
+    <!-- captura_cobranza_det -->
+    <dimen name="captura_cobranza_det_lblFormatoPagoTipo_textSize">16sp</dimen>
+    <dimen name="captura_cobranza_det_lbls_textSize">14sp</dimen>
+
+    <!-- elemento_cobranza_det -->
+    <dimen name="elemento_cobranza_det_lbls_textSize">14sp</dimen>
+
+    <!-- end of MIS CLIENTES -->
+
+
+    <!-- **** MIS PENDIENTES -->
+    <!-- revisar_pendientes -->
+    <dimen name="revisar_pendientes_lstPendientes_paddingTop">15sp</dimen>
+    <dimen name="revisar_pendientes_lstPendientes_height">560dp</dimen>
+    <dimen name="revisar_pendientes_lstPendientes_marginBottom">40dp</dimen>
+    <dimen name="revisar_pendientes_lstPendientes_dividerHeight">5sp</dimen>
+    <dimen name="revisar_pendientes_lblVendedor_textSize">16sp</dimen>
+    <dimen name="revisar_pendientes_lblVendedor_paddngTop">15dp</dimen>
+    <dimen name="revisar_pendientes_lblFecha_textSize">14sp</dimen>
+    <dimen name="revisar_pendientes_lblFecha_paddingBottom">15dp</dimen>
+
+    <!-- elemento_revisar_pendientes -->
+    <dimen name="elemento_revisar_pendientes_txts_height">40dp</dimen>
+    <dimen name="elemento_revisar_pendientes_txts_width">200dp</dimen>
+    <dimen name="elemento_revisar_pendientes_txts_textSize">12sp</dimen>
+    <dimen name="elemento_revisar_pendientes_txtDescripcion_textSize">12sp</dimen>
+    <!-- mis pendientes - END -->
+
+
+    <!-- **** MIS CUOTAS -->
+    <!-- consultar_indicadores -->
+    <dimen name="consultar_indicadores_lblNameSeller_textSize">14sp</dimen>
+    <dimen name="consultar_indicadores_lblNameSeller_marginTOP">15dp</dimen>
+    <dimen name="consultar_indicadores_lblFecha_textSize">14sp</dimen>
+    <dimen name="consultar_indicadores_lblFecha_marginBOTTOM">15dp</dimen>
+
+    <!-- elemento_consulta_indicador -->
+    <dimen name="elemento_consulta_indicador">10sp</dimen>
+    <!-- mis cuotas - END -->
+
+
+    <!-- **** INVENTARIO -->
+    <!-- consultar_inventario -->
+    <dimen name="consultar_inventario_lbls_textSizes">14sp</dimen>
+    <dimen name="consultar_inventario_lblRoute_marginTOP">25dp</dimen>
+    <dimen name="consultar_inventario_lblWorkDay_marginBOTTOM">25dp</dimen>
+
+    <!-- lista_list_inventario -->
+    <dimen name="lista_list_inventario_lblClaveName_textSize">14sp</dimen>
+    <dimen name="lista_list_inventario_lblsItems_textSize">12sp</dimen>
+    <!-- end of INVENTARIO -->
+
+
+    <!-- General client list -->
+    <!-- begin of general f this type list -->
+    <!-- dimens cliente list screeen -->
+    <dimen name="client_label_title_date">30dip</dimen>
+    <dimen name="client_label_client_others">30dip</dimen>
+    <dimen name="client_label_paddingTop">10dip</dimen>
+    <dimen name="client_label_paddingBottom">10dip</dimen>
+    <dimen name="titulo_gnerico_textSizes">16sp</dimen>
+
+    <!-- dimens for quotas list screen -->
+    <dimen name="quotas_label_title_name">30dip</dimen>
+    <dimen name="quotas_label_title_date">30dip</dimen>
+    <dimen name="quotas_label_client_others">30dip</dimen>
+    <dimen name="quotas_label_paddingTop">10dip</dimen>
+    <dimen name="quotas_label_paddingBottom">10dip</dimen>
+    <!-- end of group -->
+
+
+    <!-- dimens for main screen -->
+    <!-- elemento_dialog_captura -->
+    <dimen name="elemento_dialog_captura">40sp</dimen>
+    <!-- END elemento_dialog_captura -->
+</resources>

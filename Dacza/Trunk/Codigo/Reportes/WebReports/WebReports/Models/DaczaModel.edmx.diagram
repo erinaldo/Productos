@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3bf731bfcbd0402eacfb82e489ada9fb" Name="Diagram1">
+        <EntityTypeShape EntityType="DACZAModel.Almacen" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.Articulo" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.Cliente" Width="1.5" PointX="10.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.DEVDetalle" Width="1.5" PointX="15" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.Devolucion" Width="1.5" PointX="9.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.InventarioTaller" Width="1.5" PointX="7.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.ODTDetalle" Width="1.5" PointX="18" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.OrdenTrabajo" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.Recarga" Width="1.5" PointX="9.75" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.RECDetalle" Width="1.5" PointX="12" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.Sucursal" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.Taller" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.Usuario" Width="1.5" PointX="7.5" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACZAModel.Vin" Width="1.5" PointX="10.5" PointY="30" IsExpanded="true" />
+        <AssociationConnector Association="DACZAModel.FK_Almacen_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Taller_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_DEVDetalle_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_InventarioTaller_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_ODTDetalle_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_RECDetalle_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Vin_Articulo" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_OrdenTrabajo_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Vin_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_DEVDetalle_Devolucion" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Devolucion_Taller" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Devolucion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_InventarioTaller_Taller" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_ODTDetalle_OrdenTrabajo" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_OrdenTrabajo_Agente" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_OrdenTrabajo_Taller" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_OrdenTrabajo_Vin" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Recarga_Agente" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Recarga_Taller" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_RECDetalle_Recarga" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Agente_Taller" ManuallyRouted="false" />
+        <AssociationConnector Association="DACZAModel.FK_Cliente_Cliente" />
+        <EntityTypeShape EntityType="DACZAModel.Folio" Width="1.5" PointX="1.6676698036806981" PointY="12.628277397075797" />
+        <EntityTypeShape EntityType="DACZAModel.FolioDetalle" Width="1.5" PointX="6.249387840856512" PointY="21.447478363964464" />
+        <EntityTypeShape EntityType="DACZAModel.FolioTaller" Width="1.5" PointX="0.883052604684165" PointY="0.51264202618628829" />
+        <AssociationConnector Association="DACZAModel.FK_FolioDetalle_Folio" />
+        <AssociationConnector Association="DACZAModel.FK_FolioTaller_Folio" />
+        <AssociationConnector Association="DACZAModel.FK_FolioTaller_Taller" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

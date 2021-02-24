@@ -1,0 +1,40 @@
+﻿@model List<WebReports.Models.Recarga>
+
+@foreach (var item in Model) { 
+<div class="panel-body"> 
+                                                            
+        <table>
+            <tr>
+                <th class="width-30">Folio: @item.Folio</th>
+                <th class="width-40">Agente: @item.Usuario.Nombre</th>
+                @switch (@item.Fase)
+                { 
+                    case 0:
+                        <th class="width-30">Fase: Cancelada</th>
+                        break;
+                    case 1:
+                        <th class="width-30">Fase: Captura</th>
+                        break;
+                    case 2:
+                        @Html.Raw("<th id=\"th" + @item.RecargaId + "\" class=\"width-30\">Fase: Cerrada ")
+                        @Html.Raw("<input type=\"image\" src=\"" + @Url.Content("~/Content/images/fase.png") + "\" width=\"16\" height=\"16\" onclick=\"CambiarFase('" + @item.RecargaId + "');\"  data-toggle=\"modal\" data-target=\"#myModalFase\" />")                                            
+                        @Html.Raw("</th>")
+                        break;
+                    case 3:
+                        <th class="width-30">Fase: Surtida</th>
+                        break;                                                    
+                }
+            </tr>
+            <tr>                
+                <th class="width-30">Fecha Solicitud: @item.FechaSolicitud.ToShortDateString()</th>   
+                @if (@item.Fase == 3){
+                    <th class="width-30">Fecha Surtido: @item.FechaSolicitud.ToShortDateString()</th>
+                }         
+                
+            </tr>
+        </table>        
+        @Html.Partial("RECDetalle", item.RECDetalle.OrderBy(x => x.Partida))
+        
+</div> 
+}
+

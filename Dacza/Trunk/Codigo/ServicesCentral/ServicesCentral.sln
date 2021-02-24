@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\ServicesCentral\", ".", "{9CF2009C-67A1-408F-B1C2-52CB12743269}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/ServicesCentral"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Amesol\Productos\Route\Trunk\Codigo\ServicesCentral\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ServicesCentral\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ServicesCentral"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Amesol\Productos\Route\Trunk\Codigo\ServicesCentral\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ServicesCentral\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "61003"
+		VWDDynamicPort = "false"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CF2009C-67A1-408F-B1C2-52CB12743269}.Debug|.NET.ActiveCfg = Debug|.NET
+		{9CF2009C-67A1-408F-B1C2-52CB12743269}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,40 @@
+﻿@model List<WebReports.Models.OrdenTrabajo>
+
+
+@{WebReports.Models.OrdenTrabajo orden = Model.FirstOrDefault();}
+
+<div id=@orden.TallerId-@orden.AgenteId-@orden.ClienteId class="panel-collapse collapse">
+     @foreach (var item in Model) { 
+    <div class="panel-body"> 
+                                                            
+            <table>
+                <tr>
+                    <th>Vin: @item.Vin.Clave</th>
+                    @*<th>Agente: @item.Usuario.Clave - @item.Usuario.Nombre</th>*@
+                </tr>
+                <tr>
+                    <th class="width-25">Folio: @item.Folio</th>
+                    <th class="width-25">Kilometraje: @item.Kilometraje</th>
+                    <th class="width-25">Fecha: @item.FechaIni.ToShortDateString()</th>                                        
+                    @switch (@item.Fase)
+                    { 
+                        case 0:
+                            <th class="width-25">Fase: Cancelada</th>
+                            break;
+                        case 1:                                        
+                            @Html.Raw("<th id=\"th" + @item.OrdenId + "\" class=\"width-30\">Fase: Captura ")
+                            @Html.Raw("<input type=\"image\" src=\"" + @Url.Content("~/Content/images/fase.png") + "\" width=\"16\" height=\"16\" onclick=\"CambiarFaseOrden('" + @item.OrdenId + "');\"  data-toggle=\"modal\" data-target=\"#myModalFase\" />")                                            
+                            @Html.Raw("</th>")
+                        
+                            break;
+                        case 2:
+                            <th class="width-25">Fase: Cerrada</th>
+                            break;                                                    
+                    }
+                </tr>
+            </table>        
+            @Html.Partial("ODTDetalle", item.ODTDetalle.OrderBy(x => x.Partida))
+        
+    </div>
+     }
+</div>

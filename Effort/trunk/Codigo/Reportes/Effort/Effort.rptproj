@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ToolsVersion="2.0">
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <DataSources>
+    <ProjectItem>
+      <Name>dtEffort.rds</Name>
+      <FullPath>dtEffort.rds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSets>
+    <ProjectItem>
+      <Name>dsComentarios.rsd</Name>
+      <FullPath>dsComentarios.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsDiagramaGantt.rsd</Name>
+      <FullPath>dsDiagramaGantt.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsEquipoProyectos.rsd</Name>
+      <FullPath>dsEquipoProyectos.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsEsfuerzoProyectos.rsd</Name>
+      <FullPath>dsEsfuerzoProyectos.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsEsfuerzoTareas.rsd</Name>
+      <FullPath>dsEsfuerzoTareas.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsEstadosTarea.rsd</Name>
+      <FullPath>dsEstadosTarea.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsGantt.rsd</Name>
+      <FullPath>dsGantt.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsListadoEquipo.rsd</Name>
+      <FullPath>dsListadoEquipo.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsProyectos.rsd</Name>
+      <FullPath>dsproyectos.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsRisk.rsd</Name>
+      <FullPath>dsRisk.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsTimeSheet.rsd</Name>
+      <FullPath>dsTimeSheet.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>TareaPorEquipo.rsd</Name>
+      <FullPath>TareaPorEquipo.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsTareas.rsd</Name>
+      <FullPath>dsTareas.rsd</FullPath>
+    </ProjectItem>
+  </DataSets>
+  <Reports>
+    <ProjectItem>
+      <Name>Reporte de proyectos asignados.rdl</Name>
+      <FullPath>Reporte de proyectos asignados.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Reporte Diagrama de Gantt.rdl</Name>
+      <FullPath>Reporte Diagrama de Gantt.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Reporte Esfuerzo de proyectos.rdl</Name>
+      <FullPath>Reporte Esfuerzo de proyectos.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Reporte Esfuerzo en tareas.rdl</Name>
+      <FullPath>Reporte Esfuerzo en tareas.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Reporte Risk y Issues Magagment.rdl</Name>
+      <FullPath>Reporte Risk y Issues Magagment.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Reporte Tarea Por Empleado.rdl</Name>
+      <FullPath>Reporte Tarea Por Empleado.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Reporte Time Sheet.rdl</Name>
+      <FullPath>Reporte Time Sheet.rdl</FullPath>
+    </ProjectItem>
+  </Reports>
+  <Configurations>
+    <Configuration>
+      <Name>Debug</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Debug</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetServerURL>http://matrix/ReportServer</TargetServerURL>
+        <TargetFolder>Effort</TargetFolder>
+        <TargetDataSourceFolder>Orígenes de datos Effort</TargetDataSourceFolder>
+        <TargetDatasetFolder>Conjuntos de datos Effort</TargetDatasetFolder>
+        <TargetReportPartFolder>Elementos de informe</TargetReportPartFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>DebugLocal</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\DebugLocal</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetFolder>Effort</TargetFolder>
+        <TargetDataSourceFolder>Orígenes de datos</TargetDataSourceFolder>
+        <TargetDatasetFolder>Conjuntos de datos</TargetDatasetFolder>
+        <TargetReportPartFolder>Elementos de informe</TargetReportPartFolder>
+      </Options>
+    </Configuration>
+    <Configuration>
+      <Name>Release</Name>
+      <Platform>Win32</Platform>
+      <Options>
+        <OutputPath>bin\Release</OutputPath>
+        <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+        <TargetFolder>Effort</TargetFolder>
+        <TargetDataSourceFolder>Orígenes de datos</TargetDataSourceFolder>
+        <TargetDatasetFolder>Conjuntos de datos</TargetDatasetFolder>
+        <TargetReportPartFolder>Elementos de informe</TargetReportPartFolder>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

@@ -1,0 +1,1601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DACZAModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DACZAModelStoreContainer">
+          <EntitySet Name="Almacen" EntityType="DACZAModel.Store.Almacen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Articulo" EntityType="DACZAModel.Store.Articulo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cliente" EntityType="DACZAModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DEVDetalle" EntityType="DACZAModel.Store.DEVDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Devolucion" EntityType="DACZAModel.Store.Devolucion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Folio" EntityType="DACZAModel.Store.Folio" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FolioDetalle" EntityType="DACZAModel.Store.FolioDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FolioTaller" EntityType="DACZAModel.Store.FolioTaller" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InventarioTaller" EntityType="DACZAModel.Store.InventarioTaller" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ODTDetalle" EntityType="DACZAModel.Store.ODTDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrdenTrabajo" EntityType="DACZAModel.Store.OrdenTrabajo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Recarga" EntityType="DACZAModel.Store.Recarga" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RECDetalle" EntityType="DACZAModel.Store.RECDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sucursal" EntityType="DACZAModel.Store.Sucursal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Taller" EntityType="DACZAModel.Store.Taller" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="DACZAModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vin" EntityType="DACZAModel.Store.Vin" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Agente_Taller" Association="DACZAModel.Store.FK_Agente_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Almacen_Sucursal" Association="DACZAModel.Store.FK_Almacen_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursal" />
+            <End Role="Almacen" EntitySet="Almacen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Cliente" Association="DACZAModel.Store.FK_Cliente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Cliente1" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEVDetalle_Articulo" Association="DACZAModel.Store.FK_DEVDetalle_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="DEVDetalle" EntitySet="DEVDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEVDetalle_Devolucion" Association="DACZAModel.Store.FK_DEVDetalle_Devolucion">
+            <End Role="Devolucion" EntitySet="Devolucion" />
+            <End Role="DEVDetalle" EntitySet="DEVDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Devolucion_Taller" Association="DACZAModel.Store.FK_Devolucion_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="Devolucion" EntitySet="Devolucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Devolucion_Usuario" Association="DACZAModel.Store.FK_Devolucion_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Devolucion" EntitySet="Devolucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FolioDetalle_Folio" Association="DACZAModel.Store.FK_FolioDetalle_Folio">
+            <End Role="Folio" EntitySet="Folio" />
+            <End Role="FolioDetalle" EntitySet="FolioDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FolioTaller_Folio" Association="DACZAModel.Store.FK_FolioTaller_Folio">
+            <End Role="Folio" EntitySet="Folio" />
+            <End Role="FolioTaller" EntitySet="FolioTaller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FolioTaller_Taller" Association="DACZAModel.Store.FK_FolioTaller_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="FolioTaller" EntitySet="FolioTaller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventarioTaller_Articulo" Association="DACZAModel.Store.FK_InventarioTaller_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="InventarioTaller" EntitySet="InventarioTaller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventarioTaller_Taller" Association="DACZAModel.Store.FK_InventarioTaller_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="InventarioTaller" EntitySet="InventarioTaller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ODTDetalle_Articulo" Association="DACZAModel.Store.FK_ODTDetalle_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="ODTDetalle" EntitySet="ODTDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ODTDetalle_OrdenTrabajo" Association="DACZAModel.Store.FK_ODTDetalle_OrdenTrabajo">
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+            <End Role="ODTDetalle" EntitySet="ODTDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenTrabajo_Agente" Association="DACZAModel.Store.FK_OrdenTrabajo_Agente">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenTrabajo_Cliente" Association="DACZAModel.Store.FK_OrdenTrabajo_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenTrabajo_Taller" Association="DACZAModel.Store.FK_OrdenTrabajo_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenTrabajo_Vin" Association="DACZAModel.Store.FK_OrdenTrabajo_Vin">
+            <End Role="Vin" EntitySet="Vin" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recarga_Agente" Association="DACZAModel.Store.FK_Recarga_Agente">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Recarga" EntitySet="Recarga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recarga_Taller" Association="DACZAModel.Store.FK_Recarga_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="Recarga" EntitySet="Recarga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECDetalle_Articulo" Association="DACZAModel.Store.FK_RECDetalle_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="RECDetalle" EntitySet="RECDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECDetalle_Recarga" Association="DACZAModel.Store.FK_RECDetalle_Recarga">
+            <End Role="Recarga" EntitySet="Recarga" />
+            <End Role="RECDetalle" EntitySet="RECDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Taller_Almacen" Association="DACZAModel.Store.FK_Taller_Almacen">
+            <End Role="Almacen" EntitySet="Almacen" />
+            <End Role="Taller" EntitySet="Taller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vin_Articulo" Association="DACZAModel.Store.FK_Vin_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="Vin" EntitySet="Vin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vin_Cliente" Association="DACZAModel.Store.FK_Vin_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Vin" EntitySet="Vin" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Almacen">
+          <Key>
+            <PropertyRef Name="AlmacenId" />
+          </Key>
+          <Property Name="AlmacenId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="SucursalId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Clave" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Articulo">
+          <Key>
+            <PropertyRef Name="ArticuloId" />
+          </Key>
+          <Property Name="ArticuloId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Clave" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DescripcionLarga" Type="varchar" MaxLength="250" />
+          <Property Name="Grupo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Unidad" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Tipo" Type="smallint" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ClienteId" />
+          </Key>
+          <Property Name="ClienteId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Clave" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="RFC" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="RazonSocial" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="100" />
+          <Property Name="Domicilio" Type="varchar" MaxLength="200" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="DEVDetalle">
+          <Key>
+            <PropertyRef Name="DevolucionId" />
+            <PropertyRef Name="ArticuloId" />
+          </Key>
+          <Property Name="DevolucionId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="ArticuloId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Cantidad" Type="float" Nullable="false" />
+          <Property Name="Partida" Type="smallint" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Devolucion">
+          <Key>
+            <PropertyRef Name="DevolucionId" />
+          </Key>
+          <Property Name="DevolucionId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="TallerId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="AgenteId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Folio" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Fase" Type="smallint" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Folio">
+          <Key>
+            <PropertyRef Name="FolioId" />
+          </Key>
+          <Property Name="FolioId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="TipoMovimiento" Type="smallint" Nullable="false" />
+          <Property Name="ValorInicial" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="FolioDetalle">
+          <Key>
+            <PropertyRef Name="DetalleId" />
+          </Key>
+          <Property Name="DetalleId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="FolioId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="TipoContenido" Type="smallint" Nullable="false" />
+          <Property Name="Formato" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="FolioTaller">
+          <Key>
+            <PropertyRef Name="FolioId" />
+            <PropertyRef Name="TallerId" />
+          </Key>
+          <Property Name="FolioId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="TallerId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Usados" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="InventarioTaller">
+          <Key>
+            <PropertyRef Name="TallerId" />
+            <PropertyRef Name="ArticuloId" />
+          </Key>
+          <Property Name="TallerId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="ArticuloId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Existencia" Type="float" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="ODTDetalle">
+          <Key>
+            <PropertyRef Name="OrdenId" />
+            <PropertyRef Name="ArticuloId" />
+          </Key>
+          <Property Name="OrdenId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="ArticuloId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Cantidad" Type="float" Nullable="false" />
+          <Property Name="Partida" Type="smallint" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="OrdenTrabajo">
+          <Key>
+            <PropertyRef Name="OrdenId" />
+          </Key>
+          <Property Name="OrdenId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="TallerId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="AgenteId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="ClienteId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="VinId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Folio" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="FechaIni" Type="datetime" Nullable="false" />
+          <Property Name="FechaFin" Type="datetime" />
+          <Property Name="Fase" Type="smallint" Nullable="false" />
+          <Property Name="Kilometraje" Type="float" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Recarga">
+          <Key>
+            <PropertyRef Name="RecargaId" />
+          </Key>
+          <Property Name="RecargaId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="TallerId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="AgenteId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Folio" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="FechaSolicitud" Type="datetime" Nullable="false" />
+          <Property Name="FechaSurtido" Type="datetime" />
+          <Property Name="Fase" Type="smallint" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="RECDetalle">
+          <Key>
+            <PropertyRef Name="DetalleId" />
+          </Key>
+          <Property Name="DetalleId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="RecargaId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="ArticuloId" Type="varchar" MaxLength="8" />
+          <Property Name="ArticuloDesc" Type="varchar" MaxLength="100" />
+          <Property Name="Cantidad" Type="float" Nullable="false" />
+          <Property Name="Partida" Type="smallint" Nullable="false" />
+          <Property Name="Imagen" Type="image" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Sucursal">
+          <Key>
+            <PropertyRef Name="SucursalId" />
+          </Key>
+          <Property Name="SucursalId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Clave" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Taller">
+          <Key>
+            <PropertyRef Name="TallerId" />
+          </Key>
+          <Property Name="TallerId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="AlmacenId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Clave" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="NoSerieTerminal" Type="varchar" MaxLength="150" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="TallerId" Type="varchar" MaxLength="8" />
+          <Property Name="Clave" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ClaveAcceso" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Tipo" Type="smallint" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vin">
+          <Key>
+            <PropertyRef Name="VinId" />
+          </Key>
+          <Property Name="VinId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="ArticuloId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="ClienteId" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="Clave" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Placas" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Kilometraje" Type="float" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="MFechaHora" Type="datetime" Nullable="false" />
+          <Property Name="MUsuarioId" Type="varchar" Nullable="false" MaxLength="8" />
+        </EntityType>
+        <Association Name="FK_Agente_Taller">
+          <End Role="Taller" Type="DACZAModel.Store.Taller" Multiplicity="0..1" />
+          <End Role="Usuario" Type="DACZAModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Almacen_Sucursal">
+          <End Role="Sucursal" Type="DACZAModel.Store.Sucursal" Multiplicity="1" />
+          <End Role="Almacen" Type="DACZAModel.Store.Almacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="SucursalId" />
+            </Principal>
+            <Dependent Role="Almacen">
+              <PropertyRef Name="SucursalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Cliente">
+          <End Role="Cliente" Type="DACZAModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Cliente1" Type="DACZAModel.Store.Cliente" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="Cliente1">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEVDetalle_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Store.Articulo" Multiplicity="1" />
+          <End Role="DEVDetalle" Type="DACZAModel.Store.DEVDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="DEVDetalle">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEVDetalle_Devolucion">
+          <End Role="Devolucion" Type="DACZAModel.Store.Devolucion" Multiplicity="1" />
+          <End Role="DEVDetalle" Type="DACZAModel.Store.DEVDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devolucion">
+              <PropertyRef Name="DevolucionId" />
+            </Principal>
+            <Dependent Role="DEVDetalle">
+              <PropertyRef Name="DevolucionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Devolucion_Taller">
+          <End Role="Taller" Type="DACZAModel.Store.Taller" Multiplicity="1" />
+          <End Role="Devolucion" Type="DACZAModel.Store.Devolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="Devolucion">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Devolucion_Usuario">
+          <End Role="Usuario" Type="DACZAModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Devolucion" Type="DACZAModel.Store.Devolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Devolucion">
+              <PropertyRef Name="AgenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FolioDetalle_Folio">
+          <End Role="Folio" Type="DACZAModel.Store.Folio" Multiplicity="1" />
+          <End Role="FolioDetalle" Type="DACZAModel.Store.FolioDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folio">
+              <PropertyRef Name="FolioId" />
+            </Principal>
+            <Dependent Role="FolioDetalle">
+              <PropertyRef Name="FolioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FolioTaller_Folio">
+          <End Role="Folio" Type="DACZAModel.Store.Folio" Multiplicity="1" />
+          <End Role="FolioTaller" Type="DACZAModel.Store.FolioTaller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folio">
+              <PropertyRef Name="FolioId" />
+            </Principal>
+            <Dependent Role="FolioTaller">
+              <PropertyRef Name="FolioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FolioTaller_Taller">
+          <End Role="Taller" Type="DACZAModel.Store.Taller" Multiplicity="1" />
+          <End Role="FolioTaller" Type="DACZAModel.Store.FolioTaller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="FolioTaller">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InventarioTaller_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Store.Articulo" Multiplicity="1" />
+          <End Role="InventarioTaller" Type="DACZAModel.Store.InventarioTaller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="InventarioTaller">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InventarioTaller_Taller">
+          <End Role="Taller" Type="DACZAModel.Store.Taller" Multiplicity="1" />
+          <End Role="InventarioTaller" Type="DACZAModel.Store.InventarioTaller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="InventarioTaller">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ODTDetalle_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Store.Articulo" Multiplicity="1" />
+          <End Role="ODTDetalle" Type="DACZAModel.Store.ODTDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="ODTDetalle">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ODTDetalle_OrdenTrabajo">
+          <End Role="OrdenTrabajo" Type="DACZAModel.Store.OrdenTrabajo" Multiplicity="1" />
+          <End Role="ODTDetalle" Type="DACZAModel.Store.ODTDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenTrabajo">
+              <PropertyRef Name="OrdenId" />
+            </Principal>
+            <Dependent Role="ODTDetalle">
+              <PropertyRef Name="OrdenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenTrabajo_Agente">
+          <End Role="Usuario" Type="DACZAModel.Store.Usuario" Multiplicity="1" />
+          <End Role="OrdenTrabajo" Type="DACZAModel.Store.OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="AgenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenTrabajo_Cliente">
+          <End Role="Cliente" Type="DACZAModel.Store.Cliente" Multiplicity="1" />
+          <End Role="OrdenTrabajo" Type="DACZAModel.Store.OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenTrabajo_Taller">
+          <End Role="Taller" Type="DACZAModel.Store.Taller" Multiplicity="1" />
+          <End Role="OrdenTrabajo" Type="DACZAModel.Store.OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenTrabajo_Vin">
+          <End Role="Vin" Type="DACZAModel.Store.Vin" Multiplicity="1" />
+          <End Role="OrdenTrabajo" Type="DACZAModel.Store.OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vin">
+              <PropertyRef Name="VinId" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="VinId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recarga_Agente">
+          <End Role="Usuario" Type="DACZAModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Recarga" Type="DACZAModel.Store.Recarga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Recarga">
+              <PropertyRef Name="AgenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recarga_Taller">
+          <End Role="Taller" Type="DACZAModel.Store.Taller" Multiplicity="1" />
+          <End Role="Recarga" Type="DACZAModel.Store.Recarga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="Recarga">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECDetalle_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Store.Articulo" Multiplicity="0..1" />
+          <End Role="RECDetalle" Type="DACZAModel.Store.RECDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="RECDetalle">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECDetalle_Recarga">
+          <End Role="Recarga" Type="DACZAModel.Store.Recarga" Multiplicity="1" />
+          <End Role="RECDetalle" Type="DACZAModel.Store.RECDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recarga">
+              <PropertyRef Name="RecargaId" />
+            </Principal>
+            <Dependent Role="RECDetalle">
+              <PropertyRef Name="RecargaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Taller_Almacen">
+          <End Role="Almacen" Type="DACZAModel.Store.Almacen" Multiplicity="1" />
+          <End Role="Taller" Type="DACZAModel.Store.Taller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacen">
+              <PropertyRef Name="AlmacenId" />
+            </Principal>
+            <Dependent Role="Taller">
+              <PropertyRef Name="AlmacenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vin_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Store.Articulo" Multiplicity="1" />
+          <End Role="Vin" Type="DACZAModel.Store.Vin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="Vin">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vin_Cliente">
+          <End Role="Cliente" Type="DACZAModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Vin" Type="DACZAModel.Store.Vin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="Vin">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DACZAModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DACZAEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Almacen" EntityType="DACZAModel.Almacen" />
+          <EntitySet Name="Articulo" EntityType="DACZAModel.Articulo" />
+          <EntitySet Name="Cliente" EntityType="DACZAModel.Cliente" />
+          <EntitySet Name="DEVDetalle" EntityType="DACZAModel.DEVDetalle" />
+          <EntitySet Name="Devolucion" EntityType="DACZAModel.Devolucion" />
+          <EntitySet Name="InventarioTaller" EntityType="DACZAModel.InventarioTaller" />
+          <EntitySet Name="ODTDetalle" EntityType="DACZAModel.ODTDetalle" />
+          <EntitySet Name="OrdenTrabajo" EntityType="DACZAModel.OrdenTrabajo" />
+          <EntitySet Name="Recarga" EntityType="DACZAModel.Recarga" />
+          <EntitySet Name="RECDetalle" EntityType="DACZAModel.RECDetalle" />
+          <EntitySet Name="Sucursal" EntityType="DACZAModel.Sucursal" />
+          <EntitySet Name="Taller" EntityType="DACZAModel.Taller" />
+          <EntitySet Name="Usuario" EntityType="DACZAModel.Usuario" />
+          <EntitySet Name="Vin" EntityType="DACZAModel.Vin" />
+          <AssociationSet Name="FK_Almacen_Sucursal" Association="DACZAModel.FK_Almacen_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursal" />
+            <End Role="Almacen" EntitySet="Almacen" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Taller_Almacen" Association="DACZAModel.FK_Taller_Almacen">
+            <End Role="Almacen" EntitySet="Almacen" />
+            <End Role="Taller" EntitySet="Taller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEVDetalle_Articulo" Association="DACZAModel.FK_DEVDetalle_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="DEVDetalle" EntitySet="DEVDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventarioTaller_Articulo" Association="DACZAModel.FK_InventarioTaller_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="InventarioTaller" EntitySet="InventarioTaller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ODTDetalle_Articulo" Association="DACZAModel.FK_ODTDetalle_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="ODTDetalle" EntitySet="ODTDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECDetalle_Articulo" Association="DACZAModel.FK_RECDetalle_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="RECDetalle" EntitySet="RECDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vin_Articulo" Association="DACZAModel.FK_Vin_Articulo">
+            <End Role="Articulo" EntitySet="Articulo" />
+            <End Role="Vin" EntitySet="Vin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenTrabajo_Cliente" Association="DACZAModel.FK_OrdenTrabajo_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vin_Cliente" Association="DACZAModel.FK_Vin_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Vin" EntitySet="Vin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DEVDetalle_Devolucion" Association="DACZAModel.FK_DEVDetalle_Devolucion">
+            <End Role="Devolucion" EntitySet="Devolucion" />
+            <End Role="DEVDetalle" EntitySet="DEVDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Devolucion_Taller" Association="DACZAModel.FK_Devolucion_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="Devolucion" EntitySet="Devolucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Devolucion_Usuario" Association="DACZAModel.FK_Devolucion_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Devolucion" EntitySet="Devolucion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventarioTaller_Taller" Association="DACZAModel.FK_InventarioTaller_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="InventarioTaller" EntitySet="InventarioTaller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ODTDetalle_OrdenTrabajo" Association="DACZAModel.FK_ODTDetalle_OrdenTrabajo">
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+            <End Role="ODTDetalle" EntitySet="ODTDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenTrabajo_Agente" Association="DACZAModel.FK_OrdenTrabajo_Agente">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenTrabajo_Taller" Association="DACZAModel.FK_OrdenTrabajo_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenTrabajo_Vin" Association="DACZAModel.FK_OrdenTrabajo_Vin">
+            <End Role="Vin" EntitySet="Vin" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recarga_Agente" Association="DACZAModel.FK_Recarga_Agente">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Recarga" EntitySet="Recarga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recarga_Taller" Association="DACZAModel.FK_Recarga_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="Recarga" EntitySet="Recarga" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RECDetalle_Recarga" Association="DACZAModel.FK_RECDetalle_Recarga">
+            <End Role="Recarga" EntitySet="Recarga" />
+            <End Role="RECDetalle" EntitySet="RECDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agente_Taller" Association="DACZAModel.FK_Agente_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Cliente" Association="DACZAModel.FK_Cliente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Cliente1" EntitySet="Cliente" />
+          </AssociationSet>
+          <EntitySet Name="Folio" EntityType="DACZAModel.Folio" />
+          <EntitySet Name="FolioDetalle" EntityType="DACZAModel.FolioDetalle" />
+          <EntitySet Name="FolioTaller" EntityType="DACZAModel.FolioTaller" />
+          <AssociationSet Name="FK_FolioDetalle_Folio" Association="DACZAModel.FK_FolioDetalle_Folio">
+            <End Role="Folio" EntitySet="Folio" />
+            <End Role="FolioDetalle" EntitySet="FolioDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FolioTaller_Folio" Association="DACZAModel.FK_FolioTaller_Folio">
+            <End Role="Folio" EntitySet="Folio" />
+            <End Role="FolioTaller" EntitySet="FolioTaller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FolioTaller_Taller" Association="DACZAModel.FK_FolioTaller_Taller">
+            <End Role="Taller" EntitySet="Taller" />
+            <End Role="FolioTaller" EntitySet="FolioTaller" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Almacen">
+          <Key>
+            <PropertyRef Name="AlmacenId" />
+          </Key>
+          <Property Name="AlmacenId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="SucursalId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Sucursal" Relationship="DACZAModel.FK_Almacen_Sucursal" FromRole="Almacen" ToRole="Sucursal" />
+          <NavigationProperty Name="Taller" Relationship="DACZAModel.FK_Taller_Almacen" FromRole="Almacen" ToRole="Taller" />
+        </EntityType>
+        <EntityType Name="Articulo">
+          <Key>
+            <PropertyRef Name="ArticuloId" />
+          </Key>
+          <Property Name="ArticuloId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DescripcionLarga" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Grupo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Unidad" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Tipo" Type="Int16" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="DEVDetalle" Relationship="DACZAModel.FK_DEVDetalle_Articulo" FromRole="Articulo" ToRole="DEVDetalle" />
+          <NavigationProperty Name="InventarioTaller" Relationship="DACZAModel.FK_InventarioTaller_Articulo" FromRole="Articulo" ToRole="InventarioTaller" />
+          <NavigationProperty Name="ODTDetalle" Relationship="DACZAModel.FK_ODTDetalle_Articulo" FromRole="Articulo" ToRole="ODTDetalle" />
+          <NavigationProperty Name="RECDetalle" Relationship="DACZAModel.FK_RECDetalle_Articulo" FromRole="Articulo" ToRole="RECDetalle" />
+          <NavigationProperty Name="Vin" Relationship="DACZAModel.FK_Vin_Articulo" FromRole="Articulo" ToRole="Vin" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ClienteId" />
+          </Key>
+          <Property Name="ClienteId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="RFC" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="RazonSocial" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="DACZAModel.FK_OrdenTrabajo_Cliente" FromRole="Cliente" ToRole="OrdenTrabajo" />
+          <NavigationProperty Name="Vin" Relationship="DACZAModel.FK_Vin_Cliente" FromRole="Cliente" ToRole="Vin" />
+          <Property Type="String" Name="Telefono" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Domicilio" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cliente1" Relationship="DACZAModel.FK_Cliente_Cliente" FromRole="Cliente" ToRole="Cliente1" />
+          <NavigationProperty Name="Cliente2" Relationship="DACZAModel.FK_Cliente_Cliente" FromRole="Cliente1" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="DEVDetalle">
+          <Key>
+            <PropertyRef Name="DevolucionId" />
+            <PropertyRef Name="ArticuloId" />
+          </Key>
+          <Property Name="DevolucionId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ArticuloId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Cantidad" Type="Double" Nullable="false" />
+          <Property Name="Partida" Type="Int16" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Articulo" Relationship="DACZAModel.FK_DEVDetalle_Articulo" FromRole="DEVDetalle" ToRole="Articulo" />
+          <NavigationProperty Name="Devolucion" Relationship="DACZAModel.FK_DEVDetalle_Devolucion" FromRole="DEVDetalle" ToRole="Devolucion" />
+        </EntityType>
+        <EntityType Name="Devolucion">
+          <Key>
+            <PropertyRef Name="DevolucionId" />
+          </Key>
+          <Property Name="DevolucionId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="TallerId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="AgenteId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Folio" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Fase" Type="Int16" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="DEVDetalle" Relationship="DACZAModel.FK_DEVDetalle_Devolucion" FromRole="Devolucion" ToRole="DEVDetalle" />
+          <NavigationProperty Name="Taller" Relationship="DACZAModel.FK_Devolucion_Taller" FromRole="Devolucion" ToRole="Taller" />
+          <NavigationProperty Name="Usuario" Relationship="DACZAModel.FK_Devolucion_Usuario" FromRole="Devolucion" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="InventarioTaller">
+          <Key>
+            <PropertyRef Name="TallerId" />
+            <PropertyRef Name="ArticuloId" />
+          </Key>
+          <Property Name="TallerId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ArticuloId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Existencia" Type="Double" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Articulo" Relationship="DACZAModel.FK_InventarioTaller_Articulo" FromRole="InventarioTaller" ToRole="Articulo" />
+          <NavigationProperty Name="Taller" Relationship="DACZAModel.FK_InventarioTaller_Taller" FromRole="InventarioTaller" ToRole="Taller" />
+        </EntityType>
+        <EntityType Name="ODTDetalle">
+          <Key>
+            <PropertyRef Name="OrdenId" />
+            <PropertyRef Name="ArticuloId" />
+          </Key>
+          <Property Name="OrdenId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ArticuloId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Cantidad" Type="Double" Nullable="false" />
+          <Property Name="Partida" Type="Int16" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Articulo" Relationship="DACZAModel.FK_ODTDetalle_Articulo" FromRole="ODTDetalle" ToRole="Articulo" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="DACZAModel.FK_ODTDetalle_OrdenTrabajo" FromRole="ODTDetalle" ToRole="OrdenTrabajo" />
+        </EntityType>
+        <EntityType Name="OrdenTrabajo">
+          <Key>
+            <PropertyRef Name="OrdenId" />
+          </Key>
+          <Property Name="OrdenId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="TallerId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="AgenteId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ClienteId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="VinId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Folio" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FechaIni" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaFin" Type="DateTime" Precision="3" />
+          <Property Name="Fase" Type="Int16" Nullable="false" />
+          <Property Name="Kilometraje" Type="Double" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="DACZAModel.FK_OrdenTrabajo_Cliente" FromRole="OrdenTrabajo" ToRole="Cliente" />
+          <NavigationProperty Name="ODTDetalle" Relationship="DACZAModel.FK_ODTDetalle_OrdenTrabajo" FromRole="OrdenTrabajo" ToRole="ODTDetalle" />
+          <NavigationProperty Name="Usuario" Relationship="DACZAModel.FK_OrdenTrabajo_Agente" FromRole="OrdenTrabajo" ToRole="Usuario" />
+          <NavigationProperty Name="Taller" Relationship="DACZAModel.FK_OrdenTrabajo_Taller" FromRole="OrdenTrabajo" ToRole="Taller" />
+          <NavigationProperty Name="Vin" Relationship="DACZAModel.FK_OrdenTrabajo_Vin" FromRole="OrdenTrabajo" ToRole="Vin" />
+        </EntityType>
+        <EntityType Name="Recarga">
+          <Key>
+            <PropertyRef Name="RecargaId" />
+          </Key>
+          <Property Name="RecargaId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="TallerId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="AgenteId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Folio" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FechaSolicitud" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaSurtido" Type="DateTime" Precision="3" />
+          <Property Name="Fase" Type="Int16" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Usuario" Relationship="DACZAModel.FK_Recarga_Agente" FromRole="Recarga" ToRole="Usuario" />
+          <NavigationProperty Name="Taller" Relationship="DACZAModel.FK_Recarga_Taller" FromRole="Recarga" ToRole="Taller" />
+          <NavigationProperty Name="RECDetalle" Relationship="DACZAModel.FK_RECDetalle_Recarga" FromRole="Recarga" ToRole="RECDetalle" />
+        </EntityType>
+        <EntityType Name="RECDetalle">
+          <Key>
+            <PropertyRef Name="DetalleId" />
+          </Key>
+          <Property Name="DetalleId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="RecargaId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ArticuloId" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ArticuloDesc" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Cantidad" Type="Double" Nullable="false" />
+          <Property Name="Partida" Type="Int16" Nullable="false" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Articulo" Relationship="DACZAModel.FK_RECDetalle_Articulo" FromRole="RECDetalle" ToRole="Articulo" />
+          <NavigationProperty Name="Recarga" Relationship="DACZAModel.FK_RECDetalle_Recarga" FromRole="RECDetalle" ToRole="Recarga" />
+        </EntityType>
+        <EntityType Name="Sucursal">
+          <Key>
+            <PropertyRef Name="SucursalId" />
+          </Key>
+          <Property Name="SucursalId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Almacen" Relationship="DACZAModel.FK_Almacen_Sucursal" FromRole="Sucursal" ToRole="Almacen" />
+        </EntityType>
+        <EntityType Name="Taller">
+          <Key>
+            <PropertyRef Name="TallerId" />
+          </Key>
+          <Property Name="TallerId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="AlmacenId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="NoSerieTerminal" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Almacen" Relationship="DACZAModel.FK_Taller_Almacen" FromRole="Taller" ToRole="Almacen" />
+          <NavigationProperty Name="Devolucion" Relationship="DACZAModel.FK_Devolucion_Taller" FromRole="Taller" ToRole="Devolucion" />
+          <NavigationProperty Name="InventarioTaller" Relationship="DACZAModel.FK_InventarioTaller_Taller" FromRole="Taller" ToRole="InventarioTaller" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="DACZAModel.FK_OrdenTrabajo_Taller" FromRole="Taller" ToRole="OrdenTrabajo" />
+          <NavigationProperty Name="Recarga" Relationship="DACZAModel.FK_Recarga_Taller" FromRole="Taller" ToRole="Recarga" />
+          <NavigationProperty Name="Usuario" Relationship="DACZAModel.FK_Agente_Taller" FromRole="Taller" ToRole="Usuario" />
+          <NavigationProperty Name="FolioTaller" Relationship="DACZAModel.FK_FolioTaller_Taller" FromRole="Taller" ToRole="FolioTaller" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="UsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="TallerId" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ClaveAcceso" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Tipo" Type="Int16" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Devolucion" Relationship="DACZAModel.FK_Devolucion_Usuario" FromRole="Usuario" ToRole="Devolucion" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="DACZAModel.FK_OrdenTrabajo_Agente" FromRole="Usuario" ToRole="OrdenTrabajo" />
+          <NavigationProperty Name="Recarga" Relationship="DACZAModel.FK_Recarga_Agente" FromRole="Usuario" ToRole="Recarga" />
+          <NavigationProperty Name="Taller" Relationship="DACZAModel.FK_Agente_Taller" FromRole="Usuario" ToRole="Taller" />
+        </EntityType>
+        <EntityType Name="Vin">
+          <Key>
+            <PropertyRef Name="VinId" />
+          </Key>
+          <Property Name="VinId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ArticuloId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ClienteId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Placas" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Kilometraje" Type="Double" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="MFechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MUsuarioId" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Articulo" Relationship="DACZAModel.FK_Vin_Articulo" FromRole="Vin" ToRole="Articulo" />
+          <NavigationProperty Name="Cliente" Relationship="DACZAModel.FK_Vin_Cliente" FromRole="Vin" ToRole="Cliente" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="DACZAModel.FK_OrdenTrabajo_Vin" FromRole="Vin" ToRole="OrdenTrabajo" />
+        </EntityType>
+        <Association Name="FK_Almacen_Sucursal">
+          <End Role="Sucursal" Type="DACZAModel.Sucursal" Multiplicity="1" />
+          <End Role="Almacen" Type="DACZAModel.Almacen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="SucursalId" />
+            </Principal>
+            <Dependent Role="Almacen">
+              <PropertyRef Name="SucursalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Taller_Almacen">
+          <End Role="Almacen" Type="DACZAModel.Almacen" Multiplicity="1" />
+          <End Role="Taller" Type="DACZAModel.Taller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacen">
+              <PropertyRef Name="AlmacenId" />
+            </Principal>
+            <Dependent Role="Taller">
+              <PropertyRef Name="AlmacenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEVDetalle_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Articulo" Multiplicity="1" />
+          <End Role="DEVDetalle" Type="DACZAModel.DEVDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="DEVDetalle">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InventarioTaller_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Articulo" Multiplicity="1" />
+          <End Role="InventarioTaller" Type="DACZAModel.InventarioTaller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="InventarioTaller">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ODTDetalle_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Articulo" Multiplicity="1" />
+          <End Role="ODTDetalle" Type="DACZAModel.ODTDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="ODTDetalle">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECDetalle_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Articulo" Multiplicity="0..1" />
+          <End Role="RECDetalle" Type="DACZAModel.RECDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="RECDetalle">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vin_Articulo">
+          <End Role="Articulo" Type="DACZAModel.Articulo" Multiplicity="1" />
+          <End Role="Vin" Type="DACZAModel.Vin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articulo">
+              <PropertyRef Name="ArticuloId" />
+            </Principal>
+            <Dependent Role="Vin">
+              <PropertyRef Name="ArticuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenTrabajo_Cliente">
+          <End Role="Cliente" Type="DACZAModel.Cliente" Multiplicity="1" />
+          <End Role="OrdenTrabajo" Type="DACZAModel.OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vin_Cliente">
+          <End Role="Cliente" Type="DACZAModel.Cliente" Multiplicity="1" />
+          <End Role="Vin" Type="DACZAModel.Vin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="Vin">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DEVDetalle_Devolucion">
+          <End Role="Devolucion" Type="DACZAModel.Devolucion" Multiplicity="1" />
+          <End Role="DEVDetalle" Type="DACZAModel.DEVDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Devolucion">
+              <PropertyRef Name="DevolucionId" />
+            </Principal>
+            <Dependent Role="DEVDetalle">
+              <PropertyRef Name="DevolucionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Devolucion_Taller">
+          <End Role="Taller" Type="DACZAModel.Taller" Multiplicity="1" />
+          <End Role="Devolucion" Type="DACZAModel.Devolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="Devolucion">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Devolucion_Usuario">
+          <End Role="Usuario" Type="DACZAModel.Usuario" Multiplicity="1" />
+          <End Role="Devolucion" Type="DACZAModel.Devolucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Devolucion">
+              <PropertyRef Name="AgenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InventarioTaller_Taller">
+          <End Role="Taller" Type="DACZAModel.Taller" Multiplicity="1" />
+          <End Role="InventarioTaller" Type="DACZAModel.InventarioTaller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="InventarioTaller">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ODTDetalle_OrdenTrabajo">
+          <End Role="OrdenTrabajo" Type="DACZAModel.OrdenTrabajo" Multiplicity="1" />
+          <End Role="ODTDetalle" Type="DACZAModel.ODTDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenTrabajo">
+              <PropertyRef Name="OrdenId" />
+            </Principal>
+            <Dependent Role="ODTDetalle">
+              <PropertyRef Name="OrdenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenTrabajo_Agente">
+          <End Role="Usuario" Type="DACZAModel.Usuario" Multiplicity="1" />
+          <End Role="OrdenTrabajo" Type="DACZAModel.OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="AgenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenTrabajo_Taller">
+          <End Role="Taller" Type="DACZAModel.Taller" Multiplicity="1" />
+          <End Role="OrdenTrabajo" Type="DACZAModel.OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenTrabajo_Vin">
+          <End Role="Vin" Type="DACZAModel.Vin" Multiplicity="1" />
+          <End Role="OrdenTrabajo" Type="DACZAModel.OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vin">
+              <PropertyRef Name="VinId" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="VinId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recarga_Agente">
+          <End Role="Usuario" Type="DACZAModel.Usuario" Multiplicity="1" />
+          <End Role="Recarga" Type="DACZAModel.Recarga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="UsuarioId" />
+            </Principal>
+            <Dependent Role="Recarga">
+              <PropertyRef Name="AgenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recarga_Taller">
+          <End Role="Taller" Type="DACZAModel.Taller" Multiplicity="1" />
+          <End Role="Recarga" Type="DACZAModel.Recarga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="Recarga">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RECDetalle_Recarga">
+          <End Role="Recarga" Type="DACZAModel.Recarga" Multiplicity="1" />
+          <End Role="RECDetalle" Type="DACZAModel.RECDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recarga">
+              <PropertyRef Name="RecargaId" />
+            </Principal>
+            <Dependent Role="RECDetalle">
+              <PropertyRef Name="RecargaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agente_Taller">
+          <End Role="Taller" Type="DACZAModel.Taller" Multiplicity="0..1" />
+          <End Role="Usuario" Type="DACZAModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Cliente">
+          <End Type="DACZAModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="DACZAModel.Cliente" Role="Cliente1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="Cliente1">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Folio">
+          <Key>
+            <PropertyRef Name="FolioId" />
+          </Key>
+          <Property Type="String" Name="FolioId" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="TipoMovimiento" Nullable="false" />
+          <Property Type="Int32" Name="ValorInicial" Nullable="false" />
+          <Property Type="Boolean" Name="Activo" Nullable="false" />
+          <Property Type="DateTime" Name="MFechaHora" Nullable="false" Precision="3" />
+          <Property Type="String" Name="MUsuarioId" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FolioDetalle" Relationship="DACZAModel.FK_FolioDetalle_Folio" FromRole="Folio" ToRole="FolioDetalle" />
+          <NavigationProperty Name="FolioTaller" Relationship="DACZAModel.FK_FolioTaller_Folio" FromRole="Folio" ToRole="FolioTaller" />
+        </EntityType>
+        <EntityType Name="FolioDetalle">
+          <Key>
+            <PropertyRef Name="DetalleId" />
+          </Key>
+          <Property Type="String" Name="DetalleId" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FolioId" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="TipoContenido" Nullable="false" />
+          <Property Type="String" Name="Formato" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Activo" Nullable="false" />
+          <Property Type="DateTime" Name="MFechaHora" Nullable="false" Precision="3" />
+          <Property Type="String" Name="MUsuarioId" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Folio" Relationship="DACZAModel.FK_FolioDetalle_Folio" FromRole="FolioDetalle" ToRole="Folio" />
+        </EntityType>
+        <EntityType Name="FolioTaller">
+          <Key>
+            <PropertyRef Name="FolioId" />
+            <PropertyRef Name="TallerId" />
+          </Key>
+          <Property Type="String" Name="FolioId" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TallerId" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Usados" Nullable="false" />
+          <Property Type="Boolean" Name="Activo" Nullable="false" />
+          <Property Type="DateTime" Name="MFechaHora" Nullable="false" Precision="3" />
+          <Property Type="String" Name="MUsuarioId" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Folio" Relationship="DACZAModel.FK_FolioTaller_Folio" FromRole="FolioTaller" ToRole="Folio" />
+          <NavigationProperty Name="Taller" Relationship="DACZAModel.FK_FolioTaller_Taller" FromRole="FolioTaller" ToRole="Taller" />
+        </EntityType>
+        <Association Name="FK_FolioDetalle_Folio">
+          <End Type="DACZAModel.Folio" Role="Folio" Multiplicity="1" />
+          <End Type="DACZAModel.FolioDetalle" Role="FolioDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folio">
+              <PropertyRef Name="FolioId" />
+            </Principal>
+            <Dependent Role="FolioDetalle">
+              <PropertyRef Name="FolioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FolioTaller_Folio">
+          <End Type="DACZAModel.Folio" Role="Folio" Multiplicity="1" />
+          <End Type="DACZAModel.FolioTaller" Role="FolioTaller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folio">
+              <PropertyRef Name="FolioId" />
+            </Principal>
+            <Dependent Role="FolioTaller">
+              <PropertyRef Name="FolioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FolioTaller_Taller">
+          <End Type="DACZAModel.Taller" Role="Taller" Multiplicity="1" />
+          <End Type="DACZAModel.FolioTaller" Role="FolioTaller" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taller">
+              <PropertyRef Name="TallerId" />
+            </Principal>
+            <Dependent Role="FolioTaller">
+              <PropertyRef Name="TallerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DACZAModelStoreContainer" CdmEntityContainer="DACZAEntities">
+          <EntitySetMapping Name="Almacen">
+            <EntityTypeMapping TypeName="DACZAModel.Almacen">
+              <MappingFragment StoreEntitySet="Almacen">
+                <ScalarProperty Name="AlmacenId" ColumnName="AlmacenId" />
+                <ScalarProperty Name="SucursalId" ColumnName="SucursalId" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articulo">
+            <EntityTypeMapping TypeName="DACZAModel.Articulo">
+              <MappingFragment StoreEntitySet="Articulo">
+                <ScalarProperty Name="ArticuloId" ColumnName="ArticuloId" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="DescripcionLarga" ColumnName="DescripcionLarga" />
+                <ScalarProperty Name="Grupo" ColumnName="Grupo" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="DACZAModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEVDetalle">
+            <EntityTypeMapping TypeName="DACZAModel.DEVDetalle">
+              <MappingFragment StoreEntitySet="DEVDetalle">
+                <ScalarProperty Name="DevolucionId" ColumnName="DevolucionId" />
+                <ScalarProperty Name="ArticuloId" ColumnName="ArticuloId" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Partida" ColumnName="Partida" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Devolucion">
+            <EntityTypeMapping TypeName="DACZAModel.Devolucion">
+              <MappingFragment StoreEntitySet="Devolucion">
+                <ScalarProperty Name="DevolucionId" ColumnName="DevolucionId" />
+                <ScalarProperty Name="TallerId" ColumnName="TallerId" />
+                <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Fase" ColumnName="Fase" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventarioTaller">
+            <EntityTypeMapping TypeName="DACZAModel.InventarioTaller">
+              <MappingFragment StoreEntitySet="InventarioTaller">
+                <ScalarProperty Name="TallerId" ColumnName="TallerId" />
+                <ScalarProperty Name="ArticuloId" ColumnName="ArticuloId" />
+                <ScalarProperty Name="Existencia" ColumnName="Existencia" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ODTDetalle">
+            <EntityTypeMapping TypeName="DACZAModel.ODTDetalle">
+              <MappingFragment StoreEntitySet="ODTDetalle">
+                <ScalarProperty Name="OrdenId" ColumnName="OrdenId" />
+                <ScalarProperty Name="ArticuloId" ColumnName="ArticuloId" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Partida" ColumnName="Partida" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdenTrabajo">
+            <EntityTypeMapping TypeName="DACZAModel.OrdenTrabajo">
+              <MappingFragment StoreEntitySet="OrdenTrabajo">
+                <ScalarProperty Name="OrdenId" ColumnName="OrdenId" />
+                <ScalarProperty Name="TallerId" ColumnName="TallerId" />
+                <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="VinId" ColumnName="VinId" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="FechaIni" ColumnName="FechaIni" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Fase" ColumnName="Fase" />
+                <ScalarProperty Name="Kilometraje" ColumnName="Kilometraje" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recarga">
+            <EntityTypeMapping TypeName="DACZAModel.Recarga">
+              <MappingFragment StoreEntitySet="Recarga">
+                <ScalarProperty Name="RecargaId" ColumnName="RecargaId" />
+                <ScalarProperty Name="TallerId" ColumnName="TallerId" />
+                <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+                <ScalarProperty Name="FechaSurtido" ColumnName="FechaSurtido" />
+                <ScalarProperty Name="Fase" ColumnName="Fase" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RECDetalle">
+            <EntityTypeMapping TypeName="DACZAModel.RECDetalle">
+              <MappingFragment StoreEntitySet="RECDetalle">
+                <ScalarProperty Name="DetalleId" ColumnName="DetalleId" />
+                <ScalarProperty Name="RecargaId" ColumnName="RecargaId" />
+                <ScalarProperty Name="ArticuloId" ColumnName="ArticuloId" />
+                <ScalarProperty Name="ArticuloDesc" ColumnName="ArticuloDesc" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Partida" ColumnName="Partida" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sucursal">
+            <EntityTypeMapping TypeName="DACZAModel.Sucursal">
+              <MappingFragment StoreEntitySet="Sucursal">
+                <ScalarProperty Name="SucursalId" ColumnName="SucursalId" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taller">
+            <EntityTypeMapping TypeName="DACZAModel.Taller">
+              <MappingFragment StoreEntitySet="Taller">
+                <ScalarProperty Name="TallerId" ColumnName="TallerId" />
+                <ScalarProperty Name="AlmacenId" ColumnName="AlmacenId" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="NoSerieTerminal" ColumnName="NoSerieTerminal" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="DACZAModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="TallerId" ColumnName="TallerId" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="ClaveAcceso" ColumnName="ClaveAcceso" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vin">
+            <EntityTypeMapping TypeName="DACZAModel.Vin">
+              <MappingFragment StoreEntitySet="Vin">
+                <ScalarProperty Name="VinId" ColumnName="VinId" />
+                <ScalarProperty Name="ArticuloId" ColumnName="ArticuloId" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Placas" ColumnName="Placas" />
+                <ScalarProperty Name="Kilometraje" ColumnName="Kilometraje" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Folio">
+            <EntityTypeMapping TypeName="DACZAModel.Folio">
+              <MappingFragment StoreEntitySet="Folio">
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="ValorInicial" ColumnName="ValorInicial" />
+                <ScalarProperty Name="TipoMovimiento" ColumnName="TipoMovimiento" />
+                <ScalarProperty Name="FolioId" ColumnName="FolioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FolioDetalle">
+            <EntityTypeMapping TypeName="DACZAModel.FolioDetalle">
+              <MappingFragment StoreEntitySet="FolioDetalle">
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Formato" ColumnName="Formato" />
+                <ScalarProperty Name="TipoContenido" ColumnName="TipoContenido" />
+                <ScalarProperty Name="FolioId" ColumnName="FolioId" />
+                <ScalarProperty Name="DetalleId" ColumnName="DetalleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FolioTaller">
+            <EntityTypeMapping TypeName="DACZAModel.FolioTaller">
+              <MappingFragment StoreEntitySet="FolioTaller">
+                <ScalarProperty Name="MUsuarioId" ColumnName="MUsuarioId" />
+                <ScalarProperty Name="MFechaHora" ColumnName="MFechaHora" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Usados" ColumnName="Usados" />
+                <ScalarProperty Name="TallerId" ColumnName="TallerId" />
+                <ScalarProperty Name="FolioId" ColumnName="FolioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
