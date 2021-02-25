@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "eRoute";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+<script src="~/Controllers/js/controllers/clientesEsquemaVITController.js"></script>
+<link href="~/Views/Menu/css/filter.css" rel="stylesheet" />
+
+<div ng-controller="clientesEsquemaVITController as ctrl" ng-init="EstablecerReporte('@ViewBag.VAVClave')">
+    <h4> {{ctrl.titulo}} </h4>
+    <div class="row" style="margin-left:unset; margin-right:unset;">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" style="text-align:center;">
+            <form ng-submit="$event.preventDefault()" name="searchForm">
+                <md-autocomplete flex required style="width:300px; margin-left:-15px;" ng-disabled="ctrl.isDisabled"
+                                 md-input-name="autocompleteField"
+                                 md-no-cache="ctrl.noCache"
+                                 md-selected-item="ctrl.selectedItem"
+                                 md-search-text-change="ctrl.ShowItems(ctrl.selectedItem.value)"
+                                 md-search-text="ctrl.searchText"
+                                 md-selected-item-change="ctrl.GetSchemes();
+                                        ctrl.ShowItems(ctrl.selectedItem.value);"
+                                 md-items="item in ctrl.QuerySearch(ctrl.searchText)"
+                                 md-item-text="item.display"
+                                 md-min-length="0"
+                                 placeholder="Seleccionar centro de distribución">
+                    <md-item-template>
+                        <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No se han encontrado resultados para "{{ctrl.searchText}}".
+                    </md-not-found>
+                </md-autocomplete>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:30px;margin-left:0px;" ng-show="ctrl.showList" ng-disabled="ctrl.showList" ng-init="ctrl.GetSchemes()">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-right:unset">
+            <div class="panel panel-default" style="height:500px;">
+                <div class="panel-heading" style="background-color:#E51500; color:white">Esquemas Clientes</div>
+                <div class="panel-body">
+                    <md-input-container md-no-float class="md-block" style="margin-top:unset;">
+                        <input ng-model="querySchemes" type="text" placeholder="Búsqueda">
+                    </md-input-container>
+                    <md-checkbox ng-model="selectAllSchemes" ng-click="ctrl.SelectAllChekboxesSchemes(selectAllSchemes);">Seleccionar todos</md-checkbox>
+                    <md-list ng-cloak style="overflow-y:auto; max-height:330px; padding:unset;">
+                        <md-list-item ng-repeat="scheme in ctrl.schemes | filter:querySchemes">
+                            <md-checkbox ng-cloak style="width:30px; margin-left:auto; margin-right:auto; margin-top:20px; min-height:unset" ng-disabled="scheme.Disabled" ng-model="scheme.Checked" ng-change="ctrl.CountSchemes();"></md-checkbox>
+                            <p>{{scheme.Nombre}}</p>
+                        </md-list-item>
+                    </md-list>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="viewer" class="row" ng-show="ctrl.showList">
+        <div ng-show="ctrl.showErrorForm" ng-model="ctrl.ShowError">
+            <div class="error-message col-md-12" style="text-align:right; font-size:15px;">{{ctrl.ShowError}}</div>
+        </div>
+    </div>
+
+    <div class="row" ng-show="ctrl.showList" ng-disabled="ctrl.showList">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <md-button type="submit" ng-click="ctrl.startbar(); ctrl.SubmitForm(VendedorId, ctrl.VAVClave = @ViewBag.VAVClave)" class="md-raised login-input pull-right" style="background-color:#E51500; color:white;font-weight:bold;">Generar reporte</md-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,253 @@
+﻿@*@using eRoute.Helpers*@
+
+<div id="EdicionDomicilio" class="modal fade">
+    <div class="modal-dialog modal-lg" id="R">
+        <div class="modal-content">
+
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="Add=[]"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{GetDescripcion("XDomicilio", "Domicilio")}}</h2>
+            </div>
+          
+            <!-- dialog body -->
+            <div class="modal-body">
+                <div class="panel panel-danger">
+                    
+                    <div class="panel-body">
+                        <div ng-form="subForm" id="subForm" class="subForm">
+                            <div class="row form-group">
+                                <div class="col-md-2">
+                                    <label for=""><span>{{GetDescripcion("CEETipo", "Tipo")}}</span></label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control" data-modal="modal" ng-model="Domicilio.Tipo" name="Tipo" ng-options="val.VAVClave as val.Descripcion for val in domtipo" ng-required="true" ng-change="ObtenerSecuenciaVisita(ClienteClave, Domicilio.ClienteDomicilioID)" ng-disabled="!DomicilioNuevo" validar-tipo-domicilio="true">
+                                        <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                    </select>
+                                    <div ng-show="subForm.$submitted || subForm.Tipo.$touched">
+                                        <div class="error-message" ng-show="subForm.Tipo.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                        <div class="error-message" ng-show="subForm.Tipo.$error.existeTipoDomicilio">{{TipoSeleccionado == '1' ? GetDescripcion("E0479", "[E0479] Solo puede tener un domicilio de tipo $0$.").replace('$0$', GetDescripcion("XFiscal", "Fiscal")) : GetDescripcion("E0479", "[E0479] Solo puede tener un domicilio de tipo $0$.").replace('$0$', GetDescripcion("XVisita", "Visita"))}}</div>                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" ng-click="CopiarClienteDomicilio()" type="button">{{GetDescripcion("BTCopiar", "Copiar")}}</button>
+                                        </span>
+                                        <select id="Domicilio.TipoCopia" class="form-control" data-modal="modal" ng-model="Domicilio.TipoCopia" name="TipoCopia" ng-options="val.VAVClave as val.Descripcion for val in domtipo">
+                                            <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CEECalle", "Calle")}}</span></label></div>
+                                <div class="col-md-10">
+                                    <input type="text" id="Domicilio.Calle" name="Calle" ng-model="Domicilio.Calle" class="form-control" ng-required="true" ng-maxlength="64">
+                                    <div ng-show="subForm.$submitted || subForm.Calle.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.Calle.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                        <div class="error-message" ng-show="subForm.Calle.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','64')}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-6">
+                                    <div class="row form-group">
+                                        <div class="col-md-4"><label for=""><span>{{GetDescripcion("CEENumExt", "Exterior")}}</span></label></div>
+                                        <div class="col-md-8">
+                                            <input type="text" id="Domicilio.Numero" name="Numero" ng-model="Domicilio.Numero" class="form-control" ng-maxlength="16">
+                                            <div ng-show="subForm.$submitted || subForm.Numero.$touched || clickBtnPress">
+                                                <div class="error-message" ng-show="subForm.Numero.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','16')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-4"><label for=""><span>{{GetDescripcion("CEENumInt", "Interior")}}</span></label></div>
+                                        <div class="col-md-8">
+                                            <input type="text" id="Domicilio.NumInt" name="NumInt" ng-model="Domicilio.NumInt" class="form-control" ng-maxlength="16">
+                                            <div ng-show="subForm.$submitted || subForm.NumInt.$touched || clickBtnPress">
+                                                <div class="error-message" ng-show="subForm.NumInt.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','16')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-4"><label for=""><span>{{GetDescripcion("CEEColonia", "Colonia")}}</span></label></div>
+                                        <div class="col-md-8">
+                                            <input type="text" id="Domicilio.Colonia" name="Colonia" ng-model="Domicilio.Colonia" class="form-control" ng-maxlength="64">
+                                            <div ng-show="subForm.$submitted || subForm.Colonia.$touched || clickBtnPress">
+                                                <div class="error-message" ng-show="subForm.Colonia.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','64')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4"><label for=""><span>{{GetDescripcion("CEECodigoPostal", "Código Postal")}}</span></label></div>
+                                        <div class="col-md-8">
+                                            <input type="text" id="Domicilio.CodigoPostal" name="CodigoPostal" ng-model="Domicilio.CodigoPostal" class="form-control" ng-required="Domicilio.Tipo == 1 ? true : false" ng-maxlength="16">
+                                            <div ng-show="subForm.$submitted || subForm.CodigoPostal.$touched || clickBtnPress">
+                                                <div class="error-message" ng-show="subForm.CodigoPostal.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                <div class="error-message" ng-show="subForm.CodigoPostal.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','16')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="row form-group">
+                                        <div class="col-md-6">
+                                            <div id="map" class="mapa"></div>
+                                        </div>
+                                        <div class="col-md-2 btn-mapa">
+                                            <input type="button" value="Crear Mapa" class="btn btn-default" ng-click="CrearMapa()" />
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>                            
+
+                            <div class="row form-group">
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CEEReferenciaDom", "Referencia")}}</span></label></div>
+                                <div class="col-md-10">
+                                    <input type="text" id="Domicilio.ReferenciaDom" name="ReferenciaDom" ng-model="Domicilio.ReferenciaDom" class="form-control" ng-maxlength="100">
+                                    <div ng-show="subForm.$submitted || subForm.ReferenciaDom.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.ReferenciaDom.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','100')}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CEELocalidad", "Localidad")}}</span></label></div>
+                                <div class="col-md-4">
+                                    <input type="text" id="Domicilio.Localidad" name="Localidad" ng-model="Domicilio.Localidad" class="form-control" ng-maxlength="40">
+                                    <div ng-show="subForm.$submitted || subForm.Localidad.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.Localidad.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','40')}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CEEMunicipio", "Municipio")}}</span></label></div>
+                                <div class="col-md-4">
+                                    <input type="text" id="Domicilio.Poblacion" name="Poblacion" ng-model="Domicilio.Poblacion" class="form-control" ng-required="true" ng-maxlength="64">
+                                    <div ng-show="subForm.$submitted || subForm.Poblacion.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.Poblacion.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                        <div class="error-message" ng-show="subForm.Poblacion.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','64')}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CEEEntidad", "Entidad")}}</span></label></div>
+                                <div class="col-md-4">
+                                    <input type="text" id="Domicilio.Entidad" name="Entidad" ng-model="Domicilio.Entidad" class="form-control" ng-required="Domicilio.Tipo == 1 ? true : false" ng-maxlength="32">
+                                    <div ng-show="subForm.$submitted || subForm.Entidad.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.Entidad.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                        <div class="error-message" ng-show="subForm.Entidad.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','32')}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CEEPais", "Pais")}}</span></label></div>
+                                <div class="col-md-4">
+                                    <input type="text" id="Domicilio.Pais" name="Pais" ng-model="Domicilio.Pais" class="form-control" ng-required="requeridosSubForm" ng-maxlength="32">
+                                    <div ng-show="subForm.$submitted || subForm.Pais.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.Pais.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                        <div class="error-message" ng-show="subForm.Pais.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','32')}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("XLatitud", "Latitud")}}</span></label></div>
+                                <div class="col-md-4"><input type="number" id="Domicilio.CoordenadaY" name="Domicilio.CoordenadaY" ng-model="Domicilio.CoordenadaY" class="form-control" ></div>
+
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("XLongitud", "Longitud")}}</span></label></div>
+                                <div class="col-md-4"><input type="number" id="Domicilio.CoordenadaX" name="Domicilio.CoordenadaX" ng-model="Domicilio.CoordenadaX" class="form-control" ></div>                                
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CLDCrTienda", "CR de la Tienda")}}</span></label></div>
+                                <div class="col-md-4">
+                                    <input type="text" id="Domicilio.CrTienda" name="CrTienda" ng-model="Domicilio.CrTienda" class="form-control" ng-maxlength="5">
+                                    <div ng-show="subForm.$submitted || subForm.CrTienda.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.CrTienda.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','5')}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CLDNombreTienda", "Nombre de la Tienda")}}</span></label></div>
+                                <div class="col-md-4">
+                                    <input type="text" id="Domicilio.NombreTienda" name="NombreTienda" ng-model="Domicilio.NombreTienda" class="form-control" ng-maxlength="30">
+                                    <div ng-show="subForm.$submitted || subForm.NombreTienda.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.NombreTienda.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','30')}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CLDGLN", "GLN")}}</span></label></div>
+                                <div class="col-md-4">
+                                    <input type="text" id="Domicilio.GLN" name="GLN" ng-model="Domicilio.GLN" class="form-control" ng-maxlength="13">
+                                    <div ng-show="subForm.$submitted || subForm.GLN.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.GLN.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','13')}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2"><label for=""><span>{{GetDescripcion("CLDSucursal", "Sucursal")}}</span></label></div>
+                                <div class="col-md-4">
+                                    <input type="text" id="Domicilio.Sucursal" name="Sucursal" ng-model="Domicilio.Sucursal" class="form-control" ng-maxlength="10">
+                                    <div ng-show="subForm.$submitted || subForm.Sucursal.$touched || clickBtnPress">
+                                        <div class="error-message" ng-show="subForm.Sucursal.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','10')}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger" ng-show="Domicilio.Tipo == '2' ? true : false">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("ERMFREESC_NGeneral", "Frecuencias")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div>
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    <th><b></b></th>
+                                                    <th class="cursor-pointer" ng-click="sort('FrecuenciaClave')"><b>{{GetDescripcion("FREFrecuenciaClave", "Clave")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='FrecuenciaClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Descripcion')"><b>{{GetDescripcion("FREDescripcion", "Descripción")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Descripcion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Tipo')"><b>{{GetDescripcion("FRETipo", "Tipo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Tipo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('FechaInicio')"><b>{{GetDescripcion("FREFechaInicio", "Fecha Inicial")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='FechaInicio'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('FechaFinal')"><b>{{GetDescripcion("FREFechaFinal", "Fecha Final")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='FechaFinal'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('UnidadInicio')"><b>{{GetDescripcion("FREUnidadInicio", "Unidad de Inicio")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='UnidadInicio'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Repeticion')"><b>{{GetDescripcion("FRERepeticion", "Repetición")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Repeticion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Intervalo')"><b>{{GetDescripcion("FREIntervalo", "Intervalo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Intervalo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('RUTClave')"><b>{{GetDescripcion("SECRUTClave", "Ruta")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='RUTClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                </tr>
+
+                                                <tr ng-repeat="sec in Domicilio.Secuencia|orderBy:sortKey:reverse">
+                                                    <td><input type="checkbox" data-toggle='tooltip' ng-model="sec.Seleccionado" name="Seleccionado" ng-true-value="true" ng-false-value="false" /></td>
+                                                    <td><span style="max-width:100%" data-modal="modal"> {{sec.FrecuenciaClave}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal"> {{sec.Descripcion}} </span></td>                                                    
+                                                    <td><select class="form-control" data-modal="modal" ng-model="sec.Tipo" ng-options="val.VAVClave as val.Descripcion for val in fretipo " ng-disabled="true"></select></td>
+                                                    <td><span style="max-width:100%" data-modal="modal"> {{sec.FechaInicio}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal"> {{sec.FechaFinal}} </span></td>
+                                                    <td ng-show="sec.Tipo == '1' ? true : false"><select class="form-control" data-modal="modal" ng-model="sec.UnidadInicio" ng-options="val.VAVClave as val.Descripcion for val in fredia " ng-disabled="true" ></select></td>                                                        
+                                                    <td ng-show="sec.Tipo != '1' ? true : false"><span style="max-width:100%" data-modal="modal"> {{sec.UnidadInicio}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal"> {{sec.Repeticion}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal"> {{sec.Intervalo}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal"> {{sec.RUTClave}} </span></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                @*<input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarClienteDomicilio()" />*@
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="subForm.$invalid" ng-click="GuardarClienteDomicilio();">{{GetDescripcion("BTAceptar", "Aceptar")}}</button>
+            </div>
+        </div>
+    </div>
+</div>

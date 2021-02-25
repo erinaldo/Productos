@@ -1,0 +1,59 @@
+﻿<div id="ClientesBox" class="modal fade">
+    <div class="modal-dialog-clientes">
+        <div id="modal-content" class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="Cancelar()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="lblMsgTitulo"></h2>
+            </div>
+            <!-- dialog body -->
+            <div class="modal-body validateBox">
+                <form role="form">
+                    <div class="container">
+                        <div class="row form-group">
+                            @*<label id="lblMsgMensaje" class="control-label text-label"></label>*@
+                            <div class="col-md-10">
+                                <dir-pagination-controls max-size="9"
+                                                         direction-links="true"
+                                                         boundary-links="true">
+                                </dir-pagination-controls>
+                            </div>
+                        </div>
+                        <!--Buscar-->
+                        <div class="input-group">
+                            <span class="input-group-addon"><img width="16" height="16" src="/Content/images/buscar.png" /></span>
+                            <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="searchCliente" />
+                        </div>
+                    </div>
+
+                    <div class="scrow-clientes">
+                        @*<div style="margin: 0 auto; display: table;">
+                            </div>*@
+                        <div class="col-md-12 form-group tablaproductobox" style="padding-right:0px;">
+                            <table class="table table-bordered">
+                                <tr class="Lnegras">
+                                    <td>Clave</td>
+                                    <td>Nombre</td>
+                                    <td>RFC</td>
+                                    <td></td>
+                                </tr>
+                                <tr dir-paginate="c in cClientesList|orderBy:sortKey:reverse|filter:searchCliente|itemsPerPage:clientePag">
+                                    <td>{{c.ClienteClave}}</td>
+                                    <td>{{c.NombreContacto}}</td>
+                                    <td>{{c.IdFiscal}}</td>
+                                    <td>
+                                        <button ng-click="addClienteGenerico(c.IdFiscal,c.NombreContacto,c.ClienteClave)" data-dismiss="modal" class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" style="margin-top:0;" data-dismiss="modal" ng-click="Cancelar()" class="btn btn-default">{{translation.BTCancelar}}</button>
+            </div>
+        </div>
+    </div>
+</div>

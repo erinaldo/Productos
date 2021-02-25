@@ -1,0 +1,75 @@
+﻿@model eRoute.Models.ValorReferencia
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ValorReferencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoAplicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoAplicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoNulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoNulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoModificable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoModificable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MUsuarioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MUsuarioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MFechaHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MFechaHora)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VARCodigo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

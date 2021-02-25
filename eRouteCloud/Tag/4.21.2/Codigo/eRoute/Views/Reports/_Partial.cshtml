@@ -1,0 +1,19 @@
+﻿@model DevExpress.XtraReports.UI.XtraReport
+
+
+@Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionType = ExtensionType.WebDocumentViewer }
+)
+@Html.DevExpress().GetScripts(
+    new Script { ExtensionType = ExtensionType.WebDocumentViewer }
+)
+
+<div style="margin-top:66px;">
+    @Html.DevExpress().WebDocumentViewer(settings =>
+    {
+        settings.Name = "documentViewer";
+    }).Bind(Model).GetHtml()
+
+</div>
+
+

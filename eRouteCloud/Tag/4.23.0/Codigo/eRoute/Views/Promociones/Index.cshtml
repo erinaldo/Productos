@@ -1,0 +1,107 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+
+<style>
+</style>
+
+<div class="container valores margen-tabla" ng-controller="promocionesCtrl" ng-init="AsignarPermisoPromociones('@ViewBag.Permiso')">
+
+    <!--Encabezado-->
+    <div class="row">
+        <div class="col-md-12 header">
+            <h3 class="titulo-altura">{{translation.XAPromocionesDescripcion}}</h3>
+            @{string sPermiso = ViewBag.Permiso;}
+        </div>
+    </div>
+
+    <!--Controles y Paginación-->
+    <div class="row header-valores">
+
+        <!--Grupo de acciones-->
+        <!--Crear-->
+        <div class="col-md-1">
+            @{ if (sPermiso.Contains("C"))
+                {
+                    @Html.ImageActionLink("../Content/images/crear.png", Url.Action("Create", new { Permiso = ViewBag.Permiso }), "{{translation.BTCrear}}")
+                }
+            }
+        </div>
+
+        <!--Actualizar-->
+        <div class="col-md-2">
+            @Html.ImageActionLink("../Content/images/actualizar.png", "javascript:location.reload()", "{{translation.BTActualizar}}")
+        </div>
+
+        <!--Buscar/Filtrar resultados-->
+        <div class="col-md-3">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                    <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="search" />
+                </div>
+            </form>
+        </div>
+
+        <!--Paginacion-->
+        <div class="col-md-5">
+            <dir-pagination-controls max-size="8"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+    </div>
+
+    <!--Tabla con datos-->
+    <div class="row" ng-init="ObtenerPromociones()">
+        <div class="col-md-12">
+            <table cellpadding="12" class="table table-bordered table-hover">
+                <!--Encabezado tabla-->
+                <thead>
+                    <tr>
+                        <th style="width:6%"></th>
+                        <!--Orden ascendente o descendente-->
+                        <th class="cursor-pointer" ng-click="sort('Clave')"><b>{{translation.XClave}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Clave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('Nombre')"><b>{{translation.USUNOMBRE}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Nombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('Tipo')"><b>{{translation.XTipo}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Tipo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('FechaI')"><b>{{translation.XFechaInicial}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='FechaI'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('FechaF')"><b>{{translation.XFechaFinal}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='FechaF'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('Estado')"><b>{{translation.XEstado}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Estado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="p in promociones|orderBy:sortKey:reverse|filter:search|itemsPerPage:20">
+                        <td>
+                            <!--Modificar-->
+                            @{ if (sPermiso.Contains("U"))
+        {
+                        @Html.ImageAction("../Content/images/editar.png", HttpUtility.UrlDecode(Url.Action("Edit", "Promociones", new { Clave = "{{p.Clave}}", Permiso = ViewBag.Permiso, Opcion = "Edit" })), "{{translation.BTModificar}}")
+}
+                            }
+                            <!--Copiar-->
+                            @{ if (sPermiso.Contains("C"))
+        {
+                        @Html.ImageAction("../Content/images/copiar.png", HttpUtility.UrlDecode(Url.Action("Edit", "Promociones", new { Clave = "{{p.Clave}}", Permiso = ViewBag.Permiso, Opcion = "Copy" })), "{{translation.BTModificar}}")
+}
+                            }
+                        </td>
+                        <td>{{p.Clave}}</td>
+                        <td>{{p.Nombre}}</td>
+                        <td>{{p.Tipo}}</td>
+                        <td>{{p.FechaI}}</td>
+                        <td>{{p.FechaF}}</td>
+                        <td>{{p.Estado}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--Preguntar que es-->
+    @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+    @{ Html.RenderPartial("MsgBox/MsgBox"); }
+</div>

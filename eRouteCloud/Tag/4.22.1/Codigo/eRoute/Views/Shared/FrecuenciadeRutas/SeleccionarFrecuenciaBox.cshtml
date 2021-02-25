@@ -1,0 +1,89 @@
+﻿<div id="SeleccionarFrecuenciaBox" class="modal fade">
+    <div class="modal-dialog" id="R">
+        <div class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="FreClave=FreDescripcion=Buscar=''"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{translation.ERMFREESC_IGeneral}}</h2>
+            </div>
+
+            <div class="row datos-Rutas">
+                <div class="col-md-3">
+                    <div class="Rutas-bloque">
+                        <div class="row" ng-show="ocultar">
+                            <div class="col-md-6">
+                                <span><b>{{translation.FREFrecuenciaClave}}</b> :</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span> {{FreClave}}</span>
+                            </div>
+                        </div>
+                        <div class="row" ng-show="ocultar">
+                            <div class="col-md-6">
+                                <span><b>{{translation.FREDescripcion}}</b> :</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span> {{FreDescripcion}}</span>
+                            </div>
+                        </div>
+                        <div class="row" ng-show="!ocultar">
+                            <div class="col-md-6">
+                                <span><b>{{translation.FREFrecuenciaClave}}</b> :</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span> {{FreClaveDestino}}</span>
+                            </div>
+                        </div>
+                        <div class="row" ng-show="!ocultar">
+                            <div class="col-md-6">
+                                <span><b>{{translation.FREDescripcion}}</b> :</span>
+                            </div>
+                            <div class="col-md-6">
+                                <span> {{FreDescripcionDestino}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dialog body -->
+            <div class="scroll modal-body" ng-init="ObtenerFrecuencias()">
+                <form role="form">
+                    <div class="container">
+
+                        <!--Buscar-->
+                        <div class="col-md-12 form-group" style="padding-right:50%;">
+                            <input type="text" name="Buscar" ng-model="Buscar" class="form-control" placeholder="Buscar Configuracion..." />
+                        </div>
+
+                        <!--Tabla-->
+                        <div class="col-md-12 form-group" style="padding-right:0px;">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>{{translation.FREFrecuenciaClave}}</td>
+                                    <td>{{translation.FREDescripcion}}</td>
+                                    <td>{{translation.FRETipo}}</td>
+                                    <td>{{translation.FREFechaInicio}}</td>
+                                    <td>{{translation.FREFechaFinal}}</td>
+                                </tr>
+                                <tr ng-repeat="x in FreList | filter:Buscar" ng-click="SeleccionFre(x.FrecuenciaClave, x.Descripcion)">
+                                    <td>{{x.FrecuenciaClave}}</td>
+                                    <td>{{x.Descripcion}}</td>
+                                    <td>{{x.Tipo}}</td>
+                                    <td>{{x.FechaInicio}}</td>
+                                    <td>{{x.FechaFinal}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="Combo=true; ValidarClaveCombo(); Buscar=''">{{translation.BTAceptar}}</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="RutTipo=RutDescripcion=RutClave=Buscar=''">{{translation.BTCancelar}}</button>
+            </div>
+        </div>
+    </div>
+</div>

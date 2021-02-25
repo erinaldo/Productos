@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "eRoute";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+<script src="~/Controllers/js/controllers/r103VentaDiarioController.js"></script>
+<link href="~/Assets/CSS/StyleReports.css" rel="stylesheet" />
+
+<div ng-controller="r103VentaDiarioController as ctrl" ng-init="ctrl.StartReport('@ViewBag.VAVClave')">
+    <form name="form" class="css-form" novalidate>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel">
+                    <div class="panel-heading title">
+                        <h4>{{ ctrl.title }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="panel panel-default Panel-Default-Filter">
+                    <div class="panel-heading Panel-Filter">
+                        Vendedores
+                    </div>
+                    <div class="panel-body Panel-Body-Filter">
+                        <md-input-container md-no-float class="md-block" id="searchFilterMargin">
+                            <input ng-model="ctrl.querySeller" type="text" placeholder="Búsqueda" id="searchFilterText">
+                        </md-input-container>
+                        <md-checkbox ng-model="ctrl.inactSellers" ng-change="ctrl.GetSellers('0, 1');" id="checkBoxSelectAll">Mostrar Inactivos</md-checkbox>
+                        <md-divider id="lineDivider"></md-divider>
+                        <md-list id="listRadioButtom">
+                            <md-radio-group ng-model="ctrl.selectedSeller" ng-change="ctrl.querySeller='';">
+                                <md-list-item ng-repeat="seller in ctrl.sellers | filter: ctrl.querySeller" id="itemListRadioButtom">
+                                    <md-radio-button ng-value="seller.Clave" class="md-primary" ng-cloak>
+                                        <p>{{ seller.Nombre }}</p>
+                                    </md-radio-button>
+                                </md-list-item>
+                            </md-radio-group>
+                        </md-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="panel panel-default Panel-Default-Filter">
+                    <div class="panel-heading Panel-Filter">
+                        Fechas
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <md-input-container>
+                                <label>Rango</label>
+                                <md-select ng-model="ctrl.State" ng-disabled="true">
+                                    <md-option ng-repeat="state in ctrl.dateState" ng-value="state.Nombre">
+                                        {{ state.Nombre }}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-datepicker ng-model="ctrl.startDate" md-placeholder="Fecha" md-max-date="ctrl.todayDate" onkeydown="return false"></md-datepicker>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="panel panel-default Panel-Default-Filter">
+                    <div class="panel-heading Panel-Filter">
+                        Presupuesto
+                    </div>
+                    <div class="panel-body">
+                        <md-input-container class="md-block">
+                            <label>Presupuesto</label>
+                            <input required type="number" step="1" name="budget" ng-model="ctrl.budget" min="0" />
+
+                            <div ng-show="form.$submitted || form.budget.$touched" ng-messages="form.budget.$error" multiple md-auto-hide="false">
+                                <div ng-message="required">
+                                    Ingrese una cantidad del presupuesto.
+                                </div>
+
+                                <div ng-message="min">
+                                    Ingrese una cantidad mayor a cero.
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="viewer" class="row">
+            <div ng-show="ctrl.showErrorForm" ng-model="ctrl.ShowError">
+                <div class="error-message col-md-12">{{ ctrl.ShowError }}</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <md-button type="submit" ng-click="ctrl.Submit()" ng-disabled="form.$invalid" class="md-raised login-input pull-right" id="buttomReports"> Generar reporte </md-button>
+            </div>
+        </div>
+    </form>
+</div>

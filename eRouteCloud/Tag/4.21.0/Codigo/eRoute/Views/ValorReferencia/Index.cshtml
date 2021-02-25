@@ -1,0 +1,121 @@
+﻿@model IEnumerable<eRoute.Models.ValorReferencia>
+@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Menu/Index.cshtml";
+    string Permiso = ViewBag.Permiso;
+}
+<style>
+    @@media (min-width: 992px) {
+        .col-md-1 {
+            width: 9.333333%;
+        }
+    }
+
+    @@media (min-width: 992px) {
+        .col-md-2 {
+            width: 15.666667%;
+        }
+    }
+</style>
+
+<div class="container valores margen-tabla" ng-controller="crtlValorReferencia" ng-init="AsignarPermiso('@ViewBag.Permiso')">
+    <div class="row">
+        <div class="col-md-12 header">
+            <h3 class="titulo-altura">Valores de referencia</h3>
+        </div>
+    </div>
+    <div class="row header-valores">
+        <div class="col-md-1">
+            @{  if (Permiso.Contains("C"))
+                {
+                    @Html.ImageActionLink("../Content/images/crear.png", Url.Action("Create", new { Permiso = ViewBag.Permiso }), "{{translation.BTCrear}}")
+                }
+            }
+        </div>
+        <div class="col-md-2">
+            @Html.ImageActionLink("../Content/images/actualizar.png", "javascript:location.reload()", "{{translation.BTActualizar}}")
+        </div>
+        <div class="col-md-3">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                    <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="search" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <dir-pagination-controls max-size="8"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table cellpadding="12" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        @{ if (Permiso != "")
+                            {
+                                <th style="width:70px;"></th>
+                            }
+                        }
+                        <th class="cursor-pointer" ng-click="sort('VARCodigo')"><b>{{translation.VARVARCodigo}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='VARCodigo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('Descripcion')"><b>{{translation.VARDescripcion}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Descripcion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('TipoDato')"><b>{{translation.VARTipoDato}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoDato'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('TipoAplicacion')"><b>{{translation.ADEInterfaz}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoAplicacion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="valRef in valoresReferencia|orderBy:sortKey:reverse|filter:search|itemsPerPage:tamPag">
+                        <td>
+                            @{  if (Permiso.Contains("U"))
+                                {
+                                    @Html.ImageAction("../Content/images/editar.png", HttpUtility.UrlDecode(Url.Action("Edit", "ValorReferencia", new { VARCodigo = "{{valRef.VARCodigo}}", Permiso = ViewBag.Permiso })), "{{translation.BTModificar}}")
+                                }
+                                else if (Permiso.Contains("R"))
+                                {
+                                    @Html.ImageAction("../Content/images/consultar.png", HttpUtility.UrlDecode(Url.Action("Details", "ValorReferencia", new { VARCodigo = "{{valRef.VARCodigo}}", Permiso = ViewBag.Permiso })), "{{translation.btConsultar}}")
+                                }
+                            }
+                            &nbsp
+                            @{  if (Permiso.Contains("D"))
+                                {
+                                    @Html.ImageButton("../Content/images/eliminar.png", "ValidarEliminarValorReferencia(valRef.VARCodigo)", "{{translation.BTEliminar}}")
+                                }
+                            }
+                        </td>
+                        <td>{{valRef.VARCodigo}}</td>
+                        <td>{{valRef.Descripcion}}</td>
+                        <td>
+                            <span ng-show="valRef.TipoDato == 'N'">
+                                Numérico
+                            </span>
+                            <span ng-show="valRef.TipoDato == 'S'">
+                                Cadena
+                            </span>
+                        </td>
+                        <td>
+                            <span ng-show="valRef.TipoAplicacion == 1">
+                                Escritorio
+                            </span>
+                            <span ng-show="valRef.TipoAplicacion == 2">
+                                {{translation.XAMovil}}
+                            </span>
+                            <span ng-show="valRef.TipoAplicacion == 3">
+                                Ambas
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+    @{ Html.RenderPartial("MsgBox/MsgBox"); }
+</div>

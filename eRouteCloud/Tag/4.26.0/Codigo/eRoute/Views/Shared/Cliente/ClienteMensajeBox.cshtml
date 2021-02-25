@@ -1,0 +1,93 @@
+﻿<div id="ClienteMensajeBox" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" id="lblMsgTitulo">{{translation.ERMMMEESC_MGeneralC}}</h3>
+            </div>
+            <!-- dialog body -->
+            <div class="modal-body validateBox">
+                <div ng-form="subForm2" id="subForm2" class="subForm2">
+                    <div class="container">
+                        <!--INICIO-->
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <label for="Tipo">{{translation.MMEMDBMensajeTipo}}</label>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control" data-modal="modal" ng-change="cambiarTipo()" name="MDBMensajeTipo" ng-model="MDBMensajeTipo" ng-options="val.VAVClave as val.Descripcion for val in listMod " ng-required="bloqMensajes">
+                                    <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="Tipo">{{translation.MMETIPOESTADO}}</label>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control" data-modal="modal" name="TipoEstado" ng-model="TipoEstado" ng-options="val.VAVClave as val.Descripcion for val in edomsj " ng-required="bloqMensajes">
+                                    <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+
+                            <div class="col-md-2">
+                                <label for="Tipo">{{translation.MMENumero}}</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" ng-model="Numero" name="Numero" ng-disabled="true" ng-required="bloqMensajes" />
+                            </div>
+
+                        </div>
+                        <div class="row form-group">
+
+                            <div class="col-md-2">
+                                <label>{{translation.MMEDescripcion}}</label>
+                            </div>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="Descripcion" name="Descripcion" ng-required="bloqMensajes" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+
+                            <div class="col-md-2">
+                                <label>{{translation.MMEAsunto}}</label>
+                            </div>
+                            <div class="col-md-10">
+                                <textarea rows="3" name="Asunto" class="form-control" ng-model="Asunto" ng-required="bloqMensajes"> </textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-10">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">{{translation.MMEModulos}}</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div ng-repeat="mod in moduloCliente" class="checkbox">
+                                                    <label><input type="checkbox" value="" ng-change="validacionModuloCliente(mod.VAVClave,mod.Checked)" ng-model="mod.Checked" name="{{'VAVClave' + $index}}">{{mod.Descripcion}}</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--FIN-->
+                    </div>
+                </div>
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer" >                
+                <button type="button" class="btn btn-default" ng-click="cerrarMensajeCliente()">{{translation.BTAceptar}}</button>
+                <button type="button" class="btn btn-default" ng-click="btnCancelar()" data-dismiss="modal">{{translation.BTCancelar}}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+﻿<div id="EsquemaBox" class="modal fade">
+    <div class="modal-dialog-esquema">
+        <div class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{translation.ERMIMEESC_IGeneral}}</h2>
+            </div>
+            <!-- dialog body -->
+            <div class="modal-body-esquema" ng-init="activourl = true">
+                <div class="scrow">
+                    <form role="form">
+                        <div class="container">
+                            <div class="form-group">
+
+                                <div ui-tree="treeOptions">
+                                    <ol ui-tree-nodes="" ng-model="Segmentos" id="treeDisponibles">
+                                        <li ng-repeat="esq in esquema" ui-tree-node collapsed="false">
+                                            <div ui-tree-handle class="tree-node tree-node-content tree-view-style">
+                                                <a ng-class="{hidden: esq.length <= 0}" id="{{'esquema' + esq.EsquemaID}}" ng-click="minusPlus(this, esq.EsquemaID)" ng-init="startToogle(this)" class="glyphicon glyphicon-plus btn btn-link btn-xs tree-view-link" data-nodrag></a>
+                                                <input class="camposInput" type="checkbox" ng-click="checar(esq.EsquemaID, esq.Nombre, esq.Clave)" />   {{esq.Nombre}}
+                                            </div>
+                                            <ol ui-tree-nodes="" ng-model="esq.esquemas" ng-class="{hidden: collapsed}">
+                                                <li ng-repeat="a in esq.esquemas" ui-tree-node collapsed="false">
+                                                    <div class="tree-node tree-node-content tree-view-style">
+                                                        <span ng-show="a.esquemas.length <= 0" style="padding-left:28px;"></span>
+
+                                                        <a ng-class="{hidden: a.esquemas.length <= 0}" id="{{'esquema' + a.EsquemaID}}" ng-click="minusPlus(this, a.EsquemaID)" class="glyphicon glyphicon-minus btn btn-link btn-xs tree-view-link" data-nodrag></a>
+                                                        <input class="camposInput" type="checkbox" ng-click="checar(a.EsquemaID, a.Nombre, a.Clave)" /> {{a.Nombre}}
+                                                    </div>
+                                                    <ol ui-tree-nodes="" ng-model="a.esquemas" ng-class="{hidden: collapsed}">
+                                                        <li ng-repeat="e in a.esquemas" ui-tree-node>
+                                                            <div class="tree-node tree-node-content">
+                                                                <div class="tree-view-style">
+                                                                    <span ng-show="e.esquemas.length <= 0" style="padding-left:28px;"></span>
+                                                                    <a ng-class="{hidden: e.esquemas.length <= 0}" id="{{'esquema' + e.EsquemaID}}" ng-click="minusPlus(this, e.EsquemaID)" class="glyphicon glyphicon-minus btn btn-link btn-xs tree-view-link" data-nodrag></a>
+                                                                    <input class="camposInput" type="checkbox" ng-click="checar(e.EsquemaID, e.Nombre,e.Clave)" />  {{e.Nombre}}
+                                                                </div>
+
+                                                                <ol ui-tree-nodes="" ng-model="e.esquemas" ng-class="{hidden: collapsed}">
+                                                                    <li ng-repeat="i in e.esquemas" ui-tree-node>
+                                                                        <div class="tree-node tree-node-content tree-view-style pad-10">
+                                                                            <input class="camposInput" type="checkbox" ng-click="checar(i.EsquemaID, i.Nombre, i.Clave)" />   {{i.Nombre}}
+                                                                            <ol ui-tree-nodes="" ng-model="i.esquemas" ng-class="{hidden: collapsed}">
+                                                                                <li ng-repeat="o in i.esquemas" ui-tree-node>
+                                                                                    <div class="tree-node tree-node-content tree-view-style">
+                                                                                        <span ng-show="o.esquemas.length <= 0" style="padding-left:28px;"></span>
+                                                                                        <a ng-class="{hidden: e.esquemas.length <= 0}" id="{{'esquema' + o.EsquemaID}}" ng-click="minusPlus(this, o.EsquemaID)" class="glyphicon glyphicon-minus btn btn-link btn-xs tree-view-link" data-nodrag></a>
+                                                                                        {{o.Nombre}}
+                                                                                        <ol ui-tree-nodes="" ng-model="o.esquemas" ng-class="{hidden: collapsed}">
+                                                                                            <li ng-repeat="u in o.esquemas" ui-tree-node>
+                                                                                                <div class="tree-node tree-node-content tree-view-style">
+                                                                                                    <span ng-show="u.esquemas.length <= 0" style="padding-left:28px;"></span>
+                                                                                                    <a ng-class="{hidden: e.esquemas.length <= 0}" id="{{'esquema' + u.EsquemaID}}" ng-click="minusPlus(this, u.EsquemaID)" class="glyphicon glyphicon-minus btn btn-link btn-xs tree-view-link" data-nodrag></a>
+                                                                                                    {{u.Nombre}}
+
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        </ol>
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ol>
+                                                                        </div>
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{translation.BTAceptar}}</button>
+            </div>
+        </div>
+    </div>
+</div>

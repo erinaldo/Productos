@@ -1,0 +1,110 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+
+<style>
+</style>
+
+<div class="container valores margen-tabla" ng-controller="frecuenciadeRutasCtrl" ng-init="AsignarPermisoFrecuenciadeRutas('@ViewBag.Permiso');">
+
+    <!--Encabezado-->
+    <div class="row">
+        <div class="col-md-12 header">
+            <h3 class="titulo-altura">{{translation.XAFrecuenciasRutas}}</h3>
+            @{string sPermiso = ViewBag.Permiso;}
+        </div>
+    </div>
+
+    <!--Controles y Paginación-->
+    <div class="row header-valores">
+
+        <div class="col-md-5">
+            <!--Grupo de acciones-->
+            <!--Crear-->
+            <div class="col-md-3">
+                @{ if (sPermiso.Contains("C"))
+                    {
+                        @Html.ImageActionLink("../Content/images/crear.png", Url.Action("Create", new { Permiso = ViewBag.Permiso }), "{{translation.BTCrear}}")
+                    }
+                }
+            </div>
+
+            <!--Actualizar-->
+            <div class="col-md-4">
+                @Html.ImageActionLink("../Content/images/actualizar.png", "javascript:location.reload()", "{{translation.BTActualizar}}")
+            </div>
+
+            <!--Definicion de secuencia-->
+            <div class="col-md-5">
+                @Html.ImageActionLink("../Content/images/secuencia.png", Url.Action("Map", new { Permiso = ViewBag.Permiso }), "{{translation.btSecuenciaMapa}}")
+            </div>
+        </div>
+
+        <!--Buscar/Filtrar resultados-->
+        <div class="col-md-3">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                    <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="search" />
+                </div>
+            </form>
+        </div>
+
+        <!--Paginacion-->
+        <div class="col-md-4">
+            <dir-pagination-controls max-size="8"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+    </div>
+
+    <!--Tabla con datos-->
+    <div class="row" ng-init="ObtenerFrecuenciaRutas(); KeyGen();">
+        <div class="col-md-12">
+            <table cellpadding="12" class="table table-bordered table-hover">
+                <!--Encabezado tabla-->
+                <thead>
+                    <tr>
+                        <th style="width:6%"></th>
+                        <!--Orden ascendente o descendente-->
+                        <th class="cursor-pointer" ng-click="sort('RUTClave')"><b>{{translation.SECRUTClave}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='RUTClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('Descripcion')"><b>{{translation.RUTDescripcion}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Descripcion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('FrecuenciaClave')"><b>{{translation.SECFrecuenciaClave}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='FrecuenciaClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('FDes')"><b>{{translation.FREDescripcion}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='FDes'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="F in Frecuencias|orderBy:sortKey:reverse|filter:search|itemsPerPage:20">
+                        <td>
+                            <!--Modificar-->
+                            @{  if (sPermiso.Contains("U"))
+                                {
+                                    @Html.ImageAction("../Content/images/editar.png", HttpUtility.UrlDecode(Url.Action("Edit", "FrecuenciadeRutas", new { Clave = "{{F.RUTClave}}-{{F.FrecuenciaClave}}", Permiso = ViewBag.Permiso })), "{{translation.BTModificar}}")
+                                }
+                            }
+                            <!--Cambiar Frecuencia a Ruta-->
+                            @{  if (sPermiso.Contains("U"))
+                                {
+                                    @Html.ImageAction("../Content/images/calendario.png", HttpUtility.UrlDecode(Url.Action("Change", "FrecuenciadeRutas", new { Clave = "{{F.RUTClave}}-{{F.FrecuenciaClave}}", Permiso = ViewBag.Permiso })), "{{translation.BTCambiarFrecuenciaT}}")
+                                }
+                            }
+                        </td>
+                        <td>{{F.RUTClave}}</td>
+                        <td>{{F.Descripcion}}</td>
+                        <td>{{F.FrecuenciaClave}}</td>
+                        <td>{{F.FDes}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--Preguntar que es-->
+    @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+    @{ Html.RenderPartial("MsgBox/MsgBox"); }
+</div>

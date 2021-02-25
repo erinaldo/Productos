@@ -1,0 +1,186 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+<style>
+
+
+    /**ESTILOS PROPIOS*/
+    #cuadrado {
+        background: red;
+        width: 100px;
+        height: 100px;
+        margin: 30px;
+    }
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    @@media (min-width: 992px) {
+        .col-md-1 {
+            width: 12.333333%;
+        }
+    }
+
+
+    /******/
+    .form-valor .form-group label {
+        margin-top: 7px;
+    }
+
+    md-radio-button {
+        display: inline-block !important;
+    }
+
+   
+
+   
+</style>
+
+<div class="container valores margen-tabla " ng-controller="CamionCtrl as Ctapa" ng-init="EditarCamion('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+    <div class="row ">
+        <div class="col-md-12 header">
+            <h3 class="titulo-altura ng-binding">{{translation.XCamiones}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form name="form" class="form-horizontal form-valor" ng-class="{sumitted:form.submited}" novalidate  >
+                <div role="tabpanel">
+                    <div class="tab-content">
+                        <br />
+                        <div role="tabpanel" class="tab-pane active" id="seccion1">
+                            <div class="row form-group ">
+                                <!--Placa*-->
+                                <label class="col-md-2">
+                                    {{translation.CAMPlaca}}*<!--translation.XClave | uppercase  *poner en MAYUSCULAS LAS LETRAS-->
+                                </label>                               
+                                <div class="col-md-3">
+                                    <input type="text" maxlength="16" class="form-control" data-modal="modal" ng-model="Placa" name="Placa"  ng-disabled="!Nuevo" ng-required="true"  validar-clave-c="true" />
+                                    <div ng-show="form.$submitted || form.Placa.$touched">
+                                        <div class="error-message" ng-show="form.Placa.$error.required">{{translation.BE0001.replace('$0$', translation.XPlaca)}}</div>
+                                        <div class="error-message" ng-show="form.Placa.$error.claveRepetida">{{translation.BE0002}}</div>
+                                        
+                                    </div>
+                                </div>
+                                <!--TipoEstado*-->
+                                <label class="col-md-3">
+                                    {{translation.XEstado}}*
+                                </label>
+
+                                <div class="col-md-3">                                    
+                                        <select id="ddlTipoEstado"   class="form-control" data-modal="modal" ng-model="TipoEstado"     name="TipoEstado"     ng-options="val.VAVClave as val.Descripcion for val in  edoreg " ng-required="true" ng-disabled="SoloLectura">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                        <div ng-show="form.$submitted || form.TipoEstado.$touched">
+                                            <div class="error-message" ng-show="form.TipoEstado.$error.required">{{translation.BE0001.replace('$0$', translation.XEstado)}}</div>
+                                        </div>
+</div>
+                            </div>
+                            <div class="row form-group">
+                                <!--Clave*-->
+                                <label class="col-md-2">
+                                    {{translation.CAMClave}}*
+                                </label>
+                                <div class="col-md-3">
+                                    <input type="text" maxlength="10" class="form-control" data-modal="modal" ng-model="Clave" name="Clave"  ng-required="true" ng-disabled="SoloLectura" />
+                                    <div ng-show="form.$submitted || form.Clave.$touched">
+                                        <div class="error-message" ng-show="form.Clave.$error.required">{{translation.BE0001.replace('$0$', translation.CAMClave)}}</div>
+                                    </div>
+                                </div>
+                                <!--CentrosdeDistibucion-->
+                                <label class="col-md-3">
+                                    {{translation.Xcentrodistribucion}}*
+                                </label>
+                                <div class="col-md-3">
+                                    <select id="ddlCentros" style="max-width:100%"  class="form-control" data-modal="modal" ng-model="AlmacenIDCEDI" ng-required="true" ng-options="val.AlmacenID as val.NombreCompuesto for val in btipouso" name="{{'AlmacenIDCEDI'}}" ng-disabled="SoloLectura">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>  
+                                    <div ng-show="form.$submitted || form.AlmacenIDCEDI.$touched">
+                                        <div class="error-message" ng-show="form.AlmacenIDCEDI.$error.required">{{translation.BE0001.replace('$0$', translation.Xcentrodistribucion)}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group ">
+                                <!--Descripcion-->
+                                <label class="col-md-2">
+                                    {{translation.CAMDescripcion}}
+                                </label>
+                                <div class="col-md-9">
+                                    <input type="text"  class="form-control" data-modal="modal" ng-model="Descripcion" name="Descripcion"   ng-disabled="SoloLectura"/>
+                                </div>
+                                                               
+                            </div>
+                            <div class="row form-group">
+                                <!--Almacen-->
+                                <label class="col-md-2">
+                                    {{translation.CAlmacen}}
+                                </label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" data-modal="modal"  ng-model="AlmacenId" name="AlmacenId" ng-disabled="true"   ng-required="false" />
+                                </div>
+                                <!--Tipo Camion-->
+                                <label class="col-md-3">
+                                    {{translation.CAMTipoCamion}}
+                                </label>
+
+                                <div class="col-md-3">
+                                    <select id="ddlTipo" style="max-width:100%" class="form-control" data-modal="modal" ng-model="TipoCamion" ng-required="false" ng-options="val.VAVClave as val.Descripcion for val in tipocam" name="{{'TipoCamion'}}" ng-disabled="SoloLectura">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <!--Kilogramos-->
+                                <label class="col-md-2">
+                                    {{translation.CAMCapacidadKg}}
+                                </label>
+                                <div class="col-md-3 ">
+                                    <input  maxlength="11" class="form-control" data-modal="modal" ng-model="CapacidadKg" name="CapacidadKg" kilo-menor-cero="true"  amount="stake" valida-int="true "  camion-apa="true" ng-disabled="SoloLectura"/>
+                                    <div ng-show="form.$submitted || form.CapacidadKg.$touched">
+                                        <div class="error-message" ng-show="form.CapacidadKg.$error.kiloMenorCero">{{translation.E0007.replace('$0$', translation.CAMCapacidadKg)}}</div>
+                                    </div>
+                                </div>
+                                
+
+
+                                <!--Volumen-->
+                                <label class="col-md-3" >
+                                    {{translation.CAMCajas}}
+                                </label>
+                                <div class="col-md-3">
+                                    <input  maxlength="11" class="form-control" data-modal="modal" ng-model="Cajas" name="Cajas" caja-menor-cero="true"   amount2="stake2" valida-int="true" camion-apes="true" ng-disabled="SoloLectura" />
+                                    <div ng-show="form.$submitted || form.Cajas.$touched">
+                                        <div class="error-message" ng-show="form.Cajas.$error.cajaMenorCero">{{translation.E0007.replace('$0$', translation.CAMCajas)}}</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br />
+                            <div class="container" style="margin-left: 20px"> 
+                                @{  if (!bSoloLectura)
+                                    {
+                                        <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarCamion(CapacidadKg,Cajas)" />
+                                        <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" /> 
+                                    }
+                                    else
+                                    {
+                                        <input type="button" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                                    }
+                                }                                       
+                            </div>                           
+                        </div>
+                    </div>                    
+                </div> 
+                @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+                @{ Html.RenderPartial("MsgBox/MsgBox"); }
+            </form>
+        </div>
+    </div>
+ </div>
+
+

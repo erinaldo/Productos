@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "eRoute";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+<script src="~/Controllers/js/controllers/dynamicReportController.js"></script>
+<script src="https://momentjs.com/downloads/moment.js"></script>
+<link href="~/Assets/CSS/StyleReports.css" rel="stylesheet" />
+<div ng-controller="dynamicReportController as ctrl" ng-init="EstablecerReporte('@ViewBag.VAVClave');">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default" style="background-color:#B40002; border-radius:15px;">
+                <div class="panel-heading" style="background-color:#B40002; color:white; border-radius:15px;">
+                    <h4> {{ ctrl.titulo }} </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form name="reportForm">
+        <div ng-repeat="filter in ctrl.filtersRequiredList">
+            <div ng-if="(filter.Opciones[3] == 'E' && filter.TipoFiltro == '2' && !ctrl.switch) || (filter.Opciones[3] == 'E' && filter.TipoFiltro == '3' && ctrl.switch)">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                    <div class="panel panel-default Panel-Default-Filter">
+                        <div class="panel-heading Panel-Filter">
+                            OPCIONES
+                        </div>
+                        <div class="panel-body">
+                            <md-switch ng-model="ctrl.switch" aria-label="Filtrar por {{ ctrl.nameSwitch }}" ng-change="ctrl.GetConditionedFilter(ctrl.switch)">
+                                Filtrar por {{ ctrl.nameSwitch }}
+                            </md-switch>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="filter.TipoFiltro == '21'">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                    <div class="panel panel-default Panel-Default-Filter">
+                        <div class="panel-heading Panel-Filter">
+                            {{ filter.Descripcion }}
+                        </div>
+                        <div class="panel-body">
+                            <md-switch ng-model="filter.selected" aria-label="Mostrar Solo Precios Vigentes" ng-change="ctrl.OnChange(filter.selected)">
+                                {{ filter['data']['Nombre'] }}
+                            </md-switch>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch on="filter.Opciones[1]">
+
+                <div ng-switch-when="S">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-default Panel-Default-Filter">
+                            <div class="panel-heading Panel-Filter">
+                                {{ filter.Descripcion }}
+                            </div>
+                            <div class="panel-body">
+                                <md-checkbox ng-if="filter.Opciones[2] == 'I'" id="checkBoxSelectAll" ng-model="filter.showInactive" ng-change="ctrl.GetConditionedFilter(filter.Descripcion, filter.Opciones[2])">Mostrar Inactivos</md-checkbox>
+                                <md-autocomplete flex ng-required="filter.Opciones[0] == 'R'"
+                                                 md-input-name="autocompleteField"
+                                                 md-selected-item="filter.selected"
+                                                 md-search-text-change="ctrl.GetConditionedFilter(filter.Descripcion)"
+                                                 md-search-text="filter.searchText"
+                                                 md-selected-item-change="ctrl.GetConditionedFilter(filter.Descripcion)"
+                                                 md-items="item in ctrl.QuerySearch(filter.searchText, filter.data)"
+                                                 md-item-text="item.Nombre"
+                                                 md-min-length="0"
+                                                 placeholder="Seleccionar {{ filter.Descripcion }}">
+                                    <md-item-template>
+                                        <span md-highlight-text="filter.searchText" md-highlight-flags="^i">{{ item.Nombre }}</span>
+                                    </md-item-template>
+                                    <md-not-found>
+                                        No se han encontrado resultados para "{{ filter.searchText }}".
+                                    </md-not-found>
+                                </md-autocomplete>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-switch-when="M">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" ng-if="filter.Opciones[3] != 'E' || (filter.Opciones[3] == 'E' && filter.TipoFiltro == '2' && !ctrl.switch) || (filter.Opciones[3] == 'E' && filter.TipoFiltro == '3' && ctrl.switch) || (filter.TipoFiltro != '2' && filter.TipoFiltro != '3')">
+                        <div class="panel panel-default Panel-Default-Filter">
+                            <div class="panel-heading Panel-Filter">
+                                {{ filter.Descripcion }}
+                            </div>
+                            <div class="panel-body Panel-Body-Filter">
+                                <md-input-container md-no-float class="md-block" id="searchFilterMargin">
+                                    <input ng-model="filter.query" type="text" placeholder="Búsqueda" id="searchFilterText">
+                                </md-input-container>
+                                <md-checkbox id="checkBoxSelectAll" aria-label="Seleccionar todos"
+                                             ng-checked="isChecked(filter.data, filter.selected)"
+                                             md-indeterminate="isIndeterminate(filter.data, filter.selected)"
+                                             ng-click="toggleAll(filter.data, filter.selected)">
+                                    Seleccionar todos
+                                </md-checkbox>
+                                <md-checkbox ng-if="filter.Opciones[2] == 'I'" id="checkBoxSelectAll" ng-model="filter.showInactive" ng-change="ctrl.GetConditionedFilter(filter.Descripcion, filter.Opciones[2])">Mostrar Inactivos</md-checkbox>
+                                <md-divider id="lineDivider"></md-divider>
+                                <md-list id="listCheckBox" required>
+                                    <md-list-item id="itemListCheckBox" ng-model="filter.selected" ng-repeat="fil in filter.data | filter:filter.query">
+                                        <md-checkbox ng-checked="exists(fil, filter.selected)" ng-model="fil.Checked" ng-click="toggle(fil, filter.selected, filter.Descripcion)">
+                                        </md-checkbox>
+                                        <p>{{ fil.Nombre }}</p>
+                                    </md-list-item>
+                                </md-list>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="filter.TipoFiltro == '4'">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="panel panel-default Panel-Default-Filter">
+                        <div class="panel-heading Panel-Filter">
+                            {{ filter.Descripcion }}
+                        </div>
+                        <div class="panel-body">
+                            <md-input-container>
+                                <label>Rango</label>
+                                <md-select ng-model="filter.state" ng-disabled="filter.Opciones[3] == 'E'" ng-change="ctrl.OnSelectChange(filter)">
+                                    <md-option ng-repeat="fil in filter.data" ng-value="fil.Nombre">
+                                        {{ fil.Nombre }}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <label>Fecha <span ng-if="filter.Opciones[1] == 'E' && filter.state == 'Entre'">Inicial</span></label>
+                                    <md-datepicker ng-model="filter.startDate" name="startDate" ng-change="filter.endDate = filter.startDate; ctrl.OnSelectChange(filter);" md-max-date="filter.todayDate" ng-required="filter.Opciones[0] == 'R'"></md-datepicker>
+                                    <div ng-messages="reportForm.startDate.$error">
+                                        <div ng-message="valid">Utilice un formato valido de fecha (Ejemplo: {{ filter.todayDate | date:"shortDate" }})</div>
+                                        <div ng-message="maxdate">Elija una fecha antes del {{ filter.todayDate | date:"shortDate" }}</div>
+                                        <div ng-message="required">Elija una Fecha <span ng-if="filter.Opciones[1] == 'E'">Inicial</span></div>
+                                    </div>
+                                </md-input-container>
+                                <md-input-container class="md-block" ng-if="filter.Opciones[1] == 'E' && filter.state == 'Entre'" flex-gt-xs>
+                                    <label>Fecha Final</label>
+                                    <md-datepicker ng-model="filter.endDate" name="endDate" md-min-date="filter.startDate" ng-change="ctrl.OnSelectChange(filter)" md-max-date="filter.todayDate" ng-required="filter.Opciones[0] == 'R'"></md-datepicker>
+                                    <div ng-messages="reportForm.endDate.$error">
+                                        <div ng-message="valid">Utilice un formato valido de fecha (Ejemplo: {{ filter.todayDate | date:"shortDate" }})</div>
+                                        <div ng-message="mindate">Elija una fecha despues del {{ filter.startDate | date:"shortDate" }}</div>
+                                        <div ng-message="maxdate">Elija una fecha antes del {{ filter.todayDate | date:"shortDate" }}</div>
+                                        <div ng-message="required">Elija una Fecha Final</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <md-button type="submit" class="md-raised login-input pull-right" ng-click="submit()" id="buttomReports" ng-disabled="!reportForm.$valid">Generar reporte</md-button>
+            </div>
+        </div>
+        @*<code>reportForm.$valid = {{reportForm.$valid}}</code><br>*@
+    </form>
+</div>

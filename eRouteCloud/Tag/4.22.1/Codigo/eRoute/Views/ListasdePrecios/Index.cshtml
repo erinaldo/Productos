@@ -1,0 +1,105 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Menu/Index.cshtml";
+    string sPermiso = ViewBag.Permiso;
+}
+<style>
+
+
+</style>
+
+<div class="container valores margen-tabla" ng-controller="PrecioCtrl" ng-init="AsignarPermisoPrecio('@ViewBag.Permiso')">
+    <div class="row">
+        <div class="col-md-12 header">
+            <h3 class="titulo-altura ng-binding">{{translation.RCAListaPrecios}}</h3>
+        </div>
+    </div>
+    <div class="row header-valores">
+        <!--Crear-->
+        <div class="col-md-1">
+            @{ if (sPermiso.Contains("C"))
+                {
+                    @Html.ImageActionLink("../Content/images/crear.png", Url.Action("Create", new { Permiso = ViewBag.Permiso }), "{{translation.BTCrear}}")
+                }
+            }
+        </div>
+        <!--Actualizar-->
+        <div class="col-md-2">
+            @{ if (sPermiso != "")
+                {
+                    @Html.ImageActionLink("../Content/images/actualizar.png", Url.Action("Index", new { Permiso = ViewBag.Permiso }), "{{translation.BTActualizar}}")
+                }
+            }
+        </div>
+
+        <!--Buscar-->
+        <div class="col-md-5">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                    <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="search" />
+                </div>
+            </form>
+        </div>
+        <!--Paginas-->
+        <div class="col-md-4">
+            <dir-pagination-controls max-size="4"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+    </div>
+
+    <div class="row header-valores">
+        <div class="col-md-12">
+            <table cellpadding="12" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <!--Encabezados-->
+                        @{ if (sPermiso != "")
+                            {
+                                <th style="width:70px;"></th>
+                            }
+                        }
+                        <th class="cursor-pointer" ng-click="sort('PRCClave')"><b>{{translation.PRCClave}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='PRCClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('PRCNombre')"><b>{{translation.PRCNombre}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='PRCNombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('XEstado')"><b>{{translation.XEstado}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='XEstado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('PRECFVTipo')"><b>{{translation.PRECFVTipo}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='PRECFVTipo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="valter in cPrecio|orderBy:sortKey:reverse|filter:search|itemsPerPage:15">
+                        <!--Editar-->
+                        @{ if (sPermiso != "")
+                            {
+                                <td align="center">
+                                    @{ if (sPermiso.Contains("U"))
+                                        {
+                                            @Html.ImageAction("../Content/images/editar.png", HttpUtility.UrlDecode(Url.Action("Edit", "ListasdePrecios", new { PrecioClave = "{{valter.PrecioClave}}", Permiso = ViewBag.Permiso })), "{{translation.BTModificar}}")
+                                        }
+                                        else if (sPermiso.Contains("R"))
+                                        {
+                                            @Html.ImageAction("../Content/images/consultar.png", HttpUtility.UrlDecode(Url.Action("Details", "ListasdePrecios", new { PrecioClave = "{{valter.PrecioClave}}", Permiso = ViewBag.Permiso })), "{{translation.btConsultar}}")
+                                        }
+                                    }
+                                    &nbsp
+                                    @{ if (sPermiso.Contains("C"))
+                                        {
+                                            @Html.ImageAction("../Content/images/copiar.png", HttpUtility.UrlDecode(Url.Action("Copy", "ListasdePrecios", new { PrecioClave = "{{valter.PrecioClave}}", Permiso = ViewBag.Permiso })), "{{translation.BTCopiar}}")
+                                        }
+                                    }
+                                </td>
+                                        }
+                        }
+                        <td>{{valter.PrecioClave}}</td>
+                        <td>{{valter.Nombre}}</td>
+                        <td>{{valter.TipoEstado}}</td>
+                        <td>{{valter.CFVTipo}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

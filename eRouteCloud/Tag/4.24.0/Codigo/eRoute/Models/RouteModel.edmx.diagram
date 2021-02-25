@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5fb0886696b45009431491b16346925" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="Route4600iModel.MENDetalle" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Route4600iModel.Mensaje" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Route4600iModel.ValorReferencia" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Route4600iModel.VARValor" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Route4600iModel.VAVDescripcion" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="Route4600iModel.FK_MENDetalle_Mensaje" ManuallyRouted="false" />
+        <AssociationConnector Association="Route4600iModel.FK_VARValor_ValorReferencia" ManuallyRouted="false" />
+        <AssociationConnector Association="Route4600iModel.FK_VAVDescripcion_VARValor" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Route4600iModel.Configuracion" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Route4600iModel.CONHist" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Route4600iModel.Actividad" Width="1.5" PointX="3" PointY="13.375" />
+        <EntityTypeShape EntityType="Route4600iModel.Interfaz" Width="1.5" PointX="10.25" PointY="10.5" />
+        <EntityTypeShape EntityType="Route4600iModel.IntPer" Width="1.5" PointX="12.5" PointY="10.125" />
+        <EntityTypeShape EntityType="Route4600iModel.Modulo" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="Route4600iModel.Perfil" Width="1.5" PointX="10.25" PointY="6.625" />
+        <AssociationConnector Association="Route4600iModel.FK_Actividad_MensajeDescripcion" />
+        <AssociationConnector Association="Route4600iModel.FK_Actividad_MensajeNombre" />
+        <AssociationConnector Association="Route4600iModel.FK_Interfaz_Actividad" />
+        <AssociationConnector Association="Route4600iModel.FK_Interfaz_Modulo" />
+        <AssociationConnector Association="Route4600iModel.FK_IntPer_Interfaz" />
+        <AssociationConnector Association="Route4600iModel.FK_IntPer_Modulo" />
+        <AssociationConnector Association="Route4600iModel.FK_IntPer_Perfil" />
+        <AssociationConnector Association="Route4600iModel.FK_Modulo_MensajeDescripcion" />
+        <AssociationConnector Association="Route4600iModel.FK_Modulo_MensajeNombre" />
+        <AssociationConnector Association="Route4600iModel.FK_Modulo_Modulo" />
+        <EntityTypeShape EntityType="Route4600iModel.Almacen" Width="1.5" PointX="9.375" PointY="1" />
+        <EntityTypeShape EntityType="Route4600iModel.AlmacenProducto" Width="1.5" PointX="11.625" PointY="1.75" />
+        <AssociationConnector Association="Route4600iModel.FK_AlmacenProducto_Almacen" />
+        <EntityTypeShape EntityType="Route4600iModel.Usuario" Width="1.5" PointX="12.5" PointY="4.875" />
+        <EntityTypeShape EntityType="Route4600iModel.UsuarioAlmacen" Width="1.5" PointX="14.75" PointY="3.75" />
+        <AssociationConnector Association="Route4600iModel.FK_Usuario_Almacen" />
+        <AssociationConnector Association="Route4600iModel.FK_Usuario_Perfil" />
+        <AssociationConnector Association="Route4600iModel.FK_UsuarioAlmacen_Usuario" />
+        <EntityTypeShape EntityType="Route4600iModel.PoliticaContrasena" Width="1.5" PointX="12.375" PointY="14.75" />
+        <EntityTypeShape EntityType="Route4600iModel.PoliticaContrasenaHist" Width="1.5" PointX="14.75" PointY="7.625" />
+        <AssociationConnector Association="Route4600iModel.fk_Politica_Usuario" />
+        <EntityTypeShape EntityType="Route4600iModel.Ruta" Width="1.5" PointX="17.375" PointY="12.5" />
+        <EntityTypeShape EntityType="Route4600iModel.RutaPunto" Width="1.5" PointX="19.625" PointY="13.875" />
+        <EntityTypeShape EntityType="Route4600iModel.RutasOxxo" Width="1.5" PointX="19.625" PointY="17.25" />
+        <EntityTypeShape EntityType="Route4600iModel.Terminal" Width="1.5" PointX="9.375" PointY="15.75" />
+        <EntityTypeShape EntityType="Route4600iModel.TerminalSerial" Width="1.5" PointX="5.375" PointY="16.75" />
+        <EntityTypeShape EntityType="Route4600iModel.TerminalVersion" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Route4600iModel.Vendedor" Width="1.5" PointX="14.375" PointY="19.625" />
+        <EntityTypeShape EntityType="Route4600iModel.VendedorDescuento" Width="1.5" PointX="16.625" PointY="17.125" />
+        <EntityTypeShape EntityType="Route4600iModel.VendedorEsquema" Width="1.5" PointX="16.625" PointY="27.125" />
+        <EntityTypeShape EntityType="Route4600iModel.VendedorJornada" Width="1.5" PointX="16.625" PointY="24" />
+        <EntityTypeShape EntityType="Route4600iModel.VendedorMensaje" Width="1.5" PointX="16.625" PointY="30" />
+        <EntityTypeShape EntityType="Route4600iModel.VenRut" Width="1.5" PointX="19.625" PointY="22.125" />
+        <AssociationConnector Association="Route4600iModel.FK_RutaPunto_Ruta" />
+        <AssociationConnector Association="Route4600iModel.FK_RutasOxxo_Ruta" />
+        <AssociationConnector Association="Route4600iModel.FK_VenRut_Ruta" />
+        <AssociationConnector Association="Route4600iModel.FK_VendedorDescuento_Vendedor" />
+        <AssociationConnector Association="Route4600iModel.FK_VendedorEsquema_Vendedor" />
+        <AssociationConnector Association="Route4600iModel.FK_VendedorJornada_Vendedor" />
+        <AssociationConnector Association="Route4600iModel.FK_VendedorMensaje_Vendedor" />
+        <AssociationConnector Association="Route4600iModel.FK_VenRut_Vendedor" />
+        <EntityTypeShape EntityType="Route4600iModel.SupervisorRuta" Width="1.5" PointX="16.75" PointY="6.25" />
+        <AssociationConnector Association="Route4600iModel.FK_SupervisorRuta_Ruta" />
+        <AssociationConnector Association="Route4600iModel.FK_SupervisorRuta_Usuario" />
+        <EntityTypeShape EntityType="Route4600iModel.IntUsu" Width="1.5" PointX="14.75" PointY="11.125" />
+        <AssociationConnector Association="Route4600iModel.FK_IntUsu_Interfaz" />
+        <AssociationConnector Association="Route4600iModel.FK_IntUsu_Modulo" />
+        <AssociationConnector Association="Route4600iModel.FK_IntUsu_Usuario" />
+        <EntityTypeShape EntityType="Route4600iModel.Camion" Width="1.5" PointX="11.625" PointY="19.25" />
+        <EntityTypeShape EntityType="Route4600iModel.CamionVendedor" Width="1.5" PointX="19.625" PointY="25.375" />
+        <AssociationConnector Association="Route4600iModel.FK_Camion_Almacen" />
+        <AssociationConnector Association="Route4600iModel.FK_CamionVendedor_Camion" />
+        <AssociationConnector Association="Route4600iModel.FK_Ruta_Camion" />
+        <AssociationConnector Association="Route4600iModel.FK_CamionVendedor_Vendedor" />
+        <EntityTypeShape EntityType="Route4600iModel.SubEmpresa" Width="1.5" PointX="1.625" PointY="17.25" />
+        <EntityTypeShape EntityType="Route4600iModel.Cliente" Width="1.75" PointX="12.125" PointY="24" IsExpanded="true" />
+        <AssociationConnector Association="Route4600iModel.FK_Vendedor_Cliente" />
+        <EntityTypeShape EntityType="Route4600iModel.SEMHist" Width="1.5" PointX="14.375" PointY="28.375" />
+        <AssociationConnector Association="Route4600iModel.FK_SEMHist_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_SEMHist_SubEmpresa" />
+        <EntityTypeShape EntityType="Route4600iModel.Precio" Width="1.5" PointX="9.125" PointY="22.375" />
+        <EntityTypeShape EntityType="Route4600iModel.PrecioClienteEsquema" Width="1.5" PointX="11.375" PointY="36.75" />
+        <EntityTypeShape EntityType="Route4600iModel.PrecioProductoVig" Width="1.5" PointX="19.375" PointY="30.875" />
+        <EntityTypeShape EntityType="Route4600iModel.Producto" Width="1.5" PointX="3.875" PointY="21" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoUnidad" Width="1.5" PointX="6.125" PointY="22.25" />
+        <EntityTypeShape EntityType="Route4600iModel.Promocion" Width="1.5" PointX="19.375" PointY="0.75" />
+        <AssociationConnector Association="Route4600iModel.FK_AlmacenProducto_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_PrecioClienteEsquema_Precio" />
+        <AssociationConnector Association="Route4600iModel.FK_PrecioProductoVig_Precio1" />
+        <AssociationConnector Association="Route4600iModel.FK_Vendedor_Precio" />
+        <AssociationConnector Association="Route4600iModel.FK_PrecioProductoVig_ProductoUnidad" />
+        <AssociationConnector Association="Route4600iModel.FK_Producto_SubEmpresa" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoUnidad_Producto" />
+        <EntityTypeShape EntityType="Route4600iModel.Impuesto" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Route4600iModel.Esquema" Width="1.5" PointX="22.375" PointY="5" />
+        <AssociationConnector Association="Route4600iModel.FK_Esquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_PrecioClienteEsquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_VendedorEsquema_Esquema" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoCompetencia" Width="1.5" PointX="3.875" PointY="29.25" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoDetalle" Width="1.5" PointX="8.375" PointY="26.25" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoEpicor" Width="1.5" PointX="16.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoEquivalente" Width="1.5" PointX="6.125" PointY="37.75" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoEquivalenteCompetencia" Width="1.5" PointX="6.125" PointY="26.5" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoEsquema" Width="1.5" PointX="24.625" PointY="16.625" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoImpuesto" Width="1.5" PointX="23.625" PointY="13.375" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoNegado" Width="1.5" PointX="6.125" PointY="33.5" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoPrestamoCli" Width="1.5" PointX="14.375" PointY="35.125" />
+        <EntityTypeShape EntityType="Route4600iModel.ProductoPrioritarioEsq" Width="1.5" PointX="26.625" PointY="13.625" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoPrestamoCli_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoEsquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoPrioritarioEsq_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoImpuesto_Impuesto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoDetalle_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoEquivalente_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoEquivalente_Producto1" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoEquivalenteCompetencia_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoEsquema_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoImpuesto_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoNegado_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoPrestamoCli_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoPrioritarioEsq_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoEquivalenteCompetencia_ProductoCompetencia" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoDetalle_ProductoUnidad" />
+        <EntityTypeShape EntityType="Route4600iModel.ConfigParametro" Width="1.5" PointX="19.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Route4600iModel.ClienteEsquema" Width="1.5" PointX="24.625" PointY="20.375" />
+        <EntityTypeShape EntityType="Route4600iModel.CUOEsquema" Width="1.5" PointX="24.625" PointY="23.75" />
+        <EntityTypeShape EntityType="Route4600iModel.DESDetalle" Width="1.5" PointX="24.625" PointY="0.75" />
+        <EntityTypeShape EntityType="Route4600iModel.ImpuestoEsquema" Width="1.5" PointX="27.625" PointY="4.75" />
+        <EntityTypeShape EntityType="Route4600iModel.ModuloEsquema" Width="1.5" PointX="24.625" PointY="7.875" />
+        <EntityTypeShape EntityType="Route4600iModel.PromocionDetalle" Width="1.5" PointX="24.625" PointY="4.75" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteEsquema_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteEsquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_CUOEsquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_DESDetalle_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_ImpuestoEsquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_ModuloEsquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionDetalle_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_ImpuestoEsquema_Impuesto" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionDetalle_Promocion" />
+        <EntityTypeShape EntityType="Route4600iModel.Moneda" Width="1.5" PointX="27.375" PointY="18.75" />
+        <EntityTypeShape EntityType="Route4600iModel.MONRedondeoVig" Width="1.5" PointX="29.625" PointY="17.125" />
+        <EntityTypeShape EntityType="Route4600iModel.MONTipoCambioVig" Width="1.5" PointX="29.625" PointY="20.875" />
+        <AssociationConnector Association="Route4600iModel.FK_MONRedondeoVig_Moneda" />
+        <AssociationConnector Association="Route4600iModel.FK_MONTipoCambioVig_Moneda" />
+        <EntityTypeShape EntityType="Route4600iModel.CLIConfNumCta" Width="1.5" PointX="14.375" PointY="59" />
+        <EntityTypeShape EntityType="Route4600iModel.ClienteAcumulados" Width="1.5" PointX="14.375" PointY="38.5" />
+        <EntityTypeShape EntityType="Route4600iModel.ClienteDomicilio" Width="1.5" PointX="14.375" PointY="46.125" />
+        <EntityTypeShape EntityType="Route4600iModel.ClienteMensaje" Width="1.5" PointX="14.375" PointY="52.125" />
+        <EntityTypeShape EntityType="Route4600iModel.ClientePago" Width="1.5" PointX="14.375" PointY="55.5" />
+        <EntityTypeShape EntityType="Route4600iModel.ClienteProducto" Width="1.5" PointX="17.375" PointY="36.375" />
+        <EntityTypeShape EntityType="Route4600iModel.ClienteSinVisitaRec" Width="1.5" PointX="22.625" PointY="27.125" />
+        <EntityTypeShape EntityType="Route4600iModel.ClienteVentaMensual" Width="1.5" PointX="14.375" PointY="61.875" />
+        <EntityTypeShape EntityType="Route4600iModel.CLIFormaVenta" Width="1.5" PointX="14.375" PointY="65" />
+        <EntityTypeShape EntityType="Route4600iModel.CLINoDesImp" Width="1.5" PointX="29.625" PointY="13" />
+        <AssociationConnector Association="Route4600iModel.FK_CLIConfNumCta_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteAcumulados_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteDomicilio_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteMensaje_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClientePago_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteProducto_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteSinVisitaRec_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteVentaMensual_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_CLIFormaVenta_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_CLINoDesImp_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteProducto_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteSinVisitaRec_Ruta" />
+        <AssociationConnector Association="Route4600iModel.FK_CLINoDesImp_Impuesto" />
+        <EntityTypeShape EntityType="Route4600iModel.Zona" Width="1.5" PointX="11.625" PointY="69.75" />
+        <EntityTypeShape EntityType="Route4600iModel.ZonaPunto" Width="1.5" PointX="13.875" PointY="69.875" />
+        <AssociationConnector Association="Route4600iModel.FK_Zona_Almacen" />
+        <AssociationConnector Association="Route4600iModel.FK_Cliente_Zona" />
+        <AssociationConnector Association="Route4600iModel.FK_ZonaPunto_Zona" />
+        <EntityTypeShape EntityType="Route4600iModel.ModuloTerm" Width="1.5" PointX="27.375" PointY="30.625" />
+        <EntityTypeShape EntityType="Route4600iModel.MOTConfiguracion" Width="1.5" PointX="29.625" PointY="25.5" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteVentaMensual_MOTConfiguracion" />
+        <AssociationConnector Association="Route4600iModel.FK_MOTConfiguracion_ModuloTerm" />
+        <AssociationConnector Association="Route4600iModel.FK_Vendedor_MOTConfiguracion" />
+        <EntityTypeShape EntityType="Route4600iModel.Frecuencia" Width="1.5" PointX="19.375" PointY="40.5" />
+        <EntityTypeShape EntityType="Route4600iModel.Secuencia" Width="1.5" PointX="21.625" PointY="30.5" />
+        <AssociationConnector Association="Route4600iModel.FK_Secuencia_ClienteDomicilio" />
+        <AssociationConnector Association="Route4600iModel.FK_Secuencia_Frecuencia" />
+        <AssociationConnector Association="Route4600iModel.FK_Secuencia_Ruta" />
+        <EntityTypeShape EntityType="Route4600iModel.VENCentroDistHist" Width="1.5" PointX="27.625" PointY="9.375" />
+        <AssociationConnector Association="Route4600iModel.FK_VENCentroDistHist_Almacen" />
+        <AssociationConnector Association="Route4600iModel.FK_VENCentroDistHist_Vendedor" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoUnidad_Producto1" />
+        <EntityTypeShape EntityType="Route4600iModel.MDBMensaje" Width="1.5" PointX="0.75" PointY="24" />
+        <AssociationConnector Association="Route4600iModel.FK_ClienteMensaje_MDBMensaje" />
+        <AssociationConnector Association="Route4600iModel.FK_VendedorMensaje_MDBMensaje" />
+        <EntityTypeShape EntityType="Route4600iModel.ModuloMovDetalle" Width="1.5" PointX="1.125" PointY="28.5" />
+        <AssociationConnector Association="Route4600iModel.FK_ModuloEsquema_ModuloMovDetalle" />
+        <AssociationConnector Association="Route4600iModel.FK_PrecioClienteEsquema_ModuloMovDetalle" />
+        <AssociationConnector Association="Route4600iModel.FK_VendedorDescuento_ModuloMovDetalle" />
+        <EntityTypeShape EntityType="Route4600iModel.RutaProductoEsquema" Width="1.5" PointX="30.625" PointY="10" />
+        <AssociationConnector Association="Route4600iModel.FK_RutaProductoEsquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_RutaProductoEsquema_Ruta" />
+        <EntityTypeShape EntityType="Route4600iModel.ExcepcionFac" Width="1.5" PointX="32.625" PointY="20.875" />
+        <EntityTypeShape EntityType="Route4600iModel.ExcepcionProductoPri" Width="1.5" PointX="19.625" PointY="36" />
+        <AssociationConnector Association="Route4600iModel.FK_ExcepcionFac_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ExcepcionProductoPri_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_ExcepcionFac_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_ExcepcionFac_SubEmpresa" />
+        <AssociationConnector Association="Route4600iModel.FK_ExcepcionProductoPri_Producto" />
+        <EntityTypeShape EntityType="Route4600iModel.ModuloMov" Width="1.5" PointX="29.625" PointY="40.5" />
+        <AssociationConnector Association="Route4600iModel.FK_ModuloMov_ModuloTerm" />
+        <AssociationConnector Association="Route4600iModel.FK_ModuloMovDetalle_ModuloMov" />
+        <EntityTypeShape EntityType="Route4600iModel.ModuloMensaje" Width="1.5" PointX="3" PointY="34.625" />
+        <AssociationConnector Association="Route4600iModel.FK_ModuloMensaje_MDBMensaje" />
+        <EntityTypeShape EntityType="Route4600iModel.TransProd" Width="1.5" PointX="16.625" PointY="40.375" />
+        <EntityTypeShape EntityType="Route4600iModel.TransProdDetalle" Width="1.5" PointX="24.625" PointY="30" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProd_ClienteDomicilio" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProd_CLIFormaVenta" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProd_PrecioClienteEsquema" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoNegado_TransProd1" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProdDetalle_ProductoUnidad" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProdDetalle_Promocion" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProd_SubEmpresa" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProdDetalle_TransProd" />
+        <EntityTypeShape EntityType="Route4600iModel.Folio" Width="1.5" PointX="3.375" PointY="37.375" />
+        <AssociationConnector Association="Route4600iModel.FK_Folio_ModuloMovDetalle" />
+        <EntityTypeShape EntityType="Route4600iModel.FolioDetalle" Width="1.5" PointX="5.625" PointY="41.625" />
+        <AssociationConnector Association="Route4600iModel.FK_FolioDetalle_Folio" />
+        <EntityTypeShape EntityType="Route4600iModel.Recibo" Width="1.5" PointX="8.375" PointY="29.75" />
+        <EntityTypeShape EntityType="Route4600iModel.FolioUsuario" Width="1.5" PointX="22.625" PointY="36.875" />
+        <AssociationConnector Association="Route4600iModel.FK_FolioUsuario_Folio" />
+        <AssociationConnector Association="Route4600iModel.FK_FolioUsuario_Vendedor" />
+        <EntityTypeShape EntityType="Route4600iModel.CORTabla" Width="1.5" PointX="3" PointY="42.375" />
+        <EntityTypeShape EntityType="Route4600iModel.COTCampo" Width="1.5" PointX="9.25" PointY="40.375" />
+        <AssociationConnector Association="Route4600iModel.FK_CORTabla_Mensaje" />
+        <AssociationConnector Association="Route4600iModel.FK_COTCampo_CORTabla" />
+        <AssociationConnector Association="Route4600iModel.FK_COTCampo_Mensaje" />
+        <AssociationConnector Association="Route4600iModel.FK_Recibo_COTCampo" />
+        <EntityTypeShape EntityType="Route4600iModel.ConfiguracionRecibo" Width="1.5" PointX="27.375" PointY="0.875" />
+        <AssociationConnector Association="Route4600iModel.FK_CORTabla_ConfiguracionRecibo" />
+        <EntityTypeShape EntityType="Route4600iModel.TpdPun" Width="1.5" PointX="26.875" PointY="22.25" />
+        <EntityTypeShape EntityType="Route4600iModel.TrpPrp" Width="1.5" PointX="31.875" PointY="17.25" />
+        <AssociationConnector Association="Route4600iModel.FK_TpdPun_Promocion" />
+        <AssociationConnector Association="Route4600iModel.FK_TrpPrp_Promocion" />
+        <AssociationConnector Association="Route4600iModel.FK_TpdPun_TransProdDetalle" />
+        <AssociationConnector Association="Route4600iModel.FK_TrpPrp_TransProdDetalle" />
+        <EntityTypeShape EntityType="Route4600iModel.PromocionAplicacion" Width="1.5" PointX="34.875" PointY="18.125" />
+        <EntityTypeShape EntityType="Route4600iModel.PromocionEsquema" Width="1.5" PointX="24.625" PointY="0.75" />
+        <EntityTypeShape EntityType="Route4600iModel.PromocionEsquemaExcep" Width="1.5" PointX="29.625" PointY="4.75" />
+        <EntityTypeShape EntityType="Route4600iModel.PromocionModulo" Width="1.5" PointX="32.625" PointY="17.5" />
+        <EntityTypeShape EntityType="Route4600iModel.PromocionProducto" Width="1.5" PointX="32.625" PointY="28.375" />
+        <EntityTypeShape EntityType="Route4600iModel.PromocionRegla" Width="1.5" PointX="30.625" PointY="9" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionEsquema_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionEsquemaExcep_Esquema" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionModulo_ModuloMovDetalle" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionRegla_Precio" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionProducto_Producto" />
+        <AssociationConnector Association="Route4600iModel.FK_ProductoNegado_PromocionProducto" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionAplicacion_ProductoUnidad" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionEsquema_Promocion" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionEsquemaExcep_Promocion" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionModulo_Promocion" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionProducto_Promocion" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionRegla_Promocion" />
+        <AssociationConnector Association="Route4600iModel.FK_PromocionAplicacion_PromocionRegla" />
+        <AssociationConnector Association="Route4600iModel.FK_TrpPrp_PromocionRegla" />
+        <EntityTypeShape EntityType="Route4600iModel.AgendaVendedor" Width="1.5" PointX="25.625" PointY="37.25" />
+        <EntityTypeShape EntityType="Route4600iModel.Dia" Width="1.5" PointX="23.375" PointY="47.75" />
+        <EntityTypeShape EntityType="Route4600iModel.FolioCEDI" Width="1.5" PointX="11.625" PointY="41.375" />
+        <EntityTypeShape EntityType="Route4600iModel.Visita" Width="1.5" PointX="21.625" PointY="41.125" />
+        <AssociationConnector Association="Route4600iModel.FK_AgendaVendedor_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_AgendaVendedor_Dia" />
+        <AssociationConnector Association="Route4600iModel.FK_AgendaVendedor_Frecuencia" />
+        <AssociationConnector Association="Route4600iModel.FK_AgendaVendedor_Ruta" />
+        <AssociationConnector Association="Route4600iModel.FK_AgendaVendedor_Vendedor" />
+        <AssociationConnector Association="Route4600iModel.FK_FolioCEDI_Almacen" />
+        <AssociationConnector Association="Route4600iModel.FK_Visita_Cliente" />
+        <AssociationConnector Association="Route4600iModel.FK_Visita_Dia" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProd_Visita" />
+        <AssociationConnector Association="Route4600iModel.FK_TransProd_Visita1" />
+        <AssociationConnector Association="Route4600iModel.FK_Visita_Vendedor" />
+        <EntityTypeShape EntityType="Route4600iModel.RuteoDinamico" Width="1.5" PointX="19.625" PointY="48.25" />
+        <AssociationConnector Association="Route4600iModel.FK_RuteoDinamico_Ruta" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

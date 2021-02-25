@@ -1,0 +1,42 @@
+﻿
+@model DevExpress.XtraReports.UI.XtraReport
+
+@{
+    ViewBag.Title = "test";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+@Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionType = ExtensionType.WebDocumentViewer }
+)
+@Html.DevExpress().GetScripts(
+    new Script { ExtensionType = ExtensionType.WebDocumentViewer }
+)
+
+<h2 style="color:gray;">Seleccione un reporte</h2>
+
+@*@Html.DevExpress().ReportToolbar(toolbarSettings =>
+{
+    toolbarSettings.Name = "ReportToolbar";
+    toolbarSettings.ReportViewerName = "ReportViewer";
+    toolbarSettings.ShowDefaultButtons = false;
+
+    toolbarSettings.Items.Remove(new ReportToolbarButton(ReportToolbarItemKind.PrintPage, false));
+    toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.FirstPage, false));
+    toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.PreviousPage, false));
+    toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.PageLabel, true));
+    //toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.PageNumber, true));
+    //toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.PageCount, true));
+    toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.NextPage, true));
+    toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.LastPage, true));
+    toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.SaveToWindow, true));
+    //toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.SaveToDisk, true));
+    toolbarSettings.Items.Add(new ReportToolbarButton(ReportToolbarItemKind.SaveToDisk, false));
+    
+}).GetHtml()*@
+
+@Html.DevExpress().WebDocumentViewer(settings =>
+    {
+        settings.Name = "documentViewer";
+    }).Bind(Model).GetHtml()
+

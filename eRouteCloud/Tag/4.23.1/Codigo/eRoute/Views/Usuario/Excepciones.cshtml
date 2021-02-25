@@ -1,0 +1,205 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    /**ESTILOS PROPIOS*/
+    .margen-tabla {
+        margin-top: 20px;
+    }
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    @@media (min-width: 992px) {
+        .col-md-1 {
+            width: 12.333333%;
+        }
+    }
+
+
+    /******/
+    .form-valor .form-group label {
+        margin-top: 7px;
+    }
+
+    md-radio-button {
+        display: inline-block !important;
+    }
+
+    .titulo-descripcion {
+        margin-left: 35%;
+        display: inline-block;
+    }
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        border-top: none !important;
+    }
+
+    .lenguajes-tabla tr td {
+        padding-top: 0 !important;
+    }
+
+    .btn-eliminar-lenguaje {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .btn-e-l-m-i {
+        margin-left: 5px;
+    }
+    .modal-header .close {
+        margin-top: -10px !important;
+    }
+    .fa-2-m{
+        font-size: 1.4em;
+        color: #b70c0c;
+        font-weight: 600;
+    }
+    .activo-mg{
+        margin-top: 13px !important;
+    }
+    .conf-auto{
+        color: #b30000;
+        font-weight: 600;
+        font-size: medium;
+    }
+    .inline-check{
+        display:inline-block !important;
+    }
+    .w-60{
+        width:60% !important;
+        margin-top: 0px;
+        position: absolute;
+        margin-left: 20px;
+    }
+
+
+/********* SI SE NECESITA EL SCROLL**********/
+    .modal-dialog{
+    overflow-y: initial !important
+}
+
+.modal-body{
+    height: 250px;
+    overflow-y: auto;
+}
+
+/**********************/
+
+</style>
+
+
+<div class="row margen-tabla" ng-controller="usuarioCtrl" ng-init="EditarUsuario('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+    <div class="header" style="display: block;">
+        <h3>&nbsp&nbsp{{translation.BASUSUESC_MExcepcionesM}}</h3>
+    </div>
+    <br />
+    <form name="form" class="form-horizontal form-valor" ng-class="{submitted:form.submitted}" novalidate>
+        <div class="container">
+
+            <div class="row form-group">
+                <!--Var Código-->
+                <label class="col-md-1">
+                    {{translation.XUsuario}}
+                </label>
+                <div class="col-md-7">
+                    <input type="text" class="form-control" data-modal="modal" ng-model="USUClave" name="USUClave" placeholder="{{translation.XUsuario}}" />
+                </div>
+
+
+            </div>  
+
+            <div class="row form-group">
+                <label class="col-md-1">
+                    {{translation.ADEInterfaz}}*
+                </label>
+                <div class="col-md-4">
+                    <select id="ddlTipoInterfaz" style="max-width:100%" class="form-control" data-modal="modal" ng-model="INTTipoInterfaz" ng-required="true" ng-options="val.VAVClave as val.Descripcion for val in binterf" name="{{'TipoAplicacion' }}">
+                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                    </select>
+                    <div ng-show="form.$submitted || form.TipoAplicacion.$touched">
+                        <div class="error-message" ng-show="form.TipoAplicacion.$error.required">{{translation.BE0001.replace('$0$', translation.ADEInterfaz)}}</div>
+                    </div>
+                </div>
+
+
+            </div>  
+
+        </div>
+        <div class="container">
+            <div class="container-left" ng-init="ObtenerDisponibles('@ViewBag.Clave', '1')">
+                <div class="container" style="padding-left:15px"><label class="eRouteLabel">{{translation.XDisponibles}}</label></div>
+
+                <div class="container" style="border:solid; border-color:ActiveBorder; padding-left:10px; width:95%" ui-tree>
+                    <div ui-tree="treeOptions">
+                        <ol ui-tree-nodes="" ng-model="modulosDisponibles" id="treeDisponibles" data-nodrop-enabled>
+                            <li ng-repeat="modulo in modulosDisponibles" ui-tree-node collapsed="true" ng-hide="modulo.TipoInterfaz != INTTipoInterfaz">
+                                <div ui-tree-handle class="tree-node tree-node-content">
+                                    <a class="btn btn-link btn-xs" data-nodrag ng-click="toggle(this)"><img data-ng-src="data:image/png;base64,{{modulo.ImagenBase64}}" /></a>
+                                    {{modulo.Nombre}}
+                                </div>
+                                <ol ui-tree-nodes="" ng-model="modulo.Actividades" ng-class="{hidden: collapsed}">
+                                    <li ng-repeat="actividad in modulo.Actividades" ui-tree-node>
+                                        <div ui-tree-handle class="tree-node tree-node-content">
+                                            {{actividad.Nombre}}
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container-right" ng-init="ObtenerAsignadas('@ViewBag.Clave', '1')">
+                <div class="container" style="padding-left:15px"><label class="eRouteLabel">{{translation.XAsignadas}}</label></div>
+
+                <div class="container" style="border:solid; border-color:ActiveBorder; padding-left:10px; width:95%" ui-tree>
+                    <ol ui-tree-nodes="" ng-model="modulosAsignados" id="treeAsignadas" data-nodrop-enabled>
+                        <li ng-repeat="modulo in modulosAsignados" ui-tree-node collapsed="true" ng-hide="modulo.TipoInterfaz != INTTipoInterfaz">
+                            <div ui-tree-handle class="tree-node tree-node-content">
+                                <a class="btn btn-link btn-xs" data-nodrag ng-click="toggle(this)"><img data-ng-src="data:image/png;base64,{{modulo.ImagenBase64}}" /></a>
+                                {{modulo.Nombre}}
+                            </div>
+                            <ol ui-tree-nodes="" ng-model="modulo.Actividades" ng-class="{hidden: collapsed}">
+                                <li ng-repeat="actividad in modulo.Actividades" ui-tree-node>
+                                    <div ui-tree-handle class="tree-node tree-node-content">
+                                        <div class="container">
+                                            <div style="display: block; float: left; width:60%">{{actividad.Nombre}}</div>
+                                            <div style="display: block; float: right; width:40%">
+                                                <input type="checkbox" data-toggle='tooltip' title={{translation.BTCrear}} ng-model="actividad.Create" name="Crear" ng-true-value="true" ng-false-value="false" ng-disabled=!actividad.Permiso.includes('C') data-nodrag /> @*ng-checked=actividad.PermisoA.includes('C')*@
+                                                <input type="checkbox" data-toggle='tooltip' title={{translation.btConsultar}} ng-model="actividad.Read" name="Consultar" ng-true-value="true" ng-false-value="false" ng-disabled=!actividad.Permiso.includes("R") data-nodrag /> @*ng-checked=actividad.PermisoA.includes('R')*@
+                                                <input type="checkbox" data-toggle='tooltip' title={{translation.BTModificar}} ng-model="actividad.Update" name="Modificar" ng-true-value="true" ng-false-value="false" ng-disabled=!actividad.Permiso.includes("U") data-nodrag /> @*ng-checked=actividad.PermisoA.includes('U')*@
+                                                <input type="checkbox" data-toggle='tooltip' title={{translation.XEliminar}} ng-model="actividad.Delete" name="Eliminar" ng-true-value="true" ng-false-value="false" ng-disabled=!actividad.Permiso.includes("D") data-nodrag /> @*ng-checked=actividad.PermisoA.includes('D')*@
+                                                <input type="checkbox" data-toggle='tooltip' title={{translation.Xejecutar}} ng-model="actividad.Execute" name="Ejecutar" ng-true-value="true" ng-false-value="false" ng-disabled=!actividad.Permiso.includes("E") data-nodrag /> @*ng-checked=actividad.PermisoA.includes('E')*@
+                                                <input type="checkbox" data-toggle='tooltip' title={{translation.XOtros}} ng-model="actividad.Others" name="Otros" ng-true-value="true" ng-false-value="false" ng-disabled=!actividad.Permiso.includes("O") data-nodrag /> @*ng-checked=actividad.PermisoA.includes('O')*@
+                                                <input type="checkbox" data-toggle='tooltip' title={{translation.XImprimir}} ng-model="actividad.Print" name="Imprimir" ng-true-value="true" ng-false-value="false" ng-disabled=!actividad.Permiso.includes("P") data-nodrag /> @*ng-checked=actividad.PermisoA.includes('P')*@
+                                                <input type="checkbox" data-toggle='tooltip' title={{translation.XFirmar}} ng-model="actividad.Sign" name="Firmar" ng-true-value="true" ng-false-value="false" ng-disabled=!actividad.Permiso.includes("S") data-nodrag /> @*ng-checked=actividad.PermisoA.includes('S')*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div> 
+        </div>
+        <!--DOS DIV-->
+
+        <br />
+        <div class="container" style="margin-left: 20px">
+            <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarUsuario()" />
+            <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+        </div>
+
+       
+</form>
+</div>

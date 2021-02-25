@@ -1,0 +1,35 @@
+﻿<div id="EsquemaClientesBox" class="modal fade">
+    <div class="modal-dialog" id="R">
+        <div class="modal-content">
+
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="EsquemasCliNuevo=[]"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{translation.ERMIMEESC_IGeneral}}</h2>
+            </div>
+
+            <div class="row" ng-show="!esquemaDisponible_EC">
+                <div class="col-md-12">
+                    <div class="error-message error-esquema" ng-show="!esquemaDisponible_EC">{{translation.E0694.replace('$0$',EsquemaIDPadreNombre).replace('$1$', translation.XEsquema).replace('$2$',NombreEstatusEsquema)}}</div>
+                </div>
+            </div>
+
+            <!-- dialog body -->
+            <div class="modal-body" ng-init="index = false">
+                <tree-grid tree-data="tree_EC"
+                           col-defs="col_defs_EC"
+                           expand-on="expanding_property_EC"
+                           funct-del="ActionUrl"
+                           tree-control="myTreeControl"
+                           on-click="AddCliente(branch['Clave'], branch['Nombre'], branch['EsquemaID']);">
+                </tree-grid>
+            </div>
+
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="AddFinalC();">{{translation.BTAceptar}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+

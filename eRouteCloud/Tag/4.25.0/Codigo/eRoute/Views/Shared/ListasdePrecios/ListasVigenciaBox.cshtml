@@ -1,0 +1,69 @@
+﻿ <div id="ListasVigenciaBox" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- dialog header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="m<odal-title" id="lblMsgTitulo">Vigencia de Precios del Producto</h2>
+                </div>
+
+                <!-- dialog body -->
+                <div class="scroll modal-body">
+                    <form role="form">
+                        <div class="container">
+                            <!--paginacion-->
+                            <div class="row form-group">
+                                <div class="col-md-12 ">
+                                    <dir-pagination-controls max-size="4"
+                                                             direction-links="true"
+                                                             boundary-links="true">
+                                    </dir-pagination-controls>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <!--Buscar-->
+                                <div class="col-md-12 ">
+                                    <input type="text" name="Buscar" ng-model="Buscar" class="form-control" placeholder="Buscar ..." />
+                                </div>
+                            </div>
+
+                            <!--Tabla-->
+                            <div class="scrow">
+                                <div class="col-md-12 form-group tablaclientebox" style="padding-right:0px;">
+                                    <table class="table table-bordered p2">
+                                        <tr class="Lnegras">
+                                            <td>{{translation.XInicio}}</td>
+                                            <td>{{translation.XPrecio}}</td>
+                                            <td>{{translation.XEstado}}</td>
+                                            <td>{{translation.FORFin}}</td>
+                                        </tr>
+                                        <tr dir-paginate="v in cVigencia|orderBy:sortKey:reverse|filter:Buscar|itemsPerPage:tamPag" ng-click="SeleccionCl(v.MFechaHora,v.MUsuarioID)">
+                                            <td>{{v.PPVFechaInicio | date:'MM/dd/yyyy'}}</td>
+                                            <td>{{v.Precio  | currency  }}</td>
+                                            <td>{{v.TipoEstado}}</td>                                           
+                                            <td>{{v.FechaFin | date:'MM/dd/yyyy'}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        
+                    </form>
+                </div>
+
+                <!-- dialog buttons -->
+                <div class="modal-footer">
+                    <div class="row form-group">
+                        <div class="col-md-1 ">
+                            <label name="ad" ng-model="ad">{{ad}}</label>
+                        </div>
+                        <div class="col-md-3 col-md-push-7 ">
+                            <label name="fe" ng-model="fe">{{fe | date: 'dd/MM/yyyy h:mm:ss a'}}</label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{translation.BTAceptar}}</button>
+                </div>
+            </div>
+        </div>
+    </div>

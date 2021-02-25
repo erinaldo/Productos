@@ -1,0 +1,48 @@
+﻿<div id="ProdRelBox" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{translation.ERMPROESC_IGeneral}}</h2>
+            </div>
+            <!-- dialog body -->
+            <div class="modal-body validateBox">
+                <form role="form">
+                    <div class="container">
+                        <div class="form-group">
+                            <label id="lblMsgMensaje" class="control-label text-label"></label>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="Lnegras">
+                                        <td style="width:3%"></td>
+                                        <td>{{translation.PROProductoClave}}</td>
+                                        <td>{{translation.PROId}}</td>
+                                        <td>{{translation.PROTipo}}</td>
+                                        <td>{{translation.PRONombreCorto}}</td>
+                                        <td>{{translation.PROTipoFase}}</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="pro in cProductoRelList">
+                                        <td><input id="{{pro.ProductoClave}}" class="impInput" type="checkbox" ng-model="ProductoClave.$index" name="{{'ProductoClave' + $index }}" ng-false-value="'NO'" ng-true-value="'YES'" ng-click="addProdRel(pro.ProductoClave,pro.Nombre,PRUTipoAux,PRUTipoIndexAux)"></td>
+                                        <td>{{pro.ProductoClave}}</td>
+                                        <td>{{pro.Id}}</td>
+                                        <td>{{pro.Descripcion}}</td>
+                                        <td>{{pro.Nombre}}</td>
+                                        <td>{{pro.Descripcion2}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{translation.BTAceptar}}</button>
+            </div>
+        </div>
+    </div>
+</div>

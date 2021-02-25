@@ -1,0 +1,478 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    /**ESTILOS PROPIOS*/
+
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    @@media (min-width: 992px) {
+        .col-md-1 {
+            width: 12.333333%;
+        }
+    }
+
+
+    /******/
+    .form-valor .form-group label {
+        margin-top: 7px;
+    }
+
+    md-radio-button {
+        display: inline-block !important;
+    }
+
+    .titulo-descripcion {
+        margin-left: 35%;
+        display: inline-block;
+    }
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        border-top: none !important;
+    }
+
+    .lenguajes-tabla tr td {
+        padding-top: 0 !important;
+    }
+
+    .btn-eliminar-lenguaje {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .btn-e-l-m-i {
+        margin-left: 5px;
+    }
+    .modal-header .close {
+        margin-top: -10px !important;
+    }
+    .fa-2-m{
+        font-size: 1.4em;
+        color: #b70c0c;
+        font-weight: 600;
+    }
+    .activo-mg{
+        margin-top: 13px !important;
+    }
+    .conf-auto{
+        color: #b30000;
+        font-weight: 600;
+        font-size: medium;
+    }
+    .inline-check{
+        display:inline-block !important;
+    }
+    .w-60{
+        width:60% !important;
+        margin-top: 0px;
+        position: absolute;
+        margin-left: 20px;
+    }
+
+    /***REDUCE LOS BORDER DE LOS TABS*/
+    .nav-tabs > li > a {
+        border-radius:0 !important;
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        color: #ffffff;
+        background-color: #b30000;
+        font-weight:600;
+    }
+    .nav-tabs > li {
+        background: #c57b7b;
+    }
+    .nav-tabs > li a {
+        color: #ffffff;
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+        background-color: rgba(179, 0, 0, 0.36);
+    }
+
+/********* SI SE NECESITA EL SCROLL**********/
+    .modal-dialog{
+    overflow-y: initial !important
+}
+
+.modal-body:not(.validateBox){
+    height: 250px;
+    overflow-y: auto;
+}
+.nav-tabs {
+    border-bottom: 1px solid #dddddd;
+    background: #75716c;
+    padding: 9px 10px 1px 10px;
+}
+
+/**********************/
+
+</style>
+
+<div class="row margen-tabla">
+    <div class="col-md-12">
+
+    </div>
+</div>
+
+
+
+<div class="row margen-tabla"  ng-controller="usuarioCtrl" ng-init="EditarUsuario('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+
+    <div class="header" style="display: block;">
+        <h3>&nbsp&nbsp{{translation.XUsuarios}}</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form name="form" class="form-horizontal form-valor" ng-class="{submitted:form.submitted}" novalidate>
+                <div role="tabpanel">
+               
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active" role="presentation">
+                            <a href="#seccion1" aria-controls="" data-toggle="tab" role="tab">{{translation.XGenerales}}</a>
+                        </li>
+                        <li ng-show="tab" role="presentation">
+                            <a href="#seccion2" aria-controls="" data-toggle="tab" role="tab">{{translation.USUTabRutas}}</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+         
+                        <div role="tabpanel" class="tab-pane active" id="seccion1">
+                            <br />
+                            <div class="row form-group">
+                                <!--Var Código-->
+                                <label class="col-md-2">
+                                    {{translation.USUCLAVE}}
+                                </label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" validar-clave-usuario="true" ng-disabled="SoloLectura" data-modal="modal" ng-model="USUClave" name="USUClave" placeholder="{{translation.USUCLAVE}}" ng-required="true" />
+                                    <div ng-show="form.$submitted || form.USUClave.$touched">
+                                        <div class="error-message" ng-show="form.USUClave.$error.required">{{translation.BE0001.replace('$0$', translation.USUCLAVE)}}</div>
+                                        <div class="error-message" ng-show="form.USUClave.$error.claveUsuarioRepetida">{{translation.BE0002}}</div>
+                                    </div>
+                                </div>
+
+                                <label class="col-md-2">
+                                    {{translation.USUACTIVO}}
+                                </label>
+
+                                <div class="col-md-4">
+
+                                    <input class="activo-mg" type="checkbox" ng-model="Activo" ng-disabled="SoloLectura" name="Activo" ng-checked="false" ng-false-value="0" ng-true-value="1">
+                                    <div ng-show="form.$submitted || form.Activo.$touched">
+                                        <div class="error-message" ng-show="form.Activo.$error.required">{{translation.BE0001.replace('$0$', translation.USUACTIVO)}}</div>
+                                        <div class="error-message" ng-show="form.Activo.$error.codigoRepetido">{{translation.BE0002}}</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row form-group">
+                                <!--Nombre-->
+                                <div class="col-md-2">
+                                    <label>{{translation.USUNOMBRE}} *</label>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" data-modal="modal" ng-model="Nombre" name="Nombre" ng-disabled="SoloLectura" placeholder="{{translation.USUNOMBRE}}" ng-required="true" />
+                                    <div ng-show="form.$submitted || form.Nombre.$touched">
+                                        <div class="error-message" ng-show="form.Nombre.$error.required">{{translation.BE0001.replace('$0$', translation.USUNOMBRE)}}</div>
+                                    </div>
+                                </div>
+                                <!--PERFIL-->
+                                <div class="col-md-2">
+                                    <label>{{translation.USUPERClave}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="ddlPerfil" style="max-width:100%" class="form-control" data-modal="modal" ng-model="PERClave" ng-disabled="SoloLectura" ng-options="perfil.PERClave as perfil.DescripcionCompuesta for perfil in perfilData" name="{{'PERClave' }}">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+                                    <div ng-show="form.$submitted || form.USUPERClave.$touched">
+                                        <div class="error-message" ng-show="form.USUPERClave.$error.required">{{translation.BE0001.replace('$0$', translation.USUPERClave)}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <!--Tipo-->
+                                <div class="col-md-2">
+                                    <label>{{translation.USUTipo}}*</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="ddlTipo" style="max-width:100%" ng-change="newTab()" class="form-control" ng-disabled="SoloLectura" data-modal="modal" ng-model="Tipo" ng-required="true" ng-options="val.VAVClave as val.Descripcion for val in btipouso" name="{{'Tipo'}}">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+
+                                    <div ng-show="form.$submitted || form.Tipo.$touched">
+                                        <div class="error-message" ng-show="form.Tipo.$error.required">{{translation.BE0001.replace('$0$', translation.USUTipo)}}</div>
+                                    </div>
+                                </div>
+
+                                <!--Días limite-->
+                                <div class="col-md-2">
+                                    <!--label>Interfaz* translation.Interfaz</!--label -->
+                                    <label>{{translation.USUDiasLimite}}*</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="number" class="form-control" data-modal="modal" min="0" ng-model="DiasLimite" name="DiasLimite" ng-disabled="SoloLectura" placeholder="{{translation.USUDiasLimite}}" ng-required="true" />
+                                    <div ng-show="form.$submitted || form.DiasLimite.$touched">
+                                        <div class="error-message" ng-show="form.DiasLimite.$error.required">{{translation.BE0001.replace('$0$', translation.USUDiasLimite)}}</div>
+                                        <div class="error-message" ng-show="form.DiasLimite.$error.min">{{translation.E0336.replace('$0$', translation.USUDiasLimite)}}</div> 
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <!--Clave acceso-->
+
+                                <div class="col-md-2">
+                                    <label>{{translation.USUClaveAcceso}}*</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="password" class="form-control" data-modal="modal" ng-model="ClaveAcceso" ng-disabled="SoloLectura" name="ClaveAcceso" placeholder="{{translation.USUClaveAcceso}}" ng-required="contValida" />
+
+                                    <div ng-show="form.$submitted || form.ClaveAcceso.$touched">
+                                        <div class="error-message" ng-show="form.ClaveAcceso.$error.required">{{translation.BE0001.replace('$0$', translation.USUClaveAcceso)}}</div>
+                                    </div>
+
+                                </div>
+
+                                <!--Almacen-->
+                                <div class="col-md-2">
+                                    <!--label>Interfaz* translation.Interfaz</!--label -->
+                                    <label>{{translation.CAMAlmacenIDCEDI}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="ddlAlmacen" style="max-width:100%" class="form-control" data-modal="modal" ng-disabled="SoloLectura" ng-change="configAlmacen()" ng-model="AlmacenID" ng-options="centro.AlmacenID as centro.NombreCompuesto for centro in centroDist" name="{{'AlmacenID' }}">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+                                    <div ng-show="form.$submitted || form.AlmacenID.$touched">
+                                        <div class="error-message" ng-show="form.AlmacenID.$error.required">{{translation.BE0001.replace('$0$', translation.CAMAlmacenIDCEDI)}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <!--Fecha mod-->
+
+                                <div class="col-md-2">
+                                    <label>{{translation.USUFechaMod}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <md-datepicker ng-model="FechaMod" class="md-picker-style" name="FechaMod" ng-disabled="true"></md-datepicker>
+                                    <div ng-show="form.$submitted || form.FechaMod.$touched">
+                                        <div class="error-message" ng-show="form.FechaMod.$error.required">{{translation.BE0001.replace('$0$', translation.USUFechaMod)}}</div>
+                                    </div>
+
+                                </div>
+
+                                <!--Politica-->
+                                <div class="col-md-2">
+                                    <!--label>Interfaz* translation.Interfaz</!--label -->
+                                    <label>{{translation.USUPoliticas}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="ddlPolitica" style="max-width:100%" class="form-control" data-modal="modal" ng-disabled="SoloLectura" ng-change="validarPass()" ng-model="PoliticaId" ng-options="politica.PoliticaId as politica.DescripcionCompuesta for politica in politicasPriv" name="{{'PoliticaId' }}">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+                                    <div ng-show="form.$submitted || form.PoliticaId.$touched">
+                                        <div class="error-message" ng-show="form.PoliticaId.$error.required">{{translation.BE0001.replace('$0$', translation.USUPoliticas)}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        @{ if (!bSoloLectura)
+                                            {
+                                                @Html.ImageButtonLink("/Content/images/crear.png", "AgregarCentro()", "{{translation.XAgregar}} {{translation.RUTCentroDistribucion}}")
+                                            }
+                                        }
+
+                                    </div>
+                                </div>
+
+                                            <br />
+                                <div ng-init="ObtenerDetalleUsuario('@ViewBag.Clave')">
+                                    <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                        <tr>
+                                            @{ if (!bSoloLectura)
+                                                {
+                                                    <th style="width:5%"></th>
+                                                }
+                                            }
+                                            <th style="width:20%"><b>{{translation.USUCLAVE}}</b></th>
+                                            <th><b>{{translation.USUNOMBRE}}</b></th>
+                                        </tr>
+
+
+                                        <tr ng-repeat="det in centroData" ng-init="marcar()">
+                                            @{ if (!bSoloLectura)
+                                                {
+                                                    <td>
+                                                        <span class="btn-eliminar-lenguaje btn-e-l-m-i">
+                                                            @Html.ImageButton("/Content/images/eliminar.png", "ValidarEliminarCentro($index, det.Clave)", "{{translation.BTEliminar}}")
+                                                        </span>
+                                                    </td>
+                                                }
+                                            }
+  
+                                            <td>
+                                                <span style="max-width:100%" data-modal="modal" ng-model="det.Clave" name="{{'Clave' + $index }}" placeholder="{{translation.VAVVAVClave}}">{{det.Clave}}</span>
+                                            </td>
+                                            <td>
+
+                                                <span  style="max-width:100%" data-modal="modal" ng-model="det.Nombre" name="{{'Nombre' + $index }}" placeholder="{{translation.VAVGrupo}}" ng-disabled="SoloLectura"> {{det.Nombre}} </span>
+
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+
+                  
+
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <span class="conf-auto">Crear Configuración Automática</span>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="checkbox">
+                                            <label><input id="todo" ng-false-value="'NO'" ng-true-value="'YES'" ng-disabled="SoloLectura" ng-model="todos" type="checkbox" ng-click="checarTodos()" value="">{{translation.XTodos}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <div class="checkbox">
+                                            <label><input id="conf-vendedor" ng-false-value="0" ng-true-value="1" ng-disabled="SoloLectura" ng-model="ConfVendedor" type="checkbox" value="">{{translation.CVendedor}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="checkbox">
+                                            <label><input id="conf-terminal" ng-false-value="0" ng-true-value="1" ng-disabled="SoloLectura" ng-model="ConfTerminal" type="checkbox" value="">{{translation.CTerminal}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <div class="checkbox inline-check">
+                                            <label><input id="conf-ruta" ng-false-value="0" ng-change="habilitarRuta()" ng-disabled="SoloLectura" ng-true-value="1" ng-model="ConfRuta" type="checkbox" value="">{{translation.CRuta}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select id="idTipoRuta" style="max-width:100%" class="form-control" data-modal="modal"  ng-disabled="SoloLectura" ng-change="validarPass()" ng-model="TipoRuta" name="{{'TipoRuta'}}" ng-options="val.VAVClave as val.Descripcion for val in tindmod">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                    </div>
+                                    <p>
+                                        {{idTipoRuta}}
+                                    </p>
+
+                                    <div class="col-md-1">
+                                        <div class="checkbox">
+                                            <label><input id="conf-almacen" ng-false-value="0" ng-true-value="1" ng-disabled="SoloLectura" ng-model="ConfAlmacen" type="checkbox" value="">{{translation.CAlmacen}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+                            <div class="container" style="margin-left: 20px">
+
+                                <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarUsuario()" />
+                                <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+
+
+                            </div>
+                            <div id="unico"></div>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="seccion2">
+                            <h3>{{AlmacenID}}
+                            
+                            
+                            </h3>
+                            <br />
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    @{ if (!bSoloLectura)
+                                        {
+                                            @Html.ImageButtonLink("/Content/images/crear.png", "AgregarRuta()", "{{translation.XAgregar}} {{translation.CRuta}}")
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                            <br />
+                            <div ng-init="ObtenerRutasSuper('@ViewBag.Clave')">
+                                <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                    <tr>
+                                        @{ if (!bSoloLectura)
+                                            {
+                                                <th style="width:5%"></th>
+                                            }
+                                        }
+                                        <th style="width:20%"><b>{{translation.USUCLAVE}}</b></th>
+                                        <th><b>{{translation.RUTDescripcion}}</b></th>
+                                    </tr>
+
+
+                                    <tr ng-repeat="ruta in rutasSupervisadas" ng-init="marcar()">
+                                        @{ if (!bSoloLectura)
+                                            {
+                                                <td>
+                                                    <span class="btn-eliminar-lenguaje btn-e-l-m-i">
+                                                        @Html.ImageButton("/Content/images/eliminar.png", "ValidarEliminarRutaSupervisada($index, ruta.RUTClave, ruta.Tipo,ruta.Descripcion)", "{{translation.BTEliminar}}")
+                                                    </span>
+                                                </td>
+                                            }
+                                        }
+
+                                        <td>
+                                            <span style="max-width:100%" data-modal="modal" ng-model="ruta.RUTClave" name="{{'RUTClave' + $index }}">{{ruta.RUTClave}}</span>
+                                        </td>
+                                        <td>
+
+                                            <span style="max-width:100%" data-modal="modal" ng-model="ruta.Descripcion" name="{{'Descripcion' + $index }}" ng-disabled="SoloLectura"> {{ruta.Descripcion}} </span>
+
+                                        </td>
+
+                                    </tr>
+
+                                </table>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+            @{ Html.RenderPartial("MsgBox/ValidateBox"); }
+            @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+            @{ Html.RenderPartial("MsgBox/RutaBox"); }
+            @{ Html.RenderPartial("MsgBox/MsgBox"); }
+            @{ Html.RenderPartial("MsgBox/CentroBox"); }
+            @{ Html.RenderPartial("MsgBox/YesNoMsgBoxAux"); }
+   
+
+        </div>
+    </div>
+
+
+</div>

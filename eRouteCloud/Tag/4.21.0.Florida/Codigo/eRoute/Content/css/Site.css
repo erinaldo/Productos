@@ -1,0 +1,325 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.container 
+{
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 0;
+ 
+}
+
+.header {    
+    color: #eeeeee;
+    height: 35px;
+    background-color: #B30000;
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+
+.modal-header {    
+    color: #eeeeee;
+    background-color: #B30000;
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+
+.header {
+    margin-top: 0px !important;
+}
+
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.pagination > li {
+  display: inline;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.428571429;
+  text-decoration: none;
+  background-color: #B30000;
+  border: 1px solid #dddddd;
+  color: #eeeeee;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  background-color: #eeeeee;
+  color: #B30000;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 2;
+  color: #B30000;
+  cursor: default;
+  background-color:  #dddddd;
+  border-color: #B30000;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #eeeeee;
+  cursor: not-allowed;
+  background-color: #B30000;
+  border-color: #dddddd;
+}
+
+.table {
+    width: 97%;
+    margin-bottom: 20px;
+}
+
+.eRouteLabel {    
+    color: #B30000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.container-left 
+{
+   display: block;
+   float: left;
+   margin-left: 0;
+   width: 50%;
+}
+
+.container-right 
+{
+   display: block;
+   float: right;
+   margin-right: 0;
+   width: 50%;
+}
+
+.btn-default {
+  color: #eeeeee;
+  background-color: #B30000;
+  border-color: #cccccc;
+}
+
+.form-horizontal
+.control-label {
+   font-size: small;
+   font-weight: normal;
+   text-align: left;
+}
+
+.control-label {
+   font-size: small;
+   font-weight: normal;
+   text-align: left;
+}
+/**RETIRAR EL COLOR A LOS SubFormularios**/
+form.submitted:not(.subForm) .ng-invalid:not(.subForm)
+{    
+    background-color: #ffeeee;
+}
+
+.error-message {
+    color: #B30000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+.disabled {
+  color: gray;
+  cursor: default;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+
+/**VALORES POR REFERENCIA*/
+
+    .margen-tabla{
+        margin-left:0.2% !important;   
+        margin-right:5px;
+    }
+    .titulo-altura{
+        line-height: 1.4;
+    }
+    .cursor-pointer{
+        cursor: pointer;
+    }
+    .valores .pagination {
+        margin: 0 !important;
+    }
+    .header-valores{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    /**VALORES POR REFERENCIA*/
+
+ul.nav.nav-duxstar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #B30000;
+}
+
+.nav-duxstar li {
+    float: left;
+}
+
+.nav-duxstar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-duxstar .active a{
+    color: #B30000;
+}
+
+/* Change the link color to #111 (black) on hover */
+.nav-duxstar li a:hover:not(.active) {
+    background-color: white;
+    color: #B30000;
+}
+
+.nav-duxstar .active {
+    background-color: #f7f7f7;
+}
+
+.nav-duxstar li {
+    border-right: 1px solid #bbb;
+}
+
+.nav-duxstar li:last-child {
+    border-right: none;
+}
+/**HACKS*/
+.form-valor .form-group label {
+    margin-top: 7px;
+}
+
+md-radio-button {
+    display: inline-block !important;
+}
+
+.titulo-descripcion {
+    margin-left: 35%;
+    display: inline-block;
+}
+
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    border-top: none !important;
+}
+/***TABS DE BOOTSTRAP MODIFICADOS***/
+/*REDUCE LOS BORDER DE LOS TABS*/
+.nav-tabs > li > a {
+    border-radius:0 !important;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #b30000;
+    background-color: #f7f7f7;
+    font-weight:600;
+}
+.nav-tabs > li {
+    background: #b30000;
+}
+.nav-tabs > li a {
+    color: #ffffff;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: rgba(179, 0, 0, 0.36);
+}
+.nav-tabs {
+    border-bottom: 1px solid #f7f7f7;
+    background: #75716c;
+    padding: 9px 10px 1px 10px;
+}
+/**MARGEN DEL BOTÓN AGREGAR DE LAS VENTANAS MODALES*/
+.margen-agregar{margin: 20px 0;}
+
+/**SELECT MEDIDA DE 100px*/
+.select-width{ width: 140px !important; }
+/*BOTON DE AÑADIR EN TABLAS**/
+.btn-add-margin{position: relative; top: 6px;}
+/**ALINEA LABEL A LOS INPUTS*/
+.label-align { margin-top: 7px;  }
+/**DA UN ESTILO DISTINTO AL md-datepicker**/
+.md-picker-style{
+    border-radius: 5px;
+    width: 100%;
+    display: block;
+    border: solid 1px #cccccc;
+}
+.md-picker-style .md-datepicker-button {
+    margin: -1px 6px;
+    height: 0;
+    min-width: 0;
+    line-height: 0;
+    padding: 0;
+    width: 40px;
+    border-radius: 50%;
+
+}
+.md-picker-style .md-datepicker-calendar-icon {
+    height: 22px;
+    width: 22px;
+}
+
+.md-calendar-scroll-container { width: 311px !important;}

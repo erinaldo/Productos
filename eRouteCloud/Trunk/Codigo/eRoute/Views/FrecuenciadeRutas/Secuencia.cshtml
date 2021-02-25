@@ -1,0 +1,373 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Map";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    #map {
+        width: 100%;
+        left: 0;
+    }
+</style>
+
+<div class="container" ng-controller="frecuenciadeRutasCtrl" ng-init="EditarFrecuencia('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+
+    <!--Cabecera-->
+    <div class="header" style="display: block;">
+        <h3 class="titulo-altura">{{translation.ERMSECESC_MFrecuenciaMapaM}}</h3>
+        @{string sPermiso = ViewBag.Permiso;}
+    </div>
+
+    <!--Formulario-->
+    <div class="row">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div id="right-panel">                
+                <div>
+                    <strong>Results</strong>
+                </div>
+            </div>
+            <div id="map"></div>
+            <div id="siguiente"><button onclick="fnBuscarSiguiente()">Siguiente</button></div>
+            <div id="output"></div>
+            <script>               
+                
+                var origin1 = { lat: 32.548084, lng: -116.92028, id: 'origin1' };
+                //var origin1 = { lat: 20.667943, lng: -103.36652, id: 'origin1' };
+                //var destinationA = { lat: 20.649147, lng: -103.403540 };
+                //var destinationB = { lat: 20.710677, lng: -103.412689 };
+                //var destinationC = { lat: 20.678927, lng: -103.370704 };
+                //var origin1 = { lat: 31.289656, lng: -110.96886, id: 'origin1' };
+                var destination1 = { lat: 31.325829, lng: -110.95152, id: 'destination1' };
+                var destination2 = { lat: 31.31374, lng: -110.945915, id: 'destination2' };
+                var destination3 = { lat: 31.289534, lng: -110.96895, id: 'destination3' };
+                var destination4 = { lat: 31.287498, lng: -110.96291, id: 'destination4' };
+                var destination5 = { lat: 31.330173, lng: -110.93539, id: 'destination5' };
+                var destination6 = { lat: 31.332073, lng: -110.92986, id: 'destination6' };
+                var destination7 = { lat: 31.247383, lng: -110.94648, id: 'destination7' };
+                var destination8 = { lat: 31.279367, lng: -110.92572, id: 'destination8' };
+                var destination9 = { lat: 31.289656, lng: -110.96886, id: 'destination9' };
+                var destination10 = { lat: 31.301899, lng: -110.97281, id: 'destination10' };
+                var destination11 = { lat: 31.331673, lng: -110.9329, id: 'destination11' };
+                var destination12 = { lat: 31.303082, lng: -110.975006, id: 'destination12' };
+                var destination13 = { lat: 31.266071, lng: -110.94748, id: 'destination13' };
+                var destination14 = { lat: 31.311378, lng: -110.889336, id: 'destination14' };
+                var destination15 = { lat: 31.289656, lng: -110.96886, id: 'destination15' };
+                var destination16 = { lat: 31.289656, lng: -110.96886, id: 'destination16' };
+                var destination17 = { lat: 31.160175, lng: -110.97973, id: 'destination17' };
+                var destination18 = { lat: 31.29805, lng: -110.95926, id: 'destination18' };
+                var destination19 = { lat: 31.289656, lng: -110.96886, id: 'destination19' };
+                var destination20 = { lat: 31.289656, lng: -110.96886, id: 'destination20' };
+                var destination21 = { lat: 31.292345, lng: -110.963264, id: 'destination21' };
+                var destination22 = { lat: 31.15711, lng: -110.98327, id: 'destination22' };
+                var destination23 = { lat: 31.331295, lng: -110.93672, id: 'destination23' };
+                var destination24 = { lat: 31.158518, lng: -110.97549, id: 'destination24' };
+                var destination25 = { lat: 31.156897, lng: -110.97803, id: 'destination25' };
+                //var destination26 = { lat: 31.306936, lng: -110.93392 };
+                //var destination27 = { lat: 31.325054, lng: -110.96446 };
+                //var destination28 = { lat: 31.29267, lng: -110.97469 };
+                //var destination29 = { lat: 31.160221, lng: -110.97987 };
+                //var destination30 = { lat: 31.159609, lng: -110.9724 };
+                //var destination31 = { lat: 31.25921, lng: -110.94182 };
+                //var destination32 = { lat: 31.302809, lng: -110.9611 };
+                //var destination33 = { lat: 31.313522, lng: -110.96752 };
+                //var destination34 = { lat: 31.280907, lng: -110.91873 };
+                //var destination35 = { lat: 31.33073, lng: -110.93086 };
+                //var destination36 = { lat: 31.158459, lng: -110.97573 };
+                //var destination37 = { lat: 31.314959, lng: -110.96248 };
+                //var destination38 = { lat: 31.327751, lng: -110.94085 };
+                //var destination39 = { lat: 31.291384, lng: -110.935394 };
+                //var destination40 = { lat: 31.000687, lng: -110.88193 };
+                //var destination41 = { lat: 31.153795, lng: -110.98719 };
+                //var destination42 = { lat: 31.258827, lng: -110.9548 };
+                //var destination43 = { lat: 31.33172, lng: -110.933 };
+                //var destination44 = { lat: 31.303514, lng: -110.89834 };
+                //var destination45 = { lat: 31.28945, lng: -110.96879 };
+                //var destination46 = { lat: 31.26567, lng: -110.94071 };
+                //var destination47 = { lat: 31.277042, lng: -110.91876 };
+                //var destination48 = { lat: 31.326061, lng: -110.924255 };
+                //var destination49 = { lat: 31.292755, lng: -110.91977 };
+                //var destination50 = { lat: 31.302664, lng: -110.899376 };
+                //var destination51 = { lat: 31.062595, lng: -110.899086 };
+                //var destination52 = { lat: 31.307375, lng: -110.93486 };
+                //var destination53 = { lat: 31.261124, lng: -110.95418 };
+                //var destination54 = { lat: 31.293913, lng: -110.97581 };
+                //var destination55 = { lat: 31.316063, lng: -110.967064 };
+                //var destination56 = { lat: 31.293818, lng: -110.977005 };
+                //var destination57 = { lat: 31.291424, lng: -110.93535 };
+                //var destination58 = { lat: 31.301294, lng: -110.95437 };
+                //var destination59 = { lat: 31.310236, lng: -110.888916 };
+                //var destination60 = { lat: 31.261583, lng: -110.957275 };
+                //var destination61 = { lat: 31.3111, lng: -110.890205 };
+                //var destination62 = { lat: 31.279352, lng: -110.92577 };
+                //var destination63 = { lat: 31.32905, lng: -110.92932 };
+                //var destination64 = { lat: 31.308138, lng: -110.932495 };
+                //var destination65 = { lat: 31.158485, lng: -110.97565 };
+                //var destination66 = { lat: 31.3299, lng: -110.931114 };
+                //var destination67 = { lat: 31.279394, lng: -110.92587 };
+                //var destination68 = { lat: 31.27932, lng: -110.92594 };
+                //var destination69 = { lat: 31.314753, lng: -110.96788 };
+                //var destination70 = { lat: 31.303467, lng: -110.89731 };
+                //var destination71 = { lat: 31.28026, lng: -110.92514 };
+                //var destination72 = { lat: 31.31916, lng: -110.934074 };
+                //var destination73 = { lat: 31.31412, lng: -110.96623 };
+                //var destination74 = { lat: 31.298807, lng: -110.93217 };
+                //var destination75 = { lat: 31.273657, lng: -110.93043 };
+                //var destination76 = { lat: 31.32413, lng: -110.95484 };
+                //var destination77 = { lat: 31.062487, lng: -110.89952 };
+                //var destination78 = { lat: 31.305918, lng: -110.89298 };
+                //var destination79 = { lat: 31.31891, lng: -110.93389 };
+                //var destination80 = { lat: 31.314272, lng: -110.921745 };
+                //var destination81 = { lat: 31.293337, lng: -110.91851 };
+                //var destination82 = { lat: 31.2991, lng: -110.906815 };
+                //var destination83 = { lat: 31.313786, lng: -110.95203 };
+                //var destination84 = { lat: 31.16053, lng: -110.96882 };
+                //var destination85 = { lat: 31.329277, lng: -110.94229 };
+                //var destination86 = { lat: 31.33067, lng: -110.94923 };
+                //var destination87 = { lat: 31.260525, lng: -110.958206 };
+                //var destination88 = { lat: 31.33165, lng: -110.94755 };
+                //var destination89 = { lat: 31.06577, lng: -110.90081 };
+                //var destination90 = { lat: 31.301577, lng: -110.96075 };
+                //var destination91 = { lat: 31.328966, lng: -110.95046 };
+                //var destination92 = { lat: 31.330431, lng: -110.93272 };
+                //var destination93 = { lat: 31.322815, lng: -110.95039 };
+                //var destination94 = { lat: 31.31473, lng: -110.95904 };
+                //var destination95 = { lat: 31.278757, lng: -110.925224 };
+                //var destination96 = { lat: 31.291471, lng: -110.93534 };
+                //var destination97 = { lat: 31.325966, lng: -110.928215 };
+                //var destination98 = { lat: 31.303291, lng: -110.93706 };
+                //var destination99 = { lat: 31.30918, lng: -110.93038 };
+                //var destination100 = { lat: 31.326342, lng: -110.95145 };
+
+                //var destinations = [destinationA, destinationB, destinationC];
+                var destinations = [
+                    destination1,destination2,destination3,destination4,destination5,destination6,destination7,destination8,destination9,destination10,
+                    destination11,destination12,destination13,destination14,destination15,destination16,destination17,destination18,destination19,destination20,
+                    destination21,destination22,destination23,destination24,destination25]
+                //    ,destination26,destination27,destination28,destination29,destination30,
+                //    destination31, destination32, destination33, destination34, destination35, destination36, destination37, destination38, destination39, destination40,
+                //    destination41, destination42, destination43, destination44, destination45, destination46, destination47, destination48, destination49, destination50,
+                //    destination51, destination52, destination53, destination54, destination55, destination56, destination57, destination58, destination59, destination60,
+                //    destination61, destination62, destination63, destination64, destination65, destination66, destination67, destination68, destination69, destination70,
+                //    destination71, destination72, destination73, destination74, destination75, destination76, destination77, destination78, destination79, destination80,
+                //    destination81, destination82, destination83, destination84, destination85, destination86, destination87, destination88, destination89, destination90,
+                //    destination91, destination92, destination93, destination94, destination95, destination96, destination97, destination98, destination99, destination100
+                //]
+                var destino;
+                var map;
+                var directionsService;
+                var directionsDisplay;
+                var minDistance = 0;
+                var destinoText;
+                var indexDestino;
+
+                function initMap() {
+                    var bounds = new google.maps.LatLngBounds;
+                    //var markersArray = [];                    
+                    var origin1 = { lat: 32.548084, lng: -116.92028, id: 'origin1' };
+                    //var origin1 = { lat: 20.667943, lng: -103.36652, id: 'origin1' };
+                    //var origin1 = { lat: 31.289656, lng: -110.96886, id: 'origin1' };
+                    var destination1 = { lat: 31.325829, lng: -110.95152, id: 'destination1' };
+                    var destination2 = { lat: 31.31374, lng: -110.945915, id: 'destination2' };
+                    var destination3 = { lat: 31.289534, lng: -110.96895, id: 'destination3' };
+                    var destination4 = { lat: 31.287498, lng: -110.96291, id: 'destination4' };
+                    var destination5 = { lat: 31.330173, lng: -110.93539, id: 'destination5' };
+                    var destination6 = { lat: 31.332073, lng: -110.92986, id: 'destination6' };
+                    var destination7 = { lat: 31.247383, lng: -110.94648, id: 'destination7' };
+                    var destination8 = { lat: 31.279367, lng: -110.92572, id: 'destination8' };
+                    var destination9 = { lat: 31.289656, lng: -110.96886, id: 'destination9' };
+                    var destination10 = { lat: 31.301899, lng: -110.97281, id: 'destination10' };
+                    var destination11 = { lat: 31.331673, lng: -110.9329, id: 'destination11' };
+                    var destination12 = { lat: 31.303082, lng: -110.975006, id: 'destination12' };
+                    var destination13 = { lat: 31.266071, lng: -110.94748, id: 'destination13' };
+                    var destination14 = { lat: 31.311378, lng: -110.889336, id: 'destination14' };
+                    var destination15 = { lat: 31.289656, lng: -110.96886, id: 'destination15' };
+                    var destination16 = { lat: 31.289656, lng: -110.96886, id: 'destination16' };
+                    var destination17 = { lat: 31.160175, lng: -110.97973, id: 'destination17' };
+                    var destination18 = { lat: 31.29805, lng: -110.95926, id: 'destination18' };
+                    var destination19 = { lat: 31.289656, lng: -110.96886, id: 'destination19' };
+                    var destination20 = { lat: 31.289656, lng: -110.96886, id: 'destination20' };
+                    var destination21 = { lat: 31.292345, lng: -110.963264, id: 'destination21' };
+                    var destination22 = { lat: 31.15711, lng: -110.98327, id: 'destination22' };
+                    var destination23 = { lat: 31.331295, lng: -110.93672, id: 'destination23' };
+                    var destination24 = { lat: 31.158518, lng: -110.97549, id: 'destination24' };
+                    var destination25 = { lat: 31.156897, lng: -110.97803, id: 'destination25' };
+
+                    var destinationIcon = 'https://chart.googleapis.com/chart?' +
+                        'chst=d_map_pin_letter&chld=D|FF0000|000000';
+                    var originIcon = 'https://chart.googleapis.com/chart?' +
+                        'chst=d_map_pin_letter&chld=O|FFFF00|000000';
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: { lat: 20.667943, lng: -103.36652 },
+                        zoom: 10
+                    });
+                  
+                    //var geocoder = new google.maps.Geocoder;                    
+
+                    fnMostrarRuta();
+
+                    function fnMostrarRuta() {
+                        var myElement = document.getElementById('map');
+                        myElement.style.height = 501 + "px";
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: origin1,
+                            zoom: 8
+                        });
+
+                        var objConfigDR = {
+                            map: map,
+                            suppressMarkers: false
+                        }
+
+                        //var waypts = [{ location: { origin1 }, stopover: true },
+                        //              { location: { destino }, stopover: true }];  
+                        var waypts = [
+                            { location: { lat: destination1.lat, lng: destination1.lng }, stopover: true },
+                            { location: { lat: destination2.lat, lng: destination2.lng }, stopover: true },
+                            { location: { lat: destination3.lat, lng: destination3.lng }, stopover: true },
+                            { location: { lat: destination4.lat, lng: destination4.lng }, stopover: true },
+                            { location: { lat: destination5.lat, lng: destination5.lng }, stopover: true },
+                            { location: { lat: destination6.lat, lng: destination6.lng }, stopover: true },
+                            { location: { lat: destination7.lat, lng: destination7.lng }, stopover: true },
+                            { location: { lat: destination8.lat, lng: destination8.lng }, stopover: true },
+                            { location: { lat: destination9.lat, lng: destination9.lng }, stopover: true },
+                            { location: { lat: destination10.lat, lng: destination10.lng }, stopover: true },
+                            { location: { lat: destination11.lat, lng: destination11.lng }, stopover: true },
+                            { location: { lat: destination12.lat, lng: destination12.lng }, stopover: true },
+                            { location: { lat: destination13.lat, lng: destination13.lng }, stopover: true },
+                            { location: { lat: destination14.lat, lng: destination14.lng }, stopover: true },
+                            { location: { lat: destination15.lat, lng: destination15.lng }, stopover: true },
+                            { location: { lat: destination16.lat, lng: destination16.lng }, stopover: true },
+                            { location: { lat: destination17.lat, lng: destination17.lng }, stopover: true },
+                            { location: { lat: destination18.lat, lng: destination18.lng }, stopover: true },
+                            { location: { lat: destination19.lat, lng: destination19.lng }, stopover: true },
+                            { location: { lat: destination20.lat, lng: destination20.lng }, stopover: true },
+                            { location: { lat: destination21.lat, lng: destination21.lng }, stopover: true },
+                            { location: { lat: destination22.lat, lng: destination22.lng }, stopover: true },
+                            { location: { lat: destination23.lat, lng: destination23.lng }, stopover: true },
+                            { location: { lat: destination24.lat, lng: destination24.lng }, stopover: true },
+                            { location: { lat: destination25.lat, lng: destination25.lng }, stopover: true }]
+
+
+                        var objConfigDS = {
+                            origin: new google.maps.LatLng(origin1),
+                            destination: new google.maps.LatLng(origin1),
+                            waypoints: waypts,
+                            optimizeWaypoints: true,
+                            provideRouteAlternatives: true,
+                            travelMode: google.maps.TravelMode.DRIVING,
+                            drivingOptions: {
+                                departureTime: new Date("27-05-2019 07:00:00"),  // for the time N milliseconds from now.
+                                trafficModel: 'pessimistic'
+                            }
+                        }
+
+                        directionsService = new google.maps.DirectionsService();
+                        directionsDisplay = new google.maps.DirectionsRenderer(objConfigDR);
+
+                        directionsDisplay.setPanel(document.getElementById('directionsPanel'));
+
+                        directionsService.route(objConfigDS, fnRutear);
+                    }                    
+
+                    function fnRutear(resultados, status) {
+                        if (status == 'OK') {
+
+                            directionsDisplay.setDirections(resultados);
+                        }
+                        else {
+                            alert: ('Error ' + status)
+                        }
+                    }
+
+                    
+                }
+               
+                function fnBuscarSiguiente() {
+
+                    var service = new google.maps.DistanceMatrixService;
+                     
+                    service.getDistanceMatrix({
+                        origins: [origin1],
+                        destinations: destinations,
+                        travelMode: 'DRIVING',
+                        unitSystem: google.maps.UnitSystem.METRIC,
+                        avoidHighways: false,
+                        avoidTolls: false,
+                        drivingOptions: {
+                            departureTime: new Date(), //"29-06-2019 07:00:00"),  // for the time N milliseconds from now.
+                            trafficModel: 'pessimistic'
+                        }
+                    }, function (response, status) {
+                        if (status !== 'OK') {
+                            alert('Error was: ' + status);
+                        } else {
+                            var originList = response.originAddresses;
+                            var destinationList = response.destinationAddresses;
+                            var outputDiv = document.getElementById('output');
+                            outputDiv.innerHTML = '';
+                            //deleteMarkers(markersArray);
+
+                            var showGeocodedAddressOnMap = function (asDestination) {
+                                var icon = asDestination ? destinationIcon : originIcon;
+                                return function (results, status) {
+                                    if (status === 'OK') {
+                                        map.fitBounds(bounds.extend(results[0].geometry.location));
+                                        markersArray.push(new google.maps.Marker({
+                                            map: map,
+                                            position: results[0].geometry.location,
+                                            icon: icon
+                                        }));
+                                    } else {
+                                        alert('Geocode was not successful due to: ' + status);
+                                    }
+                                };
+                            };
+
+                            minDistance = 0;
+                            for (var i = 0; i < originList.length; i++) {
+                                var results = response.rows[i].elements;
+                                //geocoder.geocode({ 'address': originList[i] },
+                                //showGeocodedAddressOnMap(false));
+                                for (var j = 0; j < results.length; j++) {
+                                    //geocoder.geocode({ 'address': destinationList[j] },
+                                    //showGeocodedAddressOnMap(true));
+                                    //outputDiv.innerHTML += (j+1) + ') "' + originList[i] + '" to "' + destinationList[j] +
+                                    //    '": ' + results[j].distance.text + ' in ' +
+                                    //    results[j].duration.text + '<br>';
+                                    if (minDistance == 0) {
+                                        minDistance = results[j].distance.value;
+                                        destino = destinations[j];
+                                        destinoText = '"' + originList[i] + '" to "' + destinationList[j] + '": ' + results[j].distance.text + ' in ' + results[j].duration.text;
+                                        indexDestino = j;
+                                    }
+                                    else if (results[j].distance.value < minDistance) {
+                                        minDistance = results[j].distance.value;
+                                        destino = destinations[j];
+                                        destinoText = '"' + originList[i] + '" to "' + destinationList[j] + '": ' + results[j].distance.text + ' in ' + results[j].duration.text;
+                                        indexDestino = j;
+                                    }
+                                }
+                            }
+
+                            outputDiv.innerHTML += destinoText + '<br>';
+                            origin1 = destino;
+                            destinations.splice(indexDestino, 1)
+                            //fnMostrarRuta();
+                        }
+
+
+                    });
+                }
+            </script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDieOjOBc-buYRApCb9SMoad4bYyvhGn8U&callback=initMap">
+            </script>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div id="directionsPanel"></div>
+        </div>
+    </div>
+
+</div>

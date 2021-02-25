@@ -1,0 +1,2592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{471810C8-8371-4799-B441-DEA0D54699CF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eRoute</RootNamespace>
+    <AssemblyName>eRoute</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BASLICLOG">
+      <HintPath>C:\Duxstar\Route Desktop\BASLICLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.50.0\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.Mvc5.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.Resources.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v16.1.Web, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Reporting, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\ClienteController.cs" />
+    <Compile Include="Controllers\API\ConfigParametroController.cs" />
+    <Compile Include="Controllers\API\ConfiguracionReciboController.cs" />
+    <Compile Include="Controllers\API\FoliosController.cs" />
+    <Compile Include="Controllers\API\FrecuenciadeRutasController.cs" />
+    <Compile Include="Controllers\API\FrecuenciasController.cs" />
+    <Compile Include="Controllers\API\ImpuestoController.cs" />
+    <Compile Include="Controllers\API\Maps\GetMapGenDataController.cs" />
+    <Compile Include="Controllers\API\MDBMensajeController.cs" />
+    <Compile Include="Controllers\API\CargasController.cs" />
+    <Compile Include="Controllers\API\Reports\GetModelController.cs" />
+    <Compile Include="Controllers\API\Reports\GetProductsSchemeController.cs" />
+    <Compile Include="Controllers\API\PromocionesController.cs" />
+    <Compile Include="Controllers\API\Reports\GetSchemeController.cs" />
+    <Compile Include="Controllers\API\Reports\GetLotesController.cs" />
+    <Compile Include="Controllers\API\Reports\GetSupervisorController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\API\RutasController.cs" />
+    <Compile Include="Controllers\API\VendedoresController.cs" />
+    <Compile Include="Controllers\ConfigParametroController.cs" />
+    <Compile Include="Controllers\ConfiguracionReciboController.cs" />
+    <Compile Include="Controllers\FoliosController.cs" />
+    <Compile Include="Controllers\FrecuenciadeRutasController.cs" />
+    <Compile Include="Controllers\CargasController .cs" />
+    <Compile Include="Controllers\FrecuenciasController.cs" />
+    <Compile Include="Controllers\PromocionesController.cs" />
+    <Compile Include="Controllers\RutasController.cs" />
+    <Compile Include="Controllers\API\AuthController.cs" />
+    <Compile Include="Controllers\API\AuthorizeAPI.cs" />
+    <Compile Include="Controllers\API\AuthToken.cs" />
+    <Compile Include="Controllers\API\CamionesController.cs" />
+    <Compile Include="Controllers\API\ConfiguracionController.cs" />
+    <Compile Include="Controllers\API\Maps\GetMapDataController.cs" />
+    <Compile Include="Controllers\API\Maps\GetMapListController.cs" />
+    <Compile Include="Controllers\API\MensajeController.cs" />
+    <Compile Include="Controllers\API\MonedasController.cs" />
+    <Compile Include="Controllers\API\PerfilController.cs" />
+    <Compile Include="Controllers\API\ProductoController.cs" />
+    <Compile Include="Controllers\API\ProfileListController.cs" />
+    <Compile Include="Controllers\API\Reports\FilterReportsController.cs" />
+    <Compile Include="Controllers\API\Reports\GetAllRoutesController.cs" />
+    <Compile Include="Controllers\API\Reports\GetCedisController.cs" />
+    <Compile Include="Controllers\API\Reports\GetClientSchemeController.cs" />
+    <Compile Include="Controllers\API\Reports\GetClientsController.cs" />
+    <Compile Include="Controllers\API\Reports\GetDateStatusController.cs" />
+    <Compile Include="Controllers\API\Reports\GetEncuestasController.cs" />
+    <Compile Include="Controllers\API\Reports\GetProductsController.cs" />
+    <Compile Include="Controllers\API\Reports\GetRoutesController.cs" />
+    <Compile Include="Controllers\API\Reports\GetSellerController.cs" />
+    <Compile Include="Controllers\API\LogoutController.cs" />
+    <Compile Include="Controllers\API\OpenFilterController.cs" />
+    <Compile Include="Controllers\API\ListasdePreciosController.cs" />
+    <Compile Include="Controllers\API\SegmentoController.cs" />
+    <Compile Include="Controllers\API\TerminalesController.cs" />
+    <Compile Include="Controllers\API\UsersManager.cs" />
+    <Compile Include="Controllers\API\SubEmpresaController.cs" />
+    <Compile Include="Controllers\API\UsuarioController.cs" />
+    <Compile Include="Controllers\API\AlmacenController.cs" />
+    <Compile Include="Controllers\API\ValorReferenciaController.cs" />
+    <Compile Include="Controllers\AuthorizeMVC.cs" />
+    <Compile Include="Controllers\CamionesController.cs" />
+    <Compile Include="Controllers\ConfiguracionController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MapsController.cs" />
+    <Compile Include="Controllers\MensajeController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\MonedasController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\AlmacenController.cs" />
+    <Compile Include="Controllers\SegmentoController.cs" />
+    <Compile Include="Controllers\SubEmpresaController.cs" />
+    <Compile Include="Controllers\ListasdePreciosController.cs" />
+    <Compile Include="Controllers\TerminalesController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\ValorReferenciaController.cs" />
+    <Compile Include="Controllers\VendedoresController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\MyHelpers.cs" />
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Actividad.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgendaVendedor.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Almacen.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlmacenExistenteModel.cs" />
+    <Compile Include="Models\Camion.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CamionVendedor.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIConfNumCta.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClienteAcumulados.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClienteDomicilio.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClienteEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClienteMensaje.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientePago.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClienteProducto.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClienteSinVisitaRec.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClienteVentaMensual.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIFormaVenta.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLINoDesImp.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConfigParametro.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConfiguracionRecibo.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CORTabla.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COTCampo.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CUOEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DESDetalle.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dia.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Esquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExcepcionFac.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExcepcionProductoPri.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExtendedRouteModel.cs" />
+    <Compile Include="Models\Folio.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FolioCEDI.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FolioDetalle.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FolioUsuario.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Frecuencia.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Impuesto.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImpuestoEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IntUsu.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MDBMensaje.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModuloEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModuloMensaje.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModuloMov.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModuloMovDetalle.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModuloTerm.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Moneda.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MONRedondeoVig.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MONTipoCambioVig.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOTConfiguracion.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Precio.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrecioClienteEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrecioProductoVig.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Producto.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoCompetencia.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoDetalle.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoEpicor.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoEquivalente.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoEquivalenteCompetencia.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoImpuesto.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoNegado.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoPrestamoCli.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoPrioritarioEsq.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoUnidad.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Promocion.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PromocionAplicacion.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PromocionDetalle.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PromocionEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PromocionEsquemaExcep.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PromocionModulo.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PromocionProducto.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PromocionRegla.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recibo.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReportesModels\CargaPorDiaBYD.cs" />
+    <Compile Include="Models\ReportesModels\CargasDEL.cs" />
+    <Compile Include="Models\ReportesModels\CargasFinalesPorRuta.cs" />
+    <Compile Include="Models\ReportesModels\CargasInicialesPorRuta.cs" />
+    <Compile Include="Models\ReportesModels\ComisionesTUC.cs" />
+    <Compile Include="Models\ReportesModels\DocumentosConSaldoPDR.cs" />
+    <Compile Include="Models\ReportesModels\R207ExistenciasDeProducto.cs" />
+    <Compile Include="Models\ReportesModels\InformeVentasXadisROV.cs" />
+    <Compile Include="Models\ReportesModels\MDiarioDeActividadesTiemposPDR.cs" />
+    <Compile Include="Models\ReportesModels\MFacturaGlobalPDR.cs" />
+    <Compile Include="Models\ReportesModels\MIndicadoresDeVentaPDR.cs" />
+    <Compile Include="Models\ReportesModels\MovimientosPorLoteDEL.cs" />
+    <Compile Include="Models\ReportesModels\CifrasControlBYD.cs" />
+    <Compile Include="Models\ReportesModels\LiquidacionTUC.cs" />
+    <Compile Include="Models\ReportesModels\PedidosConfirmadosPRS.cs" />
+    <Compile Include="Models\ReportesModels\R263ImproductividadImagenes.cs" />
+    <Compile Include="Models\ReportesModels\R264ClientesProspectos.cs" />
+    <Compile Include="Models\ReportesModels\VendedorCliModelListPreBYD.cs" />
+    <Compile Include="Models\ReportesModels\VentasParaInterfazHOR.cs" />
+    <Compile Include="Models\ReportesModels\ClientesEsquemasVIT.cs" />
+    <Compile Include="Models\ReportesModels\ClienteVisVsPlanTrabajo.cs" />
+    <Compile Include="Models\ReportesModels\ConcentradoMovAlmacenALT.cs" />
+    <Compile Include="Models\ReportesModels\DiarioActividadesVit.cs" />
+    <Compile Include="Models\ReportesModels\GlobalPorRutaAFR.cs" />
+    <Compile Include="Models\ReportesModels\IndicadoresOJAI.cs" />
+    <Compile Include="Models\ReportesModels\ImproductividadXCliente.cs" />
+    <Compile Include="Models\ReportesModels\MDiarioDeActividadesPDR.cs" />
+    <Compile Include="Models\ReportesModels\MIndicadoresDeVenta.cs" />
+    <Compile Include="Models\ReportesModels\LiquidacionAfrima.cs" />
+    <Compile Include="Models\ReportesModels\LiquidacionLaFlorida.cs" />
+    <Compile Include="Models\ReportesModels\MDiarioDeActividades.cs" />
+    <Compile Include="Models\ReportesModels\MClientesSinVentas.cs" />
+    <Compile Include="Models\ReportesModels\MLiquidacionPDR.cs" />
+    <Compile Include="Models\ReportesModels\MReporteLiquidacionLPB.cs" />
+    <Compile Include="Models\ReportesModels\MPlandeTrebajoSemanal.cs" />
+    <Compile Include="Models\ReportesModels\InformecCienteSINVisitaVenta.cs" />
+    <Compile Include="Models\ReportesModels\InventarioAlmacenALT.cs" />
+    <Compile Include="Models\ReportesModels\MEfectividadPorRuta.cs" />
+    <Compile Include="Models\ReportesModels\MInformeCuadreVentas.cs" />
+    <Compile Include="Models\ReportesModels\MReporteCFDI.cs" />
+    <Compile Include="Models\ReportesModels\MReporteClientesNoVisitados.cs" />
+    <Compile Include="Models\ReportesModels\MReporteVentaClienteOportuno.cs" />
+    <Compile Include="Models\ReportesModels\MTiemposEnRutaIN.cs" />
+    <Compile Include="Models\ReportesModels\PedidoPromedioCliente.cs" />
+    <Compile Include="Models\ReportesModels\PedidosPreventaAlt.cs" />
+    <Compile Include="Models\ReportesModels\PromocionesNvoMOR.cs" />
+    <Compile Include="Models\ReportesModels\ResumenTiempoMovimientos.cs" />
+    <Compile Include="Models\ReportesModels\ScoreCard.cs" />
+    <Compile Include="Models\ReportesModels\CarteraMensualXRutaPDR.cs" />
+    <Compile Include="Models\ReportesModels\VentasBYD.cs" />
+    <Compile Include="Models\ReportesModels\VentasvsAnioAnterior.cs" />
+    <Compile Include="Models\ReportesModels\CargasRealesporPedido.cs" />
+    <Compile Include="Models\ReportesModels\VentaDetalladoCompleto.cs" />
+    <Compile Include="Models\ReportesModels\CierreDeDiaGrupoMOR.cs" />
+    <Compile Include="Models\ReportesModels\ClientesInformacionBase.cs" />
+    <Compile Include="Models\ReportesModels\CoberturaPorProductoMOR.cs" />
+    <Compile Include="Models\ReportesModels\ComparativoVentaMensualMOO.cs" />
+    <Compile Include="Models\ReportesModels\CumplimientoVisitaGHR.cs" />
+    <Compile Include="Models\ReportesModels\DescargaEnvaseALT.cs" />
+    <Compile Include="Models\ReportesModels\DocumentosConSaldo.cs" />
+    <Compile Include="Models\ReportesModels\DownloadFile.cs" />
+    <Compile Include="Models\ReportesModels\EfectividadVisitaRIP.cs" />
+    <Compile Include="Models\ReportesModels\EncuestasAplicadas.cs" />
+    <Compile Include="Models\ReportesModels\GAPMOR.cs" />
+    <Compile Include="Models\ReportesModels\InventarioVentasRIK.cs" />
+    <Compile Include="Models\ReportesModels\LiquidacionMOR.cs" />
+    <Compile Include="Models\ReportesModels\LiquidacionRIK.cs" />
+    <Compile Include="Models\ReportesModels\MyOpenXML.cs" />
+    <Compile Include="Models\ReportesModels\PromocionClientesMOR.cs" />
+    <Compile Include="Models\ReportesModels\PromocionesMOR.cs" />
+    <Compile Include="Models\ReportesModels\PuntosPorCliente.cs" />
+    <Compile Include="Models\ReportesModels\VentaDetalladaMOR.cs" />
+    <Compile Include="Models\ReportesModels\VentasPorClienteMOR.cs" />
+    <Compile Include="Models\ReportesModels\VentasporCodigoDetalladoUNI.cs" />
+    <Compile Include="Models\ReportesModels\VentasPorDiaMOR.cs" />
+    <Compile Include="Models\ReportesModels\VentasPorProductoMOR.cs" />
+    <Compile Include="Models\ReportesModels\NecesidadesDeCargaUNI.cs" />
+    <Compile Include="Models\ReportesModels\LiquidacionUNI.cs" />
+    <Compile Include="Models\ReportesModels\VentasXadisSIE.cs" />
+    <Compile Include="Models\Ruta.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RutaProductoEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RutaPunto.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RutasOxxo.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RuteoDinamico.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Secuencia.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SEMHist.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubEmpresa.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SupervisorRuta.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Terminal.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TerminalSerial.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TerminalVersion.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RutaModel.cs" />
+    <Compile Include="Models\TpdPun.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TransProd.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TransProdDetalle.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrpPrp.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Models\PerfilModel.cs" />
+    <Compile Include="Models\PoliticaPrivacidad.cs" />
+    <Compile Include="Models\AlmacenProducto.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Configuracion.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONHist.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Interfaz.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IntPer.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MENDetalle.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mensaje.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Modulo.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Perfil.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PoliticaContrasena.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PoliticaContrasenaHist.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfileModel.cs" />
+    <Compile Include="Models\ReportesModels\AnalisisDeSaldoMOO.cs" />
+    <Compile Include="Models\ReportesModels\EstatusPedidosSAPChocolatera.cs" />
+    <Compile Include="Models\ReportesModels\Cargas.cs" />
+    <Compile Include="Models\ReportesModels\Pedidos.cs" />
+    <Compile Include="Models\ReportesModels\PuntosGPS.cs" />
+    <Compile Include="Models\ReportesModels\PuntosRecorrido.cs" />
+    <Compile Include="Models\ReportesModels\TiemposEnRuta.cs" />
+    <Compile Include="Models\ReportGetCondition.cs" />
+    <Compile Include="Models\RouteModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RouteModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RouteModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RouteModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RouteModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TokenModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioAlmacen.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValorReferencia.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlmacenCentroModel.cs" />
+    <Compile Include="Models\ValorRefModel.cs" />
+    <Compile Include="Models\VARValor.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VAVDescripcion.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VENCentroDistHist.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vendedor.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VendedorDescuento.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VendedorEsquema.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VendedorJornada.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VendedorMensaje.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VenRut.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Visita.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Zona.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ZonaPunto.cs">
+      <DependentUpon>RouteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Reports\R002Ventas\R002VentasDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R002Ventas\R002VentasGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R002Ventas\R002VentasPedidosPorProducto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R010DevolucionesYCambiosDelCliente\R010DevolucionesYCambiosDelCliente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R027DevolucionesYCambiosPorVendedor\R027DevolucionesYCambiosPorVendedor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R027DevolucionesYCambiosPorVendedor\R027DevolucionesYCambiosPorVendedorResumen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R130PedidosPreventaDetallado\R130PedidosPreventaDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R130PedidosPreventaDetallado\R130PedidosPreventaDetalladoTotalPorProducto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R135Sincronizacion\R135Sincronizacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R153LibroDeRuta\R153LibroDeRuta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R262Ventas\R262Ventas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R075CobranzaMultiple\R075CobranzaMultiple.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R075CobranzaMultiple\R075CobranzaMultiple1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R075CobranzaMultiple\R075CobranzaMultiple2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R075CobranzaMultiple\R075CobranzaMultiple3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ActividadesAcumuladoCOS\ActividadesAcumuladoCOS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CargasDEL\CargasDELReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CargasDEL\ResumenLotes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CargasDEL\TotalFechaDEL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CargaSugeridaRIP\CargaSugeridaRIP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ClientesEsquemaVIT\ClientesEsqueVIT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\R046ClientesPorRuta\R046ClientesPorRuta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ComisionesTUC\ReporteComisionesTUC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ComisionesTUC\ReporteEsquemasComisionesTUC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioActividadesVit\report_PrincipalVit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioActividadesVit\report_SubNoVisitadosVit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioDeActividadesPDR\report_PrincipalPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioDeActividadesPDR\report_SubNoVisitadosPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioDeActividadesTiemposPDR\report_PrincipalTPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioDeActividadesTiemposPDR\report_SubKmTPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioDeActividadesTiemposPDR\report_SubNoVisitadosTPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioDeActividades\report_Principal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DiarioDeActividades\report_SubNoVisitados.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DocumentosConSaldoPDR\ReporteDocumentosConSaldoPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado10.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado11.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado12.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado13.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado14.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado15.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado16.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado17.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado5.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado6.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado7.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado8.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado9.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\efectividadPoRutaSubDetallado6.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadPorRuta\reporteEfectividadPorRutaGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\FacturaGlobalPDR\CobranzaFacturaGlobalPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\FacturaGlobalPDR\FacturaGlobalPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ImproductividadXCliente\rep_ImprodXCliente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IndicadoresDeVentaPDR\IndicadoresDeVentaPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IndicadoresDeVenta\IndicadoresDeVenta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InformeClientesSinVisitanSinVenta\InformeClientesVisitaVenta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionAfrima\ReporteLiquidacionAfrima.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionAfrima\SubReporteBilletesA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionAfrima\SubReporteCobranzaA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionAfrima\SubReporteContadoA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionAfrima\SubReporteCreditoA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionAfrima\SubReporteMonedasA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionAfrima\SubReporteProductosA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDEL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELCobranza.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELDesgloseDocumentos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELDesgloseEfectivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELKilometros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELTiemposVisitas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELTotales.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELTotalGeneralVisitas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELVentasContado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELVentasCredito.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionDEL\LiquidacionDELVisitasFueraRuta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionLaFlorida\ReporteLiquidacionLaFlorida.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionLaFlorida\SubReporteBilletes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionLaFlorida\SubReporteCobranza.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionLaFlorida\SubReporteContado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionLaFlorida\SubReporteCredito.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionLaFlorida\SubReporteDesglose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionLaFlorida\SubReporteMonedas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionLaFlorida\SubReporteProductos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionPDR\DesgloseEfectivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionPDR\LiquidacionPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionPDR\PreliquidacionPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionPDR\CobranzaPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionPDR\DesglosePDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionPDR\VentasContadoPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionPDR\VentasCreditoPDR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionTUC\Rpt_Liquidacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ListaDeSurtimientoCOS\ListaDeSurtimientoCOS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ListaDeSurtimientoCOS\PedidosPreventa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PedidoPreventaAlt\ProductosPedidosAlt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PedidoPreventaAlt\ReportePedidoGeneralAlt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PedidoPreventaAlt\ReportePedidosPreventaAlt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PedidoPromedioPorCliente\pedidoPromCliente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PlandeTrabajoSemanal\PlanTrabajoSemanal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ProximidadRIP\ProximidadRIP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteClientesNoVisitados\ReporteClientesNoVisitados.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteClientesSinVenta\ClientesSinVenta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteClienteVisVsPlanTrabajo\ReporteClienteVisVsPlanTrabajo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CargasRealesporPedido\ReporteCargasRealesporPedido.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CargasRealesporPedido\SubreporteGral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CargasRealesporPedido\SubreporteSTotal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HojaDeLiquidacionUNI\Ayudante.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HojaDeLiquidacionUNI\SubClientesNoSurtidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InformeCuadreVentas\InformeCuadreVentas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InventarioAlmacenALT\ReporteInventarioAlmacenALT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InventarioAlmacenALT\VentasContado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteCFDI\ReporteCFDInota.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteCFDI\PrincipalReporteCFDI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteLiquidacionLPB\PrincipalLiquidacionLPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteLiquidacionLPB\Sub1LPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteLiquidacionLPB\Sub2LPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteLiquidacionLPB\Sub3LPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteLiquidacionLPB\Sub4LPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteLiquidacionLPB\Sub5LPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteLiquidacionLPB\Sub6LPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteLiquidacionLPB\Sub7LPB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteVentaClienteOportuno\ReporteVentaClienteOportunoGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReporteVentaClienteOportuno\ReporteVenteClienteOportunoDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ResumenTiempoMovimientos\Report_ResActividades.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TiemposRutaINDAR\ClientesAgendaiN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TiemposRutaINDAR\ClientesFFrecuenciaIN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TiemposRutaINDAR\SubKilometrosIN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TiemposRutaINDAR\TiemposRutaReportIN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladoCompleto\ResumenLargo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladoCompleto\ResumenCorto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladoCompleto\ReporteGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladoCompleto\ResumenPorCodigo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladoCompleto\AutoventaPreventaResumen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladoCompleto\AutoventaPreventaCompleto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AnalisisSaldosMOO\AnalisisSaldosMOODetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AnalisisSaldosMOO\AnalisisSaldosMOOGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AnalisisSaldosMOO\SubVendedor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Cargas\CargasReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Cargas\TotalFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ClienteSinVenta\SubReportClienteSinVisita.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ClienteSinVenta\SubRepClienteSinVenta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DocumentosConSaldo\ReporteDocumentosConSaldo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EfectividadVisitaRIP\ReporteEfectividadVisitaRIP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EstatusPedidosSAPChocolatera\EstatusPedidosSAPChocolateraReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HojaDeLiquidacionUNI\ReporteHojaDeLiquidacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HojaDeLiquidacionUNI\SubClientesSurtidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HojaDeLiquidacionUNI\SubLiquidacionPorCodigoConsignacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HojaDeLiquidacionUNI\SubLiquidacionPorCodigoUnifoods.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\HojaDeLiquidacionUNI\SubResumenGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionMOR\Cobranza.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionMOR\ReporteLiquidacionMOR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionMOR\ReporteLiquidacionMOR2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionMOR\VentasContado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionMOR\VentasCredito.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LiquidacionMOR\VentasPorProducto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\NecesidadesDeCarga\ReporteNecesidadesDeCarga.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pedidos\ProductosPedidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pedidos\ReportePedidoGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pedidos\ReportePedidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PromocionClienteMOR\PromocionClientesMORReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PuntosGPS\ReportePuntosGPS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PuntosPorCliente\ReportePuntosPorCliente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ClienteSinVenta\ReporteClienteSinVenta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PuntosRecorrido\ReportePuntosRecorrido.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TiemposRuta\ClientesAgenda.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TiemposRuta\ClientesFFrecuencia.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TiemposRuta\SubKilometros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TiemposRuta\TiemposRutaReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladaMOR\ProductoPorPrecioKg.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladaMOR\ReporteVentaDetalladaMOR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladaMOR\VentaDetalladaKgMOR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladaMOR\VentasKG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDetalladaMOR\VentasProductoKg.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDiarioCOS\TotalGlobalProducto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentaDiarioCOS\VentaDiarioCOS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasBYD\ReporteVentasBYD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasGAT\VentasGATDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasGAT\VentasGATGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasGAT\VentasGATPedidosPorProducto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasporCodigoDetalladoUNI\ReporteVentasporCodigoDetalladoUNI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasporCodigoDetalladoUNI\SubReporteVentasClienteDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasporCodigoDetalladoUNI\SubReporteVentasCodigo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasporCodigoDetalladoUNI\SubReporteVentasCliente.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasporCodigoDetalladoUNI\SubReporteResumenT1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasporCodigoDetalladoUNI\SubReporteResumenT3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasvsAnioAnterior\ReporteVentasvsAnioAnterior.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasvsAnioAnterior\SubReporteDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasvsAnioAnterior\SubReporteGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasLPB\PedidosProductoDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasLPB\PedidosProductoGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasLPB\VentasDetallado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasLPB\VentasGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Assets\CSS\StyleModules.css" />
+    <Content Include="Assets\CSS\StyleReports.css" />
+    <Content Include="Assets\Login\a_login_bg.png" />
+    <Content Include="Assets\Login\a_login_logo.png" />
+    <Content Include="Content\120px-FF0084_circle.svg.png" />
+    <Content Include="Content\185963.svg" />
+    <Content Include="Content\angular-ui-tree.css" />
+    <Content Include="Content\css\angular-material.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\circleblack.png" />
+    <Content Include="Content\css\angular-ui-tree.css" />
+    <Content Include="Content\css\angular.treeview.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\config.xml" />
+    <Content Include="Content\css\angular-ui-tree.min.css" />
+    <Content Include="Content\css\custom-tree.css" />
+    <Content Include="Content\css\treeGrid.css" />
+    <Content Include="Content\dirPagination.js" />
+    <Content Include="Content\images\actualizar.png" />
+    <Content Include="Content\images\buscar.png" />
+    <Content Include="Content\images\calendario.png" />
+    <Content Include="Content\images\cargando.gif" />
+    <Content Include="Content\images\consultar.png" />
+    <Content Include="Content\images\copiar.png" />
+    <Content Include="Content\images\crear.png" />
+    <Content Include="Content\images\diccionario.png" />
+    <Content Include="Content\images\editar.png" />
+    <Content Include="Content\images\eliminar.png" />
+    <Content Include="Content\js\angular.treeview.js" />
+    <Content Include="Content\js\dirPagination.js" />
+    <Content Include="Content\js\tree-grid-directive.js" />
+    <Content Include="Controllers\js\camiones.js" />
+    <Content Include="Controllers\js\cliente.js" />
+    <Content Include="Controllers\js\configuracionRecibo.js" />
+    <Content Include="Controllers\js\controllers\actividadesAcumuladoCOSController.js" />
+    <Content Include="Controllers\js\controllers\cargasDELController.js" />
+    <Content Include="Controllers\js\controllers\cifrasControlBYDController.js" />
+    <Content Include="Controllers\js\controllers\comisionesTUCController.js" />
+    <Content Include="Controllers\js\controllers\documentosConSaldoPDRController.js" />
+    <Content Include="Controllers\js\controllers\r207ExistenciasDeProductoController.js" />
+    <Content Include="Controllers\js\controllers\facturaGlobalPDRController.js" />
+    <Content Include="Controllers\js\controllers\filtroUnoController.js" />
+    <Content Include="Controllers\js\controllers\informeVentasROVController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionLPBController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionTUCController.js" />
+    <Content Include="Controllers\js\controllers\Maps\logisticoMapGenController.js" />
+    <Content Include="Controllers\js\controllers\movimientosPorLoteDELController.js" />
+    <Content Include="Controllers\js\controllers\pedidosConfirmadosPRSController.js" />
+    <Content Include="Controllers\js\controllers\r262VentasController.js" />
+    <Content Include="Controllers\js\controllers\r075CobranzaMultipleController.js" />
+    <Content Include="Controllers\js\controllers\r263ImproductividadImgController.js" />
+    <Content Include="Controllers\js\controllers\r264ClientesProspectosController.js" />
+    <Content Include="Controllers\js\controllers\vendedorClienteModelListPreBYDController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionDELController.js" />
+    <Content Include="Controllers\js\controllers\r002VentasController.js" />
+    <Content Include="Controllers\js\controllers\ventasParaInterfazController.js" />
+    <Content Include="Controllers\js\controllers\clientesEsquemaVITController.js" />
+    <Content Include="Controllers\js\controllers\r010DevolucionesYCambiosDelClienteController.js" />
+    <Content Include="Controllers\js\controllers\r027DevolucionesYCambiosPorVendedorController.js" />
+    <Content Include="Controllers\js\controllers\diarioActividadesVitController.js" />
+    <Content Include="Controllers\js\controllers\improductXClienteController.js" />
+    <Content Include="Controllers\js\controllers\indicadoresOJAIController.js" />
+    <Content Include="Controllers\js\controllers\r153LibroDeRutaController.js" />
+    <Content Include="Controllers\js\controllers\globalPorRutaAFRController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionAfrimaController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionLaFloridaController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionPDRController.js" />
+    <Content Include="Controllers\js\controllers\pedidosPreventaAltController.js" />
+    <Content Include="Controllers\js\controllers\r130PedidosPreventaDetalladoController.js" />
+    <Content Include="Controllers\js\controllers\promocionesNvoMORController.js" />
+    <Content Include="Controllers\js\controllers\cargaPorDiaBYDController.js" />
+    <Content Include="Controllers\js\controllers\cargasFinalesPorRutaController.js" />
+    <Content Include="Controllers\js\controllers\cargasInicialesPorRutaController.js" />
+    <Content Include="Controllers\js\controllers\efectividadPorRutaController.js" />
+    <Content Include="Controllers\js\controllers\listaDeSurtimientoCOSController.js" />
+    <Content Include="Controllers\js\controllers\plandeTrabajoSemanalController.js" />
+    <Content Include="Controllers\js\controllers\informeCLientesSinVisitaSinVentaController.js" />
+    <Content Include="Controllers\js\controllers\informeCuadreVentasController.js" />
+    <Content Include="Controllers\js\controllers\reporteClientesNoVisitadosController.js" />
+    <Content Include="Controllers\js\controllers\reporteClienteVisVsPlanTrabajoController.js" />
+    <Content Include="Controllers\js\controllers\concentradoMovAlmacenALTController.js" />
+    <Content Include="Controllers\js\controllers\inventarioAlmacenController.js" />
+    <Content Include="Controllers\js\controllers\reporteCFDIController.js" />
+    <Content Include="Controllers\js\controllers\r135SincronizacionController.js" />
+    <Content Include="Controllers\js\controllers\clientesSinVentaController.js" />
+    <Content Include="Controllers\js\controllers\diarioDeActividadesController.js" />
+    <Content Include="Controllers\js\controllers\resumenTiempoMovimientoController.js" />
+    <Content Include="Controllers\js\controllers\scoreCardController.js" />
+    <Content Include="Controllers\js\controllers\tiemposEnRutaINDARController.js" />
+    <Content Include="Controllers\js\controllers\ventaClienteOportunoController.js" />
+    <Content Include="Controllers\js\controllers\ventaDiarioCOSController.js" />
+    <Content Include="Controllers\js\controllers\carteraMensualXRutaPDRController.js" />
+    <Content Include="Controllers\js\controllers\ventasBYDController.js" />
+    <Content Include="Controllers\js\controllers\pedidoPromedioPorCliente.js" />
+    <Content Include="Controllers\js\controllers\proximidadRIPController.js" />
+    <Content Include="Controllers\js\controllers\cargaSugeridaRIPController.js" />
+    <Content Include="Controllers\js\controllers\ventasLPBController.js" />
+    <Content Include="Controllers\js\controllers\ventasGATController.js" />
+    <Content Include="Controllers\js\controllers\ventasvsAnioAnteriorController.js" />
+    <Content Include="Controllers\js\controllers\cargasRealesporPedidoController.js" />
+    <Content Include="Controllers\js\controllers\ventaDetalladoCompletoController.js" />
+    <Content Include="Controllers\js\controllers\cierreDeDiaGrupoController.js" />
+    <Content Include="Controllers\js\controllers\clientesInformacionBaseMorController.js" />
+    <Content Include="Controllers\js\controllers\coberturaPorProductoMorController.js" />
+    <Content Include="Controllers\js\controllers\comparativoVentaMensualMooController.js" />
+    <Content Include="Controllers\js\controllers\cumplimientoVisitaGHRController.js" />
+    <Content Include="Controllers\js\controllers\descargaEnvaseAltController.js" />
+    <Content Include="Controllers\js\controllers\documentosConSaldoController.js" />
+    <Content Include="Controllers\js\controllers\efectividadVisitaRIPController.js" />
+    <Content Include="Controllers\js\controllers\exportarEncuestasAplicadasController.js" />
+    <Content Include="Controllers\js\controllers\gapMorController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionMorController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionUNIController.js" />
+    <Content Include="Controllers\js\controllers\Maps\clientesNoVisitadosMapFilterController.js" />
+    <Content Include="Controllers\js\controllers\Maps\clientesSinVentaMapController.js" />
+    <Content Include="Controllers\js\controllers\Maps\clientesSinVentaMapFilterController.js" />
+    <Content Include="Controllers\js\controllers\Maps\coberturaMapFilterController.js" />
+    <Content Include="Controllers\js\controllers\Maps\logisticoMapController.js" />
+    <Content Include="Controllers\js\controllers\necesidadesCargaController.js" />
+    <Content Include="Controllers\js\controllers\promocionClientesMorController.js" />
+    <Content Include="Controllers\js\controllers\promocionesMorController.js" />
+    <Content Include="Controllers\js\controllers\puntosPorClienteController.js" />
+    <Content Include="Controllers\js\controllers\ventaDetalladaMorController.js" />
+    <Content Include="Controllers\js\controllers\ventasPorClienteMorController.js" />
+    <Content Include="Controllers\js\controllers\ventasporCodigoDetalladoUNIController.js" />
+    <Content Include="Controllers\js\controllers\ventasPorDiaMorController.js" />
+    <Content Include="Controllers\js\controllers\ventasPorProductoMorController.js" />
+    <Content Include="Controllers\js\controllers\ventasXadisSIEController.js" />
+    <Content Include="Controllers\js\core\coreMaps.js" />
+    <Content Include="Controllers\js\defaultBox.js" />
+    <Content Include="Controllers\js\configParametro.js" />
+    <Content Include="Controllers\js\directivas.js" />
+    <Content Include="Controllers\js\folios.js" />
+    <Content Include="Controllers\js\frecuenciadeRutas.js" />
+    <Content Include="Controllers\js\frecuencias.js" />
+    <Content Include="Controllers\js\mdbMensaje.js" />
+    <Content Include="Controllers\js\messageBoxAux.js" />
+    <Content Include="Controllers\js\monedas.js" />
+    <Content Include="Controllers\js\cargas.js" />
+    <Content Include="Controllers\js\producto.js" />
+    <Content Include="Controllers\js\promociones.js" />
+    <Content Include="Controllers\js\rutas.js" />
+    <Content Include="Controllers\js\segmento.js" />
+    <Content Include="Controllers\js\seleccionEsquema.js" />
+    <Content Include="Controllers\js\services\mapServices.js" />
+    <Content Include="Controllers\js\subEmpresa.js" />
+    <Content Include="Controllers\js\almacen.js" />
+    <Content Include="Controllers\js\autoBox.js" />
+    <Content Include="Controllers\js\listasdeprecios.js" />
+    <Content Include="Controllers\js\terminales.js" />
+    <Content Include="Controllers\js\controllers\inventarioVentasRIKController.js" />
+    <Content Include="Controllers\js\controllers\liquidacionRIKController.js" />
+    <Content Include="Controllers\js\validateBox.js" />
+    <Content Include="Controllers\js\rutaBox.js" />
+    <Content Include="Controllers\js\configuracion.js" />
+    <Content Include="Controllers\js\controllers\estatusPedidosSAPChocolateraController.js" />
+    <Content Include="Controllers\js\mensaje.js" />
+    <Content Include="Controllers\js\centroBox.js" />
+    <Content Include="Controllers\js\perfil.js" />
+    <Content Include="Controllers\js\reporte.js" />
+    <Content Include="Controllers\js\translation.js" />
+    <Content Include="Controllers\js\controllers\cargasController.js" />
+    <Content Include="Controllers\js\controllers\r046ClientesPorRutaController.js" />
+    <Content Include="Controllers\js\controllers\analisisDeSaldosMooController.js" />
+    <Content Include="Controllers\js\controllers\pedidosController.js" />
+    <Content Include="Controllers\js\controllers\puntosGpsController.js" />
+    <Content Include="Controllers\js\controllers\puntosRecorridoController.js" />
+    <Content Include="Controllers\js\controllers\tiemposEnRutaController.js" />
+    <Content Include="Controllers\js\core\core.js" />
+    <Content Include="Controllers\js\mensaje.js" />
+    <Content Include="Controllers\js\reporte.js" />
+    <Content Include="Controllers\js\services\menuServices.js" />
+    <Content Include="Controllers\js\services\reportServices.js" />
+    <Content Include="Controllers\js\usuario.js" />
+    <Content Include="Controllers\js\valorReferencia.js" />
+    <Content Include="Content\css\loading-bar.css" />
+    <Content Include="Content\Logo.png" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\huge-red-circle.svg" />
+    <Content Include="Content\LACMTA_Circle_Blue_Line.svg.png" />
+    <Content Include="Controllers\js\vendedores.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\RouteModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RouteModel.edmx</DependentUpon>
+      <LastGenOutput>RouteModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RouteModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RouteModel.edmx</DependentUpon>
+      <LastGenOutput>RouteModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-aria.min.js" />
+    <Content Include="Scripts\angular-material.min.js" />
+    <Content Include="Scripts\angular-messages.min.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui-tree.js" />
+    <Content Include="Scripts\angular-ui-tree.min.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <EntityDeploy Include="Models\RouteModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RouteModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RouteModel.edmx.diagram">
+      <DependentUpon>RouteModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\eroute - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\eroute - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\eroute.pubxml" />
+    <None Include="Properties\PublishProfiles\eroutelocal.pubxml" />
+    <None Include="Properties\PublishProfiles\Trunk.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\globalize.cultures.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-3.0.0.debug.js" />
+    <Content Include="Scripts\knockout-3.0.0.js" />
+    <Content Include="Scripts\loading-bar.js" />
+    <Content Include="Scripts\lodash.js" />
+    <Content Include="Scripts\lodash.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ng-map.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\xml2json.js" />
+    <Content Include="Views\ConfigParametro\Index.cshtml" />
+    <Content Include="Views\Login\applicationServiceRefactored.js" />
+    <Content Include="Views\Login\Login.css" />
+    <Content Include="Views\Login\Login.js" />
+    <Content Include="Views\Login\maintenanceApp.js" />
+    <Content Include="Views\Shared\Cliente\CentroBox.cshtml" />
+    <Content Include="Views\Shared\Cliente\ClienteMensajeBox.cshtml" />
+    <Content Include="Views\Shared\FrecuenciadeRutas\SeleccionarFrecuenciaBox.cshtml" />
+    <Content Include="Views\Shared\ListasdePrecios\ListasVigenciaBox.cshtml" />
+    <Content Include="Views\Shared\ListasdePrecios\PrecioBox.cshtml" />
+    <Content Include="Views\Shared\ListasdePrecios\ValidateBox.cshtml" />
+    <Content Include="Views\Shared\MDBMensaje\CreacionMDBMensaje.cshtml" />
+    <Content Include="Views\Menu\css\angular.treeview.css" />
+    <Content Include="Views\Menu\css\filter.css" />
+    <Content Include="Views\Menu\img\file.png" />
+    <Content Include="Views\Menu\img\folder-closed.png" />
+    <Content Include="Views\Menu\img\folder.png" />
+    <Content Include="Views\Menu\img\jsfiddle01.png" />
+    <Content Include="Views\Menu\img\jsfiddle02.png" />
+    <Content Include="Views\Menu\img\preview.png" />
+    <Content Include="Views\Menu\js\angular.treeview.js" />
+    <Content Include="Controllers\js\menu.js" />
+    <Content Include="Views\Menu\css\sidebar.css" />
+    <Content Include="Views\Menu\js\sidebarapp.js" />
+    <Content Include="Views\Menu\js\sidebar_menu.js" />
+    <Content Include="Views\Menu\css\menu.css" />
+    <Content Include="Controllers\js\messageBox.js" />
+    <Content Include="Views\Reports\DescargaEnvaseALT.cshtml" />
+    <Content Include="Views\Reports\EfectividadVisitaRIP.cshtml" />
+    <Content Include="Views\Reports\PromocionClienteMOR.cshtml" />
+    <Content Include="Views\Shared\Monedas\VigenciaMonedasBox.cshtml" />
+    <Content Include="Views\Shared\Segmento\SegmentoPadre.cshtml" />
+    <Content Include="Views\Shared\Segmento\SegmentosBox.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenClienteMBox.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VendedoresBox.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenDescuentos.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenJornadas.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenListaPreciosBox.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenMensajesdelSistema.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenSegmentos.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenTerminalBox.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenUsuarioBox.cshtml" />
+    <Content Include="Views\Shared\Vendedores\VenVigenciaBox.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Menu\Templates\Filters.cshtml" />
+    <Content Include="Views\Menu\Landing.cshtml" />
+    <Content Include="Views\Maps\Index.cshtml" />
+    <Content Include="Views\Menu\Templates\ReportViewer.cshtml" />
+    <Content Include="Views\Reports\R046ClientesPorRuta.cshtml" />
+    <Content Include="Views\Reports\Ver.cshtml" />
+    <Content Include="Views\Reports\PuntosDeRecorrido.cshtml" />
+    <Content Include="Views\Reports\PuntosGPS.cshtml" />
+    <Content Include="Views\Reports\TiemposEnRuta.cshtml" />
+    <Content Include="Views\Reports\ReporteNoExiste.cshtml" />
+    <Content Include="Views\Reports\Pedidos.cshtml" />
+    <Content Include="Views\Reports\_Partial.cshtml" />
+    <Content Include="Views\Reports\Test.cshtml" />
+    <Content Include="Views\Reports\Empty.cshtml" />
+    <Content Include="Views\Menu\ReportIndex.cshtml" />
+    <Content Include="Views\Mensaje\Index.cshtml" />
+    <Content Include="Views\Shared\NoImplementado.cshtml" />
+    <Content Include="Views\Mensaje\Mensaje.cshtml" />
+    <Content Include="Views\Shared\MsgBox\YesNoMsgBox.cshtml" />
+    <Content Include="Views\Shared\MsgBox\MsgBox.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Reports\AnalisisDeSaldosMOO.cshtml" />
+    <Content Include="Views\Reports\Cargas.cshtml" />
+    <Content Include="Translations\Translation_EC.json" />
+    <Content Include="Translations\Translation_ECR.json" />
+    <Content Include="Translations\Translation_EM.json" />
+    <Content Include="Translations\Translation_EP.json" />
+    <Content Include="Translations\Translation_IN.json" />
+    <Content Include="Views\Perfil\Index.cshtml" />
+    <Content Include="Views\Perfil\Perfil.cshtml" />
+    <Content Include="Views\ValorReferencia\Create.cshtml" />
+    <Content Include="Views\ValorReferencia\Delete.cshtml" />
+    <Content Include="Views\ValorReferencia\Details.cshtml" />
+    <Content Include="Views\ValorReferencia\Edit.cshtml" />
+    <Content Include="Views\ValorReferencia\Index.cshtml" />
+    <Content Include="Views\Reports\EstatusPedidosSAPChocolatera.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Usuario.cshtml" />
+    <Content Include="Views\Usuario\Excepciones.cshtml" />
+    <Content Include="Views\Configuracion\Configuracion.cshtml" />
+    <Content Include="Views\Almacen\Index.cshtml" />
+    <Content Include="Views\Almacen\Almacen.cshtml" />
+    <Content Include="Views\SubEmpresa\Index.cshtml" />
+    <Content Include="Views\SubEmpresa\SubEmpresa.cshtml" />
+    <Content Include="Views\Camiones\Index.cshtml" />
+    <Content Include="Views\Terminales\Index.cshtml" />
+    <Content Include="Views\Terminales\Terminales.cshtml" />
+    <Content Include="Views\Reports\InventarioVentasRIK.cshtml" />
+    <Content Include="Views\Reports\LiquidacionRIK.cshtml" />
+    <Content Include="Views\Reports\CumplimientoVisitaGHR.cshtml" />
+    <Content Include="Views\Reports\CumplimientoVisitaGeneralGHR.cshtml" />
+    <Content Include="Views\ListasdePrecios\Index.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\Producto.cshtml" />
+    <Content Include="Views\Maps\ClientesNoVisitadosMapFilter.cshtml" />
+    <Content Include="Views\Maps\ClientesSinVentaMap.cshtml" />
+    <Content Include="Views\Maps\ClientesSinVentaMapFilter.cshtml" />
+    <Content Include="Views\Maps\CoberturaMapFilter.cshtml" />
+    <Content Include="Views\Maps\Empty.cshtml" />
+    <Content Include="Views\Maps\LogisticoMap.cshtml" />
+    <Content Include="Views\Reports\CierreDeDiaGrupoMOO.cshtml" />
+    <Content Include="Views\Reports\ClientesInformacionBaseMOR.cshtml" />
+    <Content Include="Views\Reports\CoberturaPorProductoMOR.cshtml" />
+    <Content Include="Views\Reports\ComparativoVentaMensualMOO.cshtml" />
+    <Content Include="Views\Reports\DocumentosConSaldo.cshtml" />
+    <Content Include="Views\Reports\GAPMOR.cshtml" />
+    <Content Include="Views\Reports\LiquidacionMOR.cshtml" />
+    <Content Include="Views\Reports\PromocionesMOR.cshtml" />
+    <Content Include="Views\Reports\VentaDetalladaMOR.cshtml" />
+    <Content Include="Views\Reports\VentasPorClienteMOR.cshtml" />
+    <Content Include="Views\Reports\VentasPorDiaMOR.cshtml" />
+    <Content Include="Views\Reports\VentasPorProductoMOR.cshtml" />
+    <Content Include="Views\ListasdePrecios\ListasdePrecios.cshtml" />
+    <Content Include="Views\Reports\ExportarEncuestas.cshtml" />
+    <Content Include="Views\Shared\MsgBox\MsgBoxAux.cshtml" />
+    <Content Include="Views\Shared\MsgBox\YesNoMsgBoxAux.cshtml" />
+    <Content Include="Views\Reports\PuntosPorCliente.cshtml" />
+    <Content Include="Views\Segmento\Index.cshtml" />
+    <Content Include="Views\Segmento\Segmento.cshtml" />
+    <Content Include="Views\Rutas\Index.cshtml" />
+    <Content Include="Views\Rutas\Rutas.cshtml" />
+    <Content Include="Views\Monedas\Index.cshtml" />
+    <Content Include="Views\Monedas\Monedas.cshtml" />
+    <Content Include="Views\Vendedores\Index.cshtml" />
+    <Content Include="Views\Vendedores\Vendedores.cshtml" />
+    <Content Include="Views\Cliente\Cliente.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\FrecuenciadeRutas\Cambiar.cshtml" />
+    <Content Include="Views\FrecuenciadeRutas\FrecuenciadeRutas.cshtml" />
+    <Content Include="Views\FrecuenciadeRutas\Index.cshtml" />
+    <Content Include="Views\Reports\NecesidadesDeCargaUNI.cshtml" />
+    <Content Include="Views\Reports\HojaDeLiquidacionUNI.cshtml" />
+    <Content Include="Views\Reports\VentasDetalladoCompleto.cshtml" />
+    <Content Include="Views\Reports\CargasRealesporPedido.cshtml" />
+    <Content Include="Views\Reports\VentasporCodigoDetalladoUNI.cshtml" />
+    <Content Include="Views\Reports\VentasvsAnioAnterior.cshtml" />
+    <Content Include="Views\Reports\ConcentradoMovAlmacenALT.cshtml" />
+    <Content Include="Views\Reports\CargasInicialesporRutaAlt.cshtml" />
+    <Content Include="Views\Reports\InventarioAlmacenALT.cshtml" />
+    <Content Include="Views\Reports\CargasFinalesporRutaAlt.cshtml" />
+    <Content Include="Views\ListasdePrecios\CopiarListasdePrecios.cshtml" />
+    <Content Include="Views\Reports\ReporteCFDI.cshtml" />
+    <Content Include="Views\Reports\VentasBYD.cshtml" />
+    <Content Include="Views\Reports\CargaPorDiaBYD.cshtml" />
+    <Content Include="Views\Promociones\Index.cshtml" />
+    <Content Include="Views\Promociones\Promociones.cshtml" />
+    <Content Include="Views\Reports\InformeCuadreVentas.cshtml" />
+    <Content Include="Views\Reports\ReporteClientesVisVsPlanTrabajo.cshtml" />
+    <Content Include="Views\Reports\InformeCLientesSinVisitaSinVenta.cshtml" />
+    <Content Include="Views\Reports\VentasGAT.cshtml" />
+    <Content Include="Views\Reports\EfectividadPorRuta.cshtml" />
+    <Content Include="Views\Reports\ListaDeSurtimientoCOS.cshtml" />
+    <Content Include="Views\Reports\ResumenTiempoMovimientos.cshtml" />
+    <Content Include="Views\Reports\R135Sincronizacion.cshtml" />
+    <Content Include="Views\Camiones\Camiones.cshtml" />
+    <Content Include="Views\Shared\Esquema\SeleccionEsquema.cshtml" />
+    <Content Include="Views\Cliente\Domicilio.cshtml" />
+    <Content Include="Views\Reports\ClientesSinVenta.cshtml" />
+    <Content Include="Views\Shared\Impuesto\SeleccionImpuesto.cshtml" />
+    <Content Include="Views\Reports\VentaClienteOportuno.cshtml" />
+    <Content Include="Views\Reports\PlandeTrabajoSemanal.cshtml" />
+    <Content Include="Views\Shared\Producto\SeleccionProducto.cshtml" />
+    <Content Include="Views\Shared\MDBMensaje\SeleccionMDBMensaje.cshtml" />
+    <Content Include="Views\Reports\TiemposEnRutaINDAR.cshtml" />
+    <Content Include="Views\Reports\DiarioDeActividades.cshtml" />
+    <Content Include="Views\Reports\ActividadesAcumuladoCOS.cshtml" />
+    <Content Include="Views\Reports\VentaDiarioCOS.cshtml" />
+    <Content Include="Views\Shared\FrecuenciadeRutas\AsignarClientesBox.cshtml" />
+    <Content Include="Views\Shared\FrecuenciadeRutas\SeleccionarRutaBox.cshtml" />
+    <Content Include="Views\Shared\Almacen\AutoBox.cshtml" />
+    <Content Include="Views\Shared\Producto\EsquemaBox.cshtml" />
+    <Content Include="Views\Shared\Producto\ProdBox.cshtml" />
+    <Content Include="Views\Shared\Producto\ProdCompBox.cshtml" />
+    <Content Include="Views\Shared\Producto\ProdEquivBox.cshtml" />
+    <Content Include="Views\Shared\Producto\ProdRelacionado.cshtml" />
+    <Content Include="Views\Shared\Rutas\RutaProductoBox.cshtml" />
+    <Content Include="Views\Shared\Rutas\VehiculoBox.cshtml" />
+    <Content Include="Views\Shared\Segmento\ProdPrioritario.cshtml" />
+    <Content Include="Views\Shared\SubEmpresa\ClientesBox.cshtml" />
+    <Content Include="Views\Shared\Promociones\EsquemaClientesBox.cshtml" />
+    <Content Include="Views\Reports\VentasLPB.cshtml" />
+    <Content Include="Views\Folios\Folios.cshtml" />
+    <Content Include="Views\Folios\Index.cshtml" />
+    <Content Include="Views\Reports\GlobalPorRutaAFR.cshtml" />
+    <Content Include="Views\Reports\LiquidacionAfrima.cshtml" />
+    <Content Include="Views\Reports\LiquidacionLaFlorida.cshtml" />
+    <Content Include="Views\Cargas\Index.cshtml" />
+    <Content Include="Views\Cargas\Cargas.cshtml" />
+    <Content Include="Views\Shared\SubEmpresa\HistorialBox.cshtml" />
+    <Content Include="Views\ConfiguracionRecibo\Index.cshtml" />
+    <Content Include="Views\ConfiguracionRecibo\ConfiguracionRecibo.cshtml" />
+    <Content Include="Views\Reports\R010DevolucionesYCambiosDelCliente.cshtml" />
+    <Content Include="Views\Reports\R027DevolucionesYCambiosPorVendedor.cshtml" />
+    <Content Include="Views\Shared\Cargas\CargaVendedorBox.cshtml" />
+    <Content Include="Views\Shared\Cargas\CargaProductoBox.cshtml" />
+    <Content Include="Views\FrecuenciadeRutas\Secuencia.cshtml" />
+    <Content Include="Views\Frecuencias\Index.cshtml" />
+    <Content Include="Views\Frecuencias\Frecuencias.cshtml" />
+    <Content Include="Views\Reports\PedidoPromedioPorCliente.cshtml" />
+    <Content Include="Views\Reports\LiquidacionPDR.cshtml" />
+    <Content Include="Views\Reports\R153LibroDeRuta.cshtml" />
+    <Content Include="Views\Reports\ImproductividadXCliente.cshtml" />
+    <Content Include="Views\Reports\CargaSugeridaRIP.cshtml" />
+    <Content Include="Views\Reports\ProximidadRIP.cshtml" />
+    <Content Include="Views\Reports\PedidosPreventaAltena.cshtml" />
+    <Content Include="Views\Reports\ScoreCard.cshtml" />
+    <Content Include="Views\Reports\DiarioActividadesVit.cshtml" />
+    <Content Include="Views\Reports\ClienteEsquemasVIT.cshtml" />
+    <Content Include="Views\Reports\IndicadoresOJAI.cshtml" />
+    <Content Include="Views\Reports\PromocionesNvoMOR.cshtml" />
+    <Content Include="Views\Reports\CarteraMensualXRutaPDR.cshtml" />
+    <Content Include="Views\Reports\R130PedidosPreventaDetallado.cshtml" />
+    <Content Include="Views\Shared\Promociones\ModulosBox.cshtml" />
+    <Content Include="Views\Reports\ventasParaInterfazHOR.cshtml" />
+    <Content Include="Views\Shared\Producto\ProdContenedor.cshtml" />
+    <Content Include="Views\Reports\CargasDEL.cshtml" />
+    <Content Include="Views\Reports\CifrasControlBYD.cshtml" />
+    <Content Include="Views\Reports\VendedorCliModelListPreBYD.cshtml" />
+    <Content Include="Views\Reports\LiquidacionTUC.cshtml" />
+    <Content Include="Views\Reports\LiquidacionDEL.cshtml" />
+    <Content Include="Views\Reports\ComisionesTUC.cshtml" />
+    <Content Include="Views\Reports\MovimientosPorLoteDEL.cshtml" />
+    <Content Include="Views\Reports\informeVentasXadisROV.cshtml" />
+    <Content Include="Views\Reports\FacturaGlobalPDR.cshtml" />
+    <Content Include="Views\Maps\LogisticoMapGen.cshtml" />
+    <Content Include="Views\Reports\ReporteClientesNoVisitados.cshtml" />
+    <Content Include="Views\Reports\FiltroUno.cshtml" />
+    <Content Include="Views\Shared\Cargas\CargasFiltro.cshtml" />
+    <Content Include="Views\Shared\Cargas\CargasReporte.cshtml" />
+    <Content Include="Views\Shared\Usuarios\UsuarioCEDIBox.cshtml" />
+    <Content Include="Views\Shared\Usuarios\UsuarioRutaBox.cshtml" />
+    <Content Include="Views\Reports\LiquidacionLPB.cshtml" />
+    <Content Include="Views\Reports\DocumentosConSaldoPDR.cshtml" />
+    <Content Include="Views\Reports\ventasXadisSIE.cshtml" />
+    <Content Include="Views\Reports\R002Ventas.cshtml" />
+    <Content Include="Views\Reports\PedidosConfirmadosPRS.cshtml" />
+    <Content Include="Views\Reports\R262Ventas.cshtml" />
+    <Content Include="Views\Reports\R075CobranzaMultiple.cshtml" />
+    <Content Include="Views\Reports\R207ExistenciasDeProducto.cshtml" />
+    <Content Include="Views\Reports\R263ImproductividadImagenes.cshtml" />
+    <Content Include="Views\Reports\R264ClientesProspectos.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
+    <Folder Include="Reportes\" />
+    <Folder Include="Views\Menu\ReportsTemplates\" />
+    <Folder Include="Views\Users\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\R002Ventas\R002VentasDetallado.resx">
+      <DependentUpon>R002VentasDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R002Ventas\R002VentasGeneral.resx">
+      <DependentUpon>R002VentasGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R002Ventas\R002VentasPedidosPorProducto.resx">
+      <DependentUpon>R002VentasPedidosPorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R010DevolucionesYCambiosDelCliente\R010DevolucionesYCambiosDelCliente.resx">
+      <DependentUpon>R010DevolucionesYCambiosDelCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R027DevolucionesYCambiosPorVendedor\R027DevolucionesYCambiosPorVendedor.resx">
+      <DependentUpon>R027DevolucionesYCambiosPorVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R027DevolucionesYCambiosPorVendedor\R027DevolucionesYCambiosPorVendedorResumen.resx">
+      <DependentUpon>R027DevolucionesYCambiosPorVendedorResumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R130PedidosPreventaDetallado\R130PedidosPreventaDetallado.resx">
+      <DependentUpon>R130PedidosPreventaDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R130PedidosPreventaDetallado\R130PedidosPreventaDetalladoTotalPorProducto.resx">
+      <DependentUpon>R130PedidosPreventaDetalladoTotalPorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R135Sincronizacion\R135Sincronizacion.resx">
+      <DependentUpon>R135Sincronizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R153LibroDeRuta\R153LibroDeRuta.resx">
+      <DependentUpon>R153LibroDeRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R262Ventas\R262Ventas.resx">
+      <DependentUpon>R262Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R075CobranzaMultiple\R075CobranzaMultiple.resx">
+      <DependentUpon>R075CobranzaMultiple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R075CobranzaMultiple\R075CobranzaMultiple1.resx">
+      <DependentUpon>R075CobranzaMultiple1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R075CobranzaMultiple\R075CobranzaMultiple2.resx">
+      <DependentUpon>R075CobranzaMultiple2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R075CobranzaMultiple\R075CobranzaMultiple3.resx">
+      <DependentUpon>R075CobranzaMultiple3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ActividadesAcumuladoCOS\ActividadesAcumuladoCOS.resx">
+      <DependentUpon>ActividadesAcumuladoCOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CargasDEL\CargasDELReport.resx">
+      <DependentUpon>CargasDELReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CargasDEL\ResumenLotes.resx">
+      <DependentUpon>ResumenLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CargasDEL\TotalFechaDEL.resx">
+      <DependentUpon>TotalFechaDEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CargaSugeridaRIP\CargaSugeridaRIP.resx">
+      <DependentUpon>CargaSugeridaRIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClientesEsquemaVIT\ClientesEsqueVIT.resx">
+      <DependentUpon>ClientesEsqueVIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\R046ClientesPorRuta\R046ClientesPorRuta.resx">
+      <DependentUpon>R046ClientesPorRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ComisionesTUC\ReporteComisionesTUC.resx">
+      <DependentUpon>ReporteComisionesTUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ComisionesTUC\ReporteEsquemasComisionesTUC.resx">
+      <DependentUpon>ReporteEsquemasComisionesTUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioActividadesVit\report_PrincipalVit.resx">
+      <DependentUpon>report_PrincipalVit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioActividadesVit\report_SubNoVisitadosVit.resx">
+      <DependentUpon>report_SubNoVisitadosVit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioDeActividadesPDR\report_PrincipalPDR.resx">
+      <DependentUpon>report_PrincipalPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioDeActividadesPDR\report_SubNoVisitadosPDR.resx">
+      <DependentUpon>report_SubNoVisitadosPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioDeActividadesTiemposPDR\report_PrincipalTPDR.resx">
+      <DependentUpon>report_PrincipalTPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioDeActividadesTiemposPDR\report_SubKmTPDR.resx">
+      <DependentUpon>report_SubKmTPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioDeActividadesTiemposPDR\report_SubNoVisitadosTPDR.resx">
+      <DependentUpon>report_SubNoVisitadosTPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioDeActividades\report_Principal.resx">
+      <DependentUpon>report_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DiarioDeActividades\report_SubNoVisitados.resx">
+      <DependentUpon>report_SubNoVisitados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DocumentosConSaldoPDR\ReporteDocumentosConSaldoPDR.resx">
+      <DependentUpon>ReporteDocumentosConSaldoPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaDetallado.resx">
+      <DependentUpon>efectividadPorRutaDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaGeneral.resx">
+      <DependentUpon>efectividadPorRutaGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado1.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado10.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado11.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado12.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado13.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado14.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado15.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado16.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado17.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado2.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado3.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado4.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado5.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado6.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado7.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado8.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPorRutaSubDetallado9.resx">
+      <DependentUpon>efectividadPorRutaSubDetallado9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\efectividadPoRutaSubDetallado6.resx">
+      <DependentUpon>efectividadPoRutaSubDetallado6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadPorRuta\reporteEfectividadPorRutaGeneral.resx">
+      <DependentUpon>reporteEfectividadPorRutaGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FacturaGlobalPDR\CobranzaFacturaGlobalPDR.resx">
+      <DependentUpon>CobranzaFacturaGlobalPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FacturaGlobalPDR\FacturaGlobalPDR.resx">
+      <DependentUpon>FacturaGlobalPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ImproductividadXCliente\rep_ImprodXCliente.resx">
+      <DependentUpon>rep_ImprodXCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IndicadoresDeVentaPDR\IndicadoresDeVentaPDR.resx">
+      <DependentUpon>IndicadoresDeVentaPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IndicadoresDeVenta\IndicadoresDeVenta.resx">
+      <DependentUpon>IndicadoresDeVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InformeClientesSinVisitanSinVenta\InformeClientesVisitaVenta.resx">
+      <DependentUpon>InformeClientesVisitaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionAfrima\ReporteLiquidacionAfrima.resx">
+      <DependentUpon>ReporteLiquidacionAfrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionAfrima\SubReporteBilletesA.resx">
+      <DependentUpon>SubReporteBilletesA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionAfrima\SubReporteCobranzaA.resx">
+      <DependentUpon>SubReporteCobranzaA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionAfrima\SubReporteContadoA.resx">
+      <DependentUpon>SubReporteContadoA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionAfrima\SubReporteCreditoA.resx">
+      <DependentUpon>SubReporteCreditoA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionAfrima\SubReporteMonedasA.resx">
+      <DependentUpon>SubReporteMonedasA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionAfrima\SubReporteProductosA.resx">
+      <DependentUpon>SubReporteProductosA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDEL.resx">
+      <DependentUpon>LiquidacionDEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELCobranza.resx">
+      <DependentUpon>LiquidacionDELCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELDesgloseDocumentos.resx">
+      <DependentUpon>LiquidacionDELDesgloseDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELDesgloseEfectivo.resx">
+      <DependentUpon>LiquidacionDELDesgloseEfectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELKilometros.resx">
+      <DependentUpon>LiquidacionDELKilometros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELTiemposVisitas.resx">
+      <DependentUpon>LiquidacionDELTiemposVisitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELTotales.resx">
+      <DependentUpon>LiquidacionDELTotales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELTotalGeneralVisitas.resx">
+      <DependentUpon>LiquidacionDELTotalGeneralVisitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELVentasContado.resx">
+      <DependentUpon>LiquidacionDELVentasContado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELVentasCredito.resx">
+      <DependentUpon>LiquidacionDELVentasCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionDEL\LiquidacionDELVisitasFueraRuta.resx">
+      <DependentUpon>LiquidacionDELVisitasFueraRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionLaFlorida\ReporteLiquidacionLaFlorida.resx">
+      <DependentUpon>ReporteLiquidacionLaFlorida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionLaFlorida\SubReporteBilletes.resx">
+      <DependentUpon>SubReporteBilletes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionLaFlorida\SubReporteCobranza.resx">
+      <DependentUpon>SubReporteCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionLaFlorida\SubReporteContado.resx">
+      <DependentUpon>SubReporteContado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionLaFlorida\SubReporteCredito.resx">
+      <DependentUpon>SubReporteCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionLaFlorida\SubReporteDesglose.resx">
+      <DependentUpon>SubReporteDesglose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionLaFlorida\SubReporteMonedas.resx">
+      <DependentUpon>SubReporteMonedas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionLaFlorida\SubReporteProductos.resx">
+      <DependentUpon>SubReporteProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionPDR\DesgloseEfectivo.resx">
+      <DependentUpon>DesgloseEfectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionPDR\LiquidacionPDR.resx">
+      <DependentUpon>LiquidacionPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionPDR\PreliquidacionPDR.resx">
+      <DependentUpon>PreliquidacionPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionPDR\CobranzaPDR.resx">
+      <DependentUpon>CobranzaPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionPDR\DesglosePDR.resx">
+      <DependentUpon>DesglosePDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionPDR\VentasContadoPDR.resx">
+      <DependentUpon>VentasContadoPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionPDR\VentasCreditoPDR.resx">
+      <DependentUpon>VentasCreditoPDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionTUC\Rpt_Liquidacion.resx">
+      <DependentUpon>Rpt_Liquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ListaDeSurtimientoCOS\ListaDeSurtimientoCOS.resx">
+      <DependentUpon>ListaDeSurtimientoCOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ListaDeSurtimientoCOS\PedidosPreventa.resx">
+      <DependentUpon>PedidosPreventa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PedidoPreventaAlt\ProductosPedidosAlt.resx">
+      <DependentUpon>ProductosPedidosAlt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PedidoPreventaAlt\ReportePedidoGeneralAlt.resx">
+      <DependentUpon>ReportePedidoGeneralAlt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PedidoPreventaAlt\ReportePedidosPreventaAlt.resx">
+      <DependentUpon>ReportePedidosPreventaAlt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PedidoPromedioPorCliente\pedidoPromCliente.resx">
+      <DependentUpon>pedidoPromCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PlandeTrabajoSemanal\PlanTrabajoSemanal.resx">
+      <DependentUpon>PlanTrabajoSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ProximidadRIP\ProximidadRIP.resx">
+      <DependentUpon>ProximidadRIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteClientesNoVisitados\ReporteClientesNoVisitados.resx">
+      <DependentUpon>ReporteClientesNoVisitados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteClientesSinVenta\ClientesSinVenta.resx">
+      <DependentUpon>ClientesSinVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteClienteVisVsPlanTrabajo\ReporteClienteVisVsPlanTrabajo.resx">
+      <DependentUpon>ReporteClienteVisVsPlanTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CargasRealesporPedido\ReporteCargasRealesporPedido.resx">
+      <DependentUpon>ReporteCargasRealesporPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CargasRealesporPedido\SubreporteGral.resx">
+      <DependentUpon>SubreporteGral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CargasRealesporPedido\SubreporteSTotal.resx">
+      <DependentUpon>SubreporteSTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HojaDeLiquidacionUNI\Ayudante.resx">
+      <DependentUpon>Ayudante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HojaDeLiquidacionUNI\SubClientesNoSurtidos.resx">
+      <DependentUpon>SubClientesNoSurtidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InformeCuadreVentas\InformeCuadreVentas.resx">
+      <DependentUpon>InformeCuadreVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InventarioAlmacenALT\ReporteInventarioAlmacenALT.resx">
+      <DependentUpon>ReporteInventarioAlmacenALT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InventarioAlmacenALT\VentasContado.resx">
+      <DependentUpon>VentasContado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteCFDI\ReporteCFDInota.resx">
+      <DependentUpon>ReporteCFDInota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteCFDI\PrincipalReporteCFDI.resx">
+      <DependentUpon>PrincipalReporteCFDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteLiquidacionLPB\PrincipalLiquidacionLPB.resx">
+      <DependentUpon>PrincipalLiquidacionLPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteLiquidacionLPB\Sub1LPB.resx">
+      <DependentUpon>Sub1LPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteLiquidacionLPB\Sub2LPB.resx">
+      <DependentUpon>Sub2LPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteLiquidacionLPB\Sub3LPB.resx">
+      <DependentUpon>Sub3LPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteLiquidacionLPB\Sub4LPB.resx">
+      <DependentUpon>Sub4LPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteLiquidacionLPB\Sub5LPB.resx">
+      <DependentUpon>Sub5LPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteLiquidacionLPB\Sub6LPB.resx">
+      <DependentUpon>Sub6LPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteLiquidacionLPB\Sub7LPB.resx">
+      <DependentUpon>Sub7LPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteVentaClienteOportuno\ReporteVentaClienteOportunoGeneral.resx">
+      <DependentUpon>ReporteVentaClienteOportunoGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReporteVentaClienteOportuno\ReporteVenteClienteOportunoDetallado.resx">
+      <DependentUpon>ReporteVenteClienteOportunoDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ResumenTiempoMovimientos\Report_ResActividades.resx">
+      <DependentUpon>Report_ResActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TiemposRutaINDAR\ClientesAgendaiN.resx">
+      <DependentUpon>ClientesAgendaiN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TiemposRutaINDAR\ClientesFFrecuenciaIN.resx">
+      <DependentUpon>ClientesFFrecuenciaIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TiemposRutaINDAR\SubKilometrosIN.resx">
+      <DependentUpon>SubKilometrosIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TiemposRutaINDAR\TiemposRutaReportIN.resx">
+      <DependentUpon>TiemposRutaReportIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladoCompleto\ResumenLargo.resx">
+      <DependentUpon>ResumenLargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladoCompleto\ResumenCorto.resx">
+      <DependentUpon>ResumenCorto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladoCompleto\ReporteGeneral.resx">
+      <DependentUpon>ReporteGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladoCompleto\ResumenPorCodigo.resx">
+      <DependentUpon>ResumenPorCodigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladoCompleto\AutoventaPreventaResumen.resx">
+      <DependentUpon>AutoventaPreventaResumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladoCompleto\AutoventaPreventaCompleto.resx">
+      <DependentUpon>AutoventaPreventaCompleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AnalisisSaldosMOO\AnalisisSaldosMOODetallado.resx">
+      <DependentUpon>AnalisisSaldosMOODetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AnalisisSaldosMOO\AnalisisSaldosMOOGeneral.resx">
+      <DependentUpon>AnalisisSaldosMOOGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AnalisisSaldosMOO\SubVendedor.resx">
+      <DependentUpon>SubVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Cargas\CargasReport.resx">
+      <DependentUpon>CargasReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Cargas\TotalFecha.resx">
+      <DependentUpon>TotalFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClienteSinVenta\SubReportClienteSinVisita.resx">
+      <DependentUpon>SubReportClienteSinVisita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClienteSinVenta\SubRepClienteSinVenta.resx">
+      <DependentUpon>SubRepClienteSinVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DocumentosConSaldo\ReporteDocumentosConSaldo.resx">
+      <DependentUpon>ReporteDocumentosConSaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EfectividadVisitaRIP\ReporteEfectividadVisitaRIP.resx">
+      <DependentUpon>ReporteEfectividadVisitaRIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EstatusPedidosSAPChocolatera\EstatusPedidosSAPChocolateraReport.resx">
+      <DependentUpon>EstatusPedidosSAPChocolateraReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HojaDeLiquidacionUNI\ReporteHojaDeLiquidacion.resx">
+      <DependentUpon>ReporteHojaDeLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HojaDeLiquidacionUNI\SubClientesSurtidos.resx">
+      <DependentUpon>SubClientesSurtidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HojaDeLiquidacionUNI\SubLiquidacionPorCodigoConsignacion.resx">
+      <DependentUpon>SubLiquidacionPorCodigoConsignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HojaDeLiquidacionUNI\SubLiquidacionPorCodigoUnifoods.resx">
+      <DependentUpon>SubLiquidacionPorCodigoUnifoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\HojaDeLiquidacionUNI\SubResumenGeneral.resx">
+      <DependentUpon>SubResumenGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionMOR\Cobranza.resx">
+      <DependentUpon>Cobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionMOR\ReporteLiquidacionMOR.resx">
+      <DependentUpon>ReporteLiquidacionMOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionMOR\ReporteLiquidacionMOR2.resx">
+      <DependentUpon>ReporteLiquidacionMOR2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionMOR\VentasContado.resx">
+      <DependentUpon>VentasContado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionMOR\VentasCredito.resx">
+      <DependentUpon>VentasCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LiquidacionMOR\VentasPorProducto.resx">
+      <DependentUpon>VentasPorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NecesidadesDeCarga\ReporteNecesidadesDeCarga.resx">
+      <DependentUpon>ReporteNecesidadesDeCarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pedidos\ProductosPedidos.resx">
+      <DependentUpon>ProductosPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pedidos\ReportePedidoGeneral.resx">
+      <DependentUpon>ReportePedidoGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pedidos\ReportePedidos.resx">
+      <DependentUpon>ReportePedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PromocionClienteMOR\PromocionClientesMORReport.resx">
+      <DependentUpon>PromocionClientesMORReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PuntosGPS\ReportePuntosGPS.resx">
+      <DependentUpon>ReportePuntosGPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PuntosPorCliente\ReportePuntosPorCliente.resx">
+      <DependentUpon>ReportePuntosPorCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClienteSinVenta\ReporteClienteSinVenta.resx">
+      <DependentUpon>ReporteClienteSinVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PuntosRecorrido\ReportePuntosRecorrido.resx">
+      <DependentUpon>ReportePuntosRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TiemposRuta\ClientesAgenda.resx">
+      <DependentUpon>ClientesAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TiemposRuta\ClientesFFrecuencia.resx">
+      <DependentUpon>ClientesFFrecuencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TiemposRuta\SubKilometros.resx">
+      <DependentUpon>SubKilometros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TiemposRuta\TiemposRutaReport.resx">
+      <DependentUpon>TiemposRutaReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladaMOR\ProductoPorPrecioKg.resx">
+      <DependentUpon>ProductoPorPrecioKg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladaMOR\ReporteVentaDetalladaMOR.resx">
+      <DependentUpon>ReporteVentaDetalladaMOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladaMOR\VentaDetalladaKgMOR.resx">
+      <DependentUpon>VentaDetalladaKgMOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladaMOR\VentasKG.resx">
+      <DependentUpon>VentasKG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDetalladaMOR\VentasProductoKg.resx">
+      <DependentUpon>VentasProductoKg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDiarioCOS\TotalGlobalProducto.resx">
+      <DependentUpon>TotalGlobalProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentaDiarioCOS\VentaDiarioCOS.resx">
+      <DependentUpon>VentaDiarioCOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasBYD\ReporteVentasBYD.resx">
+      <DependentUpon>ReporteVentasBYD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasGAT\VentasGATDetallado.resx">
+      <DependentUpon>VentasGATDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasGAT\VentasGATGeneral.resx">
+      <DependentUpon>VentasGATGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasGAT\VentasGATPedidosPorProducto.resx">
+      <DependentUpon>VentasGATPedidosPorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasporCodigoDetalladoUNI\ReporteVentasporCodigoDetalladoUNI.resx">
+      <DependentUpon>ReporteVentasporCodigoDetalladoUNI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasporCodigoDetalladoUNI\SubReporteVentasClienteDetallado.resx">
+      <DependentUpon>SubReporteVentasClienteDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasporCodigoDetalladoUNI\SubReporteVentasCodigo.resx">
+      <DependentUpon>SubReporteVentasCodigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasporCodigoDetalladoUNI\SubReporteVentasCliente.resx">
+      <DependentUpon>SubReporteVentasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasporCodigoDetalladoUNI\SubReporteResumenT1.resx">
+      <DependentUpon>SubReporteResumenT1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasporCodigoDetalladoUNI\SubReporteResumenT3.resx">
+      <DependentUpon>SubReporteResumenT3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasvsAnioAnterior\ReporteVentasvsAnioAnterior.resx">
+      <DependentUpon>ReporteVentasvsAnioAnterior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasvsAnioAnterior\SubReporteDetallado.resx">
+      <DependentUpon>SubReporteDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasvsAnioAnterior\SubReporteGeneral.resx">
+      <DependentUpon>SubReporteGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasLPB\PedidosProductoDetallado.resx">
+      <DependentUpon>PedidosProductoDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasLPB\PedidosProductoGeneral.resx">
+      <DependentUpon>PedidosProductoGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasLPB\VentasDetallado.resx">
+      <DependentUpon>VentasDetallado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VentasLPB\VentasGeneral.resx">
+      <DependentUpon>VentasGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4966</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4966/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

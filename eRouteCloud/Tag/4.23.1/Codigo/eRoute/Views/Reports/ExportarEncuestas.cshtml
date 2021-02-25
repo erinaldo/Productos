@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "eRoute";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+<script src="~/Controllers/js/controllers/exportarEncuestasAplicadasController.js"></script>
+<link href="~/Assets/CSS/StyleReports.css" rel="stylesheet" />
+
+<div ng-controller="exportarEncuestasAplicadasController as ctrl" ng-init="EstablecerReporte('@ViewBag.VAVClave')">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default" style="background-color:#B40002; border-radius:15px;">
+                <div class="panel-heading" style="background-color:#B40002; color:white; border-radius:15px;">
+                    <h4> {{ctrl.titulo}} </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+            <div class="panel panel-default Panel-Default-Filter">
+                <div class="panel-heading Panel-Filter">
+                    Fechas
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <md-input-container>
+                            <label>Rango</label>
+                            <md-select ng-model="ctrl.State" ng-change="ctrl.OnSelectChange(ctrl.State,0)">
+                                <md-option ng-repeat="state in ctrl.dateState" value="{{state.Nombre}}">
+                                    {{state.Nombre}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-datepicker ng-model="ctrl.date1" md-placeholder="Fecha" md-max-date="ctrl.minDate" ng-change="ctrl.date2=ctrl.date1; ctrl.OnSelectChange(ctrl.State,1); ctrl.showErrorForm = false;" onkeydown="return false"></md-datepicker>
+                        <md-datepicker ng-model="ctrl.date2" ng-show="ctrl.showSelect" md-placeholder="Fecha" md-min-date="ctrl.date1" md-max-date="ctrl.minDate" ng-change="ctrl.showErrorForm = false;" onkeydown="return false"></md-datepicker>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="panel panel-default Panel-Default-Filter">
+                <div class="panel-heading Panel-Filter">
+                    Encuestas
+                </div>
+                <div class="panel-body Panel-Body-Filter">
+                    <md-input-container md-no-float class="md-block" id="searchFilterMargin">
+                        <input ng-model="queryPolls" type="text" placeholder="Búsqueda" id="searchFilterText">
+                    </md-input-container>
+                    <md-divider id="lineDivider"></md-divider>
+                    <md-list id="listRadioButtom">
+                        <md-radio-group ng-model="EncuestaId" ng-change="queryPolls='';">
+                            <md-list-item ng-repeat="poll in ctrl.polls | filter:queryPolls" id="itemListRadioButtom">
+                                <md-radio-button ng-value="poll.Clave" class="md-primary" ng-cloak>
+                                    <p>{{poll.Clave}} {{poll.Nombre}}</p>
+                                </md-radio-button>
+                            </md-list-item>
+                        </md-radio-group>
+                    </md-list>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="panel panel-default Panel-Default-Filter">
+                <div class="panel-heading Panel-Filter">
+                    Centro De Distribución
+                </div>
+                <div class="panel-body Panel-Body-Filter">
+                    <md-input-container md-no-float class="md-block" id="searchFilterMargin">
+                        <input ng-model="queryCEDIS" type="text" placeholder="Búsqueda" id="searchFilterText">
+                    </md-input-container>
+                    <md-checkbox ng-model="selectAllCEDIS" ng-click="ctrl.SelectAllCheckboxesCEDIS(selectAllCEDIS)" id="checkBoxSelectAll">Seleccionar todos</md-checkbox>
+                    <md-divider id="lineDivider"></md-divider>
+                    <md-list id="listCheckBox">
+                        <md-list-item id="itemListCheckBox" ng-repeat="cedi in ctrl.cedis | filter:queryCEDIS">
+                            <md-checkbox id="itemCheckBoxValue" ng-disabled="cedi.Disabled" ng-model="cedi.Checked" ng-change="ctrl.CountCEDIS();"></md-checkbox>
+                            <p>{{cedi.Nombre}}</p>
+                        </md-list-item>
+                    </md-list>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="panel panel-default Panel-Default-Filter">
+                <div class="panel-heading Panel-Filter">
+                    Rutas
+                </div>
+                <div class="panel-body Panel-Body-Filter">
+                    <md-input-container md-no-float class="md-block" id="searchFilterMargin" ng-show="ctrl.routes != undefined">
+                        <input ng-model="queryRoutes" type="text" placeholder="Búsqueda" id="searchFilterText">
+                    </md-input-container>
+                    <md-checkbox ng-model="selectAllRoutes" ng-show="ctrl.routes != undefined" ng-click="ctrl.SelectAllCheckboxesRoutes(selectAllRoutes);" id="checkBoxSelectAll">Seleccionar todos</md-checkbox>
+                    <md-divider id="lineDivider" ng-show="ctrl.routes != undefined"></md-divider>
+                    <md-list id="listCheckBox">
+                        <md-list-item id="itemListCheckBox" ng-repeat="route in ctrl.routes | filter:queryRoutes">
+                            <md-checkbox id="itemCheckBoxValue" ng-disabled="route.Disabled" ng-model="route.Checked" ng-change="ctrl.CountRoutes();"></md-checkbox>
+                            <p>{{route.Nombre}}</p>
+                        </md-list-item>
+                    </md-list>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="viewer" class="row">
+        <div ng-show="ctrl.showErrorForm" ng-model="ctrl.ShowError">
+            <div class="error-message col-md-12">{{ctrl.ShowError}}</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <md-button type="submit" ng-click="ctrl.startbar(); ctrl.SubmitForm(ctrl.VAVClave = @ViewBag.VAVClave)" class="md-raised login-input pull-right" id="buttomReports">Generar reporte</md-button>
+        </div>
+    </div>
+</div>

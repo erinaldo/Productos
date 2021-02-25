@@ -1,0 +1,30 @@
+﻿<div id="SeleccionEsquema" class="modal fade">
+    <div class="modal-dialog modal-lg" id="R">
+        <div class="modal-content">
+
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="Add=[]"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{GetDescripcion("", "Seleccionar Esquema")}}</h2>
+            </div>
+
+            <!-- dialog body -->
+            <div class="modal-body" ng-init="index = false">
+                <tree-grid 
+                           tree-data="tree_data"
+                           col-defs="col_defs"
+                           expand-on="expanding_property"ERMIMEESC_IGeneral
+                           funct-del="ActionUrl"
+                           tree-control="myTreeControl"
+                           on-click="AgregarEsquema(branch['Clave'], branch['Nombre'], branch['EsquemaID']);">
+                </tree-grid>
+            </div>
+
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="AgregarEsquemas();">{{GetDescripcion("BTAceptar", "Aceptar")}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+

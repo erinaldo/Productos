@@ -1,0 +1,41 @@
+﻿<div id="SeleccionImpuesto" class="modal fade">
+    <div class="modal-dialog" id="R">
+        <div class="modal-content">
+
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{GetDescripcion("ERMIMPESC_IGeneral", "Seleccionar Impuesto")}}</h2>
+            </div>
+
+            <!-- dialog body -->
+            <div class="modal-body" ng-init="index = false">
+
+                <div ng-init="ObtenerImpuestos()">
+                    <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                        <tr>
+                            <th style="width:5%"></th>
+                            <th style="width:20%"><b>{{GetDescripcion("IMPClave", "Clave")}}</b></th>
+                            <th><b>{{GetDescripcion("IMPNombre","Nombre")}}</b></th>
+                            <th><b>{{GetDescripcion("IMPAbreviatura", "Abreviatura")}}</b></th>
+                        </tr>
+
+                        <tr ng-repeat="impuesto in impuestos">
+                            <td><input type="checkbox" ng-model="impuesto.Seleccionado" ng-true-value="true" ng-false-value="false" data-nodrag /></td>
+                            <td><span style="max-width:100%" data-modal="modal"> {{impuesto.ImpuestoClave}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal"> {{impuesto.Nombre}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal"> {{impuesto.Abreviatura}} </span></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="AgregarImpuestos();">{{GetDescripcion("BTAceptar","Aceptar")}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+

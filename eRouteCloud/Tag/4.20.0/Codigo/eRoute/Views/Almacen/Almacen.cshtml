@@ -1,0 +1,409 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    /**ESTILOS PROPIOS*/
+
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    @@media (min-width: 992px) {
+        .col-md-1 {
+            width: 12.333333%;
+        }
+    }
+
+    @@media (min-width: 992px) {
+        .col-md-3 {
+            width: 23%;
+        }
+
+        .col-md-1 {
+            width: 14.333333%;
+        }
+
+        .col-md-7 {
+            width: 59.333333%;
+        }
+    }
+
+    .header h3 {
+        line-height: 1.45;
+    }
+
+    .mapa {
+        width: 250px;
+        height: 143px;
+        margin: 2px;
+        border: solid 2px #b30000;
+        border-radius: 4px;
+    }
+
+
+    /******/
+    .form-valor .form-group label {
+        margin-top: 7px;
+    }
+
+    md-radio-button {
+        display: inline-block !important;
+    }
+
+    .titulo-descripcion {
+        margin-left: 35%;
+        display: inline-block;
+    }
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        border-top: none !important;
+    }
+
+    .lenguajes-tabla tr td {
+        padding-top: 0 !important;
+    }
+
+    .btn-eliminar-lenguaje {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .btn-e-l-m-i {
+        margin-left: 5px;
+    }
+
+    .modal-header .close {
+        margin-top: -10px !important;
+    }
+
+    .fa-2-m {
+        font-size: 1.4em;
+        color: #b70c0c;
+        font-weight: 600;
+    }
+
+    .activo-mg {
+        margin-top: 13px !important;
+    }
+
+    .conf-auto {
+        color: #b30000;
+        font-weight: 600;
+        font-size: medium;
+    }
+
+    .inline-check {
+        display: inline-block !important;
+    }
+
+    .w-60 {
+        width: 60% !important;
+        margin-top: 0px;
+        position: absolute;
+        margin-left: 20px;
+    }
+
+    /***REDUCE LOS BORDER DE LOS TABS*/
+    .nav-tabs > li > a {
+        border-radius: 0 !important;
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        color: #ffffff;
+        background-color: #b30000;
+        font-weight: 600;
+    }
+
+    .nav-tabs > li {
+        background: #c57b7b;
+    }
+
+        .nav-tabs > li a {
+            color: #ffffff;
+        }
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        background-color: rgba(179, 0, 0, 0.36);
+    }
+
+    /********* SI SE NECESITA EL SCROLL**********/
+    .modal-dialog {
+        overflow-y: initial !important;
+    }
+
+    .validateBox {
+        height: 250px !important;
+        overflow-y: auto;
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid #dddddd;
+        background: #75716c;
+        padding: 9px 10px 1px 10px;
+    }
+
+    @@media (min-width: 992px) {
+        .mapa-grid {
+            position: absolute;
+            float: right;
+            display: inline-grid;
+        }
+    }
+
+    /**********************/
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #map_canvas {
+        height: 100%;
+    }
+
+    @@media print {
+        html,
+        body {
+            height: auto;
+        }
+
+        #map_canvas {
+            height: 650px;
+        }
+    }
+</style>
+
+<div class="row margen-tabla">
+    <div class="col-md-12">
+
+    </div>
+</div>
+
+<div class="row margen-tabla" ng-controller="almacenCtrl" ng-init="EditarAlmacen('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+
+    <div class="header" style="display: block;">
+        <h3>&nbsp&nbsp{{translation.XAlmacenes}}</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form name="form" class="form-horizontal form-valor" ng-class="{submitted:form.submitted}" novalidate>
+                <br />
+                <div class="row form-group">
+                    <!--Var Código-->
+                    <label class="col-md-1">
+                        {{translation.ALMClave}}*
+                    </label>
+                    <div class="col-md-3">
+                        <input type="text" validar-clave-al="true" class="form-control" data-modal="modal" ng-model="Clave" name="Clave" ng-disabled="SoloLectura" ng-required="true" ng-maxlength="8" />
+                        <div ng-show="form.$submitted || form.Clave.$touched">
+                            <div class="error-message" ng-show="form.Clave.$error.required">{{translation.BE0001.replace('$0$', translation.CTIALMClave)}}</div>
+                            <div class="error-message" ng-show="form.Clave.$error.maxlength">{{translation.E0761.replace('$0$', translation.CTIALMClave)}}</div>
+                            <div class="error-message" ng-show="form.Clave.$error.claveRepetidaAlmacen">{{translation.BE0002}}</div>
+
+                        </div>
+
+                    </div>
+
+                    <label class="col-md-1">
+                        {{translation.ALMTipoEstado}}
+                    </label>
+
+                    <div class="col-md-3">
+                        <select class="form-control" data-modal="modal" ng-model="TipoEstado" name="TipoEstado"  ng-disabled="SoloLectura" ng-options="val.VAVClave as val.Descripcion for val in  edoreg " ng-required="true">
+                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                        </select>
+                    </div>
+                    
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-1">
+                        <label>
+                            {{translation.ALMNombre}}*
+                        </label>
+                    </div>
+
+                    <div class="col-md-7">
+                        <input maxlength="40" type="text" class="form-control" data-modal="modal" ng-model="Nombre" name="Nombre" ng-disabled="SoloLectura" ng-required="true" />
+                        <div ng-show="form.$submitted || form.Nombre.$touched">
+                            <div class="error-message" ng-show="form.Nombre.$error.required">{{translation.BE0001.replace('$0$', translation.ALMNombre)}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <!--Var Código-->
+                    <div class="col-md-1">
+                        <label class="">
+                            {{translation.ALMTipo}}*
+                        </label>
+                    </div>
+
+                    <div class="col-md-3">
+                        <select id="ddlTipoAlmacen" ng-disabled="TipoBloque || SoloLectura" style="max-width:100%" class="form-control" data-modal="modal" ng-click="ActivarPadre(); bloqueos()" ng-change="tipoAlm()" ng-model="Tipo" ng-options="tipo.VAVClave as tipo.Descripcion for tipo in almTipo" name="Tipo" ng-required="true">
+                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                        </select>
+
+                        <div ng-show="form.$submitted || form.Tipo.$touched">
+                            <div class="error-message" ng-show="form.Tipo.$error.required">{{translation.BE0001.replace('$0$', translation.ALMTipo)}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="">
+                            {{translation.ALMAlmacenPadreID}}
+                        </label>
+                    </div>
+
+
+                    <div class="col-md-3">
+
+                        <select class="form-control" ng-disabled="AlmacenPadreBloq || SoloLectura" data-modal="modal" ng-model="AlmacenPadreId" name="AlmacenPadreId" ng-options="val.AlmacenID as val.NombreCompuesto for val in btipouso" @*ng-required="true"*@></select>
+                    </div>
+                    <div class="col-md-2 mapa-grid">
+                        @*<div ng-show="mapa" id="map" class="mapa" ng-disabled="SoloLectura"></div>*@
+                        <label ng-show="mapa" id="map" class="mapa" ng-disabled="SoloLectura"></label>
+                    </div>
+
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-1">
+                        <label>
+                            {{translation.ALMDomicilio}}
+                        </label>
+                    </div>
+                    <div class="col-md-7">
+                        <textarea maxlength="120" class="form-control" ng-model="Domicilio" name="Domicilio" placeholder="{{translation.XDomicilio}}" ng-disabled="TipoBloque || SoloLectura"></textarea>
+
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <!--Var Código-->
+                    <div class="col-md-1">
+                        <label class="">
+                            {{translation.ALMLatitud}}
+                        </label>
+                    </div>
+
+                    <div class="col-md-3">
+                        <input type="number" max="100" class="form-control" data-modal="modal" ng-disabled="SoloLectura" ng-model="Latitud" name="Latitud" />
+
+                    </div>
+                    <div class="col-md-1">
+                        <label class="">
+                            {{translation.ALMLongitud}}
+                        </label>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <input type="number" max="100" class="form-control" data-modal="modal" ng-disabled="SoloLectura" ng-model="Longitud" name="Longitud" />
+                    </div>
+
+
+
+                </div>
+                <div class="row form-group">
+                    <!--Var Código-->
+                    <div class="col-md-1">
+                        <label class="">
+                            {{translation.ALMCodigoBarras}}
+                        </label>
+                    </div>
+
+                    <div class="col-md-3">
+                        <input type="text" ng-disabled="CodigoBarrasBloque || SoloLectura" class="form-control"    ng-required="requerido" data-modal="modal" ng-model="CodigoBarras" name="CodigoBarras" />
+                        <div ng-show="form.$submitted || form.CodigoBarras.$touched">
+                            <div class="error-message" ng-show="form.CodigoBarras.$error.required">{{translation.BE0001.replace('$0$', translation.ALMCodigoBarras)}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="">
+                            {{translation.ALMTelefono}}
+                        </label>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <input maxlength="32" type="text" class="form-control" data-modal="modal" ng-model="Telefono" name="Telefono" ng-disabled="SoloLectura" />
+                        <div ng-show="form.$submitted || form.Telefono.$touched">
+                            <div class="error-message" ng-show="form.Longitud.$error.required">{{translation.BE0001.replace('$0$', translation.ALMTelefono)}}</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 mapa-grid">
+                        <input type="button" value="Crear Mapa" class="btn btn-default btn-mapa" ng-click="CrearMapa()" ng-disabled="SoloLectura" />
+
+                    </div>
+                </div>
+                <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                    <div class="row" ng-show="tipoRequerido">
+                        <div class="col-md-6">
+                            @{ if (!bSoloLectura)
+                                {
+                                    @Html.ImageButtonLink("../Content/images/crear.png", "AgregarAutomovil()", "{{translation.XAgregar}} {{translation.CCamion}}")
+                                }
+                            }
+
+                        </div>
+                    </div>
+                    <br />
+                    <div ng-init="ObtenerDetalleAlmacen('@ViewBag.Clave')" ng-show="tipoRequerido">
+                        <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                            <tr>
+                                @{ if (!bSoloLectura)
+                                    {
+                                        <th style="width:5%"></th>
+                                    }
+                                }
+                                <th style="width:20%"><b>{{translation.CAMPlaca}}</b></th>
+                                <th><b>{{translation.CAMClave}}</b></th>
+                                <th><b>{{translation.CAMDescripcion}}</b></th>
+                            </tr>
+
+
+                            <tr ng-repeat="cam in camionData" ng-init="marcar()">
+                                @{ if (!bSoloLectura)
+                                    {
+                                        <td>
+                                            <span type="checkbox" ng-model="selectall" class="btn-eliminar-lenguaje btn-e-l-m-i" >
+
+                                                @Html.ImageButton("../Content/images/eliminar.png", "ValidarEliminarCamion($index, cam.Placa)", "{{translation.BTEliminar}}")
+                                            </span>
+                                        </td>
+                                    }
+                                }
+
+                                <td>
+                                    <span style="max-width:100%" data-modal="modal">{{cam.Placa}}</span>
+                                </td>
+                                <td>
+
+                                    <span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{cam.Clave}} </span>
+
+                                </td>
+                                <td>
+                                    <span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{cam.Descripcion}} </span>
+                                </td>
+
+                            </tr>
+                          
+                        </table>
+                    </div>
+
+                </div>
+                <br />
+                <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarAlmacen()" />
+                <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+            </form>
+            @{ Html.RenderPartial("Almacen/AutoBox"); }
+            @{ Html.RenderPartial("MsgBox/MsgBox"); }
+            @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,161 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+<style>
+
+
+    /**ESTILOS PROPIOS*/
+    #cuadrado {
+        background: red;
+        width: 100px;
+        height: 100px;
+        margin: 30px;
+    }
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    @@media (min-width: 992px) {
+        .col-md-1 {
+            width: 12.333333%;
+        }
+    }
+
+
+    /******/
+    .form-valor .form-group label {
+        margin-top: 7px;
+    }
+
+    md-radio-button {
+        display: inline-block !important;
+    }
+
+   
+
+   
+</style>
+
+<div class="container valores margen-tabla " ng-controller="TerminalCtrl" ng-init="EditarTerminal('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+    <div class="row ">
+        <div class="col-md-12 header">
+            <h3 class="titulo-altura ng-binding">{{translation.XTerminales}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form name="form" class="form-horizontal form-valor" ng-class="{sumitted:form.submited}" novalidate  >
+                <div role="tabpanel">
+                    <div class="tab-content">
+                        <br />
+                        <div role="tabpanel" class="tab-pane active" id="seccion1">
+                            <div class="row form-group ">
+                                <!--Clave-->
+                                <label class="col-md-2">
+                                    {{translation.XClave}}*<!--translation.XClave | uppercase  *poner en MAYUSCULAS LAS LETRAS-->
+                                </label>                               
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" data-modal="modal" ng-disabled="!Nuevo" ng-model="TerminalClave" ng-maxlength="8" name="TerminalClave" placeholder="{{translation.XClave}}" ng-required="true" validar-clave-t="true" />
+                                    <div ng-show="form.$submitted || form.TerminalClave.$touched">
+                                        <div class="error-message" ng-show="form.TerminalClave.$error.required">{{translation.BE0001.replace('$0$', translation.XClave)}}</div>
+                                        <div class="error-message" ng-show="form.TerminalClave.$error.claveRepetida">{{translation.BE0002}}</div>
+                                        <div class="error-message" ng-show="form.TerminalClave.$error.maxlength ">{{translation.E0761.replace('$0$', translation.XClave)}}</div>
+                                    </div>
+                                </div>
+                                <!--Fase-->
+                                <label class="col-md-3">
+                                    {{translation.XFase}}*
+                                </label>
+
+                                <div class="col-md-3">
+                                    <select id="ddlTipoFase"   class="form-control" data-modal="modal" ng-model="TipoFase" ng-required="true"  ng- ng-options="val.VAVClave as val.Descripcion for val in  terfase " name="TipoFase" ng-disabled="SoloLectura">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>   
+                                    <div ng-show="form.$submitted || form.TipoFase.$touched">
+                                        <div class="error-message" ng-show="form.TipoFase.$error.required">{{translation.BE0001.replace('$0$', translation.XFase)}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <!--Descripcion-->
+                                <label class="col-md-2">
+                                    {{translation.XDescripcion}}
+                                </label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" data-modal="modal" ng-model="Descripcion" name="Descripcion" ng-maxlength="32" placeholder="{{translation.XDescripcion}}" ng-required="false" ng-disabled="SoloLectura" />
+                                    <div ng-show="form.$submitted || form.Descripcion.$touched">
+                                        <div class="error-message" ng-show="form.Descripcion.$error.maxlength ">{{translation.E0761.replace('$0$', translation.XDescripcion)}}</div>
+                                    </div>
+                                </div>
+                                <!--CentrosdeDistibucion-->
+                                <label class="col-md-3">
+                                    {{translation.Xcentrodistribucion}}*
+                                </label>
+
+                                <div class="col-md-3">
+                                    <select id="ddlTipo" style="max-width:100%"  class="form-control" data-modal="modal" ng-model="AlmacenID" ng-required="true" ng-options="val.AlmacenID as val.NombreCompuesto for val in btipouso" name="{{'AlmacenID'}}" ng-disabled="SoloLectura">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+                                    <div ng-show="form.$submitted || form.AlmacenID.$touched">
+                                        <div class="error-message" ng-show="form.AlmacenID.$error.required">{{translation.BE0001.replace('$0$', translation.Xcentrodistribucion)}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group ">
+                                <!--NumerodeSerie-->
+                                <label class="col-md-2">
+                                    {{translation.TERNumeroSerie}}
+                                </label>
+                                <div class="col-md-5">
+                                    <input type="text"  class="form-control" data-modal="modal" ng-model="NumeroSerie" name="NumeroSerie" placeholder="{{translation.TERNumeroSerie}}" ng-disabled="true" />
+                                </div>
+                                <!--GPS-->
+                                <div class="col-md-1">
+                                    <input class="activo-mg" type="checkbox" ng-model="GPS" name="GPS" ng-disabled="SoloLectura">
+                                    <label>
+                                        {{translation.XGps}}
+                                    </label>
+                                </div>                                
+                            </div>
+                            <div class="row form-group">
+                                <!--Comentario-->
+                                <label class="col-md-2">
+                                    {{translation.XComentario}}
+                                </label>
+                                <div class="col-md-10">
+                                   <textarea class="form-control" ng-model="Comentario" ng-maxlength="64" name="Comentario" placeholder="{{translation.XComentario}}" ng-disabled="SoloLectura"> </textarea>
+                                    <div ng-show="form.$submitted || form.Comentario.$touched">
+                                        <div class="error-message" ng-show="form.Comentario.$error.maxlength ">{{translation.E0761.replace('$0$', translation.XComentario)}}</div>
+                                    </div>    
+                                 </div>    
+                                                  
+                            </div>
+                            <br />
+                            <div class="container" style="margin-left: 20px">
+                                @{  if (!bSoloLectura)
+                                    {
+                                        <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarTerminal()" />
+                                        <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                                    }
+                                    else
+                                    {
+                                        <input type="button" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                                    }
+                                }                                       
+                            </div>                           
+                        </div>
+                    </div>                    
+                </div> 
+                @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+                @{ Html.RenderPartial("MsgBox/MsgBox"); }
+            </form>
+        </div>
+    </div>
+ </div>
+
+

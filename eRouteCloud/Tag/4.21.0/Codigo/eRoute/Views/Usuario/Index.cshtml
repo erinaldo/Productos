@@ -1,0 +1,104 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+<style>
+       @@media (min-width: 992px)
+        {
+            .col-md-1 {
+                width: 9.333333%;
+            }
+        }
+       @@media (min-width: 992px)
+        {
+            .col-md-2 {
+                width: 15.666667%;
+            }
+       }
+      
+
+</style>
+
+<div class="container valores margen-tabla" ng-controller="usuarioCtrl" ng-init="AsignarPermisoUsuario('@ViewBag.Permiso')">
+    <div class="row">
+
+        <div class="col-md-12 header">
+            <h3 class="titulo-altura">{{translation.XUsuarios}}</h3>
+        
+            @{string sPermiso = ViewBag.Permiso;}
+        </div>
+    </div>
+    <div class="row header-valores">
+        <div class="col-md-1">
+            @{  if (sPermiso.Contains("C"))
+                {
+                    @Html.ImageActionLink("../Content/images/crear.png", Url.Action("Create", new { Permiso = ViewBag.Permiso }), "{{translation.BTCrear}}")
+                }
+            }
+        </div>
+        <div class="col-md-2">
+            @Html.ImageActionLink("../Content/images/actualizar.png", "javascript:location.reload()", "{{translation.BTActualizar}}")
+        </div>
+        <div class="col-md-3">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-addon"><img width="16" height="16" src="/Content/images/buscar.png" /></span>
+                    <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="search" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-5">
+            <dir-pagination-controls max-size="8"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table cellpadding="12" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th style="width:12%"></th>
+                        <th class="cursor-pointer" ng-click="sort('USUId')"><b>{{translation.USUCLAVE}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='USUId'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('Nombre')"><b>{{translation.USUNOMBRE}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Nombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('PERClave')"><b>{{translation.USUPERClave}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='PERClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th>Activo</th>
+                     </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="usr in cUsuariosList|orderBy:sortKey:reverse|filter:search|itemsPerPage:tamPag">
+                        <td>
+                            @{  if (sPermiso.Contains("U"))
+                                {
+                                    @Html.ImageAction("../Content/images/editar.png", HttpUtility.UrlDecode(Url.Action("Edit", "Usuario", new { USUId = "{{usr.USUId}}", Permiso = ViewBag.Permiso })), "{{translation.BTModificar}}")
+                                }else
+                           
+                                if (sPermiso.Contains("R"))
+                                {
+                                    @Html.ImageAction("../Content/images/consultar.png", HttpUtility.UrlDecode(Url.Action("Details", "Usuario", new { USUId = "{{usr.USUId}}", Permiso = ViewBag.Permiso })), "{{translation.btConsultar}}")
+                                }
+                            }
+              
+
+
+                        </td>
+                        <td>{{usr.Clave}}</td>
+                        <td>{{usr.Nombre}}</td>
+                        <td>{{usr.PERClave}}</td>
+                        <td><input type="checkbox" ng-disabled="true" ng-checked="usr.Activo" id="CheckboxActivo" name="CheckboxActivo" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+    @{ Html.RenderPartial("MsgBox/MsgBox"); }
+</div>
+
+
+

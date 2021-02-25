@@ -1,0 +1,163 @@
+﻿@{
+    ViewBag.Title = "Clientes Sin Venta";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+
+<link href="~/Views/Menu/css/filter.css" rel="stylesheet" />
+<script src="~/Controllers/js/controllers/Maps/clientesNoVisitadosMapFilterController.js"></script>
+<style>
+    /*lists*/
+    .listdemoListControls md-divider {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .listdemoListControls md-list {
+        padding-top: 0;
+    }
+
+    .listdemoListControls md-list-item > p,
+    .listdemoListControls md-list-item > ._md-list-item-inner > p,
+    .listdemoListControls md-list-item ._md-list-item-inner > p,
+    .listdemoListControls md-list-item ._md-list-item-inner > ._md-list-item-inner > p {
+        -webkit-user-select: none;
+        -moz-user-select: none;        
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .datepickerdemoBasicUsage {
+    }
+
+    .datepickerdemoBasicUsage md-content {
+        padding-bottom: 200px;
+    }
+
+    .datepickerdemoBasicUsage .validation-messages {
+        font-size: 12px;
+        color: #dd2c00;
+        margin: 10px 0 0 25px;
+
+    }
+    
+
+    md-checkbox.md-checked.freq .md-icon {
+        background-color: #0049b9;
+    }
+
+    md-checkbox.md-checked.real .md-icon {
+        background-color: #3dbf09;
+    }
+
+    md-checkbox.md-checked.config .md-icon {
+        background-color: #e88300;
+    }
+
+    md-checkbox.md-checked.range .md-icon {
+        background-color: #e82fd0;
+    }
+
+    md-checkbox.md-checked.nvisit .md-icon {
+        background-color: #272727;
+    }
+
+    .icon-label{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        color: white;
+        font-weight: bold;
+        width:25px; 
+        height:25px;
+        border-radius:12px 12px 12px 12px;
+        padding:5px;
+    }
+
+    .icon-position{
+        position: absolute;
+        top: -5px;
+        left: -14px;
+    }
+        
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYrm-MObvFEujYrIr0KvBZKQCM_eY1LCk"></script>
+
+<div ng-controller="clientesNoVisitadosMapFilterController as ctrl">
+    <h4>Clientes No Visitados</h4>
+    <div class="row">
+        <div class="col-lg-12">
+            <div layout="column" ng-cloak>
+                <form ng-submit="$event.preventDefault()" name="searchForm">
+                    <md-autocomplete flex required style="width:290px;margin:20px 0 10px 0;" ng-disabled="ctrl.isDisabled"
+                                     md-input-name="autocompleteField"
+                                     md-no-cache="ctrl.noCache"
+                                     md-selected-item="ctrl.selectedItem"
+                                     md-search-text-change="ctrl.ShowLists(ctrl.selectedItem.value)"
+                                     md-search-text="ctrl.searchText"
+                                     md-selected-item-change="ctrl.GetSellers(ctrl.selectedItem.value); ctrl.nShowLists(ctrl.selectedItem.value); ctrl.GetRoutes(ctrl.selectedItem.value)"
+                                     md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                     md-item-text="item.display"
+                                     md-min-length="0"
+                                     placeholder="Seleccionar centro de distribución">
+                        <md-item-template>
+                            <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No se han encontrado resultados para "{{ctrl.searchText}}".
+                        </md-not-found>
+                        <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                            <div ng-message="required">You <b>must</b> have a favorite state.</div>
+                        </div>
+                    </md-autocomplete>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:20px;margin-left:0px;" ng-show="ctrl.showList">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 list-margin">
+            Rutas
+            <div class="">
+                <md-input-container md-no-float class="md-block">
+                    <input ng-model="queryRoute" type="text" style="width:90%;margin-left:10px;" placeholder="Búsqueda">
+                </md-input-container>
+                <md-checkbox style="margin-left:4px;" ng-disabled="RoutesSelectallCheckBox" ng-model="selectAll" ng-click="ctrl.SelectAllChekboxesRoutes(selectAll)" ng-change="ctrl.ClearSellersCheckBoxes()">Seleccionar todos</md-checkbox>
+                <md-divider></md-divider>
+                <md-list ng-cloak style="max-height:310px;overflow-y:auto;margin-left:-16px;">
+                    <md-list-item ng-repeat="route in ctrl.routes | filter:queryRoute">
+                        <md-checkbox ng-disabled="route.Disabled" ng-model="route.Checked" ng-change="ctrl.ClearSellersCheckBoxes()"></md-checkbox>
+                        <p> {{ route.RUTClave }} | {{route.Descripcion}} </p>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-show="ctrl.showList" style="margin-top:20px;">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+            <md-input-container style="margin-top:5px; width:150px;">
+                <label>Rango</label>
+                <md-select ng-model="ctrl.State" ng-change="ctrl.OnSelectChange(ctrl.State)">
+                    <md-option ng-repeat="state in ctrl.dateState" value="{{state.Descripcion}}">
+                        {{state.Descripcion}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <md-datepicker style="background-color: #f7f7f7 !important;" ng-model="ctrl.date1" md-placeholder="Fecha" md-max-date="ctrl.minDate" onkeydown="return false"></md-datepicker>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <md-datepicker ng-show="ctrl.showSelect" style="background-color: #f7f7f7 !important;" ng-model="ctrl.date2" md-placeholder="Fecha" md-max-date="ctrl.minDate" onkeydown="return false"></md-datepicker>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+            <md-button type="submit" ng-click="ctrl.startbar(); ctrl.SubmitForm(ctrl.VAVClave = 4)" class="md-raised login-input pull-right" style="background-color:#E51500; color:white;font-weight:bold;">Ver Mapa</md-button>
+        </div>
+    </div>
+
+    <div id="viewer">
+
+    </div>
+</div>

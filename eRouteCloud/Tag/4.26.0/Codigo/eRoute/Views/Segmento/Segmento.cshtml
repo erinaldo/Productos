@@ -1,0 +1,356 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    /**ESTILOS PROPIOS*/
+
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    .bold {
+        font-weight: 600;
+    }
+
+    /******/
+
+    #EsquemaBox input[type="checkbox"] {
+        top: 2px;
+        position: relative;
+    }
+
+    @@media screen and (min-width: 768px) {
+        .modal-dialog {
+            width: 85%;
+        }
+    }
+
+
+    .modal-dialog {
+        overflow-y: initial !important;
+    }
+
+    .modal-body:not(.validateBox) {
+        height: 400px;
+        overflow-y: auto;
+    }
+
+    @@media (min-width: 992px) {
+
+        .col-md-2-hack {
+            width: 11.666667% !important;
+        }
+    }
+
+    .prestamo-checkbox {
+        position: relative;
+        top: 7px;
+    }
+
+    .boder-esquema {
+        border: #b30000 dotted 1px;
+    }
+
+    #generales {
+        margin-top: 20px;
+    }
+    /*** STYLE TREE VIEW**/
+    .tree-view-style {
+        border: solid 1px rgba(179, 0, 0, 0.21);
+        padding-bottom: 3px;
+        background: #f7f7f7;
+        color: #6d0e0e;
+        margin-top: 1px;
+        cursor: default;
+        border-radius: 1px;
+    }
+
+    .pad-10 {
+        padding-left: 10px !important;
+    }
+
+    .tree-view-link {
+        font-weight: 600;
+        font-size: 16px;
+        padding-left: 12px;
+        padding-top: 2px;
+        margin-right: -10px;
+    }
+
+        .tree-view-link:hover {
+            text-decoration: none;
+        }
+
+    #EsquemaBox input[type="checkbox"] {
+        margin-left: 10px;
+    }
+
+    .glyphicon {
+        top: -3px;
+    }
+
+    hr {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+        position: relative;
+        border-top: 1px solid #dddddd;
+        left: -16px;
+    }
+
+    .table {
+        margin-bottom: 10px !important;
+    }
+
+    .margen-tabla {
+        margin-right: -13px !important;
+    }
+
+    .col-xs-1-5 {
+        width: 4.333333% !important;
+    }
+
+    .thead-format {
+        background: #b81313;
+        color: #f7f7f7;
+        font-weight: 600;
+    }
+
+    .titulo-productos {
+        position: relative;
+        top: 4px;
+    }
+    .btn-esquema{
+        background: #b30000;
+        color: #FFF;
+    }
+    .datos-esquema{
+        margin: 0 25px;
+    }
+    .esquema-bloque{
+        margin-top:10px; padding:10px; background-color: rgba(179, 0, 0, 0.15); border-radius:5px; font:12px Tahoma;
+    }
+    .btn-eliminar-prio{
+        position:relative;
+        left: 45%;
+    }
+    .error-esquema{
+        font-size: 12px;
+        left: 29px;
+        position: relative;
+        top: 19px;
+    }
+    @@media screen and (min-width: 768px)
+    {
+        .validateBoxDialog {
+            width: 40%;
+        }
+    }
+
+</style>
+
+
+
+
+<div class="row margen-tabla" ng-controller="segmentosController" ng-init="EditarEsquema('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()', '@ViewBag.Action')">
+
+    <div class="header" style="display: block;">
+        <h3 class="titulo-productos">&nbsp&nbsp{{translation.XEsquemas}}</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+            <div role="tabpanel">
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active" role="presentation">
+                        <a href="#generales" aria-controls="" data-toggle="tab" role="tab">{{translation.XGenerales}}</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#productosPrioritarios" aria-controls="" data-toggle="tab" role="tab">{{translation.XProductosPrioritarios}}</a>
+                    </li>
+                </ul>
+                <form name="form" class="form-horizontal form-valor" ng-class="{submitted:form.submitted}" novalidate>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="generales">
+                            <div class="row form-group">
+                                <div class="col-md-2">
+                                    <label for="">
+                                        {{translation.ESQClave}}
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="Clave" id="Clave" ng-model="Clave" class="form-control" required>
+                                    <div ng-show="form.$submitted || form.Clave.$touched">
+                                        <div class="error-message" ng-show="form.Clave.$error.required">{{translation.BE0001.replace('$0$', translation.ESQClave)}}</div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label for="">{{translation.ESQTipoEstado}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="{{'PRUTipoUnidad' + $index" style="max-width:100%}}" class="form-control" data-modal="modal" ng-model="TipoEstado" ng-options="val.VAVClave as val.Descripcion for val in edoreg" name="TipoEstado">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-2">
+                                    <label for="">
+                                        {{translation.ESQEsquemaIDPadre}}
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <input type="text" name="EsquemaIDPadre" id="EsquemaIDPadre" verificar-esquema="true" ng-model="EsquemaIDPadre" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-secondary btn-esquema" ng-click="agregarSegmento()" type="button"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
+                                        </span>
+                                    </div>
+                                    <div ng-show="form.$submitted || form.EsquemaIDPadre.$touched">
+                                        <div class="error-message" ng-show="form.EsquemaIDPadre.$error.esquemaExistente">{{translation.E0094}}</div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input ng-disabled="true" type="text" name="EsquemaIDPadreNombre" id="EsquemaIDPadreNombre" ng-model="EsquemaIDPadreNombre" class="form-control">
+                                </div>
+
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-2">
+                                    <label for="">
+                                        {{translation.ESQNombre}}
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="Nombre" id="Nombre" ng-model="Nombre" class="form-control">
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label for="">{{translation.ESQAbreviatura}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="Abreviatura" id="Abreviatura" ng-model="Abreviatura" class="form-control">
+                                </div>
+
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-2">
+                                    <label for="">
+                                        {{translation.ESQOrden}}
+                                    </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="number" name="Orden" id="Orden" min="0" ng-model="Orden" class="form-control">
+                                    <div ng-show="form.$submitted || form.Orden.$touched">
+                                        <div class="error-message" ng-show="form.Orden.$error.min">{{translation.E0216.replace('$0$', '0').replace('$1$','100')}}</div>
+                                        <div class="error-message" ng-show="form.Orden.$error.number">{{translation.I0259.replace('$0$', translation.Orden )}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label for="">{{translation.ESQTipo}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="{{Tipo}}" ng-disabled="true" class="form-control" data-modal="modal" ng-model="Tipo" ng-options="val.VAVClave as val.Descripcion for val in tesquema" name="Tipo">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="row form-group" ng-init="verificarPorcentajeCambios()">
+                                 <div class="col-md-2">
+                                     <label ng-if="PorCambios == true" for="">{{translation.ESQPorCambiosCaduco}}</label>
+                                 </div>
+                                 <div class="col-md-4">
+
+                                    <input ng-if="PorCambios == true" type="number" min="0" max="100" name="PorCambiosCaduco" id="PorCambiosCaduco" ng-model="PorCambiosCaduco" class="form-control">
+                                     <div ng-show="form.$submitted || form.PorCambiosCaduco.$touched">
+                                         <div class="error-message" ng-show="form.PorCambiosCaduco.$error.max">{{translation.E0216.replace('$0$', '0').replace('$1$','100')}}</div>
+                                         <div class="error-message" ng-show="form.PorCambiosCaduco.$error.min">{{translation.E0216.replace('$0$', '0').replace('$1$','100')}}</div>
+                                         <div class="error-message" ng-show="form.PorCambiosCaduco.$error.number">{{translation.I0259.replace('$0$', translation.ESQPorCambiosCaduco )}}</div>
+                                     </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label for="">{{translation.ESQClasificacion}}</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="{{Clasificacion}}"  class="form-control" data-modal="modal" ng-model="Clasificacion" ng-options="val.VAVClave as val.Descripcion for val in cesquema " name="Clasificacion">
+                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="productosPrioritarios">
+                            <div class="row margen-agregar">
+                                <div class="col-md-6">
+                                    @{ if (!bSoloLectura)
+                                        {
+                                            @Html.ImageButton("../Content/images/crear.png", "agregarProductoPrioritario()", "{{translation.BTCrear}}", "btn-add-margin", "{{translation.BTCrear}}")
+                                        }
+                                    }
+                                </div>
+                            </div>
+
+                                <div class="row" ng-init="obtenerProductosDetalle('@ViewBag.Clave')">
+        
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>{{translation.PROProductoClave}}</td>
+                                                    <td>{{translation.PRONombreCorto}}</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="p in cProductoPriorList">
+                                                    <td>
+                                                        @Html.ImageButton("../Content/images/eliminar.png", "ValidarEliminarProductos(p.ProductoClave)", "{{translation.BTEliminar}}", "btn-eliminar-prio")
+                                                    </td>
+                                                    <td>{{p.ProductoClave}}</td>
+                                                    <td>{{p.Nombre}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarEsquema()" />
+                                <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                            </div>
+
+                            @{ Html.RenderPartial("MsgBox/YesNoMsgBoxAux"); }
+                            @{ Html.RenderPartial("Segmento/SegmentoPadre"); }
+                            @{ Html.RenderPartial("Segmento/ProdPrioritario"); }
+
+
+
+</form>
+                <!--Fin Form-->
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>

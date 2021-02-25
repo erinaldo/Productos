@@ -1,0 +1,676 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Configuración";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    /*Estilos Propios*/
+
+    .btn-Camiones {
+        background: #b30000;
+        color: #FFF;
+    }
+
+    .datos-Camiones {
+        margin: 0 20px;
+    }
+
+    .Camiones-bloque {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: rgba(179, 0, 0, 0.15);
+        border-radius: 5px;
+        font: 12px Tahoma;
+    }
+
+    #R {
+        width: 85%;
+    }
+
+    #T {
+        width: 95%;
+    }
+
+    .T {
+        height: 590px;
+        overflow-y: auto;
+    }
+
+    .scrollY {
+        width: 100%; /*manten el ancho que necesitas*/
+        /*y elimina el height, de esta manera el div ira creciendo en base a la cantidad de fotos*/
+        max-height: 200px;
+        /*overflow-x: scroll;*/
+        overflow: auto;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    @@media (min-width: 992px) {
+        .col-md {
+            width: 12.333333%;
+        }
+    }
+
+    .table {
+        width: 98%;
+    }
+
+    /********* SI SE NECESITA EL SCROLL**********/
+    .modal-dialog {
+        overflow-y: initial !important;
+    }
+
+    .modal-body:not(.validateBox):not(.T):not(.scroll-producto) {
+        height: 350px;
+        overflow-y: auto;
+    }
+
+    .scroll-completo {
+        /*overflow-x: scroll;
+        white-space: nowrap;
+        width:80%;*/
+        overflow-y: scroll;
+        height: 250px;
+    }
+
+    .scroll-producto {
+        /*overflow-x: scroll;
+        white-space: nowrap;
+        width:80%;*/
+        overflow-y: scroll;
+        height: 450px;
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid #dddddd;
+        background: #75716c;
+        padding: 0px 0px 0px 00px;
+    }
+
+    .scroll {
+        margin-right: 0px;
+    }
+
+    .btn-productos {
+        display: block;
+        width: 100%;
+        margin: 2px;
+        text-align: center;
+    }
+
+    /**********************/
+    td br {
+        display: none;
+    }
+</style>
+
+<div class="container" ng-controller="promocionesCtrl" ng-init="Esquemas(); ObtenerModulos(); EditarPromocion('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()', '@ViewBag.Opcion');">
+
+    <div class="header" style="display: block;" ng-show="ModCreate">
+        <h3>&nbsp&nbspCrear Promoción</h3>
+    </div>
+    <div class="header" style="display: block;" ng-show="!ModCreate">
+        <h3>&nbsp&nbspModificar Promoción</h3>
+    </div>
+    @{string sPermiso = ViewBag.Permiso;}
+
+    <form name="form" ng-class="{submitted:form.submitted}" novalidate>
+
+        <ul class="nav nav-duxstar" style="margin-top:5px;">
+            <li class="active"><a data-toggle="pill" href="#generales">{{translation.XGenerales}}</a></li>
+            <li><a data-toggle="pill" href="#productos">{{translation.XProductos}}</a></li>
+            <li><a data-toggle="pill" href="#reglas">{{translation.XReglas}}</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <!--Pestaña General-->
+            <div id="generales" class="tab-pane fade in active">
+                <div class="container">
+                    <div class="container" style="display:block; float:right; width:100%">
+
+                        <!--1ra Fila-->
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.XClave}}*</label>
+                                    <div class="col-md-2">
+                                        <input style="max-width:100%" type="text" class="form-control" data-modal="modal" ng-model="Clave" name="Clave" placeholder="{{translation.XClave}}" ng-required="true" ng-maxlength="10" ng-disabled="SoloLectura" validar-promocion="!SoloLectura" />
+                                        <div ng-show="form.$submitted || form.Clave.$touched">
+                                            <div class="error-message" ng-show="form.Clave.$error.required">{{translation.BE0001.replace('$0$', translation.XClave)}}</div>
+                                            <div class="error-message" ng-show="form.Clave.$error.maxlength">{{translation.E0761.replace('$0$', translation.XClave)}}</div>
+                                            <div class="error-message" ng-show="form.Clave.$error.ValidarPromocion">{{translation.BE0002}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.XEstado}}*</label>
+                                    <div class="col-md-2" ng-init="ObtenerEstado(); CreateUpdate();">
+                                        <select id="ddlEstadoPromocion" class="form-control" data-modal="modal" ng-model="Estado" name="Estado" ng-options="estado.VAVClave as estado.Descripcion for estado in edoreg" ng-required="true" ng-disabled="CM">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                        <div ng-show="form.$submitted || form.Estado.$touched">
+                                            <div class="error-message" ng-show="form.Estado.$error.required">{{translation.BE0001.replace('$0$', translation.XEstado)}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--2da Fila-->
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.USUNOMBRE}}</label>
+                                    <div class="col-md-6">
+                                        <input style="max-width:100%" type="text" class="form-control" data-modal="modal" ng-model="Nombre" name="Nombre" placeholder="{{translation.USUNOMBRE}}" ng-required="true" ng-maxlength="64" />
+                                        <div ng-show="form.$submitted || form.Nombre.$touched">
+                                            <div class="error-message" ng-show="form.Nombre.$error.required">{{translation.BE0001.replace('$0$', translation.USUNOMBRE)}}</div>
+                                            <div class="error-message" ng-show="form.Nombre.$error.maxlength">{{translation.E0761.replace('$0$', translation.USUNOMBRE)}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="checkbox" ng-checked="CKO" name="Obligatoria" style="padding-top:10px;" ng-model="Obligatoria" ng-disabled="SLO || SoloLectura" />
+                                        <label class="control-label" style="padding-top:10px;">{{translation.PRMObligatoria}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--3ra Fila-->
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.XFechaInicial}}</label>
+                                    <div class="col-md-2">
+                                        <md-datepicker ng-model="FechaI" class="md-picker-style" name="FechaI" ng-disabled="SoloLectura" style="transform: scale(1); z-index: 1200 !important;" validar-fecha-ini="true" ng-change="ValidarFin(); CadenaEntrada();"></md-datepicker>
+                                        <div ng-show="form.$submitted || form.FechaI.$touched">
+                                            <div class="error-message" ng-show="form.FechaI.$error.ValidarFechaIni">{{translation.E0066}}</div>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.XFechaFinal}}</label>
+                                    <div class="col-md-2">
+                                        <md-datepicker ng-model="FechaF" class="md-picker-style" name="FechaF" ng-disabled="" style="transform: scale(1); z-index: 1200 !important;" validar-fecha-fin="true" md-min-date="FechaI"></md-datepicker>
+                                        <div ng-show="form.$submitted || form.FechaF.$touched">
+                                            <div class="error-message" ng-show="form.FechaF.$error.ValidarFechaFin">{{translation.E0008}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="checkbox" ng-disabled="SLP" ng-checked="CKP" name="PCascada" ng-model="PCascada" style="padding-top:10px;" />
+                                        <label class="control-label" style="padding-top:10px;">Permite Cascada</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--4ta Fila-->
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.XTipo}}*</label>
+                                    <div class="col-md-2" ng-init="ObtenerTipo()">
+                                        <select id="ddlTipoPromocion" class="form-control" data-modal="modal" ng-model="Tipo" name="Tipo" ng-options="tipo.VAVClave as tipo.Descripcion for tipo in tprom" ng-required="true" ng-disabled="SLT||SoloLectura" ng-change="SoloLecturaF()">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                        <div ng-show="form.$submitted || form.Tipo.$touched">
+                                            <div class="error-message" ng-show="form.Tipo.$error.required">{{translation.BE0001.replace('$0$', translation.XTipo)}}</div>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.MOVTipoApl}}*</label>
+                                    <div class="col-md-2" ng-init="ObtenerAplicacion()">
+                                        <select id="ddlAplicacionPromocion" class="form-control" data-modal="modal" ng-model="Aplicacion" name="Aplicacion" ng-options="aplicacion.VAVClave as aplicacion.Descripcion for aplicacion in tapprom | filter:{VAVClave: OcultarT} | filter:{VAVClave: OcultarR}" ng-required="true" ng-disabled="SoloLectura" ng-change="SoloLecturaF()">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                        <div ng-show="form.$submitted || form.Aplicacion.$touched">
+                                            <div class="error-message" ng-show="form.Aplicacion.$error.required">{{translation.BE0001.replace('$0$', translation.MOVTipoApl)}}</div>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.PRMTipoRango}}*</label>
+                                    <div class="col-md-2" ng-init="ObtenerRango()">
+                                        <select id="ddlRango" class="form-control" data-modal="modal" ng-model="Rango" name="Rango" ng-options="rango.VAVClave as rango.Descripcion for rango in prmran" ng-required="true" ng-disabled="SLR||SoloLectura">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                        <div ng-show="form.$submitted || form.Rango.$touched">
+                                            <div class="error-message" ng-show="form.Rango.$error.required">{{translation.BE0001.replace('$0$', translation.PRMTipoRango)}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--5ta Fila-->
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.PRMTipoRegla}}*</label>
+                                    <div class="col-md-2" ng-init="ObtenerTipoRegla()">
+                                        <select id="ddlTipoReglaPromocion" class="form-control" data-modal="modal" ng-model="TipoRegla" name="TipoRegla" ng-options="tiporegla.VAVClave as tiporegla.Descripcion for tiporegla in aplrango" ng-required="true" ng-disabled="SLTR||SoloLectura" ng-change="SoloLecturaF()">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                        <div ng-show="form.$submitted || form.TipoRegla.$touched">
+                                            <div class="error-message" ng-show="form.TipoRegla.$error.required">{{translation.BE0001.replace('$0$', translation.PRMTipoRango)}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="checkbox" ng-disabled="SLSP||SoloLectura" ng-checked="CKSP" name="SeleccionP" ng-model="SeleccionP" style="padding-top:10px;" ng-change="SoloLecturaF()" />
+                                        <label class="control-label" style="padding-top:10px;">{{translation.PRMSeleccionProducto}}</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="checkbox" ng-disabled="SLCC||SoloLectura" ng-checked="CKCC" name="CapturaC" ng-model="CapturaC" style="padding-top:10px;" />
+                                        <label class="control-label" style="padding-top:10px;">{{translation.PRMCapturaCantidad}}</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="checkbox" ng-disabled="SLBO||SoloLectura" ng-checked="CKBO" name="BackOrder" ng-model="BackOrder" style="padding-top:10px;" />
+                                        <label class="control-label" style="padding-top:10px;">{{translation.PRMPendienteEntrega}}</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="checkbox" name="InventarioP" ng-model="InventarioP" style="padding-top:10px;" ng-disabled="SLBO||SoloLectura" />
+                                        <label class="control-label" style="padding-top:10px;">{{translation.PRMInventarioPromocion}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--6ta Fila--
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="checkbox" ng-disabled="SLNDP||SoloLectura" ng-checked="CKNDP" name="NDProducto" ng-model="NDProducto" style="padding-top:10px;" />
+                                        <label class="control-label" style="padding-top:10px;">{{translation.PRMNoDisminuirProducto}}</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="checkbox" ng-disabled="SLVEC||SoloLectura" ng-checked="CKVEL" name="ValidarEC" ng-model="ValidarEC" style="padding-top:10px;" />
+                                        <label class="control-label" style="padding-top:10px;">{{translation.PRMValidaMultiplesEsquemas}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--7ma Fila--
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <legend class="header">&nbsp&nbsp{{translation.XGruposCliente}}</legend>
+
+                                        <!--Tabla de Clientes y Botones-->
+                                        <div class="row form-group">
+                                            <div class="col-md-10 table-responsive scroll-completo">
+                                                <table cellpadding="12" class="table table-bordered table-hover">
+                                                    <!--Encabezado tabla-->
+                                                    <thead>
+                                                        <tr>
+                                                            <!--Orden ascendente o descendente-->
+                                                            <th style="width:3%;"></th>
+                                                            <th class="cursor-pointer" ng-click="sortEC('Clave')"><b>{{translation.XClave}}</b><span class="glyphicon sort-icon" ng-show="sortKeyEC=='Clave'" ng-class="{'glyphicon-chevron-up':reverseEC,'glyphicon-chevron-down':!reverseEC}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sortEC('Nombre')"><b>{{translation.PDVNombre}}</b><span class="glyphicon sort-icon" ng-show="sortKeyEC=='Nombre'" ng-class="{'glyphicon-chevron-up':reverseEC,'glyphicon-chevron-down':!reverseEC}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sortEC('Estado')"><b>{{translation.XEstado}}</b><span class="glyphicon sort-icon" ng-show="sortKeyEC=='Estado'" ng-class="{'glyphicon-chevron-up':reverseEC,'glyphicon-chevron-down':!reverseEC}"></span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="EC in EsquemasClientes|orderBy:sortKeyEC:reverseEC|orderBy:Lock:true|filter:search">
+                                                            <td ng-disabled="{{EC.Modificar}}">
+                                                                <!--Eliminar-->
+                                                                @{
+                                                                    if (sPermiso.Contains("D"))
+                                                                    {
+                                                                        @Html.ImageButton("../Content/images/eliminar.png", "RemoverCliente($index, EC.Clave, EC.Modificar)", "{{translation.BTEliminar}}")
+                                                                    }
+                                                                }
+                                                            </td>
+                                                            @*<td class="EditEC" ng-init="EditableEC(EC.Clave);" ng-keypress="ValidarEC($event);">{{EC.Clave}}</td>*@
+                                                            <td>
+                                                                <input style="max-width:100%" type="text" class="form-control" data-modal="modal" ng-model="EC.Clave" name="{{'Clave' + $index}}" placeholder="" ng-required="true" ng-maxlength="" value="" ng-disabled="{{EC.Modificar}}" onKeypress="if(event.keyCode == 13) event.returnValue = false;" ng-keypress="ValidarEC($event, EC);" ng-blur="ValidarEC($event, EC);" ng-change="EC.Nombre = ''; DeleteLast(EC);" />
+                                                                <div ng-show="form.$submitted || form.{{'Clave' + $index}}.$touched">
+                                                                    <div class="error-message" ng-show="form.{{'Clave' + $index}}.$error.required">{{translation.BE0001.replace('$0$', translation.XClave)}}</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <input style="max-width:100%" type="text" class="form-control" data-modal="modal" ng-model="EC.Nombre" name="" placeholder="{{EC.Nombre}}" ng-required="" ng-maxlength="" value="" ng-disabled="true" />
+                                                                @*{{EC.Nombre}}*@
+                                                            </td>
+                                                            <td>
+                                                                <select id="ddlEstado" class="form-control" data-modal="modal" ng-model="EC.Estado" name="{{'Estado' + $index }}" ng-required="validacion" ng-options="val.VAVClave as val.Descripcion for val in edoreg |filter:{VAVClave: '0'}">
+                                                                    <option value="" selected>{{translation.PERActivo}}</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="button" value="{{translation.BTCrear}}" class="btn-productos btn btn-default" ng-click="NuevoEC()" ng-disabled="EsquemaCliente" />
+                                                <input type="button" value="{{translation.BTBuscar}}" class="btn-productos btn btn-default" ng-click="Esquema_EC(); SeleccionarClientes();" ng-disabled="EsquemaCliente" />
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--8va Fila--
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <legend class="header">&nbsp&nbsp{{translation.XModulos}}</legend>
+
+                                        <!--Tabla de Modulos y Botones-->
+                                        <div class="row form-group">
+                                            <div class="col-md-10 table-responsive scroll-completo">
+                                                <table cellpadding="12" class="table table-bordered table-hover">
+                                                    <!--Encabezado tabla-->
+                                                    <thead>
+                                                        <tr>
+                                                            <!--Orden ascendente o descendente-->
+                                                            <th style="width:3%;"></th>
+                                                            <th class="cursor-pointer" ng-click="sortEM('Modulo')"><b>{{translation.XModulos}}</b><span class="glyphicon sort-icon" ng-show="sortKeyEM=='Modulo'" ng-class="{'glyphicon-chevron-up':reverseEM,'glyphicon-chevron-down':!reverseEM}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sortEM('Estado')"><b>{{translation.XEstado}}</b><span class="glyphicon sort-icon" ng-show="sortKeyEM=='Estado'" ng-class="{'glyphicon-chevron-up':reverseEM,'glyphicon-chevron-down':!reverseEM}"></span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="EM in EsquemasModulos|orderBy:sortKeyEM:reverseEM|orderBy:Lock:true|filter:search">
+                                                            <td>
+                                                                <!--Eliminar-->
+                                                                @{
+                                                                    if (sPermiso.Contains("D"))
+                                                                    {
+                                                                        @Html.ImageButton("../Content/images/eliminar.png", "RemoverModulo($index, EM.Modulo, EM.Modificar)", "{{translation.BTEliminar}}")
+                                                                    }
+                                                                }
+                                                            </td>
+                                                            <td class="" ng-init="" ng-keypress="">
+                                                                <select id="ddlTipoModulo" class="form-control" data-modal="modal" ng-model="EM.Modulo" name="{{'Modulo' + $index }}" ng-options="mod.ModuloMovDetalleClave as mod.Nombre for mod in modulos" ng-required="" ng-disabled="{{EM.Modificar}}" ng-change="EM.Nombre=''; NuevoEM();">
+                                                                    <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select id="ddlEstado" class="form-control" data-modal="modal" ng-model="EM.Estado" name="{{'Estado' + $index }}" ng-required="validacion" ng-options="val.VAVClave as val.Descripcion for val in edoreg |filter:{VAVClave: '0'}">
+                                                                    <option value="" selected>{{translation.PERActivo}}</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="button" value="{{translation.BTCrear}}" class="btn-productos btn btn-default" ng-click="NuevoEM()" />
+                                                <input type="button" value="{{translation.BTBuscar}}" class="btn-productos btn btn-default" ng-click="ObtenerModulos(); SeleccionarModulos()" />
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <br />
+                    </div>
+                </div>
+            </div>
+
+            <!--Pestaña Productos-->
+            <div id="productos" class="tab-pane fade">
+                <div class="container">
+                    <div class="container" style="display:block; float:right; width:100%">
+
+                        <!--1ra Fila-->
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12" ng-init="ObtenerSubEmpresa();">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.XSUBEMPRESA}}</label>
+                                    <div class="col-md-2">
+                                        <select id="" class="form-control" data-modal="modal" ng-model="SubEmpresa" name="Rango" ng-options="sub.SubEmpresaId as sub.NombreCorto for sub in subempresa" ng-required="false" ng-disabled="" ng-init="" ng-change="CambiarSE()"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--2da Fila-->
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12" ng-init="ObtenerProductos();">
+                                <div class="form-group">
+                                    <div class="col-md-4 modal-body scroll-producto" ng-init="index = false" style="font-size: 85%;">
+                                        <tree-grid tree-data="tree_productos"
+                                                   col-defs="col_defs"
+                                                   expand-on="expanding_property"
+                                                   funct-del="ActionUrl"
+                                                   tree-control="myTreeControl"
+                                                   on-click="myTreeControl.CambiarEsquema(branch)">
+                                        </tree-grid>
+                                    </div>
+                                    <div class="col-md-8 table-responsive scroll-producto">
+                                        <table cellpadding="12" class="table table-bordered table-hover">
+                                            <!--Encabezado tabla-->
+                                            <thead>
+                                                <tr>
+                                                    <!--Orden ascendente o descendente-->
+                                                    <th style="width:3%;"></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Clave')"><b>{{translation.XClave}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Clave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Nombre')"><b>{{translation.USUNOMBRE}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Nombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Cantidad')" ng-show="OCA"><b>{{translation.USUNOMBRE}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Cantidad'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Estado')"><b>{{translation.XEstado}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Estado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="P in AllProducts|orderBy:sortKey:reverse|filter:{SubEmpresaID: SubEmpresa}">
+                                                    <td align="center"><input type="checkbox" ng-model="ProductoClave.$index" name="{{'ProductoClave' + $index }}" ng-checked="P.Checked" ng-false-value="'NO'" ng-true-value="'YES'" ng-click="P.Estado=addProducto(P.ProductoClave, ProductoClave.$index); P.Checked = !P.Checked"></td>
+                                                    <td>{{P.ProductoClave}}</td>
+                                                    <td>{{P.Nombre}}</td>
+                                                    <td ng-show="OCA">
+                                                        <input style="max-width:100%" type="text" class="form-control" data-modal="modal" ng-model="P.Cantidad" name="{{'ProductoClave' + $index}}" placeholder="" ng-required="" ng-maxlength="" value="" ng-disabled="!P.Checked" onKeypress="if(event.keyCode == 13) event.returnValue = false;" ng-keypress="ValidarEC($event, EC);" ng-blur="ValidarEC($event, EC);" ng-change="EC.Nombre = ''; DeleteLast(EC);" />
+                                                    </td>
+                                                    <td>
+                                                        <select id="ddlEstadoProducto" class="form-control" data-modal="modal" ng-model="P.Estado" name="{{'Estado' + $index }}" ng-required="" ng-options="val.VAVClave as val.Descripcion for val in edoreg" ng-disabled="true" ng-init=""></select>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <br />
+                    </div>
+                </div>
+            </div>
+
+            <!--Pestaña Reglas-->
+            <div id="reglas" class="tab-pane fade">
+                <div class="container">
+                    <div class="container" style="display:block; float:right; width:100%">
+
+                        <!--1ra Fila-->
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.PRMTipoRegla}}</label>
+                                    <div class="col-md-2">
+                                        <select id="ddlTipoReglaPromocion" class="form-control" data-modal="modal" ng-model="TipoRegla" name="TipoRegla" ng-options="tiporegla.VAVClave as tiporegla.Descripcion for tiporegla in aplrango" ng-required="true" ng-disabled="true" ng-change="SoloLecturaF()">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                    </div>
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.IMPTipoAplicacion}}</label>
+                                    <div class="col-md-2">
+                                        <select id="ddlAplicacionPromocion" class="form-control" data-modal="modal" ng-model="Aplicacion" name="Aplicacion" ng-options="aplicacion.VAVClave as aplicacion.Descripcion for aplicacion in tapprom | filter:{VAVClave: OcultarT} | filter:{VAVClave: OcultarR}" ng-required="true" ng-disabled="true" ng-change="SoloLecturaF()">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                    </div>
+                                    <label class="control-label col-md-2" style="padding-top:10px;">{{translation.PRMTipoRango}}</label>
+                                    <div class="col-md-2">
+                                        <select id="ddlRango" class="form-control" data-modal="modal" ng-model="Rango" name="Rango" ng-options="rango.VAVClave as rango.Descripcion for rango in prmran" ng-required="true" ng-disabled="true">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--2da Fila--
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <legend class="header">&nbsp&nbsp{{translation.XRangos}}</legend>
+
+                                        <!--Tabla de Clientes y Botones-->
+                                        <div class="row form-group">
+                                            <div class="col-md-10 table-responsive scroll-completo">
+                                                <table cellpadding="12" class="table table-bordered table-hover">
+                                                    <!--Encabezado tabla-->
+                                                    <thead>
+                                                        <tr>
+                                                            <!--Orden ascendente o descendente-->
+                                                            <th style="width:3%;"></th>
+                                                            <th class="cursor-pointer" ng-click="sort('Minimo')"><b>{{translation.XMINIMO}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Minimo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sort('Maximo')"><b>{{translation.XMAXIMO}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Maximo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sort('Importe')"><b>{{translation.XImporte}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Importe'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="M in EsquemasReglas|orderBy:sortKey:reverse|filter:search">
+                                                            <td>
+                                                                <!--Eliminar-->
+                                                                @{
+                                                                    if (sPermiso.Contains("D"))
+                                                                    {
+                                                                        @Html.ImageButton("../Content/images/eliminar.png", "", "{{translation.BTEliminar}}")
+                                                                    }
+                                                                }
+                                                            </td>
+                                                            <td>{{M.Minimo}}</td>
+                                                            <td>{{M.Maximo}}</td>
+                                                            <td>{{M.Importe}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="button" value="{{translation.BTCrear}}" class="btn-productos btn btn-default" ng-click="" />
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!--3ra Fila--
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <legend class="header">&nbsp&nbsp{{translation.XProductos}}</legend>
+
+                                        <!--Tabla de Clientes y Botones-->
+                                        <div class="row form-group">
+                                            <div class="col-md-10 table-responsive scroll-completo">
+                                                <table cellpadding="12" class="table table-bordered table-hover">
+                                                    <!--Encabezado tabla-->
+                                                    <thead>
+                                                        <tr>
+                                                            <!--Orden ascendente o descendente-->
+                                                            <th style="width:3%;"></th>
+                                                            <th class="cursor-pointer" ng-click="sort('Producto')"><b>{{translation.XProducto}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Producto'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sort('NombreCorto')"><b>{{translation.XNombreCorto}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='NombreCorto'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sort('Unidad')"><b>{{translation.XUnidad}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Unidad'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sort('Cantidad')"><b>{{translation.XCantidad}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Cantidad'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                            <th class="cursor-pointer" ng-click="sort('Estado')"><b>{{translation.XEstado}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Estado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="M in MinMaxList|orderBy:sortKey:reverse|filter:search">
+                                                            <td>
+                                                                <!--Eliminar-->
+                                                                @{
+                                                                    if (sPermiso.Contains("D"))
+                                                                    {
+                                                                        @Html.ImageButton("../Content/images/eliminar.png", "", "{{translation.BTEliminar}}")
+                                                                    }
+                                                                }
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="button" value="{{translation.BTCrear}}" class="btn-productos btn btn-default" ng-click="" ng-disabled="true" />
+                                                <input type="button" value="{{translation.BTBuscar}}" class="btn-productos btn btn-default" ng-click="" ng-disabled="true" />
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <br />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" style="margin-left: 20px">
+            @{  if (!bSoloLectura)
+                {
+                    <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="ValidarAceptar()" />
+                        <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                }
+                else
+                {
+                    <input type="button" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                }
+            }
+        </div>
+
+        @{ Html.RenderPartial("MsgBox/MsgBox"); }
+        @{ Html.RenderPartial("MsgBox/MsgBoxAux"); }
+        @{ Html.RenderPartial("MsgBox/YesNoMsgBoxAux"); }
+        @{ Html.RenderPartial("Promociones/EsquemaClientesBox"); }
+        @{ Html.RenderPartial("Promociones/ModulosBox"); }
+    </form>
+</div>

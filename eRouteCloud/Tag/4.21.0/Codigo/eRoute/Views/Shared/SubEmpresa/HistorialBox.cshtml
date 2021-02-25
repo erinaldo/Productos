@@ -1,0 +1,100 @@
+﻿<div id="HistorialBox" class="modal fade">
+    <div class="modal-dialog-hist">
+        <div  class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close modal-title" data-dismiss="modal" aria-label="Close" ng-click="CancelarHistBox()"><span style="color: yellow" aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="lblMsgTitulo">{{translation.ERMCONHESC_HConfiguracion}}</h2>
+                @*<label id="lblMsgMensaje" class="control-label text-label"></label>*@
+            </div>
+            <!-- dialog body -->
+            <div class="modal-body validateBox">
+                <form role="form">
+                    @*<div class="container">
+                        <!--paginacion-->
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <dir-pagination-controls max-size="8"
+                                                         direction-links="true"
+                                                         boundary-links="true">
+                                </dir-pagination-controls>
+                            </div>
+                        </div>
+                        <!--Buscar-->
+                        <div class="input-group">
+                            <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                            <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="search" />
+                        </div>
+                    </div>*@
+                    <br />
+                    <div class="scrow" ng-mousedown="count = count + 1" ng-init="count=0">
+                        <!--Tabla-->
+                        <div class="col-md-12 form-group" style="padding-right:0px;">
+                            <table class="table table-bordered table-historial">
+                                <tr class="Lnegras">
+                                    @*<td style="width:8%"></td>*@
+                                    <td>{{translation.XFechaIni}}</td>
+                                    <td>{{translation.COHComprobanteDig}}</td>
+                                    <td>{{translation.COHFoliosTerminal}}</td>
+                                    <td>{{translation.COHDirRepMensual}}</td>
+                                    <td>Formato Factura</td>   @*verificar*@
+                                    <td>{{translation.COHClienteGenerico}}</td>
+                                    <td>Formato NC</td>   @*verificar*@
+                                    <td>{{translation.SEMVersionCFD}}</td>
+                                    <td>Proveedor Timbre</td> @*verificar*@
+                                    <td>{{translation.SEMCustomerId}}</td>
+                                    <td>{{translation.SEMCustomerKey}}</td>
+                                    <td>{{translation.SEMServidorTimbre}}</td>
+                                    <td>{{translation.SEMServidorCancelacion}}</td>
+                                    <td>Achivo PFX64</td>   
+                                    <td>Cer Finkok</td>
+                                    <td>Key Finkok</td>
+                                    <td>Recibo Elec Pago</td>  @*verificar*@
+                                </tr>
+                                <tr dir-paginate="SEMH in HistorialList|orderBy:sortKey:'SEMH.FechaInicio'|filter:search|itemsPerPage:tamPagEq" @**ngFor="let SEMH of HistorialList; let i = index" ng-click="setClickedRow($index)" [class.active]="$index == selectedRow"*@>
+                                    <td>{{SEMH.FechaInicio | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                    <td><input class="camposInput" type="checkbox" name="{{'SEMH.Comprobante' + $index }}" ng-checked="{{SEMH.Comprobante}}" disabled></td>
+                                    @*<td>{{SEMH.Comprobante}}</td>*@
+                                    <td><input class="camposInput" type="checkbox" name="{{'SEMH.FoliosFiscales' + $index }}" ng-checked="{{SEMH.FoliosFiscales}}" disabled></td>
+                                    @*<td>{{SEMH.FoliosFiscales}}</td>*@
+                                    <td>{{SEMH.DirReportesMensuales}}</td>
+                                    <td>{{SEMH.FormatoFactura}}</td>   @*verificar*@
+                                    <td>{{SEMH.ClienteGenerico}}</td>
+                                    <td>{{SEMH.FormatoNC}}</td>   @*verificar*@
+                                    <td>{{SEMH.VersionCFD}}</td>
+                                    <td>{{SEMH.ProveedorTimbre}}</td> @*verificar*@
+                                    <td>{{SEMH.CustomerID}}</td>
+                                    <td>{{SEMH.CustomerKey}}</td>
+                                    <td>{{SEMH.ServidorTimbre}}</td>
+                                    <td>{{SEMH.ServidorCancelacion}}</td>
+                                    <td>{{SEMH.ArchivoPFX64}}</td>
+                                    <td>{{SEMH.CerFinKok}}</td>
+                                    <td>{{SEMH.KeyFinKok}}</td>
+                                    <td><input class="camposInput" type="checkbox" name="{{'SEMH.ReciboElecPago' + $index }}" ng-checked="{{SEMH.ReciboElecPago}}"disabled></td>
+                                    @*<td>{{SEMH.ReciboElecPago}}</td>*@  @*verificar*@
+
+                                    @*MFechaHora = h.MFechaHora,
+                                    MUsuarioID = h.MUsuarioID*@
+
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--FIN SCROW-->
+                </form>
+                @*<div class="row">
+                    <div class="col-md-10">
+                        <input class="table-bordered form-group" type="text" name="UserHist" ng-model="UserHist" value="{{UserHist}}" disabled />
+                    </div>
+                    <div>
+                        Count: {{count}}
+                    </div>
+                </div>*@
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer" >                
+                <button type="button" style="margin-top:0;" data-dismiss="modal" ng-click="Cancelar()" class="btn btn-default">{{translation.BTSalir}}</button>
+            </div>
+        </div>
+    </div>
+</div>

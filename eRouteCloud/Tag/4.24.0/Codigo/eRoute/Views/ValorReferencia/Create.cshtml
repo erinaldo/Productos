@@ -1,0 +1,309 @@
+﻿@model eRoute.Models.ValorReferencia
+@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    /**ESTILOS PROPIOS*/
+    .margen-tabla {
+        margin-top: 0;
+    }
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+    @@media (min-width: 992px)
+    {
+        .col-md-1 {
+            width: 12.333333%;
+        }
+    }
+    .table {
+        width: 100%;
+    }
+    .margen-tabla {
+        margin-left: -20px !important;
+        margin-right: 0;
+    }
+    .header {
+        width: 104%;
+    }
+       
+
+    /******/
+    .form-valor .form-group label {
+        margin-top: 7px;
+    }
+
+    md-radio-button {
+        display: inline-block !important;
+    }
+    .leng{
+        margin-left: 9%;
+        display: inline-block;
+    }
+    .titulo-descripcion{
+        margin-left: 16%;
+        display: inline-block;
+    }
+      .titulo-descripcion-2{
+        margin-left: 15%;
+        display: inline-block;
+    }
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        border-top: none !important;
+    }
+    .lenguajes-tabla tr td{
+        padding-top:0 !important;
+    }
+
+    .btn-eliminar-lenguaje{
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .btn-e-l-m-i{
+         margin-left: 5px;
+    }
+
+
+</style>
+
+<div class="row margen-tabla" ng-controller="crtlValorReferencia" ng-init="EditarValor('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+
+    <div class="header" style="display: block;">
+        <h3>&nbsp&nbsp{{translation.CValorReferencia}}</h3>
+    </div>
+
+    <form name="form" class="form-horizontal form-valor" ng-class="{submitted:form.submitted}" novalidate>
+        <div>
+            <br />
+            <div class="row form-group">
+                <!--Var Código-->
+                <label class="col-md-1">
+                    {{translation.VARVARCodigo}}*
+                </label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" data-modal="modal" ng-model="VARCodigo" ng-disabled="SoloLectura" maxlength="8" ng-maxlength="8" name="VARCodigo" placeholder="{{translation.VARVARCodigo}}" ng-required="true" validar-codigo-unico="true" />
+                    <div ng-show="form.$submitted || form.VARCodigo.$touched">
+                        <div class="error-message" ng-show="form.VARCodigo.$error.required">{{translation.BE0001.replace('$0$', translation.VARVARCodigo)}}</div>
+                        <div class="error-message" ng-show="form.VARCodigo.$error.codigoRepetido">{{translation.BE0002}}</div>
+                        <div class="error-message" ng-show="form.VARCodigo.$error.maxlength ">{{translation.E0718.replace('$0$', '0').replace('$1$','8')}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <!--Descripción-->
+                <div class="col-md-1">
+                    <label>{{translation.VARDescripcion}} *</label>
+                </div>
+
+                <div class="col-md-7">
+                    <input type="text" class="form-control" data-modal="modal" ng-model="Descripcion" ng-maxlength="40" name="Descripcion" placeholder="{{translation.VARDescripcion}}" ng-required="true"/>
+                    <div ng-show="form.$submitted || form.Descripcion.$touched">
+                        <div class="error-message" ng-show="form.Descripcion.$error.required">{{translation.BE0001.replace('$0$', translation.VARDescripcion)}}</div>
+                        <div class="error-message" ng-show="form.Descripcion.$error.maxlength ">{{translation.E0718.replace('$0$', translation.VARDescripcion).replace('$1$','40')}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <!--Tipo de dato-->
+                <div class="col-md-1">
+                    <label>{{translation.VARTipoDato}}*</label>
+                </div>
+                <div class="col-md-3">
+                    <select id="ddlTipoDato" style="max-width:100%" class="form-control" data-modal="modal" ng-model="TipoDato" ng-required="true" ng-options="val.VAVClave as val.Descripcion for val in bdato" name="{{'TipoDato' }}">
+                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                    </select>
+          
+                    <div ng-show="form.$submitted || form.TipoDato.$touched">
+                        <div class="error-message" ng-show="form.TipoDato.$error.required">{{translation.BE0001.replace('$0$', translation.VARTipoDato)}}</div>
+                    </div>
+                </div>
+
+                <!--Interfaz-->
+                <div class="col-md-1">
+                    <!--label>Interfaz* translation.Interfaz</!--label -->
+                    <label>{{translation.ADEInterfaz}}*</label>
+                </div>
+                <div class="col-md-3">
+                    <select id="ddlMEDTipoLenguaje" style="max-width:100%" class="form-control" data-modal="modal" ng-model="TipoAplicacion" ng-required="true" ng-options="val.VAVClave as val.Descripcion for val in bmenapl" name="{{'TipoAplicacion' }}">
+                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                    </select>
+                    <div ng-show="form.$submitted || form.TipoAplicacion.$touched">
+                        <div class="error-message" ng-show="form.TipoAplicacion.$error.required">{{translation.BE0001.replace('$0$', translation.ADEInterfaz)}}</div>
+                    </div>
+
+                </div>
+            </div>
+            <!--Modificacable-->
+            <div class="row form-group">
+                <div class="col-md-1">
+                    <label>{{translation.VARTipoModificable}}*</label>
+
+                </div>
+                <div class="col-md-3">
+                    <md-radio-group ng-model="tipo.modificable" ng-required="true">
+                        <md-radio-button value="1">SI</md-radio-button>
+                        <md-radio-button value="0" class="md-primary"> NO </md-radio-button>
+                    </md-radio-group>
+                    <div ng-show="form.$submitted || form.tipo.modificable.$touched">
+                        <div class="error-message" ng-show="form.tipo.modificable.$error.required">{{translation.BE0001.replace('$0$', translation.VARTipoModificable)}}</div>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <label>{{translation.VARTipoNulo}}*</label>
+
+                </div>
+                <div class="col-md-3">
+                    <md-radio-group ng-model="tipo.nulo">
+
+                        <md-radio-button value="1">SI</md-radio-button>
+                        <md-radio-button value="0" class="md-primary"> NO </md-radio-button>
+
+
+                    </md-radio-group>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container" style="margin-left: 20px; margin-right: 20px;">
+            @{ 
+                @Html.ImageButtonLink("../Content/images/crear.png", "AgregarDescripcion()", "{{translation.XLenguajes}}")
+            }
+
+            <br />
+            <br />
+            <div ng-init="ObtenerDetalleValores('@ViewBag.Clave')">
+                <table cellpadding="12"  class="table table-bordered table-hover valor-table">
+                    <tr>
+                        <th style="width:4%"></th>
+                        <th style="width:11%"><b>{{translation.VAVVAVClave}}</b></th>
+                        <th style="width:11%"><b>{{translation.VAVClaveSAT}}</b></th>
+                        <th style="width:11%"><b>{{translation.VAVGrupo}}</b></th>
+                        <th>{{translation.VAVEstado}}</th>
+                        <th>
+                            <span class="leng">{{translation.VADVADTipoLenguaje}}</span> 
+                        <span class="titulo-descripcion">{{ translation.MEDDescripcion}}</span>
+                            <span class="titulo-descripcion-2">{{ translation.VADDescripcionSAT}}</span>
+                        </th>
+                    </tr>
+                    <tr ng-show="!priReg"  ng-repeat="det in vardetalle">
+                        <td>
+                            <span class="btn-eliminar-lenguaje btn-e-l-m-i">
+                                @Html.ImageButton("../Content/images/eliminar.png", "ValidarEliminarVARvalor($index)", "{{translation.BTEliminar}}")
+                            </span>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" style="max-width:100%" ng-disabled="det.Nuevo" data-modal="modal" ng-model="det.VAVClave" ng-maxlength="8" name="{{'VAVClave' + $index }}" placeholder="{{translation.VAVVAVClave}}" ng-required="validacion"  validar-repetido="true" ng-change="bloquearLenguaje(det.VAVClave,det.$$hashKey )" bloquear-lenguaje="true"/>
+                            <div ng-show="form.$submitted || form.{{'VAVClave' + $index }}.$touched">
+                                <div class="error-message" ng-show="form.{{'VAVClave' + $index}}.$error.required">{{translation.BE0001.replace('$0$', translation.VAVVAVClave)}}</div>
+                                <div class="error-message" ng-show="form.{{'VAVClave' + $index }}.$error.valorRepetido">{{translation.BE0002}}</div>
+                                <div class="error-message" ng-show="form.{{'VAVClave' + $index }}.$error.maxlength">{{translation.E0718.replace('$0$', translation.VAVVAVClave).replace('$1$','8')}}</div>
+                                
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" style="max-width:100%" data-modal="modal" ng-model="det.ClaveSAT" name="{{'ClaveSAT' + $index }}" ng-maxlength="20" placeholder="{{translation.VAVClaveSAT}}" ng-required=""  />
+                            <div ng-show="form.$submitted || form.{{'ClaveSAT' + $index }}.$touched">
+                                <div class="error-message" ng-show="form.{{'ClaveSAT' + $index }}.$error.valorRepetido">{{translation.BE0002}}</div>
+                                <div class="error-message" ng-show="form.{{'ClaveSAT' + $index }}.$error.maxlength">{{translation.E0718.replace('$0$', translation.VAVClaveSAT).replace('$1$','20')}}</div>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" style="max-width:100%" data-modal="modal" ng-model="det.Grupo" name="{{'Grupo' + $index }}" ng-maxlength="20" placeholder="{{translation.VAVGrupo}}" />
+                            <div ng-show="form.$submitted || form.{{'Grupo' + $index }}.$touched">
+                                <div class="error-message" ng-show="form.{{'Grupo' + $index }}.$error.maxlength">{{translation.E0718.replace('$0$', translation.VAVGrupo).replace('$1$','20')}}</div>
+                            </div>
+                        </td>
+                        <td>
+                            <select id="ddlEstado" class="form-control" data-modal="modal" ng-model="det.Estado" name="{{'Estado' + $index }}" ng-required="validacion" ng-options="val.VAVClave as val.Descripcion for val in edoreg">
+                                <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                            </select>
+                            <div ng-show="form.$submitted || form.{{'Estado' + $index }}.$touched">
+                                <div class="error-message" ng-show="form.{{'Estado' + $index}}.$error.required">{{translation.BE0001.replace('$0$', translation.VAVEstado)}}</div>
+                            </div>
+                        </td>
+                        <td>
+                            <table class="lenguajes-tabla">
+                                <tr ng-repeat="vad in det.VAVDescripcion">
+                                    <td>
+                                        <span class="btn-eliminar-lenguaje">
+                                            @Html.ImageButton("../Content/images/eliminar.png", "EliminarLenguaje($index, vad, det.VAVClave)", "{{translation.BTEliminar}}")
+                                      </span>
+                                    </td>
+                                    <td>
+                                        <select id="{{'TipoLenguaje' + $index}}" style="max-width:100%" class="form-control" clase="{{'descrip'+det.$$hashKey}}" data-modal="modal" lenguaje-repetido-b="true" ng-model="vad.VADTipoLenguaje" ng-options="val.VAVClave as val.Descripcion for val in blengua"  name="{{'MEDTipoLenguaje' + det.VAVClave + $index }}">
+                                            <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                        </select>
+                                        <div ng-show="form.$submitted || form.{{'MEDTipoLenguaje' + det.VAVClave + $index }}.$touched">
+                                            <div class="error-message" ng-show="form.{{'MEDTipoLenguaje' + det.VAVClave + $index }}.$error.required">{{translation.BE0001.replace('$0$', translation.VADVADTipoLenguaje)}}</div>
+                                            <div class="error-message" ng-show="form.{{'MEDTipoLenguaje' + det.VAVClave + $index }}.$error.lenguajeRepetido">{{translation.BE0002}}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" style="max-width:100%" data-modal="modal" ng-model="vad.Descripcion" name="{{'Descripcion' + det.VAVClave + $index }}" ng-maxlength="40" placeholder="{{translation.VADDescripcion}}" />
+                                        <div ng-show="form.$submitted || form.{{'Descripcion' + det.VAVClave + $index }}.$touched">
+                                            <div class="error-message" ng-show="form.{{'Descripcion' + det.VAVClave + $index }}.$error.required">{{translation.BE0001.replace('$0$', translation.VADDescripcion)}}</div>
+                                            <div class="error-message" ng-show="form.{{'Descripcion' + det.VAVClave + $index }}.$error.maxlength ">{{translation.E0718.replace('$0$', translation.VARDescripcion).replace('$1$','40')}}</div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <input type="text" class="form-control" style="max-width:100%" data-modal="modal" ng-model="vad.DescripcionSAT" name="{{'DescripcionSAT' + det.VAVClave + $index }}" ng-maxlength="100" placeholder="{{translation.VADDescripcionSAT}}" />
+                                        <div ng-show="form.$submitted || form.{{'DescripcionSAT' + det.VAVClave + $index }}.$touched">
+                                            <div class="error-message" ng-show="form.{{'DescripcionSAT' + det.VAVClave + $index }}.$error.required">{{translation.BE0001.replace('$0$', translation.VADDescripcionSAT)}}</div>
+                                            <div class="error-message" ng-show="form.{{'DescripcionSAT' + det.VAVClave + $index }}.$error.maxlength ">{{translation.E0718.replace('$0$', translation.VADDescripcionSAT).replace('$1$','100')}}</div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+
+                            @Html.ImageButton("../Content/images/crear.png", "ValorAgregarLenguaje(det.VAVClave)", "{{translation.BTCrear}}", "btn-add-margin")
+                        </td>
+                    </tr>
+
+                </table>
+
+                
+
+                <div ng-show="validar">
+                    Validar: {{validar}}
+                    <!--div class="error-message" ng-show="form.TipoMensaje.$error.required">{{!--translation.BE0001.replace('$0$', translation.MENTipoMensaje)}}</!--div-->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-show="!claveVacia">
+                
+                    <div class="error-message" style="float: right;  margin-top: 8px; }">{{translation.BE0001.replace('$0$', translation.VAVVAVClave)}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-left: 20px">
+
+
+            <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarValores()" />
+            <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+      
+
+        </div>
+
+
+        @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+        @{ Html.RenderPartial("MsgBox/MsgBox"); }
+    </form>
+</div>

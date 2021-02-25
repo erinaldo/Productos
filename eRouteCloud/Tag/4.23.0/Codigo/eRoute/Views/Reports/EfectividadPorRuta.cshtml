@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "eRoute";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+<script src="~/Controllers/js/controllers/efectividadPorRutaController.js"></script>
+<link href="~/Views/Menu/css/filter.css" rel="stylesheet" />
+
+<div ng-controller="efectividadPorRutaController as ctrl" ng-init="EstablecerReporte('@ViewBag.VAVClave')">
+    <div class="panel-heading" style="background-color:#B40002; color:white; border-radius:20px; padding:1px 15px;">
+        <h4> {{ctrl.titulo}} </h4>
+    </div>
+    <div class="row" style="margin-left:unset; margin-right:unset; margin-top:15px">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="panel panel-default" style="width:auto; height:auto; border-radius:15px;">
+                <div class="panel-heading" style="width:auto; height:auto; background-color:#B40002; color:white; width:auto; border-top-right-radius:15px; border-top-left-radius:15px; font-size:15px;">
+                    Centro De Distribución
+                </div>
+                <div class="panel-body" style="width:auto; height:auto; border-radius:15px;">
+                    <md-autocomplete flex required style="width:auto; height:auto; border-radius:15px;"
+                                     md-input-name="autocompleteField"
+                                     md-selected-item="ctrl.selectedItem"
+                                     md-search-text-change="ctrl.ShowItems(ctrl.selectedItem.Clave)"
+                                     md-search-text="ctrl.searchText"
+                                     md-selected-item-change="ctrl.GetDates();
+                                                inactRoutes = false;
+                                                ctrl.DetalladoGeneral();
+                                                ctrl.ShowItems(ctrl.selectedItem.Clave);
+                                                ctrl.ReportType=false;"
+                                     md-items="item in ctrl.QuerySearch(ctrl.searchText)"
+                                     md-item-text="item.Nombre"
+                                     md-min-length="0"
+                                     placeholder="Seleccionar Centro de Distribución">
+                        <md-item-template>
+                            <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.Nombre}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No se han encontrado resultados para "{{ctrl.searchText}}".
+                        </md-not-found>
+                    </md-autocomplete>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" ng-show="ctrl.showList" ng-disabled="ctrl.showList">
+            <div class="panel panel-default" style="width:auto; height:auto; border-radius:15px;">
+                <div class="panel-heading">
+                    Fechas
+                </div>
+                <div class="panel-body" style="width:auto; height:auto; border-radius:15px;">
+                    <div class="col-md-12">
+                        <md-input-container style="width:25%; margin:10px 0px 0px 0px; border-radius:15px; padding:unset;">
+                            <label>Rango</label>
+                            <md-select ng-model="ctrl.State" ng-change="ctrl.OnSelectChange(ctrl.State,0)" style="border-radius:15px; height:auto; width:auto; padding:unset;">
+                                <md-option ng-repeat="state in ctrl.dateState" value="{{state.Nombre}}" ng-init="ng-selected=ctrl.State" style="border-radius:15px; height:auto; width:auto; padding:5px 10px;">
+                                    {{state.Nombre}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-datepicker ng-model="ctrl.date1" md-placeholder="Fecha" md-max-date="ctrl.minDate" ng-change="ctrl.date2=ctrl.date1; ctrl.OnSelectChange(ctrl.State,1); ctrl.showErrorForm = false;" onkeydown="return false"></md-datepicker>
+                        <md-datepicker ng-model="ctrl.date2" ng-show="ctrl.showSelect" md-placeholder="Fecha" md-min-date="ctrl.date1" md-max-date="ctrl.minDate" ng-change="ctrl.showErrorForm = false;" onkeydown="return false"></md-datepicker>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-show="ctrl.showList" ng-disabled="ctrl.showList">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="text-align:center;">
+            <md-checkbox ng-model="ctrl.ReportType" aria-label="DetalladoGeneral" ng-change="ctrl.DetalladoGeneral();" style="margin-top:15px;">{{ctrl.DetGen}}</md-checkbox>
+        </div>
+    </div>
+
+    <div class="row" ng-show="ctrl.showList" ng-disabled="ctrl.showList">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="padding-right:unset">
+            <div class="panel panel-default" style="height:auto; border-radius:15px;">
+                <div class="panel-heading" style="background-color:#B40002; color:white; border-top-right-radius:15px; border-top-left-radius:15px; font-size:15px">
+                    Rutas
+                </div>
+                <div class="panel-body">
+                    <md-input-container md-no-float class="md-block" style="margin-top:unset;">
+                        <input ng-model="queryRoute" type="text" placeholder="Búsqueda">
+                    </md-input-container>
+                    <md-checkbox ng-model="selectAllRoutes" ng-click="ctrl.SelectAllCheckboxesRoutes(selectAll);">Seleccionar todos</md-checkbox>
+                    <md-checkbox ng-model="inactRoutes" ng-change="ctrl.GetRoutes(ctrl.selectedItem.Clave, '0, 1');">Mostrar Inactivos</md-checkbox>
+                    <md-list ng-cloak style="overflow-y:auto; max-height:330px; padding:unset;">
+                        <md-list-item ng-repeat="route in ctrl.routes | filter:queryRoute">
+                            <md-checkbox ng-cloak style="width:30px; margin:10px 0px 10px 0px; min-height:unset" ng-disabled="route.Disabled" ng-model="route.Checked" ng-change="ctrl.CountRoutes();"></md-checkbox>
+                            <p>{{route.Clave}}</p>
+                        </md-list-item>
+                    </md-list>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="viewer" class="row" ng-show="ctrl.showList" ng-disabled="ctrl.showList">
+        <div ng-show="ctrl.showErrorForm" ng-model="ctrl.ShowError">
+            <div class="error-message col-md-12" style="text-align:right; font-size:15px;">{{ctrl.ShowError}}</div>
+        </div>
+    </div>
+
+    <div class="row" ng-show="ctrl.showList" ng-disabled="ctrl.showList">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <md-button type="submit" ng-click="ctrl.startbar(); ctrl.SubmitForm(ctrl.VAVClave = @ViewBag.VAVClave)" class="md-raised login-input pull-right" style="background-color:#B40002; color:white;font-weight:bold;">Generar reporte</md-button>
+        </div>
+    </div>
+</div>
+
+
+
+

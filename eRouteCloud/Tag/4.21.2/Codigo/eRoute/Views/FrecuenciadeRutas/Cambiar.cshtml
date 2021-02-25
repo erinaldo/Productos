@@ -1,0 +1,295 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    /*Estilos Propios*/
+
+    .btn-Rutas {
+        background: #b30000;
+        color: #FFF;
+    }
+
+    .datos-Rutas {
+        margin: 0 20px;
+    }
+
+    .Rutas-bloque {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: rgba(179, 0, 0, 0.15);
+        border-radius: 5px;
+        font: 12px Tahoma;
+    }
+
+    #R {
+        width: 85%;
+    }
+
+    #T {
+        width: 95%;
+    }
+
+    .T {
+        height: 590px;
+        overflow-y: auto;
+    }
+
+    .scrollY {
+        width: 100%; /*manten el ancho que necesitas*/
+        /*y elimina el height, de esta manera el div ira creciendo en base a la cantidad de fotos*/
+        max-height: 200px;
+        /*overflow-x: scroll;*/
+        overflow: auto;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    @@media (max-width: 1366px) {
+        .col-md {
+            width: 12.333333%;
+        }
+
+        .scroll-completo {
+        overflow-y: scroll;
+        height: 350px;
+        padding-right: 0px;
+        /*width:90%;*/
+        }
+    }
+
+    @@media (min-width: 1367px){
+        .col-md {
+            width: 12.333333%;
+        }
+
+        .scroll-completo {
+        overflow-y: scroll;
+        height: 350px;
+        padding-right: 0px;
+        }
+    }
+
+    .table {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        display: table;
+        table-layout: auto;
+    }
+
+    /********* SI SE NECESITA EL SCROLL**********/
+    .modal-dialog {
+        overflow-y: initial !important
+    }
+
+    .modal-body:not(.validateBox):not(.T) {
+        height: 400px;
+        overflow-y: auto;
+        /*white-space: nowrap;
+        overflow-x: auto;*/
+    }
+
+    .modal-body-header {
+        overflow-y: auto;
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid #dddddd;
+        background: #75716c;
+        padding: 0px 0px 0px 00px;
+    }
+
+    .scroll {
+        margin-right: 0px;
+    }
+
+    /**********************/
+
+</style>
+
+<div class="container" ng-controller="frecuenciadeRutasCtrl" ng-init="CambiarFrecuencia('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+
+    <!--Cabecera-->
+    <div class="header" style="display: block;">
+        <h3>&nbsp&nbsp{{translation.ERMSECESC_MFrecuenciaCF}}</h3>
+    </div>
+
+    <!--Formulario-->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <form name="form" ng-model="form" class="form-horizontal form-valor" ng-class="{submitted:form.submitted}" novalidate>
+                <br />
+
+                <!--Ruta-->
+                <fieldset>
+                    <legend>{{translation.XRutaT}}</legend>
+                    <div class="row form-group">
+                        <!--Label-->
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <label>
+                                {{translation.RUTRUTClave}}
+                            </label>
+                        </div>
+                        <!--Ventana emergente-->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="input-group">
+                                <input type="text" name="RutClave" id="RutClave" ng-model="RutClave" class="form-control" placeholder="{{translation.RUTRUTClave}}" ng-required="true" ng-maxlength="10" ng-disabled="SoloLectura" validar-ruta="true" ng-change="RutDescripcion=RutTipo='';VerificarRuta(); Combo=false; ValidarClaveCombo();">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary btn-Rutas @*btn-default*@" ng-click="SeleccionarRutas()" type="button" ng-disabled="Modificar"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
+                                </span>
+                            </div>
+                            <div ng-show="form.$submitted || form.RutClave.$touched">
+                                <div class="error-message" ng-show="form.RutClave.$error.ValidarRuta">{{translation.E0096}}</div>
+                                <div class="error-message" ng-show="form.RutClave.$error.required">{{translation.BE0001.replace('$0$', translation.RUTRUTClave)}}</div>
+                                <div class="error-message" ng-show="form.RutClave.$error.maxlength">{{translation.E0761.replace('$0$', translation.RUTRUTClave)}}</div>
+                            </div>
+                        </div>
+                        <!--Text con vaciado de Descripción de la Ruta-->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <input ng-disabled="true" type="text" name="RutDescripcion" id="RutDescripcion" ng-model="RutDescripcion" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <!--Label-->
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <label>
+                                {{translation.RUTTipo}}
+                            </label>
+                        </div>
+                        <!--Text con vaciado de datos de Tipo-->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <input ng-disabled="true" type="text" name="RutTipo" id="RutTipo" ng-model="RutTipo" class="form-control">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!--Frecuencia-->
+                <fieldset>
+                    <legend>{{translation.CFrecuencia}}</legend>
+                    <!--Origen-->
+                    <div class="row form-group">
+                        <!--Label-->
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <label>
+                                {{translation.XOrigen}}
+                            </label>
+                        </div>
+                        <!--Ventana emergente-->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="input-group">
+                                <input type="text" name="FreClave" id="FreClave" ng-model="FreClave" class="form-control" placeholder="{{translation.FREFrecuenciaClave}}" ng-maxlength="10" ng-disabled="SoloLectura" validar-vigencia-frecuencia="true" validar-clave-frecuencia="true" ng-change="FreDescripcion='';VerificarFrecuencia(); Combo=false; ValidarClaveCombo(); ">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary btn-Rutas @*btn-default*@" ng-click="SeleccionarFrecuencias()" type="button" ng-disabled="Modificar"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                        <!--Text con vaciado de Descripcion de la Frecuencia-->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <input ng-disabled="true" type="text" name="FreDescripcion" id="FreDescripcion" ng-model="FreDescripcion" class="form-control">
+                        </div>
+                    </div>
+
+                    <!--Destino-->
+                    <div class="row form-group">
+                        <!--Label-->
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <label>
+                                {{translation.XDestino}}
+                            </label>
+                        </div>
+                        <!--Ventana emergente-->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="input-group">
+                                <input type="text" name="FreClaveDestino" id="FreClaveDestino" ng-model="FreClaveDestino" class="form-control" placeholder="{{translation.FREFrecuenciaClave}}" ng-maxlength="10" validar-vigencia-frecuencia="true" validar-clave-frecuencia="true" ng-change="FreDescripcionDestino='';VerificarFrecuenciaDestino(); Combo=false;" ng-required="true">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary btn-Rutas @*btn-default*@" ng-click="SeleccionarFrecuencias()" type="button"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
+                                </span>
+                            </div>
+                            <div ng-show="form.$submitted || form.FreClaveDestino.$touched">
+                                <div class="error-message" ng-show="form.FreClaveDestino.$error.ValidarVigenciaFrecuencia">{{translation.E0692}}</div>
+                                <div class="error-message" ng-show="form.FreClaveDestino.$error.ValidarClaveFrecuencia">{{translation.E0022}}</div>
+                                <div class="error-message" ng-show="form.FreClaveDestino.$error.required">{{translation.BE0001.replace('$0$', translation.RUTRUTClave)}}</div>
+                                <div class="error-message" ng-show="form.FreClaveDestino.$error.maxlength">{{translation.E0761.replace('$0$', translation.FREFrecuenciaClave)}}</div>
+                            </div>
+                        </div>
+                        <!--Text con vaciado de Descripcion de la Frecuencia-->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <input ng-disabled="true" type="text" name="FreDescripcionDestino" id="FreDescripcionDestino" ng-model="FreDescripcionDestino" class="form-control" ng-change="ValidarDescripcion();">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!--Clientes-->
+                <fieldset>
+                    <legend>{{translation.XClientes}}</legend>
+
+                    <!--Botones orden visita-->
+                    <div class="row form-group">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <input type="submit" value="/\" class="btn btn-default" ng-click="SubirPrioridadCam();" />
+                            <input type="button" value="\/" class="btn btn-default" ng-click="BajarPrioridadCam();" />
+                        </div>
+                    </div>
+
+                    <!--Tabla de Clientes y Botones-->
+                    <div class="row form-group">
+                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 table-responsive scroll-completo">
+                            <table cellpadding="12" class="table table-bordered table-hover">
+                                <!--Encabezado tabla-->
+                                <thead>
+                                    <tr>
+                                        <!--Orden ascendente o descendente-->
+                                        <td></td>
+                                        <th class="cursor-pointer" ng-click="sort('Orden')"><b>{{translation.SECOrden}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Orden'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                        <th class="cursor-pointer" ng-click="sort('Clave')"><b>{{translation.XNumeroCliente}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Clave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                        <th class="cursor-pointer" ng-click="sort('RazonSocial')"><b>{{translation.BONRazonSocial}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='RazonSocial'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                        <th class="cursor-pointer" ng-click="sort('NombreCorto')"><b>{{translation.XNegocio}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='NombreCorto'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                        <th class="cursor-pointer" ng-click="sort('NombreContacto')"><b>{{translation.XEncargado}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='NombreContacto'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                        <th class="cursor-pointer" ng-click="sort('Calle')"><b>{{translation.XCalle}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Calle'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                        <th class="cursor-pointer" ng-click="sort('Colonia')"><b>{{translation.XColonia}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Colonia'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                        <th class="cursor-pointer" ng-click="sort('Poblacion')"><b>{{translation.XMunicipio}}</b><span class="glyphicon sort-icon" ng-show="sortKey=='Poblacion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="C in CambiarList|orderBy:sortKey:reverse|filter:search" ng-click="Seleccionar(C.Orden)">
+                                        <td><input type="checkbox" ng-model="Clave.$index" name="{{'Clave' + $index }}" ng-false-value="'NO'" ng-true-value="'YES'" ng-click="CambioCliente(C.Clave, C.ClienteClave, C.RazonSocial, C.NombreCorto, C.NombreContacto, C.ClienteDomicilioID, C.Calle, C.Colonia, C.Poblacion, C.SECId, Clave.$index);"></td>
+                                        <td>{{C.Orden}}</td>
+                                        <td>{{C.Clave}}</td>
+                                        <td>{{C.RazonSocial}}</td>
+                                        <td>{{C.NombreCorto}}</td>
+                                        <td>{{C.NombreContacto}}</td>
+                                        <td>{{C.Calle}}</td>
+                                        <td>{{C.Colonia}}</td>
+                                        <td>{{C.Poblacion}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                            <input type="submit" value="&nbsp;Asignar" class="btn btn-default" ng-disabled="Modificar;" ng-click="AsignarClientes(); AsignarClientesNuevos('1');" />
+                            <input type="submit" value="Eliminar" class="btn btn-default" ng-click="EliminarSeleccion();" ng-disabled="Modificar"/>
+                        </div>
+                    </div>
+                </fieldset>
+                <br />
+                <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="ValidarAceptar();" />
+                <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+            </form>
+            @{ Html.RenderPartial("FrecuenciadeRutas/SeleccionarFrecuenciaBox"); }
+            @{ Html.RenderPartial("FrecuenciadeRutas/SeleccionarRutaBox"); }
+            @{ Html.RenderPartial("FrecuenciadeRutas/AsignarClientesBox"); }
+            @{ Html.RenderPartial("MsgBox/MsgBox"); }
+            @{ Html.RenderPartial("MsgBox/YesNoMsgBoxAux"); }
+            @{ Html.RenderPartial("MsgBox/MsgBoxAux"); }
+        </div>
+    </div>
+</div>

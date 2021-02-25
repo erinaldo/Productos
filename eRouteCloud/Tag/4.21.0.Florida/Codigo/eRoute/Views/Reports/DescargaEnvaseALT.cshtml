@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "eRoute";
+    Layout = "~/Views/Menu/Index.cshtml";
+}
+
+<script src="~/Controllers/js/controllers/descargaEnvaseAltController.js"></script>
+<link href="~/Views/Menu/css/filter.css" rel="stylesheet" />
+<script src="~/Views/Menu/js/angular.treeview.js"></script>
+<link href="~/Views/Menu/css/angular.treeview.css" rel="stylesheet" />
+
+<div ng-controller="descargaEnvaseAltController as ctrl">
+    <h4>Descarga de Envase (ALT)</h4>
+    <div class="row">
+        <div style="width:20%;">
+            <form name="ctrl.formRutas">
+                <md-autocomplete md-selected-item="ctrl.ruta"
+                                 md-search-text="ctrl.busquedaRuta"
+                                 md-items="item in ctrl.filtraBusqueda(ctrl.busquedaRuta, ctrl.routes)"
+                                 md-item-text="item.Descripcion"
+                                 md-no-cache="true"
+                                 md-min-length="0"
+                                 md-input-name="ruta"
+                                 placeholder="Ruta"
+                                 id="ruta"
+                                 style="margin-bottom: 0px;">
+                    <md-item-template>
+                        <span md-highlight-text="ctrl.busquedaRuta" md-highlight-flags="^i">{{item.Descripcion}}</span>
+                    </md-item-template>
+                    <md-not-found ng-if="true">
+                        No se han encontrado resultados para "{{ctrl.busquedaRuta}}".
+                    </md-not-found>
+                </md-autocomplete>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:20px;">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+            <md-input-container style="margin-top:5px; width:150px;">
+                <label>Rango</label>
+                <md-select ng-model="ctrl.State" ng-change="ctrl.OnSelectChange(ctrl.State)">
+                    <md-option ng-repeat="state in ctrl.dateState" value="{{state.Descripcion}}">
+                        {{state.Descripcion}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <md-datepicker style="background-color: #f7f7f7 !important;" ng-model="ctrl.date1" md-placeholder="Fecha" md-max-date="ctrl.minDate" onkeydown="return false"></md-datepicker>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+            <md-datepicker ng-show="ctrl.showSelect" style="background-color: #f7f7f7 !important;" ng-model="ctrl.date2" md-placeholder="Fecha" md-max-date="ctrl.minDate" onkeydown="return false"></md-datepicker>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+            <md-button type="submit" ng-click="ctrl.startbar(); ctrl.SubmitForm(ctrl.selectedItem.value, ctrl.dateState, ctrl.routes, ctrl.ListClients, ctrl.sellers,ctrl.VAVClave = @ViewBag.VAVClave)" class="md-raised login-input pull-right" style="background-color:#E51500; color:white;font-weight:bold;">Generar reporte</md-button>
+        </div>
+    </div>
+
+    <div id="viewer">
+
+    </div>
+</div>

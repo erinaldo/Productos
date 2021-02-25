@@ -1,0 +1,46 @@
+﻿<div id="CentroBox" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" >{{translation.XAgregar}} {{translation.RUTCentroDistribucion}}</h2>
+            </div>
+            <!-- dialog body -->
+            <div class="modal-body">
+                <form role="form">
+                    <div class="container">
+
+                        <div class="form-group">
+                            <input type="text" name="search2" ng-model="search2" class="form-control" placeholder="Buscar centro..."/>
+                        </div>
+
+                        <div class="form-group">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td></td>
+                                    <td>{{translation.USUClaveAcceso}}</td>
+                                    <td>{{translation.USUNOMBRE}}</td>
+                                </tr>
+
+                                <tr ng-repeat="t in centroDist | filter:search2">
+                                    <td><input type="checkbox" ng-model="Clave.$index"  name="{{'Clave' + $index }}" ng-checked="{{t.Existe}}" ng-false-value="'NO'" ng-true-value="'YES'" ng-click="addCentro(t.Clave, Clave.$index, t.Nombre, t.AlmacenID)"></td>
+                                    <td>{{t.Clave}}</td>
+                                    <td>{{t.Nombre}}</td>
+                                </tr>
+                            </table>
+                            
+                      
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer" >                
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{translation.BTAceptar}}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿body {
+}
+
+.list-title-style{
+    border-radius:4px;
+    border-color: transparent;
+}
+
+.list-panelheading{
+    background-color: #fff!important;
+}
+
+.list-style{
+    border:none;
+}

@@ -1,0 +1,62 @@
+﻿<div id="SeleccionProducto" class="modal fade">
+    <div class="modal-dialog modal-lg" id="R">
+        <div class="modal-content">
+
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{GetDescripcion("ERMPROESC_IGeneral", "")}}</h2>
+            </div>
+
+            <!-- dialog body -->
+            <div class="modal-body" ng-init="index = false">
+
+                <table cellpadding="12">
+                    <tr>
+                        <th style="width:20%">
+                            <form>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                                    <input type="text" placeholder="{{GetDescripcion('BTBuscar', 'Buscar')}}" class="form-control" ng-model="search" />
+                                </div>
+                            </form>
+                        </th>
+                        <th style="width:48%">
+                            <dir-pagination-controls max-size="10"
+                                                     direction-links="true"
+                                                     boundary-links="true">
+                            </dir-pagination-controls>
+                        </th>
+                    </tr>
+                </table>
+
+                <div ng-init="ObtenerProductos()">
+                    <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                        <tr>                            
+                            <th style="width:5%"></th>
+                            <th class="cursor-pointer" ng-click="sort('ProductoClave')"><b>{{GetDescripcion("PROProductoClave", "Clave")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='ProductoClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                            <th class="cursor-pointer" ng-click="sort('Id')"><b>{{GetDescripcion("PROId", "Identificador")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                            <th class="cursor-pointer" ng-click="sort('Nombre')"><b>{{GetDescripcion("PRONombre", "Nombre")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Nombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                            <th class="cursor-pointer" ng-click="sort('Tipo')"><b>{{GetDescripcion("PROTipo", "Tipo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Tipo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>                            
+                        </tr>
+
+                        <tr dir-paginate="producto in productos|orderBy:sortKey:reverse|filter:search|itemsPerPage:30">
+                            <td><input type="checkbox" ng-model="producto.Seleccionado" ng-true-value="true" ng-false-value="false" data-nodrag /></td>
+                            <td><span style="max-width:100%" data-modal="modal"> {{producto.ProductoClave}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal"> {{producto.Id}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal"> {{producto.Nombre}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal"> {{producto.Tipo}} </span></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="AgregarProductos();">{{GetDescripcion("BTAceptar", "Aceptar")}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+

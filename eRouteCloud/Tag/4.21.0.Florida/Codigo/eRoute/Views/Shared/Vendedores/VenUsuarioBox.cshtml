@@ -1,0 +1,58 @@
+﻿<div id="VenUsuarioBox" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="lblMsgTitulo">Seleccionar Usuario</h2>
+            </div>
+
+            <!-- dialog body -->
+            <div class="scroll modal-body">
+                <form role="form">
+                    <div class="container">
+                        <!--paginacion-->
+                        <div class="row form-group">
+                            <div class="col-md-12 ">
+                                <dir-pagination-controls max-size="4"
+                                                         direction-links="true"
+                                                         boundary-links="true">
+                                </dir-pagination-controls>
+                            </div>
+                        </div>
+                        <!--Buscar-->
+                        <div class="col-md-12 ">
+                            <input type="text" name="Buscar" ng-model="Buscar" class="form-control" placeholder="Buscar ..." />
+                        </div>
+                    </div>
+                    <br />
+                        <div class="scrow">
+                            <!--Tabla-->
+                            <div class="col-md-12 form-group tablaclientebox" style="padding-right:0px;">
+                                <table class="table table-bordered">
+                                    <tr class="Lnegras">
+                                        <td>{{translation.VENVendedorID}}</td>
+                                        <td>{{translation.VENNombre}}</td>
+                                        <td>{{translation.USUACTIVO}}</td>
+                                        <td>{{translation.Xcentrodistribucion}}</td>
+                                        <td>{{translation.BF0002.replace('$0$', "USUPoliticaId")}}</td>
+                                    </tr>
+                                    <tr dir-paginate="r in cUsuario|orderBy:sortKey:reverse|filter:Buscar|itemsPerPage:tamPag "  ng-click="SeleccionUs(r.Clave,r.Nombre)">
+                                        <td>{{r.Clave}}</td>
+                                        <td>{{r.Nombre}}</td>
+                                        <td><input type="checkbox" name="Baja" ng-model="r.Activo" ng-checked="r.Activo" ng-disabled="true"></td> 
+                                        <td>{{r.AlmacenID}}</td>
+                                        <td> </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>                  
+                </form>
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{translation.BTAceptar}}</button>
+            </div>
+        </div>
+    </div>
+</div>

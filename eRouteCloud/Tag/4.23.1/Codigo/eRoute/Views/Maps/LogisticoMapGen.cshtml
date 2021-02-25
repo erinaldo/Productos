@@ -1,0 +1,340 @@
+﻿@{
+    ViewBag.Title = "Clientes Sin Venta";
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html ng-app="eRouteApp" style="background-color:#f7f7f7;">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>eRoute Cloude</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="~/Scripts/lodash.js"></script>
+
+    <script src="~/Views/Login/Login.js"></script>
+    <script src="~/Views/Menu/js/sidebar_menu.js"></script>
+    <script src="~/Views/Menu/js/sidebarapp.js"></script>
+    <script src="~/Scripts/ng-map.min.js"></script>
+    <script src="~/Views/Menu/js/angular.treeview.js"></script>
+    <script src="~/Scripts/loading-bar.js"></script>
+
+    <script src="~/Content/dirPagination.js"></script>
+    <script src="~/Controllers/js/mensaje.js"></script>
+    <script src="~/Controllers/js/usuario.js"></script>
+    <script src="~/Controllers/js/almacen.js"></script>
+
+    <script src="~/Controllers/js/subEmpresa.js"></script>
+    <script src="~/Controllers/js/producto.js"></script>
+    <script src="~/Controllers/js/defaultBox.js"></script>
+
+    <script src="~/Controllers/js/terminales.js"></script>
+    <script src="~/Controllers/js/camiones.js"></script>
+    <script src="~/Controllers/js/listasdeprecios.js"></script>
+
+    <script src="~/Controllers/js/autoBox.js"></script>
+    <script src="~/Controllers/js/validateBox.js"></script>
+
+
+    <script src="~/Controllers/js/rutaBox.js"></script>
+    <script src="~/Controllers/js/centroBox.js"></script>
+
+    <script src="~/Controllers/js/valorReferencia.js"></script>
+    <script src="~/Controllers/js/messageBox.js"></script>
+    <script src="~/Controllers/js/translation.js"></script>
+    <script src="~/Controllers/js/configuracion.js"></script>
+    <script src="~/Controllers/js/core/coreMaps.js"></script>
+    <script src="~/Controllers/js/services/reportServices.js"></script>
+    <script src="~/Controllers/js/services/menuServices.js"></script>
+    <script src="~/Controllers/js/services/mapServices.js"></script>
+    <script src="~/Controllers/js/reporte.js"></script>
+    <script src="~/Controllers/js/menu.js"></script>
+    <script src="~/Controllers/js/perfil.js"></script>
+
+    <link href="~/Content/css/angular-ui-tree.css" rel="stylesheet" />
+    <link href="~/Content/css/custom-tree.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-ui-tree.js"></script>
+
+    <link href="~/Content/css/loading-bar.css" rel="stylesheet" />
+    <link href="~/Views/Menu/css/menu.css" rel="stylesheet" />
+    <link href="~/Views/Menu/css/sidebar.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="~/favicon.ico" type="image/ico" />
+    <link href="~/Content/css/Site.css" rel="stylesheet" />
+    <style>
+        #loading-bar {
+            pointer-events: all;
+            z-index: 99999;
+            border: none;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0pxctr cursor: wait;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+    <link href="~/Views/Menu/css/filter.css" rel="stylesheet" />
+    <script src="~/Controllers/js/controllers/Maps/logisticoMapGenController.js"></script>
+    <style>
+        /*lists*/
+        .listdemoListControls md-divider {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .listdemoListControls md-list {
+            padding-top: 0;
+        }
+
+        .listdemoListControls md-list-item > p,
+        .listdemoListControls md-list-item > ._md-list-item-inner > p,
+        .listdemoListControls md-list-item ._md-list-item-inner > p,
+        .listdemoListControls md-list-item ._md-list-item-inner > ._md-list-item-inner > p {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .datepickerdemoBasicUsage {
+        }
+
+            .datepickerdemoBasicUsage md-content {
+                padding-bottom: 200px;
+            }
+
+            .datepickerdemoBasicUsage .validation-messages {
+                font-size: 12px;
+                color: #dd2c00;
+                margin: 10px 0 0 25px;
+            }
+
+
+        md-checkbox.md-checked.freq .md-icon {
+            background-color: #0049b9;
+        }
+
+        md-checkbox.md-checked.real .md-icon {
+            background-color: #3dbf09;
+        }
+
+        md-checkbox.vmduv .md-icon {
+            background-color: #3dbf09;
+            border-color: #3dbf09;
+        }
+
+            md-checkbox.vmduv .md-icon::after {
+                border-color: #3dbf09;
+            }
+
+        md-checkbox.md-checked.config .md-icon {
+            background-color: #e88300;
+        }
+
+        md-checkbox.md-checked.range .md-icon {
+            background-color: #e82fd0;
+        }
+
+        md-checkbox.md-checked.nvisit .md-icon {
+            background-color: #272727;
+        }
+
+        md-checkbox.md-checked.tracking .md-icon {
+            background-color: #660066;
+        }
+
+        .icon-label {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: white;
+            font-weight: bold;
+            width: 25px;
+            height: 25px;
+            border-radius: 12px 12px 12px 12px;
+            padding: 5px;
+        }
+
+        .icon-position {
+            position: absolute;
+            top: -5px;
+            left: -14px;
+        }
+
+        /*@@media (min-width: 992px) {
+            .verticalSeparator {
+                display: none;
+            }
+        }*/
+
+        /*@@media (min-width: 1200px) {*/
+        .verticalSeparator {
+            display: inline-block;
+            width: 0px;
+            height: 100%;
+            border-right: 3px solid !important;
+            border-color: #e51500 !important;
+        }
+        /*}*/
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYrm-MObvFEujYrIr0KvBZKQCM_eY1LCk"></script>
+</head>
+
+<body style="padding-top:0px; padding-bottom:0px; overflow-y:hidden; overflow-x:hidden;">
+
+
+    <div style="width:100%; height:100%;" ng-controller="logisticoMapGenController as ctrl">
+        <div style="height:100%; width:83%; float:left; display:inline-block;">
+            <div id="ctrl.map" style="width:100%; height:100%;">
+                <ng-map center="[{{ctrl.lat}},{{ctrl.long}}]" style="height:100% !important; width:100%;" map-initialized="mycallback(map)" zoom="{{ctrl.zoom}}">
+                    <div>
+                        <custom-marker ng-cloak id="custom-marker-{{id}}" draggable="true" position="[{{pins.CoordenadaY}},{{pins.CoordenadaX}}]" ng-repeat="(id, pins) in ctrl.mapFrequencyList" on-click="ctrl.ShowInfo(event, id);">
+                            <div class="icon-position">
+                                <span class="icon-label" style="background-color: {{pins.spanColor}};" ng-cloak>{{pins.ordenvisita}}</span>
+                            </div>
+                        </custom-marker>
+
+                        <custom-marker id="custom-marker2-{{id}}" ng-cloak position="[{{pins.CoordenadaY}},{{pins.CoordenadaX}}]" title="hello" ng-repeat="(id, pins) in ctrl.mapNoFrequencyList" on-click="ctrl.ShowInfoOutFreq(event,id)">
+                            <div class="icon-position">
+                                <span class="icon-label" style="background-color:{{pins.spanColor}};" ng-cloak>{{pins.ordenvisita}}</span>
+                            </div>
+                        </custom-marker>
+
+                        <custom-marker ng-cloak position="[{{pins.CoordenadaY}},{{pins.CoordenadaX}}]" title="hello" ng-repeat="(id, pins) in ctrl.nVisit" on-click="ctrl.ShowInfo(event,id)">
+                            <div class="icon-position">
+                                <span class="icon-label" style="background-color:#272727;" ng-cloak>{{pins.ordenvisita}}</span>
+                            </div>
+                        </custom-marker>
+
+                        <custom-marker id="custom-marker4-{{id}}" ng-cloak position="[{{pins.CoordenadaY}},{{pins.CoordenadaX}}]" title="hello" ng-repeat="(id, pins) in ctrl.OutRange" on-click="ctrl.ShowInfoOutRange(event, id)">
+                            <div class="icon-position">
+                                <span class="icon-label" style="background-color:#e82fd0;" ng-cloak>{{pins.ordenagenda}}</span>
+                            </div>
+                        </custom-marker>
+
+                        <custom-marker id="custom-marker3-{{id}}" ng-cloak position="[{{pins.CoordenadaY}},{{pins.CoordenadaX}}]" title="hello" ng-repeat="(id, pins) in ctrl.Tracking" on-click="ctrl.ShowInfoTracking(event, id)">
+                            <div class="icon-position">
+                                <span class="icon-label" style="background-color:{{pins.spanColor}};" ng-cloak>{{pins.ordenagenda}}</span>
+                            </div>
+                        </custom-marker>
+
+                        <info-window id="bar" on-mouseover="vm.mouseover()">
+                            <div ng-non-bindable="">
+                                <h4 id="firstHeading" ng-cloak class="firstHeading">Detalles</h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p ng-cloak>Clave: {{ctrl.infoWindowPosition.Clave}} </p>
+                                        <p ng-cloak>Razón social: {{ctrl.infoWindowPosition.razonsocial}} </p>
+                                        <p ng-cloak>Código Barras leido: {{ctrl.infoWindowPosition.codigoleido}}</p>
+                                        <p ng-cloak>GPS Leído: {{ctrl.infoWindowPosition.GPSLeido}}</p>
+                                        <p ng-cloak>Motivo improductividad: {{ctrl.infoWindowPosition.improductividad}}</p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p ng-cloak>Secuencia real: {{ctrl.infoWindowPosition.ordenvisita}}</p>
+                                        <p ng-cloak>Hora visita: {{ctrl.infoWindowPosition.FechaHoraInicial}}</p>
+                                        <p ng-cloak>Distancia del punto real: {{ctrl.infoWindowPosition.distanciagps}}</p>
+                                        <p ng-cloak>Secuencia configurada: {{ctrl.infoWindowPosition.ordenagenda}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </info-window>
+
+                        <info-window id="OutFreq" on-mouseover="vm.mouseover()">
+                            <div ng-non-bindable="">
+                                <h4 id="firstHeading" ng-cloak class="firstHeading">Detalles</h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <p ng-cloak>Clave: {{ctrl.infoWindowPosition.Clave}} </p>
+                                        <p ng-cloak>Razón social: {{ctrl.infoWindowPosition.razonsocial}} </p>
+                                        <p ng-cloak>Código Barras leido: {{ctrl.infoWindowPosition.codigoleido}}</p>
+                                        <p ng-cloak>GPS Leído: {{ctrl.infoWindowPosition.GPSLeido}}</p>
+                                        <p ng-cloak>Motivo improductividad: {{ctrl.infoWindowPosition.improductividad}}</p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p ng-cloak>Secuencia real: {{ctrl.infoWindowPosition.ordenvisita}}</p>
+                                        <p ng-cloak>Hora visita: {{ctrl.infoWindowPosition.FechaHoraInicial}}</p>
+                                        <p ng-cloak>Distancia del punto real: {{ctrl.infoWindowPosition.distanciagps}}</p>
+                                        <p ng-cloak>Secuencia configurada: {{ctrl.infoWindowPosition.ordenagenda}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </info-window>
+
+                        <info-window id="Tracking" on-mouseover="vm.mouseover()">
+                            <div ng-non-bindable="">
+                                <h4 id="firstHeading" ng-cloak class="firstHeading">Detalles</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p ng-cloak>Fecha/Hora registro: {{ctrl.infoWindowPosition.FechaHoraInicial}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </info-window>
+
+                    </div>
+
+                    @*<shape name="polyline" id="foo" ng-cloak path="{{Freq}}"
+                             geodesic="true"
+                             stroke-color="#0049b9"
+                             stroke-opacity="1.0"
+                             stroke-weight="2">
+                    </shape>*@
+
+                    @*<shape name="polyline" id="foo2" ng-cloak path="{{outFreq}}"
+                             geodesic="true"
+                             stroke-color="#FF0000"
+                             stroke-opacity="1.0"
+                             stroke-weight="2">
+                    </shape>*@
+
+                    <shape name="polyline" id="foo4" ng-cloak path="{{reallist}}"
+                           geodesic="true"
+                           stroke-color="#3dbf09"
+                           stroke-opacity="1.0"
+                           stroke-weight="2">
+                    </shape>
+
+                    <shape name="polyline" id="foo5" ng-cloak path="{{configurated}}"
+                           geodesic="true"
+                           stroke-color="#e88300"
+                           stroke-opacity="1.0"
+                           stroke-weight="2">
+                    </shape>
+
+                    <shape name="polyline" id="foo7" ng-cloak path="{{tracking}}"
+                           geodesic="true"
+                           stroke-color="#660066"
+                           stroke-opacity="1.0"
+                           stroke-weight="2">
+                    </shape>
+                </ng-map>
+            </div>
+        </div>
+
+        <div style="height:100%; width:16%; display:inline-block;">
+            <div class="verticalSeparator" style="float:left"></div>
+
+            <div style="height:100%; width:80%; overflow-y:auto; overflow-x:hidden; margin-left:10px; margin-top:10px;">
+                <label>Filtros clientes</label>
+                <md-checkbox style="width:100%;" class="freq" ng-model="ctrl.u" ng-click="ctrl.filter1()">Visitados en frecuencia</md-checkbox>
+                <md-checkbox style="width:100%;" ng-model="ctrl.e" ng-click="ctrl.filter2()">Visitados fuera de frecuencia</md-checkbox>
+                <md-checkbox style="width:100%;" class="nvisit" ng-model="ctrl.t" ng-click="ctrl.filter3()">No visitados</md-checkbox>
+                <md-checkbox style="width:100%;" class="vmduv">Visitado mas de una vez</md-checkbox>
+
+                <label>Filtros trayectorias</label>
+                <md-checkbox style="width:100%;" class="real" ng-model="ctrl.k" ng-click="ctrl.filter4()">Secuencia real</md-checkbox>
+                <md-checkbox style="width:100%;" class="config" ng-model="ctrl.l" ng-click="ctrl.filter5()">Secuencia configurado</md-checkbox>
+                <md-checkbox style="width:100%;" class="range" ng-model="ctrl.p" ng-click="ctrl.filter6()">Visitados fuera de rango</md-checkbox>
+                <md-checkbox style="width:100%;" class="tracking" ng-model="ctrl.q" ng-click="ctrl.filter7()">Trayectoria</md-checkbox>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

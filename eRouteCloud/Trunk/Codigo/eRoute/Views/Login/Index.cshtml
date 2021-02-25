@@ -1,0 +1,69 @@
+﻿@model eRoute.Models.LoginData
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")    
+
+    <script src="~/Views/Login/Login.js"></script>
+    <link href="~/Views/Login/Login.css" rel="stylesheet" />
+    <link href="~/Content/css/loading-bar.css" rel="stylesheet" />
+    <script src="~/Scripts/loading-bar.js"></script>
+    <link id="linkRoot" rel="search" href="@Request.ApplicationPath" />
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="~/favicon.ico" type="image/ico" />
+</head>
+
+<body ng-app="loginApp" style="background-repeat:round;">    
+    <div class="container" style="padding-left:3%;">
+        <div class="row">
+            <div class="col-lg-6 col-xs-12">
+                <img ng-src="~/Assets/Login/a_login_logo.png" class="logo-style" width="380" height="190" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-xs-12 login-style">
+                <div id="login" class="inputDemo" ng-controller="login as ctrl" ng-cloak >
+                    <md-content layout-padding style="width:359px;padding:0 8px 8px 32px !important;">
+                        <form name="LoginForm" ng-submit="ctrl.SendLogin()">
+                            <h3 class="md-title" style="color:#000000; margin-bottom:32px;">Inicio de sesión</h3>
+                            <md-input-container class="md-block" style="margin-top:18px;">
+                                <label>Usuario</label>
+                                <input name="userName" class="input-pos" ng-model="ctrl.UserName">
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>Password</label>
+                                <input type="password" class="input-pos" name="Password" ng-model="ctrl.Password" />
+                            </md-input-container>
+                            <md-button type="submit" ng-disabled="ctrl.logButton" class="md-raised login-input">Iniciar sesión</md-button>
+                        </form>
+                    </md-content>
+                </div>
+            </div>
+        </div>
+
+        <div layout="row" id="toastBounds">
+            <div>
+                <md-checkbox ng-repeat="(name, isSelected) in toastPosition" ng-cloak ng-model="toastPosition[name]">
+                    {{name}}
+                </md-checkbox>
+            </div>
+        </div>
+
+        <footer class="text-center">
+            @*<p>&copy; @DateTime.Now.Year - eRoute</p>*@
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")    
+</body>
+</html>

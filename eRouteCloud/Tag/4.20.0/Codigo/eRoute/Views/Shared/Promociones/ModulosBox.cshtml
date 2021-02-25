@@ -1,0 +1,43 @@
+﻿<div id="ModulosBox" class="modal fade">
+    <div class="modal-dialog" id="R">
+        <div class="modal-content">
+
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click=""><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{translation.ERMMOTESC_IGeneral}}</h2>
+            </div>
+
+            <!-- dialog body -->
+            <div class="scroll modal-body" ng-init="">
+                <form role="form">
+                    <div class="container">
+                        <!--Tabla-->
+                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group" style="padding-right:0px;">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td></td>
+                                    <td>{{translation.PRCNombre}}</td>
+                                    <td>{{translation.MMDTipoIndice}}</td>
+                                    <td>{{translation.CALOrden}}</td>
+                                </tr>
+                                <tr dir-paginate="x in modulos | filter:Buscar | itemsPerPage:20" ng-init="">
+                                    <td><input type="checkbox" ng-checked="Iniciar" ng-init="" ng-false-value="'NO'" ng-true-value="'YES'" ng-click="AddModulo(x.ModuloMovDetalleClave, x.Nombre, x.TipoEstado)"></td>
+                                    <td>{{x.Nombre}}</td>
+                                    <td>{{x.TipoIndice}}</td>
+                                    <td>{{x.Orden}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="AddFinalM(); EsquemasModnuevo=[]">{{translation.BTAceptar}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+

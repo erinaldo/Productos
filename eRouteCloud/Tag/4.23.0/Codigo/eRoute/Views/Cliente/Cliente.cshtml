@@ -1,0 +1,1379 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+@*<script src="~/Scripts/libs.js"></script>
+<script src="~/Scripts/politespace.js"></script>
+<script src="~/Scripts/politespace-init.js"></script>
+<script>
+	jQuery( function(){
+		jQuery( document ).trigger( "enhance" );
+	});
+</script>*@
+
+<style>
+    /**ESTILOS PROPIOS*/
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    .header h3 {
+        line-height: 1.45;
+    }
+
+    .mapa {
+        width: 100%;
+        height: 180px;
+        margin: 2px;
+        border: solid 2px #b30000;
+        border-radius: 4px;
+    }
+
+    /******/
+    .form-valor .form-group label {
+        margin-top: 7px;
+    }
+
+    md-radio-button {
+        display: inline-block !important;
+    }
+
+    .titulo-descripcion {
+        margin-left: 35%;
+        display: inline-block;
+    }
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        border-top: none !important;
+    }
+
+    .lenguajes-tabla tr td {
+        padding-top: 0 !important;
+    }
+
+    .btn-eliminar-lenguaje {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .btn-e-l-m-i {
+        margin-left: 5px;
+    }
+
+    .modal-header .close {
+        margin-top: -10px !important;
+    }
+
+    .fa-2-m {
+        font-size: 1.4em;
+        color: #b70c0c;
+        font-weight: 600;
+    }
+
+    .activo-mg {
+        margin-top: 13px !important;
+    }
+
+    .conf-auto {
+        color: #b30000;
+        font-weight: 600;
+        font-size: medium;
+    }
+
+    .inline-check {
+        display: inline-block !important;
+    }
+
+    .w-60 {
+        width: 60% !important;
+        margin-top: 0px;
+        position: absolute;
+        margin-left: 20px;
+    }
+
+    /***REDUCE LOS BORDER DE LOS TABS*/
+    .nav-tabs > li > a {
+        border-radius: 0 !important;
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        color: #ffffff;
+        background-color: #b30000;
+        font-weight: 600;
+    }
+
+    .nav-tabs > li {
+        background: #c57b7b;
+    }
+
+        .nav-tabs > li a {
+            color: #ffffff;
+        }
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        background-color: rgba(179, 0, 0, 0.36);
+    }
+
+    /********* SI SE NECESITA EL SCROLL**********/
+
+    .modal-dialog {
+        overflow-y: initial !important;        
+    }
+
+    .modal-lg {
+        width: 80%;
+    }
+
+    .validateBox {
+        height: 250px !important;
+        overflow-y: auto;
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid #dddddd;
+        background: #75716c;
+        padding: 9px 10px 1px 10px;
+    }
+
+
+    /**********************/
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #map_canvas {
+        height: 100%;
+    }
+
+    @@media print {
+        html,
+        body {
+            height: auto;
+        }
+
+        #map_canvas {
+            height: 650px;
+        }
+    }
+    .lbl-2-px{
+        font-size: 0.9242em;
+        position: relative;
+        top: 2px;
+    }
+    .lbl-chk-8{
+        font-size: 0.899em;
+        position: relative;
+        top: 2px;
+    }
+    .lbl-chk{
+        position: relative;
+        top: 0.15em;
+    }
+    .top-3{
+            top: -3px;
+    }
+
+
+    @@media (min-width: 992px)
+    {
+         .col-md-30-iz{
+            width: 30%;
+        }
+    }
+
+    @@media (min-width: 992px)
+    {
+        .col-md-19-der {
+           width: 19.666667%;
+        }
+    }
+    .btn-mapa {
+        
+        position:sticky;
+        float:left;
+        /*display: inline-grid;*/
+    }
+    #CLIMapa {
+        height: 180px;
+        width: 240px;
+    }
+
+     @@media (min-width: 992px) {
+        .mapa-grid {
+            position: sticky;
+            float: left;
+            display: inline-grid;
+        }
+    }
+
+    #cb {
+        vertical-align: text-bottom;
+        _vertical-align: middle;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .panel-danger > .panel-heading {
+        color: #ffffff;
+        background-color: #ce6969;
+        border-color: #b76d78;
+    }
+</style>
+
+
+<div class="row margen-tabla">
+    <div class="col-md-12">
+
+    </div>
+</div>
+
+<div class="row margen-tabla" ng-controller="clienteCtrl" ng-init="EditarCliente('@ViewBag.ClienteClave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+
+    <div class="header" style="display: block;">
+        <h3>&nbsp&nbsp{{GetDescripcion("XClientes", "Clientes")}} </h3>
+   
+    </div>
+    @*<div class="row">
+        <pre> {{subForm.Tipo | json}}</pre>
+    </div>*@
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active" role="presentation">
+                    <a href="#generales" aria-controls="" data-toggle="tab" role="tab">{{GetDescripcion("XGenerales", "Generales")}}</a>
+                </li>
+                <li role="presentation">
+                    <a href="#domicilio" aria-controls="" data-toggle="tab" role="tab">{{GetDescripcion("XDomicilio", "Domicilio")}}</a>
+                </li>
+                <li role="presentation">
+                    <a href="#mensajes" aria-controls="" data-toggle="tab" role="tab">{{GetDescripcion("XAMensajesClientes", "Mensajes")}}</a>
+                </li>
+                <li role="presentation">
+                    <a href="#condicionesVenta" aria-controls="" data-toggle="tab" role="tab">{{GetDescripcion("XCondicionesdeVenta", "Condiciones de Venta")}}</a>
+                </li>
+                <li role="presentation">
+                    <a href="#saldos" aria-controls="" data-toggle="tab" role="tab">{{GetDescripcion("XSaldos", "Saldos")}}</a>
+                </li>
+
+                <li role="presentation">
+                    <a href="#facturacion" aria-controls="" data-toggle="tab" role="tab">{{GetDescripcion("XFacturacion", "Facturación")}}</a>
+                </li>
+                <li role="presentation">
+                    <a href="#productosPrioritarios" aria-controls="" data-toggle="tab" role="tab">{{GetDescripcion("XProductosPrioritarios", "Productos Prioritarios")}}</a>
+                </li>
+            </ul>
+            <div role="tabpanel">
+                <form name="form" class="form-horizontal form-valor" ng-class="{submitted:form.submitted}" novalidate>
+                    <div class="tab-content">
+                        <div id="generales" class="tab-pane active">
+
+                             <br />
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XGenerales", "Generales")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row form-group">
+
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="Clave">{{GetDescripcion("CLIClave", "Clave")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="Clave" validar-clave-repetida="true" ng-model="Clave" ng-maxlength="20" validar-clave-nueva="true" ng-required="true" ng-disabled="SoloLectura"/>
+                                            <div ng-show="form.$submitted || form.Clave.$touched">
+                                                <div class="error-message" ng-show="form.Clave.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                <div class="error-message" ng-show="form.Clave.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','20')}}</div>
+                                                <div class="error-message" ng-show="form.Clave.$error.claveNueva">{{GetDescripcion("E0736", "[E0736] La clave no debe iniciar con la cadena 'NUEVO'")}}</div>
+                                                <div class="error-message" ng-show="form.Clave.$error.claveClienteRepetida">{{GetDescripcion("BE0002", "[BE0002] Registro existente.")}}</div>
+                                            </div>
+                                        </div>
+                                       
+                                        <!--FechaRegistro-->
+                                        <div class="col-md-1">
+                                            <label class="label-align lbl-2-px" for="Clave">{{GetDescripcion("CLIFechaRegistroSistema", "Fecha Registro")}}</label>
+                                        </div>                                        
+                                        <div class="col-md-2">
+                                            @*<md-datepicker ng-model="FechaInactivacion" ng-disabled="SoloLectura" class="md-picker-style" name="FechaInactivacion" nb-required="Inactivacion"></md-datepicker>*@
+                                            <md-datepicker ng-model="FechaRegistroSistema" ng-disabled="false" class="md-picker-style" name="FechaRegistroSistema"></md-datepicker>
+                                        </div>
+                                      
+
+                                        <!--TipoEstado-->
+                                        <div class="col-md-1">
+                                            <label class="label-align lbl-2-px" for="Clave">{{GetDescripcion("CLITipoEstado", "Estado")}}</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control" data-modal="modal" ng-model="TipoEstado" name="TipoEstado" ng-options="val.VAVClave as val.Descripcion for val in  edoreg " ng-required="true" ng-disabled="SoloLectura" ng-change="HabilitarInactivacion()">
+                                                <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                            </select>
+                                            <div ng-show="form.$submitted || form.TipoEstado.$touched">
+                                                <div class="error-message" ng-show="form.TipoEstado.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+
+                                    <div class="row form-group">
+
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="Clave">{{GetDescripcion("CLIIdElectronico", "Código de Barras")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            
+                                            <input type="text" class="form-control" name="IdElectronico" validar-codigo-repetido="true" ng-model="IdElectronico" ng-disabled="SoloLectura" ng-maxlength="64"/>
+                                            <div ng-show="form.$submitted || form.IdElectronico.$touched">
+                                                <div class="error-message" ng-show="form.IdElectronico.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','64')}}</div>
+                                                <div class="error-message" ng-show="form.IdElectronico.$error.codigoClienteRepetido">{{GetDescripcion("E0617", "[E0617] El código de barras se encuentre asignado a otro cliente activo")}}</div>
+                                            </div>
+                                        </div>
+
+                                        <!--FechaInactivacion-->
+                                        <div class="col-md-1" ng-show="Inactivacion">
+                                            <label class="label-align lbl-2-px" for="Clave">{{GetDescripcion("CLIFechaInactivacion", "Fecha Inactivación")}}</label>
+                                        </div>
+                                        <div class="col-md-2" ng-show="Inactivacion">
+                                            <md-datepicker ng-model="FechaInactivacion" ng-disabled="SoloLectura" class="md-picker-style" name="FechaInactivacion" nb-required="Inactivacion"></md-datepicker>
+                                            <div ng-show="form.$submitted || form.FechaInactivacion.$touched">
+                                                <div class="error-message" ng-show="form.FechaInactivacion.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                            </div>
+                                        </div>
+
+
+                                        <!--MotivoInactivacion-->
+                                        <div class="col-md-1" ng-show="Inactivacion">
+                                            <label class="label-align lbl-2-px" for="Clave">{{GetDescripcion("CLIMotivoInactivacion", "Motivo Inactivación")}}</label>
+                                        </div>
+                                        <div class="col-md-2" ng-show="Inactivacion">
+                                            <select class="form-control" data-modal="modal" ng-model="MotivoInactivacion" name="MotivoInactivacion" ng-options="val.VAVClave as val.Descripcion for val in  tipmotin " ng-required="Inactivacion" ng-disabled="SoloLectura">
+                                                <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                            </select>
+                                            <div ng-show="form.$submitted || form.MotivoInactivacion.$touched">
+                                                <div class="error-message" ng-show="form.MotivoInactivacion.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                            </div>
+                                        </div>    
+                                      
+                                    </div>
+                                    <div class="row form-group">
+
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="RazonSocial">{{GetDescripcion("CLIRazonSocial", "Razón Social")}}</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="RazonSocial" ng-model="RazonSocial" ng-required="true" ng-disabled="SoloLectura" ng-maxlength="128"/>
+                                            <div ng-show="form.$submitted || form.RazonSocial.$touched">
+                                                <div class="error-message" ng-show="form.RazonSocial.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                <div class="error-message" ng-show="form.RazonSocial.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','128')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="IdFiscal">{{GetDescripcion("XRFC", "RFC")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" validar-rfc="true" name="IdFiscal" ng-model="IdFiscal" ng-disabled="SoloLectura" ng-maxlength="64"/>
+                                            <div ng-show="form.$submitted || form.IdFiscal.$touched">
+                                                <div class="error-message" ng-show="form.IdFiscal.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','64')}}</div>                                                
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="FechaNacimiento">{{GetDescripcion("CLIFechaNacimiento", "Fecha Nacimiento")}}</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <md-datepicker ng-model="FechaNacimiento" class="md-picker-style" name="FechaNacimiento" ng-disabled="SoloLectura" md-max-date="maxDate"></md-datepicker>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="NombreCorto">{{GetDescripcion("CLINombreCorto", "Nombre Corto")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="NombreCorto" ng-model="NombreCorto" ng-disabled="SoloLectura" ng-maxlength="32"/>
+                                            <div ng-show="form.$submitted || form.NombreCorto.$touched">
+                                                <div class="error-message" ng-show="form.NombreCorto.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','32')}}</div>                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="NumeroSAP">{{GetDescripcion("CLINumeroSAP", "Número SAP")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="NumeroSAP" ng-model="NumeroSAP" ng-disabled="SoloLectura" ng-maxlength="20"/>
+                                            <div ng-show="form.$submitted || form.NumeroSAP.$touched">
+                                                <div class="error-message" ng-show="form.NumeroSAP.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','20')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label class="label-align lbl-2-px" for="AlmacenID">{{GetDescripcion("CLIAlmacenID", "Centro de Distribución")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select class="form-control" data-modal="modal" ng-model="AlmacenID" name="AlmacenID" ng-options="val.AlmacenID as val.NombreCompuesto for val in centroDist" ng-required="true" ng-disabled="SoloLectura">
+                                                <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                            </select>
+                                            <div ng-show="form.$submitted || form.AlmacenID.$touched">
+                                                <div class="error-message" ng-show="form.AlmacenID.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="DatosExtra">{{GetDescripcion("CLIDatosExtra", "Datos Extra")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="DatosExtra" ng-model="DatosExtra" ng-disabled="SoloLectura" ng-maxlength="200" />
+                                            <div ng-show="form.$submitted || form.DatosExtra.$touched">
+                                                <div class="error-message" ng-show="form.DatosExtra.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','200')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XContacto", "Contacto")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="NombreContacto">{{GetDescripcion("XNombreContacto", "Nombre Contacto")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="NombreContacto" ng-model="NombreContacto" ng-disabled="SoloLectura" ng-maxlength="64"/>
+                                            <div ng-show="form.$submitted || form.NombreContacto.$touched">
+                                                <div class="error-message" ng-show="form.NombreContacto.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','64')}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="TelefonoContacto">{{GetDescripcion("CLITelefonoContacto", "Teléfono")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="TelefonoContacto" ng-model="TelefonoContacto" validar-telefono="true" ng-disabled="SoloLectura" ng-maxlength="64"/>
+                                            <div ng-show="form.$submitted || form.TelefonoContacto.$touched">
+                                                <div class="error-message" ng-show="form.TelefonoContacto.$error.telefonoInvalido">{{GetDescripcion("E1006", "[E1006] Caracteres inválidos, solo se admiten números separados por coma")}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="CorreoElectronico">{{GetDescripcion("CLICorreoElectronico", "Correo Electrónico")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="CorreoElectronico" ng-model="CorreoElectronico" validar-email="true" ng-disabled="SoloLectura" ng-maxlength="1000"/>
+                                            <div ng-show="form.$submitted || form.CorreoElectronico.$touched">
+                                                <div class="error-message" ng-show="form.CorreoElectronico.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','64')}}</div>
+                                                <div class="error-message" ng-show="form.CorreoElectronico.$error.emailInvalido">{{GetDescripcion("E0593", "[E0593] El formato para el campo $0$ debe de ser $1$").replace('$0$', '').replace('$1$',"XX@XX.XX")}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="label-align" for="SitioWeb">{{GetDescripcion("CLISitioWeb", "Sitio Web")}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="SitioWeb" ng-model="SitioWeb" ng-disabled="SoloLectura" ng-maxlength="200" />
+                                            <div ng-show="form.$submitted || form.SitioWeb.$touched">
+                                                <div class="error-message" ng-show="form.SitioWeb.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','200')}}</div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XParametros", "Parámetros")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @*Primera fila*@
+                                    <div class="row form-group">
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="PublicoGeneral" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="PublicoGeneral" id="PublicoGeneral" name="PublicoGeneral" ng-model="PublicoGeneral"> {{GetDescripcion("CLIPublicoGeneral", "Público General")}}
+                                            </label>
+                                        </div> 
+
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="AseguramientoGPS" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" name="AseguramientoGPS" ng-model="AseguramientoGPS" type="checkbox" id="AseguramientoGPS" ng-checked="AseguramientoGPS"> {{GetDescripcion("CLIAseguramientoGPS", "Aseguramiento GPS")}}
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="col-md-2 col-md-19-der col-sm-6">
+                                            <label for="TipoFiscal" class="label-align lbl-chk-8">
+                                                {{GetDescripcion("CLITipoFiscal", "Documento")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 col-md-30-iz col-sm-6">
+                                            <select class="form-control" data-modal="modal" ng-model="TipoFiscal" name="TipoFiscal" ng-options="val.VAVClave as val.Descripcion for val in  docfisc " ng-required="true" ng-disabled="SoloLectura || CobranzaPendiente">
+                                                <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                            </select>
+                                            <div ng-show="form.$submitted || form.TipoFiscal.$touched">
+                                                <div class="error-message" ng-show="form.TipoFiscal.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*Segunda fila*@
+                                    <div class="row form-group">
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="ActualizaSaldoCheque" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="ActualizaSaldoCheque" id="ActualizaSaldoCheque" name="ActualizaSaldoCheque" ng-model="ActualizaSaldoCheque" value="option2" ng-disabled="SoloLectura"> {{GetDescripcion("CLIActualizaSaldoCheque", "Actualiza Cheque")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="Exclusividad" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" name="Exclusividad" ng-model="Exclusividad" type="checkbox" ng-checked="Exclusividad" id="Exclusividad" value="option2" ng-disabled="SoloLectura"> {{GetDescripcion("CLIExclusividad", "Exclusividad")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-2 col-md-19-der col-sm-6">
+                                            <label for="VigExclusividad" class="label-align lbl-chk-8">
+                                                {{GetDescripcion("CLIVigExclusividad", "Vigencia Exclusividad")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 col-md-30-iz col-sm-6">
+                                            <md-datepicker ng-model="VigExclusividad" ng-disabled="!Exclusividad" class="md-picker-style" name="VigExclusividad" ng-required="Exclusividad"></md-datepicker>
+                                            <div ng-show="form.$submitted || form.VigExclusividad.$touched">
+                                                <div class="error-message" ng-show="form.VigExclusividad.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*Tercera fila*@
+                                    <div class="row form-group">
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="ExigirOrdenCompra" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="ExigirOrdenCompra" id="ExigirOrdenCompra" name="ExigirOrdenCompra" ng-model="ExigirOrdenCompra" value="option2"> {{GetDescripcion("CLIExigirOrdenCompra", "Exigir Orden de Compra")}}
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="ExigirPedidoAdicional" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" name="ExigirPedidoAdicional" ng-model="ExigirPedidoAdicional" type="checkbox" ng-checked="ExigirPedidoAdicional" id="ExigirPedidoAdicional" value="option2"> {{GetDescripcion("CLIExigirPedidoA", "Exigir Pedido Adicional")}}
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-2 col-md-19-der col-sm-6">
+                                            <label for="FormatoPedidoAdicional" class="label-align lbl-chk-8">
+                                                {{GetDescripcion("CLIFormatoPedidoA", "Formato Pedido Adicional")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 col-md-30-iz col-sm-6">
+                                            <input type="text" class="form-control" name="FormatoPedidoAdicional" ng-model="FormatoPedidoAdicional" validar-formato="true" ng-disabled="!ExigirPedidoAdicional" ng-required="ExigirPedidoAdicional" ng-maxlength="16" />
+                                            <div ng-show="form.$submitted || form.FormatoPedidoAdicional.$touched">
+                                                <div class="error-message" ng-show="form.FormatoPedidoAdicional.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                <div class="error-message" ng-show="form.FormatoPedidoAdicional.$error.maxlength">{{GetDescripcion("E1004", "[E1004] El máximo de caracteres se ha excedido, la longitud máxima permitida es $0$").replace('$0$','16')}}</div>
+                                                <div class="error-message" ng-show="form.FormatoPedidoAdicional.$error.formatoInvalido">{{GetDescripcion("E0879", "[E0879] Caracteres inválidos, el Formato deberá estar conformado por: [A, 9, X, a, x, z, *]")}}</div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @*Cuarta fila*@
+                                    <div class="row form-group">
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="ValidaFolNeg" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="ValidaFolNeg" id="ValidaFolNeg" name="ValidaFolNeg" ng-model="ValidaFolNeg" value="option2"> {{GetDescripcion("CLIValidaFolNeg", "Mostrar Folio Negociación")}}
+                                            </label>
+                                        </div>
+                                       
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="VencimientoVenta" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" name="VencimientoVenta" ng-model="VencimientoVenta" type="checkbox" ng-checked="VencimientoVenta" id="VencimientoVenta" value="option2"> {{GetDescripcion("CLIVencimientoVenta", "Vencimiento Venta")}}
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-2 col-md-19-der col-sm-6">
+                                            <label for="DiasVencimiento" class="label-align lbl-chk-8">
+                                                {{GetDescripcion("CLIDiasVencimiento", "Días de Vencimiento")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 col-md-30-iz col-sm-6">
+                                            <input type="number" class="form-control" name="DiasVencimiento" ng-disabled="!VencimientoVenta" ng-model="DiasVencimiento" ng-required="VencimientoVenta" min="0" />
+                                            <div ng-show="form.$submitted || form.DiasVencimiento.$touched">
+                                                <div class="error-message" ng-show="form.DiasVencimiento.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                <div class="error-message" ng-show="form.DiasVencimiento.$error.min">{{GetDescripcion("ME0007", "[E0007] La cantidad debe ser igual o mayor a cero")}}</div>  
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @*Quinta fila*@
+                                    <div class="row form-group">
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="Prestamo" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" id="Prestamo" name="Prestamo" ng-model="Prestamo" value="option2" ng-disabled="SoloLectura" ng-checked="Prestamo"> {{GetDescripcion("CLIPrestamo", "Manejo de Envase")}}
+                                            </label>
+                                        </div>
+
+                                        
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="ValidarLimEnvase" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" name="ValidarLimEnvase" ng-model="ValidarLimEnvase" type="checkbox" ng-checked="ValidarLimEnvase" id="ValidarLimEnvase" value="option2"> {{GetDescripcion("CLIValidarLimEnvase", "´Límite Préstamo Envase")}}
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-2 col-md-19-der col-sm-6">
+                                            <label for="LimiteEnvase" class="label-align lbl-chk-8">
+                                                {{GetDescripcion("CLILimiteEnvase", "Cantidad Préstamo Envase")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 col-md-30-iz col-sm-6">
+                                            <input type="number" class="form-control" name="LimiteEnvase" ng-disabled="!ValidarLimEnvase" ng-model="LimiteEnvase" ng-required="ValidarLimEnvase" min="0" />                                            
+                                            <div ng-show="form.$submitted || form.LimiteEnvase.$touched">
+                                                <div class="error-message" ng-show="form.LimiteEnvase.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                <div class="error-message" ng-show="form.LimiteEnvase.$error.min">{{GetDescripcion("ME0007", "[E0007] La cantidad debe ser igual o mayor a cero")}}</div>   
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    @*Sexta fila*@
+                                    <div class="row form-group">
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="ExigirTomaInvMer" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" name="ExigirTomaInvMer" ng-model="ExigirTomaInvMer" type="checkbox" id="ExigirTomaInvMer" value="option2" ng-disabled="SoloLectura" ng-checked="ExigirTomaInvMer"> {{GetDescripcion("CLIExigirTomaInvMer", "Exigir Toma de Inventario y Mercadeo")}}
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-3 col-sm-6">
+                                            <label for="BonificacionMasiva" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="BonificacionMasiva" id="BonificacionMasiva" name="BonificacionMasiva" ng-model="BonificacionMasiva"> {{GetDescripcion("CLIBonificacionMasiva", "Bonificación Masiva")}}
+                                            </label>
+                                        </div>
+                                    
+                                                                               
+                                        <div class="col-md-2 col-md-19-der col-sm-6">
+                                            <label for="TipoCamion" class="label-align lbl-chk-8">
+                                                {{GetDescripcion("CLITipoCamion", "Tipo Camión")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 col-md-30-iz col-sm-6">
+                                            <select class="form-control" data-modal="modal" ng-model="TipoCamion" name="TipoCamion" ng-options="val.VAVClave as val.Descripcion for val in  tipocam" ng-required="true">                 
+                                                <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                            </select>
+                                            <div ng-show="form.$submitted || form.TipoCamion.$touched">
+                                                <div class="error-message" ng-show="form.TipoCamion.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*Octava fila*@
+                                    <div class="row form-group">
+                                        <div class="col-md-2 col-md-19-der col-sm-6">
+                                            <label for="ZonaClave" class="label-align lbl-chk-8">
+                                                {{GetDescripcion("CLIZonaClave", "Zona de Reparto")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3 col-md-30-iz col-sm-6">
+                                            <select class="form-control" data-modal="modal" ng-model="ZonaClave" name="ZonaClave" ng-options="val.ZonaClave as val.Nombre for val in cZonas">
+                                                <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                            </select>
+                                        </div>
+                                    </div>                                  
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XAEsquemas", "Segmentos")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @{ if (!bSoloLectura)
+                                                    {
+                                                        @Html.ImageButtonLink("../Content/images/crear.png", "AgregarClienteEsquema()", "{{GetDescripcion('XAgregar', 'Agregar')}} {{GetDescripcion('XSegmento', 'Segmento')}}")
+                                                    }
+                                                }
+
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div ng-init="ObtenerClienteEsquema('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <th style="width:5%"></th>
+                                                        }
+                                                    }
+                                                    <th class="cursor-pointer" ng-click="sort('Clave')"><b>{{GetDescripcion("ESQClave", "Clave")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Clave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Nombre')"><b>{{GetDescripcion("ESQNombre", "Nombre")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Nombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('TipoEstado')"><b>{{GetDescripcion("ESQTipoEstado", "Estado")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoEstado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>                                                    
+                                                </tr>
+
+
+                                                <tr ng-repeat="esq in clienteEsquema|orderBy:sortKey:reverse">
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <td>
+                                                               
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i" ng-show="esq.Nuevo">
+                                                                    @Html.ImageButton("../Content/images/eliminar.png", "EliminarClienteEsquema(esq.EsquemaID)", "{{GetDescripcion('BTEliminar', 'Eliminar')}}")
+                                                                </span>
+                                                            </td>
+                                                        }
+                                                    }
+
+                                                    <td><span style="max-width:100%" data-modal="modal">{{esq.Clave}}</span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{esq.Nombre}} </span></td>
+                                                    <td>
+                                                        <select class="form-control" data-modal="modal" ng-model="esq.TipoEstado" ng-options="val.VAVClave as val.Descripcion for val in  edoreg " ng-required="true" ng-disabled="SoloLectura"></select>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+
+                                            <div ng-show="form.$submitted">
+                                                <div class="error-message" ng-show="esquemaRequerido">{{GetDescripcion("E0006", "[E0006] Debe asignar por lo menos un Esquema de Cliente")}}</div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div id="domicilio" class="tab-pane">
+                            <br />
+                            <div class="panel panel-danger">
+                                @*<div class="panel-heading">
+                                    <h3 class="panel-title">{{translation.XDomicilio}}</h3>
+                                </div>*@
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @{ if (!bSoloLectura)
+                                                    {
+                                                        @Html.ImageButtonLink("../Content/images/crear.png", "AgregarClienteDomicilio()", "{{GetDescripcion('XAgregar','Agregar')}} {{GetDescripcion('XDomicilio','Domicilio')}}")
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div ng-init="ObtenerClienteDomicilio('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <th style="width:8%"></th>
+                                                        }
+                                                    }
+                                                    <th style="width:10%" class="cursor-pointer" ng-click="sort('Tipo')"><b>{{GetDescripcion("CLDTipo", "Tipo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Tipo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Calle')"><b>{{GetDescripcion("CLDCalle", "Calle")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Calle'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Numero')"><b>{{GetDescripcion("CLDNumero", "Exterior")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Numero'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('NumInt')"><b>{{GetDescripcion("CLDNumInt", "Interior")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='NumInt'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('CodigoPostal')"><b>{{GetDescripcion("CLDCodigoPostal", "Código Postal")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CodigoPostal'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Colonia')"><b>{{GetDescripcion("CLDColonia", "Colonia")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Colonia'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Poblacion')"><b>{{GetDescripcion("CLDPoblacion", "Población")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Poblacion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                </tr>
+
+                                                <tr ng-repeat="dom in clienteDomicilio|orderBy:sortKey:reverse">            
+                                                    <td>
+                                                        @{  if (ViewBag.Permiso.Contains("U") && !bSoloLectura)
+                                                            {
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i">
+                                                                    @Html.ImageButton("../Content/images/editar.png", "EditarClienteDomicilio(dom.ClienteDomicilioID, False)", "{{GetDescripcion('BTEditar','Editar')}}")
+                                                                </span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i">
+                                                                    @Html.ImageButton("../Content/images/consultar.png", "EditarClienteDomicilio(dom.ClienteDomicilioID, True)", "{{GetDescripcion('btConsultar','Consultar')}}")
+                                                                </span>
+                                                            }
+                                                        }
+
+                                                        &nbsp &nbsp
+                                                        @{  if (ViewBag.Permiso.Contains("D"))
+                                                            {
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i" ng-show="dom.Nuevo">
+                                                                    @Html.ImageButton("../Content/images/eliminar.png", "ValidarEliminarClienteDomicilio(dom.ClienteDomicilioID)", "{{GetDescripcion('BTEliminar','Eliminar')}}")
+                                                                </span>
+                                                            }
+                                                        }
+                                                    </td>                                                        
+
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{dom.TipoDescripcion}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{dom.Calle}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{dom.Numero}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{dom.NumInt}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{dom.CodigoPostal}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{dom.Colonia}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{dom.Poblacion}} </span></td>
+                                                </tr>
+                                            </table>                                            
+                                        </div>
+                                        <div ng-show="form.$submitted">
+                                            <div class="error-message" ng-show="domicilioRequerido">{{GetDescripcion("E0018", "[E0018] Debe crear por lo menos un Domicilio $0$ para el Cliente").replace('$0$', '')}}</div>
+                                            <div class="error-message" ng-show="fiscalRequerido">{{GetDescripcion("E0018", "[E0018] Debe crear por lo menos un Domicilio $0$ para el Cliente").replace('$0$', GetDescripcion("XFiscal", "Fiscal"))}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="mensajes" class="tab-pane">
+                            <br />
+                            <div class="panel panel-danger">
+                                @*<div class="panel-heading">
+                                    <h3 class="panel-title">{{translation.XAMensajesClientes}}</h3>
+                                </div>*@
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div class="row">
+                                            @{ if (!bSoloLectura)
+                                            {
+                                                <div class="row form-group">
+                                                    <div class="col-md-2">@Html.ImageButtonLink("../Content/images/buscar.png", "BuscarMDBMensaje()", "{{GetDescripcion('BTBuscar','Buscar')}} {{GetDescripcion('XMensaje','Mensaje')}}")</div>
+                                                    <div class="col-md-2">@Html.ImageButtonLink("../Content/images/crear.png", "CrearMDBMensaje()", "{{GetDescripcion('XCrear','Crear')}} {{GetDescripcion('XMensaje','Mensaje')}}")</div>
+                                                </div>
+                                                }
+                                            }
+                                        </div>
+                                        <br />
+                                        <div ng-init="ObtenerClienteMensaje('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <th style="width:5%"></th>
+                                                        }
+                                                    }
+                                                    <th class="cursor-pointer" ng-click="sort('Numero')"><b>{{GetDescripcion("MMENumero", "Número")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Numero'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Asunto')"><b>{{GetDescripcion("MMEAsunto", "Asunto")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Asunto'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('TipoMensaje')"><b>{{GetDescripcion("MMEMDBMensajeTipo", "Tipo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoMensaje'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Descripcion')"><b>{{GetDescripcion("MMEDescripcion", "Descripción")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Descripcion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('TipoEstado')"><b>{{GetDescripcion("CLMTipoEstado", "Estado")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoEstado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Modulos')"><b>{{GetDescripcion("MMEModulos", "Módulos Terminal")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Modulos'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                </tr>
+
+                                                <tr ng-repeat="msg in clienteMensaje|orderBy:sortKey:reverse">
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <td>
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i" ng-show="msg.Nuevo">
+                                                                    @Html.ImageButton("../Content/images/eliminar.png", "EliminarClienteMensaje(msg.MDBMensajeID)", "{{GetDescripcion('BTEliminar','Eliminar')}}")
+                                                                </span>
+                                                            </td>
+                                                        }
+                                                    }
+
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.Numero}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.Asunto}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.TipoMensaje}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.Descripcion}} </span></td>
+                                                    <td>
+                                                        <select class="form-control" data-modal="modal" ng-model="msg.TipoEstado" ng-options="val.VAVClave as val.Descripcion for val in  edoreg " ng-required="true" ng-disabled="SoloLectura"></select>
+                                                    </td>                                                    
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.Modulos}} </span></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="condicionesVenta" class="tab-pane">
+                            <br />
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("ERMCLIESC_gbClientePago", "Formas de Pago")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @{ if (!bSoloLectura)
+                                                    {
+                                                        @Html.ImageButtonLink("../Content/images/crear.png", "AgregarClientePago()", "{{GetDescripcion('XAgregar','Agregar')}} {{GetDescripcion('XFormadePago','Forma de Pago')}}")
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div ng-init="ObtenerClientePago('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <th style="width:5%"></th>
+                                                        }
+                                                    }
+                                                    <th style="width:20%" class="cursor-pointer" ng-click="sort('Tipo')"><b>{{GetDescripcion("CLPTipo", "Tipo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Tipo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('TipoBanco')"><b>{{GetDescripcion("CLPTipoBanco", "Banco")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoBanco'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Cuenta')"><b>{{GetDescripcion("CLPCuenta", "Cuenta")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Cuenta'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('TipoEstado')"><b>{{GetDescripcion("CLPTipoEstado", "Estado")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoEstado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                </tr>
+
+                                                <tr ng-repeat="cpago in clientePago|orderBy:sortKey:reverse">
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <td>
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i" ng-show="cpago.Nuevo">
+                                                                    @Html.ImageButton("../Content/images/eliminar.png", "EliminarClientePago(cpago.ClientePagoID)", "{{GetDescripcion('BTEliminar','Eliminar')}}")
+                                                                </span>
+                                                            </td>
+                                                        }
+                                                    }
+                                                    <td>
+                                                        <select class="form-control" data-modal="modal" ng-model="cpago.Tipo" ng-options="val.VAVClave as val.Descripcion for val in pago | filter:{Grupo:'!NC'}" ng-required="true" ng-disabled="!cpago.Nuevo" ng-change="ValidarEfectivo()">
+                                                            <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                                        </select>                                                       
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" data-modal="modal" ng-model="cpago.TipoBanco" name="{{'TipoBanco' + $index }}" ng-options="val.VAVClave as val.Descripcion for val in tbanco " ng-required="!cpago.Efectivo" ng-disabled="SoloLectura || cpago.Efectivo"></select>
+                                                        <div ng-show="form.$submitted || form.{{'TipoBanco' + $index }}.$touched">
+                                                            <div class="error-message" ng-show="form.{{'TipoBanco' + $index }}.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>                                                            
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" class="form-control" style="max-width:100%" data-modal="modal" ng-model="cpago.Cuenta" name="{{'Cuenta' + $index }}" ng-required="!cpago.Efectivo" ng-disabled="SoloLectura || cpago.Efectivo"cpago.Efectivo />
+                                                        <div ng-show="form.$submitted || form.{{'Cuenta' + $index }}.$touched">
+                                                            <div class="error-message" ng-show="form.{{'Cuenta' + $index }}.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                        </div>
+                                                    </td>
+                                                    <td><select class="form-control" data-modal="modal" ng-model="cpago.TipoEstado" ng-options="val.VAVClave as val.Descripcion for val in edoreg " ng-required="true" ng-disabled="SoloLectura"></select></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("ERMCLIESC_gbCLIFormaVenta", "Formas de Venta")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @{ if (!bSoloLectura)
+                                                    {
+                                                        @Html.ImageButtonLink("../Content/images/crear.png", "AgregarCLIFormaVenta()", "{{GetDescripcion('XAgregar','Agregar')}} {{GetDescripcion('PRECFVTipo','Forma de Venta')}}")
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div ng-init="ObtenerCLIFormaVenta('@ViewBag.ClienteClave')">
+                                            
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <th style="width:5%"></th>
+                                                        }
+                                                    }
+                                                    <th style="width:20%" class="cursor-pointer" ng-click="sort('CFVTipo')"><b>{{GetDescripcion("CFVCFVTipo", "Tipo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CFVTipo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('LimiteCredito')"><b>{{GetDescripcion("CFVLimiteCredito", "Límite de Crédito")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='LimiteCredito'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('DiasCredito')"><b>{{GetDescripcion("CFVDiasCredito", "Días de Crédito")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='DiasCredito'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Inicial')"><b>{{GetDescripcion("CFVInicial", "Inicial")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Inicial'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('CapturaDias')"><b>{{GetDescripcion("CFVCapturaDias", "Captura Día de Crédito")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CapturaDias'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('ValidaLimite')"><b>{{GetDescripcion("CFVValidaLimite", "Valida Límite")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='ValidaLimite'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('ValidaPago')"><b>{{GetDescripcion("CFVValidaPago", "Valida Pago")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='ValidaPago'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Estado')"><b>{{GetDescripcion("CFVEstado", "Estado")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Estado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th> 
+                                                </tr>
+
+                                                <tr ng-repeat="cfv in cliFormaVenta|orderBy:sortKey:reverse">
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <td>
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i" ng-show="cfv.Nuevo">
+                                                                    @Html.ImageButton("../Content/images/eliminar.png", "EliminarCLIFormaVenta(cfv.CFVTipo)", "{{GetDescripcion('BTEliminar','Eliminar')}}")
+                                                                </span>
+                                                            </td>
+                                                        }
+                                                    }
+                                                    
+                                                    <td>
+                                                        <select class="form-control" data-modal="modal" ng-model="cfv.CFVTipo" ng-options="val.VAVClave as val.Descripcion for val in fventa" ng-required="true" ng-disabled="!cfv.Nuevo">
+                                                            <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>             
+                                                        @*<input valid-number class="form-control" data-modal="modal" ng-model="cfv.LimiteCredito" name="valor" amount="stake" b-to-cury ng-disabled="SoloLectura" />*@
+                                                        <input type="number" class="form-control" style="max-width:100%" ng-model="cfv.LimiteCredito" name="{{'LimiteCredito' + $index }}" ng-required="{{cfv.CFVTipo == 2 ? true : false}}" ng-disabled="SoloLectura || cfv.CFVTipo == 1 ? true : false" min="cfv.CFVTipo == 1 ? 0 : 1" />
+                                                        <div ng-show="form.$submitted || form.{{'LimiteCredito' + $index }}.$touched">
+                                                            <div class="error-message" ng-show="form.{{'LimiteCredito' + $index }}.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                            <div class="error-message" ng-show="form.{{'LimiteCredito' + $index }}.$error.min">{{GetDescripcion("E0334", "[E0334] El campo $0$ debe ser mayor a cero").replace('$0$', '')}}</div>
+                                                        </div>
+                                                    </td>
+                                                    <td>                                                        
+                                                        <input type="number" class="form-control" style="max-width:100%" data-modal="modal" ng-model="cfv.DiasCredito" name="{{'DiasCredito' + $index }}" ng-required="{{cfv.CFVTipo == 2 ? true : false}}" ng-disabled="SoloLectura || cfv.CFVTipo == 1 ? true : false" min="0" />
+                                                        <div ng-show="form.$submitted || form.{{'DiasCredito' + $index }}.$touched">
+                                                            <div class="error-message" ng-show="form.{{'DiasCredito' + $index }}.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                            <div class="error-message" ng-show="form.{{'DiasCredito' + $index }}.$error.min">{{GetDescripcion("E0007", "[E0007] La cantidad debe ser igual o mayor a cero.")}}</div>
+                                                        </div>
+                                                    </td>
+                                                    <td><input type="checkbox" ng-model="cfv.Inicial" ng-true-value="true" ng-false-value="false" ng-disabled="SoloLectura" data-nodrag ng-change="ValidarCLIFormaVentaInicial(cfv.CFVTipo, cfv.Inicial)" /></td>
+                                                    <td><input type="checkbox" ng-model="cfv.CapturaDias" ng-true-value="true" ng-false-value="false" ng-disabled="SoloLectura || cfv.CFVTipo == 1 ? true : false" data-nodrag /></td>
+                                                    <td><input type="checkbox" ng-model="cfv.ValidaLimite" ng-true-value="true" ng-false-value="false" ng-disabled="SoloLectura || cfv.CFVTipo == 1 ? true : false" data-nodrag /></td>
+                                                    <td><input type="checkbox" ng-model="cfv.ValidaPago" ng-true-value="true" ng-false-value="false" ng-disabled="SoloLectura || cfv.CFVTipo == 2 ? true : false" data-nodrag /></td>
+                                                    <td><select class="form-control" data-modal="modal" ng-model="cfv.Estado" ng-options="val.VAVClave as val.Descripcion for val in edoreg " ng-required="true" ng-disabled="SoloLectura"></select></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div ng-show="form.$submitted">
+                                            <div class="error-message" ng-show="formaVentaRequerida">{{GetDescripcion("E0341", "")}}</div>
+                                            <div class="error-message" ng-show="formaVentaInicialRequerida">{{GetDescripcion("E1007", "")}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="saldos" class="tab-pane">
+                            <br />
+                            <div class="row form-group">
+                                <div class="col-md-2">
+                                    <label class="label-align" for="SaldoEfectivo">{{GetDescripcion("CLISaldoEfectivo", "Saldo Efectivo")}}</label>
+                                </div>
+                                <div ng-controller="myCurrency" class="col-md-2">   
+                                    @*<input valid-number class="form-control" data-modal="modal" ng-model="SaldoEfectivo" name="SaldoEfectivo" amount="stake" b-to-currency ng-disabled="SoloLectura" />*@                                 
+                                    <input type="text" class="form-control" name="SaldoEfectivo" ng-model="SaldoEfectivo" amount="stake" b-to-currency ng-disabled="true" />
+                                    @*<span id="currency-default">{{SaldoEfectivo | currency}}</span><br>*@
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="label-align" for="FechaFactura">{{GetDescripcion("CLIFechaFactura", "Fecha Factura")}}</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <md-datepicker ng-model="FechaFactura" class="md-picker-style" name="FechaFactura" ng-disabled="SoloLectura"></md-datepicker>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label class="label-align" for="SaldoPrestamo">{{GetDescripcion("CLISaldoPrestamo", "Saldo Préstamo")}}</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control" name="SaldoPrestamo" ng-model="SaldoPrestamo" amount="stake" b-to-currency ng-disabled="true" />
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XProductos", "Productos")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                       
+                                        <div ng-init="ObtenerProductoPrestamoCLI('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    <th style="width:20%" class="cursor-pointer" ng-click="sort('ProductoClave')"><b>{{GetDescripcion("XClave", "Clave")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='ProductoClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th> 
+                                                    <th class="cursor-pointer" ng-click="sort('NombreLargo')"><b>{{GetDescripcion("PRONombreLargo", "Nombre Largo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='NombreLargo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th> 
+                                                    <th class="cursor-pointer" ng-click="sort('Saldo')"><b>{{GetDescripcion("XSaldo", "Saldo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Saldo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th> 
+                                                </tr>
+
+                                                <tr ng-repeat="prod in productoPrestamoCLI|orderBy:sortKey:reverse">                                                   
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{prod.ProductoClave}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{prod.NombreLargo}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{prod.Saldo}} </span></td>
+                                                 </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="facturacion" class="tab-pane">
+                            <br />
+                            <div class="row form-group">
+                                <div class="col-md-3 col-sm-6">
+                                    <label for="DesgloseImpuesto" class="form-check-label lbl-chk-8 top-3">
+                                        <input class="form-check-input lbl-chk" type="checkbox" id="DesgloseImpuesto" ng-checked="DesgloseImpuesto" name="DesgloseImpuesto" ng-model="DesgloseImpuesto"> {{GetDescripcion("CLIDesglose", "Desglose de Impuestos")}}
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XExcepciones", "Excepciones")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-6" ng-show="DesgloseImpuesto">
+                                                @{ if (!bSoloLectura)
+                                                    {
+                                                        @Html.ImageButtonLink("../Content/images/crear.png", "AgregarCLINoDesImp()", "{{GetDescripcion('XAgregar','Agregar')}} {{GetDescripcion('XExcepcion','Excepcion')}}")
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <br />
+
+                                        <div ng-init="ObtenerCLINoDesImp('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <th style="width:5%"></th>
+                                                        }
+                                                    }
+                                                    <th style="width:20%" class="cursor-pointer" ng-click="sort('ImpuestoClave')"><b>{{GetDescripcion("IMPClave", "Clave")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='ImpuestoClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Nombre')"><b>{{GetDescripcion("IMPNombre", "Nombre")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Nombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Abreviatura')"><b>{{GetDescripcion("IMPAbreviatura", "Abreviatura")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Abreviatura'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th> 
+                                                </tr>
+
+                                                <tr ng-repeat="imp in cliNoDesImp|orderBy:sortKey:reverse">
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <td>
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i" ng-show="DesgloseImpuesto">
+                                                                    @Html.ImageButton("../Content/images/eliminar.png", "EliminarCLINoDesImp(imp.ImpuestoClave)", "{{GetDescripcion('BTEliminar','Eliminar')}}")
+                                                                </span>
+                                                            </td>
+                                                        }
+                                                    }
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{imp.ImpuestoClave}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{imp.Nombre}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{imp.Abreviatura}} </span></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XConfNumCta", "Configuración de Número de Cuenta")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">                                       
+                                        <div ng-init="ObtenerCliConfNumCta('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    <th><b></b></th>
+                                                    <th style="width:20%" class="cursor-pointer" ng-click="sort('Campo')"><b>{{GetDescripcion("TIPMDBCampoClave", "Campo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Campo'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Orden')"><b>{{GetDescripcion("SECOrden", "Orden")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Orden'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>                                                                                                        
+                                                </tr>
+
+                                                <tr ng-repeat="conf in cliConfNumCta|orderBy:sortKey:reverse">                                                    
+                                                    <td><input type="checkbox" data-toggle='tooltip'  ng-model="conf.Seleccionado" name="Seleccionado" ng-true-value="true" ng-false-value="false" ng-disabled="conf.Campo=='1' || conf.Campo=='3' ? true : false" /></td>                                                    
+                                                    <td><select class="form-control" data-modal="modal" ng-model="conf.Campo" ng-options="val.VAVClave as val.Descripcion for val in confcta " ng-required="true" ng-disabled="true"></select></td>
+                                                    <td>
+                                                        <input type="number" class="form-control" style="max-width:100%" data-modal="modal" ng-model="conf.Orden" name="{{'Orden' + $index }}" ng-required="conf.Seleccionado && DesgloseImpuesto ? true : false" ng-disabled="SoloLectura || !conf.Seleccionado ? true : false" min="0" />                                                      
+                                                        <div ng-show="form.$submitted || form.{{'Orden' + $index }}.$touched">
+                                                            <div class="error-message" ng-show="form.{{'Orden' + $index }}.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                            <div class="error-message" ng-show="form.{{'Orden' + $index }}.$error.min">{{GetDescripcion("E0007", "[E0007]  La cantidad debe ser igual o mayor a cero.")}}</div>
+                                                        </div>
+                                                    </td>                                                    
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XExcepcionesFac", "Excepciones de Facturación")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @{ if (!bSoloLectura)
+                                                    {
+                                                        @Html.ImageButtonLink("../Content/images/crear.png", "AgregarExcepcionFac()", "{{GetDescripcion('XAgregar','Agregar')}} {{GetDescripcion('XExcepcionFac','Excepción de Facturación')}}")
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <br />
+
+                                        <div ng-init="ObtenerExcepcionFac('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <th style="width:5%"></th>
+                                                        }
+                                                    }
+                                                    <th style="width:20%" class="cursor-pointer" ng-click="sort('Clave')"><b>{{GetDescripcion("ESQClave", "Clave")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Clave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Nombre')"><b>{{GetDescripcion("ESQNombre", "Nombre")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Nombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('SubEmpresaId')"><b>{{GetDescripcion("SEMNombreEmpresa", "Sub-Empresa")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='SubEmpresaId'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                </tr>
+
+                                                <tr ng-repeat="excep in excepcionFac|orderBy:sortKey:reverse">
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <td>
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i">
+                                                                    @Html.ImageButton("../Content/images/eliminar.png", "EliminarExcepcionFac(excep.EsquemaID, excep.SubEmpresaId)", "{{GetDescripcion('BTEliminar','Eliminar')}}")
+                                                                </span>
+                                                            </td>
+                                                        }
+                                                    }
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{excep.Clave}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{excep.Nombre}} </span></td>
+                                                    <td>
+                                                        <select class="form-control" data-modal="modal" ng-model="excep.SubEmpresaId" name="{{'SubEmpresaId' + $index }}" ng-options="val.SubEmpresaId as val.NombreEmpresa for val in cSubEmpresas" ng-required="true">
+                                                            <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                                        </select>
+                                                        <div ng-show="form.$submitted || form.{{'SubEmpresaId' + $index }}.$touched">
+                                                            <div class="error-message" ng-show="form.{{'SubEmpresaId' + $index }}.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{GetDescripcion("XParametros", "Parámetros")}}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row form-group">
+                                        <div class="col-md-4 col-sm-6">
+                                            <label for="FacturacionMasiva" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" id="FacturacionMasiva" ng-checked="FacturacionMasiva" name="FacturacionMasiva" ng-model="FacturacionMasiva" value="option2"> {{GetDescripcion("CLIFacturacionMasiva", "Facturación Masiva")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <label for="FacturaFolioVenta" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="FacturaFolioVenta" id="FacturaFolioVenta" name="FacturaFolioVenta" ng-model="FacturaFolioVenta"> {{GetDescripcion("CLIFacturaFolioVenta", "Facturar por Folio de Venta")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <label for="FacturaVentasMensual" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="FacturaVentasMensual" id="FacturaVentasMensual" name="FacturaVentasMensual" ng-model="FacturaVentasMensual"> {{GetDescripcion("CLIFacturaVentasMensual", "Facturar Ventas Mensualmente")}}
+                                            </label>
+                                        </div>                                 
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-4 col-sm-6">
+                                            <label for="GrabarDecXML" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="GrabarDecXML" id="GrabarDecXML" name="GrabarDecXML" ng-model="GrabarDecXML"> {{GetDescripcion("CLIGrabarDecXML", "Grabar Decimales en XML")}}
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <label for="SolicitarCapturaCompensacion" class="form-check-label lbl-chk-8 top-3">
+                                                <input class="form-check-input lbl-chk" type="checkbox" ng-checked="SolicitarCapturaCompensacion" id="SolicitarCapturaCompensacion" name="SolicitarCapturaCompensacion" ng-model="SolicitarCapturaCompensacion"> {{GetDescripcion("CLISolicitarCapturaCompensacion", "Capturar Compensación")}}
+                                            </label>
+                                        </div>   
+                                    </div>
+                                    <div class="row form-group">                                              
+                                        <div class="col-md-2 col-sm-6">
+                                            <label for="TipoImpuesto" class="label-align lbl-chk-8">{{GetDescripcion("XTipo", "Tipo")}}</label>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <select class="form-control" data-modal="modal" ng-model="TipoImpuesto" name="TipoImpuesto" ng-options="val.VAVClave as val.Descripcion for val in impcte" ng-required="true"></select>
+                                        </div>
+                                        
+                                        <div class="col-md-2 col-sm-6">
+                                            <label for="UsoCFDI" class="label-align lbl-2-px">{{GetDescripcion("XUsoCfdi", "Uso CFDI")}}</label>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6">
+                                            <select class="form-control" data-modal="modal" ng-model="UsoCFDI" name="UsoCFDI" ng-options="val.VAVClave as val.Descripcion for val in tusocfdi " ng-disabled="SoloLectura">
+                                                <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                            </select>                                            
+                                        </div>  
+                                    </div>
+                            </div>
+                        </div>
+                        
+                        </div>
+
+                        <div id="productosPrioritarios" class="tab-pane">
+                            <br />
+                            <div class="panel panel-danger">
+                                @*<div class="panel-heading">
+                                    <h3 class="panel-title">{{translation.XExcepciones}}</h3>
+                                </div>*@
+                                <div class="panel-body">
+                                    <div class="container" style="margin-left: 20px; margin-right: 20px;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @{ if (!bSoloLectura)
+                                                    {
+                                                        @Html.ImageButtonLink("../Content/images/crear.png", "AgregarExcepcionProductoPri()", "{{GetDescripcion('XAgregar','Agregar')}} {{GetDescripcion('XExcepcion','Excepción')}}")
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div ng-init="ObtenerExcepcionProductoPri('@ViewBag.ClienteClave')">
+                                            <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                                                <tr>
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <th style="width:5%"></th>
+                                                        }
+                                                    }
+                                                    <th style="width:20%" class="cursor-pointer" ng-click="sort('ProductoClave')"><b>{{GetDescripcion("XClave", "Clave")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='ProductoClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('Nombre')"><b>{{GetDescripcion("PRONombre", "Nombre")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Nombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                    <th class="cursor-pointer" ng-click="sort('TipoExcepcion')"><b>{{GetDescripcion("EPPTipoExcepcion", "Tipo Excepción")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoExcepcion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                                                </tr>
+
+                                                <tr ng-repeat="excep in excepcionProductoPri|orderBy:sortKey:reverse">
+                                                    @{ if (!bSoloLectura)
+                                                        {
+                                                            <td>
+                                                                <span class="btn-eliminar-lenguaje btn-e-l-m-i">
+                                                                    @Html.ImageButton("../Content/images/eliminar.png", "EliminarExcepcionProductoPri(excep.ProductoClave)", "{{GetDescripcion('BTEliminar','Eliminar')}}")
+                                                                </span>
+                                                            </td>
+                                                        }
+                                                    }
+                                                    
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{excep.ProductoClave}} </span></td>
+                                                    <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{excep.Nombre}} </span></td>
+                                                    <td>
+                                                        <select class="form-control" data-modal="modal" ng-model="excep.TipoExcepcion" name="{{'TipoExcepcion' + $index }}"ng-options="val.VAVClave as val.Descripcion for val in texcep " ng-required="true" ng-disabled="SoloLectura">
+                                                            <option value="" selected>{{GetDescripcion("XSeleccionarOpcion", "Seleccionar Opción")}}</option>
+                                                        </select>
+                                                        <div ng-show="form.$submitted || form.{{'TipoExcepcion' + $index }}.$touched">
+                                                            <div class="error-message" ng-show="form.{{'TipoExcepcion' + $index }}.$error.required">{{GetDescripcion("BE0001", "[E0001] El campo $0$ es requerido.").replace('$0$', '')}}</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" id="btnAceptar" value="" class="btn btn-default" ng-click="ValidarCliente()" />
+                    <input type="button" id="btnCancelar" value="" class="btn btn-default" ng-click="ValidarCancelar()" />
+                </form>
+                @*@{ Html.RenderPartial("MsgBox/AutoBox"); }*@
+                @{ Html.RenderPartial("MsgBox/MsgBox"); }
+                @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+                
+                @{ Html.RenderPartial("Esquema/SeleccionEsquema"); }
+                @{ Html.RenderPartial("Domicilio"); }
+                @{ Html.RenderPartial("MDBMensaje/CreacionMDBMensaje"); }
+                @{ Html.RenderPartial("MDBMensaje/SeleccionMDBMensaje"); }
+                @{ Html.RenderPartial("Impuesto/SeleccionImpuesto"); }
+                @{ Html.RenderPartial("Producto/SeleccionProducto"); }
+
+            </div>
+        </div>
+    </div>
+</div>

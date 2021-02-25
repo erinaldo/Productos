@@ -1,0 +1,63 @@
+﻿<div id="ProdEquivBox" class="modal fade">
+    <div class="modal-dialog-contenedor">
+        <div id="modal-content" class="modal-content">
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="lblMsgTitulo"></h2>
+            </div>
+            <!-- dialog body -->
+            <div class="modal-body" style="margin-bottom: -20px">
+                @*<div class="scroll modal-body">*@
+                <form role="form">
+
+                    <div class="container" style="margin-top: -15px; margin-bottom: -15px">
+                        <!--paginacion-->
+                        <div class="col-md-12" style="margin-top:-10px; margin-bottom: -5px;">
+                            @*<label id="lblMsgMensaje" class="control-label text-label"></label>*@
+                            <div class="col-md-12">
+                                <dir-pagination-controls max-size="9"
+                                                         direction-links="true"
+                                                         boundary-links="true">
+                                </dir-pagination-controls>
+                            </div>
+                        </div>
+                        <!--Buscar-->
+                        <div class="input-group">
+                            <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                            <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="searchEquiv" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="scrow">
+                        <!--Tabla-->
+                        <div class="col-md-12 form-group tablaproductobox" style="padding-right:0px;">
+                            <table class="table table-bordered">
+                                <tr class="Lnegras" style="position: -webkit-sticky; position: sticky; top: 0 !important">
+                                    <td style="width:8%"></td>
+                                    <td>{{translation.PROProductoClave}}</td>
+                                    <td>{{translation.PRONombreCorto}}</td>
+                                    <td>{{translation.PROId}}</td>
+                                    <td>{{translation.PROTipo}}</td>
+                                    <td>{{translation.PROTipoFase}}</td>
+                                </tr>
+                                <tr dir-paginate="pro in cProductoListEq|orderBy:sortKey:reverse|filter:searchEquiv|itemsPerPage:tamPagEq">
+                                    <td><input id="{{pro.ProductoClave}}" class="camposInput" type="checkbox" ng-model="ProductoClave.$index" name="{{'ProductoClave' + $index }}" ng-checked="{{pro.Existe}}" ng-false-value="'NO'" ng-true-value="'YES'" ng-click="addProductoEquivalente(pro.ProductoClave, pro.Nombre, pro.TipoFase, ProductoClave.$index)"></td>
+                                    <td>{{pro.ProductoClave}}</td>
+                                    <td>{{pro.Nombre}}</td>
+                                    <td>{{pro.Id}}</td>
+                                    <td>{{pro.Tipo}}</td>
+                                    <td>{{pro.TipoFase}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- dialog buttons -->
+            <div class="modal-footer" style="margin-top: 0">
+                <button type="button" style="margin-top:0" class="btn btn-default" data-dismiss="modal">{{translation.BTAceptar}}</button>
+            </div>
+        </div>
+    </div>
+</div>

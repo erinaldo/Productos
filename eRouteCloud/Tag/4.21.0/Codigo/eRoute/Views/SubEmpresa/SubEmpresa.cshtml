@@ -1,0 +1,813 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Menu/Index.cshtml";
+    var bSoloLectura = ViewBag.SoloLectura;
+}
+
+<style>
+    /**ESTILOS PROPIOS*/
+
+    input, select, textarea {
+        max-width: none !important;
+    }
+
+    /******/
+    .form-valor .form-group label {
+        margin-top: 7px;
+    }
+
+    md-radio-button {
+        display: inline-block !important;
+    }
+
+    .titulo-descripcion {
+        margin-left: 35%;
+        display: inline-block;
+    }
+
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        border-top: none !important;
+    }
+
+    .lenguajes-tabla tr td {
+        padding-top: 0 !important;
+    }
+
+    .btn-eliminar-lenguaje {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .btn-e-l-m-i {
+        margin-left: 5px;
+    }
+
+    .modal-header .close {
+        margin-top: -10px !important;
+        font-size: 25px;
+        color: #FFFFFF;
+        background-color: black;
+    }
+
+    .btn-cerrar {
+        margin-top: -10px !important;
+        /*color: white;*/
+        /*width: 20px;
+        height: 20px;*/
+    }
+
+    .fa-2-m {
+        font-size: 1.4em;
+        color: #b70c0c;
+        font-weight: 600;
+    }
+
+    .activo-mg {
+        margin-top: 13px !important;
+    }
+
+    .conf-auto {
+        color: #b30000;
+        font-weight: 600;
+        font-size: medium;
+    }
+
+    .inline-check {
+        display: inline-block !important;
+    }
+
+    .w-60 {
+        width: 60% !important;
+        margin-top: 0px;
+        position: absolute;
+        margin-left: 20px;
+    }
+
+    /***REDUCE LOS BORDER DE LOS TABS*/
+    .nav-tabs > li > a {
+        border-radius: 0 !important;
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        color: #b30000;
+        background-color: #f7f7f7;
+        font-weight: 600;
+    }
+
+    .nav-tabs > li {
+        background: #b30000;
+    }
+
+        .nav-tabs > li a {
+            color: #ffffff;
+        }
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        background-color: rgba(179, 0, 0, 0.36);
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid #f7f7f7;
+        background: #75716c;
+        padding: 9px 10px 1px 10px;
+    }
+
+    /********* SI SE NECESITA EL SCROLL**********/
+    .modal-dialog {
+        overflow-y: initial !important;
+    }
+
+    .modal-dialog-hist {
+        border-collapse: collapse;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        width: 70%;
+    }
+
+    .modal-dialog-clientes {
+        border-collapse: collapse;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1%;
+        width: 50%;
+    }
+
+    .scrow {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .scrow-clientes {
+        width: 100%;
+        height: 300px;
+        overflow: scroll;
+    }
+
+    .Lnegras {
+        border-top: none !important;
+        background: rgb(179, 0, 0) !important;
+        color: #ffffff;
+        font-weight: 500;
+    }
+
+    .table-historial tbody > tr > td {
+        border-top: none !important;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    tr.active td {
+        background-color: #123456 !important;
+        color: white;
+    }
+
+    /*
+    .modal-open {
+        overflow: scroll; //No descomentar //Función sí se desea utilizar el scroll primario
+    }**/
+
+    /*************COMENTAR CODIGO DE ARRIBA SÍ NO SE REQUIERE EL SCROLL*/
+
+    .img:hover {
+        cursor: pointer;
+    }
+
+    /**********************/
+    .file-input {
+        position: absolute;
+        opacity: 0;
+        /* pointer-events: none; */
+        border: 1px solid #455a64;
+        border-radius: 2px;
+        color: #455a64;
+        font-size: 16px;
+        width: 85%;
+        margin: 10px 0;
+        height: 100%;
+        padding: 5px 10px;
+        background: beige;
+        z-index: 12;
+        top: -10px;
+        left: 16px;
+        cursor: pointer;
+    }
+
+    .thumbnail:hover {
+        border: 2px dotted #b54343;
+        transition: all 2s ease-in;
+    }
+
+    .box-group {
+        border: 2px solid #75716c;
+        margin: 0;
+        padding-top: 15px;
+    }
+
+    .box-titulo {
+        color: rgb(179, 0, 0);
+    }
+
+    form[name="formFact"] {
+    }
+
+    .box-group label {
+        font-size: 12px;
+    }
+
+    .box-margin {
+        margin-top: 20px;
+    }
+
+    /***/
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+</style>
+
+
+
+@*row margen-tabla*@
+<div class="container" ng-controller="subEmpresaCtrl" ng-init="EditarSubEmpresa('@ViewBag.Clave', '@ViewBag.Permiso', '@ViewBag.SoloLectura.ToString()')">
+
+    <!--Cabecera-->
+    <div class="header" style="display: block;">
+        <h3>&nbsp&nbsp{{translation.XSUBEMPRESA}}</h3>
+    </div>
+
+    <!--Formulario-->
+    <div class="row">
+        <div class="col-md-12">
+
+            <div role="tabpanel">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active" role="presentation">
+                        <a href="#generales" aria-controls="" data-toggle="tab" role="tab">{{translation.XGenerales}}</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#facturacion" aria-controls="" data-toggle="tab" role="tab">{{translation.XAFacturacion}}</a>
+                    </li>
+                </ul>
+                <form name="form" class="form-horizontal form-valor" ng-class="{submitted:form.submitted}" novalidate autocomplete="off">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="generales">
+
+                            <!--Generales-->
+                            <br />
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="thumbnail">
+                                                <input type="file" ng-model="data"
+                                                       file-select="data"
+                                                       file-loaded="myLoaded()"
+                                                       file-error="myError($error)"
+                                                       file-progress="myProgress($total,$loaded)"
+                                                       class="file-input">
+
+                                                <img ng-show="Action == 'Create' || Action == 'Edit' && data" data-ng-src="{{data}}" />
+                                                <img ng-show="Action == 'Create' && !data" data-ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWMAAAFfCAIAAAAUGDpgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlfSURBVHhe7d3ZbhPLAoZRCDcg8dBhlJgkhMQFEhI8Gki8AYghEPuU6DrZDCG/Z1dVr3Wxd5eRg91d9aXbTvD15XJ5DeBKJ/X/AP+mFECmFECmFECmFECmFECmFECmFECWf/Lq9PS0bgEjWmWNO6cAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAsiN83ocPEIHt7XAd+bwPYDeUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUYsdOT0/rFgxEKXZpyoRYMB6l2JlfAyEWDEYpduPvNIgFI1GKHfhXFMSCYSjFtq7OgVgwBqXYyiohEAsGoBSbWz0BYkHvlGJD6y5+saBrSrGJzZa9WNAvpVjbNgteLOiUUqxn+6VevsJisagD6IRSrGFXZwR3795dLpd1AD1QilXt9sLhzp07dQt6oBQr2cfrC/v4mrAnSpHtb0mLBb1QimDfi1ks6IJSXOUwy1gsaJ9S/NMhF3D5uxaLhTdEaJZSXO7w3+ent07FgjYpxSWOdTng5yxollL86bivGpRY1C1oiVL85riZmLTwGOAPSvGfdpaoWNAapahaW5xiQVOU4tpyuWxzWZZH9fPNEK9xcnyzLsW0Dlv+Za3y2BY/1TEcydxL0f7vdN67d+/kxKkfRzbfKVgy0ctbkuUy5Pz8vA5YQdljRR2wCzMtRRdnE78qZxauQVZ00Qix2KE5lqK7TEz8BOcq/qiDWOzK7ErRaSYm5ZGLxRUu7YJY7MRcSlEWWFGu9vvNxKQ8fpchl7qiCGKxvcFLUerw803GRWnEjx8/ytV+/YOelcuQ8nT04lexBWKxpZFLMZ1HTJn4/v37gwcP6h/0rySvhM8bIpMVKyAW2xj8nKKspSkTjx49qjeN4uHDh0pRrLX+xWJjw5ainE1cZOLx48f11rGUWJydndXBLG2w8sViM2OW4iIT5RT96dOn9dYRlViUFNbBzGy85sViAwOWYspEacTwmZg8ePCgPN86mI0tV7tYrGu0UiwWixKI8m22ePLkSb11dNMLnCWRdTy6naxzsVjLUKWYGlEu3b99+/bs2bN66zzcv3+/PP05vHW6wxUuFqsbqhRTI4rnz5/Xm+akXIZMrazjEe18bYvFioYqxZSJFy9e1PH8PHz4sMSiDoazp1UtFqsYqhRfv359+fJlHczVo0ePPn/+XAcD2et6FotonFJ8+PDh1atXdTBvjx8//vTpUx0M4QArWSyuNkgp3r9///r16zrg2rWR3h4+2BoWiyuMUIp37969efOmDvi/Meb9gZ+FWPzLCKV4+/Zt3eJ3vc/7ozx+sbhU96VwXK/W7/454iM3qf7Wdykc0VX0uJeO/phNrT90XArHcnV97atGHq0J9qteS+EorquXPdbU4zTNLnRZCsdvM+3vtwYfock26a8Ujtw2Wt57zT42U67orBSO2fba3IeNH1kTr6dSOFq70tqe7OLIznz6dVMKmditi/359evXaeNYOjqyc56EfZRCJvZh2qs3b9788uXLdMvhdXdkZzsVOyiFTOzPtG9v3bp1lFh0emTnOSFbL4VM7NtFLKbhwXR9ZGc4LZsuhUwcxuH38wBHdm6Ts5tXNNmrQ877YdbYrGKhFFSHmfeDra75xEIp+M++5/2Q62omsVAKfrO/eT/wippDLJSCP+1j3g+/loZ/gkrBJXY77+fwLbcY+2kqBZfb1byfSSYmAz9ZpeCftp/3s8rEZNSnrBRcZZt5P8NMTIZ84kpBsNm8n20mJuM9faUgW3fezzwTk8F2glKwktXnvUxcGGlXKAWrWmXey8QfhtkhSsEarp73MnGpMXaLUrCef817mbjCADtHKVjb3/NeJqLed5FSsIlf571MrKjrHaUUbGia9zKxln53l1KwOZnYQKc7TSng0HqMhVLAEZRYLBaLOuiBUsBx3L17t271QCngaDq6DFEKOKZeYqEUcGRdxEIp4Pjaj4VSQBMaj4VSQCtajoVSQEMuYtHaT1soBbRlisXJSVtrUymgOSUWzimAbLlc1q02KAWQKQW0yDlFdn5+fnZ29vHjxzoGjs05BbTIOQXQH6UAshZLcePGjboFc+XqA+iPUgCZUgCZUgCZUgCZUgCZUkCLrl+/XrfaoBRAphRAphRAphRAphRAphRAphRAphRAphRAphRAphRAphRAphRAphRAphRAphRAphRAphRA1mgplj/VAXBszimArN1ziroFNMA5BZApBZApBZApBZA1WoqbN2/WLaABzimArN1StPa5jDBnzimAzDkFtMhnna/q9u3bdQs4NlcfQKYU0CJXH0CmFEB/lALIlAJa5OoD6M/1+K9LnZ6e1q0dWf0L/vzHNKvFYjHdOG2UW6Yh9KWcLEznC2UOl42Tk5PplmL604v/Xm2HC3OVL9V0KXZIWWjHFIJpTq4ShUsduBRzufooxwMa8eucnLbb53UKIFMKIFMKIFMKIFMKIFMKIFMKIFOKbS3WUe8DvVGKbZ2vo94HeqMU26oNWE29D/RGKbZ1to56H+iNUmzr2zrqfaA3SrGtL+uo94HeHOG3zoGm+K1zYDeUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsiUAsjyJwMBOKcAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAMqUAkmvX/gfJWwmqV5HK9wAAAABJRU5ErkJggg==" src="data:image/png;base64,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" />
+                                                <img ng-show="Action == 'Edit' && !data && !BaseImg" data-ng-src="data:image/png;base64,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" src="data:image/png;base64,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" />
+                                                <img ng-show="Action == 'Edit' && !data && BaseImg" data-ng-src="data:image/png;base64,{{BaseImg}}" />
+                                                @*<img ng-show="Action == 'Edit' && !data" data-ng-src="data:image/png;base64,{{BaseImg}}" />*@
+                                                <div class="caption text-center">
+                                                    <em>{{translation.CONLogotipo}}</em>
+                                                </div>
+                                            </div>
+                                            @*<div ng-show="form.$submitted">
+                                                    <div ng-show="Action == 'Create'">
+                                                        <div class="error-message" ng-show="data === undefined">{{translation.BE0001.replace('$0$', translation.CONLogotipo)}}</div>
+                                                    </div>
+                                                    <div ng-show="Action == 'Edit'">
+                                                        <div class="error-message" ng-show="BaseImg == ''">{{translation.BE0001.replace('$0$', translation.CONLogotipo)}}</div>
+                                                    </div>
+                                                </div>*@
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+
+                                        </div>
+                                        <div class="col-md-4">
+
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="TipoEstado">{{translation.CEETipoEstado}} *</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select id="ddlTipoEstado" style="max-width:100%" class="form-control" data-modal="modal" ng-model="TipoEstado" ng-options="tipo.VAVClave as tipo.Descripcion for tipo in edoreg" name="TipoEstado" ng-required="true" ng-disabled="SoloLectura">
+                                                <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                            </select>
+                                            <div ng-show="form.$submitted || form.TipoEstado.$touched">
+                                                <div class="error-message" ng-show="form.TipoEstado.$error.required">{{translation.BE0001.replace('$0$', translation.CEETipoEstado)}}</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!--SubEmpresa-->
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label for="NombreEmpresa">{{translation.CEESubEmpresa}} *</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input type="text" ng-model="NombreEmpresa" name="NombreEmpresa" ng-maxlength="60" class="form-control" ng-required="true" ng-disabled="SoloLectura">
+                                            <div ng-show="form.$submitted || form.NombreEmpresa.$dirty">
+                                                <div class="error-message" ng-show="form.NombreEmpresa.$error.required">{{translation.BE0001.replace('$0$', translation.CEESubEmpresa)}}</div>
+                                                <div class="error-message" ng-show="form.NombreEmpresa.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','60')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Clave-->
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label for="ClaveSubEmpresa">{{translation.CEECentroExpID}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" ng-model="ClaveSubEmpresa" name="ClaveSubEmpresa" ng-maxlength="16" class="form-control" ng-disabled="SoloLectura">
+                                            <div ng-show="form.ClaveSubEmpresa.$dirty">
+                                                <div class="error-message" ng-show="form.ClaveSubEmpresa.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','16')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Nombre Corto-->
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label for="NombreCorto">{{translation.XNombreCorto}} *</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <input type="text" ng-model="NombreCorto" name="NombreCorto" ng-maxlength="60" class="form-control" ng-required="true" ng-disabled="SoloLectura">
+                                            <div ng-show="form.$submitted || form.NombreCorto.$dirty">
+                                                <div class="error-message" ng-show="form.NombreCorto.$error.required">{{translation.BE0001.replace('$0$', translation.XNombreCorto  )}}</div>
+                                                <div class="error-message" ng-show="form.NombreCorto.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','60')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--RFC - Telefono-->
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label for="RFC">{{translation.CEERFC}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" ng-model="RFC" name="RFC" ng-maxlength="64" class="form-control" ng-disabled="SoloLectura">
+                                            <div ng-show="form.RFC.$dirty">
+                                                <div class="error-message" ng-show="form.RFC.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','64')}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="Telefono">{{translation.XTelefono}}</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" ng-model="Telefono" name="Telefono" ng-maxlength="32" class="form-control" ng-disabled="SoloLectura">
+                                            <div ng-show="form.Telefono.$dirty">
+                                                <div class="error-message" ng-show="form.Telefono.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','32')}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">{{translation.SEMDomicilio}}</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <!--Calle-->
+                                            <div class="row form-group">
+                                                <div class="col-md-2">
+                                                    <label for="Calle">{{translation.CEECalle}}</label>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="Calle" name="Calle" ng-maxlength="64" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.Calle.$dirty">
+                                                        <div class="error-message" ng-show="form.Calle.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','64')}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Numero exterior e interior-->
+                                            <div class="row form-group">
+                                                <div class="col-md-2">
+                                                    <label for="Numero">{{translation.XNo}}. {{translation.CEENumExt}}</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" ng-model="Numero" name="Numero" ng-maxlength="16" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.Numero.$dirty">
+                                                        <div class="error-message" ng-show="form.Numero.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','16')}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label for="NumeroInterior">{{translation.XNo}}. {{translation.CEENumInt}}</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" ng-model="NumeroInterior" name="NumeroInterior" ng-maxlength="16" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.NumeroInterior.$dirty">
+                                                        <div class="error-message" ng-show="form.NumeroInterior.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','16')}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Colonia - codigo postal-->
+                                            <div class="row form-group">
+                                                <div class="col-md-2">
+                                                    <label for="Colonia">{{translation.CEEColonia}}</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" ng-model="Colonia" name="Colonia" ng-maxlength="64" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.Colonia.$dirty">
+                                                        <div class="error-message" ng-show="form.Colonia.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','64')}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label for="CodigoPostal">{{translation.CEECodigoPostal}} </label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" ng-model="CodigoPostal" name="CodigoPostal" ng-maxlength="16" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.CodigoPostal.$dirty">
+                                                        <div class="error-message" ng-show="form.CodigoPostal.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','16')}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Referencia-->
+                                            <div class="row form-group">
+                                                <div class="col-md-2">
+                                                    <label for="ReferenciaDom">{{translation.CEEReferenciaDom}}</label>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="ReferenciaDom" name="ReferenciaDom" ng-maxlength="90" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.ReferenciaDom.$dirty">
+                                                        <div class="error-message" ng-show="form.ReferenciaDom.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','90')}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Localidad - Municipio-->
+                                            <div class="row form-group">
+                                                <div class="col-md-2">
+                                                    <label for="Localidad">{{translation.CEELocalidad}} </label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" ng-model="Localidad" name="Localidad" ng-maxlength="40" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.Localidad.$dirty">
+                                                        <div class="error-message" ng-show="form.Localidad.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','40')}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label for="Ciudad">{{translation.CEEMunicipio}}</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" ng-model="Ciudad" name="Ciudad" ng-maxlength="40" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.Ciudad.$dirty">
+                                                        <div class="error-message" ng-show="form.Ciudad.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','40')}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Region - Pais-->
+                                            <div class="row form-group">
+                                                <div class="col-md-2">
+                                                    <label for="Region">{{translation.XPAIRegion}}</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" ng-model="Region" name="Region" ng-maxlength="40" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.Region.$dirty">
+                                                        <div class="error-message" ng-show="form.Region.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','40')}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label for="Pais">{{translation.CEEPais}} </label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" ng-model="Pais" name="Pais" ng-maxlength="40" class="form-control" ng-disabled="SoloLectura">
+                                                    <div ng-show="form.Pais.$dirty">
+                                                        <div class="error-message" ng-show="form.Pais.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','40')}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            &nbsp
+
+                            @{  if (!bSoloLectura)
+                                {
+                                    <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarSubEmpresa()" />
+                                    <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                                }
+                                else
+                                {
+                                    <input type="button" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                                }
+                            }
+
+                            <!--Facturacion-->
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="facturacion">
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row form-group">
+                                        <div class="col-md-3">
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" ng-change="bloquearCampos()" ng-model="ComprobanteDig" name="ComprobanteDig" value="" ng-disabled="SoloLectura">{{translation.COHComprobanteDig}}</label>
+                                            </div>
+                                        </div>
+                                        <!--VersionCFD-->
+                                        <div class="col-md-3">
+                                            <label for="VersionCFD">{{translation.SEMVersionCFD}} *</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select id="ddlVersionFiscal" ng-required="!versionCFDBloq" ng-disabled="versionCFDBloq" style="max-width:100%" class="form-control" ng-click="ObtenerFormatos(); ObtenerVersionNC()" data-modal="modal" ng-model="VersionCFD" ng-options="tipo.VAVClave as tipo.Descripcion for tipo in verfacte" name="VersionCFD">
+                                                <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                            </select>
+                                            <div ng-show="form.$submitted || form.VersionCFD.$touched">
+                                                <div class="error-message" ng-show="form.VersionCFD.$error.required">{{translation.BE0001.replace('$0$', translation.SEMVersionCFD)}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="input-group">
+                                                <!--HISTORIAL-->
+                                                <span class="input-group-btn">
+                                                    <input type="button" class="btn btn-default" value="Historial" ng-click="verHistorial('@ViewBag.Clave')" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-3">
+                                            <div class="checkbox">
+                                                <label><input ng-disabled="folioFiscalBloq" type="checkbox" name="FoliosTerminal" ng-model="FoliosTerminal" value="">{{translation.COHFoliosTerminal}}</label>
+                                            </div>
+                                        </div>
+                                        <!--FormatoFactura-->
+                                        <div class="col-md-3">
+                                            <label for="FormatoFactura">{{translation.SEMFormatoFacturas}} *</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select id="ddlTipoEstado" ng-required="!formatoComprobanteBloq" ng-disabled="formatoComprobanteBloq" style="max-width:100%" class="form-control" data-modal="modal" ng-model="FormatoFactura" ng-options="tipo.VAVClave as tipo.Descripcion for tipo in frmfac  | filter:{Grupo:grupoCFD} : true" name="FormatoFactura">
+                                                <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                            </select>
+                                            <div ng-show="form.$submitted || form.FormatoFactura.$touched">
+                                                <div class="error-message" ng-show="form.FormatoFactura.$error.required">{{translation.BE0001.replace('$0$', translation.SEMFormatoFacturas)}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-3">
+                                            <div class="checkbox">
+                                                <label><input ng-disabled="reciboElectronicoBloq" type="checkbox" name="ReciboElectronico" ng-model="ReciboElectronico" value="">{{translation.COHReciboElecPago}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            @*Formato Nota de Crédito*@
+                                            <label for="FormatoNotaCredito">{{translation.SEMFormatoNC}} *</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select id="ddlFormatoNC" ng-required="!FormatoNotaCreditoBloq" ng-disabled="FormatoNotaCreditoBloq" style="max-width:100%" class="form-control" data-modal="modal" ng-model="FormatoNC" ng-options="tipo.VAVClave as tipo.Descripcion for tipo in frmnc" name="FormatoNC">
+                                                @*<option value="" selected>{{translation.XSeleccionarOpcion}}</option>*@
+                                            </select>
+                                            <div ng-show="form.$submitted || form.FormatoNC.$touched">
+                                                <div class="error-message" ng-show="form.FormatoNC.$error.required">{{translation.BE0001.replace('$0$', translation.SEMFormatoNC)}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Cliente generico-->
+                                    <div class="row form-group">
+                                        <div class="col-md-2">
+                                            <label>{{translation.COHClienteGenerico}} -</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="input-group">
+                                                <input type="text" name="ClaveCliente" ng-required="!clienteGenericoBloq" ng-disabled="clienteGenericoBloq" ng-model="ClaveCliente" ng-maxlength="16" class="form-control" value="" validar-clave="true" placeholder="Clave Cliente..." />
+
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default btn-md" ng-disabled="botonClienteBloq" ng-click="AgregarCliente()"><i ng-show="!loading" class="fa fa-ellipsis-v" aria-hidden="true"></i>  <img style="width:20px;" ng-show="loading" src="../Content/images/cargando.gif" alt="Alternate Text" /></button>
+                                                </span>
+                                            </div>
+                                            <div ng-show="form.ClaveCliente.$dirty">
+                                                <div class="error-message" ng-show="form.ClaveCliente.$error.maxlength">{{translation.E0718.replace('$0$', 'campo').replace('menos de','máximo').replace('$1$','16')}}</div>
+                                            </div>
+                                            <div ng-show="form.$submitted || form.ClaveCliente.$touched">
+                                                <div class="error-message" ng-show="form.ClaveCliente.$error.required">{{translation.BE0001.replace('$0$', translation.COHClienteGenerico)}}</div>
+                                            </div>
+                                            <div ng-show="form.$submitted">
+                                                <div class="error-message" ng-show="form.RfcCliente.$error.required">{{translation.E0027.replace('$0$', 'Sin cliente')}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" ng-disabled="true" name="RfcCliente" ng-model="RfcCliente" class="form-control" value="" ng-required="!clienteGenericoBloq" />
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" ng-disabled="true" name="NombreCliente" ng-model="NombreCliente" class="form-control" value="" />
+                                        </div>
+                                    </div>
+                                    <!--DIRECTORIOS-->
+                                    <div class="row box-margin">
+                                        <div class="col-md-12">
+                                            <h4 class="box-titulo">Directorios</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group box-group">
+                                        <div class="col-md-12">
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="DirRepMensual">{{translation.COHDirRepMensual}}</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input ng-disabled="directorioReportesBloq" type="text" class="form-control" ng-keyup="validaRutaDir()" placeholder="C:/Ruta/Ejemplo" name="DirRepMensual" ng-model="DirRepMensual" value="" ng-required="dirRequerido" />
+                                                    <div ng-show="form.$submitted || form.DirRepMensual.$touched">
+                                                        <div class="error-message" ng-show="form.DirRepMensual.$error.required">{{translation.BE0001.replace('$0$', translation.COHDirRepMensual)}}</div>
+                                                    </div>
+
+                                                    <div ng-show="form.$submitted || form.DirRepMensual.$touched">
+                                                        <div class="error-message" ng-show="rutaValidaDir">{{translation.E0690.replace('$0$',form.DirRepMensual.$viewValue)}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="DirDocXML">{{translation.COHDirDocXML}}</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input ng-disabled="directorioDocumentosBloq" type="text" class="form-control" placeholder="C:/Ruta/Ejemplo" validar-ruta-completa="true" name="DirDocXML" ng-model="DirDocXML" value="" ng-required="!directorioDocumentosBloq" />
+                                                    <div ng-show="form.$submitted || form.DirDocXML.$touched">
+                                                        <div class="error-message" ng-show="form.DirDocXML.$error.required">{{translation.BE0001.replace('$0$', translation.COHDirDocXML)}}</div>
+                                                    </div>
+                                                    <div ng-show="form.$submitted || form.DirDocXML.$touched">
+                                                        <div class="error-message" ng-show="form.DirDocXML.$error.rutaValida">{{translation.E0690.replace('$0$', form.DirDocXML.$viewValue)}}</div>
+                                                        @*<div class="error-message" ng-show="form.DirDocXML.$error.rutaValida">{{translation.E0690.replace('$0$',form.DirDocXML.$viewValue)}}</div>*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="DirArchivosFacElec">{{translation.COHDirArchivosFacElec}}</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input type="text" ng-disabled="archivosKeyCerBloq" class="form-control" validar-ruta-completa="true" name="DirArchivosFacElec" ng-model="DirArchivosFacElec" value="" ng-required="!archivosKeyCerBloq" />
+                                                    <div ng-show="form.$submitted || form.DirArchivosFacElec.$touched">
+                                                        <div class="error-message" ng-show="form.DirArchivosFacElec.$error.required">{{translation.BE0001.replace('$0$', translation.COHDirArchivosFacElec)}}</div>
+                                                    </div>
+                                                    <div ng-show="form.$submitted || form.DirArchivosFacElec.$touched">
+                                                        <div class="error-message" ng-show="form.DirArchivosFacElec.$error.rutaValida">{{translation.E0690.replace('$0$',form.DirArchivosFacElec.$viewValue)}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row box-margin">
+                                        <div class="col-md-12">
+                                            <h4 class="box-titulo">{{translation.COHContrasenaClave.replace("de","")}}</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group box-group">
+                                        <div class="col-md-12">
+                                            <!--CONTRASEÑA-->
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="ContrasenaClave">{{translation.COHContrasenaClave}}</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input id="ddlContrasenaClave" validar-pass="{{inicioBloq}}" ng-minlength="1" ng-maxlength="255" ng-disabled="contrasenaBloq" type="password" ng-required="!contrasenaBloq" class="form-control" ng-model="ContrasenaClave" name="ContrasenaClave" value="" />
+                                                    <div ng-show="form.$submitted || form.ContrasenaClave.$touched">
+                                                        <div class="error-message" ng-show="form.ContrasenaClave.$error.required">{{translation.BE0001.replace('$0$', translation.COHContrasenaClave)}}</div>
+                                                        <div class="error-message" ng-show="form.ContrasenaClave.$error.validPass">{{translation.E0210}}</div>
+                                                        <div class="error-message" ng-show="form.ContrasenaClave.$error.minlength">{{translation.E0949.replace('$0$','8')}}</div>
+                                                        <div class="error-message" ng-show="form.ContrasenaClave.$error.maxlength">MAX 255</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--CONFIRMAR CONTRASEÑA-->
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="">{{translation.XConfirmar}} {{translation.COHContrasenaClave}}</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input pwd-match="{{inicioBloq}}" ng-minlength="1" ng-maxlength="255" ng-model="confirmacionContrasena" ng-disabled="confirmacionContrasenaBloq" type="password" class="form-control" name="confirmacionContrasena" value="" ng-required="confirmPassReq" />
+
+                                                    <div ng-show="form.$submitted || form.confirmacionContrasena.$touched">
+                                                        <div class="error-message" ng-show="form.confirmacionContrasena.$error.required">{{translation.BE0001.replace('$0$', translation.COHContrasenaClave)}}</div>
+                                                        <div class="error-message" ng-show="form.confirmacionContrasena.$error.matchPass">--{{translation.E0730.replace('$1$', translation.COHContrasenaClave).replace('$0$',translation.MCNContrasena)}}</div>
+                                                        <div class="error-message" ng-show="form.ContrasenaClave.$error.minlength">{{translation.E0949.replace('$0$','8')}}</div>
+                                                        <div class="error-message" ng-show="form.ContrasenaClave.$error.maxlength">MAX 255</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row box-margin">
+                                        <div class="col-md-12">
+                                            <h4 class="box-titulo">CFD V3</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group box-group">
+                                        <div class="col-md-12">
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="">{{translation.SEMProveedorTimbre}}</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <select ng-click="ObtenerProveedorTimbre()" ng-disabled="proveedorBloq" id="ddlTipoProov" style="max-width:100%" class="form-control" data-modal="modal" ng-model="ProveedorTimbre" ng-options="tipo.VAVClave as tipo.Descripcion for tipo in protimb" name="ProveedorTimbre" ng-required="!proveedorBloq">
+                                                        <option value="" selected>{{translation.XSeleccionarOpcion}}</option>
+                                                    </select>
+                                                    <div ng-show="form.$submitted || form.ProveedorTimbre.$touched">
+                                                        <div class="error-message" ng-show="form.ProveedorTimbre.$error.required">{{translation.BE0001.replace('$0$', translation.SEMProveedorTimbre)}}</div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="name">{{translation.SEMCustomerId}}</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input ng-disabled="custIdBloq" type="text" class="form-control" name="CustomerId" ng-model="CustomerId" value="" ng-required="!custIdBloq" />
+                                                </div>
+
+                                            </div>
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="CustomerKey">{{translation.SEMCustomerKey}}</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input ng-disabled="custKeyBloq" type="text" class="form-control" ng-model="CustomerKey" name="CustomerKey" value="" ng-required="!custKeyBloq" />
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="ServidorTimbre">{{translation.SEMServidorTimbre}}</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input ng-disabled="servidorTimbreBloq" type="text" class="form-control" name="ServidorTimbre" ng-model="ServidorTimbre" value="" ng-required="!servidorTimbreBloq" />
+                                                </div>
+                                            </div>
+                                            <div class="row form-group ">
+                                                <div class="col-md-3">
+                                                    <label for="">{{translation.SEMServidorCancelacion}}</label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <input ng-disabled="servidorCancelBloq" type="text" class="form-control" name="ServidorCancelacion" ng-model="ServidorCancelacion" value="" ng-required="!servidorCancelBloq" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+                            &nbsp
+
+                            @{  if (!bSoloLectura)
+                                {
+                                    <input type="submit" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="GuardarSubEmpresa()" />
+                                    <input type="button" value="{{translation.BTCancelar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                                }
+                                else
+                                {
+                                    <input type="button" value="{{translation.BTAceptar}}" class="btn btn-default" ng-click="ValidarCancelar()" />
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </form>
+                <!--Fin Form-->
+
+            </div>
+
+            @{ Html.RenderPartial("MsgBox/YesNoMsgBox"); }
+            @{ Html.RenderPartial("SubEmpresa/ClientesBox"); }
+            @{ Html.RenderPartial("SubEmpresa/HistorialBox"); }
+        </div>
+    </div>
+
+</div>

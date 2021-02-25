@@ -1,0 +1,66 @@
+﻿<div id="SeleccionMDBMensaje" class="modal fade" ng-controller="mdbMensajeCtrl">
+    <div class="modal-dialog modal-lg" id="R">
+        <div class="modal-content">
+
+            <!-- dialog header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title">{{GetDescripcion("ERMMMEESC_IGeneral", "Seleccionar Mensaje para Usuarios y Clientes")}}</h2>
+            </div>
+
+            <!-- dialog body -->
+            <div class="modal-body" ng-init="index = false">
+
+                <table cellpadding="12">
+                    <tr>
+                        <th style="width:20%">
+                            <form>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                                    <input type="text" placeholder="{{GetDescripcion('BTBuscar', 'Buscar')}}" class="form-control" ng-model="search" />
+                                </div>
+                            </form>
+                        </th>
+                        <th style="width:48%">
+                            <dir-pagination-controls max-size="10"
+                                                     direction-links="true"
+                                                     boundary-links="true">
+                            </dir-pagination-controls>
+                        </th>
+                    </tr>
+                </table>
+
+                <div>
+                    <table cellpadding="12" class="table table-bordered table-hover valor-table">
+                        <tr>
+                            <th style="width:5%"></th>
+                            <th class="cursor-pointer" ng-click="sort('Numero')"><b>{{GetDescripcion("MMENumero", "Numero")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Numero'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                            <th class="cursor-pointer" ng-click="sort('Asunto')"><b>{{GetDescripcion("MMEAsunto", "Asunto")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Asunto'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                            <th class="cursor-pointer" ng-click="sort('TipoMensaje')"><b>{{GetDescripcion("MMEMDBMensajeTipo", "Tipo")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoMensaje'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                            <th class="cursor-pointer" ng-click="sort('Descripcion')"><b>{{GetDescripcion("MMEDescripcion", "Descripción")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Descripcion'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>                            
+                            <th class="cursor-pointer" ng-click="sort('TipoEstado')"><b>{{GetDescripcion("CLMTipoEstado", "Estado")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='TipoEstado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                            <th class="cursor-pointer" ng-click="sort('Modulos')"><b>{{GetDescripcion("MMEModulos", "Módulos")}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='Modulos'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>                            
+                        </tr>
+
+                        <tr dir-paginate="msg in mdbMensajes|orderBy:sortKey:reverse|filter:search|itemsPerPage:30">
+                            <td><input type="checkbox" ng-model="msg.Seleccionado" ng-true-value="true" ng-false-value="false" data-nodrag /></td>
+                            <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.Numero}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.Asunto}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.TipoMensaje}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.Descripcion}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.TipoEstado}} </span></td>
+                            <td><span style="max-width:100%" data-modal="modal" ng-disabled="SoloLectura"> {{msg.Modulos}} </span></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- dialog buttons -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="AgregarMDBMensajes();">{{GetDescripcion("BTAceptar", "Aceptar")}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+

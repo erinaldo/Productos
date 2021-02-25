@@ -1,0 +1,265 @@
+﻿@{
+    ViewBag.Title = "Clientes Sin Venta";
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html ng-app="eRouteApp" style="background-color:#f7f7f7;">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>eRoute Cloude</title>
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="~/Scripts/lodash.js"></script>
+
+    <script src="~/Views/Login/Login.js"></script>
+    <script src="~/Views/Menu/js/sidebar_menu.js"></script>
+    <script src="~/Views/Menu/js/sidebarapp.js"></script>
+    <script src="~/Scripts/ng-map.min.js"></script>
+    <script src="~/Views/Menu/js/angular.treeview.js"></script>
+    <script src="~/Scripts/loading-bar.js"></script>
+
+    <script src="~/Content/dirPagination.js"></script>
+    <script src="~/Controllers/js/mensaje.js"></script>
+    <script src="~/Controllers/js/usuario.js"></script>
+    <script src="~/Controllers/js/almacen.js"></script>
+    <!--TREE VIEW INDEX-->
+    <link href="~/Content/js/angular.treeview.js" rel="stylesheet" />
+    <script src="~/Content/js/tree-grid-directive.js"> </script>
+    <link href="~/Content/css/treeGrid.css" rel="stylesheet" />
+
+    <script src="~/Controllers/js/subEmpresa.js"></script>
+    <script src="~/Controllers/js/segmento.js"></script>
+    <script src="~/Controllers/js/producto.js"></script>
+    <script src="~/Controllers/js/defaultBox.js"></script>
+
+    <script src="~/Controllers/js/terminales.js"></script>
+    <script src="~/Controllers/js/camiones.js"></script>
+    <script src="~/Controllers/js/listasdeprecios.js"></script>
+
+    <script src="~/Controllers/js/autoBox.js"></script>
+    <script src="~/Controllers/js/validateBox.js"></script>
+
+
+    <script src="~/Controllers/js/rutaBox.js"></script>
+    <script src="~/Controllers/js/centroBox.js"></script>
+
+    <script src="~/Controllers/js/valorReferencia.js"></script>
+    <script src="~/Controllers/js/messageBox.js"></script>
+    <script src="~/Controllers/js/translation.js"></script>
+    <script src="~/Controllers/js/configuracion.js"></script>
+    <script src="~/Controllers/js/core/coreMaps.js"></script>
+    <script src="~/Controllers/js/services/menuServices.js"></script>
+    <script src="~/Controllers/js/services/mapServices.js"></script>
+    <script src="~/Controllers/js/reporte.js"></script>
+    <script src="~/Controllers/js/menu.js"></script>
+    <script src="~/Controllers/js/perfil.js"></script>
+
+
+    <link href="~/Content/css/angular-ui-tree.css" rel="stylesheet" />
+    <link href="~/Content/css/angular.treeview.css" rel="stylesheet" />
+    <link href="~/Content/js/angular.treeview.js" rel="stylesheet" />
+    <link href="~/Content/css/custom-tree.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-ui-tree.js"></script>
+
+    <link href="~/Content/css/loading-bar.css" rel="stylesheet" />
+    <link href="~/Views/Menu/css/menu.css" rel="stylesheet" />
+    <link href="~/Views/Menu/css/sidebar.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="~/favicon.ico" type="image/ico" />
+    <link href="~/Content/css/Site.css" rel="stylesheet" />
+    <style>
+        #loading-bar {
+            pointer-events: all;
+            z-index: 99999;
+            border: none;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0pxctr;
+            cursor: wait;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+
+    <link href="~/Views/Menu/css/filter.css" rel="stylesheet" />
+    <script src="~/Controllers/js/controllers/Maps/clientesSinVentaMapController.js"></script>
+    <style>
+        /*lists*/
+        .listdemoListControls md-divider {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .listdemoListControls md-list {
+            padding-top: 0;
+        }
+
+        .listdemoListControls md-list-item > p,
+        .listdemoListControls md-list-item > ._md-list-item-inner > p,
+        .listdemoListControls md-list-item ._md-list-item-inner > p,
+        .listdemoListControls md-list-item ._md-list-item-inner > ._md-list-item-inner > p {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .datepickerdemoBasicUsage {
+        }
+
+            .datepickerdemoBasicUsage md-content {
+                padding-bottom: 200px;
+            }
+
+            .datepickerdemoBasicUsage .validation-messages {
+                font-size: 12px;
+                color: #dd2c00;
+                margin: 10px 0 0 25px;
+            }
+
+
+        md-checkbox.md-checked.freq .md-icon {
+            background-color: #0049b9;
+        }
+
+        md-checkbox.md-checked.real .md-icon {
+            background-color: #3dbf09;
+        }
+
+        md-checkbox.md-checked.config .md-icon {
+            background-color: #e88300;
+        }
+
+        md-checkbox.md-checked.range .md-icon {
+            background-color: #e82fd0;
+        }
+
+        md-checkbox.md-checked.nvisit .md-icon {
+            background-color: #272727;
+        }
+
+        md-checkbox.vmduv .md-icon {
+            background-color: #000;
+            border-color: #000;
+        }
+        md-checkbox.vmduv .md-icon::after {
+            border-color: #000;
+        }
+
+        .icon-label {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: white;
+            font-weight: bold;
+            width: 25px;
+            height: 25px;
+            border-radius: 12px 12px 12px 12px;
+            padding: 5px;
+        }
+
+        .icon-position {
+            position: absolute;
+            top: -5px;
+            left: -14px;
+        }
+
+        /*@@media (min-width: 992px) {
+            .verticalSeparator {
+                display: none;
+            }
+        }*/
+
+        /*@@media (min-width: 1200px) {*/
+        .verticalSeparator {
+            display: inline-block;
+            width: 0px;
+            height: 100%;
+            border-right: 3px solid !important;
+            border-color: #e51500 !important;
+        }
+        /*}*/
+    </style>
+    <script type="text/javascript">
+        $(window).resize(function () {
+            google.maps.event.trigger(map, "resize");
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYrm-MObvFEujYrIr0KvBZKQCM_eY1LCk"></script>
+</head>
+
+<body style="padding-top:0px; padding-bottom:0px; overflow-y:hidden; overflow-x:hidden;">
+
+
+    <div style="width:100%; height:100%;" ng-controller="clientesSinVentaMapController as ctrl">
+        <style ng-if="ctrl.showRutas" ng-repeat="ruta in ctrl.rutas">
+                md-checkbox.md-checked.{{ruta.RUTClave}} .md-icon {
+                    background-color:{{ruta.Color}};
+                }
+            </style>
+        <div style="height:100%; width:83%; float:left; display:inline-block;">
+            <div id="map" style="width:100%; height:100%;">
+                <ng-map center="[{{ctrl.lat}},{{ctrl.long}}]" style="height:100% !important; width:100%;" map-initialized="mycallback(map)" zoom="{{ctrl.zoom}}">
+                    <div>
+                        <div ng-if="ctrl.rutasTotales != null" ng-repeat="rutas in ctrl.rutasTotales">
+                            <custom-marker ng-if="rutas.Checked" ng-cloak id="custom-cliente-marker-{{cliente.Clave}}" draggable="true" position="[{{cliente.CoordenadaY}},{{cliente.CoordenadaX}}]" ng-repeat="cliente in rutas.Clientes" on-click="ctrl.ShowInfoClientes(event, cliente);">
+                                <div class="icon-position">
+                                    <span class="icon-label" style="background-color: {{rutas.Color}};" ng-cloak></span>
+                                </div>
+                            </custom-marker>
+                        </div>
+
+                        <div ng-repeat="rutas in ctrl.rutas">
+                            <custom-marker ng-if="rutas.Checked" ng-cloak id="custom-marker-{{cliente.Clave}}" draggable="true" position="[{{cliente.CoordenadaY}},{{cliente.CoordenadaX}}]" ng-repeat="cliente in rutas.Clientes" on-click="ctrl.ShowInfo(event, cliente);">
+                                <div class="icon-position">
+                                    <span class="icon-label" style="background-color: {{rutas.Color}};" ng-cloak></span>
+                                </div>
+                            </custom-marker>
+                        </div>
+
+                            <info-window id="bar" on-mouseover="vm.mouseover()">
+                                <div ng-non-bindable="">
+                                    <h4 id="firstHeading" class="firstHeading">Detalles</h4>
+                                    <div class="row" style="margin-left:0px; margin-right:0px;">
+                                        <div class="col-lg-6">
+                                            <p ng-cloak>Clave: {{ctrl.infoWindowPosition.Clave}} </p>
+                                            <p ng-cloak>Razón social: {{ctrl.infoWindowPosition.RazonSocial}} </p>
+                                            <p ng-cloak>Ruta: {{ctrl.infoWindowPosition.Rutas}}</p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <p ng-cloak>Entidad: {{ctrl.infoWindowPosition.Entidad}}</p>
+                                            <p ng-cloak>Población: {{ctrl.infoWindowPosition.Poblacion}}</p>
+                                            <p ng-cloak>Colonia: {{ctrl.infoWindowPosition.Colonia}}</p>
+                                            <p ng-cloak>Calle: {{ctrl.infoWindowPosition.Calle}}</p>
+                                            <p ng-cloak>Número: {{ctrl.infoWindowPosition.Numero}}</p>
+                                            <p ng-cloak>Número Int.: {{ctrl.infoWindowPosition.NumeroInt}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </info-window>
+                    </div>
+                </ng-map>
+            </div>
+        </div>
+
+        <div style="height:100%; width:16%; display:inline-block;">
+            <div class="verticalSeparator" style="float:left"></div>
+            <div style="height:100%; width:80%; overflow-y:auto; overflow-x:hidden; margin-left:10px; margin-top:10px;">
+                <md-checkbox ng-if="ctrl.rutasTotales != null" class="vmduv" style="width:100%; margin-bottom:15px;">Todos los clientes</md-checkbox>
+                <md-checkbox ng-class="ruta.RUTClave" style="width:100%;" ng-if="ctrl.showRutas" ng-repeat="ruta in ctrl.rutas" ng-model="ruta.Checked">{{ruta.RUTClave}}</md-checkbox>
+            </div>
+            <div ng-if="!ctrl.showRutas" style="width:100%; height:50px;">
+                Loading
+            </div>
+        </div>
+    </div>
+</body>
+</html>

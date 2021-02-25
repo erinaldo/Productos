@@ -1,0 +1,189 @@
+﻿body {
+}
+
+.container-pos {
+    margin-left: 20%;
+    margin-top: 50px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.list-margin {
+    background-color: #fff;
+    box-shadow: 0px 0px 14px 3px #bdb9b9;
+    margin-right: 25px;
+    min-height: 440px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width : 480px) {
+    .container-pos {
+        margin-left: 5%;
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .container-pos {
+        margin-left: 29%;
+    }
+}
+
+
+@media only screen and (min-width : 992px) {
+    .container-pos {
+        margin-left: 26%;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .container-pos {
+        margin-left: 18%;
+    }
+}
+
+md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon {
+    background-color: #B40002;
+}
+
+md-radio-group.md-default-theme:not([disabled]) .md-primary .md-on, md-radio-group:not([disabled]) .md-primary .md-on, md-radio-group.md-default-theme:not([disabled]).md-primary .md-on, md-radio-group:not([disabled]).md-primary .md-on, md-radio-button.md-default-theme:not([disabled]) .md-primary .md-on, md-radio-button:not([disabled]) .md-primary .md-on, md-radio-button.md-default-theme:not([disabled]).md-primary .md-on, md-radio-button:not([disabled]).md-primary .md-on {
+    background-color: #B40002;
+}
+
+md-radio-group.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, md-radio-group:not([disabled]) .md-primary .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]) .md-primary.md-checked .md-off, md-radio-group:not([disabled]) .md-primary.md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary .md-checked .md-off, md-radio-group:not([disabled]).md-primary .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary.md-checked .md-off, md-radio-group:not([disabled]).md-primary.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, md-radio-button:not([disabled]) .md-primary .md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary.md-checked .md-off, md-radio-button:not([disabled]) .md-primary.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]).md-primary .md-checked .md-off, md-radio-button:not([disabled]).md-primary .md-checked .md-off, md-radio-button.md-default-theme:not([disabled]).md-primary.md-checked .md-off, md-radio-button:not([disabled]).md-primary.md-checked .md-off {
+    border-color: #B40002;
+}
+
+md-icon.md-default-theme, md-icon {
+    color: #B40002;
+}
+
+md-autocomplete-wrap #input-1, #input-2 {
+    min-width: 92%;
+}
+
+md-list md-radio-group md-list-item md-radio-button .md-container {
+    height: 30px;
+}
+
+.Header-Label {
+    background: rgb(179,0,0);
+    color: white;
+    border-radius: 20px;
+}
+
+    .Header-Label h4 {
+        text-align: center;
+    }
+
+#row-margin {
+    margin-left: unset;
+    margin-right: unset;
+    margin-top: 15px;
+}
+
+#containerDate {
+    width: 20%;
+    margin: 10px 0 0 0;
+    border-radius: 15px;
+    padding: unset;
+}
+
+#selectDate {
+    margin-top: -10px;
+}
+
+#datepickerStyle {
+    background-color: #f7f7f7 !important;
+}
+
+.Panel-Default-Filter {
+    border-radius: 15px;
+}
+
+.Panel-Body-Filter {
+    min-height: 425px;
+}
+
+.Panel-Filter {
+    background-color: #B40002 !important;
+    color: white !important;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+#searchFilterMargin {
+    margin: 0 !important;
+}
+
+#searchFilterText {
+    max-width: 95% !important;
+}
+
+#checkBoxSelectAll {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#lineDivider {
+    background: rgb(179,0,0);
+    max-width: 95%;
+}
+
+#listCheckBox {
+    min-height: 310px;
+    max-height: 310px;
+    overflow-y: auto;
+    margin-left: -10px;
+}
+
+#itemListCheckBox {
+    margin-top: 0;
+    margin-bottom: -14px;
+}
+
+#itemCheckBoxValue {
+    margin-right: 2%;
+}
+
+.error-message {
+    text-align: right;
+    font-size: 15px;
+}
+
+#marginSubmit {
+    margin-top: 15px;
+}
+
+#buttomReports {
+    background-color: #B40002;
+    color: white;
+    font-weight: bold;
+}
+
+#listRadioButtom {
+    margin-top: 20px;
+    min-height: 310px;
+    max-height: 310px;
+    overflow-y: auto;
+    margin-left: -10px;
+    padding: unset;
+}
+
+#itemListRadioButtom {
+    margin-bottom: -15px;
+    margin-top: -1px;
+}
+
+
+/***************************    ESTILOS PROPIOS PARA LOS REPORTES   *********************************/
+/*
+#RadioTypeReport {
+    margin-bottom: 15px;
+}
+#itemRadioValue {
+    margin-right: 2%;
+}
+*/

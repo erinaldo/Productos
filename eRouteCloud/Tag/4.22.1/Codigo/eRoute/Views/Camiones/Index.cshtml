@@ -1,0 +1,101 @@
+﻿@using eRoute.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Menu/Index.cshtml";
+    string sPermiso = ViewBag.Permiso;
+}
+<style>
+
+   
+
+</style>
+
+<div class="container valores margen-tabla" ng-controller="CamionCtrl" ng-init="AsignarPermisoUsuario('@ViewBag.Permiso')">
+    <div class="row">
+        <div class="col-md-12 header">
+            <h3 class="titulo-altura ng-binding">{{translation.XCamiones}}</h3>       
+            
+        </div>
+    </div>
+    <!--Crear-->
+    <div class="row header-valores">
+        <div class="col-md-1">
+            @{ if (sPermiso.Contains("C")) {
+                @Html.ImageActionLink("../Content/images/crear.png", Url.Action("Create", new { Permiso = ViewBag.Permiso }), "{{translation.BTCrear}}")   
+                }
+            }
+        </div>
+        <!--Actualizar-->
+        <div class="col-md-2">           
+               
+                    @Html.ImageActionLink("../Content/images/actualizar.png", Url.Action("Index", new { Permiso = ViewBag.Permiso }), "{{translation.BTActualizar}}")
+                    
+        </div>
+        <!--Buscar-->
+        <div class="col-md-6">
+            <form>
+                <div class="input-group">
+                    <span class="input-group-addon"><img width="16" height="16" src="../Content/images/buscar.png" /></span>
+                    <input type="text" placeholder="{{translation.BTBuscar}}" class="form-control" ng-model="search" />
+                </div>
+            </form>
+        </div>
+        <!--Paginas-->
+        <div class="col-md-3">
+            <dir-pagination-controls max-size="4"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+    </div>
+
+    <div class="row header-valores">
+        <div class="col-md-12">
+            <table cellpadding="12" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <!--Encabezados-->
+                        <th style="width:8%"></th>
+                        <th class="cursor-pointer" ng-click="sort('CAMPlaca')"><b>{{translation.CAMPlaca}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CAMPlaca'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('CAMCamionClave')"><b>{{translation.CAMCamionClave}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CAMCamionClave'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('CAMNombre')"><b>{{translation.CAMNombre}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CAMNombre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('CAMCapacidadKg')"><b>{{translation.CAMCapacidadKg}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CAMCapacidadKg'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('CAMCajas')"><b>{{translation.CAMCajas}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CAMCajas'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                        <th class="cursor-pointer" ng-click="sort('CAMTipoEstado')"><b>{{translation.CAMTipoEstado}}</b>  <span class="glyphicon sort-icon" ng-show="sortKey=='CAMTipoEstado'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="valter in cCamion|orderBy:sortKey:reverse|filter:search|itemsPerPage:tamPag">
+                        <!--Editar-->
+                        <td>
+                            @{  if (sPermiso.Contains("U"))
+                                { 
+                                    @Html.ImageAction("../Content/images/editar.png", HttpUtility.UrlDecode(Url.Action("Edit", "Camiones", new { Placa = "{{valter.Placa}}", Permiso = ViewBag.Permiso })), "{{translation.BTModificar}}")
+                                }
+
+                                else if (sPermiso.Contains("R"))
+                                {
+
+                                     @Html.ImageAction("../Content/images/consultar.png", HttpUtility.UrlDecode(Url.Action("Details", "Camiones", new { Placa = "{{valter.Placa}}", Permiso = ViewBag.Permiso })), "{{translation.btConsultar}}")
+
+
+                                }
+
+                            }                             
+                       </td>
+                        <td>{{valter.Placa}}</td>
+                        <td>{{valter.Clave}}</td>
+                        <td>{{valter.Descripcion}}</td>                       
+                        <td>{{valter.Kilogramos}}</td>
+                        <td>{{valter.Volumen}}</td>
+                        <td>{{valter.Estado}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
