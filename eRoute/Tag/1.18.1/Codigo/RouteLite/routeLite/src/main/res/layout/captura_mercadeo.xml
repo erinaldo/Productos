@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lblCliente"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textSize="@dimen/seleccion_transaccion_lblCliente_textSize" />
+
+    <TextView
+        android:id="@+id/lblRuta"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Small Text"
+        android:textSize="@dimen/seleccion_transaccion_lblsRutaDay" />
+
+    <TextView
+        android:id="@+id/lblDia"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Small Text"
+        android:textSize="@dimen/seleccion_transaccion_lblsRutaDay" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/lblProducto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:text="Producto"
+                    android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <Spinner
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spProducto"
+                        android:spinnerMode="dialog"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:id="@+id/txtProducto"
+                        style="@style/GeneralEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:selectAllOnFocus="true"
+                        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+                </LinearLayout>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/lblMarca"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:text="Marca"
+                android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spMarca"
+                    android:spinnerMode="dialog"
+                    android:layout_weight="1"/>
+
+                <EditText
+                    android:id="@+id/txtMarca"
+                    style="@style/GeneralEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:selectAllOnFocus="true"
+                    android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/lblPresentacion"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:text="Presentacion"
+                android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spPresentacion"
+                    android:spinnerMode="dialog"
+                    android:layout_weight="1"/>
+
+                <EditText
+                    android:id="@+id/txtPresentacion"
+                    style="@style/GeneralEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:selectAllOnFocus="true"
+                    android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"/> >
+            </LinearLayout>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/lblTipo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:text="Tipo"
+            android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spTipo"
+                android:spinnerMode="dialog"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/txtTipo"
+                style="@style/GeneralEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/lblPrecio"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Precio"
+                android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+            <TextView
+                android:id="@+id/lblPrecioOferta"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="PrecioOferta"
+                android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <EditText
+                android:id="@+id/txtPrecio"
+                style="@style/GeneralEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"/>
+            <EditText
+                android:id="@+id/txtPrecioOferta"
+                style="@style/GeneralEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"/>
+        </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/lblCantidad"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Cantidad"
+                    android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+                <TextView
+                    android:id="@+id/lblVigenciaOferta"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="VigenciaOferta"
+                    android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <EditText
+                    android:id="@+id/txtCantidad"
+                    style="@style/GeneralEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:selectAllOnFocus="true"
+                    android:inputType="numberDecimal"
+                    android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"/>
+                <Button
+                    android:id="@+id/btnVigenciaOferta"
+                    style="@style/buttonSquareStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/lblNotas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Notas"
+            android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+        <EditText
+            android:id="@+id/txtNotas"
+            style="@style/GeneralEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"/>
+
+    </LinearLayout>
+</ScrollView>>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnContinuar"
+            style="@style/buttonSquareStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</LinearLayout>

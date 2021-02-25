@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:weightSum="1.0" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.85" >
+
+        <EditText
+            android:id="@+id/txtScanner"
+            style="@style/GeneralEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="true"
+            android:inputType="text"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15"
+        android:gravity="right" >
+
+        <ImageButton
+            android:id="@+id/btnScanner"
+            style="@style/imageButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:src="@drawable/codigo_barras" />
+    </LinearLayout>
+
+</LinearLayout>

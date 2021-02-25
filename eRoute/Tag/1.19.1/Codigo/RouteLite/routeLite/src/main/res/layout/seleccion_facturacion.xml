@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10" >
+
+    <FrameLayout
+        android:id="@+id/layoutParentFacturacion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.8" >
+
+        <!-- Layout inicial, se muestra el listado de facturas -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblCliente"
+                style="@style/DarkGrayStyleClient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/seleccion_pedido_lblCliente_textSize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lblRuta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+
+                    <TextView
+                        android:id="@+id/lblDia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="@dimen/seleccion_pedido_lbls_rutaYdia_textSize" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lstFacturas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1" >
+            </ListView>
+        </LinearLayout>
+
+        <!-- Layout que muestra los generales de la factura -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lblGenerales"
+                        style="@style/DarkGrayStyleClient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:id="@+id/lblSubEmpresa"
+                        style="@style/FacturacionLabels"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="8dp" />
+
+                    <Spinner
+                        android:id="@+id/spnSubEmpresa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+
+                    <TextView
+                        android:id="@+id/lblFolio"
+                        style="@style/FacturacionLabels" />
+
+                    <Spinner
+                        android:id="@+id/spnFolio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+
+                    <TextView
+                        android:id="@+id/lblFecha"
+                        style="@style/FacturacionLabels" />
+
+                    <EditText
+                        android:id="@+id/txtFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:editable="false" />
+                    
+                    <TextView
+                        android:id="@+id/lblFormaPago"
+                        style="@style/FacturacionLabels" />
+
+                    <Spinner
+                        android:id="@+id/spnFormaPago"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+
+                    <TextView
+                        android:id="@+id/lblOrdenCompra"
+                        style="@style/FacturacionLabels" />
+
+                    <EditText
+                        android:id="@+id/txtOrdenCompra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+
+                    <TextView
+                        android:id="@+id/lblUsoCFDI"
+                        style="@style/FacturacionLabels" />
+
+                    <Spinner
+                        android:id="@+id/spnUsoCFDI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- Layout que muestra los metodos de pago para la factura -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/lblMetodosPago"
+                style="@style/DarkGrayStyleClient"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight=".15" />
+
+            <ListView
+                android:id="@+id/lstMetodosPago"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight=".85" >
+            </ListView>
+        </LinearLayout>
+
+        <!-- Layout que muestra los pedidos a facturar -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="1" >
+
+            <TextView
+                android:id="@+id/lblPedidos"
+                style="@style/DarkGrayStyleClient"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight=".15" />
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".10"
+                android:weightSum="5"
+                android:background="@color/gray">
+                
+                <View android:layout_width="0dp"
+		            android:layout_height="wrap_content"
+		            android:layout_weight=".9"/>
+                
+                <TextView
+		            android:id="@+id/lblFolioCol"
+		            android:layout_width="0dp"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1.5"
+		            android:textStyle="bold"
+		            android:textColor="@color/blanco"
+		            android:layout_gravity="center_vertical"
+		            android:text="Medium Text"
+		            android:layout_marginLeft="5dp"
+		            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+		
+		        <TextView
+		            android:id="@+id/lblFechaCol"
+		            android:layout_width="0dp"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1.255"
+		            android:textStyle="bold"
+		            android:textColor="@color/blanco"
+		            android:layout_gravity="center_vertical"
+		            android:text="Medium Text"
+		            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"/>
+		
+		        <TextView
+		            android:id="@+id/lblTotalCol"
+		            android:layout_width="0dp"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1.255"
+		            android:textStyle="bold"
+		            android:textColor="@color/blanco"
+		            android:layout_gravity="center_vertical"
+		            android:text="Medium Text"
+		            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lstPedidos"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".75" >
+            </ListView>
+        </LinearLayout>
+
+        <!-- Layout que muestra los datos de facturacion -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone" >
+            
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lblDatosFacturacion"
+                        style="@style/DarkGrayStyleClient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:id="@+id/lblRazonSocial"
+                        style="@style/FacturacionLabels"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="8dp"
+                         />
+
+                    <EditText
+                        android:id="@+id/txtRazonSocial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblRFC"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtRFC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="13"
+                        android:inputType="textCapCharacters"
+                        android:digits="QWERTYUIOPASDFGHJKLÑZXCVBNM0123456789"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblCalleDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtCalleDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblNumeroExtDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtNumeroExtDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblNumeroIntDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtNumeroIntDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblColoniaDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtColoniaDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblEntidadDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtEntidadDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblMunicipioDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtMunicipioDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblPaisDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtPaisDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblCodigoPostalDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtCodigoPostalDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/lblReferenciaDF"
+                        style="@style/FacturacionLabels"
+                        android:layout_margin="4dp"/>
+
+                    <EditText
+                        android:id="@+id/txtReferenciaDF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp" />
+                    
+                </LinearLayout>
+            </ScrollView>
+            
+        </LinearLayout>
+
+        <!-- Layout que solicita los datos del complemento -->
+        <LinearLayout
+            android:id="@+id/layComplemento"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/layDatosComplemento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lblDatosComplemento"
+                        style="@style/DarkGrayStyleClient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:background="#FFFFFF"
+        android:gravity="center_horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btnContinuar"
+            style="@style/buttonSquareStyle"
+            android:layout_width="@dimen/general_button_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/captura_pedido_lblitulo_height"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:background="@color/titleBarColor"
+        android:layout_weight="1"
+        android:weightSum="2" >
+        
+        <TextView 
+            android:id="@+id/lblEtiquetaTotal"
+            style="@style/MyActionBarTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:visibility="invisible"/>
+        
+        <TextView 
+            android:id="@+id/lblTotalFactura"
+            style="@style/MyActionBarTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:visibility="invisible"/>
+        
+    </LinearLayout>
+
+</LinearLayout>

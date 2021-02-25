@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/lblRoute"
+            style="@style/DarkGrayStyleClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/consultar_inventario_lblRoute_marginTOP"
+            android:text="TextView"
+            android:layout_weight=".8"
+            android:textSize="@dimen/consultar_inventario_lbls_textSizes" />
+
+        <ImageView
+            android:id="@+id/actualizar_inventario"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_gravity="bottom"
+            android:layout_weight=".2"
+            android:adjustViewBounds="true"
+            android:src="@drawable/actrol1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblWorkDay"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/consultar_inventario_lblWorkDay_marginBOTTOM"
+        android:text="TextView"
+        android:textSize="@dimen/consultar_inventario_lbls_textSizes" />
+
+    <LinearLayout
+        android:id="@+id/layInventario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="horizontal"
+        android:weightSum="5.2" >
+
+        <TextView
+            android:id="@+id/lblUnit"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="right"
+            android:text="U"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblExistencia"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="E"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+         <TextView
+             android:id="@+id/lblDisponible"
+             style="@style/InventarioTitleList"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="3dp"
+             android:layout_weight="1"
+             android:gravity="right"
+             android:text="D"
+             android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+                
+        <TextView
+            android:id="@+id/lblNoDisp"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="ND"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblMalEstado"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="ME"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layInventarioLotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="horizontal"
+        android:weightSum="6" >
+
+        <TextView
+            android:id="@+id/lblLote"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.7"
+            android:gravity="right"
+            android:text="L"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblCaducidadLote"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:gravity="right"
+            android:text="C"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblExistenciaLote"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:text="E"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblDisponibleLote"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:text="D"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblNoDispLote"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:text="ND"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblMalEstadoLote"
+            style="@style/InventarioTitleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:text="ME"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lstInventory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/lblLeyenda"
+        style="@style/MiniBlackText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/titleBarColor"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5.2" >
+
+            <TextView
+                android:id="@+id/lblTotalKgsLts"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblKLValue1"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblKLValue2"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblKLValue3"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblKLValue4"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5.2" >
+
+            <TextView
+                android:id="@+id/lblTotalUnits"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1.2"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblUnitsValue1"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblUnitsValue2"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblUnitsValue3"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblUnitsValue4"
+                style="@style/RedTextFontNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

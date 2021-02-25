@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:UNIT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLPackage" guid="jrFpkb9OT02eB44tqQPseQAA">
+<XPD:ATTR name="Name" type="string">CU_INT</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="FS6ZfbwAHkGHIs5TwP/X2QAA">
+<XPD:ATTR name="Name" type="string">DCU_INT</XPD:ATTR>
+<XPD:REF name="Namespace">jrFpkb9OT02eB44tqQPseQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:UNIT>

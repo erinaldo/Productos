@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/txtCol1"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    <TextView
+        android:id="@+id/txtCol2"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    <TextView
+        android:id="@+id/txtCol3"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    <TextView
+        android:id="@+id/txtCol4"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    <TextView
+        android:id="@+id/txtCol5"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:maxLines="1"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/txtCol6"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:maxLines="1"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+        android:visibility="gone" />
+
+</LinearLayout>
