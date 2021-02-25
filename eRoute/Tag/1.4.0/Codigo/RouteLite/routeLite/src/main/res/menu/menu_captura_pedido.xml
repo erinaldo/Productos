@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/promociones" android:title="@string/Void"></item>
+    <item android:id="@+id/actualizar" android:title="@string/Void"></item>
+    <item android:id="@+id/modificar"></item>
+    <item android:id="@+id/ultimavta"></item>
+    <item android:id="@+id/ventaMensual"></item>
+    
+</menu>

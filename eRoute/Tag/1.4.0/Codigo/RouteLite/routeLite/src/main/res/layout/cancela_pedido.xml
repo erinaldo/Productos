@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_weight="1"
+        android:weightSum="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:weightSum="1" >
+
+            <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="0dp"
+	            android:layout_weight=".9"
+	            android:orientation="vertical" >
+	            <TextView
+	                android:id="@+id/lblFolio"
+	                style="@style/DarkGrayStyleClient"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="Medium Text"
+	                android:textAppearance="?android:attr/textAppearanceMedium"
+	                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+	
+	            <TextView
+	                android:id="@+id/lblRuta"
+	                style="@style/DarkGrayStyleClient"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="Small Text"
+	                android:textAppearance="?android:attr/textAppearanceSmall"
+	                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+	
+	            <TextView
+	                android:id="@+id/lblDia"
+	                style="@style/DarkGrayStyleClient"
+	                android:layout_width="wrap_content"
+	                android:layout_height="32dp"
+	                android:text="Small Text"
+	                android:textAppearance="?android:attr/textAppearanceSmall"
+	                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+	
+	            <TextView
+	                android:id="@+id/lblMotivoCancela"
+	                style="@style/DarkGrayStyleClient"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:textAppearance="?android:attr/textAppearanceSmall"
+	                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+	
+	            <Spinner
+	                android:id="@+id/cmbMotivoCancela"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content" />
+		      </LinearLayout>
+
+	          <LinearLayout
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content"
+	              android:layout_weight="0.1"
+	              android:gravity="bottom|center|center_horizontal|center_vertical"
+	              android:orientation="horizontal"
+	              android:weightSum="2" >
+
+	            <Button
+	                android:id="@+id/btnContinuar"
+            		style="@style/buttonSquareStyle"
+            		android:layout_width="@dimen/general_button_width"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"/>
+	        	</LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblPlaca"
+                style="@style/CommonDarkGrayStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <com.amesol.routelite.controles.TextBoxScanner
+                    android:id="@+id/textBoxScanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </com.amesol.routelite.controles.TextBoxScanner>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblClave"
+                style="@style/CommonDarkGrayStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtClave"
+                style="@style/GeneralEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:enabled="false"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblKmInicial"
+                style="@style/CommonDarkGrayStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKmInicial"
+                style="@style/GeneralEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+                android:maxLength="6">
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblKmFinal"
+                style="@style/CommonDarkGrayStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtKmFinal"
+                style="@style/GeneralEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+                android:maxLength="6">
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblLtGasCons"
+                style="@style/CommonDarkGrayStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtLtGasCons"
+                style="@style/GeneralEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblLtGasConsumida"
+                style="@style/CommonDarkGrayStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtLtGasConsumida"
+                style="@style/GeneralEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btnContinuar"
+            style="@style/buttonSquareStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+    <include
+        android:layout_weight="1"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>
