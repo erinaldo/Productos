@@ -1,0 +1,2 @@
+Alias: Duxstar
+Pass: Dux5tar*123

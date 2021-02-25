@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @RenderBody()
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <h6>
+                    @ViewContext.Controller.GetType().Assembly.GetName().Version
+                </h6>
+                <h6>
+                    @String.Format("{0:dd/MM/yyyy HH:mm}", File.GetLastWriteTime(ViewContext.Controller.GetType().Assembly.Location))
+                </h6>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">Selling</string>
+    <string name="preferencias_name">Configuración</string>
+    <string name="version_name_lbl">V</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="usuario_lbl">Usuario</string>
+    <string name="contrasenia_lbl">Contraseña</string>
+    <string name="siguente_lbl">Siguiente</string>
+
+
+    <string name="menu_surtido">Surtido</string>
+    <string name="menu_recibo">Recibo</string>
+    <string name="menu_reubicacion">Reubicación</string>
+    <string name="menu_almacenaje">Almacenaje</string>
+    <string name="menu_estado">Cambio de Estado</string>
+    <string name="menu_existencia">Existencia</string>
+    <string name="menu_conteo">Conteo</string>
+    <string name="menu_ajuste_inventario">Ajuste Inventario</string>
+    <string name="menu_salir">Salir</string>
+
+    <string name="dialog_guardar_lbl">Guardar</string>
+    <string name="dialog_cancelar_lbl">Cancelar</string>
+    <string name="dialog_almacenes_lbl">Almacenes</string>
+    <string name="dialog_carritos_lbl">Carritos</string>
+    <string name="dialog_ip_message_lbl">Ingresa la IP del servidor:</string>
+
+
+    <string name="preferencias_logout_lbl">Cerrar Sesión</string>
+    <string name="preferencias_ip_lbl">IP de conexión</string>
+    <string name="preferencias_terminar_lbl">Seleccionar terminal</string>
+
+
+    <string name="campos_vacios_lbl">Asegurate de que todos los campos esten llenos antes de continuar</string>
+    <string name="error_inicio_sesion_lbl">El nombre de usuario o la contraseña que introdujo no son validos.</string>
+    <string name="error_servidor_lbl">Error al intentar conectarse al servidor. Por favor intente mas tarde.</string>
+    <string name="error_lbl">Lo sentimos, algo salio mal, por favor intenta de nuevo.</string>
+    <string name="error_ip_lbl">Debes ingresar una dirección IP valida para poder continuar</string>
+
+
+    <string name="activity_lectura_nombre">Pantalla De Lectura</string>
+
+    <string name="activity_documentos_error">No hay documentos pendientes</string>
+    <string name="activity_documentos_no_seleccion">Debes seleccionar al menos un documento para continuar</string>
+    <string name="activity_documentos_error_seleccionar">No hay documentos para seleccionar</string>
+    <string name="title_activity_existencia">Existencia</string>
+
+    <string name="leer_codigo_captura_lbl">Ingresa el codigo o usa el lector</string>
+    <string name="leer_codigo_ubicacion_lbl">Ingresa el código de la ubicación</string>
+    <string name="leer_codigo_material_lbl">Ingresa el código del material</string>
+    <string name="leer_codigo_enviar_lbl">Aceptar</string>
+    <string name="leer_codigo_vacio_lbl">Por favor ingresa un código valido</string>
+    <string name="leer_codigo_error_lbl">Código no encontrado</string>
+
+    <string name="existencia_no_informacion_lbl">No se encontró información para mostrar</string>
+
+    <string name="title_activity_cambio_estado">Cambio De Estado</string>
+    <string name="title_activity_reubicacion">Reubicación</string>
+
+    <string name="detalle_producto_clave_lbl">Clave:</string>
+    <string name="detalle_producto_descripcion_lbl">Descripción:</string>
+    <string name="detalle_producto_nombre_lbl">Nombre:</string>
+    <string name="detalle_producto_existencia_lbl">Existencia:</string>
+    <string name="detalle_producto_apartado_lbl">Apartado:</string>
+    <string name="detalle_producto_bloqueado_lbl">Bloqueado:</string>
+    <string name="detalle_producto_existencia_i_lbl">E</string>
+    <string name="detalle_producto_apartado_i_lbl">A</string>
+    <string name="detalle_producto_bloqueado_i_lbl">B</string>
+    <string name="detalle_producto_area_lbl">Area Asignada:</string>
+    <string name="detalle_producto_ubicacion_lbl">Ubicación Asignada:</string>
+
+    <string name="http_not_found">Alguno de los datos proporcionados son incorrectos</string>
+    <string name="http_forbidden">Hubo un error en la autenticacio. Cierre sesión e intente de nuevo</string>
+    <string name="http_no_content">No se pudieron realizar los cambios solicitados</string>
+    <string name="productos_afectados_lbl">Productos afectados</string>
+
+    <string name="ubicacion_leer_origen_lbl">Leer ubicación origen</string>
+    <string name="ubicacion_leer_destino_lbl">Leer ubicación destino</string>
+    <string name="ubicacion_leer_lbl">Leer ubicación</string>
+    <string name="ubicacion_incorrecta_lbl">No se puede realizar la acción solicitada sobre esta ubicación</string>
+
+    <string name="cantidad_lbl">Cantidad</string>
+    <string name="dialog_list_title">Selecciona una opción...</string>
+    <string name="dialog_terminal_title">Selecciona tu terminal...</string>
+
+    <string name="recibo_anden_folio_lbl">Folio:</string>
+    <string name="recibo_anden_anden_lbl">Anden:</string>
+    <string name="recibo_anden_porcentaje_lbl">Porcentaje:</string>
+    <string name="recibo_anden_piezas_lbl">Piezas:</string>
+    <string name="recibo_exito_lbl">Producto movido exitosamente</string>
+    <string name="recibo_crear_ubicacion_lbl">La ubicación de transito que leiste no existe. ¿Deseas crearla?</string>
+    <string name="recibo_finalizado_lbl">El documento de recibo ya esta finalizado</string>
+    <string name="recibo_ubicacion_no_existe">La Ubicación no existe.</string>
+    <string name="recibo_sucursal_ubicacion_recibo_error">La ubicacion no exitse y la sucursal no permite crear la ubicación.</string>
+
+    <string name="almacenaje_crear_huella_msg">La huella del producto debe tener al menos el campo de volumen. ¿Deseas agregarlo?</string>
+    <string name="almacenaje_dirigido_no_espacio_msg">No se encontró espacio para colocar el producto. Favor de intentar con una cantidad de piezas menor</string>
+    <string name="almacenaje_ubicacion_lbl">Ubicación:</string>
+    <string name="almacenaje_area_lbl">Area:</string>
+    <string name="almacenaje_confirmar_ubicacion_lbl">Confirmar ubicación</string>
+    <string name="almacenaje_confirmar_ubicacion_diferente_lbl">La ubicación ingresada es diferente a la sugerida. ¿Deseas continuar?</string>
+
+    <string name="dialog_si_lbl">Si</string>
+    <string name="dialog_no_lbl">No</string>
+
+    <string name="dialog_huella_volumen_lbl">Volumen:</string>
+    <string name="dialog_huella_largo_lbl">Largo:</string>
+    <string name="dialog_huella_alto_lbl">Alto:</string>
+    <string name="dialog_huella_ancho_lbl">Ancho:</string>
+    <string name="dialog_huella_error_lbl">Debes ingresar, al menos, el campo volumen</string>
+    <string name="dialog_pass_error_lbl">Ingresa un password antes de continuar</string>
+    <string name="dialog_ok_lbl">Información actualizada correctamente</string>
+    <string name="dialog_contrasenia_lbl">Password</string>
+
+    <string name="ajuste_inventario_ok_lbl">Ajuste realizado correctamente</string>
+    <string name="ajuste_inventario_sin_cambios_lbl">No es necesario realizar ajuste</string>
+
+    <string name="mensaje_modulo_proceso_lbl">Módulo en proceso de construcción&#8230;</string>
+
+    <string name="token_error_lbl">El token ha caducado. Por favor inicia sesión nuevamente</string>
+
+    <string name="surtido_tipo_mostrador_lbl">Mostrador</string>
+    <string name="surtido_tipo_ruta_lbl">Ruta/Paqueteria</string>
+
+    <string name="surtido_area_asignada_lbl">Tienes surtido pendiente, no puedes dejar el area</string>
+    <string name="surtido_area_no_seleccionada_lbl">Debes elegir, al menos, un area para continuar</string>
+    <string name="surtido_area_sin_pedidos_msg">No existen pedidos por surtir en las areas seleccionadas</string>
+
+    <string name="surtido_prioridad_lbl">Prioridad:</string>
+    <string name="surtido_pedido_lbl">Pedido:</string>
+    <string name="surtido_cliente_lbl">Cliente:</string>
+    <string name="surtido_stage_lbl">Stage:</string>
+    <string name="surtido_estado_lbl">Estado:</string>
+
+    <string name="surtido_sync_lbl">Sincronizar</string>
+    <string name="surtido_home_lbl">Salir</string>
+
+    <string name="surtido_stby_lbl">Stand by</string>
+    <string name="surtido_depositar_lbl">Depositar</string>
+    <string name="surtido_surtir_lbl">Surtir</string>
+    <string name="surtido_limpiar_lbl">Limpiar</string>
+    <string name="surtido_opciones1_lbl">M.Rechazo</string>
+    <string name="surtido_opciones2_lbl">Reiniciar</string>
+
+    <string name="surtido_posicion_lbl">Posición:</string>
+    <string name="surtido_ubicacion_lbl">Ubicacion:</string>
+    <string name="surtido_producto_lbl">Producto:</string>
+    <string name="surtido_cantidad_lbl">Cantidad:</string>
+    <string name="surtido_codigo_lbl">Ingresar:</string>
+    <string name="surtido_surtidos_lbl">Leidos:</string>
+    <string name="surtido_motivo_rechazo_lbl">M. Rechazo:</string>
+
+    <string name="surtido_leer_stage_msg">Valida el stage para confirmar el deposito:</string>
+    <string name="surtido_editar_cantidad_msg">Ingresa la nueva cantidad de leidos:</string>
+
+    <string name="surtido_ubicacion_hint">Ingresa ubicación</string>
+    <string name="surtido_producto_hint">Ingresa producto</string>
+    <string name="surtido_cantidad_hint">Ingresa cantidad</string>
+    <string name="surtido_codigo_hint">Ubicacion</string>
+    <string name="surtido_filtro_todas">Todas</string>
+    <string name="surtido_error_ubicacionproducto">La ubicación y el producto no coinciden con ningun elemento de la lista</string>
+    <string name="surtido_error_cantidad">Estas intentando mover mas piezas de las solicitadas. Por favor, intenta con una cantidad menor</string>
+    <string name="surtido_error_rechazado">Estas intentando leer un producto rechazado. Prueba con otro producto o cambia el motivo rechazo</string>
+    <string name="surtido_error_ubicacion">La ubicación no se encuentra en el listado</string>
+    <string name="surtido_error_rechazo_terminado">No es posible rechazar un producto terminado</string>
+    <string name="surtido_error_stage_deposito">El Stage proporcionado no es valido para este pedido</string>
+    <string name="surtido_no_disponible_stage_deposito">Aun no existen productos para depositar</string>
+    <string name="surtido_confirm_clean">Se va a eliminar todo el progreso sobre este detalle de pedido. ¿Deseas continuar?</string>
+    <string name="surtido_inactive_msg">No se encuentra activo el surtido con RadioFrecuencia. Por favor contacta al administrador de Selling</string>
+
+    <string name="surtido_estado_disponible">Disponible</string>
+    <string name="surtido_estado_asignado">Asignado</string>
+    <string name="surtido_estado_terminado">terminado</string>
+
+
+
+    <string name="version_app">0.0.9</string>
+
+
+</resources>

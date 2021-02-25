@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://digitalinvoice.com.mx/WSDI" elementFormDefault="qualified" targetNamespace="https://digitalinvoice.com.mx/WSDI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DigitalInvoice.WebServices.WSDI" />
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Timbrar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobanteBytesZipped" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarSoloTimbre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarSoloTimbreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarSoloTimbreResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobanteBytesZipped" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarTestResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarSoloTimbreTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarSoloTimbreTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarSoloTimbreTestResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarAck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarAckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DigitalInvoice.WebServices.WSDI" minOccurs="0" name="TimbrarAckResult" nillable="true" type="q1:TimbradoCFDIResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerAckResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarTimbreResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbreUUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbreUUIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarTimbreUUIDResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UUIDs" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RecuperarTimbresResult" nillable="true" type="q3:ArrayOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarBase64">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarBase64Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarBase64Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarTestBase64">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarTestBase64Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarTestBase64Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarSoloTimbreTestBase64">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarSoloTimbreTestBase64Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarSoloTimbreTestBase64Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarAckBase64">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarAckBase64Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DigitalInvoice.WebServices.WSDI" minOccurs="0" name="TimbrarAckBase64Result" nillable="true" type="q4:TimbradoCFDIResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbreBase64">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbreBase64Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarTimbreBase64Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbreBase64UUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbreBase64UUIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarTimbreBase64UUIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbresBase64">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UUIDs" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarTimbresBase64Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RecuperarTimbresBase64Result" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarSoloTimbreBase64">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarSoloTimbreBase64Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarSoloTimbreBase64Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

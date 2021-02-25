@@ -1,0 +1,1098 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SellingWS</name>
+    </assembly>
+    <members>
+        <member name="M:SellingWS.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action. 
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,SellingWS.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:SellingWS.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SellingWS.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:SellingWS.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SellingWS.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,SellingWS.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,SellingWS.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create one using <see cref="T:SellingWS.Areas.HelpPage.ObjectGenerator"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},SellingWS.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:SellingWS.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleKey.#ctor(SellingWS.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:SellingWS.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,SellingWS.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:SellingWS.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:SellingWS.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SellingWS.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:SellingWS.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SellingWS.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:SellingWS.Controllers.ProductoController">
+            <summary>
+            Controlador de Productos
+            </summary>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.UbicacionesInventario(System.String,System.String)">
+            <summary>
+            Ubicaciones en las que existe Producto.
+            </summary>
+            <param name="id">El identificador del Producto.</param>
+            <param name="ALMClave">Clave del Almacén.</param>
+            <returns>ApiUbicacionInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.VerificaUbicacionCambioEstado(System.String,System.String,System.String)">
+            <summary>
+            Detalles del producto en una ubicacion
+            </summary>
+            <param name="UBCClave">Clave de la ubicacion.</param>
+            <param name="PROClave">Clave del producto.</param>
+            <param name="ALMClave">Clave del Almacén.</param>
+            <returns>ApiProductoInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.VerificaOrigenAlmacenaje(System.String,System.String,System.String,System.Decimal)">
+            <summary>
+            Que un Producto en una Ubicacion pueda ser considerado para Almacenaje.
+            </summary>
+            <param name="ALMClave">Clave del Almacén.</param>
+            <param name="UBCClave">Clave de la ubicacion.</param>
+            <param name="PROClave">Clave del producto.</param>
+            <param name="cantidad">Cantidad de producto.</param>
+            <returns>ApiProductoInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.VerificaReubicacion(System.String,System.String,System.String)">
+            <summary>
+            Si un producto en una ubicación puede ser reubicado
+            </summary>
+            <param name="ALMClave">Clave del Almacén</param>
+            <param name="UBCClave">Clave de la ubicacion</param>
+            <param name="PROClave">Clave del producto</param>
+            <returns>ApiProductoInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.VerificaRecibo(System.String,System.String,System.Double)">
+            <summary>
+            Verifica si un producto está en una ubicación de recibo y las cantidades recibidas
+            </summary>
+            <param name="IdRecibo">Identificador del Recibo</param>
+            <param name="PROClave">Clave del producto</param>
+            <param name="cantidad">Cantidad recibida del producto</param>
+            <returns>ApiProductoInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.MotivoSobrante(System.String,System.Int32)">
+            <summary>
+            Registra un Motivo para un evento de Sobrante de Material
+            </summary>
+            <param name="idReciboSobrante">Identificador del ReciboSobrante</param>
+            <param name="MotivoSobrante">Motivo del sobrante (ValorRef)</param>
+            <returns>ApiProductoInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.MoverProductoReubicacion(SellingWS.Models.API.ApiProductoMoverRequest)">
+            <summary>
+            Reubica un producto, de UbicaciónOrigen a UbicaciónDestino
+            </summary>
+            <param name="requestData">COMClave=Clave de la Compania, SUCClave = Clave de la Sucursal,ALMClave = Clave del Almacen,origenUBCClave = Clave Ubicacion origen, destinoUBCClave = Clave Ubicacion destino, PROClave = Clave del Producto, cantidad = Cantidad a reubicar</param>
+            <returns>Double</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.MoverAlmacenajeNoDirigido(System.String,System.String,System.String,System.String,System.String,System.String,System.Decimal)">
+            <summary>
+            Mueve un producto, de una UbicacionTransito a UbicacionAlmacenaje
+            </summary>
+            <param name="COMClave">Clave de la Compania.</param>
+            <param name="SUCClave">Clave de la Sucursal.</param>
+            <param name="ALMClave">Clave del Almacén.</param>
+            <param name="UbicacionTransito">Clave de la ubicacion de Tránsito.</param>
+            <param name="UbicacionAlmacenaje">Clave de la ubicacion de Almacenaje.</param>
+            <param name="Producto">Clave del producto.</param>>
+            <param name="cantidad">Cantidad de producto.</param>>
+            
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.ModificarProductoEstado(SellingWS.Models.API.ApiProductoCambioEstadoRequest)">
+            <summary>
+            Modifica el Estado de un Producto, Bloquear o Desbloquear 
+            </summary>
+            <param name="requestData">COMClave = Clave de la compania, SUCClave = Clave de la Sucursal, ALMClave = Clave del Almacén, UBCClave = Clave de la ubicacion, PROClave = Clave del producto, Bloquear = Bloquear o Desbloquear.</param>
+            <returns>Double</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.AgregarHuella(System.String,System.Decimal,System.Nullable{System.Decimal},System.Nullable{System.Decimal},System.Nullable{System.Decimal})">
+            <summary>
+            Agrega la Huella para un producto (ProductoUnidad).
+            </summary>
+            <param name="PROClave">La Clave del Producto</param>
+            <param name="volumen">Volumen del producto</param>
+            <param name="alto">Alto del producto</param>
+            <param name="largo">Largo del producto</param>
+            <param name="ancho">Ancho del producto</param>
+            <returns>ApiProductoInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.ProductoController.AjustarInventario(System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.String)">
+            <summary>
+            Realiza el ajuste de inventario de un producto en una Ubicacion
+            </summary>
+            <param name="COMClave">Clave de la Compania.</param>
+            <param name="SUCClave">Clave de la Sucursal.</param>
+            <param name="ALMClave">Clave del Almacén.</param>
+            <param name="Ubicacion">Clave de la ubicacion de Tránsito.</param>
+            <param name="Producto">Clave del producto.</param>
+            <param name="cantidad">Cantidad de producto.</param>
+            <param name="Login">(Optional)Login del Usuario autorizador.</param>
+            <param name="Password">(Optional)Password del Usuario autorizador.</param>
+            <returns>Double</returns>
+        </member>
+        <member name="T:SellingWS.Controllers.SucursalController">
+            <summary>
+            Controlador de Sucursales
+            </summary>
+        </member>
+        <member name="M:SellingWS.Controllers.SucursalController.Show(System.String)">
+            <summary>
+            Detalle de una Sucursal.
+            </summary>
+            <param name="id">El identificador de la Sucursal.</param>
+            <returns>La información de una Sucursal a la que el usuario tiene Acceso.</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SucursalController.Almacenes(System.String)">
+            <summary>
+            Listado de Almacenes de una Sucursal.
+            </summary>
+            <param name="id">El identificador de la Sucursal.</param>
+            <returns>El listado de Almacenes de una Sucursal a los que el usuario tiene Acceso.</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.areas(System.String,System.Boolean)">
+            <summary>
+            Areas existentes en el almacen, 'asignado' indica las areas en las que tiene asignaciones sin terminar (Estado != 3).
+            </summary>
+            <param name="ALMClave">El identificador del Almacén.</param>
+            <param name="mostrador">Si los asignados son de mostrador o no.</param>
+            <returns>IEnumerable{ApiSurtidoAreas} || 404 || 204</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.asignarDocUsu(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Se asigna el documento al usuario que este logeado 
+            </summary>
+            <param name="DOCClave">Clave del documento que se asignara al usuario.</param>
+            <param name="AREClaves">Areas seleccionadas.</param>
+            <returns>200 || 404 || 204</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.asignados(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Devuelve los SurtidoDetalle asignados de las areas seleccionadas.
+            </summary>
+            <param name="AREClaves">Areas seleccionadas</param>
+            <param name="mostrador">Si los asignados son de mostrador o no.</param>
+            <returns>IEnumerable[ApiSurtidoAsigancion] || 404 || 204></returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.asignacion(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Asigna varios SurtidoDetalle de las areas seleccionadas, para el primer Surtido con mayor prioridad.
+            </summary>
+            <param name="AREClaves">Areas seleccionadas</param>
+            <param name="mostrador">Si los asignados son de mostrador o no.</param>
+            <returns>ApiSurtidoAsigancion || 404 || 204</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.ponerEnStandby(System.String)">
+            <summary>
+            Modifica el estado de los SurtidoDetalle a Standby.
+            </summary>
+            <param name="DOCClave">Clave del documento al que se actualizara el estado.</param>
+            <returns>200 || 404 || 204</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.actualizaDetalle(System.Collections.Generic.List{SellingWS.Models.API.ApiSurtidoDepositar},System.String)">
+            <summary>
+            Aumenta la cantidad del Producto en Transito y/o Asigna un TipoRechazo
+            </summary>
+            <param name="surtidos">Objeto con los detalles del surtido</param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.depositar(System.String,System.String,System.String,System.Collections.Generic.List{SellingWS.Models.API.ApiSurtidoDepositar})">
+            <summary>
+            Mueve los productos a la Ubicacion Stage, modifica el estado del SurtidoDetalle y de Surtido. 
+            </summary>
+            <param name="COMClave">Clave de la Compania.</param>
+            <param name="SUCClave">Clave de la Sucursal.</param>
+            <param name="ALMClave">Clave del Almacén.</param>
+            <param name="surtidos">Objeto con los detalles del Surtido</param>
+            <returns></returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.rfActivo(System.String)">
+            <summary>
+            Indica si esta activo el surtido por Radio frecuencia
+            </summary>
+            <param name="SUCClave">Clave de la Sucursal.</param>
+            <returns>200 || 204</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.SurtidoController.validarProducto(System.String,System.Double)">
+            <summary>
+            Indica si acepta decimales o no el producto
+            </summary>
+            <param name="PROClave">Clave del producto</param>
+            <param name="cantidad">Cantidad recibida del producto</param>
+            <returns>200 || 204</returns>
+        </member>
+        <member name="T:SellingWS.Controllers.TokensController">
+            <summary>
+            Controlador de Tokens
+            </summary>
+        </member>
+        <member name="M:SellingWS.Controllers.TokensController.Login(SellingWS.Models.API.ApiUsuario)">
+            <summary>
+            Genera un token de acceso.
+            </summary>
+            <param name="usuario">ApiUsuario{nombre,contrasenia}.</param>
+            <returns>Token de acceso .</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.TokensController.Logout">
+            <summary>
+            Elimina un token de acceso.
+            </summary>
+        </member>
+        <member name="T:SellingWS.Controllers.UbicacionController">
+            <summary>
+            Controlador de Ubicaciones
+            </summary>
+        </member>
+        <member name="M:SellingWS.Controllers.UbicacionController.ProductosInventario(System.String,System.String)">
+            <summary>
+            Productos existentes en una Ubicación.
+            </summary>
+            <param name="id">El identificador de la Ubicación.</param>
+            <param name="ALMClave">El identificador del Almacén.</param>
+            <returns>ApiProductoInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.UbicacionController.ValidarUbicacionCambioEstado(System.String,System.String)">
+            <summary>
+            Si una ubicación es válida para Cambio de Estado.
+            </summary>
+            <param name="id">El identificador de la Ubicación.</param>
+            <param name="ALMClave">El identificador del Almacén.</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.UbicacionController.ValidarOrigenReubicacion(System.String,System.String)">
+            <summary>
+            Si una ubicación es válida para Reubicación.
+            </summary>
+            <param name="id">El identificador de la Ubicación.</param>
+            <param name="ALMClave">El identificador del Almacén.</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.UbicacionController.ValidarUbicacionAlmacenaje(System.String,System.String)">
+            <summary>
+            Si una ubicación es válida para Almacenaje.
+            </summary>
+            <param name="id">El identificador de la Ubicación.</param>
+            <param name="ALMClave">El identificador del Almacén.</param>
+            <returns>HttpStatusCode</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.UbicacionController.ValidarAjusteInventario(System.String,System.String)">
+            <summary>
+            Si una ubicación es válida para Ajuste de Inventario.
+            </summary>
+            <param name="Ubicacion">El identificador de la Ubicación.</param>
+            <param name="ALMClave">El identificador del Almacén.</param>
+            <returns>HttpStatusCode</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.UbicacionController.Recibo(System.String,System.String,System.Boolean,System.String,System.String,System.Decimal)">
+            <summary>
+            Si una ubicación es válida para Recibir, recibe en caso de que sea válido
+            </summary>
+            <param name="UBCClave">Nombre de la ubicacion</param>
+            <param name="ALMClave">Clave del Almacén</param>
+            <param name="crearUBC">Si solicita crear la ubicacion en caso de que no exista </param>
+            <param name="PROClave">Clave del Producto</param>
+            <param name="IdRecibo">Clave del Recibo</param>
+            <param name="cantidad">Cantidad de prodcuto</param>
+            <returns>HttpStatusCode</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.UbicacionController.Andenes(System.String)">
+            <summary>
+            Andenes disponibles en un Almacén
+            </summary>
+            <param name="ALMClave">El identificador del Almacén.</param>
+            <returns>ApiProductoInventario</returns>
+        </member>
+        <member name="M:SellingWS.Controllers.UbicacionController.AlmacenajeDirigido(System.String,System.String,System.Decimal)">
+            <summary>
+            Devuelve una ubicación de sugerencia para el almacenaje Dirigido.
+            </summary>
+            <param name="ALMClave">La clave del Almacén.</param>
+            <param name="Producto">La clave del Producto.</param>
+            <param name="cantidad">Cantidad de Producto a almacenar</param>
+            <returns>HttpStatusCode</returns>
+        </member>
+        <member name="T:SellingWS.Controllers.UtilsController">
+            <summary>
+            Controlador utilidades
+            </summary>
+        </member>
+        <member name="M:SellingWS.Controllers.UtilsController.ValorRef">
+            <summary>
+            Las referencias de los valores de cada campo por tabla.
+            </summary>
+            <returns>Las referencias de los valores de cada campo por tabla.</returns>
+        </member>
+        <member name="M:SellingWS.Filters.TokenAuthorizeAttribute.#ctor(System.Boolean)">
+            <summary>
+            Overriden constructor to allow explicit disabling of this filter's behavior.
+            Pass false to disable (same as no filter but declarative)
+            </summary>
+            <param name="active"></param>
+        </member>
+        <member name="M:SellingWS.Filters.TokenAuthorizeAttribute.SkipAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Skips Authorization on AllowAnonymousAttribute
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:SellingWS.Filters.TokenAuthorizeAttribute.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Override to Web API filter method to handle Basic Auth check
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:SellingWS.Models.API.ApiProductoVerificaReciboResponse">
+            <summary>
+            Respuesta de Producto/VerificaRecibo.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Models.API.ApiProductoVerificaReciboResponse.PROClave">
+            <summary>Producto.Clave</summary>
+        </member>
+        <member name="P:SellingWS.Models.API.ApiProductoVerificaReciboResponse.Descripcion">
+            <summary>Producto.Descripcion</summary>
+        </member>
+        <member name="P:SellingWS.Models.API.ApiProductoVerificaReciboResponse.AreaPicking">
+            <summary>Estrategia.Area.Nombre</summary>
+        </member>
+        <member name="P:SellingWS.Models.API.ApiProductoVerificaReciboResponse.UbicacionPicking">
+            <summary>Estrategia.Ubicacion.Ubicacion1</summary>
+        </member>
+        <member name="T:SellingWS.Resources.Mensajes">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.AjusteInventario_Autenticacion_Error">
+            <summary>
+              Busca una cadena traducida similar a El Usuario no tiene autorización o la contraseña es incorrecta..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.AjusteInventario_Producto_NotFound">
+            <summary>
+              Busca una cadena traducida similar a El Material no existe..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.AjusteInventario_Ubicacion_ApartadoBloqueado">
+            <summary>
+              Busca una cadena traducida similar a No es posible realizar ajustes a una Ubicación que tiene Material bloqueado o apartado..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.AjusteInventario_Ubicacion_NoContent">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación tiene que ser de tipo Stage o Almacenaje..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.AjusteInventario_Ubicacion_NotFound">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación no existe..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Cantidad_Incorrecta">
+            <summary>
+              Busca una cadena traducida similar a La cantidad debe ser mayor a 0..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Estrategia_DiferenteProducto">
+            <summary>
+              Busca una cadena traducida similar a La Estrategia para la Ubicación de Almacenaje seleccionada está asignada a un Material distinto..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Estrategia_NotFound">
+            <summary>
+              Busca una cadena traducida similar a No se encuentra Estrategia de colocación para este Material..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Producto_NoContent4">
+            <summary>
+              Busca una cadena traducida similar a La cantidad de Material a mover es mayor a la disponible en la Ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Producto_NotFound">
+            <summary>
+              Busca una cadena traducida similar a El Material no existe en la Ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_ProductoCantidad_Destino_NotFound">
+            <summary>
+              Busca una cadena traducida similar a Intenta con una cantidad menor. Puede mover únicamente {0} materiales a esa ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_ProductoCantidad_Origen_NotFound">
+            <summary>
+              Busca una cadena traducida similar a Intenta con una cantidad menor. Hay disponibles únicamente {0}..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Ubicacion_NoContent">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación debe ser tipo Stage o Tránsito..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Ubicacion_NoContent2">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación está bloqueada..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Ubicacion_NoContent3">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación es tipo Stage pero el Material no está disponible..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Ubicacion_NoContent4">
+            <summary>
+              Busca una cadena traducida similar a El Material está bloqueado y la Ubicación no es de Tránsito.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Ubicacion_NotFound">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación no existe..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_Ubicacion_SobrepasaVolumen">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación de Almacenaje seleccionada no tiene volumen disponible, intente con una Cantidad menor o una Ubicación distinta..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_UbicacionAlmacenaje_Bloqueada">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación de Almacenaje está Bloqueada..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_UbicacionAlmacenaje_DiferenteGrupo">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación de Almacenaje no contiene Materiales de la misma Familia..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_UbicacionAlmacenaje_NotFound">
+            <summary>
+              Busca una cadena traducida similar a No se encuentra la Ubicación de Almacenaje..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Almacenaje_UbicacionTransito_NotFound">
+            <summary>
+              Busca una cadena traducida similar a No se encuentra la Ubicación de Tránsito..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.CambioEstado_Material_NoContent">
+            <summary>
+              Busca una cadena traducida similar a El Material no está disponible para un cambio de estado en la Ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.CambioEstado_Material_NotFound">
+            <summary>
+              Busca una cadena traducida similar a El Material no existe en la Ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.CambioEstado_Ubicacion_NoContent">
+            <summary>
+              Busca una cadena traducida similar a Las Ubicaciones de Tránsito no son válidas para operaciones de Cambio de Estado..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.CambioEstado_Ubicacion_NotFound">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación no existe..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.CambioEstado_Ubicacion_NotFound2">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación no existe o el Material no existe en esa Ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.General_Error">
+            <summary>
+              Busca una cadena traducida similar a Lo sentimos, algo salio mal..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.General_Mayor_Decimales">
+            <summary>
+              Busca una cadena traducida similar a El Producto solo Permite {0} decimal(es)..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.General_No_Decimales">
+            <summary>
+              Busca una cadena traducida similar a El producto no acepta decimales..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.General_Token_NotFound">
+            <summary>
+              Busca una cadena traducida similar a Problema de Autenticación, intente iniciar sesión nuevamente..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.General_USRClave_NotFound">
+            <summary>
+              Busca una cadena traducida similar a Ha habido un problema con la identificación del usuario..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Cantidad_Incorrecta">
+            <summary>
+              Busca una cadena traducida similar a La cantidad debe ser mayor o igual a 0..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Estrategia_NotFound">
+            <summary>
+              Busca una cadena traducida similar a No se encuentra Estrategia de colocación para este Material..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_EstructuraTransito_NotFound">
+            <summary>
+              Busca una cadena traducida similar a No se encontró alguna Estructura de Tránsito en ese Almacén..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_IdRecibo_NotFound">
+            <summary>
+              Busca una cadena traducida similar a No se encuentra ese Id de Recibo..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Material_Excedente">
+            <summary>
+              Busca una cadena traducida similar a La cantidad de Material leída excede a la cantidad solicitada..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Material_Excedente_Error">
+            <summary>
+              Busca una cadena traducida similar a Error al registrar el sobrante, queda prueba en el archivo de Log..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Material_NotFound">
+            <summary>
+              Busca una cadena traducida similar a El Material no existe en la Ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Producto_MotivoSobrante_NotFound">
+            <summary>
+              Busca una cadena traducida similar a El Motivo no es válido..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Producto_NotFound">
+            <summary>
+              Busca una cadena traducida similar a El Material no existe..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Producto_ReciboSobrante_NotFound">
+            <summary>
+              Busca una cadena traducida similar a No se encuentra ese Registro de Sobrante..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Ubicacion_NoArea">
+            <summary>
+              Busca una cadena traducida similar a No se puede colocar el Material en esa  ubicación, intente con la lectura de una diferente..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Ubicacion_NoContent">
+            <summary>
+              Busca una cadena traducida similar a Error al crear la Ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Ubicacion_NotFound">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación no existe..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Recibo_Ubicacion_NoTransito">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación no es de Tránsito..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_Material_NotFound">
+            <summary>
+              Busca una cadena traducida similar a El Material no existe en la Ubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_UbicacionDestino_NoContent">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación de destino no puede ser de tipo Tránsito o Andén..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_UbicacionDestino_NoContent2">
+            <summary>
+              Busca una cadena traducida similar a El Material no pertenece a la misma Familia que los Materiales de la Ubicación destino..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_UbicacionDestino_NoContent3">
+            <summary>
+              Busca una cadena traducida similar a El Material no está disponible para una Reubicación..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_UbicacionDestino_NoContent4">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación destino no tiene espacio disponible..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_UbicacionDestino_NoContent5">
+            <summary>
+              Busca una cadena traducida similar a El Material no tiene la misma Área de Estrategia que la Ubicación destino..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_UbicacionDestino_NotFound">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación de destino no existe..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_UbicacionOrigen_NoContent">
+            <summary>
+              Busca una cadena traducida similar a Sólo se permiten Ubicaciones tipo Stage o Almacenaje..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Reubicacion_UbicacionOrigen_NotFound">
+            <summary>
+              Busca una cadena traducida similar a La Ubicación no existe..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Surtido_ALMClave_Empty">
+            <summary>
+              Busca una cadena traducida similar a Debe seleccionar un Almacen..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Surtido_AREClaves_Empty">
+            <summary>
+              Busca una cadena traducida similar a Debe seleccionar por lo menos un Área..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Surtido_Asignado">
+            <summary>
+              Busca una cadena traducida similar a El documento actual se encuentra asignado a otro usuario..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Token_Version_Error">
+            <summary>
+              Busca una cadena traducida similar a La versión del movil no es igual a la que esta registrada..
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Ubicacion_Proceso_Almacenaje">
+            <summary>
+              Busca una cadena traducida similar a La ubicación se encuentra en proceso de almacenaje.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Ubicacion_Transito_Utilizado">
+            <summary>
+              Busca una cadena traducida similar a La ubicación de tipo transito se encuentra en proceso de recibo.
+            </summary>
+        </member>
+        <member name="P:SellingWS.Resources.Mensajes.Ubicacion_Utilizada">
+            <summary>
+              Busca una cadena traducida similar a La ubicación actual está siendo utilizada en un Recibo diferente.
+            </summary>
+        </member>
+        <member name="M:SellingWS.Security.HashPass.CreateHash(System.String)">
+            <summary>
+            Creates a salted PBKDF2 hash of the password.
+            </summary>
+            <param name="password">The password to hash.</param>
+            <returns>The hash of the password.</returns>
+        </member>
+        <member name="M:SellingWS.Security.HashPass.ValidatePassword(System.String,System.String)">
+            <summary>
+            Validates a password given a hash of the correct one.
+            </summary>
+            <param name="password">The password to check.</param>
+            <param name="correctHash">A hash of the correct password.</param>
+            <returns>True if the password is correct. False otherwise.</returns>
+        </member>
+        <member name="M:SellingWS.Security.HashPass.SlowEquals(System.Byte[],System.Byte[])">
+            <summary>
+            Compares two byte arrays in length-constant time. This comparison
+            method is used so that password hashes cannot be extracted from
+            on-line systems using a timing attack and then attacked off-line.
+            </summary>
+            <param name="a">The first byte array.</param>
+            <param name="b">The second byte array.</param>
+            <returns>True if both byte arrays are equal. False otherwise.</returns>
+        </member>
+        <member name="M:SellingWS.Security.HashPass.Pbkdf2(System.String,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Computes the PBKDF2-SHA1 hash of a password.
+            </summary>
+            <param name="password">The password to hash.</param>
+            <param name="salt">The salt.</param>
+            <param name="iterations">The PBKDF2 iteration count.</param>
+            <param name="outputBytes">The length of the hash to generate, in bytes.</param>
+            <returns>A hash of the password.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,280 @@
+Public Class FrmAddEquivalente
+    Inherits System.Windows.Forms.Form
+
+#Region " Windows Form Designer generated code "
+
+    Public Sub New()
+        MyBase.New()
+
+        'This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        'Add any initialization after the InitializeComponent() call
+
+    End Sub
+
+    'Form overrides dispose to clean up the component list.
+    Protected Overloads Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing Then
+            If Not (components Is Nothing) Then
+                components.Dispose()
+            End If
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents BtnGuardar As Janus.Windows.EditControls.UIButton
+    Friend WithEvents BtnCancelar As Janus.Windows.EditControls.UIButton
+    Friend WithEvents TxtSearch As System.Windows.Forms.TextBox
+    Friend WithEvents CmbFiltro As StoreCombo
+    Friend WithEvents CmbCampo As StoreCombo
+    Friend WithEvents GridProductos As Janus.Windows.GridEX.GridEX
+    Friend WithEvents ChkMarcaTodos As System.Windows.Forms.CheckBox
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAddEquivalente))
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.GridProductos = New Janus.Windows.GridEX.GridEX
+        Me.ChkMarcaTodos = New System.Windows.Forms.CheckBox
+        Me.TxtSearch = New System.Windows.Forms.TextBox
+        Me.CmbFiltro = New Selling.StoreCombo
+        Me.CmbCampo = New Selling.StoreCombo
+        Me.BtnGuardar = New Janus.Windows.EditControls.UIButton
+        Me.BtnCancelar = New Janus.Windows.EditControls.UIButton
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.BtnCancelar)
+        Me.GroupBox1.Controls.Add(Me.GridProductos)
+        Me.GroupBox1.Controls.Add(Me.BtnGuardar)
+        Me.GroupBox1.Controls.Add(Me.ChkMarcaTodos)
+        Me.GroupBox1.Controls.Add(Me.TxtSearch)
+        Me.GroupBox1.Controls.Add(Me.CmbFiltro)
+        Me.GroupBox1.Controls.Add(Me.CmbCampo)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(688, 358)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Selección de Productos"
+        '
+        'GridProductos
+        '
+        Me.GridProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GridProductos.ColumnAutoResize = True
+        Me.GridProductos.ColumnAutoSizeMode = Janus.Windows.GridEX.ColumnAutoSizeMode.DiaplayedCells
+        Me.GridProductos.ColumnSetNavigation = Janus.Windows.GridEX.ColumnSetNavigation.ColumnSet
+        Me.GridProductos.GroupByBoxVisible = False
+        Me.GridProductos.Location = New System.Drawing.Point(13, 66)
+        Me.GridProductos.Name = "GridProductos"
+        Me.GridProductos.RecordNavigator = True
+        Me.GridProductos.Size = New System.Drawing.Size(662, 247)
+        Me.GridProductos.TabIndex = 7
+        Me.GridProductos.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007
+        '
+        'ChkMarcaTodos
+        '
+        Me.ChkMarcaTodos.Enabled = False
+        Me.ChkMarcaTodos.Location = New System.Drawing.Point(13, 45)
+        Me.ChkMarcaTodos.Name = "ChkMarcaTodos"
+        Me.ChkMarcaTodos.Size = New System.Drawing.Size(87, 22)
+        Me.ChkMarcaTodos.TabIndex = 6
+        Me.ChkMarcaTodos.Text = "Marcar Todos"
+        '
+        'TxtSearch
+        '
+        Me.TxtSearch.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtSearch.Location = New System.Drawing.Point(293, 22)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.Size = New System.Drawing.Size(382, 20)
+        Me.TxtSearch.TabIndex = 4
+        '
+        'CmbFiltro
+        '
+        Me.CmbFiltro.BackColor = System.Drawing.SystemColors.Window
+        Me.CmbFiltro.Location = New System.Drawing.Point(153, 22)
+        Me.CmbFiltro.Name = "CmbFiltro"
+        Me.CmbFiltro.Size = New System.Drawing.Size(134, 21)
+        Me.CmbFiltro.TabIndex = 3
+        '
+        'CmbCampo
+        '
+        Me.CmbCampo.BackColor = System.Drawing.SystemColors.Window
+        Me.CmbCampo.Location = New System.Drawing.Point(13, 22)
+        Me.CmbCampo.Name = "CmbCampo"
+        Me.CmbCampo.Size = New System.Drawing.Size(134, 21)
+        Me.CmbCampo.TabIndex = 2
+        '
+        'BtnGuardar
+        '
+        Me.BtnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnGuardar.Image = CType(resources.GetObject("BtnGuardar.Image"), System.Drawing.Image)
+        Me.BtnGuardar.Location = New System.Drawing.Point(585, 316)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(90, 37)
+        Me.BtnGuardar.TabIndex = 26
+        Me.BtnGuardar.Text = "&Aceptar"
+        Me.BtnGuardar.ToolTipText = "Guardar cambios"
+        Me.BtnGuardar.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007
+        '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnCancelar.Image = CType(resources.GetObject("BtnCancelar.Image"), System.Drawing.Image)
+        Me.BtnCancelar.Location = New System.Drawing.Point(489, 316)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(90, 37)
+        Me.BtnCancelar.TabIndex = 27
+        Me.BtnCancelar.Text = "&Salir"
+        Me.BtnCancelar.ToolTipText = "Cancelar y cerrar ventana"
+        Me.BtnCancelar.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007
+        '
+        'FrmAddEquivalente
+        '
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
+        Me.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.ClientSize = New System.Drawing.Size(688, 358)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximumSize = New System.Drawing.Size(853, 713)
+        Me.MinimumSize = New System.Drawing.Size(580, 364)
+        Me.Name = "FrmAddEquivalente"
+        Me.Text = "FrmAddEquivalente"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+
+#End Region
+
+    Public PROClave As String
+
+    Private dtProductos As DataTable
+
+
+    Private Sub FrmAddEquivalente_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'ModPOS.CambiarEstiloXP.CambiarEstilo(Me)
+        Dim Cnx As String
+
+        Cnx = ModPOS.BDConexion
+
+        With Me.CmbCampo
+            .Conexion = Cnx
+            .ProcedimientoAlmacenado = "sp_filtra_valorref"
+            .NombreParametro1 = "tabla"
+            .Parametro1 = "AddClass"
+            .NombreParametro2 = "Campo"
+            .Parametro2 = "CampoProducto"
+            .llenar()
+        End With
+
+
+        With Me.CmbFiltro
+            .Conexion = Cnx
+            .ProcedimientoAlmacenado = "sp_filtra_valorref"
+            .NombreParametro1 = "tabla"
+            .Parametro1 = "AddClass"
+            .NombreParametro2 = "campo"
+            .Parametro2 = "Filtro"
+            .llenar()
+        End With
+
+
+
+    End Sub
+
+    Private Sub FrmAddEquivalente_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        ModPOS.ProductoEquivalente.Dispose()
+        ModPOS.ProductoEquivalente = Nothing
+    End Sub
+
+    Private Sub BtnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancelar.Click
+        Me.Close()
+    End Sub
+
+
+    Private Sub ChkMarcaTodos_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChkMarcaTodos.CheckedChanged
+        If dtProductos.Rows.Count > 0 Then
+            Dim i As Integer
+            Cursor.Current = Cursors.WaitCursor
+            If ChkMarcaTodos.Checked Then
+                For i = 0 To dtProductos.Rows.Count - 1
+                    dtProductos.Rows(i)("Marca") = True
+                Next
+            Else
+                For i = 0 To dtProductos.Rows.Count - 1
+                    dtProductos.Rows(i)("Marca") = False
+                Next
+
+            End If
+            Cursor.Current = Cursors.Default
+        End If
+    End Sub
+
+    Private Sub BtnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGuardar.Click
+        Dim i As Integer
+        If Not dtProductos Is Nothing Then
+            Dim foundRows() As DataRow
+            foundRows = dtProductos.Select("Marca = 1")
+            If foundRows.GetLength(0) > 0 Then
+                Select Case MessageBox.Show("Se agregaran todos los registros marcados como equivalentes del producto actual, esta deacuerdo?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    Case DialogResult.Yes
+                        Cursor.Current = Cursors.WaitCursor
+                        For i = 0 To foundRows.GetUpperBound(0)
+                            ModPOS.Producto.AddEquivalente(foundRows(i)("PROClave"), foundRows(i)("Clave"), foundRows(i)("Nombre"), foundRows(i)("Descripción"))
+                        Next
+                        dtProductos.Dispose()
+                        Cursor.Current = Cursors.Default
+                        Me.Close()
+                End Select
+            Else
+                MessageBox.Show("Debe Marcar por lo menos un Producto equivalente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Else
+            MessageBox.Show("Realice la busqueda de productos equivalentes utilizando los filtros de selección", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub TxtSearch_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtSearch.KeyUp
+        If CmbCampo.SelectedValue = Nothing OrElse CmbFiltro.SelectedValue = Nothing Then
+            MsgBox("Los parametros de busqueda son requeridos", MsgBoxStyle.Critical, "Error")
+        ElseIf TxtSearch.Text <> "" Then
+
+            If Not dtProductos Is Nothing Then
+                dtProductos.Dispose()
+            End If
+
+            dtProductos = ModPOS.Recupera_Tabla("sp_filtra_NoEquivalentes", "@PROClave", Me.PROClave, "@Campo", Me.CmbCampo.SelectedValue, "@Filtro", Me.CmbFiltro.SelectedValue, "@Busca", Me.TxtSearch.Text.Replace("'", "''"))
+            If dtProductos.Rows.Count > 0 Then
+                GridProductos.DataSource = dtProductos
+                GridProductos.RetrieveStructure()
+                GridProductos.AutoSizeColumns()
+                GridProductos.RootTable.Columns("PROClave").Visible = False
+                GridProductos.CurrentTable.Columns("Clave").Selectable = False
+                GridProductos.CurrentTable.Columns("Nombre").Selectable = False
+                GridProductos.CurrentTable.Columns("Descripción").Selectable = False
+
+                ChkMarcaTodos.Enabled = True
+            Else
+                ChkMarcaTodos.Enabled = False
+                MsgBox("No se encontró ningún elemento.", MsgBoxStyle.Information, "Información")
+            End If
+        End If
+    End Sub
+End Class
