@@ -1,0 +1,309 @@
+package com.amesol.routelite.actividades;
+
+import java.security.acl.Group;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Hashtable;
+
+import android.annotation.SuppressLint;
+
+import com.amesol.routelite.datos.Ruta;
+import com.amesol.routelite.datos.basedatos.Consultas;
+import com.amesol.routelite.datos.generales.ISetDatos;
+import com.amesol.routelite.datos.utilerias.Sesion;
+import com.amesol.routelite.datos.utilerias.Sesion.Campo;
+import com.amesol.routelite.presentadores.Enumeradores;
+
+
+public class ValoresReferencia
+{
+
+	private static Map<String, Map<String, ValorReferencia>> valores = null;
+
+	private static synchronized Map<String, Map<String, ValorReferencia>> get()
+	{
+		if (valores == null)
+		{
+			valores = new Hashtable<String, Map<String, ValorReferencia>>();
+			try
+			{
+				ISetDatos setdatos = Consultas.ConsultasValorReferencia.obtenerValores();
+				int iVarCodigo = setdatos.getColumnIndex("VARCodigo");
+				int iVavClave = setdatos.getColumnIndex("VAVClave");
+				int iGrupo = setdatos.getColumnIndex("Grupo");
+				int iDescripcion = setdatos.getColumnIndex("Descripcion");
+				int iClaveSAT = setdatos.getColumnIndex("ClaveSAT");
+				int iDescripcionSAT = setdatos.getColumnIndex("DescripcionSAT");
+				while (setdatos.moveToNext())
+				{
+					String VARCodigo = setdatos.getString(iVarCodigo);
+					if (VARCodigo == null)
+						VARCodigo = "";
+					else
+						VARCodigo = VARCodigo.toUpperCase().trim();
+					if (VARCodigo.equals("TCARSU"))
+						VARCodigo = "TCARSU";
+					String VAVClave = setdatos.getString(iVavClave);
+					if (VAVClave == null)
+						VAVClave = "";
+					else
+						VAVClave = VAVClave.toUpperCase().trim();
+					String Grupo = setdatos.getString(iGrupo);
+					if (Grupo == null)
+						Grupo = "";
+					else
+						Grupo = Grupo.toUpperCase().trim();
+					String Descripcion = setdatos.getString(iDescripcion);
+					if (Descripcion == null)
+						Descripcion = "";
+
+					String ClaveSAT = setdatos.getString(iClaveSAT);
+					if (ClaveSAT  == null)
+						ClaveSAT = "";
+
+					String DescripcionSAT = setdatos.getString(iDescripcionSAT);
+					if (DescripcionSAT  == null)
+						DescripcionSAT = "";
+
+					Map<String, ValorReferencia> claves = null;
+					if (!valores.containsKey(VARCodigo))
+					{
+						claves = new Hashtable<String, ValorReferencia>();
+						valores.put(VARCodigo, claves);
+					}
+					else
+						claves = valores.get(VARCodigo);
+					claves.put(VAVClave, new ValorReferencia(VARCodigo, VAVClave, Descripcion, Grupo, ClaveSAT, DescripcionSAT ));
+
+				}
+				setdatos.close();
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+		return valores;
+	}
+
+	public static synchronized void actualizarValoresReferencia()
+	{
+		valores = new Hashtable<String, Map<String, ValorReferencia>>();
+		try
+		{
+			ISetDatos setdatos = Consultas.ConsultasValorReferencia.obtenerValores();
+			int iVarCodigo = setdatos.getColumnIndex("VARCodigo");
+			int iVavClave = setdatos.getColumnIndex("VAVClave");
+			int iGrupo = setdatos.getColumnIndex("Grupo");
+			int iDescripcion = setdatos.getColumnIndex("Descripcion");
+			int iClaveSAT = setdatos.getColumnIndex("ClaveSAT");
+			int iDescripcionSAT = setdatos.getColumnIndex("DescripcionSAT");
+			while (setdatos.moveToNext())
+			{
+				String VARCodigo = setdatos.getString(iVarCodigo);
+				if (VARCodigo == null)
+					VARCodigo = "";
+				else
+					VARCodigo = VARCodigo.toUpperCase().trim();
+				if (VARCodigo.equals("TCARSU"))
+					VARCodigo = "TCARSU";
+				String VAVClave = setdatos.getString(iVavClave);
+				if (VAVClave == null)
+					VAVClave = "";
+				else
+					VAVClave = VAVClave.toUpperCase().trim();
+				String Grupo = setdatos.getString(iGrupo);
+				if (Grupo == null)
+					Grupo = "";
+				else
+					Grupo = Grupo.toUpperCase().trim();
+				String Descripcion = setdatos.getString(iDescripcion);
+				if (Descripcion == null)
+					Descripcion = "";
+
+				String ClaveSAT = setdatos.getString(iClaveSAT);
+				if (ClaveSAT  == null)
+					ClaveSAT = "";
+
+				String DescripcionSAT = setdatos.getString(iDescripcionSAT);
+				if (DescripcionSAT  == null)
+					DescripcionSAT = "";
+
+				Map<String, ValorReferencia> claves = null;
+				if (!valores.containsKey(VARCodigo))
+				{
+					claves = new Hashtable<String, ValorReferencia>();
+					valores.put(VARCodigo, claves);
+				}
+				else
+					claves = valores.get(VARCodigo);
+				claves.put(VAVClave, new ValorReferencia(VARCodigo, VAVClave, Descripcion, Grupo, ClaveSAT, DescripcionSAT));
+
+			}
+			setdatos.close();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public static ValorReferencia[] getValores(String VARCodigo)
+	{
+		VARCodigo = VARCodigo.toUpperCase().trim();
+		Map<String, ValorReferencia> valores = get().get(VARCodigo);
+		if (valores != null)
+		{
+			return valores.values().toArray(new ValorReferencia[valores.values().size()]);
+		}
+		return null;
+	}
+
+	public static ValorReferencia[] getValores(String VARCodigo, String Grupo, String... exceptoGrupo)
+	{
+		VARCodigo = VARCodigo.toUpperCase().trim();
+		if (Grupo != null)
+			Grupo = Grupo.toUpperCase().trim();
+		if (exceptoGrupo != null)
+		{
+			for (int i = 0; i < exceptoGrupo.length; i++)
+				exceptoGrupo[i] = exceptoGrupo[i].toUpperCase().trim();
+		}
+		Map<String, ValorReferencia> valores = get().get(VARCodigo);
+		if (valores != null)
+		{
+			ArrayList<ValorReferencia> lista = new ArrayList<ValorReferencia>();
+			for (ValorReferencia v : valores.values())
+			{
+				String[] aGrupos = v.getGrupo().split(",");
+				if ((Grupo != null) && (!Arrays.asList(aGrupos).contains(Grupo)))
+					continue;
+				if ((exceptoGrupo != null) && (v.getGrupo() != null) && (arraysSearch(exceptoGrupo, aGrupos)))
+					continue;
+				lista.add(v);
+			}
+			return lista.toArray(new ValorReferencia[lista.size()]);
+		}
+		return null;
+	}
+	static boolean arraysSearch(String[] arr1, String[] arr2)
+	{
+		int i = 0;
+		int j = 0;
+		for (i = 0; i < arr1.length; i++)
+		{
+			for (j = 0; j < arr2.length; j++)
+				if(arr2[i].equals(arr1[j]))
+					return true;
+		}
+
+		return false;
+	}
+
+    public static String getCadenaValores(String VARCodigo, String Grupo)
+    {
+        VARCodigo = VARCodigo.toUpperCase().trim();
+        if (Grupo != null)
+            Grupo = Grupo.toUpperCase().trim();
+
+        Map<String, ValorReferencia> valores = get().get(VARCodigo);
+        if (valores != null)
+        {
+            String valoresRes = "";
+            for (ValorReferencia v : valores.values())
+            {
+                if ((Grupo != null) && (!v.getGrupo().equals(Grupo)))
+                    continue;
+				/*if((VARCodigo.equals("ACTROL") && Grupo.equals("INVENTARIO") && v.getVavclave().equals("26")) && !(((Ruta) Sesion.get(Campo.RutaActual)).Inventario && Integer.parseInt(Sesion.get(Campo.TipoModulo).toString()) == Enumeradores.TiposModulos.PREVENTA)){
+					continue;
+				}*/
+                valoresRes += v.getVavclave() + ",";
+            }
+            if (valoresRes.length()>0){
+                valoresRes = valoresRes.substring(0, valoresRes.length() -1);
+            }
+
+            return valoresRes;
+        }
+        return "";
+    }
+
+
+    public static ValorReferencia getValor(String VARCodigo, String VAVClave)
+	{
+		VARCodigo = VARCodigo.toUpperCase().trim();
+		VAVClave = VAVClave.toUpperCase().trim();
+		Map<String, ValorReferencia> valores = get().get(VARCodigo);
+		if (valores != null)
+		{
+			return valores.get(VAVClave);
+		}
+		return null;
+	}
+
+	public static String getDescripcion(String VARCodigo, String VAVClave)
+	{
+		VARCodigo = VARCodigo + "";
+		VAVClave = VAVClave + "";
+		VARCodigo = VARCodigo.toUpperCase().trim();
+		VAVClave = VAVClave.toUpperCase().trim();
+		Map<String, ValorReferencia> valores = get().get(VARCodigo);
+		if (valores != null)
+		{
+			ValorReferencia valRef = valores.get(VAVClave);
+			if (valRef != null)
+				return valRef.getDescripcion();
+		}
+		return "";
+	}
+
+	// Devuelve un string separado por comas con los VAVClave solicitados
+	public static String getStringVAVClave(String VARCodigo, String Grupo)
+	{
+		VARCodigo = VARCodigo.toUpperCase().trim();
+		if (Grupo != null)
+			Grupo = Grupo.toUpperCase().trim();
+
+		Map<String, ValorReferencia> valores = get().get(VARCodigo);
+		if (valores != null)
+		{
+			String lista = "";
+			for (ValorReferencia v : valores.values())
+			{
+				if ((Grupo != null) && (!v.getGrupo().equals(Grupo)))
+					continue;
+				lista += v.getVavclave() + ",";
+				// lista.add(v);
+			}
+			if (lista.length() > 0)
+			{
+				lista = lista.substring(0, lista.length() - 1);
+			}
+			return lista;
+		}
+		return null;
+	}
+
+	public static String getVAVClave(String VARCodigo, String Descripcion)
+	{
+		VARCodigo = VARCodigo.toUpperCase().trim();
+		Descripcion = Descripcion.toUpperCase().trim();
+		Map<String, ValorReferencia> valores = get().get(VARCodigo);
+		if (valores != null)
+		{
+			String valorRes = "";
+			for (ValorReferencia v : valores.values())
+			{
+				if ((Descripcion != null) && (v.getDescripcion().toUpperCase().equals(Descripcion)))
+				{
+					valorRes = v.getVavclave();
+					break;
+				}
+			}
+			return valorRes;
+		}
+		return "";
+	}
+
+}
