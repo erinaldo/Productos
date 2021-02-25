@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:UNIT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLPackage" guid="qlSCgnBVHUONWUDyAdQGyAAA">
+<XPD:ATTR name="Name" type="string">Actores</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">10</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLActor" guid="xk8CTn/d9UedzsmtFHbXHwAA">
+<XPD:ATTR name="Name" type="string">Administrador</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">108</XPD:ATTR>
+<XPD:REF name="Views[0]">S6tOH+A7C0uM6GXhJJ1DCgAA</XPD:REF>
+<XPD:REF name="Views[1]">Lq+Qg6bKSEascz5cxhIZ1QAA</XPD:REF>
+<XPD:REF name="Views[2]">X93OvFbc6UixR542X5Nb5AAA</XPD:REF>
+<XPD:REF name="Views[3]">xjanaEgU2Uu7fLy5wGNHLAAA</XPD:REF>
+<XPD:REF name="Views[4]">BvhXkDAMPUqCCAr+KuwxrQAA</XPD:REF>
+<XPD:REF name="Views[5]">Plsi/uPKP0m5Lmc+p0+JPwAA</XPD:REF>
+<XPD:REF name="Views[6]">SE3cGPH6wkqjr6jCaFN07AAA</XPD:REF>
+<XPD:REF name="Views[7]">BU7ouM3jVk+X0q/xVuTpCwAA</XPD:REF>
+<XPD:REF name="Views[8]">YBp5dtmv4Eu30j99z3B/SAAA</XPD:REF>
+<XPD:REF name="Views[9]">kaAp9SIJtE2crakfr1Ne2gAA</XPD:REF>
+<XPD:REF name="Views[10]">7jqu7UiMxkWGaZEXcLs2SwAA</XPD:REF>
+<XPD:REF name="Views[11]">35HO4/vYF0646MfF8xLWGwAA</XPD:REF>
+<XPD:REF name="Views[12]">KqdyTsfjK0WPKxxjPypukAAA</XPD:REF>
+<XPD:REF name="Views[13]">OzcgnCj44Eygtr2fy/c2iQAA</XPD:REF>
+<XPD:REF name="Views[14]">iAAAJREZwU6G3bddod+G5AAA</XPD:REF>
+<XPD:REF name="Views[15]">DrefwMyWakOO30zpfX5WWQAA</XPD:REF>
+<XPD:REF name="Views[16]">5k3GJ//RlkaCvhYZWK8iLgAA</XPD:REF>
+<XPD:REF name="Views[17]">o6pM5ROUREOw86UnHKTBqQAA</XPD:REF>
+<XPD:REF name="Views[18]">osMNnMB+7Em2sgHnRITUzgAA</XPD:REF>
+<XPD:REF name="Views[19]">g5ZH0DhHU02wHPnGSFpy3wAA</XPD:REF>
+<XPD:REF name="Views[20]">JlW4fcv6qkOfsgCi8mqmPwAA</XPD:REF>
+<XPD:REF name="Views[21]">tfBuZRsFdkeOiIYFIBZSAQAA</XPD:REF>
+<XPD:REF name="Views[22]">Y7veiQnGik6LZrZcnGTt/AAA</XPD:REF>
+<XPD:REF name="Views[23]">uTRPviCsyUiDqqhTX8hU7AAA</XPD:REF>
+<XPD:REF name="Views[24]">hc4YCx0ojEi5BLLanOZy/wAA</XPD:REF>
+<XPD:REF name="Views[25]">RzB9WyI51E+eX9SnlptLaQAA</XPD:REF>
+<XPD:REF name="Views[26]">nTfVBmy2DUiUSktr0CuXvAAA</XPD:REF>
+<XPD:REF name="Views[27]">2qbkE6m3Bki+HjRoMFtz5gAA</XPD:REF>
+<XPD:REF name="Views[28]">sc0pyDz37kOvTnfRDRp7RQAA</XPD:REF>
+<XPD:REF name="Views[29]">LgdvEAHl/EmSCoh3PTfw5AAA</XPD:REF>
+<XPD:REF name="Views[30]">nqxFuubmCUC7pag0QNAYwQAA</XPD:REF>
+<XPD:REF name="Views[31]">Wi4TjveNA02P0aPucfQJ8wAA</XPD:REF>
+<XPD:REF name="Views[32]">el/sPGeCvEKjCB4A9p2E1QAA</XPD:REF>
+<XPD:REF name="Views[33]">E1kDf7EIzE+uAPejC1aFGwAA</XPD:REF>
+<XPD:REF name="Views[34]">uZK8xatIX0C3WpyZ6kY3VwAA</XPD:REF>
+<XPD:REF name="Views[35]">upWeWq0YV0CiXX1+aAnsGwAA</XPD:REF>
+<XPD:REF name="Views[36]">oYiZ07ixsE6v9THu2XRrigAA</XPD:REF>
+<XPD:REF name="Views[37]">scLCJWcnGUivXgB1M1SY2wAA</XPD:REF>
+<XPD:REF name="Views[38]">/X9eqTXrzUayOoG/ugPPxwAA</XPD:REF>
+<XPD:REF name="Views[39]">O2rgVO+h5UWhCyid4vS3pgAA</XPD:REF>
+<XPD:REF name="Views[40]">U+LN5Qw/aUe5lPHOQy/wdQAA</XPD:REF>
+<XPD:REF name="Views[41]">TkH82kvfOU+xI5jfJcgkwgAA</XPD:REF>
+<XPD:REF name="Views[42]">0lynnYG2kEGEW8d9czWUSgAA</XPD:REF>
+<XPD:REF name="Views[43]">6EF7CTD0PkmgudbFB3YzMgAA</XPD:REF>
+<XPD:REF name="Views[44]">CmI35esJJUGZu4+OZVa/WAAA</XPD:REF>
+<XPD:REF name="Views[45]">7AkLeQYrlUC7FwHamd/OsgAA</XPD:REF>
+<XPD:REF name="Views[46]">ZosNvzz6CEawMnl/Ex8OwQAA</XPD:REF>
+<XPD:REF name="Views[47]">N0wyGTLuQkmFhZZoX+ClAAAA</XPD:REF>
+<XPD:REF name="Views[48]">i2o6hRaPiEyG9QXy5c8yGQAA</XPD:REF>
+<XPD:REF name="Views[49]">xU1UZ1un506moXXfRa9GDgAA</XPD:REF>
+<XPD:REF name="Views[50]">C5Ab4L03tkO4Yi1CNwCgugAA</XPD:REF>
+<XPD:REF name="Views[51]">Wb5c2eR+tEumeKDLnhdnGgAA</XPD:REF>
+<XPD:REF name="Views[52]">Z95eRtas8Uy0FJcEHnKVwwAA</XPD:REF>
+<XPD:REF name="Views[53]">o2Ik5sluEUO3jpDlPsa1vwAA</XPD:REF>
+<XPD:REF name="Views[54]">PaQ3+mB/1EidCavLzOiRVQAA</XPD:REF>
+<XPD:REF name="Views[55]">0MO9IoZaDkWHpprI7xsZBwAA</XPD:REF>
+<XPD:REF name="Views[56]">CD4U/DXH/EefZEx3qs7VEgAA</XPD:REF>
+<XPD:REF name="Views[57]">6S3bkso0K0yWY8xNBXPtxgAA</XPD:REF>
+<XPD:REF name="Views[58]">U1Ui9CZGhEWpMLJloLLr5wAA</XPD:REF>
+<XPD:REF name="Views[59]">j6up/QmmPUW2nL13+lR24QAA</XPD:REF>
+<XPD:REF name="Views[60]">2VOQi3nDr0elSMetVvvTyQAA</XPD:REF>
+<XPD:REF name="Views[61]">24gw727JGE+myI7/tIKaEQAA</XPD:REF>
+<XPD:REF name="Views[62]">IuNSo8Zp50WbZJuHAldzmAAA</XPD:REF>
+<XPD:REF name="Views[63]">pEFphu2e00C4cZncPq/LegAA</XPD:REF>
+<XPD:REF name="Views[64]">G52CfqsmXUOCX6WuH76ouQAA</XPD:REF>
+<XPD:REF name="Views[65]">T5PegVsqeEGtVHezN2jNbwAA</XPD:REF>
+<XPD:REF name="Views[66]">qeANheLtYkqqJxhEJ3xu6AAA</XPD:REF>
+<XPD:REF name="Views[67]">QcPnHGVeuEeA3MghzXL0dwAA</XPD:REF>
+<XPD:REF name="Views[68]">UFGnNlsi5Uujo6j4lrZw+gAA</XPD:REF>
+<XPD:REF name="Views[69]">vIYg3KDd/EyghfgzVU0algAA</XPD:REF>
+<XPD:REF name="Views[70]">gTm1I9ucuUaz7ELgzzoYRQAA</XPD:REF>
+<XPD:REF name="Views[71]">tTF9wTvrxE+EQFqRAQnW5QAA</XPD:REF>
+<XPD:REF name="Views[72]">mNUfrrgD1UadBo8wF9EHFwAA</XPD:REF>
+<XPD:REF name="Views[73]">k2+IWZVUT0SAmx8GwAnqSwAA</XPD:REF>
+<XPD:REF name="Views[74]">qYewcuouAUC/FVPveGdQdAAA</XPD:REF>
+<XPD:REF name="Views[75]">DwuYnqqeLEGJOTrB/vkbHAAA</XPD:REF>
+<XPD:REF name="Views[76]">QSmixFU2CkWXcW9AnylC4QAA</XPD:REF>
+<XPD:REF name="Views[77]">9urO8buRG0WWl5RaA87TWwAA</XPD:REF>
+<XPD:REF name="Views[78]">f/LE+yXazEOvfLUeAJwv2AAA</XPD:REF>
+<XPD:REF name="Views[79]">vq6jpJVTBk+u93NXh043+AAA</XPD:REF>
+<XPD:REF name="Views[80]">oy6fs26f6UWHf2pZvSwxuQAA</XPD:REF>
+<XPD:REF name="Views[81]">mgS4gXBvz0qkecStT5PYXwAA</XPD:REF>
+<XPD:REF name="Views[82]">d6+lHYysd06DG9QnpJBnwQAA</XPD:REF>
+<XPD:REF name="Views[83]">A67SxRgW206aCpIutLPwlAAA</XPD:REF>
+<XPD:REF name="Views[84]">QmyolOddVUO9fMYuAADF8QAA</XPD:REF>
+<XPD:REF name="Views[85]">cwmKwyZ1/0qcpJGGn3doSwAA</XPD:REF>
+<XPD:REF name="Views[86]">nMMheVDArUuHAbHRai3EpQAA</XPD:REF>
+<XPD:REF name="Views[87]">nguapPq90EieuLMCMEsAuwAA</XPD:REF>
+<XPD:REF name="Views[88]">4SgNPx4IYUauFxhyJQEORAAA</XPD:REF>
+<XPD:REF name="Views[89]">iBik9Z0yE0GT3EpL6QXL9AAA</XPD:REF>
+<XPD:REF name="Views[90]">w1ofpPqtrkeNRIY6+jaD7AAA</XPD:REF>
+<XPD:REF name="Views[91]">+hgxh/0j5UiKHLcHG14x1wAA</XPD:REF>
+<XPD:REF name="Views[92]">elyie5QjkkWFwipF9Cw+YwAA</XPD:REF>
+<XPD:REF name="Views[93]">4MHC8aWdTkem+z9INpZM0wAA</XPD:REF>
+<XPD:REF name="Views[94]">7pNtMtnUeUqz5NIU7R41vwAA</XPD:REF>
+<XPD:REF name="Views[95]">AdKTZvw5xkyt8ZGtG77EsAAA</XPD:REF>
+<XPD:REF name="Views[96]">5T+8lLNd6ECfOf1gmI+w7gAA</XPD:REF>
+<XPD:REF name="Views[97]">pbo7/ow/Z0mpb5iNGKUlhgAA</XPD:REF>
+<XPD:REF name="Views[98]">jUYPC87xSUe7c10JC3dudAAA</XPD:REF>
+<XPD:REF name="Views[99]">wocnGzcAhUmhPCOiuwRjVQAA</XPD:REF>
+<XPD:REF name="Views[100]">P+8IxTH5hUCG8e5fAexWmQAA</XPD:REF>
+<XPD:REF name="Views[101]">4V0axhRQe0ycwGJJ+mJzGAAA</XPD:REF>
+<XPD:REF name="Views[102]">nSOwZEc4HkCy/AmUnQG1PgAA</XPD:REF>
+<XPD:REF name="Views[103]">jqkzuOQtDky/w4r4lHoI4QAA</XPD:REF>
+<XPD:REF name="Views[104]">iHQ5SeSVRk+blofeF0hkTwAA</XPD:REF>
+<XPD:REF name="Views[105]">3Mjpv3cL70y1LS/ArS9q1AAA</XPD:REF>
+<XPD:REF name="Views[106]">E9GKoKynYkykzBNpiD1FngAA</XPD:REF>
+<XPD:REF name="Views[107]">bLIC/I2+i0qBss8+VDbYSQAA</XPD:REF>
+<XPD:ATTR name="#ClientDependencies" type="integer">1</XPD:ATTR>
+<XPD:REF name="ClientDependencies[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::">gP6vxBe1Lk+rGkM9tiRxXQAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">42</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">0Y4icw3ZyEykvltDnpajKgAA</XPD:REF>
+<XPD:REF name="Associations[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">v1PvwpaKtECZgzZUi/UOsQAA</XPD:REF>
+<XPD:REF name="Associations[2]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">PLnI/px3/Uq267mgCnxuIAAA</XPD:REF>
+<XPD:REF name="Associations[3]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">qX++f6GKaE+E/f5RNuvYKwAA</XPD:REF>
+<XPD:REF name="Associations[4]" pathname="::Logical View::::">nrEjrrDooEWQ6TzkdW/QewAA</XPD:REF>
+<XPD:REF name="Associations[5]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">YxhYgJt4KUCBXzOIfuTNZgAA</XPD:REF>
+<XPD:REF name="Associations[6]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">cW0B0vzYHkiuVOlXazykMgAA</XPD:REF>
+<XPD:REF name="Associations[7]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">/xQad9cQyUefyZi/1Mxn9AAA</XPD:REF>
+<XPD:REF name="Associations[8]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">XLUtsiZalkClikoDNiOV8wAA</XPD:REF>
+<XPD:REF name="Associations[9]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">qt9wmPevoUutpe4y4FyLEAAA</XPD:REF>
+<XPD:REF name="Associations[10]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">puyTaNqatk6cDrBnQeyOGAAA</XPD:REF>
+<XPD:REF name="Associations[11]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">/CvkK9z8y0CdDRgt9brWTQAA</XPD:REF>
+<XPD:REF name="Associations[12]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">nnxLD4vBiUO++YwCWxRBzwAA</XPD:REF>
+<XPD:REF name="Associations[13]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">WgTCb0YRZUSKS1W07APuMgAA</XPD:REF>
+<XPD:REF name="Associations[14]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">dQ+7KxY/kEqgypTAIolFNAAA</XPD:REF>
+<XPD:REF name="Associations[15]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">uM30A9F+fkCN5z0HBUuSbAAA</XPD:REF>
+<XPD:REF name="Associations[16]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">JpjvZwTgx0eUhHd5w1mLngAA</XPD:REF>
+<XPD:REF name="Associations[17]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">AsW3DG983Um9JHgKmj7o1AAA</XPD:REF>
+<XPD:REF name="Associations[18]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">NSIUSHSzGEawmdQWSJJUvAAA</XPD:REF>
+<XPD:REF name="Associations[19]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">y2Au0OrNe0GtfdThBJ9t3QAA</XPD:REF>
+<XPD:REF name="Associations[20]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">dqKdWoUnkEut/PkdQgXt3gAA</XPD:REF>
+<XPD:REF name="Associations[21]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">EdWCivCPnEa4KRqVaACXqQAA</XPD:REF>
+<XPD:REF name="Associations[22]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">V+02ieyecUOO7hx97qebmQAA</XPD:REF>
+<XPD:REF name="Associations[23]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">nLn7mkWIc0W5QXQEtKhszwAA</XPD:REF>
+<XPD:REF name="Associations[24]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">ig85AXzKxkuj0e2W9MhXCAAA</XPD:REF>
+<XPD:REF name="Associations[25]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">s83Qz8JpR0GiD/Uqq9XBfQAA</XPD:REF>
+<XPD:REF name="Associations[26]" pathname="::Use Case View::Casos de Uso::CU_LIC::DCU_LIC::::">h45cBxNHLEaf730xHXNbHgAA</XPD:REF>
+<XPD:REF name="Associations[27]" pathname="::Use Case View::Casos de Uso::CU_LIC::DCU_LIC::::">1wkIOWfwpEqmWsXBpvDdmAAA</XPD:REF>
+<XPD:REF name="Associations[28]" pathname="::Use Case View::Casos de Uso::CU_LIC::DCU_LIC::::">CDZ5D03o6UGarLh5g34UigAA</XPD:REF>
+<XPD:REF name="Associations[29]" pathname="::Use Case View::Casos de Uso::CU_LIC::DCU_LIC::::">GL9/o1LqiEKG+BAjQU/ibwAA</XPD:REF>
+<XPD:REF name="Associations[30]" pathname="::Use Case View::Casos de Uso::CU_LIC::DCU_LIC::::">u69+T5M5NkqWWrgwFMeuhwAA</XPD:REF>
+<XPD:REF name="Associations[31]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">NyuWPn/460aOTdLRJSG3cwAA</XPD:REF>
+<XPD:REF name="Associations[32]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">NmsubMash0mJmsvNW6vzegAA</XPD:REF>
+<XPD:REF name="Associations[33]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">1Krx/de2JkGA+mQZtfc4yQAA</XPD:REF>
+<XPD:REF name="Associations[34]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">PR0IK/hFZkmLUeDDaLxchAAA</XPD:REF>
+<XPD:REF name="Associations[35]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">sUiD/lqrbkyO/uPaWVOPOAAA</XPD:REF>
+<XPD:REF name="Associations[36]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">dv7JF8ctIEWkgsnuprTA0QAA</XPD:REF>
+<XPD:REF name="Associations[37]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">lrpAifLXG0GsyeJ//+sHkgAA</XPD:REF>
+<XPD:REF name="Associations[38]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">ZmWInDjP3EaH6gamOXc8pwAA</XPD:REF>
+<XPD:REF name="Associations[39]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">BKvhoy+600WjsFMb7tC2VQAA</XPD:REF>
+<XPD:REF name="Associations[40]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">3tfAvjwzK0WHpE/ahIiJkgAA</XPD:REF>
+<XPD:REF name="Associations[41]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">wvEM7Q7Ub0uEShogwi1GHwAA</XPD:REF>
+<XPD:ATTR name="#Instances" type="integer">49</XPD:ATTR>
+<XPD:REF name="Instances[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">TZ0hTtvGM0KOS5Pk6NtUNQAA</XPD:REF>
+<XPD:REF name="Instances[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">whBmpP+VzkKGWS13Op5TBQAA</XPD:REF>
+<XPD:REF name="Instances[2]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">oU26FaSi2ECBmLXU+84OOwAA</XPD:REF>
+<XPD:REF name="Instances[3]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">rYBy3k9Ai0GutFvzkaxoMQAA</XPD:REF>
+<XPD:REF name="Instances[4]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">WKnJAwje/EyCVR/GAHZXIAAA</XPD:REF>
+<XPD:REF name="Instances[5]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Detalle de la Addenda::Diagramas de Interaccion::">cutA9Wed90y869GucczzhAAA</XPD:REF>
+<XPD:REF name="Instances[6]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Detalle de la Addenda::Diagramas de Interaccion::">VDalHL0Ac0mjUbiebjm/8gAA</XPD:REF>
+<XPD:REF name="Instances[7]" pathname="::Use Case View::Casos de Uso::CU_ESC::Asignar Addenda a Clientes::Diagramas de Interaccion::">W/t01x43PU29ZG1ZEj8s4gAA</XPD:REF>
+<XPD:REF name="Instances[8]" pathname="::Use Case View::Casos de Uso::CU_ESC::Asignar Addenda a Clientes::Diagramas de Interaccion::">/0uNKEg9QE6Dtr1xwNkyUwAA</XPD:REF>
+<XPD:REF name="Instances[9]" pathname="::Use Case View::Casos de Uso::CU_ESC::Regenerar Sello Digital::Diagramas de Interaccion::">N2e/hXw93k6bZ3+ytPosXQAA</XPD:REF>
+<XPD:REF name="Instances[10]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Vendedores::Diagramas de Interacción::">UmEAZBMRyUG13LzmXQM/VAAA</XPD:REF>
+<XPD:REF name="Instances[11]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Vendedores::Diagramas de Interacción::">ORbQkTqsxkewFWWoC0ShZwAA</XPD:REF>
+<XPD:REF name="Instances[12]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Vendedores::Diagramas de Interacción::">TBumdG/tFkq9VqXnlpiRBAAA</XPD:REF>
+<XPD:REF name="Instances[13]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Vendedores::Diagramas de Interacción::">fwqIMDHHgkGHgTo0qhJvcwAA</XPD:REF>
+<XPD:REF name="Instances[14]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Vendedores::Diagramas de Interacción::">b37yU+Mk3USqIWYqweUpcgAA</XPD:REF>
+<XPD:REF name="Instances[15]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Actividades Terminal::Diagramas de Interaccion::">fT2VuKG2v0SF55rNJ4CN3gAA</XPD:REF>
+<XPD:REF name="Instances[16]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">bI5W2oYhK0ilQ2TcrIRPkgAA</XPD:REF>
+<XPD:REF name="Instances[17]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">HLbXJ65fPEyEUMZ+XJbkEgAA</XPD:REF>
+<XPD:REF name="Instances[18]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">rdRj1PTbE0qeMNzMWP+KTAAA</XPD:REF>
+<XPD:REF name="Instances[19]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Detalle de la Addenda::Diagramas de Interaccion::">uUsvW18OVUKzlzwNpDiuLQAA</XPD:REF>
+<XPD:REF name="Instances[20]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Detalle de la Addenda::Diagramas de Interaccion::">V8e1y8Wcw0iRKSqWJ+tEzAAA</XPD:REF>
+<XPD:REF name="Instances[21]" pathname="::Use Case View::Casos de Uso::CU_ESC::Asignar Addenda a Clientes::Diagramas de Interaccion::">RpwYuxNXRUOCB9r0f0z+nQAA</XPD:REF>
+<XPD:REF name="Instances[22]" pathname="::Use Case View::Casos de Uso::CU_ESC::Asignar Addenda a Clientes::Diagramas de Interaccion::">zn8r/mzGKEKFa1aLWdLwUAAA</XPD:REF>
+<XPD:REF name="Instances[23]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Addenda::Diagramas de Interaccion::">86Va/KpN10aZCA3uie0djwAA</XPD:REF>
+<XPD:REF name="Instances[24]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Interfaces::Diagramas de Interaccion::">T5WpJAJI8EqrjbppUkLyhAAA</XPD:REF>
+<XPD:REF name="Instances[25]" pathname="::Use Case View::Casos de Uso::CU_ESC::Regenerar Sello Digital::Diagramas de Interaccion::">87A9JTyW8Em1W+IijJoe8gAA</XPD:REF>
+<XPD:REF name="Instances[26]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Bonos::Diagramas de Interaccion::">3Mep6xibP0OF97kO38/SkQAA</XPD:REF>
+<XPD:REF name="Instances[27]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Bonos::Diagramas de Interaccion::">/gozERZmeEKvng/WLIucewAA</XPD:REF>
+<XPD:REF name="Instances[28]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Bonos::Diagramas de Interaccion::">tkp9MMIJxU2+ojTT9zi2UgAA</XPD:REF>
+<XPD:REF name="Instances[29]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Bonos::Diagramas de Interaccion::">8M9LfebGhUOXYSK0gqdVXwAA</XPD:REF>
+<XPD:REF name="Instances[30]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Bonos::Diagramas de Interaccion::">RvMzUnrM7USQD/hf03PbAgAA</XPD:REF>
+<XPD:REF name="Instances[31]" pathname="::Use Case View::Casos de Uso::CU_ESC::Configurar Bonos::Diagramas de Interaccion::">nkCWNaOmM0aUyreXCyPCNAAA</XPD:REF>
+<XPD:REF name="Instances[32]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Bonos::Diagramas de Interaccion::">Z9JYxkLmy0m2DZFbBAmlLQAA</XPD:REF>
+<XPD:REF name="Instances[33]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Bonos::Diagramas de Interaccion::">vUujtwqvkkmZS3ZPi9WtMAAA</XPD:REF>
+<XPD:REF name="Instances[34]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Bonos::Diagramas de Interaccion::">Rf3YqP4aXUSUGIUxZuKJlAAA</XPD:REF>
+<XPD:REF name="Instances[35]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Bonos::Diagramas de Interaccion::">WL9xrHsBCEaZETjoF9a0aQAA</XPD:REF>
+<XPD:REF name="Instances[36]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Bonos::Diagramas de Interaccion::">HnYcG0Y8mUKe6rEXMqU3ewAA</XPD:REF>
+<XPD:REF name="Instances[37]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Bonos::Diagramas de Interaccion::">h/OAhuyzLESOiWcIMoRSQAAA</XPD:REF>
+<XPD:REF name="Instances[38]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Bonos::Diagramas de Interaccion::">M1Vn8G1jpEWyK4WkbOI3/QAA</XPD:REF>
+<XPD:REF name="Instances[39]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Movimientos del Almacen::Diagramas de Interaccion::">PtS1/LQ4oEagrmqFp38LVAAA</XPD:REF>
+<XPD:REF name="Instances[40]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Movimientos del Almacen::Diagramas de Interaccion::">ZzW0F3+OHk6wagm163532wAA</XPD:REF>
+<XPD:REF name="Instances[41]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Movimientos del Almacen::Diagramas de Interaccion::">/0qn8frCKkaWzuEVw9M+jwAA</XPD:REF>
+<XPD:REF name="Instances[42]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Movimientos del Almacen::Diagramas de Interaccion::">V1NV5fiyV0OmoVFUspJz8QAA</XPD:REF>
+<XPD:REF name="Instances[43]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Movimientos del Almacen::Diagramas de Interaccion::">JPixMBLP1kCq8LNzZgdQzAAA</XPD:REF>
+<XPD:REF name="Instances[44]" pathname="::Use Case View::Casos de Uso::CU_ESC::Administrar Movimientos del Almacen::Diagramas de Interaccion::">1RwV1grqUEuOaERZ5+vEYwAA</XPD:REF>
+<XPD:REF name="Instances[45]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Carga Sugerida::Diagrama de Interaccion::">V1GvV3Mpl06IIkHgVtxnawAA</XPD:REF>
+<XPD:REF name="Instances[46]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Carga Sugerida::Diagrama de Interaccion::">LnWtA/U1Z0ueGCbMiXv0GwAA</XPD:REF>
+<XPD:REF name="Instances[47]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Carga Sugerida::Diagrama de Interaccion::">DBsm7CEuYk+X47KnuIKRCQAA</XPD:REF>
+<XPD:REF name="Instances[48]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Carga Sugerida::Diagrama de Interaccion::">rnVhys4dxUq7nr3j/Y8MTgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[1]" type="UMLActor" guid="30nkLiCG4ECi+O4mY+2LJQAA">
+<XPD:ATTR name="Name" type="string">Base de Datos</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">210</XPD:ATTR>
+<XPD:REF name="Views[0]">PvqTETkFJkCum3e5B8JGuQAA</XPD:REF>
+<XPD:REF name="Views[1]">3ZLFgCGKT0+OpZdbaKmJ/QAA</XPD:REF>
+<XPD:REF name="Views[2]">HTddiknc/U+lKlf0O2Qa9AAA</XPD:REF>
+<XPD:REF name="Views[3]">9CrUu6nSbUed5dLeM8bXLgAA</XPD:REF>
+<XPD:REF name="Views[4]">QlnK69b3BkKNMrezfK4SSAAA</XPD:REF>
+<XPD:REF name="Views[5]">fJ6Ryo9BQ02EkxpHB/MXogAA</XPD:REF>
+<XPD:REF name="Views[6]">DADEMDHIAEKaa1TCqLh4ygAA</XPD:REF>
+<XPD:REF name="Views[7]">10FoIMt+n0Wkn2C5wFMARAAA</XPD:REF>
+<XPD:REF name="Views[8]">93Pks3o5f0uAoSYpl4DX7gAA</XPD:REF>
+<XPD:REF name="Views[9]">oiDx0+OF4kKq0QZ0IJJ37AAA</XPD:REF>
+<XPD:REF name="Views[10]">u50261JO6EKpydLwTbTUzgAA</XPD:REF>
+<XPD:REF name="Views[11]">Z8mTCNANXkOxcNkDSOYfbAAA</XPD:REF>
+<XPD:REF name="Views[12]">ZHRGySutsUSjqm8+V+j9IwAA</XPD:REF>
+<XPD:REF name="Views[13]">KlXzCd2Mfk+yXPwE8rjAkAAA</XPD:REF>
+<XPD:REF name="Views[14]">e5yJOlOVQEOf8vYaZ2On0AAA</XPD:REF>
+<XPD:REF name="Views[15]">po7GkeNT0Eeke386xDtbBQAA</XPD:REF>
+<XPD:REF name="Views[16]">WYlHO8cAV0GRKBu7bPlQcQAA</XPD:REF>
+<XPD:REF name="Views[17]">7Zvz8GNf7k+HK34k9vSW+wAA</XPD:REF>
+<XPD:REF name="Views[18]">ueFXVX22xkiQsmbhMOrZJwAA</XPD:REF>
+<XPD:REF name="Views[19]">6/pg2sFtT0qHUEFXtwTj8AAA</XPD:REF>
+<XPD:REF name="Views[20]">lY2Xg4ufZkOTLOBu6zrzMAAA</XPD:REF>
+<XPD:REF name="Views[21]">j3L2O4xl3kCADVP3LPuWJgAA</XPD:REF>
+<XPD:REF name="Views[22]">g4IFBJpbpEuWl71MxeFfSAAA</XPD:REF>
+<XPD:REF name="Views[23]">hoOylwy4PUG/Et3WjFInrwAA</XPD:REF>
+<XPD:REF name="Views[24]">3ZeFxU5K9Uu+HE0sWnAMcQAA</XPD:REF>
+<XPD:REF name="Views[25]">a8VWYxS8mke5bk0M/ZYC8gAA</XPD:REF>
+<XPD:REF name="Views[26]">RSsxaxi6MUqmAkGVmejQ2AAA</XPD:REF>
+<XPD:REF name="Views[27]">uik5obnxJEyZs2sCpmtr5AAA</XPD:REF>
+<XPD:REF name="Views[28]">/x6GNIYzPk+DGQYQyATuQgAA</XPD:REF>
+<XPD:REF name="Views[29]">X9BEcfDeHEWLmmwF0VxpDQAA</XPD:REF>
+<XPD:REF name="Views[30]">cPzdZ79czU6XVa4r1LkU1wAA</XPD:REF>
+<XPD:REF name="Views[31]">1FQEexbRYUG0W3eJgrCWowAA</XPD:REF>
+<XPD:REF name="Views[32]">CbbR2YpMHUq5TkWO46ubAgAA</XPD:REF>
+<XPD:REF name="Views[33]">EazfsKW1lEOVElnsPkiuyQAA</XPD:REF>
+<XPD:REF name="Views[34]">NvWguiQ/jEKuG8R7VixbYQAA</XPD:REF>
+<XPD:REF name="Views[35]">8sSrMG91FEeTfanSdAtF8AAA</XPD:REF>
+<XPD:REF name="Views[36]">ngI4YB5FC0+RJ/ZqMfFPrwAA</XPD:REF>
+<XPD:REF name="Views[37]">4QTTPXIT10uH58pKUu+LzgAA</XPD:REF>
+<XPD:REF name="Views[38]">7J+MHsBH60eB64kq+ZVsIQAA</XPD:REF>
+<XPD:REF name="Views[39]">d/3FPS2S4UGsHRpBaAMUegAA</XPD:REF>
+<XPD:REF name="Views[40]">bvYSgnPa60We2U3mD65BFgAA</XPD:REF>
+<XPD:REF name="Views[41]">PFA2gjypTEm7qkrT5Vr55QAA</XPD:REF>
+<XPD:REF name="Views[42]">5Yw0W2Jmlki/sCd8Dl+TEwAA</XPD:REF>
+<XPD:REF name="Views[43]">IGqpJJ9eNUCAFMyD4NHAZAAA</XPD:REF>
+<XPD:REF name="Views[44]">zhiF3vZ0UkmhWKcE/FAB5gAA</XPD:REF>
+<XPD:REF name="Views[45]">yEaINstyHkiGnUuUKkpDogAA</XPD:REF>
+<XPD:REF name="Views[46]">tveQh6SKhUun2OcA+9x7IgAA</XPD:REF>
+<XPD:REF name="Views[47]">mtEFDsRkAkeDXgf92iPVTgAA</XPD:REF>
+<XPD:REF name="Views[48]">qoHXH+akkUm4B9YHhlxACwAA</XPD:REF>
+<XPD:REF name="Views[49]">g+isPdgiDkOPCstBNUM/AQAA</XPD:REF>
+<XPD:REF name="Views[50]">UFnuwX8ed0yv3RNIyTdJiwAA</XPD:REF>
+<XPD:REF name="Views[51]">9qF2uAlK/kW8YQT6wjJOzAAA</XPD:REF>
+<XPD:REF name="Views[52]">2hrIKdXccEG8ixDstiXIzwAA</XPD:REF>
+<XPD:REF name="Views[53]">zo9VJSTiVkSsqUNLtKTB9wAA</XPD:REF>
+<XPD:REF name="Views[54]">PEWwqOwDi0aqot81rDGmNwAA</XPD:REF>
+<XPD:REF name="Views[55]">sEoVgI6Y+kOq9hTXPjNMLQAA</XPD:REF>
+<XPD:REF name="Views[56]">ZC/pbl12Hk6EtcXBt3U+jgAA</XPD:REF>
+<XPD:REF name="Views[57]">XrKt5wQNjUyNA/qH6rp4mAAA</XPD:REF>
+<XPD:REF name="Views[58]">pK1xEKMqcEuQrJCURjOAPQAA</XPD:REF>
+<XPD:REF name="Views[59]">ODsr2tyPmkal696ZKrHG6wAA</XPD:REF>
+<XPD:REF name="Views[60]">wb0oWgiGgUCaVtI99Q2gBwAA</XPD:REF>
+<XPD:REF name="Views[61]">6f3vxnVKckWb9V6SkVYYLgAA</XPD:REF>
+<XPD:REF name="Views[62]">Gka/1FskmkqRg4pqlyZVtQAA</XPD:REF>
+<XPD:REF name="Views[63]">aHclOWqJ+kK/cRr2eLt9EwAA</XPD:REF>
+<XPD:REF name="Views[64]">fMMqqtqdEUOe7tsBrL/VLQAA</XPD:REF>
+<XPD:REF name="Views[65]">hvOzCF1sHEmym2nHO43BtQAA</XPD:REF>
+<XPD:REF name="Views[66]">t7NUblHZw0241ruz+7/F1wAA</XPD:REF>
+<XPD:REF name="Views[67]">53crhU6kWUGWbfRIn/VrGwAA</XPD:REF>
+<XPD:REF name="Views[68]">hByRoj/YTEe2UlYcEkuBXgAA</XPD:REF>
+<XPD:REF name="Views[69]">o+UtNFXfNUuK2AOcfE+JvwAA</XPD:REF>
+<XPD:REF name="Views[70]">ha/95oaBfkGiIS+Z0NnNmQAA</XPD:REF>
+<XPD:REF name="Views[71]">eE2Tez1R00+4jmoLFujB3gAA</XPD:REF>
+<XPD:REF name="Views[72]">aPfJFsPjI0Wixp5r0DlDhgAA</XPD:REF>
+<XPD:REF name="Views[73]">QlvaFK1dDUqV+UXzZQfdFgAA</XPD:REF>
+<XPD:REF name="Views[74]">1RSXkA8aDUOywbvzoEC3ywAA</XPD:REF>
+<XPD:REF name="Views[75]">4DrsmmoYTU2xi5mz+vPregAA</XPD:REF>
+<XPD:REF name="Views[76]">u0uHsZsm3kaRAlm+WK9MoQAA</XPD:REF>
+<XPD:REF name="Views[77]">7BFIOa5PIUen/DsciUg5DgAA</XPD:REF>
+<XPD:REF name="Views[78]">2pfFwwcuOk2Qml4kieeeKQAA</XPD:REF>
+<XPD:REF name="Views[79]">fSAgtDoU0EWLjQLcWI72+wAA</XPD:REF>
+<XPD:REF name="Views[80]">uZpT1CtHPkKaI9j77qQGuAAA</XPD:REF>
+<XPD:REF name="Views[81]">95ubetndzEqf4AogQosUJAAA</XPD:REF>
+<XPD:REF name="Views[82]">hGXX7Y2bmUakwSlxJ3LN+QAA</XPD:REF>
+<XPD:REF name="Views[83]">BKni3DDR50aESrKPyanuagAA</XPD:REF>
+<XPD:REF name="Views[84]">FQRTio2dKUObmeo/csg7jAAA</XPD:REF>
+<XPD:REF name="Views[85]">OHXy7jvuzUWaRYNWeeFXWAAA</XPD:REF>
+<XPD:REF name="Views[86]">/c0tZM0VQ0COnxLyH1VxLgAA</XPD:REF>
+<XPD:REF name="Views[87]">9t2mJxnCLUGJigRx/ifsKQAA</XPD:REF>
+<XPD:REF name="Views[88]">MtJoJzKb80myJTWf6GfpQAAA</XPD:REF>
+<XPD:REF name="Views[89]">KYsoXeF7lkKtRgI2Oi4fUQAA</XPD:REF>
+<XPD:REF name="Views[90]">QJia/hkOz0uASbzBQUJWMwAA</XPD:REF>
+<XPD:REF name="Views[91]">b2WA96ZYCEyCI2otNod9/AAA</XPD:REF>
+<XPD:REF name="Views[92]">MOKc73ecpE+7h4rbk5ozzAAA</XPD:REF>
+<XPD:REF name="Views[93]">f4KNhFqisU6KpF5bsKbvHAAA</XPD:REF>
+<XPD:REF name="Views[94]">hsf3VNyHC0aFQSuTpHaqJQAA</XPD:REF>
+<XPD:REF name="Views[95]">x5Xs4Vo1hESpnztMtvhO+gAA</XPD:REF>
+<XPD:REF name="Views[96]">kI+yl86AtEK50R956NiAbgAA</XPD:REF>
+<XPD:REF name="Views[97]">O39kJoQFGkWp6k2CaWE1AgAA</XPD:REF>
+<XPD:REF name="Views[98]">e9WCi1jZ5kWttwIAz2WN+AAA</XPD:REF>
+<XPD:REF name="Views[99]">aiTMdjknpUKvwwT0yXmhugAA</XPD:REF>
+<XPD:REF name="Views[100]">zecGfobLrEu6g3ix3lxHdgAA</XPD:REF>
+<XPD:REF name="Views[101]">mn58Na/FV0Gd/1Su2/jLvAAA</XPD:REF>
+<XPD:REF name="Views[102]">SygqrC+17Eat/Su3YdZC9wAA</XPD:REF>
+<XPD:REF name="Views[103]">0T18hK6u4kmKgTFroMZKawAA</XPD:REF>
+<XPD:REF name="Views[104]">DT6h7upfNU6KLOpK7ibY8AAA</XPD:REF>
+<XPD:REF name="Views[105]">PEkDqdfS6ESdVH0oppb/lgAA</XPD:REF>
+<XPD:REF name="Views[106]">lucXwyST1k2xXM4DWOf9rQAA</XPD:REF>
+<XPD:REF name="Views[107]">hOYFgCZgK0iHfZ6J1vFplQAA</XPD:REF>
+<XPD:REF name="Views[108]">dPcn+39Ia02ngHBaD2Fr9gAA</XPD:REF>
+<XPD:REF name="Views[109]">Vjfzs3nT0UKYaM9YQ/qNVwAA</XPD:REF>
+<XPD:REF name="Views[110]">4NEM55wCzUm9CkLXudd9NwAA</XPD:REF>
+<XPD:REF name="Views[111]">1xpp/BwVXkCaN3C6g0/DOAAA</XPD:REF>
+<XPD:REF name="Views[112]">CXyOt9FI3Eq0NusTnI7B7AAA</XPD:REF>
+<XPD:REF name="Views[113]">9r/l8N8qjkOZPywNK92BewAA</XPD:REF>
+<XPD:REF name="Views[114]">GA4QMWYr2Umxcyw70UmI9AAA</XPD:REF>
+<XPD:REF name="Views[115]">DLBwE9TH+EmcEyb+rh7W2gAA</XPD:REF>
+<XPD:REF name="Views[116]">/5hYbdgxe06ZKkgBVmjbywAA</XPD:REF>
+<XPD:REF name="Views[117]">5GJvM4WNgE6baHp+dH6T5gAA</XPD:REF>
+<XPD:REF name="Views[118]">879cwPgcRUW3rFifXUQV4wAA</XPD:REF>
+<XPD:REF name="Views[119]">LPAE/XnFCE28AimNiXlZUwAA</XPD:REF>
+<XPD:REF name="Views[120]">hrX0km8EOkOA5pi2SIHJcwAA</XPD:REF>
+<XPD:REF name="Views[121]">+YqaPyr0ekGr71acFAh8CwAA</XPD:REF>
+<XPD:REF name="Views[122]">4ztxPVUZhEWm8G1lZhk22gAA</XPD:REF>
+<XPD:REF name="Views[123]">cMuX1gSl1kWR1oAFUcno2gAA</XPD:REF>
+<XPD:REF name="Views[124]">avxzpjZu4U6fC6vGGRv1DwAA</XPD:REF>
+<XPD:REF name="Views[125]">vgvK4B/JDE2Bfvf8R2VFOwAA</XPD:REF>
+<XPD:REF name="Views[126]">XkPV+4MWKUuWAT257S9iMwAA</XPD:REF>
+<XPD:REF name="Views[127]">m4TeQz1H9kKEoE6kwfP6XAAA</XPD:REF>
+<XPD:REF name="Views[128]">g/qvuK5mbk+GURVE3vDotAAA</XPD:REF>
+<XPD:REF name="Views[129]">ZX46rAEDhEyHdCZh9FxyawAA</XPD:REF>
+<XPD:REF name="Views[130]">SvN9nUVDlEe1+YWGgFiqywAA</XPD:REF>
+<XPD:REF name="Views[131]">gQAM9pGlF0WVswiRupt6SgAA</XPD:REF>
+<XPD:REF name="Views[132]">y0I18Cvs20CCLzYRqfie9AAA</XPD:REF>
+<XPD:REF name="Views[133]">cnmuq+WC70SqXuU4ta1buAAA</XPD:REF>
+<XPD:REF name="Views[134]">gj4Q0hMHGkCL+gqlZ5h2MgAA</XPD:REF>
+<XPD:REF name="Views[135]">klUCnUGQOkarLRxLYeE4ZwAA</XPD:REF>
+<XPD:REF name="Views[136]">sxz7/LP9VEyFwemaiQ/LrQAA</XPD:REF>
+<XPD:REF name="Views[137]">LK5+aMkhB0Gfkwg2ZohowQAA</XPD:REF>
+<XPD:REF name="Views[138]">HuHtamMVNkiDOsF5brwI1QAA</XPD:REF>
+<XPD:REF name="Views[139]">kCVVEXf4T06KYqyW+1T04wAA</XPD:REF>
+<XPD:REF name="Views[140]">DklwPEQRGU2v+tXRMFmBggAA</XPD:REF>
+<XPD:REF name="Views[141]">Lv6iDCxlcUSfm+uFCuN3ngAA</XPD:REF>
+<XPD:REF name="Views[142]">Y8O2QXP0zUaKCNLU4v9fewAA</XPD:REF>
+<XPD:REF name="Views[143]">9GhtlM/xwk+/b7eNbs2YbAAA</XPD:REF>
+<XPD:REF name="Views[144]">PfZEhLyVZEamjVWh064nRgAA</XPD:REF>
+<XPD:REF name="Views[145]">PipWLTJjGk+OlbqwrlA60gAA</XPD:REF>
+<XPD:REF name="Views[146]">BUFnqJ5vZk6mKRAH5m9OIgAA</XPD:REF>
+<XPD:REF name="Views[147]">3toNUuAkDkqRVyQgXsqDBgAA</XPD:REF>
+<XPD:REF name="Views[148]">1GqqitycJkGVrYiBfbMl8wAA</XPD:REF>
+<XPD:REF name="Views[149]">vFe+l5aX3kO1uyV500z3KAAA</XPD:REF>
+<XPD:REF name="Views[150]">FYtus7X7VkquEstG/W8iwgAA</XPD:REF>
+<XPD:REF name="Views[151]">wl8oIjuZakWWeDFAVyI5BwAA</XPD:REF>
+<XPD:REF name="Views[152]">RLDQS6uFU06w86BNV1OfVwAA</XPD:REF>
+<XPD:REF name="Views[153]">3P+As+709EWNbM+41fZtCgAA</XPD:REF>
+<XPD:REF name="Views[154]">fbO6LFRgikiK0/sVsqddYAAA</XPD:REF>
+<XPD:REF name="Views[155]">QO6S5z3ffkOVhnQu2hhmvgAA</XPD:REF>
+<XPD:REF name="Views[156]">tMeWDZbvT0mXIywOyyeUhQAA</XPD:REF>
+<XPD:REF name="Views[157]">v4wP2ntrfUuwDJct5Bh+FgAA</XPD:REF>
+<XPD:REF name="Views[158]">133yJGIDRkGixBhywXUx2AAA</XPD:REF>
+<XPD:REF name="Views[159]">3lyRk4S5ZkypO9AHROIK3gAA</XPD:REF>
+<XPD:REF name="Views[160]">OclQbNqC+kCg80nJj+BjyAAA</XPD:REF>
+<XPD:REF name="Views[161]">N3+/wWUtT0qreM1OTO1ZwwAA</XPD:REF>
+<XPD:REF name="Views[162]">yL35COYtW0KVqzSfQV4zuwAA</XPD:REF>
+<XPD:REF name="Views[163]">z5muZlRmTE+RfXSvnd1xkAAA</XPD:REF>
+<XPD:REF name="Views[164]">AL5zDd4BIk6e19ZiNfuHkQAA</XPD:REF>
+<XPD:REF name="Views[165]">Hp8dH53rK0aCk64elHNZCQAA</XPD:REF>
+<XPD:REF name="Views[166]">/uhnCW5UVkS504c1p97ftAAA</XPD:REF>
+<XPD:REF name="Views[167]">s6NztUx9ak+f30NPOk1WmAAA</XPD:REF>
+<XPD:REF name="Views[168]">y1YFE/4hCkiOJYah6hqzBgAA</XPD:REF>
+<XPD:REF name="Views[169]">NMzC3O5ZJ0iXwubJKGYmZwAA</XPD:REF>
+<XPD:REF name="Views[170]">VbTCtRcCckmOmvmdrdYEewAA</XPD:REF>
+<XPD:REF name="Views[171]">mgb9s2q8VkaRR45lQmNKYgAA</XPD:REF>
+<XPD:REF name="Views[172]">7U11EG69hEGm3hvZspRpJgAA</XPD:REF>
+<XPD:REF name="Views[173]">dYA5SfJAX0Glq2xWHwqPfAAA</XPD:REF>
+<XPD:REF name="Views[174]">gUmKWPGFgkGvQM18D8BWxQAA</XPD:REF>
+<XPD:REF name="Views[175]">8LyJWEPR/Ui4IW0TYPML3gAA</XPD:REF>
+<XPD:REF name="Views[176]">hiqRgofREE2+WEdg+H2xmwAA</XPD:REF>
+<XPD:REF name="Views[177]">1p9zkt+2hECGJPvDNQGYvAAA</XPD:REF>
+<XPD:REF name="Views[178]">BHrsbPsj+EqKBk5gA4wI/QAA</XPD:REF>
+<XPD:REF name="Views[179]">gz8E+jsqHE2gjtpVClxQTQAA</XPD:REF>
+<XPD:REF name="Views[180]">OghhiFqRWkCD/MZ9cdfQUgAA</XPD:REF>
+<XPD:REF name="Views[181]">zPdX136bOUO31+4tIzI0JQAA</XPD:REF>
+<XPD:REF name="Views[182]">WORc0sF4hkuDUc8nYBgoJwAA</XPD:REF>
+<XPD:REF name="Views[183]">2HQ6r5pIUUqqWKZnu4/aVwAA</XPD:REF>
+<XPD:REF name="Views[184]">TK9yu2UoWE+TAxVgMOqlEwAA</XPD:REF>
+<XPD:REF name="Views[185]">ikzSI/sM4EOc2HsRuFkJUwAA</XPD:REF>
+<XPD:REF name="Views[186]">fS3qgbjgCEiX8RerEooPwQAA</XPD:REF>
+<XPD:REF name="Views[187]">KxDPTZmRY0iA+AMEJU/CPQAA</XPD:REF>
+<XPD:REF name="Views[188]">abRvN3GZN02fbgIQJ4dgoAAA</XPD:REF>
+<XPD:REF name="Views[189]">1j7QCC0gHkKrR2GvknBxfAAA</XPD:REF>
+<XPD:REF name="Views[190]">VSdY5bYi+U+8jJieGICxJAAA</XPD:REF>
+<XPD:REF name="Views[191]">HO8LvDhM+Emgqz2vN0DTeQAA</XPD:REF>
+<XPD:REF name="Views[192]">X3xJ3HaLekmLB5uaYqQrrwAA</XPD:REF>
+<XPD:REF name="Views[193]">fERQIBCRy0ulUGcWD+0g9gAA</XPD:REF>
+<XPD:REF name="Views[194]">9j+uimLvMkWxjcvMFI1gkwAA</XPD:REF>
+<XPD:REF name="Views[195]">WeRqthLAdE+UmMxIHdpJmwAA</XPD:REF>
+<XPD:REF name="Views[196]">LirAHX7iSU+RzuYtYbW3JgAA</XPD:REF>
+<XPD:REF name="Views[197]">8UeELc9RVUGa2w6bSjAfAAAA</XPD:REF>
+<XPD:REF name="Views[198]">5PrF/al4gUeTN8aaWmxMGAAA</XPD:REF>
+<XPD:REF name="Views[199]">LxtyFee8HEOvpAH9TF724wAA</XPD:REF>
+<XPD:REF name="Views[200]">n0/JRUynOUq6VHoDyN4kWAAA</XPD:REF>
+<XPD:REF name="Views[201]">xi9lpPxVC02ke6j7vl0srQAA</XPD:REF>
+<XPD:REF name="Views[202]">i0nMIBhFf0GXVnNiKrq4JQAA</XPD:REF>
+<XPD:REF name="Views[203]">7JqGCnMw+EWzLw8CcyOJeQAA</XPD:REF>
+<XPD:REF name="Views[204]">eU9Cvw/FD0uK4m7V3NMYxwAA</XPD:REF>
+<XPD:REF name="Views[205]">da2KR3Q2eEGf9o5fwEvCEgAA</XPD:REF>
+<XPD:REF name="Views[206]">gUOXmOJNFk+YMi2a7ES7agAA</XPD:REF>
+<XPD:REF name="Views[207]">Gzk85iWa2kao3y1dYGPnlQAA</XPD:REF>
+<XPD:REF name="Views[208]">wOoXYblrg0yxXPCGcim2yQAA</XPD:REF>
+<XPD:REF name="Views[209]">7qixn4/CTEWCu5r8XL6ODAAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">63</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">5xe2HPv+fUmtzBEVh5qQZgAA</XPD:REF>
+<XPD:REF name="Associations[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">zYCPSewwhkCGW0NnWaCKjgAA</XPD:REF>
+<XPD:REF name="Associations[2]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">hJarm3DZ0UarKrH6VTU//QAA</XPD:REF>
+<XPD:REF name="Associations[3]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">IJjdE0IfTUaj+gUw/RFAIgAA</XPD:REF>
+<XPD:REF name="Associations[4]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">wSc58EWJKUCleZUWT8ttTAAA</XPD:REF>
+<XPD:REF name="Associations[5]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">IwxAihEmXk+D0Uz/B7SMEQAA</XPD:REF>
+<XPD:REF name="Associations[6]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">4udgGD9ZJkeQ0UgA/+MXGAAA</XPD:REF>
+<XPD:REF name="Associations[7]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">8v/6GS0/mUu7KOA5isf7vgAA</XPD:REF>
+<XPD:REF name="Associations[8]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">6RvuZ77I8EeJg3xZAY4Q1QAA</XPD:REF>
+<XPD:REF name="Associations[9]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">dKf6z8UFD0GG7JKZGczNgQAA</XPD:REF>
+<XPD:REF name="Associations[10]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">j5w2TClywEWdAqKR71aTOQAA</XPD:REF>
+<XPD:REF name="Associations[11]" pathname="::Use Case View::Casos de Uso::CU_LIC::DCU_LIC::::">t1G9UAwB2kWnODIQ71QXIgAA</XPD:REF>
+<XPD:REF name="Associations[12]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">IGXEO0oBV0W8XDbjSYUojgAA</XPD:REF>
+<XPD:REF name="Associations[13]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">akfeChohX0yiDsiu50+vXAAA</XPD:REF>
+<XPD:REF name="Associations[14]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">81aBHHkOX0uOtqUKALVMSwAA</XPD:REF>
+<XPD:REF name="Associations[15]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">IpfvqbDqEk6m/NCJ0g9rYgAA</XPD:REF>
+<XPD:REF name="Associations[16]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">n69kSUxSyk62vtjtDowV1gAA</XPD:REF>
+<XPD:REF name="Associations[17]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">OeJrT9MV10aDIuneCEAtogAA</XPD:REF>
+<XPD:REF name="Associations[18]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">Ym8bJMsy2kWUr9KuThCAYgAA</XPD:REF>
+<XPD:REF name="Associations[19]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">WsnRFp3sXEOD6JlbcvdpyQAA</XPD:REF>
+<XPD:REF name="Associations[20]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">fdM5oqZZqU6KQa8mHm1yEwAA</XPD:REF>
+<XPD:REF name="Associations[21]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">Q4364itYkEKF5UfVv4dTMQAA</XPD:REF>
+<XPD:REF name="Associations[22]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">Ajjn+wTzxUWaqFfXqNQxBwAA</XPD:REF>
+<XPD:REF name="Associations[23]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">jrjaH30gPkajOuacCRf9dQAA</XPD:REF>
+<XPD:REF name="Associations[24]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">+lrCYoeZnU2AoY2OfXz9WQAA</XPD:REF>
+<XPD:REF name="Associations[25]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">oUMBSZ5nc0SjwvWo20EivQAA</XPD:REF>
+<XPD:REF name="Associations[26]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">eE5ENzc9hEC/0LhA43WW2AAA</XPD:REF>
+<XPD:REF name="Associations[27]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">9DAItmPRF0q78RVMnnXa6wAA</XPD:REF>
+<XPD:REF name="Associations[28]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">rRP/gKk4Bk+GTiYCUMqtPwAA</XPD:REF>
+<XPD:REF name="Associations[29]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">copSbshPhkWl2aq6+QshdAAA</XPD:REF>
+<XPD:REF name="Associations[30]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">NnyIDNKfs0WWibCucvaHvgAA</XPD:REF>
+<XPD:REF name="Associations[31]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">2i9tObMUWUyQ90heXmnzjgAA</XPD:REF>
+<XPD:REF name="Associations[32]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">pHV0BRPmOkWaAhiINR/IXwAA</XPD:REF>
+<XPD:REF name="Associations[33]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">hGdai4E510qzmpuQerhiAAAA</XPD:REF>
+<XPD:REF name="Associations[34]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">0oyVhpOnAECUn22LHNHAowAA</XPD:REF>
+<XPD:REF name="Associations[35]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">+rwNR0CbCESUMCjStRbM7QAA</XPD:REF>
+<XPD:REF name="Associations[36]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">RwHiTYAAfEePMgcWU7HikQAA</XPD:REF>
+<XPD:REF name="Associations[37]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">erfCHdgiG0qhrEz+P86cUQAA</XPD:REF>
+<XPD:REF name="Associations[38]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">OlbQCS6sOU6CBuGWDaLmIwAA</XPD:REF>
+<XPD:REF name="Associations[39]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">vO82qRBFT0iYUhsIqaeHcAAA</XPD:REF>
+<XPD:REF name="Associations[40]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">0rWi1/CRnUWziJbTUWwyqwAA</XPD:REF>
+<XPD:REF name="Associations[41]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">N11kHB1CokyiNgXaGTw23wAA</XPD:REF>
+<XPD:REF name="Associations[42]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">RVbLQiVA+0Osbm1iS01EMQAA</XPD:REF>
+<XPD:REF name="Associations[43]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">UTA5UIaJoUilqUKjRYKMiwAA</XPD:REF>
+<XPD:REF name="Associations[44]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">bA9QsVmQZEyxZkUXoH/PZwAA</XPD:REF>
+<XPD:REF name="Associations[45]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">+13I7de1aUKWPcHZrhTmGgAA</XPD:REF>
+<XPD:REF name="Associations[46]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">QRm7XA8UXUGdqFFLCx8LJAAA</XPD:REF>
+<XPD:REF name="Associations[47]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">aowhHFHMD0W5/03pdjf2IwAA</XPD:REF>
+<XPD:REF name="Associations[48]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">6WqMkJFBEUSzXr22L2nm0AAA</XPD:REF>
+<XPD:REF name="Associations[49]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">4furklVIAESYfAOWZxlyGgAA</XPD:REF>
+<XPD:REF name="Associations[50]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">fA75F1mwNEmZzmLxU5c+8QAA</XPD:REF>
+<XPD:REF name="Associations[51]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">42ypShsVHkSeTNHscwTMFAAA</XPD:REF>
+<XPD:REF name="Associations[52]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">LUdmzI/x40epEbYvq83lAwAA</XPD:REF>
+<XPD:REF name="Associations[53]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">JWBdx1Z+Akqh2oAsuyK76gAA</XPD:REF>
+<XPD:REF name="Associations[54]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">hsFDojS41UuRo6xM1rFmdQAA</XPD:REF>
+<XPD:REF name="Associations[55]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">nhVLFh6vzkyNLuLxWoQBxwAA</XPD:REF>
+<XPD:REF name="Associations[56]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">0jOMUPlc+ECGnhnqYZFxbgAA</XPD:REF>
+<XPD:REF name="Associations[57]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">hnA8JeB+tEKKOKOzkR7/zAAA</XPD:REF>
+<XPD:REF name="Associations[58]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">FqJt68OUtEqQ1ZgLmym6HAAA</XPD:REF>
+<XPD:REF name="Associations[59]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">viaY5849E0+eSo5CiRgC5AAA</XPD:REF>
+<XPD:REF name="Associations[60]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">k0rwwkqPmUSQ9APGzzpEZgAA</XPD:REF>
+<XPD:REF name="Associations[61]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">zyJO+Y9vn0WiuEtbHzSslQAA</XPD:REF>
+<XPD:REF name="Associations[62]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">+7vZouRMjkywDm0G6I20WgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[2]" type="UMLActor" guid="PmHT2yjkRkeu2EGpQZHeLgAA">
+<XPD:ATTR name="Name" type="string">ServidorWEB</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">18</XPD:ATTR>
+<XPD:REF name="Views[0]">m9hx0ZNnPUGGUzWoeiIUjAAA</XPD:REF>
+<XPD:REF name="Views[1]">cJRQkLnZckCt+TyoPaHZnwAA</XPD:REF>
+<XPD:REF name="Views[2]">5XTWzUujsEOCloj7mnU+2gAA</XPD:REF>
+<XPD:REF name="Views[3]">Bs+UIqbXRUi878uAfsnh4wAA</XPD:REF>
+<XPD:REF name="Views[4]">IzVtdxDmik2RGLCWVzMd1QAA</XPD:REF>
+<XPD:REF name="Views[5]">5wkmGhwrlUGhfSkDujgLPQAA</XPD:REF>
+<XPD:REF name="Views[6]">nkHFJGnUnEWcixuaWbx1kgAA</XPD:REF>
+<XPD:REF name="Views[7]">ecqwvqIfY0OEuIW1o7aKbQAA</XPD:REF>
+<XPD:REF name="Views[8]">rwxglErXTki71ex3/z1OmAAA</XPD:REF>
+<XPD:REF name="Views[9]">Cunz5e6/tUqv02FSPmaLSgAA</XPD:REF>
+<XPD:REF name="Views[10]">YIo4OJXcwESLv+KK8uwLrwAA</XPD:REF>
+<XPD:REF name="Views[11]">6EhTG8sUa0GkjyK9teowgwAA</XPD:REF>
+<XPD:REF name="Views[12]">v5FpTlRq90+xd3q6OoW3ZAAA</XPD:REF>
+<XPD:REF name="Views[13]">EnUFtP2EH06yB7+b9IY2bwAA</XPD:REF>
+<XPD:REF name="Views[14]">3qKpj+cni0qExn7dtyWPLwAA</XPD:REF>
+<XPD:REF name="Views[15]">5YJtrR6q80agN6LylFMzlwAA</XPD:REF>
+<XPD:REF name="Views[16]">MW05xfE0ZESVy7DduB/BRAAA</XPD:REF>
+<XPD:REF name="Views[17]">YaW64QIi+k+A19/FeJSR6gAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">7</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">qO82hzXTVkaVK15UHzYHDwAA</XPD:REF>
+<XPD:REF name="Associations[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">RwAb/04nl0GMXaonlK7foQAA</XPD:REF>
+<XPD:REF name="Associations[2]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">ZvxdJ7xuxEOBj8WMovG55AAA</XPD:REF>
+<XPD:REF name="Associations[3]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_SIN::DCU_SIN::::">6L3/z3mk2UuwQlndfp0DHAAA</XPD:REF>
+<XPD:REF name="Associations[4]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">Ygsv/px6MEiLs2D6WjsO/QAA</XPD:REF>
+<XPD:REF name="Associations[5]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_INT::DCU_INT::::">5tFM5okoCUaSabwxyI0uMQAA</XPD:REF>
+<XPD:REF name="Associations[6]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_SIN::DCU_SIN::::">2FRhmGRi30SI9d9OcTmmywAA</XPD:REF>
+<XPD:ATTR name="#Instances" type="integer">1</XPD:ATTR>
+<XPD:REF name="Instances[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::Descargar Interfaces XML::Diagramas de Interaccion::">S3kHrWzLFUyeQpnagN5AAQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[3]" type="UMLActor" guid="oRXOvCp5w0W7v7xpWZqfeQAA">
+<XPD:ATTR name="Name" type="string">RecibeCFD</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">3</XPD:ATTR>
+<XPD:REF name="Views[0]">nRA6cRoh6kOnHGobsGASRAAA</XPD:REF>
+<XPD:REF name="Views[1]">L2YVxQa0ZEiP1JLfu4YoNAAA</XPD:REF>
+<XPD:REF name="Views[2]">G31v5NE8t0ePqUBcyulFuQAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_SIN::DCU_SIN::::">Wjm9yfDBlUe+002EH9xy4wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[4]" type="UMLActor" guid="n0xJilHCHkmtnxJUxSSDBwAA">
+<XPD:ATTR name="Name" type="string">Vendedor</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">99</XPD:ATTR>
+<XPD:REF name="Views[0]">7m4hVEoOZUKhzOLwI6FcIwAA</XPD:REF>
+<XPD:REF name="Views[1]">/zI9B8hjNEOpV8K3qImBYgAA</XPD:REF>
+<XPD:REF name="Views[2]">NpHl6OaQfk+/MN+5j6UMvQAA</XPD:REF>
+<XPD:REF name="Views[3]">BR4zaxJxXEi/5GfAQUOUaQAA</XPD:REF>
+<XPD:REF name="Views[4]">azqU2Jxmv0WbhwZHDiaXVwAA</XPD:REF>
+<XPD:REF name="Views[5]">Z90YdO1/1USzFbhdGQX9NQAA</XPD:REF>
+<XPD:REF name="Views[6]">Ammyrj0fn0K0JUsuiamomQAA</XPD:REF>
+<XPD:REF name="Views[7]">eEG2CYTlpU2YTj81rS5ltwAA</XPD:REF>
+<XPD:REF name="Views[8]">JX93NE4YSkSVte53/J/AdQAA</XPD:REF>
+<XPD:REF name="Views[9]">xLvM1PGSakGWv1gcIDL3GwAA</XPD:REF>
+<XPD:REF name="Views[10]">ilStD4MlZUiv3AFWez//ygAA</XPD:REF>
+<XPD:REF name="Views[11]">8YExtx9WBEaN+puGnAGE6wAA</XPD:REF>
+<XPD:REF name="Views[12]">BzWKL6jUVEy2E09l9264AAAA</XPD:REF>
+<XPD:REF name="Views[13]">f+UWhcsR9kCNwz7ztkJ3VAAA</XPD:REF>
+<XPD:REF name="Views[14]">ikiadgzo9UWNVlD10TgwyAAA</XPD:REF>
+<XPD:REF name="Views[15]">HcUJB8IcxESm7h26Ibo4vgAA</XPD:REF>
+<XPD:REF name="Views[16]">q2/W0ELzmUyVfX26pCHilAAA</XPD:REF>
+<XPD:REF name="Views[17]">d/QOSmIxaEqImNxoSwHtygAA</XPD:REF>
+<XPD:REF name="Views[18]">DpC/gXxXQUCmdzRLX9A19QAA</XPD:REF>
+<XPD:REF name="Views[19]">/tI+47TgV0q5849sdvn22wAA</XPD:REF>
+<XPD:REF name="Views[20]">AiUUyw9XuUSa+U50hl/JCQAA</XPD:REF>
+<XPD:REF name="Views[21]">yRkMhJpx1kKtj5FP5wabWQAA</XPD:REF>
+<XPD:REF name="Views[22]">0NHQpOKWLUeXgODSamWm4gAA</XPD:REF>
+<XPD:REF name="Views[23]">qakoayod00+TeMYdSY18swAA</XPD:REF>
+<XPD:REF name="Views[24]">XPCFf5/4F0uCaC4lVvo3GgAA</XPD:REF>
+<XPD:REF name="Views[25]">I+W4JqqA3U2Q+gyOtBs8IwAA</XPD:REF>
+<XPD:REF name="Views[26]">5HEfnb1eWU64GsD3qs3CXgAA</XPD:REF>
+<XPD:REF name="Views[27]">il5IlkX8aEiXcfblnnpDgwAA</XPD:REF>
+<XPD:REF name="Views[28]">pcZls+wME0KQLRiJRmH3agAA</XPD:REF>
+<XPD:REF name="Views[29]">77Ki8qsAR0q6wEKqush+OAAA</XPD:REF>
+<XPD:REF name="Views[30]">7jqO+R+ZE06JjJTLN/jk2wAA</XPD:REF>
+<XPD:REF name="Views[31]">WsWLKCrv+0+3fhmh//zN4AAA</XPD:REF>
+<XPD:REF name="Views[32]">JKM2lr98jEer/nJ7NzKuoAAA</XPD:REF>
+<XPD:REF name="Views[33]">qqIRl5qwtE+Q9AsfQDoBRAAA</XPD:REF>
+<XPD:REF name="Views[34]">kBUzTQciz0OvfxRcXTQt4gAA</XPD:REF>
+<XPD:REF name="Views[35]">ukVVGh9w/UmrStvE8/C2+gAA</XPD:REF>
+<XPD:REF name="Views[36]">czAHH7fLOk+DyFkl6QfPiwAA</XPD:REF>
+<XPD:REF name="Views[37]">uPnWdpyCHkWBO5L1wUMqEwAA</XPD:REF>
+<XPD:REF name="Views[38]">U1qZyly/a0ep3l6bN+NohwAA</XPD:REF>
+<XPD:REF name="Views[39]">0k9i8XXH/kCdalT8iHy0+gAA</XPD:REF>
+<XPD:REF name="Views[40]">5HCVgfGrfESHzCt4PQSccQAA</XPD:REF>
+<XPD:REF name="Views[41]">qF63098cq0CWgGfjcwhxpAAA</XPD:REF>
+<XPD:REF name="Views[42]">iTDMkynmA06o+zO+sQw+jgAA</XPD:REF>
+<XPD:REF name="Views[43]">t/kMgljb2kuH7UGycl+qUgAA</XPD:REF>
+<XPD:REF name="Views[44]">n4T0YlQhAEqg1rHclMA5sQAA</XPD:REF>
+<XPD:REF name="Views[45]">i+ILhQHW6ESx5YF0t1K5+QAA</XPD:REF>
+<XPD:REF name="Views[46]">DofD8MA1OkK6BCuQlxKmmwAA</XPD:REF>
+<XPD:REF name="Views[47]">Rwj7kdXhkk69/nU9EFmBiAAA</XPD:REF>
+<XPD:REF name="Views[48]">DmhilUvnBEe4ZrmbeO/sUAAA</XPD:REF>
+<XPD:REF name="Views[49]">0Qcueb5gCkuMgE8NVLgnwgAA</XPD:REF>
+<XPD:REF name="Views[50]">I1LZYzMK1kCrunAirTXxmAAA</XPD:REF>
+<XPD:REF name="Views[51]">w9u+FhTj40CK8ulLen/i/QAA</XPD:REF>
+<XPD:REF name="Views[52]">bcP9uup7r0qZiwJVdLJrLgAA</XPD:REF>
+<XPD:REF name="Views[53]">f458+nxYw0WE/Y97l2FPogAA</XPD:REF>
+<XPD:REF name="Views[54]">jSPbqo5s1UObPOy3V/9XCgAA</XPD:REF>
+<XPD:REF name="Views[55]">6M7kpbTI6kOg6MVqgWAzQAAA</XPD:REF>
+<XPD:REF name="Views[56]">FgVkmflFG06jRt4AxmShoQAA</XPD:REF>
+<XPD:REF name="Views[57]">b6/FI9tAZEKRosmuxAVuQAAA</XPD:REF>
+<XPD:REF name="Views[58]">jeEL0tsk6kem53vmqCjdUAAA</XPD:REF>
+<XPD:REF name="Views[59]">jSpes8+lgUqOXsTWW/p7kAAA</XPD:REF>
+<XPD:REF name="Views[60]">4SyyB1o7aUq8ttAGTnBtmAAA</XPD:REF>
+<XPD:REF name="Views[61]">uuETIRWpsUCLvjIwriiVWAAA</XPD:REF>
+<XPD:REF name="Views[62]">xNshK6CwKk+2Hkvl+5AABAAA</XPD:REF>
+<XPD:REF name="Views[63]">KvUck3/sgkm1gju0cF8gbwAA</XPD:REF>
+<XPD:REF name="Views[64]">TIIbgeOgakOm73rAq5NugQAA</XPD:REF>
+<XPD:REF name="Views[65]">eopwFYxs5kGNyz8WK2Lj5AAA</XPD:REF>
+<XPD:REF name="Views[66]">4MyFXmwPLEmmKMl1KyOTNQAA</XPD:REF>
+<XPD:REF name="Views[67]">tareIGgSCkGoygv9ib0bRwAA</XPD:REF>
+<XPD:REF name="Views[68]">uPC4nGvqk02eZrsvRMt1PgAA</XPD:REF>
+<XPD:REF name="Views[69]">xduBsS3xsUmGixl8Ts6nWAAA</XPD:REF>
+<XPD:REF name="Views[70]">sZjV0BivKUq89MzDoPwACQAA</XPD:REF>
+<XPD:REF name="Views[71]">hXYB44w8Xkqcr+REZ8I9CQAA</XPD:REF>
+<XPD:REF name="Views[72]">ghVX5mqSDkurXeYtGu7BswAA</XPD:REF>
+<XPD:REF name="Views[73]">o28btqY9y0mISGlGK4bsJwAA</XPD:REF>
+<XPD:REF name="Views[74]">XeVpTgp1qEirJYcY9iTAgQAA</XPD:REF>
+<XPD:REF name="Views[75]">Z0mVh+6ddU2mgu3oY8gp4QAA</XPD:REF>
+<XPD:REF name="Views[76]">7hnv4AuhHUKuzOZJ3n0Q1gAA</XPD:REF>
+<XPD:REF name="Views[77]">CkZ9rtJCZ0GY/wlB4g6f/gAA</XPD:REF>
+<XPD:REF name="Views[78]">/mXXx+HWkEagFc2wNvOB3AAA</XPD:REF>
+<XPD:REF name="Views[79]">FgGHDuunw02Z/eicsFnTLwAA</XPD:REF>
+<XPD:REF name="Views[80]">7FDENovjwkehYyOPMg9SZwAA</XPD:REF>
+<XPD:REF name="Views[81]">p58DioGAz0SU04Y2mM3epAAA</XPD:REF>
+<XPD:REF name="Views[82]">WiXeXyZjqE6+gCRxG5zYBAAA</XPD:REF>
+<XPD:REF name="Views[83]">03vu1xLWj0KnYGRVfuLtoAAA</XPD:REF>
+<XPD:REF name="Views[84]">rbPgBK+qcU+T76NxTJ33FwAA</XPD:REF>
+<XPD:REF name="Views[85]">Dh2IXTY3RU+j3uZMOIhzjAAA</XPD:REF>
+<XPD:REF name="Views[86]">+BAQnxCFIUWqkqjPp5rDcgAA</XPD:REF>
+<XPD:REF name="Views[87]">p0qpQ6C6M0C1hYMkUaGZKAAA</XPD:REF>
+<XPD:REF name="Views[88]">N2F/xUJc+kCooR85GwOy6AAA</XPD:REF>
+<XPD:REF name="Views[89]">W0i9fKKBdEqjRY3kT5hXcwAA</XPD:REF>
+<XPD:REF name="Views[90]">GWX67ldqOkWvDQPh+mR/tgAA</XPD:REF>
+<XPD:REF name="Views[91]">tJZtudN3kESxV4wKmtfRPAAA</XPD:REF>
+<XPD:REF name="Views[92]">dom2ZSu7REORn2Lvt8cz1QAA</XPD:REF>
+<XPD:REF name="Views[93]">52AWFzm7DUONFHotabIzcgAA</XPD:REF>
+<XPD:REF name="Views[94]">gm2kkajtwEqIJzjsdyb11gAA</XPD:REF>
+<XPD:REF name="Views[95]">6fROOGsLiUmwkR3LFE73dAAA</XPD:REF>
+<XPD:REF name="Views[96]">gvYQHYoqh0C3fHnJbXLPmAAA</XPD:REF>
+<XPD:REF name="Views[97]">T2JtYh4WfE6MhCdLNBLWfwAA</XPD:REF>
+<XPD:REF name="Views[98]">GatU7F8Wl0OgzpINUg3ouAAA</XPD:REF>
+<XPD:ATTR name="#TypedParameters" type="integer">6</XPD:ATTR>
+<XPD:REF name="TypedParameters[0]" pathname="::Logical View::Clases::CL_MOV::Control::GenerarReporteDifInvInicial::ObtenerVendedor::Vendedor">JV48/xmlV0OAF+Cy1S8NugAA</XPD:REF>
+<XPD:REF name="TypedParameters[1]" pathname="::Logical View::Clases::CL_MOV::Control::GenerarReporteNotaDeVta::ObtenerVendedor::Vendedor">lml3dVkjrkuNUmR07vpMJwAA</XPD:REF>
+<XPD:REF name="TypedParameters[2]" pathname="::Logical View::Clases::CL_MOV::Control::GenerarReporteTransDelDia::ObtenerVendedor::Vendedor">NZjiBpQwgUC/96LglAblRQAA</XPD:REF>
+<XPD:REF name="TypedParameters[3]" pathname="::Logical View::Clases::CL_MOV::Control::GenerarReporteLiquidacionDia::ObtenerVendedor::Vendedor">ez+1mp8fk0mWHhEJzys6NgAA</XPD:REF>
+<XPD:REF name="TypedParameters[4]" pathname="::Logical View::Clases::CL_MOV::Control::GenerarReporteIndicadores::ObtenerVendedor::Vendedor">fJ+arCAf00WK4ZLUKwl8XwAA</XPD:REF>
+<XPD:REF name="TypedParameters[5]" pathname="::Logical View::Clases::CL_ESC::CL_WEB::Control::ReporteInformeDeConsignacion::ObtenerVendedor::Vendedor">jnbPsCfk7E2NQZzAmxY1vgAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">36</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">kyeuCxajSUmq98DPfTKWdAAA</XPD:REF>
+<XPD:REF name="Associations[1]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">b42HUrakIEWLb2EbadNmvgAA</XPD:REF>
+<XPD:REF name="Associations[2]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">DBitcrvI60GTFZJR3R6nGAAA</XPD:REF>
+<XPD:REF name="Associations[3]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">P9sqo9OE40eYFSPehr6/sgAA</XPD:REF>
+<XPD:REF name="Associations[4]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">uUxsqBz2TUu3Gg5kMT2PdwAA</XPD:REF>
+<XPD:REF name="Associations[5]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">jGgsALO+pUa8IzLF1nTUvgAA</XPD:REF>
+<XPD:REF name="Associations[6]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">Ke8ndDcALE6CU6JGr9hGbgAA</XPD:REF>
+<XPD:REF name="Associations[7]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">os5LZqPIz0SE+VbjMq7JKAAA</XPD:REF>
+<XPD:REF name="Associations[8]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">EJRRI+8LGE+0MYxLzvUv7QAA</XPD:REF>
+<XPD:REF name="Associations[9]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">AaOdY6prA0+uTok6fourKAAA</XPD:REF>
+<XPD:REF name="Associations[10]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">Vhb9w/TjN0mLRbv0EYuaqgAA</XPD:REF>
+<XPD:REF name="Associations[11]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">SdRatgMiSU6K7IA5+swapgAA</XPD:REF>
+<XPD:REF name="Associations[12]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">CsDVpw9cQkirHnb7sSfdZgAA</XPD:REF>
+<XPD:REF name="Associations[13]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">riRgAh2eQkaBgj0QhZlZmQAA</XPD:REF>
+<XPD:REF name="Associations[14]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">Df1lwtV+eU+X7Y8vf+GbZQAA</XPD:REF>
+<XPD:REF name="Associations[15]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">EG1AaErdLUGniMPqZq39UAAA</XPD:REF>
+<XPD:REF name="Associations[16]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">6lS/vgnOEUaQ98XY3SzDBAAA</XPD:REF>
+<XPD:REF name="Associations[17]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">unJp6csALUORve52jp0fHQAA</XPD:REF>
+<XPD:REF name="Associations[18]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">MnV53ZdZ5E2yh2jjGZIcZwAA</XPD:REF>
+<XPD:REF name="Associations[19]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">qW5NW9bKmkuIU2KEl9neoAAA</XPD:REF>
+<XPD:REF name="Associations[20]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">IQbSKcuQg06QFfk4SJBz5gAA</XPD:REF>
+<XPD:REF name="Associations[21]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">7cnXAsM70UmSxVeNR1ObRgAA</XPD:REF>
+<XPD:REF name="Associations[22]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">+s5HkjYbUEWdm0Y4ukvKsAAA</XPD:REF>
+<XPD:REF name="Associations[23]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">lNn0d4b8PE6CmdzfOaALFgAA</XPD:REF>
+<XPD:REF name="Associations[24]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">5FORS9UIe0OU8SW9sMa4dgAA</XPD:REF>
+<XPD:REF name="Associations[25]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">xJoUZuF6yEmPJ1FnKrFH3wAA</XPD:REF>
+<XPD:REF name="Associations[26]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">Qr0eZFEwFEakrB0SRZXhDwAA</XPD:REF>
+<XPD:REF name="Associations[27]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">Awg5v8QNmki55PSo/2VzGwAA</XPD:REF>
+<XPD:REF name="Associations[28]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">CeEmNevIZkiuLzRQ+OD8LQAA</XPD:REF>
+<XPD:REF name="Associations[29]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">s23/oxohmEOgtZ32LN1pSwAA</XPD:REF>
+<XPD:REF name="Associations[30]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">b91AGwIu3EO4opoQx9awwgAA</XPD:REF>
+<XPD:REF name="Associations[31]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">+6rynli1ckCrcWs8N5NHJQAA</XPD:REF>
+<XPD:REF name="Associations[32]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">csTFKdgUHU+orfg/5PmVwAAA</XPD:REF>
+<XPD:REF name="Associations[33]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">8ix2uIpAzkex/zcD2bseLgAA</XPD:REF>
+<XPD:REF name="Associations[34]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">itKGys3J00a6tcaXn8hwBgAA</XPD:REF>
+<XPD:REF name="Associations[35]" pathname="::Use Case View::Casos de Uso::CU_MOV::DCU_MOV::::">I2L6XVs/lkaCblRSry0+8QAA</XPD:REF>
+<XPD:ATTR name="#Instances" type="integer">15</XPD:ATTR>
+<XPD:REF name="Instances[0]" pathname="::Use Case View::Casos de Uso::CU_MOV::Consultar Catalogo de Mensajes a Clientes::Diagramas de Interaccion::">7Lmy5JqSf0CXWwIXR6jPZAAA</XPD:REF>
+<XPD:REF name="Instances[1]" pathname="::Use Case View::Casos de Uso::CU_MOV::Asignar Mensajes al Cliente::Diagramas de Interaccion::">eP5XkgxHU06EezTEGSA/pQAA</XPD:REF>
+<XPD:REF name="Instances[2]" pathname="::Use Case View::Casos de Uso::CU_MOV::Consultar Mensajes del Cliente::Diagramas de Interaccion::">xLnRSCrooUazZNZvKYcOVwAA</XPD:REF>
+<XPD:REF name="Instances[3]" pathname="::Use Case View::Casos de Uso::CU_MOV::Reporte de Clientes con Mensajes::Diagramas de Interaccion::">cXUDeqzfc0eJcgO6bFVIyQAA</XPD:REF>
+<XPD:REF name="Instances[4]" pathname="::Use Case View::Casos de Uso::CU_MOV::Reporte de Diferencia Inventario Inicial::Diagramas de Interaccion::">48jT/sut8Eq3Y4trUgw5swAA</XPD:REF>
+<XPD:REF name="Instances[5]" pathname="::Use Case View::Casos de Uso::CU_MOV::Reporte de Inventario a Bordo::Diagrama de Interaccion::">NZCavWiOmUSY/u7YdZHo8AAA</XPD:REF>
+<XPD:REF name="Instances[6]" pathname="::Use Case View::Casos de Uso::CU_MOV::Reporte de Nota de Venta::Diagramas de Interaccion::">dJOrVYwv6EOUF66FcORXLwAA</XPD:REF>
+<XPD:REF name="Instances[7]" pathname="::Use Case View::Casos de Uso::CU_MOV::Reporte de Transacciones del Dia::Diagramas de Interaccion::">Z2fwivunNU+hiw4DeMATuAAA</XPD:REF>
+<XPD:REF name="Instances[8]" pathname="::Use Case View::Casos de Uso::CU_MOV::Reporte de Indicadores::Diagramas de Interaccion::">Fp7lWRQ0eUma0PDNeekHVQAA</XPD:REF>
+<XPD:REF name="Instances[9]" pathname="::Use Case View::Casos de Uso::CU_MOV::Reporte de Liquidacion del Dia::Diagramas de Interaccion::">KpBB9saaZUOpCIR/oW4a3gAA</XPD:REF>
+<XPD:REF name="Instances[10]" pathname="::Use Case View::Casos de Uso::CU_ESC::Controlar Inventarios::Diagramas de Interaccion::">Uoo6SibQDEWnEAyXjrMfRwAA</XPD:REF>
+<XPD:REF name="Instances[11]" pathname="::Use Case View::Casos de Uso::CU_ESC::Controlar Inventarios::Diagramas de Interaccion::">3yEZDYeSake2zvhy0gw1EAAA</XPD:REF>
+<XPD:REF name="Instances[12]" pathname="::Use Case View::Casos de Uso::CU_ESC::Controlar Inventarios::Diagramas de Interaccion::">1IUS21xAj0qUwuSUL9AhnAAA</XPD:REF>
+<XPD:REF name="Instances[13]" pathname="::Use Case View::Casos de Uso::CU_ESC::Controlar Inventarios::Diagramas de Interaccion::">TfEk3xHbXkGAZ9VFd65e6wAA</XPD:REF>
+<XPD:REF name="Instances[14]" pathname="::Use Case View::Casos de Uso::CU_ESC::Controlar Inventarios::Diagramas de Interaccion::">ajbKTL33gUyPZ0fCOLKYUAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[5]" type="UMLActor" guid="vhLkJZXpt0OFuqoDFH5GEAAA">
+<XPD:ATTR name="Name" type="string">Supervisor</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">6</XPD:ATTR>
+<XPD:REF name="Views[0]">CVKfMuI1mkWBhNk2MjrsIgAA</XPD:REF>
+<XPD:REF name="Views[1]">hMudm2ZkNUmP7dbv45S1uAAA</XPD:REF>
+<XPD:REF name="Views[2]">jvFD7oBUjUKQPVjymIOTfQAA</XPD:REF>
+<XPD:REF name="Views[3]">iMsl6GkDaEOdYrwVXG8uggAA</XPD:REF>
+<XPD:REF name="Views[4]">ixg7N9+CF0GtY9ZHmN/VLQAA</XPD:REF>
+<XPD:REF name="Views[5]">koq33dOXX0+BW97nRecuUQAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">FJJsSUfMHkug6JAWcRLLQgAA</XPD:REF>
+<XPD:REF name="Associations[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">QNv+jcZpskW7bjH7n3XxMQAA</XPD:REF>
+<XPD:ATTR name="#Instances" type="integer">3</XPD:ATTR>
+<XPD:REF name="Instances[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::Controlar Inventarios::Diagramas de Interaccion::">j8qCSK5Gr02eZxUDZcehLwAA</XPD:REF>
+<XPD:REF name="Instances[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">KlOHB8jVmEWBGrBBSTPtIwAA</XPD:REF>
+<XPD:REF name="Instances[2]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">+M6OOnBPw0uAt/VECYlZMgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[6]" type="UMLActor" guid="FuzUhRzzQ0qh/FVnyTpllAAA">
+<XPD:ATTR name="Name" type="string">Almacenista</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">12</XPD:ATTR>
+<XPD:REF name="Views[0]">MXx4GNSF/02Cv1bT2HdZcAAA</XPD:REF>
+<XPD:REF name="Views[1]">CHPVotxRY06Sg5hpzapL5AAA</XPD:REF>
+<XPD:REF name="Views[2]">Rj+ull36VEGHLjWqWVU9KAAA</XPD:REF>
+<XPD:REF name="Views[3]">D0eKvom68kGHtXxM7NoiggAA</XPD:REF>
+<XPD:REF name="Views[4]">0cFz0PfpN0WckU6Pj/D0jgAA</XPD:REF>
+<XPD:REF name="Views[5]">622qg+ZyDEWVtlalMc9+RQAA</XPD:REF>
+<XPD:REF name="Views[6]">0Lt+2Oxx4UK3frzSIt89awAA</XPD:REF>
+<XPD:REF name="Views[7]">/ju79fGVekOPXsDBu/nvvQAA</XPD:REF>
+<XPD:REF name="Views[8]">VodzewTFl0eshSnVZUxbOAAA</XPD:REF>
+<XPD:REF name="Views[9]">Kf7jUsJ9w0OZePH6c/43VAAA</XPD:REF>
+<XPD:REF name="Views[10]">huaYjd6v7kWXj6bTLXLPbwAA</XPD:REF>
+<XPD:REF name="Views[11]">TmLgWfHGwE2pYVqsBWnFmQAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">5</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">+U3HdbSlVkq7uRzIL87C8wAA</XPD:REF>
+<XPD:REF name="Associations[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">dFPOuWd3TkOWSmNElLDTvgAA</XPD:REF>
+<XPD:REF name="Associations[2]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">Lepp0JRZOk60fsVDxICuzQAA</XPD:REF>
+<XPD:REF name="Associations[3]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">LbBynWKxCkaqhBJs57QA3QAA</XPD:REF>
+<XPD:REF name="Associations[4]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">ZUcqWQmS6UqB3caqi0LCCwAA</XPD:REF>
+<XPD:ATTR name="#Instances" type="integer">7</XPD:ATTR>
+<XPD:REF name="Instances[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">P+1Sgl9makSUa4xXwiQPvgAA</XPD:REF>
+<XPD:REF name="Instances[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">RuXIcA/ftU2n5TtucDoXOAAA</XPD:REF>
+<XPD:REF name="Instances[2]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">SlQpyxJVikuOyfSJiLDsqAAA</XPD:REF>
+<XPD:REF name="Instances[3]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">oX5FGccRGkW1myWvSBFYcAAA</XPD:REF>
+<XPD:REF name="Instances[4]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">zj2ZokK7UkO3GaZuzbP7HAAA</XPD:REF>
+<XPD:REF name="Instances[5]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">KmvY+MIJ+kymoveAhMvSIgAA</XPD:REF>
+<XPD:REF name="Instances[6]" pathname="::Use Case View::Casos de Uso::CU_ESC::Registrar Movimientos de Entradas y Salidas::Diagramas de Interaccion::">BSPcKJ37G0q00w3uOH8dhAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[7]" type="UMLActor" guid="VmjtZ3QCNEyw/qdzEhNhMAAA">
+<XPD:ATTR name="Name" type="string">Vendedor de Mostrador</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">15</XPD:ATTR>
+<XPD:REF name="Views[0]">5gH6iXaxM0CDXwuVXdlBgAAA</XPD:REF>
+<XPD:REF name="Views[1]">yKr2+Tcm/E2n1eKkeabsQwAA</XPD:REF>
+<XPD:REF name="Views[2]">8Hn8BDkiJkOqLQatJLjflwAA</XPD:REF>
+<XPD:REF name="Views[3]">+q2ZOHe4V0a1yulDzqk+0wAA</XPD:REF>
+<XPD:REF name="Views[4]">PP2+xMt/JkSwdiuwCZjf5gAA</XPD:REF>
+<XPD:REF name="Views[5]">7ufhaRin5E+W+btZHszaIAAA</XPD:REF>
+<XPD:REF name="Views[6]">DmVzG2WavUSqzyOHTMpVpwAA</XPD:REF>
+<XPD:REF name="Views[7]">fSUSngoITUa2LiwvZcImzwAA</XPD:REF>
+<XPD:REF name="Views[8]">rW0VVDcAdE2jXOn1xrlVlwAA</XPD:REF>
+<XPD:REF name="Views[9]">BniaBI4CqE6zX+q50WYuTQAA</XPD:REF>
+<XPD:REF name="Views[10]">HPHertC56kq8y+V9nIpx3wAA</XPD:REF>
+<XPD:REF name="Views[11]">tD4Nxv10LUyBDDROH6SBLQAA</XPD:REF>
+<XPD:REF name="Views[12]">oAuY08ZkkUe9VD1GATCyHgAA</XPD:REF>
+<XPD:REF name="Views[13]">/WNsZzVoJ0a5Aft52hwzyAAA</XPD:REF>
+<XPD:REF name="Views[14]">viecnz6Zk06z/pkkT8GW/wAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">5</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">nyF1KTT49UKJuj+5vECNGQAA</XPD:REF>
+<XPD:REF name="Associations[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">deDWdvh65EC8MX4gXvrRDAAA</XPD:REF>
+<XPD:REF name="Associations[2]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">5zu/PTIb0Ee5K/heW75LtAAA</XPD:REF>
+<XPD:REF name="Associations[3]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">d1qGsYY9B0Onca5HYcAX/gAA</XPD:REF>
+<XPD:REF name="Associations[4]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">BFLBny3hokiluLcF5GvLdgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[8]" type="UMLActor" guid="D443yaGSsEeexMzo1CZpLwAA">
+<XPD:ATTR name="Name" type="string">Pentaho</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">3</XPD:ATTR>
+<XPD:REF name="Views[0]">EvKErsjNMUixW/8FSt2YUgAA</XPD:REF>
+<XPD:REF name="Views[1]">b+z8nDGk0UadTwuxzLukxQAA</XPD:REF>
+<XPD:REF name="Views[2]">QuVWldQdjEy4wUmqJkcegQAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::CU_WEB::DCU_WEB::::">Kn+Ai39+CU2BkWmxeOMqWAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[9]" type="UMLActor" guid="EBFdRTOMFEKGaM9ivwc7GwAA">
+<XPD:ATTR name="Name" type="string">Facturista</XPD:ATTR>
+<XPD:REF name="Namespace">qlSCgnBVHUONWUDyAdQGyAAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">6</XPD:ATTR>
+<XPD:REF name="Views[0]">JJwAX7wdUku4upUT7G44rgAA</XPD:REF>
+<XPD:REF name="Views[1]">sMHtxcIhkk+t5ydDaEZI3AAA</XPD:REF>
+<XPD:REF name="Views[2]">83AxGKpUck6FLHAkh+vRNwAA</XPD:REF>
+<XPD:REF name="Views[3]">m7puy4B2xUKXufhgOOmIvwAA</XPD:REF>
+<XPD:REF name="Views[4]">/rlbWD232EOQh6+vkCvBnAAA</XPD:REF>
+<XPD:REF name="Views[5]">cQHb6zKh7UquTnxhFN8G3gAA</XPD:REF>
+<XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
+<XPD:REF name="Associations[0]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">9XjhxGGNN02s6CHitYnvsAAA</XPD:REF>
+<XPD:REF name="Associations[1]" pathname="::Use Case View::Casos de Uso::CU_ESC::DCU_ESC::::">e0KIFQheH0CL5ukMSCdxJQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:UNIT>
