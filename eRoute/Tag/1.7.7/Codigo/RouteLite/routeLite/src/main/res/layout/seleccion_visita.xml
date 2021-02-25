@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lblCliente"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/seleccion_visita_lbl_marginTOP"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/seleccion_visita_lbls_textSize" />
+
+    <TextView
+        android:id="@+id/lblRuta"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/seleccion_visita_lbls_textSize" />
+
+    <TextView
+        android:id="@+id/lblDia"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/seleccion_visita_lbl_marginTOP"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/seleccion_visita_lbls_textSize" />
+        <ListView
+            android:id="@+id/lstVisitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </ListView>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <Button
+            android:id="@+id/btnNuevaVisita"
+            style="@style/buttonSquareStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginTop="30dp" />
+    </LinearLayout>
+
+    <include
+        android:layout_weight="1"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>

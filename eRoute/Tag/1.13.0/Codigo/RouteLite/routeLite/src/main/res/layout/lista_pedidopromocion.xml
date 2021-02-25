@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layoutClaveNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/lblClavePromo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:gravity="left"
+            android:maxLines="1"            
+            android:text="Clave: "
+     		android:textStyle="bold"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblClavePromoValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutNombrePromocion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/lblNombrePromocion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"            
+            android:gravity="left"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:text="Promocion: "
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblNombrePromocionValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutImporteDes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/lblImporteDes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:text="Importe Desc: "
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblImporteDesValue"
+            android:layout_width="0dp"
+			android:layout_weight="70"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBonificacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/lblBonificacion"
+            android:layout_width="0dp"
+            android:layout_weight="30"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:text="Bonificación: "
+            android:textStyle="bold"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblBonificacionValue"
+            android:layout_width="0dp"
+            android:layout_weight="70"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutProdRegalo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100" 
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/lblProdRegalo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:text="Prod Regalo: "
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblProdRegaloValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+			android:layout_weight="70"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutCantidadRegalo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100" 
+        android:orientation="horizontal"        
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/lblCantidadRegalo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:gravity="left"
+            android:maxLines="1"
+            android:text="Cantidad: "
+            android:textStyle="bold"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblCantidadRegaloValue"
+            android:layout_width="0dp"
+            android:layout_weight="70"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutPrecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+         android:visibility="gone" 
+>
+
+        <TextView
+            android:id="@+id/lblPrecio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:gravity="left"
+            android:maxLines="1"
+            android:text="Precio: "
+            android:textStyle="bold"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblPrecioValue"
+            android:layout_width="0dp"
+            android:layout_weight="70"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPunto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/lblPunto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:gravity="left"
+            android:maxLines="1"
+            android:text="Puntos: "
+            android:textStyle="bold"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblPunotsValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:gravity="left"
+            android:maxLines="1"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvRegalos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+    </ListView>
+
+</LinearLayout>

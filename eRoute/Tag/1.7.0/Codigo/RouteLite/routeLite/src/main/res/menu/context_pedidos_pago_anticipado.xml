@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/cppa_consultar" android:title="@string/Void"></item>
+    <item android:id="@+id/cppa_cancelar" android:visible="false"></item>
+    <item android:id="@+id/cppa_abonar" android:visible="false"></item>
+    <item android:id="@+id/cppa_confirmar" android:visible="false"></item>
+    <item android:id="@+id/cppa_eliminarAbonos" android:visible="false"></item>
+</menu>

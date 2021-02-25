@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/lblInicio"
+            style="@style/RedTextMenuItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/lblCodigoBarras"
+            style="@style/CommonDarkGrayStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="10dp"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <com.amesol.routelite.controles.TextBoxScanner
+                android:id="@+id/textBoxScannerInicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+            </com.amesol.routelite.controles.TextBoxScanner>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lblFechaHoraInicio"
+            style="@style/CommonDarkGrayStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/lblFin"
+            style="@style/RedTextMenuItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+             />
+
+        <TextView
+            android:id="@+id/lblCodigoBarrasCedi"
+            style="@style/CommonDarkGrayStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+
+        <com.amesol.routelite.controles.TextBoxScanner
+            android:id="@+id/textBoxScannerFin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" >
+        </com.amesol.routelite.controles.TextBoxScanner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btnContinuar"
+            style="@style/buttonSquareStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+    </LinearLayout>
+
+    <include
+        android:layout_weight="1"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>

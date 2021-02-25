@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_captura_pedido"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    >
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/lblListaPrecios"
+            style="@style/DarkGrayStyleClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/captura_pedido_lblListaPrecios_marginBOTTOM"
+            android:text="-"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <com.amesol.routelite.controles.CapturaProducto
+                android:id="@+id/capturaProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </com.amesol.routelite.controles.CapturaProducto>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lsTransProdDetalle"
+            style="@style/dividedListStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="0.15" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical|center"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btnSugerido"
+            style="@style/buttonSquareStyle"
+            android:layout_width="@dimen/general_button_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/btnContinuar"
+            style="@style/buttonSquareStyle"
+            android:layout_width="@dimen/general_button_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/titleBarColor"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="1.0" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.49"
+                android:weightSum="1.0" >
+                <TextView
+                    android:id="@+id/lblTotalProductos"
+                    style="@style/RedTextFontNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:textSize="@dimen/captura_pedido_lbls_Totales_textSize" />
+
+                <TextView
+                    android:id="@+id/txtTotalProductos"
+                    style="@style/RedTextFontNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:textSize="@dimen/captura_pedido_lbls_Totales_textSize" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.51"
+                android:weightSum="1.0" >
+
+                <TextView
+                    android:id="@+id/lblTotalPrevio"
+                    style="@style/RedTextFontNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:textSize="@dimen/captura_pedido_lbls_Totales_textSize" />
+
+                <TextView
+                    android:id="@+id/txtTotalPrevio"
+                    style="@style/RedTextFontNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.4"
+                    android:gravity="right"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/captura_pedido_lbls_Totales_textSize" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="1.0" >
+
+            <LinearLayout
+                android:layout_width="@dimen/general_button_width"
+                android:layout_height="match_parent"
+                android:layout_weight="0.49"
+                android:gravity="left" >
+
+                <TextView
+                    android:id="@+id/lblVolumen"
+                    style="@style/RedTextFontNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:textSize="@dimen/captura_pedido_lbls_Totales_textSize" />
+
+                <TextView
+                    android:id="@+id/txtVolumen"
+                    style="@style/RedTextFontNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:textSize="@dimen/captura_pedido_lbls_Totales_textSize" />
+                
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/general_button_width"
+                android:layout_height="match_parent"
+                android:layout_weight="0.51"
+                android:gravity="right" >
+
+                <TextView
+                    android:id="@+id/lblTotalUnidades"
+                    style="@style/RedTextFontNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:gravity="left"
+                    android:textSize="@dimen/captura_pedido_lbls_Totales_textSize" />
+
+                <TextView
+                    android:id="@+id/txtTotalUnidades"
+                    style="@style/RedTextFontNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="right"
+                    android:layout_marginRight="25dp"
+                    android:textSize="@dimen/captura_pedido_lbls_Totales_textSize" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+</FrameLayout>

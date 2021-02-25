@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0" >
+
+                <TextView
+                    android:id="@+id/lblProducto"
+                    style="@style/DarkGrayStyleClient"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.20"
+                    android:gravity="center_vertical"
+                    android:text="Medium Text"
+                    android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+                <com.amesol.routelite.controles.TextBoxScanner
+                    android:id="@+id/textBoxScanner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.64" >
+                </com.amesol.routelite.controles.TextBoxScanner>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.16"
+                    android:gravity="center|center_horizontal|center_vertical" >
+
+                    <ImageButton
+                        android:id="@+id/btnBuscarProducto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FFFFFF"
+                        android:src="@drawable/ic_btn_search" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="2" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="1.0" >
+
+                    <TextView
+                        android:id="@+id/lblProDescripcion"
+                        style="@style/DarkGrayStyleClient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+                    <TextView
+                        android:id="@+id/lblProUnidad"
+                        style="@style/DarkGrayStyleClient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:weightSum="100" >
+                    <TextView
+                        android:id="@+id/lblInventario"
+                        style="@style/DarkGrayStyleClient"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="22"
+                        android:gravity="center_vertical"
+                        android:text="Medium Text"
+                        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+                    <EditText
+                        android:id="@+id/txtInventario"
+                        style="@style/GeneralEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:ems="10"
+                        android:gravity="center_vertical"
+                        android:inputType="numberDecimal"
+                        android:selectAllOnFocus="true"
+                        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+                    <TextView
+                        android:id="@+id/lblPedido"
+                        style="@style/DarkGrayStyleClient"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_weight="22"
+                        android:gravity="center_vertical|right"
+                        android:text="Medium Text"
+                        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+                    <EditText
+                        android:id="@+id/txtCantidad"
+                        style="@style/GeneralEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:ems="10"
+                        android:gravity="center_vertical"
+                        android:inputType="numberDecimal"
+                        android:selectAllOnFocus="true"
+                        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+                    <ImageButton
+                        android:id="@+id/btnAgregar"
+                        style="@style/imageButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="16"
+                        android:src="@drawable/ic_input_add" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lsInventarioMercadeoDetalle"
+                style="@style/dividedListStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="0.15" >
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical|center"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <Button
+                android:id="@+id/btnContinuar"
+                style="@style/buttonSquareStyle"
+                android:layout_width="@dimen/general_button_width"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/titleBarColor"
+            android:orientation="vertical"
+            android:weightSum="2" >
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

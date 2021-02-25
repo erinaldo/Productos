@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.amesol.routelite"
+        minSdkVersion 15
+        targetSdkVersion 15
+        multiDexEnabled true
+
+
+        ndk {
+            moduleName "serial_port"
+            ldLibs "log"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    productFlavors {
+    }
+
+    dexOptions {
+        jumboMode true
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    compile project(':pDFViewer')
+    compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.google.android.gms:play-services:+'
+    compile files('libs/itextg-5.5.2.jar')
+    compile 'com.android.support:multidex:1.0.0'
+    compile files('libs/DeviceAPI.jar')
+}

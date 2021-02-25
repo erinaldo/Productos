@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="2">
+
+    <TextView
+        android:id="@+id/txtColumna1"
+        android:layout_weight=".8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_Titulos_textSize" />
+
+    <TextView
+        android:id="@+id/txtColumna2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:paddingLeft="15dp"
+        android:paddingRight="4dp"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_Titulos_textSize"
+        android:gravity="right" />
+
+</LinearLayout>

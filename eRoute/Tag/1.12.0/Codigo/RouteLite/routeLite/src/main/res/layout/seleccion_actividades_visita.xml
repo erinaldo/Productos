@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtCliente"
+            style="@style/DarkGrayStyleClient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/seleccion_actividades_visita_labeltop_marginTOP"
+            android:gravity="center"
+            android:text="@string/Void"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/seleccion_actividades_vista_lblsTitle_textSize" />
+
+        <TextView
+            android:id="@+id/txtRuta"
+            style="@style/DarkGrayStyleClient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/Void"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/seleccion_actividades_vista_lblsTitle_textSize" />
+
+        <TextView
+            android:id="@+id/txtDia"
+            style="@style/DarkGrayStyleClient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/seleccion_actividades_visita_labelBOTTOM_marginBottom"
+            android:gravity="left"
+            android:text="@string/Void"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/seleccion_actividades_vista_lblsTitle_textSize" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gridVisitaAct"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.50"
+        android:columnWidth="130dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="40dp" />
+
+    <include
+        android:layout_weight="1"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>

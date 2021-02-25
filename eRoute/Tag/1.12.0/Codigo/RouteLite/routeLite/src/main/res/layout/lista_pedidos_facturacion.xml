@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="5" >
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <CheckBox
+            android:id="@+id/chkSeleccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:focusable="false" />
+         
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <TextView
+            android:id="@+id/lblFolio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/seleccion_clientes_lstview_textSize" />
+
+        <TextView
+            android:id="@+id/lblFecha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/seleccion_clientes_lstview_textSize" />
+
+        <TextView
+            android:id="@+id/lblTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/seleccion_clientes_lstview_textSize" />
+        
+    </LinearLayout>
+
+</LinearLayout>

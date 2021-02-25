@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/promociones" android:title="@string/Void"></item>
+    <item android:id="@+id/actualizar" android:title="@string/Void"></item>
+    <item android:id="@+id/modificar" android:title="@string/Void"></item>
+    <item android:id="@+id/ultimavta" android:title="@string/Void"></item>
+    <item android:id="@+id/ventaMensual" android:title="@string/Void"></item>
+    <item android:id="@+id/saldoEnvase" android:title="@string/Void"></item>
+    <item android:id="@+id/tomaInventario" android:title=""></item>
+</menu>

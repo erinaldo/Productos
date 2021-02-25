@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context="com.amesol.routelite.vistas.AplicacionPromocion" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="vertical" >
+
+            <LinearLayout
+                android:id="@+id/layCliente"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/layGenerales"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lblDatosGenerales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Datos Generales"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textSize="@dimen/nuevo_cliente_lblDatosGenerales_textSize" />
+
+                    <TextView
+                        android:id="@+id/lblClave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Clave"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                    <EditText
+                        android:id="@+id/txtClave"
+                        android:layout_width="@dimen/nuevo_cliente_txts_width"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:lines="1"
+                        android:maxLength="10"
+                        android:tag="Cliente.Clave"
+                        android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                    <TextView
+                        android:id="@+id/lblRazonSocial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Razon Social"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                    <EditText
+                        android:id="@+id/txtRazonSocial"
+                        android:layout_width="@dimen/nuevo_cliente_txts_width"
+                        android:layout_height="wrap_content"
+                        android:inputType="textNoSuggestions"
+                        android:lines="1"
+                        android:maxLength="128"
+                        android:tag="Cliente.RazonSocial"
+                        android:textSize="@dimen/nuevo_cliente_txts_textSize" >
+
+                        <requestFocus />
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/lblRFC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RFC"
+                        android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <EditText
+                            android:id="@+id/txtRFC"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="14"
+                            android:tag="Cliente.IdFiscal"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <ImageButton
+                            android:id="@+id/btnGeneralesMas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_menu_more" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layGeneralesMas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:scrollbars="vertical" >
+
+                        <TextView
+                            android:id="@+id/lblNombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nombre"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtNombre"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:lines="1"
+                            android:maxLength="32"
+                            android:tag="Cliente.NombreCorto"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblCodigoBarras"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Codigo de Barras"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtCodigoBarras"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:lines="1"
+                            android:maxLength="64"
+                            android:tag="Cliente.IdElectronico"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblFechaRegistro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fecha Registro"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblFechaRegistroCli"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:tag="Cliente.FechaRegistroSistema"
+                            android:text="01/01/1900"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblFechaNacimiento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fecha de Nacimiento"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblFechaNacimientoCli"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:layout_weight="0.32"
+                            android:tag="Cliente.FechaNacimiento"
+                            android:text="01/01/1900"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblContacto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Contacto"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtContacto"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:lines="1"
+                            android:maxLength="64"
+                            android:tag="Cliente.NombreContacto"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblTelefono"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Telefono"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtTelefono"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:lines="1"
+                            android:maxLength="64"
+                            android:tag="Cliente.TelefonoContacto"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <CheckBox
+                            android:id="@+id/chkExigirOrdenCompra"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="Cliente.ExigirOrdenCompra"
+                            android:text="Exigir Orden de Compra" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <CheckBox
+                                android:id="@+id/chkDesgloseImpuestos"
+                                android:layout_width="@dimen/nuevo_cliente_chkDesgloseImpuestos_width"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:tag="Cliente.DesgloseImpuesto"
+                                android:text="Desglosa Impuestos" />
+
+                            <ImageButton
+                                android:id="@+id/btnGeneralesMenos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:src="@drawable/ic_menu_contraer" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layLineDividerSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/titleBarColor"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layPuntoEntrega"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/layDomicilioPE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/LinearLayout3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3" >
+
+                            <TextView
+                                android:id="@+id/lblDomicilio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Domicilios"
+                                android:textSize="@dimen/nuevo_cliente_lblDomicilio_textSize" />
+
+                            <ImageButton
+                                android:id="@+id/imgCopyDomicilio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/ic_input_copy" />
+
+                            <ImageButton
+                                android:id="@+id/imgPasteDomicilio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/ic_input_paste" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/lblPuntoEntrega"
+                            style="@style/MisClientes_NuevoCliente_PuntoDeEntrega"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Visita"
+                            android:textSize="@dimen/nuevo_cliente_lblPuntoEntrega_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblCallePE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Calle"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtCallePE"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="64"
+                            android:tag="ClienteDomicilioPE.Calle"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblMunicipioPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Municipio"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtMunicipioPE"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="40"
+                            android:tag="ClienteDomicilioPE.Localidad"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblPaisPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Pais"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp" >
+
+                            <EditText
+                                android:id="@+id/txtPaisPE"
+                                android:layout_width="@dimen/nuevo_cliente_txts_width"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:inputType="textNoSuggestions"
+                                android:lines="1"
+                                android:maxLength="32"
+                                android:tag="ClienteDomicilioPE.Pais"
+                                android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                            <ImageButton
+                                android:id="@+id/btnDomicilioPEMas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_menu_more" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layDomicilioPEMas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/lblNumeroExtPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Numero Exterior"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtNumeroExtPE"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="16"
+                            android:tag="ClienteDomicilioPE.Numero"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblNumeroIntPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Numero Interior"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtNumeroIntPE"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="16"
+                            android:tag="ClienteDomicilioPE.NumInt"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblColoniaPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Colonia"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtColoniaPE"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="64"
+                            android:tag="ClienteDomicilioPE.Colonia"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblCodigoPostalPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Codigo Postal"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtCodigoPostalPE"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:maxLength="16"
+                            android:tag="ClienteDomicilioPE.CodigoPostal"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblReferenciaPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Referencia"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtReferenciaPE"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="100"
+                            android:tag="ClienteDomicilioPE.ReferenciaDom"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblEntidadPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Entidad"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <EditText
+                                android:id="@+id/txtEntidadPE"
+                                android:layout_width="@dimen/nuevo_cliente_txts_width"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_weight="1"
+                                android:inputType="textNoSuggestions"
+                                android:lines="1"
+                                android:maxLength="32"
+                                android:tag="ClienteDomicilioPE.Entidad"
+                                android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                            <ImageButton
+                                android:id="@+id/btnDomicilioPEMenos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:src="@drawable/ic_menu_contraer" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layDomicilioFiscal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/layDomicilioDF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/layFiscal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="3" >
+
+                            <TextView
+                                android:id="@+id/lblDomicilioFiscal"
+                                style="@style/MisClientes_NuevoCliente_DomicilioFiscal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Domicilio Fiscal"
+                                android:textSize="@dimen/nuevo_cliente_lblDomFiscal_textSize" />
+
+                            <ImageButton
+                                android:id="@+id/imgCopyDFiscal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/ic_input_copy" />
+
+                            <ImageButton
+                                android:id="@+id/imgPasteDFiscal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/ic_input_paste" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/lblCalleDF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Calle"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtCalleDF"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="64"
+                            android:tag="ClienteDomicilioDF.Calle"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblMunicipioDF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Municipio"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtMunicipioDF"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="40"
+                            android:tag="ClienteDomicilioDF.Localidad"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblPaisDF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Pais"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <EditText
+                                android:id="@+id/txtPaisDF"
+                                android:layout_width="@dimen/nuevo_cliente_txts_width"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:inputType="textNoSuggestions"
+                                android:lines="1"
+                                android:maxLength="32"
+                                android:tag="ClienteDomicilioDF.Pais"
+                                android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                            <ImageButton
+                                android:id="@+id/btnDomicilioDFMas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_menu_more" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layDomicilioDFMas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/lblCodigoPostalDF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Codigo Postal"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtCodigoPostalDF"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:maxLength="16"
+                            android:tag="ClienteDomicilioDF.CodigoPostal"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblNumeroExtDF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Numero Exterior"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtNumeroExtDF"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="16"
+                            android:tag="ClienteDomicilioDF.Numero"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblNumeroIntDF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Numero Interior"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtNumeroIntDF"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="16"
+                            android:tag="ClienteDomicilioDF.NumInt"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblColoniaDF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Colonia"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtColoniaDF"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="64"
+                            android:tag="ClienteDomicilioDF.Colonia"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblReferenciaDF"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Referencia"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <EditText
+                            android:id="@+id/txtReferenciaDF"
+                            android:layout_width="@dimen/nuevo_cliente_txts_width"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:inputType="textNoSuggestions"
+                            android:lines="1"
+                            android:maxLength="100"
+                            android:tag="ClienteDomicilioDF.Referencia"
+                            android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                        <TextView
+                            android:id="@+id/lblEntidadDF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="Entidad"
+                            android:textSize="@dimen/nuevo_cliente_lbls_textSize" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <EditText
+                                android:id="@+id/txtEntidadDF"
+                                android:layout_width="@dimen/nuevo_cliente_txts_width"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_weight="1"
+                                android:inputType="textNoSuggestions"
+                                android:lines="1"
+                                android:maxLength="32"
+                                android:tag="ClienteDomicilioDF.Entidad"
+                                android:textSize="@dimen/nuevo_cliente_txts_textSize" />
+
+                            <ImageButton
+                                android:id="@+id/btnDomicilioDFMenos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:src="@drawable/ic_menu_contraer" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnContinuar"
+                    style="@style/buttonSquareStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="15dp"
+                    android:text="Continuar" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <include
+        android:layout_weight="1"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>

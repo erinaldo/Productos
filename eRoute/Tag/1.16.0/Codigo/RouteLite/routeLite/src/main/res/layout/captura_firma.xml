@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llPrincipal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5" >
+
+
+    <LinearLayout
+        android:id="@+id/llNombre"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".7"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/lblNombre"
+            style="@style/CommonDarkGrayStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            style="@style/GeneralEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:selectAllOnFocus="true"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" >
+
+            <requestFocus />
+        </EditText>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCapturaFirma"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="3dp"
+        android:layout_weight="3.0"
+        android:weightSum="5"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <TextView
+        android:id="@+id/lblFirma"
+        style="@style/CommonDarkGrayStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Medium Text"
+        android:layout_weight="0.1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+        android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/titleBarColor"/>
+
+        <LinearLayout
+            android:id="@+id/llFirma"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:layout_weight="4.9"
+            android:background="@color/white"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/titleBarColor"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llLimpiar"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/btnLimpiar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            style="@style/imageButtonStyle"
+            android:src="@drawable/delete"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llAceptar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="bottom|center|center_horizontal|center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnAceptar"
+            android:layout_width="@dimen/general_button_width"
+            android:layout_height="wrap_content"
+            style="@style/buttonSquareStyle"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>
+

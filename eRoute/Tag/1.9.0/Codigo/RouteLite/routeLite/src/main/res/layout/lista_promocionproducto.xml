@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layoutProductos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="00dp" >
+
+        <TextView
+            android:id="@+id/txtProductoClave"
+            android:layout_width="120dp"
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:text="ClaveProducto"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <TextView
+            android:id="@+id/txtProductoDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="NombreProducto"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+        <ImageButton
+            android:id="@+id/btnVerMas"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_weight="0.0"
+            android:background="@color/blanco"
+            android:src="@android:drawable/ic_menu_more" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutEncabezados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/lblClavepromocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="lblClave"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblNombrePromocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="lblNombre"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblTipoPromocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="lblTipo"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblRangoPromocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="lblRango"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lstPromociones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+    </ListView>
+
+</LinearLayout>

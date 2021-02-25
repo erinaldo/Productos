@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+
+    <TextView
+        android:id="@+id/lblTituloDialogoStock"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C61F1B"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/titulo_gnerico_textSizes" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblClave"
+                style="@style/DarkGrayStyleClient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2"
+                android:background="#808080"
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/consultar_inventario_lbls_textSizes"  />
+
+            <TextView
+                android:id="@+id/lblDescripcion"
+                style="@style/DarkGrayStyleClient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2"
+                android:background="#808080"
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/consultar_inventario_lbls_textSizes" />
+
+            <TextView
+                style="@style/DarkGrayStyleClient"
+                android:id="@+id/lblUnidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2"
+                android:background="#808080"
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/consultar_inventario_lbls_textSizes" />
+
+            <TextView
+                style="@style/DarkGrayStyleClient"
+                android:id="@+id/lblCantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".2"
+                android:background="#808080"
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/consultar_inventario_lbls_textSizes" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lstStock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

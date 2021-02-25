@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    <TextView
+        android:id="@+id/lblInfoCliente"
+        style="@style/separador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informacion del Cliente"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/blanco"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    <TextView
+        android:id="@+id/lblInformacionCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Razon Social Domicilio" />
+
+    <TextView
+        android:id="@+id/lblProductos"
+        style="@style/separador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Productos"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/blanco"
+        android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+    <LinearLayout
+        android:id="@+id/layoutProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/lblClaveProducto"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="lblClaveProducto"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblNombreProducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="lblNombreProducto"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lstProductos"
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
+        android:dividerHeight="5px" >
+    </ListView>
+
+    <include
+        android:layout_weight="1"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>
