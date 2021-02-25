@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.selling.movil" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.honeywell.decode.permission.DECODE" />
+
+    <application
+        android:name=".Aplicacion"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".Login2Activity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".PreferenciasActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ExistenciaActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".CambioEstadoActivity"
+            android:label="@string/title_activity_cambio_estado"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name=".ReubicacionActivity"
+            android:label="@string/title_activity_reubicacion"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ReciboActivity"
+            android:label="@string/menu_recibo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".AlmacenajeActivity"
+            android:label="@string/menu_almacenaje"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".AjusteInventarioActivity"
+            android:label="@string/menu_ajuste_inventario"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".SurtidoActivity"
+            android:label="@string/menu_surtido"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ConteoActivity"
+            android:label="@string/menu_conteo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".DefectoActivity"
+            android:label="@string/menu_defecto"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

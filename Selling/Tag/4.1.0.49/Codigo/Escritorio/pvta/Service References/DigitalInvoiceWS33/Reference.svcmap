@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c6c0cfc1-c2aa-4b26-b227-1debd40fe70f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://digitalinvoicecfdi.com.mx/WS_WSDI33/digitalinvoice.webservices.wsdi.timbrado.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DigitalInvoice.xsd" MetadataType="Schema" ID="d81ed58b-2030-47a7-80bc-44f6a773e66a" SourceId="1" SourceUrl="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?xsd=xsd2" />
+    <MetadataFile FileName="DigitalInvoice.disco" MetadataType="Disco" ID="aed37cd8-2afb-4b23-abae-9a244ca9bf41" SourceId="1" SourceUrl="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?disco" />
+    <MetadataFile FileName="DigitalInvoice1.xsd" MetadataType="Schema" ID="963b255a-1626-46ee-ab47-ae2dd92d71e1" SourceId="1" SourceUrl="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?xsd=xsd4" />
+    <MetadataFile FileName="DigitalInvoice.wsdl" MetadataType="Wsdl" ID="addc2699-5e83-4d57-9a80-571fc89a54af" SourceId="1" SourceUrl="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Timbrado.wsdl" MetadataType="Wsdl" ID="de352351-95ad-48ac-a3ac-76aac3e8cbfb" SourceId="1" SourceUrl="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?wsdl" />
+    <MetadataFile FileName="DigitalInvoice2.xsd" MetadataType="Schema" ID="9f004042-3e16-4377-8345-73b7e7daa395" SourceId="1" SourceUrl="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?xsd=xsd1" />
+    <MetadataFile FileName="DigitalInvoice3.xsd" MetadataType="Schema" ID="6c187cdc-21dc-43ee-a3d2-15a7eb1421ea" SourceId="1" SourceUrl="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?xsd=xsd0" />
+    <MetadataFile FileName="DigitalInvoice4.xsd" MetadataType="Schema" ID="e3b34434-4d61-4d0f-b203-7ff87bdd6103" SourceId="1" SourceUrl="https://digitalinvoicecfdi.com.mx/WS_WSDI33/DigitalInvoice.WebServices.WSDI.Timbrado.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

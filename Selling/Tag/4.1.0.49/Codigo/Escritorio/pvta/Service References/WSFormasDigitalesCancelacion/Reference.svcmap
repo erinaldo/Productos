@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="721460bf-442b-4dfd-a073-17e2bce9329b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://v33.facturacfdi.mx/WSCancelacionService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSCancelacionService.xsd" MetadataType="Schema" ID="7e9f4508-9351-4620-a99b-64cc6da62fe1" SourceId="1" SourceUrl="http://v33.facturacfdi.mx/WSCancelacionService?xsd=3" />
+    <MetadataFile FileName="xmlmime.xsd" MetadataType="Schema" ID="93637160-f557-495e-a47e-cb62f4a291ea" SourceId="1" SourceUrl="http://www.w3.org/2005/05/xmlmime.xsd" />
+    <MetadataFile FileName="WSCancelacionService.wsdl" MetadataType="Wsdl" ID="9abeb89e-3b39-4fad-a03f-ea5f6c63a675" SourceId="1" SourceUrl="https://v33.facturacfdi.mx/WSCancelacionService?wsdl" />
+    <MetadataFile FileName="WSCancelacionService1.xsd" MetadataType="Schema" ID="7e38ecb2-af0c-4fe5-900a-2d642efd3575" SourceId="1" SourceUrl="http://v33.facturacfdi.mx/WSCancelacionService?xsd=1" />
+    <MetadataFile FileName="WSCancelacionService2.xsd" MetadataType="Schema" ID="e9b6b011-4210-4b4b-b1e0-c1e3b3ca22d5" SourceId="1" SourceUrl="http://v33.facturacfdi.mx/WSCancelacionService?xsd=2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

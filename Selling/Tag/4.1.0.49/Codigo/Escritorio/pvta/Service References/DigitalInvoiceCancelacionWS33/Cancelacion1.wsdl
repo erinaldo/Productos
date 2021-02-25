@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="https://digitalinvoice.com.mx/WSDI" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Cancelacion" targetNamespace="https://digitalinvoice.com.mx/WSDI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://digitalinvoice.com.mx/WSDI/Imports">
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd0" namespace="https://digitalinvoice.com.mx/WSDI" />
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioCancelacionCFDI" />
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioConsultaCFDIRelacionados" />
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioAceptacionRechazoCFDI" />
+      <xsd:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/DigitalInvoice.Processes.Exceptions" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICancelacion_Cancela_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cancela" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_Cancela_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_Cancelar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cancelar" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_Cancelar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_CancelaTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelaTest" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_CancelaTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelaTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_ObtenerAck_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAck" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_ObtenerAck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAckResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_ConsultaCFDIRelacionados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaCFDIRelacionados" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_ConsultaCFDIRelacionados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaCFDIRelacionadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_AceptacionRechazo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AceptacionRechazo" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_AceptacionRechazo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AceptacionRechazoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_ObtenerPeticionesPendientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPeticionesPendientes" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_ObtenerPeticionesPendientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPeticionesPendientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_TimbrarTestBase64_InputMessage">
+    <wsdl:part name="parameters" element="tns:TimbrarTestBase64" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_TimbrarTestBase64_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimbrarTestBase64Response" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_TimbrarTestBase64_CFDiFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/DigitalInvoice.Processes.Exceptions" name="detail" element="q1:CFDiFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="ICancelacion_TimbrarTestBase64_ProcessFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/DigitalInvoice.Processes.Exceptions" name="detail" element="q2:ProcessFaultContract" />
+  </wsdl:message>
+  <wsdl:portType name="ICancelacion">
+    <wsdl:operation name="Cancela">
+      <wsdl:input wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/Cancela" message="tns:ICancelacion_Cancela_InputMessage" />
+      <wsdl:output wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/CancelaResponse" message="tns:ICancelacion_Cancela_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cancelar">
+      <wsdl:input wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/Cancelar" message="tns:ICancelacion_Cancelar_InputMessage" />
+      <wsdl:output wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/CancelarResponse" message="tns:ICancelacion_Cancelar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelaTest">
+      <wsdl:input wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/CancelaTest" message="tns:ICancelacion_CancelaTest_InputMessage" />
+      <wsdl:output wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/CancelaTestResponse" message="tns:ICancelacion_CancelaTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAck">
+      <wsdl:input wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/ObtenerAck" message="tns:ICancelacion_ObtenerAck_InputMessage" />
+      <wsdl:output wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/ObtenerAckResponse" message="tns:ICancelacion_ObtenerAck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCFDIRelacionados">
+      <wsdl:input wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/ConsultaCFDIRelacionados" message="tns:ICancelacion_ConsultaCFDIRelacionados_InputMessage" />
+      <wsdl:output wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/ConsultaCFDIRelacionadosResponse" message="tns:ICancelacion_ConsultaCFDIRelacionados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AceptacionRechazo">
+      <wsdl:input wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/AceptacionRechazo" message="tns:ICancelacion_AceptacionRechazo_InputMessage" />
+      <wsdl:output wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/AceptacionRechazoResponse" message="tns:ICancelacion_AceptacionRechazo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPeticionesPendientes">
+      <wsdl:input wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/ObtenerPeticionesPendientes" message="tns:ICancelacion_ObtenerPeticionesPendientes_InputMessage" />
+      <wsdl:output wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/ObtenerPeticionesPendientesResponse" message="tns:ICancelacion_ObtenerPeticionesPendientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TimbrarTestBase64">
+      <wsdl:input wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/TimbrarTestBase64" message="tns:ICancelacion_TimbrarTestBase64_InputMessage" />
+      <wsdl:output wsaw:Action="https://digitalinvoice.com.mx/WSDI/ICancelacion/TimbrarTestBase64Response" message="tns:ICancelacion_TimbrarTestBase64_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://digitalinvoice.com.mx/CFDiFaultContract" name="CFDiFaultContractFault" message="tns:ICancelacion_TimbrarTestBase64_CFDiFaultContractFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://digitalinvoice.com.mx/ProcessFaultContract" name="ProcessFaultContractFault" message="tns:ICancelacion_TimbrarTestBase64_ProcessFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="Cancelacion">
+    <wsdl:port name="BasicHttpBinding_ICancelacion" binding="i0:BasicHttpBinding_ICancelacion">
+      <soap:address location="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc/Basic" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f44f0e94-c227-4d66-b9e5-3edcbc2693ae" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www.timbra.mx/WCFTimbrador33/DetecnoPac.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DetecnoPac.xsd" MetadataType="Schema" ID="d37d1825-9b75-4cb8-be46-e030458db952" SourceId="1" SourceUrl="https://www.timbra.mx/WCFTimbrador33/DetecnoPac.svc?xsd=xsd1" />
+    <MetadataFile FileName="DetecnoPac.disco" MetadataType="Disco" ID="4172f03f-0111-429f-bd0c-773d672e8f5d" SourceId="1" SourceUrl="https://www.timbra.mx/WCFTimbrador33/DetecnoPac.svc?disco" />
+    <MetadataFile FileName="DetecnoPac1.xsd" MetadataType="Schema" ID="c00875dd-dcc2-49fe-96af-a43253f8d353" SourceId="1" SourceUrl="https://www.timbra.mx/WCFTimbrador33/DetecnoPac.svc?xsd=xsd2" />
+    <MetadataFile FileName="DetecnoPac2.xsd" MetadataType="Schema" ID="0fa4de1d-c826-40c3-920f-8d5a9279f60f" SourceId="1" SourceUrl="https://www.timbra.mx/WCFTimbrador33/DetecnoPac.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceDetecnoPAC.wsdl" MetadataType="Wsdl" ID="e558ed02-363a-4964-8924-a8c5e27581f9" SourceId="1" SourceUrl="https://www.timbra.mx/WCFTimbrador33/DetecnoPac.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

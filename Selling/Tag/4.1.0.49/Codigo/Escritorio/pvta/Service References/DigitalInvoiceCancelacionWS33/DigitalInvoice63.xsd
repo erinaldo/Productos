@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioCancelacionCFDI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioCancelacionCFDI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Acuse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q1:PropertyChangedEventHandler" />
+      <xs:element name="codEstatusField" nillable="true" type="xs:string" />
+      <xs:element name="fechaField" type="xs:dateTime" />
+      <xs:element name="foliosField" nillable="true" type="tns:ArrayOfAcuseFolios" />
+      <xs:element name="rfcEmisorField" nillable="true" type="xs:string" />
+      <xs:element name="signatureField" nillable="true" type="tns:SignatureType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Acuse" nillable="true" type="tns:Acuse" />
+  <xs:complexType name="ArrayOfAcuseFolios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AcuseFolios" nillable="true" type="tns:AcuseFolios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAcuseFolios" nillable="true" type="tns:ArrayOfAcuseFolios" />
+  <xs:complexType name="AcuseFolios">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q2:PropertyChangedEventHandler" />
+      <xs:element name="estatusUUIDField" nillable="true" type="xs:string" />
+      <xs:element name="uUIDField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AcuseFolios" nillable="true" type="tns:AcuseFolios" />
+  <xs:complexType name="SignatureType">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q3:PropertyChangedEventHandler" />
+      <xs:element name="idField" nillable="true" type="xs:string" />
+      <xs:element name="keyInfoField" nillable="true" type="tns:KeyInfoType" />
+      <xs:element name="objectField" nillable="true" type="tns:ArrayOfObjectType" />
+      <xs:element name="signatureValueField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="signedInfoField" nillable="true" type="tns:SignedInfoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SignatureType" nillable="true" type="tns:SignatureType" />
+  <xs:complexType name="KeyInfoType">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q4:PropertyChangedEventHandler" />
+      <xs:element name="idField" nillable="true" type="xs:string" />
+      <xs:element name="keyNameField" nillable="true" type="xs:string" />
+      <xs:element name="keyValueField" nillable="true" type="tns:KeyValueType" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="textField" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element name="x509DataField" nillable="true" type="tns:X509DataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyInfoType" nillable="true" type="tns:KeyInfoType" />
+  <xs:complexType name="KeyValueType">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q6:PropertyChangedEventHandler" />
+      <xs:element name="rSAKeyValueField" nillable="true" type="tns:RSAKeyValueType" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="textField" nillable="true" type="q7:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyValueType" nillable="true" type="tns:KeyValueType" />
+  <xs:complexType name="RSAKeyValueType">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q8:PropertyChangedEventHandler" />
+      <xs:element name="exponentField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="modulusField" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RSAKeyValueType" nillable="true" type="tns:RSAKeyValueType" />
+  <xs:complexType name="X509DataType">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q9:PropertyChangedEventHandler" />
+      <xs:element name="x509CertificateField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="x509IssuerSerialField" nillable="true" type="tns:X509IssuerSerialType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="X509DataType" nillable="true" type="tns:X509DataType" />
+  <xs:complexType name="X509IssuerSerialType">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q10:PropertyChangedEventHandler" />
+      <xs:element name="x509IssuerNameField" nillable="true" type="xs:string" />
+      <xs:element name="x509SerialNumberField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="X509IssuerSerialType" nillable="true" type="tns:X509IssuerSerialType" />
+  <xs:complexType name="ArrayOfObjectType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectType" nillable="true" type="tns:ObjectType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfObjectType" nillable="true" type="tns:ArrayOfObjectType" />
+  <xs:complexType name="ObjectType">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q11:PropertyChangedEventHandler" />
+      <xs:element name="anyField" nillable="true">
+        <xs:complexType mixed="true">
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:sequence>
+          <xs:anyAttribute />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="encodingField" nillable="true" type="xs:string" />
+      <xs:element name="idField" nillable="true" type="xs:string" />
+      <xs:element name="mimeTypeField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectType" nillable="true" type="tns:ObjectType" />
+  <xs:complexType name="SignedInfoType">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q12:PropertyChangedEventHandler" />
+      <xs:element name="canonicalizationMethodField" nillable="true" type="tns:CanonicalizationMethodType" />
+      <xs:element name="idField" nillable="true" type="xs:string" />
+      <xs:element name="referenceField" nillable="true" type="tns:ReferenceType" />
+      <xs:element name="signatureMethodField" nillable="true" type="tns:SignatureMethodType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SignedInfoType" nillable="true" type="tns:SignedInfoType" />
+  <xs:complexType name="CanonicalizationMethodType">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q13:PropertyChangedEventHandler" />
+      <xs:element name="algorithmField" nillable="true" type="xs:string" />
+      <xs:element name="anyField" nillable="true">
+        <xs:complexType mixed="true">
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:sequence>
+          <xs:anyAttribute />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CanonicalizationMethodType" nillable="true" type="tns:CanonicalizationMethodType" />
+  <xs:complexType name="ReferenceType">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q14:PropertyChangedEventHandler" />
+      <xs:element name="digestMethodField" nillable="true" type="tns:DigestMethodType" />
+      <xs:element name="digestValueField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="idField" nillable="true" type="xs:string" />
+      <xs:element name="transformsField" nillable="true" type="tns:ArrayOfTransformType" />
+      <xs:element name="typeField" nillable="true" type="xs:string" />
+      <xs:element name="uRIField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenceType" nillable="true" type="tns:ReferenceType" />
+  <xs:complexType name="DigestMethodType">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q15:PropertyChangedEventHandler" />
+      <xs:element name="algorithmField" nillable="true" type="xs:string" />
+      <xs:element name="anyField" nillable="true">
+        <xs:complexType mixed="true">
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:sequence>
+          <xs:anyAttribute />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DigestMethodType" nillable="true" type="tns:DigestMethodType" />
+  <xs:complexType name="ArrayOfTransformType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransformType" nillable="true" type="tns:TransformType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransformType" nillable="true" type="tns:ArrayOfTransformType" />
+  <xs:complexType name="TransformType">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q16:PropertyChangedEventHandler" />
+      <xs:element name="algorithmField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="textField" nillable="true" type="q17:ArrayOfstring" />
+      <xs:element name="xPathField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransformType" nillable="true" type="tns:TransformType" />
+  <xs:complexType name="SignatureMethodType">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q18:PropertyChangedEventHandler" />
+      <xs:element name="algorithmField" nillable="true" type="xs:string" />
+      <xs:element name="anyField" nillable="true">
+        <xs:complexType mixed="true">
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+          </xs:sequence>
+          <xs:anyAttribute />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="hMACOutputLengthField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SignatureMethodType" nillable="true" type="tns:SignatureMethodType" />
+</xs:schema>

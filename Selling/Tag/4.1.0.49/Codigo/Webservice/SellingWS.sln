@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SellingWS", "SellingWS\SellingWS.csproj", "{79D301AF-AC01-47CD-86B2-D3ECC772F245}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		QA|Any CPU = QA|Any CPU
+		Release|Any CPU = Release|Any CPU
+		TEST EJERCITO|Any CPU = TEST EJERCITO|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79D301AF-AC01-47CD-86B2-D3ECC772F245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D301AF-AC01-47CD-86B2-D3ECC772F245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D301AF-AC01-47CD-86B2-D3ECC772F245}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{79D301AF-AC01-47CD-86B2-D3ECC772F245}.QA|Any CPU.Build.0 = QA|Any CPU
+		{79D301AF-AC01-47CD-86B2-D3ECC772F245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D301AF-AC01-47CD-86B2-D3ECC772F245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79D301AF-AC01-47CD-86B2-D3ECC772F245}.TEST EJERCITO|Any CPU.ActiveCfg = Test|Any CPU
+		{79D301AF-AC01-47CD-86B2-D3ECC772F245}.TEST EJERCITO|Any CPU.Build.0 = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

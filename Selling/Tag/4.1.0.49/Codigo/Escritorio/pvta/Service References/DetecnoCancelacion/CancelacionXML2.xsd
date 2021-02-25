@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cancelador" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cancelador" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Xml">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcuseCanc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusquedaIdCancelacionXml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Msg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Xml" nillable="true" type="tns:Xml" />
+</xs:schema>

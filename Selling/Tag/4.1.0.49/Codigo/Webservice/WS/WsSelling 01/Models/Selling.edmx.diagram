@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c1f14d1bfd14ce48c5e1507a136e62a" Name="Diagrama1">
+        <EntityTypeShape EntityType="SellingModel.Almacen" Width="1.5" PointX="5.25" PointY="50.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Area" Width="1.5" PointX="7.5" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Autorizacion" Width="1.5" PointX="5.25" PointY="58" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Clasificacion" Width="1.5" PointX="3" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.ClasProd" Width="1.5" PointX="5.25" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Compania" Width="1.5" PointX="0.75" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.CompanyParam" Width="1.5" PointX="3" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Estrategia" Width="1.5" PointX="9.75" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Estructura" Width="1.5" PointX="12.75" PointY="51.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Existencia" Width="1.5" PointX="7.5" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Hueco" Width="1.5" PointX="15" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.InterfazSalida" Width="1.5" PointX="3" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.MovUbc" Width="1.5" PointX="10.5" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Orden" Width="1.5" PointX="7.5" PointY="53.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.OrdenDetalle" Width="1.5" PointX="12.75" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Picking" Width="1.5" PointX="8.25" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.prd_exist_uba" Width="1.5" PointX="5.25" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Producto" Width="1.5" PointX="3" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.ProductoUnidad" Width="1.5" PointX="8.25" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.ReciboAlmacen" Width="1.5" PointX="19.5" PointY="51" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.ReciboAlmacenD" Width="1.5" PointX="21.75" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.ReciboSobrante" Width="1.5" PointX="5.25" PointY="46" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Sucursal" Width="1.5" PointX="3" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.SucursalProducto" Width="1.5" PointX="11.25" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Surtido" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.SurtidoDetalle" Width="1.5" PointX="8.25" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Tokens" Width="1.5" PointX="5.25" PointY="62.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Traslado" Width="1.5" PointX="10.5" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.TrasladoDetalle" Width="1.5" PointX="11.25" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Ubicacion" Width="1.5" PointX="17.25" PointY="52.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Unidad" Width="1.5" PointX="6" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.Usuario" Width="1.5" PointX="3" PointY="59.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SellingModel.ValorRef" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SellingModel.FK_Almacen_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Area_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Estrategia_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Estructura_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Existencia_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_MovUbc_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Orden_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ReciboAlmacen_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Traslado_Almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Traslado_Almacen1" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Estrategia_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Estructura_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Autorizacion_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Autorizacion_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Clasificacion_Compania" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ClasificaProducto_Clasificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ClasProd_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_CompanyParam_Compania" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_InterfazSalida_Compania" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Producto_Compania" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Sucursal_Compania" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Estrategia_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Estrategia_Ubicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Hueco_Estructura" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Existencia_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Ubicacion_Hueco" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_MovUbc_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_OrdenDetalle_Orden" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_OrdenDetalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Picking_Picking" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Traslado_Picking" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_prd_exist_uba_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_prd_exist_uba_Ubicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ProductoUnidad_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ReciboSobrante_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_SucursalProducto_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_SurtidoDetalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_TrasladoDetalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ProductoUnidad_Unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ReciboAlmacen_Ubicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ReciboAlmacenD_ReciboAlmacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_ReciboSobrante_ReciboAlmacen" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_SucursalProducto_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Traslado_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_Traslado_Sucursal1" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_SurtidoDetalle_Ubicacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_USRClave" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.FK_TrasladoDetalle_Traslado" ManuallyRouted="false" />
+        <AssociationConnector Association="SellingModel.AccesoSucursal" />
+        <EntityTypeShape EntityType="SellingModel.Cliente" Width="1.5" PointX="0.19113996447582726" PointY="27.897225541946117" />
+        <EntityTypeShape EntityType="SellingModel.DevCompra" Width="1.5" PointX="6.20750164902187" PointY="6.4652831584519159" />
+        <EntityTypeShape EntityType="SellingModel.MOVALM" Width="1.5" PointX="10.648565070074314" PointY="28.644497482406209" />
+        <EntityTypeShape EntityType="SellingModel.Proveedor" Width="1.5" PointX="10.410221305866829" PointY="19.418580526215294" />
+        <EntityTypeShape EntityType="SellingModel.Venta" Width="1.5" PointX="5.03710848513856" PointY="19.538526529231355" />
+        <AssociationConnector Association="SellingModel.FK_DevCompra_Almacen" />
+        <AssociationConnector Association="SellingModel.FK_MOVALM_Almacen" />
+        <AssociationConnector Association="SellingModel.FK_Venta_Almacen" />
+        <AssociationConnector Association="SellingModel.FK_Cliente_Compania" />
+        <AssociationConnector Association="SellingModel.FK_Venta_Cliente" />
+        <AssociationConnector Association="SellingModel.FK_DevCompra_Proveedor" />
+        <AssociationConnector Association="SellingModel.FK_DevCompra_Sucursal" />
+        <AssociationConnector Association="SellingModel.FK_MOVALM_Picking" />
+        <AssociationConnector Association="SellingModel.FK_Orden_Proveedor" />
+        <AssociationConnector Association="SellingModel.FK_Orden_Sucursal" />
+        <AssociationConnector Association="SellingModel.FK_Venta_Picking" />
+        <AssociationConnector Association="SellingModel.FK_Venta_Usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

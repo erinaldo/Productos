@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://certificacion.venteks.net/wcf_RecargacelCommon.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="doRecarga">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransactionGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SKU" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doRecargaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="ErrorDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AuthorizationCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="openSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="openSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionGUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="closeSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transactionGUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="closeSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doRecargaCashier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransactionGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="POSGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cashierId" type="xs:int" />
+        <xs:element minOccurs="0" name="cashierPlainPasword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SKU" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doRecargaCashierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="ErrorDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AuthorizationCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doPagoDeServicioCashier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransactionGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="POSGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cashierId" type="xs:int" />
+        <xs:element minOccurs="0" name="cashierPlainPasword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reference" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SKU" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="extraCharge" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doPagoDeServicioCashierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="ErrorDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ticketInformation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="validateCashier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cashierId" type="xs:int" />
+        <xs:element minOccurs="0" name="cashierPlainPasword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="POSGUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="validateCashierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="validateCashierResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="POSGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getBalanceResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRecargaStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransactionGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRecargaStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="ErrorDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AuthorizationCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoRecargaFromApp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transactionGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sku" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoRecargaFromAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="authorizationCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoPagoDeServicioFromApp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transactionGUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reference" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sku" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="extraCharge" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoPagoDeServicioFromAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ticketInformation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateUserFromApp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateUserFromAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateUserFromAppResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastTransactionsFromApp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionsToRead" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastTransactionsFromAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="csvResult" nillable="true" type="q1:ArrayOfstring" />
+        <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+        <xs:element minOccurs="0" name="errorDescription" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalanceFromApp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalanceFromAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="balanceRecargas" type="xs:decimal" />
+        <xs:element minOccurs="0" name="balancePagoServicios" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentUserPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetChildUsersResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="jsonResponse" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastErrorString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentUserPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parentPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUserPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUserEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUserCommissionPercentage" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterNewUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastErrorString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferBalanceToChildUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="destinationUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="comission" type="xs:decimal" />
+        <xs:element minOccurs="0" name="balanceType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferBalanceToChildUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransferBalanceToChildUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastTransactionsJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionsToRead" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastTransactionsJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastTransactionsJsonResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="jsonResponse" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateUserFromAppJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateUserFromAppJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateUserFromAppJsonResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="jsonResponse" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangePasswordResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastErrorString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastDepositsJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionsToRead" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastDepositsJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastDepositsJsonResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="jsonResponse" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccounts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBankAccountsResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="jsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastTransferToUsersJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionsToRead" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastTransferToUsersJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastTransferToUsersJsonResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="jsonResponse" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyDeposit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="banco" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoDePago" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cuenta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="folioReferencia" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaHora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="notificationMethod" type="xs:int" />
+        <xs:element minOccurs="0" name="b64Image" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyDepositResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NotifyDepositResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastTransfersParentJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionsToRead" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastTransfersParentJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastTransfersParentJsonResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="jsonResponse" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeNIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldNIP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newNIP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeNIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeNIPResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecoverPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecoverPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecoverPasswordResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditChildUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NIP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="childUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newCommission" type="xs:decimal" />
+        <xs:element minOccurs="0" name="canHaveChildren" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditChildUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditChildUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPasswordForChildUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NIP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="childUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPasswordForChildUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetPasswordForChildUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetNipForChildUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NIP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="childUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newNIP" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetNipForChildUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetNipForChildUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateChildUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NIP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUserPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUserNIP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUserPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newUserCommission" type="xs:decimal" />
+        <xs:element minOccurs="0" name="canHaveChildren" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateChildUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateChildUserResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="lastError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

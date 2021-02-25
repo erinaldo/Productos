@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/selling"
+        android:layout_centerInParent="true"/>
+        <LinearLayout
+            android:id="@+id/panelProductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ListView
+                android:id="@+id/listCodigos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/panelBotones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:gravity="right">
+
+            <EditText
+                android:id="@+id/cantidadMaterialEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:hint="@string/cantidad_lbl"
+                android:text="1"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:id="@+id/codigoMaterialEt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="@string/leer_codigo_material_lbl"
+                android:layout_marginLeft="10dp" />
+
+            <Button
+                android:id="@+id/aceptarBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/leer_codigo_enviar_lbl"
+                android:background="@drawable/shape_button_aceptar"
+                android:layout_below="@+id/codigoET"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="5dp"
+                android:onClick="aceptar"/>
+
+        </LinearLayout>
+
+
+
+</RelativeLayout>

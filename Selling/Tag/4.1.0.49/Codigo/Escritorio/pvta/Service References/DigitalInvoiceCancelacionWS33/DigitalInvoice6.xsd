@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://digitalinvoice.com.mx/WSDI" elementFormDefault="qualified" targetNamespace="https://digitalinvoice.com.mx/WSDI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioCancelacionCFDI" />
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioConsultaCFDIRelacionados" />
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioAceptacionRechazoCFDI" />
+  <xs:element name="Cancela">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Cancelar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RFCEmisor" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="folios" nillable="true" type="q1:ArrayOfstring" />
+        <xs:element minOccurs="0" name="certificadoPFX" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="contraseñaCertificado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioCancelacionCFDI" minOccurs="0" name="CancelarResult" nillable="true" type="q2:Acuse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelaTest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelaTestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uuid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rfcEmisor" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerAckResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaCFDIRelacionados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RfcReceptor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="certificadoPFX" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="Contraseña" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaCFDIRelacionadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioConsultaCFDIRelacionados" minOccurs="0" name="ConsultaCFDIRelacionadosResult" nillable="true" type="q3:ConsultaRelacionados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AceptacionRechazo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RfcReceptor" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="folios" nillable="true" type="q4:ArrayOfstring" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioAceptacionRechazoCFDI" minOccurs="0" name="Respuesta" type="q5:TipoAccionPeticionCancelacion" />
+        <xs:element minOccurs="0" name="certificadoPFX" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="Contraseña" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AceptacionRechazoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioAceptacionRechazoCFDI" minOccurs="0" name="AceptacionRechazoResult" nillable="true" type="q6:AcuseAceptacionRechazo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPeticionesPendientes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RfcReceptor" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerPeticionesPendientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioAceptacionRechazoCFDI" minOccurs="0" name="ObtenerPeticionesPendientesResult" nillable="true" type="q7:AcusePeticionesPendientes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarTestBase64">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comprobante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimbrarTestBase64Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TimbrarTestBase64Result" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="acuse" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

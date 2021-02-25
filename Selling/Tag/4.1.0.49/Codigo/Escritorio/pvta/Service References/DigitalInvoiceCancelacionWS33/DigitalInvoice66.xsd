@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioConsultaCFDIRelacionados" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SAT.CFDI.Cliente.Procesamiento.ServicioConsultaCFDIRelacionados" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://digitalinvoicecfdi.com.mx/WS_Cancelacion/DigitalInvoice.WebServices.WSDI.Cancelacion.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+  <xs:complexType name="ConsultaRelacionados">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q1:PropertyChangedEventHandler" />
+      <xs:element name="resultadoField" nillable="true" type="xs:string" />
+      <xs:element name="uuidConsultadoField" nillable="true" type="xs:string" />
+      <xs:element name="uuidsRelacionadosHijosField" nillable="true" type="tns:ArrayOfUuidRelacionado" />
+      <xs:element name="uuidsRelacionadosPadresField" nillable="true" type="tns:ArrayOfUuidPadre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultaRelacionados" nillable="true" type="tns:ConsultaRelacionados" />
+  <xs:complexType name="ArrayOfUuidRelacionado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UuidRelacionado" nillable="true" type="tns:UuidRelacionado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUuidRelacionado" nillable="true" type="tns:ArrayOfUuidRelacionado" />
+  <xs:complexType name="UuidRelacionado">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q2:PropertyChangedEventHandler" />
+      <xs:element name="rfcEmisorField" nillable="true" type="xs:string" />
+      <xs:element name="rfcReceptorField" nillable="true" type="xs:string" />
+      <xs:element name="uuidField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UuidRelacionado" nillable="true" type="tns:UuidRelacionado" />
+  <xs:complexType name="ArrayOfUuidPadre">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UuidPadre" nillable="true" type="tns:UuidPadre" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUuidPadre" nillable="true" type="tns:ArrayOfUuidPadre" />
+  <xs:complexType name="UuidPadre">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q3:PropertyChangedEventHandler" />
+      <xs:element name="rfcEmisorField" nillable="true" type="xs:string" />
+      <xs:element name="rfcReceptorField" nillable="true" type="xs:string" />
+      <xs:element name="uuidField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UuidPadre" nillable="true" type="tns:UuidPadre" />
+</xs:schema>
