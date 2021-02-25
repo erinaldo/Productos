@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+    <LinearLayout
+        style="@style/BlackMiniDescriptionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/lblFolio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Small Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/captura_pedido_lblListaPrecios_Titulos_textSize"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent" 
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+		<TextView
+		    android:id="@+id/lblFecha"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="right"
+		    android:text="Small Text"
+		    android:textAppearance="?android:attr/textAppearanceMedium"
+		    android:textSize="@dimen/captura_pedido_lblListaPrecios_Titulos_textSize"
+		    android:textStyle="bold" />
+
+    </LinearLayout>
+        
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lstProductos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1" >
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btnTerminar"
+            style="@style/buttonSquareStyle"
+            android:layout_width="@dimen/general_button_width"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/captura_pedido_lblitulo_height"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:background="@color/titleBarColor"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/lblImporteLiquidar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/seleccion_pedido_lblCliente_textSize" />
+
+            <TextView
+                android:id="@+id/lblImporteLiquidarMonto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="10dp"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/seleccion_pedido_lblCliente_textSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/lblDevoluciones"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/seleccion_pedido_lblCliente_textSize" />
+
+            <TextView
+                android:id="@+id/lblSaldo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="10dp"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/seleccion_pedido_lblCliente_textSize" />
+
+        </LinearLayout>
+
+	</LinearLayout>
+
+
+
+</LinearLayout>

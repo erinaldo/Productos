@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:weightSum="100"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lblNameSeller"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:textSize="@dimen/consultar_indicadores_lblNameSeller_textSize" />
+
+    <TextView
+        android:id="@+id/lblFecha"
+        style="@style/DarkGrayStyleClient"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:textSize="@dimen/consultar_indicadores_lblFecha_textSize" />
+
+    <ListView
+        android:id="@+id/lstIndicadores"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"      
+        android:divider="@color/white"
+        android:dividerHeight="5dip" >
+    </ListView>
+
+    <include
+        android:layout_weight="5"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>
