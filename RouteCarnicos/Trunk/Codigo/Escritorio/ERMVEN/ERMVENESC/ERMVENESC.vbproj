@@ -1,0 +1,253 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E26822F6-459E-47A0-BCF6-BB7678A0556F}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ERMVENESC</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>ERMVENESC</RootNamespace>
+    <StartupObject>ERMVENESC.NGeneral</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERMVENESC.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERMVENESC.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BASACTLOG">
+      <Name>BASACTLOG</Name>
+      <HintPath>\\Rafiki\route\BASACTLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASLOG">
+      <Name>BASLOG</Name>
+      <HintPath>\\Rafiki\ROUTE\BASLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASMENLOG">
+      <Name>BASMENLOG</Name>
+      <HintPath>..\..\Aplicación\BASMENLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASPERLOG">
+      <Name>BASPERLOG</Name>
+      <HintPath>\\Rafiki\route\BASPERLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASUSUESC">
+      <Name>BASUSUESC</Name>
+      <HintPath>..\..\Aplicación\BASUSUESC.dll</HintPath>
+    </Reference>
+    <Reference Include="BASUSULOG">
+      <Name>BASUSULOG</Name>
+      <HintPath>..\..\Aplicación\BASUSULOG.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=6.5.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="ERMALMLOG">
+      <Name>ERMALMLOG</Name>
+      <HintPath>\\Desarrollo\erm\ERMALMLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCONLOG">
+      <Name>ERMCONLOG</Name>
+      <HintPath>\\Rafiki\route\ERMCONLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMDESLOG">
+      <Name>ERMDESLOG</Name>
+      <HintPath>\\Desarrollo\erm\ERMDESLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMESQESC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMESQLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMMOTESC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMMOTLOG">
+      <Name>ERMMOTLOG</Name>
+      <HintPath>\\Desarrollo\erm\ERMMOTLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMTERESC">
+      <Name>ERMTERESC</Name>
+      <HintPath>\\Desarrollo\ERM\ERMTERESC.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMTERLOG">
+      <Name>ERMTERLOG</Name>
+      <HintPath>..\..\Aplicación\ERMTERLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMTRPLOG">
+      <Name>ERMTRPLOG</Name>
+      <HintPath>\\Rafiki\ROUTE\ERMTRPLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="FormasBase">
+      <Name>FormasBase</Name>
+      <HintPath>\\Desarrollo\ERM\FormasBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.CalendarCombo.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="LbAcceso">
+      <Name>LbAcceso</Name>
+      <HintPath>..\..\Aplicación\LbAcceso.dll</HintPath>
+    </Reference>
+    <Reference Include="LbConexion">
+      <Name>LbConexion</Name>
+      <HintPath>..\..\Aplicación\LbConexion.dll</HintPath>
+    </Reference>
+    <Reference Include="LbControlError">
+      <Name>LbControlError</Name>
+      <HintPath>..\..\Aplicación\LbControlError.dll</HintPath>
+    </Reference>
+    <Reference Include="LbGeneral">
+      <Name>LbGeneral</Name>
+      <HintPath>..\..\Aplicación\LbGeneral.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\ERMVENLOG\ERMVENLOG.vbproj">
+      <Name>ERMVENLOG</Name>
+      <Project>{276DE74E-BFC2-48A8-9663-1CA1F6E2B774}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DHistorico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="NGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="DHistorico.resx">
+      <DependentUpon>DHistorico.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IGeneral.resx">
+      <DependentUpon>IGeneral.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MGeneral.resx">
+      <DependentUpon>MGeneral.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NGeneral.resx">
+      <DependentUpon>NGeneral.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

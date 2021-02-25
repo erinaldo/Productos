@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:pfic="http://www.sat.gob.mx/pfic" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.sat.gob.mx/pfic" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PFintegranteCoordinado">
+    <xs:annotation>
+      <xs:documentation> Este complemento permite incorporar a un Comprobante Fiscal Digital (CFD) o a un Comprobante Fiscal Digital a trav??s de Internet (CFDI) los datos de identificaci??n del veh??culo que corresponda a personas f??sicas integrantes de coordinados, que opten por pagar el impuesto individualmente de conformidad con lo establecido por el art??culo 83, s??ptimo p??rrafo de la Ley del Impuesto sobre la Renta.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute fixed="1.0" name="version" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido con valor prefijado a 1.0 que indica la versi??n del est??ndar bajo el que se encuentra expresado el complemento.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="ClaveVehicular" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para precisar Clave vehicular que corresponda a la versi??n del veh??culo enajenado.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:whiteSpace value="collapse" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Placa" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para se??alar la placa o n??mero de folio del
+permiso del veh??culo que
+corresponda.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:whiteSpace value="collapse" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="RFCPF" type="pfic:t_RFC" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional para precisar el RFC de la persona f??sica
+integrante de coordinados, que opte por pagar el impuesto individualmente.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="t_RFC">
+    <xs:annotation>
+      <xs:documentation>Tipo definido para expresar claves del Registro Federal de Contribuyentes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="12" />
+      <xs:maxLength value="13" />
+      <xs:whiteSpace value="collapse" />
+      <xs:pattern value="[A-Z,??,&amp;]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9][A-Z,0-9]?[A-Z,0-9]?[0-9,A-Z]?" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

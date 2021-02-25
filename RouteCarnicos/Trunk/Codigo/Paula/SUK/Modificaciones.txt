@@ -1,0 +1,80 @@
+tablas agregadas(Escritorio): 
+-SubEmpresa *Comparar script con rafiki y actualizar BD de suKarne, ver sintaxis de SQL2000 (hacer el insert inicial de acuerdo a lo que hay en conhist).
+
+-SEMHIST 
+
+-CEERegimenFiscal
+*Valor por referencia TIPREG
+
+-CLINoDesImp
+
+-TrpPun
+
+-TRPVtaAcreditada
+
+campos Agregados (Escritorio):
+TipoComprobante >>FolioSolicitado
+SubEmpresaId>>Centro de expedicion
+SubEmpresaID >>Folios
+
+SubEmpresaID>> TransProd * Considerar la estructura de la tabla actual ya que quedaran diferentes
+
+
+CONHIST>> Agregar: 	ServidorSMTP
+			Puerto
+			Correo
+			Password
+			SSL
+
+      	 Quitar:	ClienteClave
+			ComprobanteDig
+			FoliosTerminal
+			DirRepMensual
+			DirDocXML
+			DirArchivosFacElect
+			ContrasenaClave
+			ArchivoPEM
+
+
+ExigirOrdenCompra>>Cliente
+
+Tipo>>Vendedor
+
+Vendedor>>AlmacenId-No Requerido
+	  TerminalClave-No Requerido	
+	  ModuloTerm - No Requerido
+
+TPDImpuesto>>ImpuestoDesGlb
+	     ImpuestoPU
+
+TRPDatoFiscal>>TipoNotaCredito
+	     >>MetodoPago
+
+Componentes agregados:
+ERMSEMESC y ERMSEMLOG
+LbTransferencia
+
+Componentes modificados:
+ERMCEEESC y ERMCEELOG
+ERMFOLESC y ERMFOLLOG
+ERMCEFESC y ERMCEFLOG 
+
+ERMTRP--
+* Quitar cargas
+* Quitar la funcionalidad de addenda y envio de XML 
+*Quite clase AddendaFactura
+* Quite columna UUID de la navegación de facturación
+
+ERMVEN--
+?En la version original se quitaron las relaciones con Terminal y con ModuloTerm, para los vendedores de escritorio...es correcto? Cambie el componente para que no tomara en cuenta tiemposMuertos y que mandara null en terminalClave y ModuloClave.
+
+
+-ServicesCentral
+Cambie WSVendedorObtenerBD para poner lo del comprobante digital de SEMHist
+Cambie WSVerificarVendedorObtenerBD para cambiar el comprobanteDig a SEMHist
+
+-Consultas de AdminCentral
+Agregue funcion FNCentroExpedicion
+CentroExpedicion
+ConHist---borrar campos
+	

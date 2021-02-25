@@ -1,0 +1,274 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E68E5369-3BD8-40C2-B3C0-C52346970D1D}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ERMTRPLOG</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>ERMTRPLOG</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERMTRPLOG.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERMTRPLOG.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BASLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="BASMENLOG">
+      <Name>BASMENLOG</Name>
+      <HintPath>\\rafiki\route\BASMENLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCLILOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMCONLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMFOLESC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMFOLLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMIMPLOG">
+      <Name>ERMIMPLOG</Name>
+      <HintPath>\\Rafiki\route2005\ERMIMPLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMSEMLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LbConexion">
+      <Name>LbConexion</Name>
+      <HintPath>\\Rafiki\ROUTE\LbConexion.dll</HintPath>
+    </Reference>
+    <Reference Include="LbControlError, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LbDatos, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LbGeneral, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LbTransferencia, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cABNDetalle.vb" />
+    <Compile Include="cAbnTrp.vb" />
+    <Compile Include="cAbono.vb" />
+    <Compile Include="CancelaCFDService.vb">
+    </Compile>
+    <Compile Include="Cfdi.vb" />
+    <Compile Include="cTPDDesProdVendedor.vb" />
+    <Compile Include="cTPDImpuesto.vb" />
+    <Compile Include="cTpdPun.vb" />
+    <Compile Include="cTransProd.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cTransProdDetalle.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cTRPDatoFiscal.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cTrpPrp.vb" />
+    <Compile Include="cTRPRegimenFiscal.vb" />
+    <Compile Include="cTRPVtaAcreditada.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SignVerifyEnvelope.vb" />
+    <Compile Include="TimbradoCFDService.vb">
+    </Compile>
+    <Compile Include="Web References\com.tralix.pac\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\net.cloudapp.pruebacfdicancelacion\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\Users\amartinez\Desktop\CFDI 3.2\TimbradoCFD2.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.tralix.pac\</RelPath>
+      <UpdateFromURL>C:\Users\amartinez\Desktop\CFDI 3.2\TimbradoCFD2.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ERMTRPLOG_com_tralix_pac_TimbradoCFDService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://pruebacfdicancelacion.cloudapp.net/Cancelacion/CancelaCFDService.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\net.cloudapp.pruebacfdicancelacion\</RelPath>
+      <UpdateFromURL>https://pruebacfdicancelacion.cloudapp.net/Cancelacion/CancelaCFDService.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ERMTRPLOG_net_cloudapp_pruebacfdicancelacion_CancelaCFDService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\com.tralix.pac\detallista.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\divisas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\donat11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\ecb.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\ecc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\iedu.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\implocal.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\leyendasFisc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\pfic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\psgecfd.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\com.tralix.pac\terceros11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\TimbradoCFD2.wsdl" />
+    <None Include="Web References\com.tralix.pac\TimbreFiscalDigital.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.tralix.pac\TuristaPasajeroExtranjero.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\com.tralix.pac\ventavehiculos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\net.cloudapp.pruebacfdicancelacion\Acuse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\net.cloudapp.pruebacfdicancelacion\CancelaCFDService.wsdl" />
+    <None Include="Web References\net.cloudapp.pruebacfdicancelacion\CancelaCFDService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\net.cloudapp.pruebacfdicancelacion\CancelaCFDService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\net.cloudapp.pruebacfdicancelacion\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

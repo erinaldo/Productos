@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Tiempos" targetNamespace="http://tempuri.org/Tiempos.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/Tiempos.xsd" xmlns:mstns="http://tempuri.org/Tiempos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Tiempos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="DiaClave" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="RUTClave" type="xs:string" />
+        <xs:element name="TiempoRecorrido" type="xs:int" />
+        <xs:element name="TiempoVisita" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

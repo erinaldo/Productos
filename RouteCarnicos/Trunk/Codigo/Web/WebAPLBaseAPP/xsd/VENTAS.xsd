@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="VENTAS" targetNamespace="http://tempuri.org/VENTAS.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/VENTAS.xsd" xmlns:mstns="http://tempuri.org/VENTAS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="element1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FOLIO" type="xs:string" />
+        <xs:element name="CLIENTE" type="xs:string" />
+        <xs:element name="CLAVE" type="xs:string" />
+        <xs:element name="PRODUCTO" type="xs:string" />
+        <xs:element name="UNIDAD" type="xs:string" />
+        <xs:element name="PRECIOU" type="xs:int" />
+        <xs:element name="CANT" type="xs:float" />
+        <xs:element name="SUBTOTAL" type="xs:int" />
+        <xs:element name="DESCUENTOCLIENTE" type="xs:int" />
+        <xs:element name="DESCVEND" type="xs:int" />
+        <xs:element name="DESCPRODUCTO" type="xs:int" />
+        <xs:element name="IMPUESTO" type="xs:int" />
+        <xs:element name="TOTAL" type="xs:int" />
+        <xs:element name="FECHA" type="xs:date" />
+        <xs:element name="VENDEDOR" type="xs:string" />
+        <xs:element name="RUTA" type="xs:string" />
+        <xs:element name="TransProdId" type="xs:string">
+        </xs:element>
+        <xs:element name="CEDI" type="xs:string" />
+        <xs:element name="PROMOCION" type="xs:string">
+        </xs:element>
+        <xs:element name="CantUni" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

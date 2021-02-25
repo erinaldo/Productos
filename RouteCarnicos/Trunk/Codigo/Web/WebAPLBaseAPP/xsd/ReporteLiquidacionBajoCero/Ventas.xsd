@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Ventas" targetNamespace="http://tempuri.org/Ventas.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/Ventas.xsd" xmlns:mstns="http://tempuri.org/Ventas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Ventas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="DiaClave" type="xs:string" />
+        <xs:element name="ALMClave" type="xs:string" />
+        <xs:element name="Folio" type="xs:string" />
+        <xs:element name="FechaHoraAlta" type="xs:date" />
+        <xs:element name="Cliente" type="xs:string" />
+        <xs:element name="Simbolo" type="xs:string" />
+        <xs:element name="Total" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

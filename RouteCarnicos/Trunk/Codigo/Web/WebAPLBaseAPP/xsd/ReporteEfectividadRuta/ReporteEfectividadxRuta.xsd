@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteEfectividadxRuta" targetNamespace="http://tempuri.org/ReporteEfectividadxRuta.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteEfectividadxRuta.xsd" xmlns:mstns="http://tempuri.org/ReporteEfectividadxRuta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ReporteEfectividadxRuta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Almacen" type="xs:string" />
+        <xs:element name="FechaCaptura" type="xs:date" />
+        <xs:element name="Vendedor" type="xs:string" />
+        <xs:element name="Ruta" type="xs:string" />
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="DiaClave" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="RUTClave" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

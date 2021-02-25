@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SugeridoCargaPorReparto" targetNamespace="http://tempuri.org/SugeridoCargaPorReparto.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/SugeridoCargaPorReparto.xsd" xmlns:mstns="http://tempuri.org/SugeridoCargaPorReparto.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ProductosKgLts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ClaveCEDI" type="xs:string" />
+				<xs:element name="NombreCEDI" type="xs:string" />
+				<xs:element name="RUTClave" type="xs:string" />
+				<xs:element name="VendedorId" type="xs:string" />
+				<xs:element name="NombreVEN" type="xs:string" />
+				<xs:element name="ProductoClave" type="xs:string" />
+				<xs:element name="NombrePRO" type="xs:string" />
+				<xs:element name="Unidad" type="xs:string" />
+				<xs:element name="Cantidad" type="xs:integer" />
+				<xs:element name="KgLts" type="xs:double" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Productos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ClaveCEDI" type="xs:string" />
+				<xs:element name="NombreCEDI" type="xs:string" />
+				<xs:element name="RUTClave" type="xs:string" />
+				<xs:element name="VendedorId" type="xs:string" />
+				<xs:element name="NombreVEN" type="xs:string" />
+				<xs:element name="ProductoClave" type="xs:string" />
+				<xs:element name="NombrePRO" type="xs:string" />
+				<xs:element name="Unidad" type="xs:string" />
+				<xs:element name="Cantidad" type="xs:integer" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

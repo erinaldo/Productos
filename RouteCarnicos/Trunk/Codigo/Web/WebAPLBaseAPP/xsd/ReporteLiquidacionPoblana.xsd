@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LiquidacionPoblana" targetNamespace="http://tempuri.org/LiquidacionPoblana.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/LiquidacionPoblana.xsd" xmlns:mstns="http://tempuri.org/LiquidacionPoblana.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Movimientos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="ALMNombre" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="VENNombre" type="xs:string" />
+        <xs:element name="ProductoClave" type="xs:string" />
+        <xs:element name="PRONombre" type="xs:string" />
+        <xs:element name="InvInicial" type="xs:decimal" />
+        <xs:element name="CambioEnt" type="xs:decimal" />
+        <xs:element name="CambioSal" type="xs:decimal" />
+        <xs:element name="Consignacion" type="xs:decimal" />
+        <xs:element name="DevolucionCons" type="xs:decimal" />
+        <xs:element name="Promocion" type="xs:decimal" />
+        <xs:element name="Descarga" type="xs:decimal" />
+        <xs:element name="Venta" type="xs:decimal" />
+        <xs:element name="Importe" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ventas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="ALMNombre" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="VENNombre" type="xs:string" />
+        <xs:element name="Folio" type="xs:string" />
+        <xs:element name="FechaHoraAlta" type="xs:dateTime" />
+        <xs:element name="Cliente" type="xs:string" />
+        <xs:element name="Total" type="xs:decimal" />
+        <xs:element name="TipoFase" type="xs:integer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Vendedores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="ALMNombre" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="VENNombre" type="xs:string" />
+        <xs:element name="Cobranza" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Denominacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Grupo" type="xs:string" />
+        <xs:element name="NombreGrupo" type="xs:string" />
+        <xs:element name="Descripcion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

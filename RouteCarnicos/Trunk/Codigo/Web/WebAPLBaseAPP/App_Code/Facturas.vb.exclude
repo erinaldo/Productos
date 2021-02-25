@@ -1,0 +1,134 @@
+Imports Microsoft.VisualBasic
+
+Public Module Facturas
+
+    Public Sub hola()
+        Dim P As 
+    End Sub
+    '    Public Function ConsultaFacturas(ByVal ins As LbConexion.cConexion, ByVal pvDetallado As Boolean, ByVal pvCondicion As String, ByVal pvRutas As ArrayList, ByVal pvClientes As ArrayList, ByVal pvFecha As Boolean) As Boolean
+    '        Dim sConsulta As New StringBuilder
+    '        If pvFecha Then
+
+    '            'pvCondicion = directcast(page. strWhereFecha(pvCondicion, "TRP.FechaHoraAlta")
+    '        End If
+    '        pvCondicion = strWhereRutas(pvCondicion, pvRutas, "RUT.RUTClave")
+    '        pvCondicion = strWhereCentrosDistribucion(pvCondicion, "AGV.ClaveCEDI")
+    '        'pvCondicion = strWhereClientes(pvCondicion, pvClientes, "CLI.RazonSocial")
+    '        pvCondicion = strWhereClientes(pvCondicion, pvClientes, "CLI.ClienteClave")
+    '        If pvDetallado Then
+    '            'Se guardan en una temporal los TransProdDetalle con el descuento del cliente calculado, para solo llamar la funcion 1 vez y se tarde menos
+    '            'Cuando se Cambien los filtros a las claves los inner join de esta consulta se pueden disminuir
+    '            sConsulta.Append("SET ANSI_WARNINGS OFF ")
+    '            sConsulta.Append("SET NOCOUNT ON if (select object_id('tempdb..#Tmp1')) is not null drop table #Tmp1 ")
+    '            sConsulta.Append("Select TPD.TransProdID,TPD.TransProdDetalleID,TPD.ProductoClave,TipoUnidad,Precio,Cantidad,TPD.Promocion, TPD.DescuentoImp,TPD.Subtotal,TPD.Impuesto, ")
+    '            sConsulta.Append("(SELECT (CASE WHEN sum(DesImporte) IS NULL THEN 0 ELSE sum(DesImporte) END) FROM TpdDes AS TDD WHERE TDD.TransProdId=TRP.TransProdId AND TDD.TransProdDetalleId=TPD.TransProdDetalleId) as DescuentoCliente, ")
+    '            sConsulta.Append("(SELECT (CASE WHEN sum(DesImpuesto) IS NULL THEN 0 ELSE sum(DesImpuesto) END) FROM TpdDes AS TDD WHERE TDD.TransProdId=TRP.TransProdId AND TDD.TransProdDetalleId=TPD.TransProdDetalleId) as DescuentoClienteImpuesto ")
+    '            sConsulta.Append("into #Tmp1 ")
+    '            sConsulta.Append("from TransProdDetalle TPD inner join TransProd TRP on TPD.TransProdID = TRP.TransProdID and TRP.Tipo = 1 and TRP.TipoFase = 3 ")
+    '            sConsulta.Append("inner join Visita VIS on VIS.VisitaClave = TRP.VisitaClave ")
+    '            sConsulta.Append("inner join Cliente CLI on CLI.ClienteClave = TRP.ClienteClave ")
+    '            sConsulta.Append("inner join Vendedor VEN on VIS.VendedorId = VEN.VendedorId ")
+    '            sConsulta.Append("inner join AgendaVendedor AGV on TRP.DiaClave = AGV.DiaClave and VEN.VendedorId = AGV.VendedorId  and VIS.ClienteClave = AGV.ClienteClave and VIS.RUTClave = AGV.RUTClave  ")
+    '            sConsulta.Append("inner join Ruta RUT on VIS.RUTClave = RUT.RUTClave ")
+    '            'sConsulta.Append(pvCondicion)
+
+    '            sConsulta.Append("select TRP.FechaCaptura as Fecha, VEN.Nombre AS Vendedor, RUT.RUTClave + ' ' + RUT.Descripcion as Ruta, TRP.Folio, TRP.TransProdID, CLI.RazonSocial +' '+cli.nombrecontacto AS Cliente, TPD.ProductoClave AS Clave, PRO.Nombre AS Producto, VAD.Descripcion AS Unidad, ")
+    '            sConsulta.Append("TPD.Precio as PrecioU, ALN.Clave + ' ' + ALN.Nombre as CEDI, sum(TPD.Cantidad) AS Cant, ")
+    '            'sConsulta.Append("sum(case when TPD.Promocion = 1 then TPD.Subtotal else TPD.Precio * TPD.Cantidad end) as SubTotal, ")
+    '            sConsulta.Append("sum(TPD.Precio * TPD.Cantidad) as SubTotal, ")
+    '            sConsulta.Append("sum(DescuentoCliente) as DescuentoCliente, sum(((TPD.SubTotal - DescuentoCliente) * TRP2.DescVendPor / 100)) as DescVend, sum(TPD.DescuentoImp) as DescProducto,")
+    '            sConsulta.Append("sum(TPD.Impuesto - DescuentoClienteImpuesto- ((TPD.Impuesto - DescuentoClienteImpuesto) * TRP2.DescVendPor / 100)) as Impuesto, ")
+    '            sConsulta.Append("sum((TPD.SubTotal - DescuentoCliente - ((TPD.SubTotal-DescuentoCliente) * TRP2.DescVendPor / 100) ) + ((TPD.Impuesto - DescuentoClienteImpuesto) - ((TPD.Impuesto-DescuentoClienteImpuesto) * TRP2.DescVendPor / 100))) as Total ")
+    '            sConsulta.Append("from TransProd TRP inner join TransProd TRP2 on TRP.TransProdId = TRP2.FacturaId ")
+    '            sConsulta.Append("inner join Cliente CLI on CLI.ClienteClave = TRP2.ClienteClave ")
+    '            sConsulta.Append("inner join #Tmp1 TPD on TRP2.TransProdId = TPD.TransProdId ")
+    '            sConsulta.Append("inner join Producto PRO on TPD.ProductoClave = PRO.ProductoClave ")
+    '            sConsulta.Append("inner join VAVDescripcion VAD on VAD.VARCodigo = 'UNIDADV' and VAD.VAVClave = TPD.TipoUnidad and VAD.VADTipoLenguaje = '" & Session("lenguaje") & "' ")
+    '            sConsulta.Append("inner join Visita VIS on VIS.VisitaClave = TRP.VisitaClave ")
+    '            sConsulta.Append("inner join Vendedor VEN on VIS.VendedorId = VEN.VendedorId ")
+    '            sConsulta.Append("inner join AgendaVendedor AGV on TRP2.DiaClave = AGV.DiaClave and VEN.VendedorId = AGV.VendedorId  and VIS.ClienteClave = AGV.ClienteClave and VIS.RUTClave = AGV.RUTClave ")
+    '            sConsulta.Append("inner join Almacen ALN on AGV.ClaveCEDI = ALN.Clave inner join Ruta RUT on VIS.RUTClave = RUT.RUTClave ")
+    '            sConsulta.Append(pvCondicion & " and TRP.tipo = 8 and TRP.tipofase <> 0 ")
+    '            sConsulta.Append("group by TRP.FechaCaptura,VEN.Nombre, RUT.RUTClave + ' ' + RUT.Descripcion, TRP.Folio, TRP.TransProdID, CLI.RazonSocial,cli.nombrecontacto , TPD.ProductoClave ,PRO.Nombre , VAD.Descripcion ,TPD.Promocion,TPD.Precio, ALN.Clave + ' ' + ALN.Nombre ")
+    '            sConsulta.Append("SET NOCOUNT OFF ")
+    '            'Sin Descuentos
+    '            'sConsulta.Append("select distinct TRP.FechaCaptura as Fecha, VEN.Nombre AS Vendedor, RUT.RUTClave + ' ' + RUT.Descripcion as Ruta, ")
+    '            'sConsulta.Append("TRP.Folio, CLI.RazonSocial AS Cliente, TPD.ProductoClave AS Clave, PRO.Nombre AS Producto, VAD.Descripcion AS Unidad, ")
+    '            'sConsulta.Append("TPD.Precio AS PrecioU, ALN.Clave + ' ' + ALN.Nombre as CEDI, TPD.Cantidad AS Cant, TPD.Precio * TPD.Cantidad as SubTotal, ")
+    '            'sConsulta.Append("TPD.DescuentoImp + (TPD.SubTotal * case when DES.ValorAplicacion is null then 0 else DES.ValorAplicacion end / 100) as DescuentoCliente, ")
+    '            'sConsulta.Append("(TPD.SubTotal * TRP2.DescVendPor / 100) as DescVend, ")
+    '            'sConsulta.Append("TPD.Impuesto - (TPD.Impuesto * case when DES.ValorAplicacion is null then 0 else DES.ValorAplicacion end / 100) - (TPD.Impuesto * TRP2.DescVendPor / 100) - (TPD.Impuesto * TRP2.Bonificacion / TRP2.SubTotal) as Impuesto, ")
+    '            'sConsulta.Append("(TPD.SubTotal - (TPD.SubTotal * case when DES.ValorAplicacion is null then 0 else DES.ValorAplicacion end / 100) - (TPD.SubTotal * TRP2.DescVendPor / 100) - (TPD.SubTotal * TRP2.Bonificacion / TRP2.SubTotal)) + ")
+    '            'sConsulta.Append("(TPD.Impuesto - (TPD.Impuesto * case when DES.ValorAplicacion is null then 0 else DES.ValorAplicacion end / 100) - (TPD.Impuesto * TRP2.DescVendPor / 100) - (TPD.Impuesto * TRP2.Bonificacion / TRP2.Subtotal)) as Total, ")
+    '            'sConsulta.Append("isnull((select top 1 Importe from PromocionRegla PRR ")
+    '            'sConsulta.Append("inner join Promocion PRM on PRM.PromocionClave = PRR.PromocionClave and TPD.Cantidad >= PRR.Minimo and TPD.Cantidad <= PRR.Maximo ")
+    '            'sConsulta.Append("and TRP2.FechaCaptura > PRM.FechaInicial and TRP2.FechaCaptura < PRM.FechaFinal ")
+    '            'sConsulta.Append("inner join PromocionProducto PRP on TPD.ProductoClave = PRP.ProductoClave and PRP.PromocionClave = PRM.PromocionClave), 0) as Bonificacion ")
+    '            'sConsulta.Append("from TransProd TRP ")
+    '            'sConsulta.Append("inner join TransProd TRP2 on TRP.TransProdId = TRP2.FacturaId ")
+    '            'sConsulta.Append("inner join Cliente CLI on CLI.ClienteClave = TRP2.ClienteClave ")
+    '            'sConsulta.Append("inner join Producto PRO on TPD.ProductoClave = PRO.ProductoClave ")
+    '            'sConsulta.Append("inner join VAVDescripcion VAD on VAD.VARCodigo = 'UNIDADV' and VAD.VAVClave = TPD.TipoUnidad and VAD.VADTipoLenguaje = '" & Session("lenguaje") & "' ")
+    '            'sConsulta.Append("inner join Visita VIS on VIS.VisitaClave = TRP.VisitaClave ")
+    '            'sConsulta.Append("inner join Vendedor VEN on VIS.VendedorId = VEN.VendedorId ")
+    '            'sConsulta.Append("inner join (select distinct DiaClave, VendedorId, ClaveCEDI from AgendaVendedor) AGV on TRP2.DiaClave = AGV.DiaClave and VEN.VendedorId = AGV.VendedorId ")
+    '            'sConsulta.Append("inner join Almacen ALN on AGV.ClaveCEDI = ALN.Clave ")
+    '            'sConsulta.Append("inner join Ruta RUT on VIS.RUTClave = RUT.RUTClave ")
+    '            'sConsulta.Append("left join DesCliente DSC on TRP2.ClienteClave = DSC.ClienteClave ")
+    '            'sConsulta.Append("left join Descuento DES on DSC.DescuentoClave = DES.DescuentoClave ")
+    '            'sConsulta.Append(pvCondicion & " and TRP.tipo = 8 and TRP.tipofase <> 0 ")
+    '        Else
+    '            sConsulta.Append("SET ANSI_WARNINGS OFF ")
+    '            sConsulta.Append("select distinct TRP.TransProdId, TRP.FechaCaptura as Fecha, VEN.Nombre as Vendedor, RUT.RUTClave + ' ' + RUT.Descripcion as Ruta, ")
+    '            sConsulta.Append("TRP.Folio,CLI.RazonSocial +' '+cli.nombrecontacto as Cliente, CLI.Clave AS Clave, sum(TRP.Total) as Total, ALN.Clave + ' ' + ALN.Nombre as CEDI ")
+    '            sConsulta.Append("from TransProd TRP ")
+    '            sConsulta.Append("inner join TransProd TRP2 on TRP.TransProdId = TRP2.FacturaId ")
+    '            sConsulta.Append("inner join Cliente CLI on CLI.ClienteClave = TRP2.ClienteClave ")
+    '            sConsulta.Append("inner join Visita VIS on VIS.VisitaClave = TRP.VisitaClave ")
+    '            sConsulta.Append("inner join Vendedor VEN on VIS.VendedorId = VEN.VendedorId ")
+    '            sConsulta.Append("inner join AgendaVendedor AGV on TRP2.DiaClave = AGV.DiaClave and VEN.VendedorId = AGV.VendedorId  and VIS.ClienteClave = AGV.ClienteClave and VIS.RUTClave = AGV.RUTClave ")
+    '            sConsulta.Append("inner join Almacen ALN on AGV.ClaveCEDI = ALN.Clave ")
+    '            sConsulta.Append("inner join Ruta RUT on VIS.RUTClave = RUT.RUTClave ")
+    '            sConsulta.Append(pvCondicion & " and TRP.Tipo = 8 and TRP.TipoFase <> 0 ")
+    '            sConsulta.Append("group by TRP.FechaCaptura, VEN.Nombre, RUT.RUTClave + ' ' + RUT.Descripcion, TRP.Folio, TRP.TransProdId, CLI.RazonSocial,cli.nombrecontacto , CLI.Clave , ALN.Clave + ' ' + ALN.Nombre ")
+    '        End If
+
+    '        'Session("Query") = sConsulta.ToString
+    '        '-----------------------------------------
+    '        Dim dt As Data.DataTable
+    '        dt = ins.EjecutarConsulta(sConsulta.ToString, IntCommandTimeOut)
+    '        If dt.Rows.Count = 0 Then
+    '            Return False
+    '        End If
+    '        paroPage.Session("DataTable") = dt
+    '        '-----------------------------------------
+
+    '        'Query 2    
+    '        sConsulta = New StringBuilder
+    '        sConsulta.Append("SET ANSI_WARNINGS OFF ")
+    '        sConsulta.Append("select CEDI, Clave, Producto, Unidad, sum(Cantidad) as Cantidad, ")
+    '        sConsulta.Append("sum((SubTotal - DescuentoCliente -((SubTotal - DescuentoCliente) * DescVendPor / 100)) + (Impuesto - DescuentoClienteImpuesto -((Impuesto - DescuentoClienteImpuesto) * DescVendPor / 100))) as Total ")
+    '        sConsulta.Append("FROM ")
+    '        sConsulta.Append("( ")
+    '        sConsulta.Append("select ALN.Clave + ' ' + ALN.Nombre as CEDI, TPD.ProductoClave as Clave, ")
+    '        sConsulta.Append("PRO.Nombre as Producto, VAD.Descripcion as Unidad, TPD.Cantidad, TPD.SubTotal, TRP2.DescVendPor, TPD.Impuesto, ")
+    '        sConsulta.Append("(SELECT (CASE WHEN sum(DesImporte) IS NULL THEN 0 ELSE sum(DesImporte) END) FROM TpdDes AS TDD WHERE TDD.TransProdId=TRP2.TransProdId AND TDD.TransProdDetalleId=TPD.TransProdDetalleId) as DescuentoCliente, ")
+    '        sConsulta.Append("(SELECT (CASE WHEN sum(DesImpuesto) IS NULL THEN 0 ELSE sum(DesImpuesto) END) FROM TpdDes AS TDD WHERE TDD.TransProdId=TRP2.TransProdId AND TDD.TransProdDetalleId=TPD.TransProdDetalleId) as DescuentoClienteImpuesto ")
+    '        sConsulta.Append("from TransProd TRP ")
+    '        sConsulta.Append("inner join TransProd TRP2 on TRP.TransProdId = TRP2.FacturaId ")
+    '        sConsulta.Append("inner join Cliente CLI on CLI.ClienteClave = TRP2.ClienteClave ")
+    '        sConsulta.Append("inner join TransProdDetalle TPD on TRP2.TransProdId = TPD.TransProdId ")
+    '        sConsulta.Append("inner join Producto PRO on TPD.ProductoClave = PRO.ProductoClave ")
+    '        sConsulta.Append("inner join VAVDescripcion VAD on VAD.VARCodigo = 'UNIDADV' and VAD.VAVClave = TPD.TipoUnidad and VAD.VADTipoLenguaje = '" & Session("lenguaje") & "' ")
+    '        sConsulta.Append("inner join Visita VIS on VIS.VisitaClave = TRP.VisitaClave ")
+    '        sConsulta.Append("inner join Vendedor VEN on VIS.VendedorId = VEN.VendedorId ")
+    '        sConsulta.Append("inner join Ruta RUT on VIS.RUTClave = RUT.RUTClave ")
+    '        sConsulta.Append("inner join AgendaVendedor AGV on TRP.DiaClave = AGV.DiaClave and VEN.VendedorId = AGV.VendedorId  and VIS.ClienteClave = AGV.ClienteClave and VIS.RUTClave = AGV.RUTClave  ")
+    '        sConsulta.Append("inner join Almacen ALN on AGV.ClaveCEDI = ALN.Clave ")
+    '        sConsulta.Append(pvCondicion & " and TRP.Tipo = 8 and TRP.TipoFase <> 0 ")
+    '        sConsulta.Append(") as Resultado ")
+    '        sConsulta.Append("group by CEDI, Clave, Producto , Unidad ")
+    '        paroPage.Session("Query2") = sConsulta.ToString
+
+    '        Return True
+End Module

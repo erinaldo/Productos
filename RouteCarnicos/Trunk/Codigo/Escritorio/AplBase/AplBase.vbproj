@@ -1,0 +1,275 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{647D616D-2F74-4ABD-8F98-AD435D23395F}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>amesol.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Route</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>Route</RootNamespace>
+    <StartupObject>Route.ModuloInicio</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Route.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>SINLICENCIA=1,WAREHOUSE=0</DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Route.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>SINLICENCIA=1,WAREHOUSE=0</DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SINLICENCIA|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Route.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BASACTLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="BASLOG">
+      <Name>BASLOG</Name>
+      <HintPath>\\Desarrollo\amesolbase\BASLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASMENLOG">
+      <Name>BASMENLOG</Name>
+      <HintPath>\\Desarrollo\ERM\BASMENLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASMODLOG">
+      <Name>BASMODLOG</Name>
+      <HintPath>\\Desarrollo\erm\BASMODLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASPERLOG">
+      <Name>BASPERLOG</Name>
+      <HintPath>\\Desarrollo\amesolbase\BASPERLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASREGESC">
+      <Name>BASREGESC</Name>
+      <HintPath>..\Registro\BASREGESC\BASREGESC\bin\BASREGESC.dll</HintPath>
+    </Reference>
+    <Reference Include="BASREGLOG">
+      <Name>BASREGLOG</Name>
+      <HintPath>..\Registro\BASREGESC\BASREGESC\bin\BASREGLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASUSULOG">
+      <Name>BASUSULOG</Name>
+      <HintPath>\\desarrollo\ERM\BASUSULOG.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=6.5.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Archivos de programa\Janus Systems\Controls for Microsoft .NET\Windows Forms Controls v3\Bin\Janus.Data.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.CalendarCombo.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Archivos de programa\Janus Systems\Controls for Microsoft .NET\Windows Forms Controls v3\Bin\Janus.Windows.Common.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Schedule.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="LbAcceso">
+      <Name>LbAcceso</Name>
+      <HintPath>..\..\Librerias\LbAcceso\bin\LbAcceso.dll</HintPath>
+    </Reference>
+    <Reference Include="LbConexion">
+      <Name>LbConexion</Name>
+      <HintPath>\\Desarrollo\ERM\LbConexion.dll</HintPath>
+    </Reference>
+    <Reference Include="LbControlError">
+      <Name>LbControlError</Name>
+      <HintPath>\\Desarrollo\ERM\LbControlError.dll</HintPath>
+    </Reference>
+    <Reference Include="LbGeneral">
+      <Name>LbGeneral</Name>
+      <HintPath>\\Rafiki\ROUTE\LbGeneral.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="amesol.ico" />
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FAplBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaAcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaCambioClave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaPadre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormControlesJanus.Designer.vb">
+      <DependentUpon>FormControlesJanus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormControlesJanus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloInicio.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FAplBase.resx">
+      <DependentUpon>FAplBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaAcercaDe.resx">
+      <DependentUpon>FormaAcercaDe.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaCambioClave.resx">
+      <DependentUpon>FormaCambioClave.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaLogin.resx">
+      <DependentUpon>FormaLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaPadre.DotNetBarManager1.xml" />
+    <EmbeddedResource Include="FormaPadre.resx">
+      <DependentUpon>FormaPadre.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControlesJanus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormControlesJanus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Imagenes\Icono.dat" />
+    <None Include="Imagenes\Logo.dat" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

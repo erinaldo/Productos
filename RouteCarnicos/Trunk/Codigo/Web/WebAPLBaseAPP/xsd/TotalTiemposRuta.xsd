@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TotalTiemposRuta" targetNamespace="http://tempuri.org/TotalTiemposRuta.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/TotalTiemposRuta.xsd" xmlns:mstns="http://tempuri.org/TotalTiemposRuta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="element1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="VENDEDOR" type="xs:string" />
+        <xs:element name="sinventa" type="xs:int" />
+        <xs:element name="TOTALClientes" type="xs:int" />
+        <xs:element name="NOVISITADOs" type="xs:int" />
+        <xs:element name="VISITADOs" type="xs:int" />
+        <xs:element name="VISITAEfectiva" type="xs:double" />
+        <xs:element name="EfectividadCompra" type="xs:double" />
+        <xs:element name="Ruta" type="xs:string" />
+        <xs:element name="Cedi" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

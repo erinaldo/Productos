@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DepositosEfectivo" targetNamespace="http://tempuri.org/DepositosEfectivo.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/DepositosEfectivo.xsd" xmlns:mstns="http://tempuri.org/DepositosEfectivo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DepositosEfectivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="FechaPreLiquidacion" type="xs:date" />
+        <xs:element name="Tipo" type="xs:string" />
+        <xs:element name="Denominacion" type="xs:double" />
+        <xs:element name="Cantidad" type="xs:double" />
+        <xs:element name="Referencia" type="xs:string" />
+        <xs:element name="Ficha" type="xs:string" />
+        <xs:element name="Banco" type="xs:string" />
+        <xs:element name="Simbolo" type="xs:string" />
+        <xs:element name="Importe" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

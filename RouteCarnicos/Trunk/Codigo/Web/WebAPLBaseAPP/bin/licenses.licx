@@ -1,0 +1,11 @@
+Janus.Web.GridEX.GridEX, Janus.Web.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.UI.Dock.UIPanelManager, Janus.Web.UI.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.UI.CommandBars.UICommandManager, Janus.Web.UI.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.GridEX.EditControls.IntegerUpDown, Janus.Web.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.GridEX.GridEXDropDown, Janus.Web.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.GridEX.EditControls.MultiColumnCombo, Janus.Web.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.GridEX.EditControls.CheckedComboBox, Janus.Web.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.GridEX.EditControls.ComboBox, Janus.Web.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.GridEX.EditControls.NumericEditBox, Janus.Web.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.UI.Callback.UICallbackManager, Janus.Web.UI.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf
+Janus.Web.GridEX.EditControls.CalendarCombo.CalendarCombo, Janus.Web.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf

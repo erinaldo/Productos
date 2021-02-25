@@ -1,0 +1,2 @@
+Insert into SubEmpresa 
+select ConfiguracionID, NombreEmpresa, RFC, Pais, Region, Localidad, ReferenciaDom, Ciudad, Colonia, Calle, Numero, NumeroInterior, CodigoPostal, Logotipo , Telefono, 1, GETDATE(), 'Admin' from Configuracion 

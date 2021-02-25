@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Encuestas" targetNamespace="http://tempuri.org/Encuestas.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/Encuestas.xsd" xmlns:mstns="http://tempuri.org/Encuestas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Encuestas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Encuesta" type="xs:string" />
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="DiaClave" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="RUTClave" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

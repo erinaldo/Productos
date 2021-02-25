@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteFolios" targetNamespace="http://tempuri.org/ReporteFolios.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteFolios.xsd" xmlns:mstns="http://tempuri.org/ReporteFolios.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Folios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CentroExpID" type="xs:string" />
+        <xs:element name="Nombre" type="xs:string" />
+        <xs:element name="NumCertificado" type="xs:string" />
+        <xs:element name="FechaInicial" type="xs:date" />
+        <xs:element name="FechaFinal" type="xs:date" />
+        <xs:element name="Serie" type="xs:string" />
+        <xs:element name="TipoComprobante" type="xs:string" />
+        <xs:element name="Vendedor" type="xs:string" />
+        <xs:element name="Inicio" type="xs:integer" />
+        <xs:element name="Fin" type="xs:integer" />
+        <xs:element name="FolioActual" type="xs:integer" />
+        <xs:element name="DoctosSemanal" type="xs:integer" />
+        <xs:element name="PromDiario" type="xs:float" />
+        <xs:element name="Disponibles" type="xs:integer" />
+        <xs:element name="DiasFolio" type="xs:float" />
+        <xs:element name="Aprobacion" type="xs:integer" />
+        <xs:element name="AnioAprobacion" type="xs:integer" />
+        <xs:element name="Usados" type="xs:integer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProductoNegadoGral" targetNamespace="http://tempuri.org/ProductoNegadoGral.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ProductoNegadoGral.xsd" xmlns:mstns="http://tempuri.org/ProductoNegadoGral.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ProductoNegadoGral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="DiaClave" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="RutClave" type="xs:string" />
+        <xs:element name="TotalNegado" type="xs:int" />
+        <xs:element name="TotalImproductivo" type="xs:int" />
+        <xs:element name="TotalNegadoEnAgenda" type="xs:int" />
+        <xs:element name="TotalImproductivoEnAgenda" type="xs:int" />
+        <xs:element name="TotalNegadoFueraAgenda" type="xs:int" />
+        <xs:element name="TotalImproductivoFueraAgenda" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

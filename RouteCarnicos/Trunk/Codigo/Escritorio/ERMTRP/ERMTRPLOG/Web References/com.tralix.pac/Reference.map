@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/iedu.xsd" filename="iedu.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/ventavehiculos.xsd" filename="ventavehiculos.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/implocal.xsd" filename="implocal.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/psgecfd.xsd" filename="psgecfd.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/ecc.xsd" filename="ecc.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/ecb.xsd" filename="ecb.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/detallista.xsd" filename="detallista.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/terceros11.xsd" filename="terceros11.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/divisas.xsd" filename="divisas.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/pfic.xsd" filename="pfic.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/TuristaPasajeroExtranjero.xsd" filename="TuristaPasajeroExtranjero.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/donat11.xsd" filename="donat11.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/xsds_2/leyendasFisc.xsd" filename="leyendasFisc.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/amartinez/Desktop/CFDI 3.2/TimbradoCFD2.wsdl" filename="TimbradoCFD2.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

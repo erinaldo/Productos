@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteGastos" targetNamespace="http://tempuri.org/ReporteGastos.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteGastos.xsd" xmlns:mstns="http://tempuri.org/ReporteGastos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Gastos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="folio" type="xs:string" />
+				<xs:element name="concepto" type="xs:string" />
+				<xs:element name="subtotal" type="xs:double" />
+				<xs:element name="impuesto" type="xs:double" />
+				<xs:element name="total" type="xs:double" />
+				<xs:element name="fecha" type="xs:date" />
+				<xs:element name="vendedor" type="xs:string" />
+				<xs:element name="CEDI" type="xs:string" />
+				<xs:element name="Porcentaje" type="xs:double" />
+				<xs:element name="Comentario" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

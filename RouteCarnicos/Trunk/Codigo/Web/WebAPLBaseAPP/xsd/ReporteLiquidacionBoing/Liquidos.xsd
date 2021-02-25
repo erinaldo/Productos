@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Liquidos" targetNamespace="http://tempuri.org/Liquidos.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/Liquidos.xsd" xmlns:mstns="http://tempuri.org/Liquidos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Liquidos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ProductoClave" type="xs:string" />
+				<xs:element name="PRONombre" type="xs:string" />
+				<xs:element name="Cargas" type="xs:double" />
+				<xs:element name="Ajustes" type="xs:double" />
+				<xs:element name="DevolucionesAlmacen" type="xs:double" />
+				<xs:element name="Descargas" type="xs:double" />
+				<xs:element name="VentaBruta" type="xs:double" />
+				<xs:element name="Ventas" type="xs:double" />
+				<xs:element name="Promocion" type="xs:double" />
+				<xs:element name="Precio" type="xs:double" />
+				<xs:element name="Importe" type="xs:double" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,4123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Janus.Web.UI.v3</name>
+    </assembly>
+    <members>
+        <member name="T:Janus.Web.UI.Dock.UIPanelGroup">
+            <summary>
+            Represents a group of two or more panels.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIPanelBase">
+            <summary>
+            Implements the basic functionality required by UIPanelGroups and UIPanel controls.
+            </summary>	
+        </member>
+        <member name="T:Janus.Web.UI.IPanelWizardConfigurable">
+            <summary>
+            This member support the design time serialization of a UIPanelLayout and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.IPanelWizardConfigurable.PanelManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.schemeHeightLightCaption">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.schemeHeightDarkCaption">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.defaultOutlookButtonHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.defaultSeparatorHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.defaultSeparatorWidth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.defaultCaptionHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.newLine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.tagKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.viewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.isTrackingViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.GetCssDefinition">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.GetDesignerStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.DeserializeLayout(Janus.Web.Common.Layouts.JanusLayoutReader)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.SerializeLayout(Janus.Web.Common.Layouts.JanusLayoutWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.GetScriptDefinition">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.LoadViewState(System.Object)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.SaveViewState">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.TrackViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.SetDirtyViewStateCore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.CreateGroup(Janus.Web.UI.Dock.PanelGroupStyle,Janus.Web.UI.Dock.UIPanelBase)">
+            <summary>
+            Creates a new UIPanelGroup with panel passed as parameter.
+            </summary>
+            <param name="groupStyle">The GroupStyle for the new UIPanelGroup.</param>
+            <param name="panelToGroupWith">The panel to be grouped with.</param>
+            <returns>A UIPanelGroup representing the group created.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.GetClientEvent(System.String,System.String[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.GetServerEvent(System.String,System.String[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.MapFormatStyle(Janus.Web.UI.UIFormatStyle)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.OnPanelClosed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.containerHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.GetCoreContainerHeight">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.SetCoreContainerHeight(System.Int32)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelBase.containerWidth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.GetCoreContainerWidth">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.ApplyClientStatusCore(System.String)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.RenderControl(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.RenderBorderPanelCaption(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.RenderPanelCaption(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.AddParsedSubObject(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.EnsurePanelControlsCore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelBase.InitializePanelObjectCore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.ActiveCaptionFormatStyle">
+            <summary>
+            Gets a UIFormatStyle with the settings used to render the caption bar when the panel is active.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.AllowClose">
+            <summary>
+            Specifies wheter the user can close the panel when it belongs to a Tab group. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.AllowResize">
+            <summary>
+            Determines wheter the panel can be resized. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.BorderCaption">
+            <summary>
+            Gets or sets a value indicating whether the caption is rendered with a border around it.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.BorderCaptionColor">
+            <summary>
+            Gets or sets a value that indicates the border color of the caption bar.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.BorderPanel">
+            <summary>
+            Gets or sets a value indicating whether the panel is rendered with a border around it.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.BorderPanelColor">
+            <summary>
+            Indicates the border color of a panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.CaptionDisplayMode">
+            <summary>
+            Gets or sets a value that determines what is displayed in the caption bar.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.CaptionFormatStyle">
+            <summary>
+            Gets a UIFormatStyle with the settings used to render the caption bar.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.CaptionHeight">
+            <summary>
+            Gets or sets the height of the caption bar in a panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.CaptionStyle">
+            <summary>
+            Determines which predefined style will be used to render the background of the caption bar.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.CaptionTemplate">
+            <summary>
+            Gets or sets a custom ITemplate object to render the contets of the caption. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.UICaptionContainer">
+            <summary>
+            Gets the UICaptionContainer object that contains an instantiated ITemplate. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.CaptionVisible">
+            <summary>
+            Gets or sets a value indicating whether the caption bar is shown.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Closed">
+            <summary>
+            Determines wheter the panel is visible.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Dock">
+            <summary>
+            Gets or sets a value indicating if the panel could be docked or not. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Enabled">
+            <summary>
+            Indicates whether the panel is enabled.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Height">
+            <summary>
+            Gets or sets a value containing the height for the panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.InfoText">
+            <summary>
+            Gets or sets the text to be displayed in the caption of a panel separated from the Panel's Text.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.InfoTextAlignment">
+            <summary>
+            Gets or sets a value that determines the alignment of the InfoText in the panel caption.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.InfoTextFormatStyle">
+            <summary>
+            Gets a UIFormatStyle with the settings used to render the info text in the caption bar.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Image">
+            <summary>
+            Gets or sets the image's URL that is displayed on the panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.ImageAlignment">
+            <summary>
+            Gets or sets a value that determines the alignment of the image in the panel caption.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.LargeImage">
+            <summary>
+            Gets or sets the image's URL that is displayed on the button representing the panel in an OutlookNavigator group.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.TextAlignment">
+            <summary>
+            Gets or sets a value that determines the alignment of the text in the panel caption.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.NavigateUrl">
+            <summary>
+            Gets or sets the url to navigate when a tab button panel is selected.  
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Target">
+            <summary>
+            Gets or sets the target frame for the navigation when a tab button is selected
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.NextRow">
+            <summary>
+            Gets or sets a value indicating that the current panel and all the following panels in the collection should be rendered in the next row when they belongs to a Tab panel group.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.PanelManager">
+            <summary>
+            Gets the UIPanelManager that manages the panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.ParentGroup">
+            <summary>
+            Gets the UIPanelGroup that contains the panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.TabStateStyles">
+            <summary>
+            Gets the UIStateStyles that holds the format styles used to render the tab representing the panel in their different states.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.ViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Text">
+            <summary>
+            Gets or sets the text to be rendered in the caption of a panel. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.ToolTipText">
+            <summary>
+            The text of the ToolTip for the panel in a tab-group. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.UseActiveCaptionStyle">
+            <summary>
+            Gets or sets a value that determines whether the panels should use the FormatStyleActiveCaption to render the caption bar when it is active.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Width">
+            <summary>
+            Gets or sets a value containing the width of the panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.IdentifierLayout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.IsCollectionLayout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.Janus#Web#UI#IPanelWizardConfigurable#PanelManager">
+            <summary>
+            This member support the design time serialization of a UIPanelLayout and is not intended to be used directly from your code.
+            </summary>		
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelBase.IsTrackingViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelGroup.defaultOutlookSmallButtonsHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelGroup.defaultOutlookSeparatorHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelGroup.defaultVerticalTilesSeparatorWidth">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelGroup.defaultTabsHeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelGroup.defaultVisibleOutlookButtons">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelGroup.defaultBackgroundOutlookSeparator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.#ctor">
+            <summary>
+            Initializes a new instance of the UIPanelGroup class.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.#ctor(Janus.Web.UI.Dock.PanelGroupStyle)">
+            <summary>
+            Initializes a new instance of the UIPanelGroup class with the specified GroupStyle
+            </summary>
+            <param name="groupStyle">The GroupStyle of the UIPanelGroup</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.SerializeLayout(Janus.Web.Common.Layouts.JanusLayoutWriter)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.DeserializeLayout(Janus.Web.Common.Layouts.JanusLayoutReader)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.AddParsedSubObject(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.ApplyClientStatusCore(System.String)">
+            <summary>
+            Overrides base.ApplyClientStatusCore
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.EnsurePanelControlsCore">
+            <summary>
+            Overrides base.EnsurePanelControlsCore
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.GetCoreContainerHeight">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.GetCssDefinition">
+            <summary>
+            Overrides base.GetCssDefinition
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.GetDesignerStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.GetScriptDefinition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.GetCoreContainerWidth">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.InitializePanelObjectCore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.RenderBorderPanelCaption(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.TrackViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.SaveViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.LoadViewState(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelGroup.SetDirtyViewStateCore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelGroup.Panels">
+            <summary>
+            Gets an array of panels that represent the panels that are contained in the group.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelGroup.GroupStyle">
+            <summary>
+            Determines the style of the UIPanelGroup
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelGroup.SelectedPanel">
+            <summary>
+            Gets or sets the currently selected panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelGroup.SplitterSize">
+            <summary>
+            Gets or sets a value specifying the width of the splitter bar in a tiled panel group.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelGroup.SelectedPanelIndex">
+            <summary>
+            This members supports the design time serialization of a UIPanelGroup class and is not intended to be used directly from your code. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelGroup.ShowOutlookNavigatorConfigureMenu">
+            <summary>
+            Determines whether the 'Configure Buttons' menu is shown in an Outlook Navigator group. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelGroup.VisibleOutlookButtons">
+            <summary>
+            Determines how many panel buttons are visible in an Outlook Navigator group.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommandManager">
+            <summary>
+            Represents a control that will hold the structure for the commands and commandbars.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.AddParsedSubObject(System.Object)">
+            <summary>
+            Overrides base.AddParsedSubObject
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.CreateChildControls">
+            <summary>
+            Overrides base.CreateChildControls
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.OnPreRender(System.EventArgs)">
+            <summary>
+            Overrides base.OnPreRender
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.RenderControl(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.RenderControl
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.Render
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.RenderEndTag
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.RenderContents
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.GetLayout">
+            <summary>
+            Creates a UICommandBarsLayout object containing settings of the CommandManager component.
+            </summary>
+            <returns>The UICommandBarsLayout created.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.GetUIVersionString">
+            <summary>
+            Gets a string representing with the version number.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.FindControl(System.String)">
+            <summary>
+            Overrides base.FindControl
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.LoadLayout(Janus.Web.UI.CommandBars.UICommandBarsLayout)">
+            <summary>
+            Loads the settings preserved in a UICommandBarsLayout object without setting it as the current layout.
+            </summary>
+            <param name="layout">The UICommandBarsLayout with the UICommandManager component settings.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.LoadLayoutFile(System.IO.Stream)">
+            <summary>
+            Loads the UICommandManager component settings persisted in a stream.
+            </summary>
+            <param name="stream">A Stream object with the UICommandManager control settings.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.SaveLayoutFile(System.IO.Stream)">
+            <summary>
+            Persist in a stream all the UICommandManager component settings.
+            </summary>
+            <param name="stream">A Stream object where settings will be persisted.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.RaisePostDataChangedEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.RaisePostBackEvent(System.String)">
+            <summary>
+            
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.TrackViewState">
+            <summary>
+            Overrides base.TrackViewState
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.LoadViewState(System.Object)">
+            <summary>
+            Overrides base.LoadViewState
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandManager.SaveViewState">
+            <summary>
+            Overrides base.SaveViewState
+            </summary>		
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.ClientEvents">
+            <summary>
+            Gets a UICommandBarClientEvents object to set up client events. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.CommandBars">
+            <summary>
+            Gets an object representing the collection of the UICommandBar objects contained in this class.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.CommandsBarFormatStyle">
+            <summary>
+            Gets the UIFormatStyle used to render the UICommandBar objects in the CommandBars collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.CommandsStateStyles">
+            <summary>
+            Gets the UIStateStyles that holds the format styles used to draw the commands in their different states.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.CurrentLayout">
+            <summary>
+            Gets or sets the current UICommandBarsLayout.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.ColorSchemeFolderPath">
+            <summary>
+            Gets or sets a value containing the server path where the Color Scheme files for the control resides.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.DataMember">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.DataSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.ImagesFolderPath">
+            <summary>
+            Gets or sets a value containing the server path where the images file for the control resides.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.Layouts">
+            <summary>
+            Gets the collection of UICommandBarsLayout objects in the UICommandManager component.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.PopupSettings">
+            <summary>
+            Gets the UIPopupSettings used to render the popup window that contains the child commands. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.PostBackOnClick">
+            <summary>
+            Gets or sets a value specifying if a postback should be raised when a command is clicked. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.ScriptsFolderPath">
+            <summary>
+            Gets or sets a value containing the server path where JavaScript files for the control resides.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.ShowToolTips">
+            <summary>
+            Gets or sets a value indicating whether a ToolTip is shown when the mouse passes over a command.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandManager.VisualStyle">
+            <summary>
+            Gets or sets a value specifying the default appearance style for the objects assigned to this UICommandManager.
+            </summary>
+        </member>
+        <member name="E:Janus.Web.UI.CommandBars.UICommandManager.CommandClick">
+            <summary>
+            Occurs when the user clicks on a UICommand.
+            </summary>
+        </member>
+        <member name="E:Janus.Web.UI.CommandBars.UICommandManager.CurrentLayoutChanged">
+            <summary>
+            Occurs after the CurrentLayout property has changed.
+            </summary>
+        </member>
+        <member name="E:Janus.Web.UI.CommandBars.UICommandManager.CurrentLayoutChanging">
+            <summary>
+            Occurs before the CurrentLayout changes.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UIPanelGroupBuilder">
+            <summary>
+            Summary description for UIPanelGroupBuilder.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UIPanelBaseBuilder">
+            <summary>
+            Summary description for UIPanelBaseBuilder.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelBaseBuilder.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelBaseBuilder.FillTableProperties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelBaseBuilder.GetChildControlType(System.String,System.Collections.IDictionary)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelBaseBuilder.Init(System.Web.UI.TemplateParser,System.Web.UI.ControlBuilder,System.Type,System.String,System.String,System.Collections.IDictionary)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelGroupBuilder.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelGroupBuilder.FillTableProperties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommandBarClientEvents">
+            <summary>
+            Summary description for UICommandBarClientEvents.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarClientEvents.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarClientEvents.CommandClick">
+            <summary>
+            Gets or sets the javascript event fired after the user clicks in a UICommand. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarClientEvents.CommandMouseOver">
+            <summary>
+            Gets or sets the javascript event fired when the mouse pointer over one of the commands.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarClientEvents.CommandMouseOut">
+            <summary>
+            Gets or sets the javascript event fired when the mouse pointer out one of the commands. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarClientEvents.Load">
+            <summary>
+            Gets or sets the javascript event fired after the CommandManager is completely loaded in client side
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.UIFormatStyle">
+            <summary>
+            Contains style and appearance settings used to render the different areas of the controls.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultBackgroundOutlookCaptionDark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultBackgroundOutlookHot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultBackgroundOutlookPressed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultBackgroundOutlookSelected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultBackgroundOutlookStandard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultCaptionLight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultCaptionDark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultBackgroundOutlookDark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultBackgroundOutlookLight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.UIFormatStyle.defaultBackgroundOutlookTab">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.UIFormatStyle.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.UIFormatStyle.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.AddAttributesToRender
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Janus.Web.UI.UIFormatStyle.CopyFrom(System.Web.UI.WebControls.Style)">
+            <summary>
+            Overrides base.CopyFrom
+            </summary>
+            <param name="style"></param>
+        </member>
+        <member name="M:Janus.Web.UI.UIFormatStyle.MergeWith(System.Web.UI.WebControls.Style)">
+            <summary>
+            Overrides base.MergeWith
+            </summary>
+            <param name="style"></param>
+        </member>
+        <member name="M:Janus.Web.UI.UIFormatStyle.GetStyleAttribute(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Janus.Web.UI.UIFormatStyle.SetStyleAttribute(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BackgroundImage">
+            <summary>
+            Gets or sets a value with the image to use as background
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BackgroundImageDrawMode">
+            <summary>
+            Gets or sets a value that determines the way a background image is rendered.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BackgroundPosition">
+            <summary>
+            Gets or sets the position of the background image in the object.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BackgroundRepeat">
+            <summary>
+            Gets or sets a value indicating how the BackgroundImage property of the object is tiled.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderLeft">
+            <summary>
+            Gets a composite value for the border-left style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderLeftColor">
+            <summary>
+            Gets or sets a value for the border-left-color style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderLeftWidth">
+            <summary>
+            Gets or sets a value for the border-left-width style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderTop">
+            <summary>
+            Gets a string with the border-top style attribute
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderTopColor">
+            <summary>
+            Gets or sets value for the border-top-color style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderTopWidth">
+            <summary>
+            Gets or sets a value for the border-top-width style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderBottom">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderBottomColor">
+            <summary>
+            Gets or sets a value for the border-bottom-color style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderBottomWidth">
+            <summary>
+            Gets or sets a value for the border-bottom-width style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderRight">
+            <summary>
+            Gets a value with the composed border-right style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderRightColor">
+            <summary>
+            Gets or sets a value with the border-right-color style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.BorderRightWidth">
+            <summary>
+            Gets or sets a value with the border-right-width style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.Cursor">
+            <summary>
+            Gets or sets a value for cursor style attribute
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.FillAreaImagePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.FillAreaCss">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.FontBold">
+            <summary>
+            Gets a value that indicates whether the Font object used is bold.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.FontItalic">
+            <summary>
+            Gets a value that indicates whether the Font object used is italic.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.FontStrikeout">
+            <summary>
+            Gets a value that indicates whether the Font object used has a horizontal line through the font.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.FontUnderline">
+            <summary>
+            Gets a value that indicates whether the Font object used is underlined.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.LeftBorderImagePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.LeftBorderCss">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.NamingProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.Padding">
+            <summary>
+            Gets or sets a value containing the padding style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.Position">
+            <summary>
+            Gets or sets a value containing the position style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.RigthBorderImagePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.RightBorderCss">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.TextAlign">
+            <summary>
+            Gets or sets a value containing the text-align style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.Top">
+            <summary>
+            Gets or sets a value containing the top style attribute.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIFormatStyle.VerticalAlign">
+            <summary>
+            Gets or sets a value containing the vertical-align style attribute.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIPanelLayoutCollection">
+            <summary>
+            Summary description for UIPanelLayoutCollection.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.Add(Janus.Web.UI.Dock.UIPanelLayout)">
+            <summary>
+            Appends the specified UIPanelLayout object at the end of the collection.
+            </summary>
+            <param name="layout">The UIPanelLayout object to add.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.Contains(System.String)">
+            <summary>
+            Determines whether a UIPanelLayout with the specified key is in the collection.
+            </summary>
+            <param name="key">The Key of the UIPanelLayout to locate in the collection.</param>
+            <returns>true if item is found in the collection; otherwise, false.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.Contains(Janus.Web.UI.Dock.UIPanelLayout)">
+            <summary>
+            Determines whether a UIPanelLayout is in the collection.
+            </summary>
+            <param name="layout">The UIPanelLayout to locate in the collection.</param>
+            <returns>true if item is found in the collection; otherwise, false.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.IndexOf(Janus.Web.UI.Dock.UIPanelLayout)">
+            <summary>
+            Returns the zero-based index of the specified UIPanelLayout in the collection.
+            </summary>
+            <param name="layout">The UIPanelLayout to locate in the collection. </param>
+            <returns>A zero-based index value that represents the position of the specified UIPanelLayout in the collection.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.Remove(Janus.Web.UI.Dock.UIPanelLayout)">
+            <summary>
+            Removes the specified UIPanelLayout object from the collection.
+            </summary>
+            <returns>The UIPanelLayout object to remove. </returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.OnClearComplete">
+            <summary>
+            Overrides base.OnClearComplete
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.OnInsert(System.Int32,System.Object)">
+            <summary>
+            Overrides base.OnInsert
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Overrides base.OnInsertComplete
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayoutCollection.OnRemoveComplete(System.Int32,System.Object)">
+            <summary>
+            Overrides base.OnRemoveComplete
+            </summary>		
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayoutCollection.PanelManager">
+            <summary>
+            Gets the UIPanelManager control that the collection is assigned to.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayoutCollection.Item(System.Int32)">
+            <summary>
+            Gets a UIPanelLayout object from the collection at the specified index.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayoutCollection.Item(System.String)">
+            <summary>
+            Gets a UIPanelLayout object from the collection with the specified key.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIPanelCollection">
+            <summary>
+            A collection of UIPanelBase controls that represent the panel of a UIPanelManager component or a UIPanelGroup control.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelCollection.Add(Janus.Web.UI.Dock.UIPanelBase)">
+            <summary>
+            Appends the specified UIPanel or UIPanelGroup control at the end of the collection.
+            </summary>
+            <param name="panel"></param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelCollection.Contains(Janus.Web.UI.Dock.UIPanelBase)">
+            <summary>
+            Determines whether a UIPanel or UIPanelGroup is in the collection.
+            </summary>
+            <param name="panel">The UIPanelBase to locate.</param>
+            <returns>true if item is found in the collection; otherwise, false.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelCollection.IndexOf(Janus.Web.UI.Dock.UIPanelBase)">
+            <summary>
+            Searches for the specified UIPanelBase and returns the zero-based index of the panel in the collection.
+            </summary>
+            <param name="panel">The UIPanelBase to locate in the collection. </param>
+            <returns></returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelCollection.Insert(System.Int32,Janus.Web.UI.Dock.UIPanelBase)">
+            <summary>
+            Inserts a UIPanelBase into the collection at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which UIPanelBase should be inserted.</param>
+            <param name="panel">The UIPanel or UIPanelGroup to insert.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelCollection.Remove(Janus.Web.UI.Dock.UIPanelBase)">
+            <summary>
+            Removes the the specific UIPanelBase from the collection.
+            </summary>
+            <param name="panel">The UIPanel or UIPanelGroup to remove.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the UIPanelBase at the specified index of the collection.
+            </summary>
+            <param name="index">The zero-based index of the UIPanel or UIPanelGroup to remove.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelCollection.SetPanelIndex(Janus.Web.UI.Dock.UIPanelBase,System.Int32)">
+            <summary>
+            Sets the index of the specified UIPanel or UIPanelGroup in the collection to the specified index value.
+            </summary>
+            <param name="panel">The UIPanel or UIPanelGroup to search for.</param>
+            <param name="index">The new index value of the panel.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelCollection.OnClearComplete">
+            <summary>
+            Overrides base.OnClearComplete
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelCollection.Item(System.Int32)">
+            <summary>
+            Gets the UIPanel or UIPanelGroup control at the specified index.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelCollection.Item(System.String)">
+            <summary>
+            Gets the UIPanel or UIPanelGroup control with the specified key
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelCollection.ParentGroup">
+            <summary>
+            This member supports the Janus.Web.UI infrastructure and is not intended to be used directly from your code. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UIPanelLayoutBuilder">
+            <summary>
+            Summary description for UIPanelLayoutBuilder.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelLayoutBuilder.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelLayoutBuilder.FillTableProperties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.DefaultPaneSettingsBuilder">
+            <summary>
+            Summary description for DefaultPaneSettingsBuilder.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Design.DefaultPaneSettingsBuilder.tableProperties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.DefaultPaneSettingsBuilder.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.DefaultPaneSettingsBuilder.FillTableProperties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.DefaultPaneSettingsBuilder.FindPropertyType(System.String@)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Design.DefaultPaneSettingsBuilder.GetChildControlType(System.String,System.Collections.IDictionary)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.DefaultPaneSettingsBuilder.Init(System.Web.UI.TemplateParser,System.Web.UI.ControlBuilder,System.Type,System.String,System.String,System.Collections.IDictionary)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.ContainerFrameEditor">
+            <summary>
+            Provides a user interface for selecting ContainerFrame objects in a Properties window.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.ContainerFrameEditor.#ctor">
+            <summary>
+            Initializes a new instance of the ColumnEditor class.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.ContainerFrameEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            Overrides UITypeEditor.EditValue.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.ContainerFrameEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Overrides UITypeEditor.GetEditStyle
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Janus.Web.UI.Design.ContainerFrameConverter">
+            <summary>
+            Summary description for ContainerFrameConverter.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.ContainerFrameConverter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.ContainerFrameConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Overrides TypeConverter.CanConvertTo
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.ContainerFrameConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Overrides TypeConverter.ConvertTo
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.ContainerFrameConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.ContainerFrameConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIInnerContainer">
+            <summary>
+            Summary description for UIInnerContainerTemplate.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainer.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainer.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainer.FindControl(System.String)">
+            <summary>
+            Overrides base.FindControl
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIInnerContainer.InnerContainerTemplate">
+            <summary>
+            Gets or sets a custom ITemplate for use as a container.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIInnerContainer.Panel">
+            <summary>
+            Gets the UIPanel object that is parent for this container. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelActionEventArgs">
+            <summary>
+            Summary description for PanelActionEventArgs.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.PanelActionEventArgs.Panel">
+            <summary>
+            Gets the UIPanelBase instance associated to the event.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.FilteredBuilder">
+            <summary>
+            Summary description for FilteredBuilder.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommandBarCollection">
+            <summary>
+            A collection of UICommandBar objects owned by a UICommandManager.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.Add(Janus.Web.UI.CommandBars.UICommandBar)">
+            <summary>
+            Adds a UICommandBar to the collection.
+            </summary>
+            <param name="commandBar">The UICommandBar to add. </param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.AddRange(Janus.Web.UI.CommandBars.UICommandBar[])">
+            <summary>
+            Adds an array of UICommandBar objects to the collection.
+            </summary>
+            <param name="commandBars">An array of UICommandBar objects to add to the collection.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.Contains(Janus.Web.UI.CommandBars.UICommandBar)">
+            <summary>
+            Determines whether a specified CommandBar is in the collection.
+            </summary>
+            <param name="commandBar">The UICommandBar to locate in the collection. </param>
+            <returns>True if the specified UICommandBar is in the collection; otherwise, false.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.Clear">
+            <summary>
+            Removes all the UICommandBar objects from the collection.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.IndexOf(Janus.Web.UI.CommandBars.UICommandBar)">
+            <summary>
+            Returns the zero-based index of the specified UICommandBar in the collection.
+            </summary>
+            <param name="commandBar">The UICommandBar to locate in the collection.</param>
+            <returns>A zero-based index value that represents the position of the specified UICommandBar in the collection.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.Remove(Janus.Web.UI.CommandBars.UICommandBar)">
+            <summary>
+            Removes a UICommandBar from the collection.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the CommandBar at the specified index of the collection.
+            </summary>
+            <param name="index">The indexed location of the UICommandBar object in the collection.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Overrides base.OnInsertComplete
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarCollection.OnClearComplete">
+            <summary>
+            Overrides base.OnClearComplete
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarCollection.Item(System.String)">
+            <summary>
+            Gets the UICommandBar object with the specified key in the collection.
+            </summary>		
+            <param name="key">The key of the UICommandBar in the collection.</param>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarCollection.Item(System.Int32)">
+            <summary>
+            Gets the UICommandBar object at the specified index location in the collection. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Internal.UIColorScheme">
+            <summary>
+            Summary description for UIColorScheme.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Internal.CommandsBarColorScheme">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelActionCancelEventHandler">
+            <summary>
+            Represents the method that handles events related to UIPanelBase instances that can be cancelled.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelActionEventHandler">
+            <summary>
+            Represents the method that handles events related to UIPanelBase instances.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.BackgroundImageDrawMode">
+            <summary>
+            Specifies how the back ground image is rendered.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.BackgroundImageDrawMode.Empty">
+            <summary>
+            Undefined. The value of the property will be inherited from the parent GridEXFormatStyle object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.BackgroundImageDrawMode.None">
+            <summary>
+            The background image is not rendered. The background is solid.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.BackgroundImageDrawMode.UseBackgroundPosition">
+            <summary>
+            The background image is rendered using the values specified in the BackgrounPosition property.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.BackgroundImageDrawMode.UseBackgroundRepeat">
+            <summary>
+            The background image is rendered using the values specified in the BackgroundRepeat property.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.InheritableBoolean">
+            <summary>
+            Represents a boolean value for a property that can inherit its value from a base or parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.InheritableBoolean.Default">
+            <summary>
+            The value of the property is inherited from the parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.InheritableBoolean.True">
+            <summary>
+            Represents a boolean true value.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.InheritableBoolean.False">
+            <summary>
+            Represents a boolean false value.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.TriState">
+            <summary>
+            Represents a boolean value for a property that can inherit its value from a base or parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.TriState.Empty">
+            <summary>
+            Indicates that the value for this property should be inherited from the parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.TriState.False">
+            <summary>
+            Specifies that False should be used in a property ignoring settings in the parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.TriState.True">
+            <summary>
+            Specifies that True should be used in a property ignoring settings in the parent object.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.VisualStyle">
+            <summary>
+            Specifies which apperance style the control is formatted after.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.VisualStyle.Default">
+            <summary>
+            Unspecified. The value of the property will be inherited from the parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.VisualStyle.Standard">
+            <summary>
+            Panels are formatted as their equivalent in Visual Studio/Office XP applications.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.VisualStyle.Office2003Blue">
+            <summary>
+            The control is formatted as its related control in Office 2003. A blue color scheme is applied.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.VisualStyle.Office2003Olive">
+            <summary>
+            The control is formatted as its related control in Office 2003. An olive color scheme is applied.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.VisualStyle.Office2003Silver">
+            <summary>
+            The control is formatted as its related control in Office 2003. A silver color scheme is applied.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.VisualStyle.Office2007Blue">
+            <summary>
+            The control is formatted as its related control in Office 2007. A blue color scheme is applied. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.InnerContainerType">
+            <summary>
+            Specifies the type of content that is going to be contained in the panel. 
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.InnerContainerType.UseUrl">
+            <summary>
+            The content is determined by an URL.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.InnerContainerType.UseFrames">
+            <summary>
+            The content is determined by a set of IFRAME object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.InnerContainerType.UseUserControlUrl">
+            <summary>
+            The content is determined by an user control.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.InnerContainerType.UseTemplate">
+            <summary>
+            The content is determined by an ITemplate object. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.InnerContainerUrlLoadingMode">
+            <summary>
+            Specifies how the content of an URL container is loaded.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.InnerContainerUrlLoadingMode.OnPanelLoad">
+            <summary>
+            Content is retrieved when the panel is loaded.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.InnerContainerUrlLoadingMode.OnPanelSelected">
+            <summary>
+            Content is retrieved when the panel is selected.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelCaptionDisplayMode">
+            <summary>
+            Specifies how a panel's caption is displayed.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionDisplayMode.UseDefault">
+            <summary>
+            Unspecified. The value of the property is inherited from the settings specified in the UIPanelManager.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionDisplayMode.Image">
+            <summary>
+            Only the image specified for the panel is rendered in the caption bar.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionDisplayMode.ImageAndText">
+            <summary>
+            The image and text specified for the panel are rendered in the caption bar.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionDisplayMode.Text">
+            <summary>
+            Only the text specified for the panel is rendered in the caption bar.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionDisplayMode.Template">
+            <summary>
+            A template object is rendered in the caption bar.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelCaptionStyle">
+            <summary>
+            Specifies which style is used to render the caption in a panel.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionStyle.UseDefault">
+            <summary>
+            Unspecified. The value of the property is inherited from the settings specified in the UIPanelManager.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionStyle.Standard">
+            <summary>
+            Caption is rendered using the settings specified in the FormatStyleCaption.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionStyle.Dark">
+            <summary>
+            Caption is rendered using the settings specified in the FormatStyleDarkCaption.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelCaptionStyle.Light">
+            <summary>
+            Caption is rendered using the settings specified in the FormatStyleLighCaption.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelGroupStyle">
+            <summary>
+            Specifies the group style for a UIPanelGroup.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelGroupStyle.HorizontalTiles">
+            <summary>
+            Panels contained in the group are tiled horizontally within the client region of the control.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelGroupStyle.VerticalTiles">
+            <summary>
+            Panels contained in the group are tiled vertically within the client region of the control.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelGroupStyle.Tab">
+            <summary>
+            Panels contained in the group are represented as tabs.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelGroupStyle.OutlookNavigator">
+            <summary>
+            Panels contained in the group are represented as buttons in an outlook navigator.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.OperationMode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.OperationMode.Server">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.OperationMode.CallBack">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelImageAlignment">
+            <summary>
+            Specifies the alignment of the image of the panel relative to its area.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelImageAlignment.UseDefault">
+            <summary>
+            Unspecified. The value of the property will be inherited from the parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelImageAlignment.Near">
+            <summary>
+            Image is aligned near. In left-to-right, the near position is left. In right-to-left, the near position is right.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelImageAlignment.Far">
+            <summary>
+            Text is aligned far. In left-to-right, the far position is right. In right-to-left, the far position is left.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelVisualStyle">
+            <summary>
+            Specifies which style is used to render panels. 
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelVisualStyle.UseDefault">
+            <summary>
+            Unspecified. The value of the property is inherited from the settings specified in the UIPanelManager
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelVisualStyle.Standard">
+            <summary>
+            Panels are formatted as their equivalent in Visual Studio/Office XP applications.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelVisualStyle.Office2003Blue">
+            <summary>
+            Panels are formatted as their equivalent in Office 2003 applications. A blue color scheme is applied.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelVisualStyle.Office2003Olive">
+            <summary>
+            Panels are formatted as their equivalent in Office 2003 applications. An olive color scheme is applied.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelVisualStyle.Office2003Silver">
+            <summary>
+            Panels are formatted as their equivalent in Office 2003 applications. A silver color scheme is applied. 
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelVisualStyle.Office2007Blue">
+            <summary>
+            Panels are formatted as their equivalent in Office 2007 applications. A blue color scheme is applied. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelTextAlignment">
+            <summary>
+            Specifies the alignment of a text string of the panel relative to its area.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelTextAlignment.UseDefault">
+            <summary>
+            Unspecified. The value of the property will be inherited from the parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelTextAlignment.Near">
+            <summary>
+            Text is aligned near. In left-to-right, the near position is left. In right-to-left, the near position is right.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelTextAlignment.Center">
+            <summary>
+            The Text is centered.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.PanelTextAlignment.Far">
+            <summary>
+            Text is aligned far. In left-to-right, the far position is right. In right-to-left, the far position is left.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.TabSelectedBehavior">
+            <summary>
+            Specifies the behavior that should be executed when a tab strip is selected. 
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabSelectedBehavior.None">
+            <summary>
+            None behavior is executed.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabSelectedBehavior.HideAdjacentBorders">
+            <summary>
+            The adjacent left and right tab borders and the separator are hiden.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabSelectedBehavior.HideAdjacentRightBorder">
+            <summary>
+            The adjacent right tab border and the separator are hiden. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.TabStripAlignment">
+            <summary>
+            Specifies the vertical alignment of tab strips.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStripAlignment.UseDefault">
+            <summary>
+            Unspecified. The value of the property will be inherited from the parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStripAlignment.Bottom">
+            <summary>
+            The tab strip is rendered at the bottom of the panel.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStripAlignment.Top">
+            <summary>
+            The tab strip is rendered at the top of the panel.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.TextOrientation">
+            <summary>
+            Specifies the orientation of the text in the tab strips.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TextOrientation.Default">
+            <summary>
+            The orientation of the text will be determined by the alignment of the tab strip.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TextOrientation.Vertical">
+            <summary>
+            Specifies that text is vertical.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TextOrientation.Horizontal">
+            <summary>
+            Specifies that text is horizontal.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.ClientPanelObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.ClientPanelObject.TabSeparator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.ClientPanelObject.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.ClientPanelObject.OutlookButton">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.ClientPanelObject.PanelCaption">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.ClientPanelObject.HorizontalTileSeparator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.ClientPanelObject.VerticalTileSeparator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.DimensionResize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.DimensionResize.Height">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.DimensionResize.Width">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.TabStateStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStateStyle.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStateStyle.FormatStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStateStyle.HotFormatStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStateStyle.PressedFormatStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStateStyle.SelectedFormatStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.TabStateStyle.DisabledFormatStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIPanelType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelType.PanelBase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelType.Panel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Dock.UIPanelType.PanelGroup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.CommandType">
+            <summary>
+            Spcefies the behaviour of the UICommand objects
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandType.Label">
+            <summary>
+            The command will be presented as a standard label.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandType.Command">
+            <summary>
+            The command will be presented as a standard toolbar button. The appearance depends on the value of the Style property of its owner.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandType.ToggleButton">
+            <summary>
+            The command will appear selected when clicked and retains that state until clicked again.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandType.Separator">
+            <summary>
+            The command represents a line between commands.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandType.Custom">
+            <summary>
+            The command can render custom controls from an ITemplate object. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.CommandBarType">
+            <summary>
+            Specifies the default appearance and behaviour of the UICommandBar objects. 
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandBarType.Menu">
+            <summary>
+            The UICommandBar control will behave as a standard ToolBar control. 
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandBarType.ToolBar">
+            <summary>
+            The UICommandBar control will behave as a standard Menu control. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.CommandStyle">
+            <summary>
+            Specifies how the command will be drawn when it is on a UICommandBar.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandStyle.Default">
+            <summary>
+            Unspecified. The value of the property will be inherited from the parent object.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandStyle.Image">
+            <summary>
+            Only the image of the command will be displayed on the commandbar.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandStyle.TextImage">
+            <summary>
+            The text and the image of the command will be displayed on the commandbar.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.CommandBars.CommandStyle.Text">
+            <summary>
+            Only the text of the command will be displayed on the commandbar.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIPanelManager">
+            <summary>
+            Represents a control that manages docking and grouping of UIPanel objects.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.RaisePostDataChangedEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.RaisePostBackEvent(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.FindControl(System.String)">
+            <summary>
+            Overrides base.FindControl
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.GetLayout">
+            <summary>
+            Creates a UIPanelLayout object containing settings of the UIPanelManager component.
+            </summary>
+            <returns>The UIPanelLayout created.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.GetUIVersionString">
+            <summary>
+            Gets a string representing with the version number.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.LoadLayout(Janus.Web.UI.Dock.UIPanelLayout)">
+            <summary>
+            Loads the settings preserved in a UIPanelLayout object without setting it as the current layout.
+            </summary>
+            <param name="layout">The UIPanelLayout with the UIPanelManager component settings.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.LoadLayoutFile(System.IO.Stream)">
+            <summary>
+            Loads the UIPanelManager component settings persisted in a stream.
+            </summary>
+            <param name="stream">A Stream object with the UIPanelManager control settings.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.SaveLayoutFile(System.IO.Stream)">
+            <summary>
+            Persist in a stream all the UIPanelManager component settings.
+            </summary>
+            <param name="stream">A Stream object where settings will be persisted.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.AddParsedSubObject(System.Object)">
+            <summary>
+            Overrides base.AddParsedSubOject
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.AddAttributesToRender
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.CreateChildControls">
+            <summary>
+            Overrides base.CreateChildControls
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.OnLoad(System.EventArgs)">
+            <summary>
+            Overrides base.OnLoad
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.OnPreRender(System.EventArgs)">
+            <summary>
+            Overrides base.OnPreRender
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.RenderControl(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.RenderControl
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.Render
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.RenderContents
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.SaveViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.TrackViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelManager.LoadViewState(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.BackColorSplitter">
+            <summary>
+            The background color of splitter bars.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.CallBackLoadingPanelText">
+            <summary>
+            Gets or sets the text used when the content of the panel is being load in callback mode.  
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.CallBackLoadingImage">
+            <summary>
+            Gets or sets a value containing the image to use as the callback loading indicator.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.ClientEvents">
+            <summary>
+            Gets a UIClientEvents object to set up client events. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.CurrentLayout">
+            <summary>
+            Gets or sets the current UIPanelLayout..
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.DataMember">
+            <summary>
+            Overrides base.DataMember
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.DataSource">
+            <summary>
+            Overrides base.DataMember
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.DefaultPanelSettings">
+            <summary>
+            Contains default settings for panels managed by the control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.ImagesFolderPath">
+            <summary>
+            Gets or sets a value containing the server path where the images file for the control resides.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.Layouts">
+            <summary>
+            Gets the collection of UIPanelLayout objects in the UIPanelManager control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.OperationMode">
+            <summary>
+            Gets or sets the mode that will use the control to operate.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.PanelPadding">
+            <summary>
+            Dock padding settings for all edges of the container control
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.Panels">
+            <summary>
+            Gets an collection of panels and panel groups that represent the panels managed by the control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.PostBackOnSelection">
+            <summary>
+            Gets or sets a value specifying if a postback should be raised when a panel is selected. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.VisualStyle">
+            <summary>
+            Gets or sets a value specifying the appearance for controls managed by the control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.RenderGroupPanelsInStrictMode">
+            <summary>
+            Gets or sets a value indicating wheter the group panels should be rendered using a XHTML strict mode. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.RootPanel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.GroupPanel">
+            <summary>
+            This member support the design time serialization of the UIPanelManager class and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.Panel">
+            <summary>
+            This member support the design time serialization of the UIPanelManager class and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.ScriptsFolderPath">
+            <summary>
+            Gets or sets a value containing the server path where JavaScript files for the control resides.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.SplitterSize">
+            <summary>
+            Gets or sets a value specifying the width of splitter bars.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.TabSettings">
+            <summary>
+            Gets a TabSettings object containing the default settings for the tabs managed by the control. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.TabStripFormatStyle">
+            <summary>
+            Gets a UIFormatStyle with the settings used to render the tab strip of Tab panel group.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelManager.ColorSchemeFolderPath">
+            <summary>
+            Gets or sets a value containing the server path where the Color Scheme files for the control resides.
+            </summary>
+        </member>
+        <member name="E:Janus.Web.UI.Dock.UIPanelManager.CurrentLayoutChanged">
+            <summary>
+            Occurs after the CurrentLayout property has changed.
+            </summary>
+        </member>
+        <member name="E:Janus.Web.UI.Dock.UIPanelManager.CurrentLayoutChanging">
+            <summary>
+            Occurs before the CurrentLayout changes.
+            </summary>
+        </member>
+        <member name="E:Janus.Web.UI.Dock.UIPanelManager.SelectedPanelChanged">
+            <summary>
+            Occurs when the SelectedPanel changes.
+            </summary>
+        </member>
+        <member name="E:Janus.Web.UI.Dock.UIPanelManager.SelectedPanelChanging">
+            <summary>
+            Occurs when the SelectedPanel is about to be changed.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection">
+            <summary>
+            A collection of UICommandBarsLayout objects owned by a UICommandManager or UICommandBarsLayout
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.Add(Janus.Web.UI.CommandBars.UICommandBarsLayout)">
+            <summary>
+            Appends the specified UICommandBarsLayout object at the end of the collection.
+            </summary>
+            <param name="layout">The UICommandBarsLayout object to add.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.Contains(System.String)">
+            <summary>
+            Determines whether a UICommandBarsLayout with the specified key is in the collection.
+            </summary>
+            <param name="key">The Key of the UICommandBarsLayout to locate in the collection.</param>
+            <returns>true if item is found in the collection; otherwise, false.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.Contains(Janus.Web.UI.CommandBars.UICommandBarsLayout)">
+            <summary>
+            Determines whether a UICommandBarsLayout is in the collection.
+            </summary>
+            <param name="layout">The UICommandBarsLayout to locate in the collection.</param>
+            <returns>true if item is found in the collection; otherwise, false.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.IndexOf(Janus.Web.UI.CommandBars.UICommandBarsLayout)">
+            <summary>
+            Returns the zero-based index of the specified UICommandBarsLayout in the collection.
+            </summary>
+            <param name="layout">The UICommandBarsLayout to locate in the collection. </param>
+            <returns>A zero-based index value that represents the position of the specified UICommandBarsLayout in the collection.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.Remove(Janus.Web.UI.CommandBars.UICommandBarsLayout)">
+            <summary>
+            Removes the specified UICommandBarsLayout object from the collection.
+            </summary>
+            <returns>The UIPanelLayout object to remove. </returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.OnClearComplete">
+            <summary>
+            Overrides base.OnClearComplete
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.OnInsert(System.Int32,System.Object)">
+            <summary>
+            Overrides base.OnInsert
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Overrides base.OnInsertComplete
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.OnRemoveComplete(System.Int32,System.Object)">
+            <summary>
+            Overrides base.OnRemoveComplete
+            </summary>		
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.CommandManager">
+            <summary>
+            Gets the UICommandManager control that the collection is assigned to.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.Item(System.String)">
+            <summary>
+            Gets a UICommandBarsLayout object from the collection with the specified key.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayoutCollection.Item(System.Int32)">
+            <summary>
+            Gets a UIPanelLayout object from the collection at the specified index.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.CommandEventArgs">
+            <summary>
+            Provides data for the Click event of the UICommand.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.CommandEventArgs.Command">
+            <summary>
+            Gets the UICommand containing the data.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.CommandEventHandler">
+            <summary>
+            Represents the method that will handle the MouseHover, Click, CloseUp and Popup events of a UICommand.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UICaptionContainer">
+            <summary>
+            Summary description for UICaptionContainer.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UICaptionContainer.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UICaptionContainer.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UICaptionContainer.InnerContainerTemplate">
+            <summary>
+            Gets or sets a custom ITemplate for use as a Container
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UICaptionContainer.Panel">
+            <summary>
+            Gets the UIPanelBase object that is parent for this container.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelActionCancelEventArgs">
+            <summary>
+            Contains data for a cancelable event related to a UIPanelBase.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.PanelActionCancelEventArgs.Panel">
+            <summary>
+            Gets the UIPanelBase instance associated to the event.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.PanelActionCancelEventArgs.Cancel">
+            <summary>
+            Gets the UIPanelBase instance associated to the event.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UIImageUrlEditor">
+            <summary>
+            Summary description for UIImageUrlEditor.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIImageUrlEditor.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIImageUrlEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UICommandManagerBuilder">
+            <summary>
+            Summary description for UICommandManagerBuilder.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommandBarsLayout">
+            <summary>
+            Contains persisted properties of a UICommandBarsLayout control.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.IsDirty">
+            <summary>
+            Indicates whether the properties in the UIPanelManager component differ from the persisted information.
+            </summary>
+            <returns>true if the properties in the UIPanelManager component differ from the persisted information.	</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.SetDataBinding(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>A UICommandBarsLayout that is the copy of the current instance.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.CloneLayout(System.Boolean)">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <param name="includeChildren">A Boolean that specifies whether the ChildLayouts are copied or not. </param>
+            <returns>A UIPanelLayout that is the copy of the current instance.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.GetXmlString">
+            <summary>
+            Returns this UIPanelLayout object as a Xml string.
+            </summary>
+            <returns>A Xml string containing the UIPanelLayout object persisted properties.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.Update">
+            <summary>
+            Updates the layout with the changes in the CommandManager properties when it is the current layout.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.Save(System.IO.Stream)">
+            <summary>
+            Saves this UICommandBarsLayout object to the specified Stream object.
+            </summary>
+            <param name="stream">The Stream object to which to save this UICommandBarsLayout object.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.Save(System.Xml.XmlWriter)">
+            <summary>
+            Saves this UIPanelLayout object to the specified XmlWriter object.
+            </summary>
+            <param name="xmlWriter">Saves this UIPanelLayout object to the specified XmlWriter object.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.FromStream(System.IO.Stream)">
+            <summary>
+            Creates an UICommandBarsLayout object from the specified data stream.
+            </summary>
+            <param name="stream">A Stream object that contains the data for this UICommandBarsLayout object.</param>
+            <returns>The UICommandBarsLayout object created.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.FromXMLString(System.String)">
+            <summary>
+            Creates an UICommandBarsLayout object from the specified string.
+            </summary>
+            <param name="xmlString">A string that contains the data for this UICommandBarsLayout object.</param>
+            <returns>The UICommandBarsLayout object created.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBarsLayout.FromXMLReader(System.Xml.XmlReader)">
+            <summary>
+            Creates an UICommandBarsLayout object from the specified Xml reader.
+            </summary>
+            <param name="xmlReader">A XmlReader object that contains the data for this UICommandBarsLayout object.</param>
+            <returns>The UICommandBarsLayout object created.</returns>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.ChildLayouts">
+            <summary>
+            Gets the collection of UIPanelLayout objects that inherit their values from the layout.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.Description">
+            <summary>
+            Gets or sets a string that can be used to store an informational description in the layout.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.CurrentLayout">
+            <summary>
+            This member supports the Janus.Web.UI infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.IsCurrentLayout">
+            <summary>
+            Gets or sets a value indicating whether this instance is the current layout in the UIPanelManager control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.Key">
+            <summary>
+            Gets or sets the key used to identify an object in a collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.LayoutString">
+            <summary>
+            Gets or sets an XML string containing the persisted properties in the control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.ParentLayout">
+            <summary>
+            Gets the parent UICommandBarsLayout instance.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.StandAlone">
+            <summary>
+            Gets a value that determines whether the layout is a stand alone layout or if it is a child of another layout.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.LayoutCollection">
+            <summary>
+            This member support the design time serialization of a UIPanelLayout and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.LayoutReferences">
+            <summary>
+            This member supports the Janus.Web.UI infrastructure and is not intended to be used directly from your code. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.DataMember">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBarsLayout.DataSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.TabSeparator">
+            <summary>
+            Represents a tab separator panel that can be used to separate panels in a group tab. 
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.TabSeparator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICallbackManagerDesigner.GetEmptyDesignTimeHtml">
+            <summary>
+            Override base.GetEmptyDesignTimeHtml
+            </summary>		
+        </member>
+        <member name="T:Janus.Web.UI.Dock.TabSettings">
+            <summary>
+            Contains the tab settings to use in a tab panel.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.TabSettings.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.ViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.FirstTabOffset">
+            <summary>
+            Gets or sets the offset of the first tab page in control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.MultiLine">
+            <summary>
+            Gets or sets a value indicating whether more than one row of tabs can be displayed.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.ShowCloseButton">
+            <summary>
+            Specifies whether a button for closing the selected tab is rendered. This property has no effect if the Multiline property is equal to True.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.ShowContent">
+            <summary>
+            Gets or sets a value that determines if the content area in a group tab will be shown.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.TabSelectedBehavior">
+            <summary>
+            Gets or sets a value specifying the behavior that should be executed when a tab strip is selected. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.TabSeparator">
+            <summary>
+            Gets or sets a value that determines if a tab separator is rendered between tabs.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.TabSeparatorWidth">
+            <summary>
+            Gets or sets a value that determines the width of the separator bettwen tabs.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.TabStripOffset">
+            <summary>
+            Represents the offset of the tab strip in the control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.TabStripAlignment">
+            <summary>
+            Gets or sets a value that determines the alignment of the tab strip in a tab panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.TabSettings.TextOrientation">
+            <summary>
+            Gets or sets a value specifying the orientation of the text of the tab strip in the control.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UIPanelManagerDesigner">
+            <summary>
+            Summary description for UIPanelManagerDesigner.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelManagerDesigner.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelManagerDesigner.OnAbout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelManagerDesigner.OnDesigner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelManagerDesigner.OnAddPanelWizard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelManagerDesigner.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelManagerDesigner.GetEmptyDesignTimeHtml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelManagerDesigner.GetErrorDesignTimeHtml(System.Exception)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelManagerDesigner.GetDesignTimeHtml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Design.UIPanelManagerDesigner.AllowResize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Design.UIPanelManagerDesigner.Control">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Design.UIPanelManagerDesigner.ActionLists">
+            <summary>
+            Overrides base.ActionList
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Design.UIPanelManagerDesigner.TemplateGroups">
+            <summary>
+            Override base.TemplateGroups
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UIPopupSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UIPopupSettings.#ctor">
+            <summary>
+            Initializes a new instance of the Janus.Web.UI.CommandBars.UIPopupSettings class
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UIPopupSettings.ImageAreaFormatStyle">
+            <summary>
+            Gets the UIFormatStyle used to render the background of the area that where the images and checkboxes are displayed. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UIPopupSettings.PopupFormatStyle">
+            <summary>
+            Gets the UIFormatStyle used to render the background of the popup area.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UIPopupSettings.StateStyles">
+            <summary>
+            Gets the UIStateStyles that holds the format styles used to render the commands in their different states. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.InternalUIContainerTemplate">
+            <summary>
+            Summary description for InternalUIContainerTemplate.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelActionList.#ctor(Janus.Web.UI.Design.UIPanelManagerDesigner)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelActionList.GetSortedActionItems">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelActionList.OnDesigner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelActionList.OnAddPanelWizard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelActionList.OnAbout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommand">
+            <summary>
+            Represents an individual item that is displayed within an UICommandBar.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommand.#ctor">
+            <summary>
+            Initialize a new instance of the UICommand class.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommand.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the UICommand class
+            </summary>
+            <param name="key">The Key of the new UICommand</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommand.#ctor(System.String,System.String,Janus.Web.UI.CommandBars.CommandType)">
+            <summary>
+            Initialize a new instance of the UICommand class.
+            </summary>
+            <param name="key">The Key of the new UICommand class.</param>
+            <param name="text">The Text of the new UICommand clas</param>
+            <param name="commandType">The type of command this object represents</param>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Align">
+            <summary>
+            Gets or set a value specifying how the command will be aligned on a UICommandBar.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Checked">
+            <summary>
+            Indicated whether the command is checked. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.CommandStyle">
+            <summary>
+            Gets or set a value specifying how the command will be drawn on a UICommandBar.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.CommandTemplate">
+            <summary>
+            Gets or sets a custom ITemplate to render custom controls of a command. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.CommandContainer">
+            <summary>
+            Gets the UICommandContainer that contains an instantiated ITemplate.  
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.CommandType">
+            <summary>
+            Gets or sets a value specifying the behaviour for this command.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Commands">
+            <summary>
+            Gets a value indicating the collection of UICommand objects associated with the command. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Description">
+            <summary>
+            Gets or sets a String expression containing a descriptive string associated with this command.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.DisabledImage">
+            <summary>
+            Gets or sets the image displayed by the command when it is disabled.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Enabled">
+            <summary>
+            Gets or sets a value indicating whether the UICommand is enabled.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.IsEnabled">
+            <summary>
+            Gets or sets a value indicating whether the UICommand is enabled.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.NavigateUrl">
+            <summary>
+            Gets or sets the url to navigate when the command is selected. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Target">
+            <summary>
+            Gets or sets the target frame for the navigation when the command is selected
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Key">
+            <summary>
+            Gets or sets the key used to identify an object in a collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.HotImage">
+            <summary>
+            Gets or sets the image displayed by the command when the mouse is over it.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Image">
+            <summary>
+            Gets or sets the image that is displayed on the UICommand.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Index">
+            <summary>
+            Gets the index of the UICommand in the collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.SelectedImage">
+            <summary>
+            Gets or sets the image that is displayed by the UICommand when it is selected.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.PopupSettings">
+            <summary>
+            Gets the UIPopupSettings used to render the popup window that contains the child commands. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.StateStyles">
+            <summary>
+            Gets the UIStateStyles that holds the format styles used to draw the command in its different states.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.TagString">
+            <summary>
+            Gets or sets a string that contains data to associate with the command.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Text">
+            <summary>
+            Gets or sets the text displayed for this command.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.ToolTipText">
+            <summary>
+            Gets or sets the ToolTip text for this command.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Visible">
+            <summary>
+            Gets or sets a value indicating whether the command is visible or hidden.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether the UICommand is visible.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommand.Width">
+            <summary>
+            Gets or sets the width of this command.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.InternalUICommandContainer">
+            <summary>
+            Summary description for InternalUICommandContainer.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIPanelLayout">
+            <summary>
+            Contains persisted properties of a UIPanelManager component.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.SetDataBinding(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.GetXmlString">
+            <summary>
+            Returns this UIPanelLayout object as a Xml string.
+            </summary>
+            <returns>A Xml string containing the UIPanelLayout object persisted properties.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.IsDirty">
+            <summary>
+            Indicates whether the properties in the UIPanelManager component differ from the persisted information.
+            </summary>
+            <returns>true if the properties in the UIPanelManager component differ from the persisted information.	</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.Update">
+            <summary>
+            Updates the layout with the changes in the PanelManager properties when it is the current layout.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.Save(System.IO.Stream)">
+            <summary>
+            Saves this UIPanelLayout object to the specified Stream object.
+            </summary>
+            <param name="stream">The Stream object to which to save this UIPanelLayout object.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.Save(System.Xml.XmlWriter)">
+            <summary>
+            Saves this UIPanelLayout object to the specified XmlWriter object.
+            </summary>
+            <param name="xmlWriter">Saves this UIPanelLayout object to the specified XmlWriter object.</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.FromStream(System.IO.Stream)">
+            <summary>
+            Creates an UIPanelLayout object from the specified data stream.
+            </summary>
+            <param name="stream">A Stream object that contains the data for this UIPanelLayout object.</param>
+            <returns>The UIPanelLayout object created.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.FromXMLString(System.String)">
+            <summary>
+            Creates an UIPanelLayout object from the specified string.
+            </summary>
+            <param name="xmlString">A string that contains the data for this UIPanelLayout object.</param>
+            <returns>The UIPanelLayout object created.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.FromXMLReader(System.Xml.XmlReader)">
+            <summary>
+            Creates an UIPanelLayout object from the specified Xml reader.
+            </summary>
+            <param name="xmlReader">A XmlReader object that contains the data for this UIPanelLayout object.</param>
+            <returns>The UIPanelLayout object created.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>A UIPanelLayout that is the copy of the current instance.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanelLayout.CloneLayout(System.Boolean)">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <param name="includeChildren">A Boolean that specifies whether the ChildLayouts are copied or not. </param>
+            <returns>A UIPanelLayout that is the copy of the current instance.</returns>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.ChildLayouts">
+            <summary>
+            Gets the collection of UIPanelLayout objects that inherit their values from the layout.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.Description">
+            <summary>
+            Gets or sets a string that can be used to store an informational description in the layout.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.Key">
+            <summary>
+            Gets or sets the key used to identify an object in a collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.LayoutString">
+            <summary>
+            Gets or sets an Xml string containing the persisted properties in the control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.LayoutReferences">
+            <summary>
+            This member supports the Janus.Web.UI infrastructure and is not intended to be used directly from your code. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.CurrentLayout">
+            <summary>
+            This member supports the Janus.Web.UI infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.IsCurrentLayout">
+            <summary>
+            Gets or sets a value indicating whether this instance is the current layout in the UIPanelManager control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.ParentLayout">
+            <summary>
+            Gets the parent UIPanelLayout instance.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.StandAlone">
+            <summary>
+            Gets a value that determines whether the layout is a stand alone layout or if it is a child of another layout.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.LayoutCollection">
+            <summary>
+            This member support the design time serialization of a UIPanelLayout and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.DataMember">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.DataSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanelLayout.ViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.PanelPadding">
+            <summary>
+            Determines the border padding for panels docked to the ContainerControl associated to a UIPanelManager.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.PanelPadding.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.PanelPadding.All">
+            <summary>
+            Gets or sets the padding width for all panels in its container control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.PanelPadding.Left">
+            <summary>
+            Gets or sets the padding width for the left edge of the container control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.PanelPadding.Top">
+            <summary>
+            Gets or sets the padding width for the top edge of the container control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.PanelPadding.Right">
+            <summary>
+            Gets or sets the padding width for the top edge of the container control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.PanelPadding.Bottom">
+            <summary>
+            Gets or sets the padding width for the bottom edge of the container control.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Internal.Global">
+            <summary>
+            Summary description for Global.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIInnerContainerFrame">
+            <summary>
+            Represents an IFRAME object that is managed by a UIPanel instance. 
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainerFrame.#ctor">
+            <summary>
+            Initializes a new instance of a UIInnerContainerFrame class.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainerFrame.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of a UIInnerContainerFrame class.
+            </summary>
+            <param name="key">the value used to identify an object in the collection</param>
+            <param name="url">the value used as url to be loaded by the IFRAME object</param>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIInnerContainerFrame.Key">
+            <summary>
+            Gets or sets the key used to identify an object in the collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIInnerContainerFrame.Index">
+            <summary>
+            Gets the index of the column in the collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIInnerContainerFrame.Url">
+            <summary>
+            Gets or sets the URL to be loaded by the IFRAME object. 
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICallbackInstanceBuilder.FillFilteredProperties">
+            <summary>
+            Override base.FillFilteredProperties
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommandContainer">
+            <summary>
+            Summary description for UICommandContainer.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandContainer.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandContainer.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.AddAttributesToRender
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandContainer.CommandTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandContainer.Command">
+            <summary>
+            Gets the UICommand object that is parent for this container. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Callback.UICallbackUpdatableControl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackUpdatableControl.#ctor">
+            <summary>
+            Initializes an instance of the Janus.Web.UI.Callback.UICallbackUpdatableControl class.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackUpdatableControl.ControlID">
+            <summary>
+            Gets or sets the ID of the web control which content will be updatable when a callback instance occurs. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackUpdatableControl.ShowLoadingCallbackIndicator">
+            <summary>
+            Gets or sets a value indicating whether the loading callback indicator should be shown or not.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Callback.UICallbackUpdatableControlCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackUpdatableControlCollection.#ctor">
+            <summary>
+            Initializes an instance of the Janus.Web.UI.Callback.UICallbackUpdatableControlCollection class.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackUpdatableControlCollection.#ctor(Janus.Web.UI.Callback.UICallbackInstance)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackUpdatableControlCollection.Add(Janus.Web.UI.Callback.UICallbackUpdatableControl)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackUpdatableControlCollection.Remove(Janus.Web.UI.Callback.UICallbackUpdatableControl)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackUpdatableControlCollection.RemoveAt(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackUpdatableControlCollection.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackUpdatableControlCollection.System#Web#UI#IStateManager#IsTrackingViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Callback.UICallbackInstance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackInstance.#ctor">
+            <summary>
+            Initializes an instance of the Janus.Web.UI.Callback.UICallbackInstance class.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackInstance.Key">
+            <summary>
+            Gets or sets the key used to identify an object in a collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackInstance.ControlID">
+            <summary>
+            Gets or sets the ID of the web control that will be enabled with AJAX/Callback actions.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackInstance.ShowLoadingCallbackIndicator">
+            <summary>
+            Gets or sets a value indicating whether the loading callback indicator should be shown or not.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackInstance.UpdateContentOnCallback">
+            <summary>
+            Gets or sets a value indication wheter the content of the control that represents the instance should be updated or not. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackInstance.UpdatableControls">
+            <summary>
+            Gets a value indicating the collection of UICallbackUpdatableControl objects associated with the callback instance. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Callback.UICallbackInstanceCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackInstanceCollection.#ctor">
+            <summary>
+            Initializes an instance of the Janus.Web.UI.Callback.UICallbackInstanceCollection class.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackInstanceCollection.#ctor(Janus.Web.UI.Callback.UICallbackManager)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackInstanceCollection.Add(Janus.Web.UI.Callback.UICallbackInstance)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackInstanceCollection.Remove(Janus.Web.UI.Callback.UICallbackInstance)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackInstanceCollection.RemoveAt(System.Int32)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackInstanceCollection.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIInnerContainerFrameCollection">
+            <summary>
+            A collection of UIInnerContainerFrame objects that is managed by an UIPanel object. 
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainerFrameCollection.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainerFrameCollection.Add(Janus.Web.UI.Dock.UIInnerContainerFrame)">
+            <summary>
+            Creates a new UIInnerContainerFrame object and appends it at the end of the collection. 
+            </summary>
+            <param name="frame">The UIInnerContainerFrame to add</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainerFrameCollection.Remove(Janus.Web.UI.Dock.UIInnerContainerFrame)">
+            <summary>
+            Removes the specified UIInnerContainerFrame object from the collection. 
+            </summary>
+            <param name="frame">The UIInnerContainerFrame to remove</param>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIInnerContainerFrameCollection.OnClear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIInnerContainerFrameCollection.Item(System.Int32)">
+            <summary>
+            Gets a UIInnerContainerFrame from the collection at the specified index. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIInnerContainerFrameCollection.Item(System.String)">
+            <summary>
+            Gets a UIInnerContainerFrame from the collection with the specified key. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.DefaultPanelSettings">
+            <summary>
+            Summary description for DefaultPanelSettings.
+            </summary>	
+        </member>
+        <member name="M:Janus.Web.UI.Dock.DefaultPanelSettings.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.DefaultPanelSettings.#ctor(Janus.Web.UI.Dock.UIPanelManager)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.ActiveCaptionFormatStyle">
+            <summary>
+            Gets the UIFormatStyle with the settings used to render the caption bar of an active panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.BorderCaption">
+            <summary>
+            Gets or sets a value indicating whether the caption of a panel is rendered with a border around it.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.BorderCaptionColor">
+            <summary>
+            Gets or sets a value that indicates the border color of the caption bar in a panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.BorderPanel">
+            <summary>
+            Gets or sets a value indicating whether the panels are rendered with a border around it.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.BorderPanelColor">
+            <summary>
+            Indicates the border color of a panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.CaptionFormatStyle">
+            <summary>
+            Settings used to render the caption bar of panels with CaptionStyle 'Standard'.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.CaptionDisplayMode">
+            <summary>
+            Gets or sets a value that determines what is displayed in the caption bar of a panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.CaptionHeight">
+            <summary>
+            The default height of the caption bar in a panel or -1 to size the caption automatically.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.CaptionStyle">
+            <summary>
+            Gets or sets a value that determines which predefined style will be used to render the background of the caption bar in a panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.CaptionVisible">
+            <summary>
+            Gets or sets a value indicating whether the caption bar is shown.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.DarkCaptionFormatStyle">
+            <summary>
+            Settings used to render the caption bar of panels with CaptionStyle 'Dark'.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.ImageAlignment">
+            <summary>
+            Gets or sets a value that determines the alignment of the image in the panel caption.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.InfoTextAlignment">
+            <summary>
+            Gets or sets a value that determines the alignment of the InfoText in the panel caption.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.InfoTextFormatStyle">
+            <summary>
+            Gets a UIFormatStyle with the settings used to render the info text in the caption bar of a panel.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.LightCaptionFormatStyle">
+            <summary>
+            Settings used to render the caption bar of panels with CaptionStyle 'Light'.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.TabStateStyles">
+            <summary>
+            Gets the UIStateStyles that holds the format styles used to render the tabs of a panel group in their different states.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.DefaultPanelSettings.TextAlignment">
+            <summary>
+            Gets or sets a value that determines the alignment of the text in the panel caption.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UIPanelBuilder">
+            <summary>
+            Summary description for UIPanelBuilder.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelBuilder.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UIPanelBuilder.FillTableProperties">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UICommandBarBuilder">
+            <summary>
+            Summary description for UICommandBarBuilder.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.UIBarsLicenseProvider">
+            <summary>
+            Summary description for UIBarsLicenseProvider.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.UIBarsLicenseProvider.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.UIBarsLicenseProvider.GetLicense(System.ComponentModel.LicenseContext,System.Type,System.Object,System.Boolean)">
+            <summary>
+            See LicenseProvider.GetLicense
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIClientEvents">
+            <summary>
+            Summary description for UIClientEvents.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIClientEvents.#ctor">
+            <summary>
+            Initializes an instance of the Janus.Web.UI.Dock.UIClientEvents
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.ViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.AfterCallback">
+            <summary>
+            Gets or sets the javascript event fired after the CallbackManager completes a callback action.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.BeforeCallback">
+            <summary>
+            Gets or sets the javascript event fired before the CallbackManager initiates a callback action. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.Load">
+            <summary>
+            Gets or sets the javascript event fired after the PanelManager is completely loaded in client side.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.MouseOverCaption">
+            <summary>
+            Gets or sets the javascript event fired when the mouse is over the panel caption. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.MouseOutCaption">
+            <summary>
+            Gets or sets the javascript event fired when the mouse is out the panel caption.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.MouseOverTab">
+            <summary>
+            Gets or sets the javascript event fired when the mouse is over a tab strip
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.MouseOutTab">
+            <summary>
+            Gets or sets the javascript event fired after the mouse is out a tab strip.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.OutlookBarStartResize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.OutlookBarEndResize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.OutlookBarChanged">
+            <summary>
+            Gets or sets the javascript event fired after the buttons of the outlook bar are shown or hidden.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.ResizeManager">
+            <summary>
+            Gets or sets the javascript event fired after the manager is resized
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.ResizePanel">
+            <summary>
+            Gets or sets the javascript event fired after a panel is resized
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.SelectedPanelChanged">
+            <summary>
+            Gets or sets the javascript event fired after SelectedPanel changes in a group panel. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIClientEvents.SelectedPanelChanging">
+            <summary>
+            Gets or sets the javascript event fired before the SelectedPanel changes in a group panel.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UICommandActionList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandActionList.#ctor(Janus.Web.UI.Design.UICommandManagerDesigner)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandActionList.GetSortedActionItems">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandActionList.OnDesigner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandActionList.OnAbout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.AboutBox">
+            <summary>
+            Summary description for Form1.
+            </summary>
+        </member>
+        <member name="F:Janus.Web.UI.Design.AboutBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.AboutBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.AboutBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.AboutBox.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.AboutBox.OnLoad(System.EventArgs)">
+            <summary>
+            Overrides Form.OnLoad
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.UIStateStyles">
+            <summary>
+            Encapsulates the UIFormatStyle for the different states of an item.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.UIStateStyles.#ctor">
+            <summary>
+            Initialize a new instance of the UIStateStyles class.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIStateStyles.DisabledFormatStyle">
+            <summary>
+            Gets the UIFormatStyle used to render the disabled items.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIStateStyles.FormatStyle">
+            <summary>
+            Represent the format style used to render the items.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIStateStyles.HotFormatStyle">
+            <summary>
+            Represent the format style used to render the items when the mouse is over them.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIStateStyles.PressedFormatStyle">
+            <summary>
+            Represent the format style used to render the items when they are pressed or when the item is selected and the mouse is over them.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.UIStateStyles.SelectedFormatStyle">
+            <summary>
+            Represent the format style used to render the selected items.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UIPanelManagerBuilder">
+            <summary>
+            Summary description for UIPanelManagerBuilder.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Design.UICommandManagerDesigner">
+            <summary>
+            Summary description for UICommandManagerDesigner.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandManagerDesigner.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandManagerDesigner.Initialize(System.ComponentModel.IComponent)">
+            <summary>
+            Overrides base.Initialize
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandManagerDesigner.GetEmptyDesignTimeHtml">
+            <summary>
+            Override base.GetEmptyDesignTimeHtml
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandManagerDesigner.GetErrorDesignTimeHtml(System.Exception)">
+            <summary>
+            Override base.GetErrorDesignTimeHtml
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandManagerDesigner.GetDesignTimeHtml">
+            <summary>
+            Override base.GetDesignTimeHtml
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandManagerDesigner.OnAbout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Design.UICommandManagerDesigner.OnDesigner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Design.UICommandManagerDesigner.Control">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Design.UICommandManagerDesigner.ActionLists">
+            <summary>
+            Overrides base.ActionLists
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Design.UICommandManagerDesigner.TemplateGroups">
+            <summary>
+            Override base.TemplateGroups 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommandCollection">
+            <summary>
+            Summary description for UICommandCollection.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.ICommandCollectionDesign">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.ICommandCollectionDesign.MoveUp(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.ICommandCollectionDesign.MoveDown(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandCollection.Add(Janus.Web.UI.CommandBars.UICommand)">
+            <summary>
+            Adds a UICommand to the collection.
+            </summary>
+            <param name="command">The UICommand to add. </param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandCollection.AddSeparator">
+            <summary>
+            Adds a command of type Separator to the collection
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandCollection.Contains(Janus.Web.UI.CommandBars.UICommand)">
+            <summary>
+            Determines whether a specified command is in the collection.
+            </summary>
+            <param name="command">The UICommand to locate in the collection. </param>
+            <returns>True if the specified UICommand is in the collection; otherwise, false.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandCollection.IndexOf(Janus.Web.UI.CommandBars.UICommand)">
+            <summary>
+            Returns the zero-based index of the specified UICommand in the collection.
+            </summary>
+            <param name="command">The UICommand to locate in the collection.</param>
+            <returns>The zero-based index of the UICommand within the collection, if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandCollection.Remove(Janus.Web.UI.CommandBars.UICommand)">
+            <summary>
+            Removes a UICommand from the collection.
+            </summary>
+            <param name="command">The UICommand to remove. </param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes a UICommand object from the collection at the specified index.
+            </summary>
+            <param name="index">The index of the UICommand object in the collection to remove.</param>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandCollection.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Overrides base.OnInsertComplete
+            </summary>		
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandCollection.OnClearComplete">
+            <summary>
+            Overrides base.OnClearComplete
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandCollection.Item(System.Int32)">
+            <summary>
+            Gets the UICommand object at the specified indexed location in the collection.
+            </summary>
+            <param name="index">The indexed location of the UICommand in the collection.</param>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandCollection.Item(System.String)">
+            <summary>
+            Gets the UICommand object with the specified key in the collection.
+            </summary>
+            <param name="key">The key of the UICommand in the collection</param>
+        </member>
+        <member name="T:Janus.Web.UI.Callback.UICallbackClientEvents">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackClientEvents.AfterCallback">
+            <summary>
+            Gets or sets the javascript event fired after the CallbackManager completes a callback action. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackClientEvents.BeforeCallback">
+            <summary>
+            Gets or sets the javascript event fired before the CallbackManager initiates a callback action. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackClientEvents.Load">
+            <summary>
+            Gets or sets the javascript event fired after the PanelManager is completely loaded in client side.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Callback.UICallbackManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackManager.AddParsedSubObject(System.Object)">
+            <summary>
+            Overrides base.AddParsedSubObject
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackManager.RenderControl(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Overrides base.RenderControl
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackManager.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackManager.RaisePostDataChangedEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Callback.UICallbackManager.RaisePostBackEvent(System.String)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackManager.ClientEvents">
+            <summary>
+            Gets a UICallbackClientEvents object to set up client events. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackManager.CallBackLoadingText">
+            <summary>
+            Gets or sets the text used when the content of a control instance is being load. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackManager.CallBackLoadingImage">
+            <summary>
+            Gets or sets a value containing the image to use as the callback loading indicator.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Callback.UICallbackManager.CallbackInstances">
+            <summary>
+            Gets an object representing the collection of the UICallbackInstance objects contained in this class.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.UIBarsLicenseContext">
+            <summary>
+            Summary description for UIBarsLicenseContext.
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.Dock.UIPanel">
+            <summary>
+            Represents a panel control that can be docked or grouped with other panels to create panel groups.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.#ctor">
+            <summary>
+            Initializes a new instance of a UIPanel class.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.GetScriptDefinition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.DeserializeLayout(Janus.Web.Common.Layouts.JanusLayoutReader)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.SerializeLayout(Janus.Web.Common.Layouts.JanusLayoutWriter)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.GetCoreContainerHeight">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.SetCoreContainerHeight(System.Int32)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.OnPanelClosed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.RenderBorderPanelCaption(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            
+            </summary>        
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.AddParsedSubObject(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.EnsurePanelControlsCore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.TrackViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.LoadViewState(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.SaveViewState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.Dock.UIPanel.SetDirtyViewStateCore">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.InnerContainerUrl">
+            <summary>
+            Gets or sets a value containing the URL used to retrieve the content of the panel. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.InnerContainerFrame">
+            <summary>
+            Gets or sets the selected UIInnerContainerFrame object of the panel. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.UpdateContentOnCallback">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.UseInnerContainerFrame">
+            <summary>
+            This member support the design time serialization of the UIPanelManager class and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.InnerContainerFrames">
+            <summary>
+            Gets the collection of UIInnerContainerFrame objects used by the panel to render its content. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.InnerContainerUrlLoadingMode">
+            <summary>
+            Gets or sets a value indicating how to retrieve the content's URL of the panel. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.InnerContainerTemplate">
+            <summary>
+            Gets or sets a custom ITemplate to render the inner contents of the panel. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.InnerContainerUserControlUrl">
+            <summary>
+            Gets or sets a value containing the URL that should be used to retrieve the content for the panel. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.UIInnerContainer">
+            <summary>
+            Gets the UIInnerContainerTemplate object that contains an instantiated ITemplate
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.Dock.UIPanel.InnerContainerType">
+            <summary>
+            Gets or sets a value that determines the type of content that is going to be present in the panel. 
+            </summary>
+        </member>
+        <member name="T:Janus.Web.UI.CommandBars.UICommandBar">
+            <summary>
+            Represents a Web toolbar.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBar.#ctor">
+            <summary>
+            Initializes a new instance of the UICommandBar class.
+            </summary>
+        </member>
+        <member name="M:Janus.Web.UI.CommandBars.UICommandBar.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the UICommandBar class.
+            </summary>
+            <param name="key">The Key of the new UICommandBar.</param>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.Commands">
+            <summary>
+            Gets an object representing the collection of the UICommand objects assigned to this class.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.CommandBarType">
+            <summary>
+            Gets or sets a value specifying the default appearance and behaviour of this object. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.CommandStateStyles">
+            <summary>
+            Gets the UIStateStyles that holds the format styles used to draw the commands in their different states.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.CommandManager">
+            <summary>
+            Gets the UICommandManager that this object is assigned to.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.Cursor">
+            <summary>
+            Gets or sets the cursor that is displayed when the mouse pointer is over the command.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.ExpandOnHover">
+            <summary>
+            Determines whether a command menu is automatically expanded when the mouse is over it. 
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.FormatStyle">
+            <summary>
+            Gets the UIFormatStyle used to render the control.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.Key">
+            <summary>
+            Gets or sets the key used to identify an object in a colletion.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.Index">
+            <summary>
+            Gets the index of the UICommandBar in the collection.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.ShowToolTips">
+            <summary>
+            Indicates whether a ToolTip is shown when the mouse passes over a command.
+            </summary>
+        </member>
+        <member name="P:Janus.Web.UI.CommandBars.UICommandBar.Visible">
+            <summary>
+            Determines whether the command bar is visible or hidden.
+            </summary>
+        </member>
+    </members>
+</doc>

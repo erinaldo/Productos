@@ -1,0 +1,1277 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70A2D824-8086-4624-B200-9A7FAAB7319E}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{68B1623D-7FB9-47D8-8664-7ECEA3297D4F};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <ApplicationIcon>route.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>MobileClient</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <OutputFileFolder>\Program files\MobileClient</OutputFileFolder>
+    <RootNamespace>MobileClient</RootNamespace>
+    <StartupObject>Sub Main</StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsForms</MyType>
+    <FormFactorID>
+    </FormFactorID>
+    <SccAuxPath>
+    </SccAuxPath>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OSVersion>5.02</OSVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <DeployDirSuffix>$(AssemblyName)</DeployDirSuffix>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BaseAddress>0</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>SO_WCE = 0, MOD_TERM = "HHP9700"</DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>full</DebugType>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>off</GenerateSerializationAssemblies>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BaseAddress>0</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>SO_WCE =0, MOD_TERM = "HHPWM6"</DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <DebugType>Full</DebugType>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>off</GenerateSerializationAssemblies>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.CF.C1FlexGrid.2, Version=2.1.20073.184, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsCE.Forms">
+      <Name>Microsoft.WindowsCE.Forms</Name>
+    </Reference>
+    <Reference Include="Mp3Player">
+      <Name>Mp3Player</Name>
+    </Reference>
+    <Reference Include="OpenNETCF, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL" />
+    <Reference Include="OpenNETCF.Net, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL" />
+    <Reference Include="PrinterCE.NetCF, Version=1.2.5.0, Culture=neutral, PublicKeyToken=64f246f527921934">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PrinterCE\PrCE_NetCF\PrCE_NetCF - Viejito\PrinterCE.NetCF.dll</HintPath>
+    </Reference>
+    <Reference Include="Resco.DetailView.CF2, Version=5.0.0.4, Culture=neutral, PublicKeyToken=7444f602060105f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Archivos de programa\Resco MobileForms Toolkit 2005\Resco.DetailView.CF2.dll</HintPath>
+    </Reference>
+    <Reference Include="Resco.Zip.CF2, Version=5.0.0.6, Culture=neutral, PublicKeyToken=7444f602060105f9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Archivos de programa\Resco MobileForms Toolkit 2005\Resco.Zip.CF2.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.5\Devices\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\PrinterCE\PrCE_NetCF\CE.Net v5.x\PrCE_NetCF.dll">
+      <Link>PrCE_NetCF.dll</Link>
+    </Content>
+    <Content Include="fmodce.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\BT1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\BT2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\BT3.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\GR1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD10.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD11.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD12.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD14.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD3.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD6.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD7.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD8.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MD9.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MG0.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM12.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM13.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM14.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM16.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM17.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM18.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM19.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM20.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM22.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM24.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM25.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM26.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM27.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM28.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM4.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM5.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM6.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM7.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MM9.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MT1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MT2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MT3.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MT4.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MT5.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MV1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MV10.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MV2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MV3.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MV4.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MV8.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\MV9.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Mp3Player.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OPENSSLCE\libeay32.dll" />
+    <Content Include="OPENSSLCE\openssl.exe" />
+    <Content Include="OPENSSLCE\ssleay32.dll" />
+    <Content Include="route.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Symbol.Barcode.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Symbol.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Symbol.Keyboard.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Symbol.StandardForms.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Symbol_Bluetooth.dll" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="Referencias Web\ServicesCentral\EstadoTarea.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Referencias Web\ServicesCentral\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Referencias Web\ServicesCentral\Registro.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Referencias Web\ServicesCentral\ServiceMobileClient.disco" />
+    <None Include="Referencias Web\ServicesCentral\ServiceMobileClient.wsdl" />
+    <None Include="Referencias Web\ServicesCentral\TiposTmp.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Referencias Web\ServicesCentral\Usuario.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <Compile Include="vb\ClassCargando.vb" />
+    <Compile Include="vb\Controles.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="vb\CtrlMenuSeguimiento.designer.vb">
+      <DependentUpon>CtrlMenuSeguimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\CtrlMenuSeguimiento.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vb\FormAcercaDe.Designer.vb">
+      <DependentUpon>FormAcercaDe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormAcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormBonificaciones.Designer.vb">
+      <DependentUpon>FormBonificaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormBonificaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormCargando.Designer.vb">
+      <DependentUpon>FormCargando.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormCargando.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormFiltroClientes.Designer.vb">
+      <DependentUpon>FormFiltroClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormFiltroClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormKilometraje.Designer.vb">
+      <DependentUpon>FormKilometraje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormKilometraje.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaGPS.designer.vb">
+      <DependentUpon>FormPreguntaGPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPreguntaGPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FolioFiscal.vb" />
+    <Compile Include="vb\FormasFacturacionElectronica.vb" />
+    <Compile Include="vb\FormFacturaElectronicaDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormFacturacionElectronica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\CtrlMenuImagen.Designer.vb">
+      <DependentUpon>CtrlMenuImagen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\CtrlMenuImagen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vb\FormasSurtirPromocion.vb" />
+    <Compile Include="vb\FormClienteDetalle.Designer.vb">
+      <DependentUpon>FormClienteDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormClienteDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormFiltroClientesFueraFrecuencia.Designer.vb">
+      <DependentUpon>FormFiltroClientesFueraFrecuencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormFiltroClientesFueraFrecuencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormMovSinInv.Designer.vb">
+      <DependentUpon>FormMovSinInv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormMovSinInv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaImagenHHP.Designer.vb">
+      <DependentUpon>FormPreguntaImagenHHP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPreguntaImagenHHP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaCodigo.Designer.vb">
+      <DependentUpon>FormPreguntaCodigo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPreguntaCodigo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\Bateria.vb" />
+    <Compile Include="vb\common.vb" />
+    <Compile Include="vb\Conn.vb" />
+    <Compile Include="vb\FormCambioProductos.Designer.vb">
+      <DependentUpon>FormCambioProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormCambioProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDepositosGarantia.Designer.vb">
+      <DependentUpon>FormDepositosGarantia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormDepositosGarantia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormInicioFinJornada.Designer.vb">
+      <DependentUpon>FormInicioFinJornada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormInicioFinJornada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPedirFechaActual.Designer.vb">
+      <DependentUpon>FormPedirFechaActual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPedirFechaActual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreciosVenta.Designer.vb">
+      <DependentUpon>FormPreciosVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPreciosVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListItem.vb" />
+    <Compile Include="vb\Cuotas.vb" />
+    <Compile Include="Referencias Web\ServicesCentral\Reference.vb">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="vb\Agenda.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Aplicacion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\cDevice.vb" />
+    <Compile Include="vb\cEncuesta.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\ClassProceso.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\cPreguntas.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Descuento.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Dia.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\ERM.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormAbonoProgramado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormAbonoProgramadoDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormActivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormActivosAsignar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormActivosDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormActivosTransferir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormAjustes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormAjustesDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormasActivos.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasAjustes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasCambios.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasCanjes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasCargasDescargas.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasCuentasxCobrar.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasDeposito.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasDevoluciones.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasDevolucionesCliente.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasDevolucionesPrestamos.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasEncuestas.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasFacturacion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasGastos.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasHistoricoVtas.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasImpresion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasKardex.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasMercadeo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasPago.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasPagosProgramados.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasPrestamos.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasReportes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormasSolicitudes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\FormCanjes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormCargasDescargas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormCobranzaBackus.Designer.vb">
+      <DependentUpon>FormCobranzaBackus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormCobranzaBackus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormComunicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormConfiguracionCliente.Designer.vb">
+      <DependentUpon>FormConfiguracionCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormConfiguracionCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormCuentasxCobrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormCuotas.Designer.vb">
+      <DependentUpon>FormCuotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormCuotas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDepositos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDevolucionCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDevolucionClienteDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDevolucionDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDevoluciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDevolucionPrestamos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDevolucionPrestamosDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormDia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormEncuestasAplicadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormEncuestasNoAplicadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormFacturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormFacturaDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormFiltroAgenda.Designer.vb">
+      <DependentUpon>FormFiltroAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormFiltroAgenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormGastosBusqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormGrupos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormHistoricoVtas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormHistoricoVtasDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormImpresionTickets.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormImprod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormImpuestosDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormKardex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormKardexBusqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormListasPrecios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormMensajesTerminal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormMenuDia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormMenuModulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormMenuMovProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormMenuVendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormMercadeo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormModemGPRS.Designer.vb">
+      <DependentUpon>FormModemGPRS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormModemGPRS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormMovProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPedirProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaImagen.Designer.vb">
+      <DependentUpon>FormPreguntaImagen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPreguntaImagen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaMatricial.Designer.vb">
+      <DependentUpon>FormPreguntaMatricial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPreguntaMatricial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaNumero.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaOpcionalCaptura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaOpcionalSeleccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreguntaTexto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPreliquidacion.Designer.vb">
+      <DependentUpon>FormPreliquidacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPreliquidacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPrestamos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPrestamosDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormProceso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPromocionProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormPuntoGPS.Designer.vb">
+      <DependentUpon>FormPuntoGPS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormPuntoGPS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormResumen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormResumenPromociones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormRutas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormSeleccionarPromociones.Designer.vb">
+      <DependentUpon>FormSeleccionarPromociones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormSeleccionarPromociones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormSeleccionarVendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormSolicitudes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormSurtirPromocion.Designer.vb">
+      <DependentUpon>FormSurtirPromocion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormSurtirPromocion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormSurtirPromocionDetalle.designer.vb">
+      <DependentUpon>FormSurtirPromocionDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormSurtirPromocionDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormVerificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormVisitaDetalle.Designer.vb">
+      <DependentUpon>FormVisitaDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vb\FormVisitaDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FormVisitas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vb\FSEngine.vb" />
+    <Compile Include="vb\Global.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Impresion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Improductivo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Impuesto.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Inventario.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\ListaPrecios.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Main.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\MensajesTerminal.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\MenuContextualWCE.vb" />
+    <Compile Include="vb\ModuloMov.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\MOTConfiguracion.vb" />
+    <Compile Include="vb\MovProducto.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\NumerosALetras.vb" />
+    <Compile Include="vb\PhoneRadio.vb" />
+    <Compile Include="vb\Producto.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\ProductoPrestamoCli.vb" />
+    <Compile Include="vb\Promocion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Resumen.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\SKUInventario.vb" />
+    <Compile Include="vb\SubEmpresa.vb" />
+    <Compile Include="vb\TransferirArchivo.vb" />
+    <Compile Include="vb\TransProd.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\TransProdDetalle.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\TRPDatoFiscal.vb" />
+    <Compile Include="vb\TrpTpd.vb" />
+    <Compile Include="vb\ValorReferencia.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Vendedor.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Visita.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Vista.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vb\Win32API.vb" />
+    <WebReferenceUrl Include="http://localhost:9271/ServicesCentral/ServiceMobileClient.asmx">
+      <RelPath>Referencias Web\ServicesCentral\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+      <UpdateFromURL>http://localhost:9271/ServicesCentral/ServiceMobileClient.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferences Include="Referencias Web\" />
+    <EmbeddedResource Include="vb\Controles.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Controles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\CtrlMenuSeguimiento.resx">
+      <DependentUpon>CtrlMenuSeguimiento.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormAcercaDe.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAcercaDe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormBonificaciones.resx">
+      <DependentUpon>FormBonificaciones.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormCargando.resx">
+      <DependentUpon>FormCargando.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormFiltroClientes.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormFiltroClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormKilometraje.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormKilometraje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaGPS.resx">
+      <DependentUpon>FormPreguntaGPS.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormFacturaElectronicaDetalle.resx">
+      <DependentUpon>FormFacturaElectronicaDetalle.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormFacturacionElectronica.resx">
+      <DependentUpon>FormFacturacionElectronica.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\CtrlMenuImagen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CtrlMenuImagen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormClienteDetalle.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormClienteDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormFiltroClientesFueraFrecuencia.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormFiltroClientesFueraFrecuencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormMovSinInv.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormMovSinInv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaImagenHHP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPreguntaImagenHHP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaCodigo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPreguntaCodigo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormCambioProductos.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormCambioProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDepositosGarantia.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormDepositosGarantia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormInicioFinJornada.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormInicioFinJornada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPedirFechaActual.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPedirFechaActual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreciosVenta.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPreciosVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormAbonoProgramado.resx">
+      <DependentUpon>FormAbonoProgramado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormAbonoProgramadoDetalle.resx">
+      <DependentUpon>FormAbonoProgramadoDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormActivos.resx">
+      <DependentUpon>FormActivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormActivosAsignar.resx">
+      <DependentUpon>FormActivosAsignar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormActivosDetalle.resx">
+      <DependentUpon>FormActivosDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormActivosTransferir.resx">
+      <DependentUpon>FormActivosTransferir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormAjustes.resx">
+      <DependentUpon>FormAjustes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormAjustesDetalle.resx">
+      <DependentUpon>FormAjustesDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormCanjes.resx">
+      <DependentUpon>FormCanjes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormCargasDescargas.resx">
+      <DependentUpon>FormCargasDescargas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormClientes.resx">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormCobranzaBackus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormCobranzaBackus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormComunicacion.resx">
+      <DependentUpon>FormComunicacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormConfiguracionCliente.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormConfiguracionCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormCuentasxCobrar.resx">
+      <DependentUpon>FormCuentasxCobrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormCuotas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormCuotas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDepositos.resx">
+      <DependentUpon>FormDepositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDevolucionCliente.resx">
+      <DependentUpon>FormDevolucionCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDevolucionClienteDetalle.resx">
+      <DependentUpon>FormDevolucionClienteDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDevolucionDetalle.resx">
+      <DependentUpon>FormDevolucionDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDevoluciones.resx">
+      <DependentUpon>FormDevoluciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDevolucionPrestamos.resx">
+      <DependentUpon>FormDevolucionPrestamos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDevolucionPrestamosDetalle.resx">
+      <DependentUpon>FormDevolucionPrestamosDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormDia.resx">
+      <DependentUpon>FormDia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormEncuestasAplicadas.resx">
+      <DependentUpon>FormEncuestasAplicadas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormEncuestasNoAplicadas.resx">
+      <DependentUpon>FormEncuestasNoAplicadas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormFacturacion.resx">
+      <DependentUpon>FormFacturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormFacturaDetalle.resx">
+      <DependentUpon>FormFacturaDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormFiltroAgenda.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormFiltroAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormGastos.resx">
+      <DependentUpon>FormGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormGastosBusqueda.resx">
+      <DependentUpon>FormGastosBusqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormGrupos.resx">
+      <DependentUpon>FormGrupos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormHistoricoVtas.resx">
+      <DependentUpon>FormHistoricoVtas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormHistoricoVtasDetalle.resx">
+      <DependentUpon>FormHistoricoVtasDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormImpresionTickets.resx">
+      <DependentUpon>FormImpresionTickets.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormImprod.resx">
+      <DependentUpon>FormImprod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormImpuestosDetalle.resx">
+      <DependentUpon>FormImpuestosDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormInicio.resx">
+      <DependentUpon>FormInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormKardex.resx">
+      <DependentUpon>FormKardex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormKardexBusqueda.resx">
+      <DependentUpon>FormKardexBusqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormListasPrecios.resx">
+      <DependentUpon>FormListasPrecios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormMensajesTerminal.resx">
+      <DependentUpon>FormMensajesTerminal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormMenuDia.resx">
+      <DependentUpon>FormMenuDia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormMenuModulos.resx">
+      <DependentUpon>FormMenuModulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormMenuMovProducto.resx">
+      <DependentUpon>FormMenuMovProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormMenuVendedor.resx">
+      <DependentUpon>FormMenuVendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormMercadeo.resx">
+      <DependentUpon>FormMercadeo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormModemGPRS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormModemGPRS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormMovProducto.resx">
+      <DependentUpon>FormMovProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPagos.resx">
+      <DependentUpon>FormPagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPedirProducto.resx">
+      <DependentUpon>FormPedirProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaImagen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPreguntaImagen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaMatricial.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPreguntaMatricial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaNumero.resx">
+      <DependentUpon>FormPreguntaNumero.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaOpcionalCaptura.resx">
+      <DependentUpon>FormPreguntaOpcionalCaptura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaOpcionalSeleccion.resx">
+      <DependentUpon>FormPreguntaOpcionalSeleccion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreguntaTexto.resx">
+      <DependentUpon>FormPreguntaTexto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPreliquidacion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPreliquidacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPrestamos.resx">
+      <DependentUpon>FormPrestamos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPrestamosDetalle.resx">
+      <DependentUpon>FormPrestamosDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormProceso.resx">
+      <DependentUpon>FormProceso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPromocionProducto.resx">
+      <DependentUpon>FormPromocionProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormPuntoGPS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPuntoGPS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormReportes.resx">
+      <DependentUpon>FormReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormResumen.resx">
+      <DependentUpon>FormResumen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormResumenPromociones.resx">
+      <DependentUpon>FormResumenPromociones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormRutas.resx">
+      <DependentUpon>FormRutas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormSeleccionarPromociones.resx">
+      <DependentUpon>FormSeleccionarPromociones.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormSeleccionarVendedor.resx">
+      <DependentUpon>FormSeleccionarVendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormSolicitudes.resx">
+      <DependentUpon>FormSolicitudes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormSurtirPromocion.resx">
+      <DependentUpon>FormSurtirPromocion.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormSurtirPromocionDetalle.resx">
+      <DependentUpon>FormSurtirPromocionDetalle.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormUsuario.resx">
+      <DependentUpon>FormUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormVerificacion.resx">
+      <DependentUpon>FormVerificacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormVisitaDetalle.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormVisitaDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vb\FormVisitas.resx">
+      <DependentUpon>FormVisitas.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GPS\Microsoft.WindowsMobile.Samples.Location.csproj">
+      <Project>{DB77C1EE-A383-4CD5-A107-1C7C26A9E6B8}</Project>
+      <Name>Microsoft.WindowsMobile.Samples.Location</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WMHOTKEY\WMHOTKEY\HANDHELD.vbproj">
+      <Project>{D5430907-6E64-4C4B-AC45-A12ABF0D5FA9}</Project>
+      <Name>HANDHELD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{F184B08F-C81C-45F6-A57F-5ABD9991F28F}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.VisualBasic.v1.targets" />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

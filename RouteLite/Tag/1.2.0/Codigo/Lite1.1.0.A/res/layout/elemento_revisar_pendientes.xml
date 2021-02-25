@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layMovimiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+        android:background="@color/cream" >
+        <LinearLayout 
+            android:layout_width="0dp" 
+            android:layout_height="match_parent" 
+   			android:layout_weight = "85"
+   			android:weightSum="100"
+            android:orientation="vertical">
+            <LinearLayout android:layout_width="match_parent" 
+                android:layout_height="0dp" 
+                android:layout_weight = "50"
+                android:weightSum="100"
+                android:orientation="horizontal">
+                <TextView
+	                android:id="@+id/txtEstado"
+	                style="@style/RedTextFontNormal"
+	                android:layout_width="0dp"
+	                android:layout_height="match_parent"
+	                android:layout_weight="50"
+	                android:layout_marginLeft="15dp"	
+	                android:gravity="center_vertical"
+	                android:maxLines="1"
+	                android:text="Medium Text"
+	                android:textSize="@dimen/elemento_revisar_pendientes_txts_textSize" />                
+	            <TextView
+	                android:id="@+id/txtFecha"
+	                style="@style/RedTextFontNormal"
+	                android:layout_width="0dp"
+	                android:layout_height="match_parent"
+	                android:layout_weight = "50"                
+	                android:gravity="center_vertical|right"
+	                android:maxLines="1"
+	                android:text="Medium Text"
+	                android:textSize="@dimen/elemento_revisar_pendientes_txts_textSize" />
+            </LinearLayout>
+            <TextView
+	            android:id="@+id/txtAsunto"
+	            style="@style/RedTextFontNormal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="0dp" 
+                android:layout_weight = "50"
+	            android:layout_marginLeft="15dp"
+	            android:gravity="center_vertical"
+	            android:maxLines="1"
+	            android:text="Medium Text"
+	            android:textSize="@dimen/elemento_revisar_pendientes_txts_textSize" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnMasMenos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight = "15"
+            android:background="@color/cream"
+            android:src="@drawable/ic_menu_more" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="false"
+            android:longClickable="true"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/elemento_revisar_pendientes_txtDescripcion_textSize" />
+    </LinearLayout>
+
+</LinearLayout>

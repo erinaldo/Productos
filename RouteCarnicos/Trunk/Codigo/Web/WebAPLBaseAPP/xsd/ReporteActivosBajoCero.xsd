@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Activos" targetNamespace="http://tempuri.org/Activos.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/Activos.xsd" xmlns:mstns="http://tempuri.org/Activos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Activos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ALMClave" type="xs:string" />
+        <xs:element name="ALMNombre" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="VENNombre" type="xs:string" />
+        <xs:element name="RUTClave" type="xs:string" />
+        <xs:element name="RUTDescripcion" type="xs:string" />
+        <xs:element name="ClienteClave" type="xs:string" />
+        <xs:element name="RazonSocial" type="xs:string" />
+        <xs:element name="ActivoClave" type="xs:string" />
+        <xs:element name="Nombre" type="xs:string" />
+        <xs:element name="Tipo" type="xs:string" />
+        <xs:element name="IdElectronico" type="xs:string" />
+        <xs:element name="Altura" type="xs:double" />
+        <xs:element name="Ancho" type="xs:double" />
+        <xs:element name="Profundidad" type="xs:double" />
+        <xs:element name="TipoFase" type="xs:string" />
+        <xs:element name="TipoEstado" type="xs:string" />
+        <xs:element name="FechaServicio" type="xs:date" />
+        <xs:element name="Asignado" type="xs:integer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

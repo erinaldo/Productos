@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Solicitudes" targetNamespace="http://tempuri.org/Solicitudes.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/Solicitudes.xsd" xmlns:mstns="http://tempuri.org/Solicitudes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Document">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwSolicitudes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RUTClave" type="xs:string" />
+              <xs:element name="Descripcion" type="xs:string" />
+              <xs:element name="RazonSocial" type="xs:string" />
+              <xs:element name="Folio" type="xs:string" />
+              <xs:element name="peticion" type="xs:string" />
+              <xs:element name="Area" type="xs:string" />
+              <xs:element name="Concepto" type="xs:string" />
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element name="Vendedor" type="xs:string" />
+              <xs:element name="CEDI" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="DocumentKey1">
+      <xs:selector xpath=".//mstns:vwSolicitudes" />
+      <xs:field xpath="mstns:RUTClave" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

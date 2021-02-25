@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context="com.amesol.routelite.vistas.AplicacionPromocion" >
+
+    <ScrollView
+        android:id="@android:id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.91"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:id="@android:id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@android:id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/login_image_marginBottom"
+                android:layout_marginTop="@dimen/login_image_marginTop"
+                android:scaleType="center"
+                android:src="@drawable/logo_route" />
+
+            <TextView
+                android:id="@+id/lblLogin"
+                style="@style/RedTextFontLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+            <!-- style="@style/GeneralEditText" -->
+
+            <EditText
+                android:id="@+id/txtLogin"
+                style="@style/GeneralEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/generalAccesoSistemaHeight"
+                android:autoText="false"
+                android:inputType="textNoSuggestions|textVisiblePassword"
+                android:selectAllOnFocus="true"
+                android:text="@string/Void"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/lblPassword"
+                style="@style/RedTextFontLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <EditText
+                android:id="@+id/txtPassword"
+                style="@style/GeneralEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/generalAccesoSistemaHeight"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:text="@string/Void"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/lblUsuarioSustituto"
+                style="@style/RedTextFontLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnAceptar"
+                style="@style/buttonSquareStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/login_button_marginBottom"
+                android:layout_marginTop="@dimen/login_button_marginTop"
+                android:text="@string/Void" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:layout_weight="1"
+        layout="@layout/footer_bar" />
+
+</LinearLayout>

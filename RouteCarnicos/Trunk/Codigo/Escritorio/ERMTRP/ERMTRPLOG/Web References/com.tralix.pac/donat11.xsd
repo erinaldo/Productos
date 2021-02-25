@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:donat="http://www.sat.gob.mx/donat" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.sat.gob.mx/donat" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Donatarias">
+    <xs:annotation>
+      <xs:documentation>Nodo opcional para incluir la informaci??n requerida por el Servicio de Administraci??n Tributaria a las organizaciones civiles o fideicomisos autorizados para recibir donativos, que permite hacer deducibles los Comprobantes Fiscales Digitales (CFD) y Comprobantes Fiscales Digitales a trav??s de Internet (CFDI) a los donantes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute fixed="1.1" name="version" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar la versi??n del complemento de donatarias</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="noAutorizacion" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el n??mero del oficio en que se haya informado a la organizaci??n civil o fideicomiso, la procedencia de la autorizaci??n para recibir donativos deducibles, o su renovaci??n correspondiente otorgada por el Servicio de Administraci??n Tributaria.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="fechaAutorizacion" type="xs:date" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar la fecha del oficio en que se haya informado a la organizaci??n civil o fideicomiso, la procedencia de la autorizaci??n para recibir donativos deducibles, o su renovaci??n correspondiente otorgada por el Servicio de Administraci??n Tributaria.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="leyenda" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para se??alar de manera expresa que el comprobante que se expide se deriva de un donativo.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

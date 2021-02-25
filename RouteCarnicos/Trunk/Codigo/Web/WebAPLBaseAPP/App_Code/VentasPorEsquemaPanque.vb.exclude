@@ -1,0 +1,148 @@
+Imports Microsoft.VisualBasic
+
+Public Module VentasPorEsquemaPanque
+    Public Function ConsultaVentasPorEsquemaPanque(ByVal ins As LbConexion.cConexion, ByVal pvConversionKg As Boolean, ByVal pvCondicion As String, ByVal pvCondicionEsquema As String, ByVal pvLenguaje As String, ByVal pvCommandTimeout As Integer, ByRef refDataSet As Data.DataSet) As Boolean
+        Dim sConsulta As New StringBuilder
+
+        sConsulta.Append("SET ANSI_WARNINGS OFF ")
+        sConsulta.Append("set nocount on ")
+        sConsulta.Append("declare @CobrarVentas as bit ")
+        sConsulta.Append("set @CobrarVentas = (select top 1 CobrarVentas from ConHist order by CONHistFechaInicio desc) ")
+        sConsulta.Append("declare @Tipo smallint ")
+        sConsulta.Append("if @CobrarVentas = 1 ")
+        sConsulta.Append("set @Tipo=1 ")
+        sConsulta.Append("else ")
+        sConsulta.Append("set @Tipo=8 ")
+
+        sConsulta.Append("if (select object_id('tempdb..#VentaEsquemaPanque')) is not null drop table #VentaEsquemaPanque ")
+        sConsulta.Append("select * into #VentaEsquemaPanque from ( ")
+        sConsulta.Append("select ALN.Clave as ALNClave, ALN.Clave + ' ' + ALN.Nombre as CEDI, VEN.Nombre as Vendedor, VIS.RUTClave, ")
+        sConsulta.Append("(select Descripcion from dbo.Ruta where (RUTClave = VIS.RUTClave)) as Ruta, ")
+        sConsulta.Append("convert(datetime, convert(varchar(20), TRP.FechaHoraAlta, 112)) as Fecha, TRP.TransProdID, TPD.ProductoClave, ")
+        sConsulta.Append("(select Nombre from dbo.Producto where (ProductoClave = TPD.ProductoClave)) as Producto, TPD.TipoUnidad, TPD.Cantidad as CantidadVenta, ")
+        sConsulta.Append("TPD.Subtotal as ImporteVenta, 0 as CantidadDevolucion, 0 as ImporteDevolucion, 0 as CantidadCambio, 0 as ImporteCambio ")
+        sConsulta.Append("from TransProd TRP ")
+        sConsulta.Append("inner join TransProdDetalle TPD on TRP.TransProdID = TPD.TransProdID ")
+        sConsulta.Append("inner join Visita VIS on TRP.VisitaClave = VIS.VisitaClave ")
+        sConsulta.Append("inner join (select distinct DiaClave, VendedorId, ClaveCEDI from AgendaVendedor) AGV on AGV.DiaClave = TRP.DiaClave and AGV.VendedorId = VIS.VendedorID ")
+        sConsulta.Append("inner join Almacen ALN on AGV.ClaveCEDI = ALN.Clave ")
+        sConsulta.Append("inner join Vendedor VEN on VIS.VendedorId = VEN.VendedorID ")
+        sConsulta.Append(pvCondicion & " ")
+        sConsulta.Append("and TRP.Tipo = @Tipo and TRP.TipoFase<>0 and tpd.promocion<>2 ")
+        sConsulta.Append("union all ")
+        sConsulta.Append("select ALN.Clave as ALNClave, ALN.Clave + ' ' + ALN.Nombre as CEDI, ")
+        sConsulta.Append("VEN.Nombre as Vendedor, VIS.RUTClave, ")
+        sConsulta.Append("(select Descripcion from dbo.Ruta  where (RUTClave = VIS.RUTClave)) as Ruta, ")
+        sConsulta.Append("convert(datetime, convert(varchar(20), TRP.FechaHoraAlta, 112)) as Expr1, TRP.TransProdID, TPD.ProductoClave, ")
+        sConsulta.Append("(select Nombre from dbo.Producto where (ProductoClave = TPD.ProductoClave)) as Producto, TPD.TipoUnidad, 0 as Expr2, 0 as Expr3, TPD.Cantidad, ")
+        sConsulta.Append("TPD.Cantidad * isnull ((select top 1 Precio from dbo.PrecioProductoVig where (TRP.FechaHoraAlta between PPVFechaInicio and FechaFin) and (ProductoClave = TPD.ProductoClave) and (PRUTipoUnidad= TPD.TipoUnidad) order by MFechaHora asc), 0) as Importe, ")
+        sConsulta.Append("0 as Expr4, 0 as Expr5 ")
+        sConsulta.Append("from TransProd TRP ")
+        sConsulta.Append("inner join TransProdDetalle TPD on TRP.TransProdID = TPD.TransProdID ")
+        sConsulta.Append("inner join Visita VIS on TRP.VisitaClave = VIS.VisitaClave ")
+        sConsulta.Append("inner join (select distinct DiaClave, VendedorId, ClaveCEDI from AgendaVendedor) AGV on AGV.DiaClave = TRP.DiaClave and AGV.VendedorId = VIS.VendedorID ")
+        sConsulta.Append("inner join Almacen ALN on AGV.ClaveCEDI = ALN.Clave ")
+        sConsulta.Append("inner join Vendedor VEN on VIS.VendedorId = VEN.VendedorID ")
+        sConsulta.Append(pvCondicion & " ")
+        sConsulta.Append("and TRP.Tipo = 3 and TRP.TipoFase = 1 and (TPD.PROMOCION<>2 OR TPD.PROMOCION IS NULL) ")
+        sConsulta.Append("union all ")
+        sConsulta.Append("select ALN.Clave as ALNClave, ALN.Clave + ' ' + ALN.Nombre as CEDI, VEN.Nombre as Vendedor, VIS.RUTClave, ")
+        sConsulta.Append("(select Descripcion from dbo.Ruta where (RUTClave = VIS.RUTClave)) as Ruta, ")
+        sConsulta.Append("convert(datetime, convert(varchar(20), TRP.FechaHoraAlta, 112)) as Expr1, TRP.TransProdID, TPD.ProductoClave, ")
+        sConsulta.Append("(select Nombre from dbo.Producto where (ProductoClave = TPD.ProductoClave)) as Producto, TPD.TipoUnidad, 0 as Expr2, 0 as Expr3, 0 as Expr4, 0 as Expr5, TPD.Cantidad, TPD.SubTotal as Importe ")
+        sConsulta.Append("from TransProd TRP ")
+        sConsulta.Append("inner join TransProdDetalle TPD on TRP.TransProdID = TPD.TransProdID ")
+        sConsulta.Append("inner join Visita VIS on TRP.VisitaClave = VIS.VisitaClave ")
+        sConsulta.Append("inner join (select distinct DiaClave, VendedorId, ClaveCEDI from AgendaVendedor) AGV on AGV.DiaClave = TRP.DiaClave and AGV.VendedorId = VIS.VendedorID ")
+        sConsulta.Append("inner join Almacen ALN on AGV.ClaveCEDI = ALN.Clave ")
+        sConsulta.Append("inner join Vendedor VEN on VIS.VendedorId = VEN.VendedorID ")
+        sConsulta.Append(pvCondicion & " ")
+        sConsulta.Append("and TRP.Tipo = 9 and TRP.TipoFase = 1 and TRP.TipoMovimiento = 1 and (TPD.PROMOCION<>2 OR TPD.PROMOCION IS NULL)")
+        sConsulta.Append(")as t1 ")
+
+        If pvConversionKg Then
+            sConsulta.Append("select VRE.ALNClave, VRE.CEDI, PRO.ProductoClave as Clave, ESQ.Clave + '-' + ESQ.Nombre as Esquema, VRE.Fecha, VRE.Vendedor, ")
+            sConsulta.Append("VRE.RutClave as Ruta, isnull(VRE.Ruta, '') as RutaNombre, VRE.Producto, ")
+            sConsulta.Append("(select top 1 VAD.Descripcion from VAVDescripcion VAD where VAD.VARCodigo = 'UNIDADV' and VAD.VADTipoLenguaje = '" & pvLenguaje & "' and VAD.VAVClave = VRE.TipoUnidad) as Unidad, ")
+            sConsulta.Append("sum(VRE.CantidadVenta) as VentaCant, sum(VRE.CantidadVenta * PRD.Factor) as VentaCantUnit, isnull(sum(VRE.CantidadVenta * PRU.KgLts), 0) as VentaKg, ")
+            sConsulta.Append("sum(VRE.ImporteVenta) as VentaDinero, sum(VRE.CantidadDevolucion) as DevolucionCant, sum(VRE.CantidadDevolucion * PRD.Factor) as DevolucionCantUnit, ")
+            sConsulta.Append("isnull(sum(VRE.CantidadDevolucion * PRU.KgLts), 0) as DevolucionKg, sum(VRE.ImporteDevolucion) as DevolucionDinero, ")
+            sConsulta.Append("sum(VRE.CantidadCambio) as CambioCant, sum(VRE.CantidadCambio * PRD.Factor) as CambioCantUnit, ")
+            sConsulta.Append("isnull(sum(VRE.CantidadCambio * PRU.KgLts), 0) as CambioKg, sum(VRE.ImporteCambio) as CambioDinero ")
+            sConsulta.Append("from #VentaEsquemaPanque VRE ")
+            sConsulta.Append("inner join Producto PRO on VRE.ProductoClave = PRO.ProductoClave ")
+            sConsulta.Append("inner join ProductoDetalle PRD on PRO.ProductoClave = PRD.ProductoClave and VRE.TipoUnidad = PRD.PRUTipoUnidad and PRD.ProductoClave = PRD.ProductoDetClave ")
+            sConsulta.Append("inner join ProductoEsquema PRS on PRS.ProductoClave = PRO.ProductoClave ")
+            sConsulta.Append("inner join Esquema ESQ on ESQ.EsquemaId = PRS.EsquemaId ")
+            sConsulta.Append("inner join ProductoUnidad PRU on PRU.ProductoClave = PRD.ProductoClave and PRU.PRUTipoUnidad = PRD.PRUTipoUnidad ")
+            sConsulta.Append(pvCondicionEsquema & " ")
+            sConsulta.Append("group by VRE.Fecha, VRE.Vendedor, VRE.RutClave, VRE.Ruta, VRE.Producto, VRE.TipoUnidad, ESQ.Clave + '-' + ESQ.Nombre, PRO.ProductoClave, VRE.CEDI, VRE.ALNClave ")
+        Else
+            sConsulta.Append("select VRE.ALNClave, VRE.CEDI, PRO.ProductoClave as clave, ESQ.Clave + '-' + ESQ.Nombre as Esquema, VRE.Fecha, VRE.Vendedor, VRE.RutClave as Ruta, ")
+            sConsulta.Append("isnull(VRE.Ruta, '') as RutaNombre, VRE.Producto, ")
+            sConsulta.Append("(select top 1 VAD.Descripcion from VAVDescripcion VAD where VAD.VARCodigo = 'UNIDADV' and VAD.VADTipoLenguaje = '" & pvLenguaje & "' and VAD.VAVClave = VRE.TipoUnidad) as Unidad, ")
+            sConsulta.Append("sum(VRE.CantidadVenta) as VentaCant, sum(VRE.CantidadVenta * PRD.Factor) as VentaCantUnit, sum(VRE.ImporteVenta) as VentaDinero, ")
+            sConsulta.Append("sum(VRE.CantidadDevolucion) as DevolucionCant, sum(VRE.CantidadDevolucion * PRD.Factor) as DevolucionCantUnit, sum(VRE.ImporteDevolucion) as DevolucionDinero, ")
+            sConsulta.Append("sum(VRE.CantidadCambio) as CambioCant, sum(VRE.CantidadCambio * PRD.Factor) as CambioCantUnit, sum(VRE.ImporteCambio) as CambioDinero ")
+            sConsulta.Append("from #VentaEsquemaPanque VRE ")
+            sConsulta.Append("inner join Producto PRO on VRE.ProductoClave = PRO.ProductoClave ")
+            sConsulta.Append("inner join ProductoDetalle PRD on PRO.ProductoClave = PRD.ProductoClave and VRE.TipoUnidad = PRD.PRUTipoUnidad and PRD.ProductoClave = PRD.ProductoDetClave ")
+            sConsulta.Append("inner join ProductoEsquema PRS on PRS.ProductoClave = PRO.ProductoClave ")
+            sConsulta.Append("inner join Esquema ESQ on ESQ.EsquemaId = PRS.EsquemaId ")
+            sConsulta.Append(pvCondicionEsquema & " ")
+            sConsulta.Append("group by VRE.Fecha, VRE.Vendedor, VRE.RutClave, VRE.Ruta, VRE.Producto, VRE.TipoUnidad, ESQ.Clave + '-' + ESQ.Nombre, PRO.ProductoClave, VRE.CEDI, VRE.ALNClave ")
+        End If
+        sConsulta.Append("drop table #VentaEsquemaPanque ")
+        sConsulta.Append("set nocount off ")
+
+        'Session("Query") = sConsulta.ToString
+        Dim dt As Data.DataTable
+        dt = ins.EjecutarConsulta(sConsulta.ToString, pvCommandTimeout)
+        If dt.Rows.Count = 0 Then
+            Return False
+        End If
+        refDataSet = New Data.DataSet
+        refDataSet.Tables.Add(dt)
+
+        Return True
+    End Function
+
+    Public Sub VerVentasPorEsquemaPanque(ByVal parbConversionKg As Boolean, ByVal parsTipoReporte As String, ByVal paroDt As Data.DataTable, ByVal paroReporte As CrystalDecisions.CrystalReports.Engine.ReportClass, ByVal paroMensaje As BASMENLOG.CMensaje)
+        paroReporte.Database.Tables("Configuracion").SetDataSource(paroDt)
+
+        If (parsTipoReporte = "Detallado") Then
+            paroReporte.SetParameterValue("Detallado", 1)
+        Else
+            paroReporte.SetParameterValue("Detallado", 0)
+        End If
+        If parbConversionKg Then
+            paroReporte.SetParameterValue("KgLt", paroMensaje.RecuperarDescripcion("XKgLt"))
+            paroReporte.SetParameterValue("resumen3", paroMensaje.RecuperarDescripcion("Xresumendekilolitros"))
+        End If
+        paroReporte.SetParameterValue("nombre", Session("Nombre").ToString().ToUpper()) '''''''''''''****<----Nombre por filtros)
+        paroReporte.SetParameterValue("fecha", paroMensaje.RecuperarDescripcion("Xfecha"))
+        paroReporte.SetParameterValue("unidad", paroMensaje.RecuperarDescripcion("Xunidad"))
+        paroReporte.SetParameterValue("venta", paroMensaje.RecuperarDescripcion("Xventam"))
+        paroReporte.SetParameterValue("ruta", paroMensaje.RecuperarDescripcion("Xruta"))
+        paroReporte.SetParameterValue("cant", paroMensaje.RecuperarDescripcion("Xcantidad"))
+        paroReporte.SetParameterValue("$", paroMensaje.RecuperarDescripcion("X$"))
+        paroReporte.SetParameterValue("devolucion", paroMensaje.RecuperarDescripcion("Xdevolucion"))
+        paroReporte.SetParameterValue("cambio", paroMensaje.RecuperarDescripcion("Xcambio"))
+        paroReporte.SetParameterValue("resumen1", paroMensaje.RecuperarDescripcion("Xresumendeunidades"))
+        paroReporte.SetParameterValue("resumen2", paroMensaje.RecuperarDescripcion("Xresumendeimportes"))
+        paroReporte.SetParameterValue("total", paroMensaje.RecuperarDescripcion("Xtotal"))
+        paroReporte.SetParameterValue("grantotal", paroMensaje.RecuperarDescripcion("Xgrantotal"))
+        paroReporte.SetParameterValue("clave", paroMensaje.RecuperarDescripcion("Xclave"))
+        paroReporte.SetParameterValue("producto", paroMensaje.RecuperarDescripcion("Xproducto"))
+        paroReporte.SetParameterValue("ventas", paroMensaje.RecuperarDescripcion("XVentas"))
+        paroReporte.SetParameterValue("devoluciones", paroMensaje.RecuperarDescripcion("XDevoluciones"))
+        paroReporte.SetParameterValue("cambios", paroMensaje.RecuperarDescripcion("XCambios"))
+        paroReporte.SetParameterValue("unidades", paroMensaje.RecuperarDescripcion("XUnidades"))
+        paroReporte.SetParameterValue("Enviadaruta", Session("Ruta"))
+        paroReporte.SetParameterValue("FechaHoraImpresion", paroMensaje.RecuperarDescripcion("XFechaHoraImpresion"))
+        paroReporte.SetParameterValue("CentroDistribucion", paroMensaje.RecuperarDescripcion("XCentroDistribucion"))
+        paroReporte.SetParameterValue("Enviadafecha", Session("RangoFechas"))
+    End Sub
+
+End Module
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteCargas" targetNamespace="http://tempuri.org/ReporteCargas.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteCargas.xsd" xmlns:mstns="http://tempuri.org/ReporteCargas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Cargas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CEDI" type="xs:string" />
+        <xs:element name="Fecha" type="xs:dateTime" />
+        <xs:element name="Clave" type="xs:string" />
+        <xs:element name="Producto" type="xs:string" />
+        <xs:element name="Unidad" type="xs:string" />
+        <xs:element name="Cantidad" type="xs:double" />
+        <xs:element name="Piezas" type="xs:double" />
+        <xs:element name="Vendedor" type="xs:string" />
+        <xs:element name="Folio" type="xs:string" />
+        <xs:element name="TipoFase" type="xs:short" />
+        <xs:element name="DescripcionFase" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargasxFecha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CEDI" type="xs:string" />
+        <xs:element name="Fecha" type="xs:dateTime" />
+        <xs:element name="Clave" type="xs:string" />
+        <xs:element name="Producto" type="xs:string" />
+        <xs:element name="Unidad" type="xs:string" />
+        <xs:element name="Cantidad" type="xs:double" />
+        <xs:element name="Piezas" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

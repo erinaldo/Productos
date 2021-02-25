@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Encuesta" targetNamespace="http://tempuri.org/VENTAS.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/VENTAS.xsd" xmlns:mstns="http://tempuri.org/VENTAS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SPRepEncuestas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ClienteClave" type="xs:string" />
+        <xs:element name="Clave" type="xs:string" />
+        <xs:element name="NombreCorto" type="xs:string" />
+        <xs:element name="CENClave" type="xs:string" />
+        <xs:element name="DescripcionEncuesta" type="xs:string" />
+        <xs:element name="HoraInicio" type="xs:date" />
+        <xs:element name="HoraFin" type="xs:date" />
+        <xs:element name="Tipo" type="xs:string" />
+        <xs:element name="Fase" type="xs:string" />
+        <xs:element name="ENCId" type="xs:string" />
+        <xs:element name="Vendedor" type="xs:string" />
+        <xs:element name="Ruta" type="xs:string" />
+        <xs:element name="Cedi" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SPRepEncuestasRes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ENCId" type="xs:string" />
+        <xs:element name="ENPId" type="xs:string" />
+        <xs:element name="CEPNumero" type="xs:int" />
+        <xs:element name="DescripcionPregunta" type="xs:string" />
+        <xs:element name="Valor" type="xs:int" />
+        <xs:element name="Respuesta" type="xs:string" />
+        <xs:element name="Imagen" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

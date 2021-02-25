@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelTitulo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelTitulo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 10pt, style=Bold</value>
+  </data>
+  <data name="LabelTitulo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="LabelTitulo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 17</value>
+  </data>
+  <data name="LabelTitulo.Text" xml:space="preserve">
+    <value>LabelTitulo</value>
+  </data>
+  <data name="&gt;&gt;LabelTitulo.Name" xml:space="preserve">
+    <value>LabelTitulo</value>
+  </data>
+  <data name="&gt;&gt;LabelTitulo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTitulo.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;LabelTitulo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 51</value>
+  </data>
+  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 24</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="LabelEstado.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="LabelEstado.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 10pt, style=Bold</value>
+  </data>
+  <data name="LabelEstado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="LabelEstado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="&gt;&gt;LabelEstado.Name" xml:space="preserve">
+    <value>LabelEstado</value>
+  </data>
+  <data name="&gt;&gt;LabelEstado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelEstado.Parent" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;LabelEstado.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 180</value>
+  </data>
+  <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Name" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>2, 200</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Name" xml:space="preserve">
+    <value>Panel4</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="Panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 0</value>
+  </data>
+  <data name="Panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>2, 200</value>
+  </data>
+  <data name="&gt;&gt;Panel5.Name" xml:space="preserve">
+    <value>Panel5</value>
+  </data>
+  <data name="&gt;&gt;Panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel5.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TextBoxLongitud.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="TextBoxLongitud.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 36</value>
+  </data>
+  <data name="TextBoxLongitud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TextBoxLongitud.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLongitud.Name" xml:space="preserve">
+    <value>TextBoxLongitud</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLongitud.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLongitud.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLongitud.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LabelStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt, style=Bold</value>
+  </data>
+  <data name="LabelStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 133</value>
+  </data>
+  <data name="LabelStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 33</value>
+  </data>
+  <data name="LabelStatus.Text" xml:space="preserve">
+    <value>LabelStatus</value>
+  </data>
+  <data name="LabelStatus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;LabelStatus.Name" xml:space="preserve">
+    <value>LabelStatus</value>
+  </data>
+  <data name="&gt;&gt;LabelStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelStatus.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;LabelStatus.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LabelSatelites.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt, style=Bold</value>
+  </data>
+  <data name="LabelSatelites.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 98</value>
+  </data>
+  <data name="LabelSatelites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="LabelSatelites.Text" xml:space="preserve">
+    <value>LabelSatelites</value>
+  </data>
+  <data name="&gt;&gt;LabelSatelites.Name" xml:space="preserve">
+    <value>LabelSatelites</value>
+  </data>
+  <data name="&gt;&gt;LabelSatelites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSatelites.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;LabelSatelites.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LabelLongitud.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt, style=Bold</value>
+  </data>
+  <data name="LabelLongitud.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 37</value>
+  </data>
+  <data name="LabelLongitud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 20</value>
+  </data>
+  <data name="LabelLongitud.Text" xml:space="preserve">
+    <value>LabelLongitud</value>
+  </data>
+  <data name="&gt;&gt;LabelLongitud.Name" xml:space="preserve">
+    <value>LabelLongitud</value>
+  </data>
+  <data name="&gt;&gt;LabelLongitud.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLongitud.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;LabelLongitud.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LabelLatitud.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt, style=Bold</value>
+  </data>
+  <data name="LabelLatitud.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="LabelLatitud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 20</value>
+  </data>
+  <data name="LabelLatitud.Text" xml:space="preserve">
+    <value>LabelLatitud</value>
+  </data>
+  <data name="&gt;&gt;LabelLatitud.Name" xml:space="preserve">
+    <value>LabelLatitud</value>
+  </data>
+  <data name="&gt;&gt;LabelLatitud.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLatitud.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;LabelLatitud.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LabelFechaHora.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt, style=Bold</value>
+  </data>
+  <data name="LabelFechaHora.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 76</value>
+  </data>
+  <data name="LabelFechaHora.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="LabelFechaHora.Text" xml:space="preserve">
+    <value>LabelFechaHora</value>
+  </data>
+  <data name="&gt;&gt;LabelFechaHora.Name" xml:space="preserve">
+    <value>LabelFechaHora</value>
+  </data>
+  <data name="&gt;&gt;LabelFechaHora.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelFechaHora.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;LabelFechaHora.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="TextBoxLatitud.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="TextBoxLatitud.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 9</value>
+  </data>
+  <data name="TextBoxLatitud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 21</value>
+  </data>
+  <data name="TextBoxLatitud.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLatitud.Name" xml:space="preserve">
+    <value>TextBoxLatitud</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLatitud.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLatitud.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;TextBoxLatitud.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 76</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 200</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 328</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="TimerGPS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
+    <value>Pocket_PC</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>244, 328</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FormPuntoGPS</value>
+  </data>
+  <data name="&gt;&gt;TimerGPS.Name" xml:space="preserve">
+    <value>TimerGPS</value>
+  </data>
+  <data name="&gt;&gt;TimerGPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormPuntoGPS</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

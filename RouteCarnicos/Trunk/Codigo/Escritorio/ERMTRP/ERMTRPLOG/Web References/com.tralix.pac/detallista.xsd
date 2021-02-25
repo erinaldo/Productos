@@ -1,0 +1,1494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:detallista="http://www.sat.gob.mx/detallista" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.sat.gob.mx/detallista" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="detallista">
+    <xs:annotation>
+      <xs:documentation>Complemento requerido para la emision y recepcion de comprobantes fiscales digitales en el sector Retail</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="requestForPaymentIdentification">
+          <xs:annotation>
+            <xs:documentation>Nodo requerido que especifica la transacci??n a utilizar</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="entityType">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica el tipo de transacci??n</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:NMTOKEN">
+                    <xs:enumeration value="INVOICE" />
+                    <xs:enumeration value="DEBIT_NOTE" />
+                    <xs:enumeration value="CREDIT_NOTE" />
+                    <xs:enumeration value="LEASE_RECEIPT" />
+                    <xs:enumeration value="HONORARY_RECEIPT" />
+                    <xs:enumeration value="PARTIAL_INVOICE" />
+                    <xs:enumeration value="TRANSPORT_DOCUMENT" />
+                    <xs:enumeration value="AUTO_INVOICE" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="4" name="specialInstruction">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica que tipo de instrucciones comerciales son enviadas</xs:documentation>
+          </xs:annotation>
+          <xs:complexType mixed="true">
+            <xs:sequence>
+              <xs:element maxOccurs="15" name="text">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica informaci??n de texto que aplica a todo el mensaje de la factura. La informaci??n estar?? en funci??n al c??digo del tema de texto</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:minLength value="1" />
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="code" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para especificar el codigo del tipo de instrucciones comerciales que son enviadas</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:maxLength value="3" />
+                  <xs:minLength value="1" />
+                  <xs:enumeration value="AAB" />
+                  <xs:enumeration value="DUT" />
+                  <xs:enumeration value="PUR" />
+                  <xs:enumeration value="ZZZ" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="orderIdentification">
+          <xs:annotation>
+            <xs:documentation>Nodo requerido que especifica informaci??n sobre la orden de compra a la que hace referencia la factura</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="30" name="referenceIdentification">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica el n??mero de  orden de compra (comprador) a la que hace referencia la factura</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute fixed="ON" name="type" use="required">
+                        <xs:annotation>
+                          <xs:appinfo source="ON" />
+                          <xs:documentation>Atributo para especificar el codigo para identificar la orden de compra</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:NMTOKEN">
+                            <xs:enumeration value="ON" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ReferenceDate" type="xs:date">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la fecha de la orden de compra(comprador) a la que hace referencia la factura</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AdditionalInformation">
+          <xs:annotation>
+            <xs:documentation>Nodo requerido que especifica las referencias adicionales a nivel global de la factura</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="99" name="referenceIdentification">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica el n??mero de referencia adicional</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="type" use="required">
+                        <xs:annotation>
+                          <xs:documentation>Atributo para especificar el codigo de referencias adicionales</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:NMTOKEN">
+                            <xs:enumeration value="AAE" />
+                            <xs:enumeration value="CK" />
+                            <xs:enumeration value="ACE" />
+                            <xs:enumeration value="ATZ" />
+                            <xs:enumeration value="DQ" />
+                            <xs:enumeration value="IV" />
+                            <xs:enumeration value="ON" />
+                            <xs:enumeration value="AWR" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="DeliveryNote">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional donde se especifica informaci??n de recepci??n de mercancia.Informaci??n emitida por el comprador cuando recibe la mercanc??a que es facturada</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="30" name="referenceIdentification">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica el numero de folio. N??mero emitido por el comprador cuando recibe la mercanc??a que es facturada</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:minLength value="1" />
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ReferenceDate" type="xs:date">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la fecha en que fue asignado el no. de folio de recibo</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="buyer">
+          <xs:annotation>
+            <xs:documentation>Nodo requerido que especifica informaci??n del comprador</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gln">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica el n??mero global de localizaci??n (GLN) del comprador.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="contactInformation">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica informaci??n del contacto de compras</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="personOrDepartmentName">
+                      <xs:annotation>
+                        <xs:documentation>Etiqueta que especifica el contacto de compras</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="text">
+                            <xs:annotation>
+                              <xs:documentation>Contacto de Nodo requerido que especifica el contacto de compras</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:minLength value="1" />
+                                <xs:maxLength value="35" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="seller">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica informaci??n del vendedor</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gln">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica el n??mero global de localizaci??n (GLN) del vendedor.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="alternatePartyIdentification">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica el c??digo para identificar qu?? tipo de identificaci??n secundaria se le asign?? al proveedor</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="type" use="required">
+                        <xs:annotation>
+                          <xs:documentation>Atributo para especificar el tipo de identificaci??n secundaria se le asigno al proveedor</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:NMTOKEN">
+                            <xs:minLength value="1" />
+                            <xs:maxLength value="40" />
+                            <xs:enumeration value="SELLER_ASSIGNED_IDENTIFIER_FOR_A_PARTY" />
+                            <xs:enumeration value="IEPS_REFERENCE" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="shipTo">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica la ubicaci??n donde debe realizarse la entrega de la mercanc??a.  </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="gln">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica el n??mero global de localizaci??n (GLN) de la ubicaci??n a entregar la mercanc??a</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="nameAndAddress">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica el nombre y direcci??n de la ubicaci??n donde debe realizarse la entrega de mercanc??a </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence maxOccurs="unbounded">
+                    <xs:element minOccurs="0" name="name">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica la raz??n social de la empresa a donde se va a embarcar en caso de ser diferente al comprador, o el nombre de la bodega o centro de distribuci??n</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="35" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="streetAddressOne">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el domicilio a donde se embarcara la mercanc??a: Calle, n??mero exterior, n??mero interior y colonias</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="35" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="city">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica  la ciudad donde se encuentra el domicilio a donde se embarcar?? la mercanc??a</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="35" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="postalCode">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el codigo postal del domicilio a donde se embarcara la mercanc??a</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="9" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="InvoiceCreator">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica la ubicaci??n donde se especifica el identificador del emisor de la factura si es distinto del identificador del proveedor.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="gln">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica el n??mero global de localizaci??n (GLN)de la ubicaci??n del emisor de la factura</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="alternatePartyIdentification">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la identificaci??n secundaria del emisor de la factura</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="type" use="required">
+                        <xs:annotation>
+                          <xs:documentation>Atributo para especificar el tipo de identificaci??n secundaria se le asigno al proveedor</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:NMTOKEN">
+                            <xs:length value="2" />
+                            <xs:enumeration value="VA" />
+                            <xs:enumeration value="IA" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="nameAndAddress">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="name">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica la raz??n social de la empresa a dende se emite la factura en caso de ser diferente al identificador del proveedor</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="35" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="streetAddressOne">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el domicilio del emisor de la factura: Calle, n??mero exterior, n??mero interior y colonias</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="35" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="city">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica  la ciudad donde se encuentra el domicilio del emisor de la factura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="35" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="postalCode">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el codigo postal del domicilio del emisor de la factura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="9" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Customs">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica la ubicaci??n de la aduana</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="gln">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica el n??mero global de localizaci??n (GLN) de la aduana</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="3" name="currency">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica  el tipo de divisa utilizada, para efectos de comprobantes fiscales digitales emitidos UNICAMENTE se podr?? utilizar como divisa la moneda nacional (MXN), sin embargo dentro del complemento  se podr?? detallar en otra de forma informativa. Lo detallado en esta etiqueta deber?? coincidir con lo declarado en las etiquetas del SAT considerando el tipo de cambio. </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="3" name="currencyFunction">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica la funci??n de divisa</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:NMTOKEN">
+                    <xs:maxLength value="16" />
+                    <xs:minLength value="1" />
+                    <xs:enumeration value="BILLING_CURRENCY" />
+                    <xs:enumeration value="PRICE_CURRENCY" />
+                    <xs:enumeration value="PAYMENT_CURRENCY" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="rateOfChange" type="xs:decimal">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifical la tasa de cambio que se aplica a las monedas. La regla general para calcular la tasa de cambio es la siguiente:
+Divisa de Referencia multiplicada por la Tasa =  Divisa Objetivo
+</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="currencyISOCode" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para especificar el codigo de la moneda utilizada para detallar la relaci??n de facturas.Todas las cantidades posteriores seran expresadas en la divisa detallada en esta etiqueta</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:length value="3" />
+                  <xs:enumeration value="MXN" />
+                  <xs:enumeration value="XEU" />
+                  <xs:enumeration value="USD" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="paymentTerms">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica los t??rminos de pago de la factura</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="netPayment">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica  las condiciones de pago</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element minOccurs="0" name="paymentTimePeriod">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el periodo de pago de la factura</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="timePeriodDue">
+                            <xs:annotation>
+                              <xs:documentation>Nodo requerido que especifica el tiempo de pago</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="value">
+                                  <xs:annotation>
+                                    <xs:documentation>Nodo requerido que especifica el numero de periodos</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:minLength value="1" />
+                                      <xs:maxLength value="5" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="timePeriod" use="required">
+                                <xs:annotation>
+                                  <xs:documentation>Atributo para especificar el tipo de periodo</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:NMTOKEN">
+                                    <xs:minLength value="1" />
+                                    <xs:maxLength value="6" />
+                                    <xs:enumeration value="DAYS" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="netPaymentTermsType" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo para especificar las condiciones de pago</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:NMTOKEN">
+                        <xs:maxLength value="22" />
+                        <xs:minLength value="1" />
+                        <xs:enumeration value="BASIC_NET" />
+                        <xs:enumeration value="END_OF_MONTH" />
+                        <xs:enumeration value="BASIC_DISCOUNT_OFFERED" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="discountPayment">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica los descuentos por pago</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="percentage">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el valor de los porcentajes que ser??n descontados o cargados si la factura no se paga dentro del t??rmino. El porcentaje ser?? en base al valor de la factura</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="5" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="discountType" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo para especificar el calificador de porcentajes</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:NMTOKEN">
+                        <xs:maxLength value="28" />
+                        <xs:minLength value="1" />
+                        <xs:enumeration value="ALLOWANCE_BY_PAYMENT_ON_TIME" />
+                        <xs:enumeration value="SANCTION" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="paymentTermsEvent" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo para especificar la referencia del tiempo de pago</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:maxLength value="15" />
+                  <xs:minLength value="1" />
+                  <xs:enumeration value="DATE_OF_INVOICE" />
+                  <xs:enumeration value="EFFECTIVE_DATE" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="PaymentTermsRelationTime" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo para especificar el termino de relaci??n del tiempo de pago</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:minLength value="1" />
+                  <xs:maxLength value="15" />
+                  <xs:enumeration value="REFERENCE_AFTER" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="shipmentDetail">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica la informaci??n pertinente para el embarque de la mercanc??a.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType />
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="99" name="allowanceCharge">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica la informaci??n de los cargos o descuentos globales mercantiles por factura</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="specialServicesType">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica  el tipo de descuento o cargo. Este atributo s??lo se utiliza si el comprador conoce los descuentos</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:NMTOKEN">
+                    <xs:minLength value="1" />
+                    <xs:maxLength value="3" />
+                    <xs:enumeration value="AA" />
+                    <xs:enumeration value="AJ" />
+                    <xs:enumeration value="ADO" />
+                    <xs:enumeration value="ADT" />
+                    <xs:enumeration value="ADS" />
+                    <xs:enumeration value="ABZ" />
+                    <xs:enumeration value="DA" />
+                    <xs:enumeration value="EAA" />
+                    <xs:enumeration value="EAB" />
+                    <xs:enumeration value="PI" />
+                    <xs:enumeration value="TAE" />
+                    <xs:enumeration value="SAB" />
+                    <xs:enumeration value="RAA" />
+                    <xs:enumeration value="PAD" />
+                    <xs:enumeration value="FG" />
+                    <xs:enumeration value="FA" />
+                    <xs:enumeration value="TD" />
+                    <xs:enumeration value="TS" />
+                    <xs:enumeration value="TX" />
+                    <xs:enumeration value="TZ" />
+                    <xs:enumeration value="ZZZ" />
+                    <xs:enumeration value="VAB" />
+                    <xs:enumeration value="UM" />
+                    <xs:enumeration value="DI" />
+                    <xs:enumeration value="CAC" />
+                    <xs:enumeration value="COD" />
+                    <xs:enumeration value="EAB" />
+                    <xs:enumeration value="FC" />
+                    <xs:enumeration value="FI" />
+                    <xs:enumeration value="HD" />
+                    <xs:enumeration value="QD" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="monetaryAmountOrPercentage">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la cantidad monetaria o porcentaje del descuento</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="rate">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica  la tarifa</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="percentage" type="xs:decimal">
+                            <xs:annotation>
+                              <xs:documentation>Nodo opcional que especifica el porcentaje de descuento que se est?? aplicando seg??n se ha indicado en el campo anterior a toda la factura</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="base" use="required">
+                          <xs:annotation>
+                            <xs:documentation>Atributo para especificar la base del porcentaje que se aplicara</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:NMTOKEN">
+                              <xs:length value="13" />
+                              <xs:enumeration value="INVOICE_VALUE" />
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="allowanceChargeType" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo indicador de cargo o descuento</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:minLength value="1" />
+                  <xs:maxLength value="16" />
+                  <xs:enumeration value="ALLOWANCE_GLOBAL" />
+                  <xs:enumeration value="CHARGE_GLOBAL" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="settlementType" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para especificar la imputaci??n del descuento o cargo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:minLength value="1" />
+                  <xs:maxLength value="11" />
+                  <xs:enumeration value="BILL_BACK" />
+                  <xs:enumeration value="OFF_INVOICE" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="sequenceNumber" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo indicador de secuencia de calculo</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" />
+                  <xs:maxLength value="15" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="lineItem">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica la linea de detalle de la factura</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tradeItemIdentification">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica la identificaci??n de cada art??culo</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="gtin">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el c??digo EAN del art??culo solicitado</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="14" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="alternateTradeItemIdentification">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica el numero de identificaci??n adicional para el art??culo.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType mixed="true">
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="type" use="required">
+                        <xs:annotation>
+                          <xs:documentation>Atributo para especificar el tipo de identificaci??n adicional, en caso de no utilizar condigo GTIN</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:NMTOKEN">
+                            <xs:minLength value="1" />
+                            <xs:maxLength value="35" />
+                            <xs:enumeration value="BUYER_ASSIGNED" />
+                            <xs:enumeration value="SUPPLIER_ASSIGNED" />
+                            <xs:enumeration value="SERIAL_NUMBER" />
+                            <xs:enumeration value="GLOBAL_TRADE_ITEM_IDENTIFICATION" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="tradeItemDescriptionInformation">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica el inicio de la descripci??n del art??culo </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="longText">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica la descripci??n del art??culo solicitado</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="35" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="language" use="optional">
+                    <xs:annotation>
+                      <xs:documentation>Atributo para especificar el codigo del idioma en que esta la descripci??n del articulo</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:NMTOKEN">
+                        <xs:length value="2" />
+                        <xs:enumeration value="ES" />
+                        <xs:enumeration value="EN" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="invoicedQuantity">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica la cantidad facturada del producto en la l??nea de articulo actual</xs:documentation>
+                </xs:annotation>
+                <xs:complexType mixed="true">
+                  <xs:simpleContent>
+                    <xs:extension base="xs:decimal">
+                      <xs:attribute name="unitOfMeasure" type="xs:NMTOKEN" use="required">
+                        <xs:annotation>
+                          <xs:documentation>Atributo para especificar la unidad de medida, solo si el articulo es de unidad variable</xs:documentation>
+                        </xs:annotation>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="aditionalQuantity">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica  la cantidad que se esta declarando como adicional</xs:documentation>
+                </xs:annotation>
+                <xs:complexType mixed="true">
+                  <xs:simpleContent>
+                    <xs:extension base="xs:decimal">
+                      <xs:attribute name="QuantityType" use="required">
+                        <xs:annotation>
+                          <xs:documentation>Atributo para especificar el codigo  de tipo de cantidad adicional declarada</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                          <xs:restriction base="xs:NMTOKEN">
+                            <xs:minLength value="1" />
+                            <xs:maxLength value="18" />
+                            <xs:enumeration value="NUM_CONSUMER_UNITS" />
+                            <xs:enumeration value="FREE_GOODS" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="grossPrice">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica  la declaraci??n del precio bruto</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Amount" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el precio Bruto del art??culo sin incluir descuento ni cargos</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="netPrice">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la declaraci??n del precion neto</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Amount" type="xs:decimal">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el precio neto de cada art??culo</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AdditionalInformation">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la informaci??n adicional de referencia en el detalle de productos</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="referenceIdentification">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica la referencia adicional de los productos</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="type" use="required">
+                              <xs:annotation>
+                                <xs:documentation>Atributo para especificar el tipo de referencia</xs:documentation>
+                              </xs:annotation>
+                              <xs:simpleType>
+                                <xs:restriction base="xs:NMTOKEN">
+                                  <xs:length value="2" />
+                                  <xs:enumeration value="ON" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Customs">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la ubicaci??n donde se especifica el identificador de la aduana</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element minOccurs="0" name="gln">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el n??mero global de localizaci??n (GLN) de la aduana</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:length value="13" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="alternatePartyIdentification">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica la identificaci??n del no. pedimento a nivel detalle</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="type" use="required">
+                              <xs:annotation>
+                                <xs:documentation>Atributo para especificar el codigo de identificaci??n secundaria</xs:documentation>
+                              </xs:annotation>
+                              <xs:simpleType>
+                                <xs:restriction base="xs:NMTOKEN">
+                                  <xs:length value="2" />
+                                  <xs:enumeration value="TN" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ReferenceDate" type="xs:date">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica la fecha del pedimento
+YYYYMMDD
+</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="nameAndAddress">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica la etiqueta padre que indica que se empezar?? a definir el nombre y direcci??n de la ubicaci??n donde esta la aduana </xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name">
+                            <xs:annotation>
+                              <xs:documentation>Nodo requerido que especifica el nombre de la Aduana</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:minLength value="1" />
+                                <xs:maxLength value="35" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="LogisticUnits">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la informaci??n de identificaci??n log??stica</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="serialShippingContainerCode">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica la informaci??n de Rangos de identificaci??n de productos</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="type" use="required">
+                              <xs:annotation>
+                                <xs:documentation>Atributo para especificar el codigo del numero de identidad</xs:documentation>
+                              </xs:annotation>
+                              <xs:simpleType>
+                                <xs:restriction base="xs:NMTOKEN">
+                                  <xs:minLength value="1" />
+                                  <xs:maxLength value="3" />
+                                  <xs:enumeration value="BJ" />
+                                  <xs:enumeration value="SRV" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="palletInformation">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la informaci??n de empaquetado</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="palletQuantity">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el numero de paquetes </xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="15" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="description">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica la descripci??n del  empaquetado</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType mixed="true">
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="type" use="required">
+                              <xs:annotation>
+                                <xs:documentation>Atributo para especificar el tipo de empaquetado</xs:documentation>
+                              </xs:annotation>
+                              <xs:simpleType>
+                                <xs:restriction base="xs:NMTOKEN">
+                                  <xs:maxLength value="35" />
+                                  <xs:minLength value="1" />
+                                  <xs:enumeration value="EXCHANGE_PALLETS" />
+                                  <xs:enumeration value="RETURN_PALLETS" />
+                                  <xs:enumeration value="PALLET_80x100" />
+                                  <xs:enumeration value="CASE" />
+                                  <xs:enumeration value="BOX" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="transport">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el pago de transporte de embalaje</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="methodOfPayment">
+                            <xs:annotation>
+                              <xs:documentation>Nodo requerido que especifica el metodo de pago</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:NMTOKEN">
+                                <xs:maxLength value="17" />
+                                <xs:minLength value="1" />
+                                <xs:enumeration value="PREPAID_BY_SELLER" />
+                                <xs:enumeration value="PAID_BY_BUYER" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="extendedAttributes">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica la informaci??n adicional de lote del producto facturado</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="10" name="lotNumber">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el No. De lote</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="productionDate" type="xs:date" use="optional">
+                              <xs:annotation>
+                                <xs:documentation>Atributo para especificar la fecha de producci??n</xs:documentation>
+                              </xs:annotation>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="99" name="allowanceCharge">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica  la informaci??n de los cargos o descuentos globales por l??nea de art??culo</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="specialServicesType">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el tipo de descuento o cargo. Este atributo s??lo se utiliza si el comprador conoce el tipo de descuento o cargo.</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:NMTOKEN">
+                          <xs:maxLength value="3" />
+                          <xs:minLength value="1" />
+                          <xs:enumeration value="AA" />
+                          <xs:enumeration value="ADS" />
+                          <xs:enumeration value="ADO" />
+                          <xs:enumeration value="ABZ" />
+                          <xs:enumeration value="DA" />
+                          <xs:enumeration value="EAA" />
+                          <xs:enumeration value="PI" />
+                          <xs:enumeration value="TAE" />
+                          <xs:enumeration value="SAB" />
+                          <xs:enumeration value="RAA" />
+                          <xs:enumeration value="PAD" />
+                          <xs:enumeration value="FG" />
+                          <xs:enumeration value="FA" />
+                          <xs:enumeration value="TD" />
+                          <xs:enumeration value="TS" />
+                          <xs:enumeration value="TX" />
+                          <xs:enumeration value="ZZZ" />
+                          <xs:enumeration value="VAB" />
+                          <xs:enumeration value="UM" />
+                          <xs:enumeration value="DI" />
+                          <xs:enumeration value="ADT" />
+                          <xs:enumeration value="AJ" />
+                          <xs:enumeration value="CAC" />
+                          <xs:enumeration value="COD" />
+                          <xs:enumeration value="EAB" />
+                          <xs:enumeration value="FC" />
+                          <xs:enumeration value="FI" />
+                          <xs:enumeration value="HD" />
+                          <xs:enumeration value="QD" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="monetaryAmountOrPercentage">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica la cantidad monetaria o descuento por linea de articulo</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="percentagePerUnit">
+                            <xs:annotation>
+                              <xs:documentation>Nodo requerido que especifica el porcentaje del cargo o descuento</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:minLength value="1" />
+                                <xs:maxLength value="5" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="ratePerUnit">
+                            <xs:annotation>
+                              <xs:documentation>Nodo opcional que especifica la Tarifa por unidad</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="amountPerUnit">
+                                  <xs:annotation>
+                                    <xs:documentation>Nodo requerido que especifica el importe monetario del cargo o descuento por unidad</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:minLength value="1" />
+                                      <xs:maxLength value="5" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="allowanceChargeType" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo para especificar el cargo o descuento</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:NMTOKEN">
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="16" />
+                        <xs:enumeration value="ALLOWANCE_GLOBAL" />
+                        <xs:enumeration value="CHARGE_GLOBAL" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="settlementType" use="optional">
+                    <xs:annotation>
+                      <xs:documentation>Atributo para especificar la imputaci??n del cargo o descuento</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:NMTOKEN">
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="29" />
+                        <xs:enumeration value="OFF_INVOICE" />
+                        <xs:enumeration value="CHARGE_TO_BE_PAID_BY_VENDOR" />
+                        <xs:enumeration value="CHARGE_TO_BE_PAID_BY_CUSTOMER" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="sequenceNumber" use="optional">
+                    <xs:annotation>
+                      <xs:documentation>Atributo para especificar la secuencia de c??lculo</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" />
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="99" name="tradeItemTaxInformation">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica los impuestos por cada l??nea de art??culo</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="taxTypeDescription">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el tipo de arancel, impuesto o cuota. </xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:NMTOKEN">
+                          <xs:length value="3" />
+                          <xs:enumeration value="GST" />
+                          <xs:enumeration value="VAT" />
+                          <xs:enumeration value="LAC" />
+                          <xs:enumeration value="AAA" />
+                          <xs:enumeration value="ADD" />
+                          <xs:enumeration value="FRE" />
+                          <xs:enumeration value="LOC" />
+                          <xs:enumeration value="STT" />
+                          <xs:enumeration value="OTH" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="referenceNumber">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el numero de identificaci??n del impuesto. Numero asignado al comprador por una jurisdicci??n de impuesto</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:minLength value="1" />
+                          <xs:maxLength value="20" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="tradeItemTaxAmount">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el importe o porcentaje del descuento</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="taxPercentage" type="xs:decimal">
+                            <xs:annotation>
+                              <xs:documentation>Nodo requerido que especifica el porcentaje del impuesto</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="taxAmount" type="xs:decimal">
+                            <xs:annotation>
+                              <xs:documentation>Nodo requerido que especifica el monto del impuesto</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="taxCategory">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el identificador de impuesto retenido o transferido</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="xs:NMTOKEN">
+                          <xs:minLength value="0" />
+                          <xs:maxLength value="11" />
+                          <xs:enumeration value="TRANSFERIDO" />
+                          <xs:enumeration value="RETENIDO" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="totalLineAmount">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica los importes monetarios por l??nea de articulo</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="grossAmount">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional que especifica el  importe bruto</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Amount" type="xs:decimal">
+                            <xs:annotation>
+                              <xs:documentation>Nodo requerido que especifica el importe bruto de la l??nea de art??culo </xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="netAmount">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido que especifica el importe neto</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Amount" type="xs:decimal">
+                            <xs:annotation>
+                              <xs:documentation>Nodo requerido que especifica el importe neto de la l??nea de art??culo </xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute default="SimpleInvoiceLineItemType" name="type" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo para especificar el tipo de l??nea de detalle</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" />
+                  <xs:maxLength value="32" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="number" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo para especificar el numero secuencial que se asigna a cada l??nea de detalle</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                  <xs:totalDigits value="5" />
+                  <xs:fractionDigits value="0" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="totalAmount">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica el monto total de las l??neas de art??culos.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Amount" type="xs:decimal">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido que especifica el monto</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TotalAllowanceCharge">
+          <xs:annotation>
+            <xs:documentation>Nodo opcional que especifica el monto total de cargos o descuentos</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="specialServicesType">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica el tipo de descuento o cargo. Este atributo s??lo se utiliza si el comprador conoce el tipo de descuento o cargo.</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:NMTOKEN">
+                    <xs:minLength value="1" />
+                    <xs:maxLength value="3" />
+                    <xs:enumeration value="AA" />
+                    <xs:enumeration value="ADS" />
+                    <xs:enumeration value="ADO" />
+                    <xs:enumeration value="ABZ" />
+                    <xs:enumeration value="DA" />
+                    <xs:enumeration value="EAA" />
+                    <xs:enumeration value="PI" />
+                    <xs:enumeration value="TAE" />
+                    <xs:enumeration value="SAB" />
+                    <xs:enumeration value="RAA" />
+                    <xs:enumeration value="PAD" />
+                    <xs:enumeration value="FG" />
+                    <xs:enumeration value="FA" />
+                    <xs:enumeration value="TD" />
+                    <xs:enumeration value="TS" />
+                    <xs:enumeration value="TX" />
+                    <xs:enumeration value="ZZZ" />
+                    <xs:enumeration value="VAB" />
+                    <xs:enumeration value="UM" />
+                    <xs:enumeration value="DI" />
+                    <xs:enumeration value="ADT" />
+                    <xs:enumeration value="AJ" />
+                    <xs:enumeration value="CAC" />
+                    <xs:enumeration value="COD" />
+                    <xs:enumeration value="EAB" />
+                    <xs:enumeration value="FC" />
+                    <xs:enumeration value="FI" />
+                    <xs:enumeration value="HD" />
+                    <xs:enumeration value="QD" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Amount" type="xs:decimal">
+                <xs:annotation>
+                  <xs:documentation>Nodo opcional que especifica el monto total de los cargos o descuentos</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="allowanceOrChargeType" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo para especificar los cargos o descuentos consolidados</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKEN">
+                  <xs:minLength value="1" />
+                  <xs:maxLength value="9" />
+                  <xs:enumeration value="ALLOWANCE" />
+                  <xs:enumeration value="CHARGE" />
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute fixed="SimpleInvoiceType" name="type" type="xs:string" use="optional">
+        <xs:annotation>
+          <xs:documentation>Tipo de transacci??n bajo estandar del sector detallista</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute fixed="1.3.1" name="contentVersion" type="xs:string" use="optional">
+        <xs:annotation>
+          <xs:documentation>Versi??n del estandar XML utilizado para la elaboraci??n de la guia del sector detallista</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute fixed="AMC8.1" name="documentStructureVersion" type="xs:string" use="required">
+        <xs:annotation>
+          <xs:documentation>Versi??n de la estructura del documento generado "AMC8.1</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="documentStatus" use="required">
+        <xs:annotation>
+          <xs:documentation>Funci??n del mensaje</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="ORIGINAL" />
+            <xs:enumeration value="COPY" />
+            <xs:enumeration value="REEMPLAZA" />
+            <xs:enumeration value="DELETE" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

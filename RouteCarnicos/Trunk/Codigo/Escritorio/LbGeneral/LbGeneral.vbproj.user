@@ -1,0 +1,5 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ReferencePath>C:\Program Files (x86)\Amesol México\1.5.0.0SK\</ReferencePath>
+  </PropertyGroup>
+</Project>

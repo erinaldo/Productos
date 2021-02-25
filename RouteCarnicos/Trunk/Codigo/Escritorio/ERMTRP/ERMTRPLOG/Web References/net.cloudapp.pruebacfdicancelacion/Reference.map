@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://pruebacfdicancelacion.cloudapp.net/Cancelacion/CancelaCFDService.svc?wsdl" filename="CancelaCFDService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://pruebacfdicancelacion.cloudapp.net/cancelacion/CancelaCFDService.svc?xsd=xsd1" filename="CancelaCFDService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://pruebacfdicancelacion.cloudapp.net/cancelacion/CancelaCFDService.svc?xsd=xsd0" filename="CancelaCFDService0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

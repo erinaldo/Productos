@@ -1,0 +1,20 @@
+- No se incluye addendas.
+- No se incluye timbrado.
+- No considerar movimientos viejos, se considerara cambiar las fases a cancelado.
+
+- Hasta que envien los datos de facturacion, creo el registro de factura y todo lo necesario.
+
+- Los registros de los que no manden datos de facturacion, se considera que se pueden facturar.
+
+- Los pedidos por cobrar no se consideran para impresion de facturas ni para facturar si no tienen detalles.
+
+- El campo nota de la tabla producto no se considera en la impresion de la factura.
+
+Se considera mantenimiento de centros de expedicion y Regimenes fiscales desde escritorio no interfaz
+
+- considerar el llenado de ExigirOrdenCompra de cliente por default en la interfaz.
+
+- Considerar que la interfaz de tmp_vendedor guarde por default el tipo = movil para no cambiar los campos del cliente.
+- Checar que pasaria con la interfaz de factura y los impuestos, de acuerdo a lo que este en el template.
+
+ 

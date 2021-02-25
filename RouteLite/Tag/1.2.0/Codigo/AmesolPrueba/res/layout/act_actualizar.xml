@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/Fondo"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lbl_fecha_inicial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/fecha_inicial"
+        android:textAppearance="?android:attr/textAppearanceSmall" android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/fecha_inicial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_fecha_inicial"
+        android:layout_centerHorizontal="true"
+        android:text="Button" android:width="300dp" android:textSize="36sp"/>
+
+    <TextView
+        android:id="@+id/lbl_fecha_final"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fecha_inicial"
+        android:layout_centerHorizontal="true"
+        android:text="@string/fecha_final"
+        android:textAppearance="?android:attr/textAppearanceSmall" android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/fecha_final"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_fecha_final"
+        android:text="Button" android:layout_centerHorizontal="true" android:width="300dp" android:textSize="36sp"/>
+
+    <Button
+        android:id="@+id/actualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fecha_final"
+        android:layout_centerHorizontal="true"
+        android:text="@string/agenda" android:layout_marginTop="20dp" android:textSize="26sp"/>
+
+</RelativeLayout>

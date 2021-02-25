@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteDetalladoxFamilia" targetNamespace="http://tempuri.org/ReporteDetalladoxFamilia.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteDetalladoxFamilia.xsd" xmlns:mstns="http://tempuri.org/ReporteDetalladoxFamilia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DetalladoxFamilia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Ruta" type="xs:string" />
+        <xs:element name="EsquemaClave" type="xs:string" />
+        <xs:element name="EsquemaNombre" type="xs:string" />
+        <xs:element name="Cliente" type="xs:string" />
+        <xs:element name="Producto" type="xs:string" />
+        <xs:element name="Cantidad" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Liquidacion" targetNamespace="http://tempuri.org/VENTAS.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/VENTAS.xsd" xmlns:mstns="http://tempuri.org/VENTAS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="element1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="ALMNombre" type="xs:string" />
+        <xs:element name="Fecha" type="xs:date" />
+        <xs:element name="DiaClave" type="xs:string" />
+        <xs:element name="USUClave" type="xs:string" />
+        <xs:element name="VENNombre" type="xs:string" />
+        <xs:element name="ProductoClave" type="xs:string" />
+        <xs:element name="PRDNombre" type="xs:string" />
+        <xs:element name="Carga" type="xs:int" />
+        <xs:element name="Devolucion" type="xs:int" />
+        <xs:element name="Frio" type="xs:int" />
+        <xs:element name="Reclasificacion" type="xs:int" />
+        <xs:element name="Otro" type="xs:int" />
+        <xs:element name="DevolucionCte" type="xs:int" />
+        <xs:element name="ImpDevolucionCte" type="xs:int" />
+        <xs:element name="Ajuste" type="xs:int" />
+        <xs:element name="ImpAjuste" type="xs:int" />
+        <xs:element name="Venta" type="xs:int" />
+        <xs:element name="Importe" type="xs:int" />
+        <xs:element name="CharolaCarga" type="xs:int" />
+        <xs:element name="CharolaVacia" type="xs:int" />
+        <xs:element name="Faltantes" type="xs:int" />
+        <xs:element name="ImpFaltante" type="xs:int" />
+        <xs:element name="bonificacionajuste" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

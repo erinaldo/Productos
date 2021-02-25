@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FacturacionElectronica" targetNamespace="http://tempuri.org/FacturacionElectronica.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/FacturacionElectronica.xsd" xmlns:mstns="http://tempuri.org/FacturacionElectronica.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="FacturacionElectronica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Cedi" type="xs:string" />
+        <xs:element name="Vendedor" type="xs:string" />
+        <xs:element name="Fecha" type="xs:date" />
+        <xs:element name="Serie" type="xs:string" />
+        <xs:element name="Folio" type="xs:string" />
+        <xs:element name="Cliente" type="xs:string" />
+        <xs:element name="RFC" type="xs:string" />
+        <xs:element name="NumCertificado" type="xs:string" />
+        <xs:element name="AnioAprobacion" type="xs:integer" />
+        <xs:element name="Aprobacion" type="xs:integer" />
+        <xs:element name="Total" type="xs:double" />
+        <xs:element name="Fase" type="xs:string" />
+        <xs:element name="Motivo" type="xs:string" />
+        <xs:element name="Error" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

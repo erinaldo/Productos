@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteSolicitudes" targetNamespace="http://tempuri.org/ReporteSolicitudes.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteSolicitudes.xsd" xmlns:mstns="http://tempuri.org/ReporteSolicitudes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Solicitud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="descripcion" type="xs:string" />
+        <xs:element name="RazonSocial" type="xs:string" />
+        <xs:element name="folio" type="xs:string" />
+        <xs:element name="peticion" type="xs:string" />
+        <xs:element name="area" type="xs:string" />
+        <xs:element name="concepto" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

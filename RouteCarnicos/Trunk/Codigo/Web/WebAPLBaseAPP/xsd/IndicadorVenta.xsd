@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IndicadorVenta" targetNamespace="http://tempuri.org/IndicadorVenta.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/IndicadorVenta.xsd" xmlns:mstns="http://tempuri.org/IndicadorVenta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Indicador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Fecha" type="xs:dateTime" />
+        <xs:element name="Itinerario" type="xs:int" />
+        <xs:element name="Visitados" type="xs:int" />
+        <xs:element name="Eficiencia" type="xs:double" />
+        <xs:element name="VisitadosVenta" type="xs:int" />
+        <xs:element name="Efectividad" type="xs:double" />
+        <xs:element name="NoVisitados" type="xs:int" />
+        <xs:element name="TotalVenta" type="xs:double" />
+        <xs:element name="FueraFrecuencia" type="xs:int" />
+        <xs:element name="FueraFrecuenciaV" type="xs:int" />
+        <xs:element name="Vendedor" type="xs:string" />
+        <xs:element name="Ruta" type="xs:string" />
+        <xs:element name="Cedi" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

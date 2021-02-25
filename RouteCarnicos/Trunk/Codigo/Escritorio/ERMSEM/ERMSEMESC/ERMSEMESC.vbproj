@@ -1,0 +1,216 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA2DABFE-AD99-42CA-AA58-B046CA52753D}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ERMSEMESC</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>ERMSEMESC</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERMSEMESC.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERMSEMESC.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BASACTLOG">
+      <Name>BASACTLOG</Name>
+      <HintPath>\\Rafiki\route\BASACTLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASLOG">
+      <Name>BASLOG</Name>
+      <HintPath>\\Rafiki\route\BASLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASMENLOG">
+      <Name>BASMENLOG</Name>
+      <HintPath>\\Desarrollo\ERM\BASMENLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASPERLOG">
+      <Name>BASPERLOG</Name>
+      <HintPath>\\Rafiki\route\BASPERLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASUSULOG">
+      <Name>BASUSULOG</Name>
+      <HintPath>\\Rafiki\route\BASUSULOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASVARLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=6.5.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="ERMCAMESC">
+      <Name>ERMCAMESC</Name>
+      <HintPath>\\Desarrollo\ERM\ERMCAMESC.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCAMLOG">
+      <Name>ERMCAMLOG</Name>
+      <HintPath>\\Desarrollo\ERM\ERMCAMLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCLIESC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMCLILOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMVENLOG">
+      <Name>ERMVENLOG</Name>
+      <HintPath>\\rafiki\desarrollo\ROUTE\ERMVENLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="FormasBase">
+      <Name>FormasBase</Name>
+      <HintPath>\\Desarrollo\ERM\FormasBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="LbAcceso">
+      <Name>LbAcceso</Name>
+      <HintPath>\\Desarrollo\erm\LbAcceso.dll</HintPath>
+    </Reference>
+    <Reference Include="LbConexion">
+      <Name>LbConexion</Name>
+      <HintPath>\\Desarrollo\ERM\LbConexion.dll</HintPath>
+    </Reference>
+    <Reference Include="LbControlError">
+      <Name>LbControlError</Name>
+      <HintPath>\\Desarrollo\erm\LbControlError.dll</HintPath>
+    </Reference>
+    <Reference Include="LbGeneral, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HSubEmpresa.Designer.vb">
+      <DependentUpon>HSubEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HSubEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="HSubEmpresa.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HSubEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MGeneral.resx">
+      <DependentUpon>MGeneral.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="NGeneral.resx">
+      <DependentUpon>NGeneral.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ERMSEMLOG\ERMSEMLOG.vbproj">
+      <Project>{7812E979-7D44-4C2D-AAC0-55D51634257D}</Project>
+      <Name>ERMSEMLOG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

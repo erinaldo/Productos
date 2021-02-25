@@ -1,0 +1,29 @@
+﻿body 
+{
+	font-family:Tahoma;
+	font-size:9pt;
+	
+	
+}
+
+.GridTable
+{
+	border-color:#002D96;
+	border-style:solid;
+}
+.RowHeader
+{
+	background-image:url("images/ColBk.gif");
+	background-repeat:repeat-x;
+}
+.RowPager
+{
+	background-color:#bad3f9;
+	
+}
+.RowAlterna
+{
+	background-color: #f0f0ff;
+	
+}
+

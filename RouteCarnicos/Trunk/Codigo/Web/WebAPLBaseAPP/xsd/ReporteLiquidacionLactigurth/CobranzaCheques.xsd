@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CobranzaCheques" targetNamespace="http://tempuri.org/CobranzaCheques.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/CobranzaCheques.xsd" xmlns:mstns="http://tempuri.org/CobranzaCheques.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CobranzaCheques">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Folio" type="xs:string" />
+        <xs:element name="Banco" type="xs:string" />
+        <xs:element name="Referencia" type="xs:string" />
+        <xs:element name="FechaAbono" type="xs:date" />
+        <xs:element name="Importe" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

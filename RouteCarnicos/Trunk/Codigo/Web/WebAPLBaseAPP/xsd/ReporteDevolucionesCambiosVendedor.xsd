@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteDevolucionesCambiosVendedor" targetNamespace="http://tempuri.org/ReporteDevolucionesCambiosVendedor.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteDevolucionesCambiosVendedor.xsd" xmlns:mstns="http://tempuri.org/ReporteDevolucionesCambiosVendedor.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Detalle">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ClienteClave" type="xs:string" />
+				<xs:element name="RazonSocial" type="xs:string" />
+				<xs:element name="ProductoClave" type="xs:string" />
+				<xs:element name="ProductoNombre" type="xs:string" />
+				<xs:element name="Unidad" type="xs:string" />
+				<xs:element name="Factor" type="xs:integer" />
+				<xs:element name="Precio" type="xs:float" />
+				<xs:element name="CantidadDevuelta" type="xs:float" />
+				<xs:element name="ImporteDevuelto" type="xs:float" />
+				<xs:element name="CantidadCambiada" type="xs:float" />
+				<xs:element name="ImporteCambiado" type="xs:float" />
+				<xs:element name="UnidadesDevueltas" type="xs:float" />
+				<xs:element name="UnidadesCambiadas" type="xs:float" />
+				<xs:element name="CantidadCambiadaPor" type="xs:float" />
+				<xs:element name="ImporteCambiadoPor" type="xs:float" />
+				<xs:element name="UnidadesCambiadasPor" type="xs:float" />
+				<xs:element name="CEDI" type="xs:string" />
+				<xs:element name="FechaHoraAlta" type="xs:date" />
+				<xs:element name="VendedorId" type="xs:string" />
+				<xs:element name="Vendedor" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

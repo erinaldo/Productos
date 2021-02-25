@@ -1,0 +1,21 @@
+
+-Agregar actividad subempresa manualmente
+-Configurar el modulo de facturacion electrónica en modulos de la terminal.
+-Configurar todo lo necesario de SEMHist para facturar electronicamente
+
+-SuKarne debe enviarnos los datos del domicilio fiscal mediante la interfaz tmp_ClienteDomicilio.
+
+-Insertar los registros en ProductoImpuesto mediante la interfaz tmp_ProductoImpuesto
+
+- Al insertar el detalle del pedido, considerar que se tiene el TPDImpuesto
+
+- Para la facturación 2.2 es necesario proporcionar el correo del cliente, para el envio
+
+- Cambiar la descripcion de la unidad a KGM en lugar de Kilos, para que los XML´s queden iguales.
+
+- Cambio la interfaz de cliente para indicar si imprime Pagare.
+
+- Se agrego una interfaz para los numeros de pedimento.
+
+- Se debe cambiar la descripcion de los impuestos para que no falle la generación del XML, dejarlas como IVA en lugar de IVA 0%.
+

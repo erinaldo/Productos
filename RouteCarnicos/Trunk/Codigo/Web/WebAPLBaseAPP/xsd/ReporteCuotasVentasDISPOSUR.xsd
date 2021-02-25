@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteCuotasVentasDISPOSUR" targetNamespace="http://tempuri.org/ReporteCuotasVentasDISPOSUR.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteCuotasVentasDISPOSUR.xsd" xmlns:mstns="http://tempuri.org/ReporteCuotasVentasDISPOSUR.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Encabezado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ALMClave" type="xs:string" />
+        <xs:element name="Almacen" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="Vendedor" type="xs:string" />
+        <xs:element name="CUOClave" type="xs:string" />
+        <xs:element name="Cuota" type="xs:string" />
+        <xs:element name="Periodo" type="xs:string" />
+        <xs:element name="DiasPeriodo" type="xs:int" />
+        <xs:element name="DiasTranscurridos" type="xs:int" />
+        <xs:element name="DiasFaltantes" type="xs:int" />
+        <xs:element name="EsquemaProductoAvance" type="xs:int" />
+        <xs:element name="EsquemaEfectivoAvance" type="xs:int" />
+        <xs:element name="ProductoProductoAvance" type="xs:int" />
+        <xs:element name="ProductoEfectivoAvance" type="xs:int" />
+        <xs:element name="ClienteProductoAvance" type="xs:int" />
+        <xs:element name="ClienteEfectivoAvance" type="xs:int" />
+        <xs:element name="VendedorProductoAvance" type="xs:int" />
+        <xs:element name="VendedorEfectivoAvance" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Detalle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ALMClave" type="xs:string" />
+        <xs:element name="VendedorId" type="xs:string" />
+        <xs:element name="CUOClave" type="xs:string" />
+        <xs:element name="Tipo" type="xs:string" />
+        <xs:element name="Descripcion" type="xs:string" />
+        <xs:element name="ProductoMinimo" type="xs:float" />
+        <xs:element name="EfectivoMinimo" type="xs:float" />
+        <xs:element name="ProductoAvance" type="xs:float" />
+        <xs:element name="EfectivoAvance" type="xs:float" />
+        <xs:element name="Porcentaje" type="xs:int" />
+        <xs:element name="ProductoFaltante" type="xs:float" />
+        <xs:element name="EfectivoFaltante" type="xs:float" />
+        <xs:element name="PorcentajeFaltante" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

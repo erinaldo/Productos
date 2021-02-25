@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteVentasEsquema" targetNamespace="http://tempuri.org/ReporteVentasEsquema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteVentasEsquema.xsd" xmlns:mstns="http://tempuri.org/ReporteVentasEsquema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="VentaEsquema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Fecha" type="xs:date" />
+        <xs:element name="Vendedor" type="xs:string" />
+        <xs:element name="Ruta" type="xs:string" />
+        <xs:element name="Rutanombre" type="xs:string" />
+        <xs:element name="Esquema" type="xs:string" />
+        <xs:element name="Producto" type="xs:string" />
+        <xs:element name="Unidad" type="xs:string" />
+        <xs:element name="VentaCant" type="xs:double" />
+        <xs:element name="VentaDinero" type="xs:double" />
+        <xs:element name="DevolucionCant" type="xs:double" />
+        <xs:element name="DevolucionDinero" type="xs:double" />
+        <xs:element name="CambioCant" type="xs:double" />
+        <xs:element name="CambioDinero" type="xs:double" />
+        <xs:element name="Clave" type="xs:string" />
+        <xs:element name="VentaCantUnit" type="xs:double">
+        </xs:element>
+        <xs:element name="DevolucionCantUnit" type="xs:double" />
+        <xs:element name="CambioCantUnit" type="xs:double" />
+        <xs:element name="Nuevo" type="xs:string" />
+        <xs:element name="CEDI" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

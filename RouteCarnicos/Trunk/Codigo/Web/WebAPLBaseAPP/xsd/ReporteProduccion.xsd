@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteProduccion" targetNamespace="http://tempuri.org/ReporteProduccion.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ReporteProduccion.xsd" xmlns:mstns="http://tempuri.org/ReporteProduccion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Produccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ProductoClave" type="xs:string" />
+        <xs:element name="Descripcion" type="xs:string" />
+        <xs:element name="Nombre" type="xs:string" />
+        <xs:element name="Unidad" type="xs:decimal" />
+        <xs:element name="CantidadProduccion" type="xs:decimal" />
+        <xs:element name="FactorUnidadProduccion" type="xs:decimal" />
+        <xs:element name="FechaCaptura" type="xs:dateTime" />
+        <xs:element name="ClaveCEDI" type="xs:string" />
+        <xs:element name="ReqMasa" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

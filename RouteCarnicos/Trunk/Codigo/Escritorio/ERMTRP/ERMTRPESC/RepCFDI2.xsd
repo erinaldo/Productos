@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RepCFDI" targetNamespace="http://tempuri.org/RepCFDI.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/RepCFDI.xsd" xmlns:mstns="http://tempuri.org/RepCFDI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DatosFiscales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="RazonSocial" type="xs:string" />
+        <xs:element name="RFC" type="xs:string" />
+        <xs:element type="xs:string" name="TelefonoContacto" />
+        <xs:element name="Calle" type="xs:string" />
+        <xs:element name="NumExt" type="xs:string" />
+        <xs:element name="NumInt" type="xs:string" />
+        <xs:element name="Colonia" type="xs:string" />
+        <xs:element name="CodigoPostal" type="xs:string" />
+        <xs:element name="ReferenciaDom" type="xs:string" />
+        <xs:element type="xs:string" name="Localidad" />
+        <xs:element name="Municipio" type="xs:string" />
+        <xs:element name="Entidad" type="xs:string" />
+        <xs:element name="Pais" type="xs:string" />
+        <xs:element name="LogotipoEm" type="xs:base64Binary" />
+        <xs:element name="TelefonoEm" type="xs:string" />
+        <xs:element name="RFCEm" type="xs:string" />
+        <xs:element name="NombreEm" type="xs:string" />
+        <xs:element name="CalleEm" type="xs:string" />
+        <xs:element name="NumExtEm" type="xs:string" />
+        <xs:element name="NumIntEm" type="xs:string" />
+        <xs:element name="ColoniaEm" type="xs:string" />
+        <xs:element name="LocalidadEm" type="xs:string" />
+        <xs:element name="ReferenciaDomEm" type="xs:string" />
+        <xs:element name="MunicipioEm" type="xs:string" />
+        <xs:element name="RegionEm" type="xs:string" />
+        <xs:element name="PaisEm" type="xs:string" />
+        <xs:element name="CodigoPostalEm" type="xs:string" />
+        <xs:element name="CalleEx" type="xs:string" />
+        <xs:element name="NumExtEx" type="xs:string" />
+        <xs:element name="NumIntEx" type="xs:string" />
+        <xs:element name="ColoniaEx" type="xs:string" />
+        <xs:element type="xs:string" name="CodigoPostalEx" />
+        <xs:element name="ReferenciaDomEx" type="xs:string" />
+        <xs:element name="LocalidadEx" type="xs:string" />
+        <xs:element name="MunicipioEx" type="xs:string" />
+        <xs:element name="EntidadEx" type="xs:string" />
+        <xs:element name="PaisEx" type="xs:string" />
+        <xs:element name="FechaExpedicion" type="xs:dateTime" />
+        <xs:element name="TotalFac" type="xs:decimal" />
+        <xs:element name="TotalLetra" type="xs:string" />
+        <xs:element name="OrdenCompra" type="xs:string" />
+        <xs:element name="UUID" type="xs:string" />
+        <xs:element name="NoCertificadoSAT" type="xs:string" />
+        <xs:element name="FechaTimbrado" type="xs:dateTime" />
+        <xs:element name="SelloDigitalCFDI" type="xs:string" />
+        <xs:element name="SelloSAT" type="xs:string" />
+        <xs:element name="CadenaOriginalTFD" type="xs:string" />
+        <xs:element name="CodigoBarras" type="xs:base64Binary" />
+        <xs:element name="Folio" type="xs:string" />
+        <xs:element name="Clave" type="xs:string" />
+        <xs:element name="Ruta" type="xs:string" />
+        <xs:element name="MetodoPago" type="xs:string" />
+        <xs:element name="VersionCFD" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Detalle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ProductoClave" type="xs:string" />
+        <xs:element name="CodigoBarras" type="xs:string" />
+        <xs:element name="Nombre" type="xs:string" />
+        <xs:element name="ProductoNota" type="xs:string" />
+        <xs:element name="Unidad" type="xs:string" />
+        <xs:element name="Cantidad" type="xs:decimal" />
+        <xs:element name="Precio" type="xs:decimal" />
+        <xs:element name="SubTotal" type="xs:decimal" />
+        <xs:element name="DescuentoImp" type="xs:decimal" />
+        <xs:element name="FormaPago" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegimenFiscal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Regimen" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

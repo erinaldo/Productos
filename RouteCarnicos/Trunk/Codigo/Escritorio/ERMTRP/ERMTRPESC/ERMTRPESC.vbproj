@@ -1,0 +1,646 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{222C5EC5-767B-40ED-9EAE-0C024C07CC5C}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>ERMTRPESC</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>ERMTRPESC</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERMTRPESC.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ERMTRPESC.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BASACTLOG">
+      <Name>BASACTLOG</Name>
+      <HintPath>\\Rafiki\route\BASACTLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="BASMENLOG">
+      <Name>BASMENLOG</Name>
+      <HintPath>..\..\Aplicacion\BASMENLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASPERLOG">
+      <Name>BASPERLOG</Name>
+      <HintPath>\\Rafiki\route\BASPERLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASUSULOG">
+      <Name>BASUSULOG</Name>
+      <HintPath>..\..\Aplicacion\BASUSULOG.dll</HintPath>
+    </Reference>
+    <Reference Include="BASVARLOG">
+      <Name>BASVARLOG</Name>
+      <HintPath>..\..\Aplicacion\BASVARLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=6.5.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ERMALMLOG">
+      <Name>ERMALMLOG</Name>
+      <HintPath>..\..\Aplicacion\ERMALMLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCEELOG">
+      <Name>ERMCEELOG</Name>
+      <HintPath>..\..\Aplicacion\ERMCEELOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCLIESC">
+      <Name>ERMCLIESC</Name>
+      <HintPath>..\..\Aplicacion\ERMCLIESC.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCLILOG">
+      <Name>ERMCLILOG</Name>
+      <HintPath>..\..\Aplicacion\ERMCLILOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCNPLOG">
+      <Name>ERMCNPLOG</Name>
+      <HintPath>..\..\Aplicacion\ERMCNPLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMCONLOG">
+      <Name>ERMCONLOG</Name>
+      <HintPath>..\..\Aplicacion\ERMCONLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMDIALOG">
+      <Name>ERMDIALOG</Name>
+      <HintPath>..\..\Aplicacion\ERMDIALOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMESQESC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\rafiki\Route2005\ERMESQESC.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMFOLLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMFRELOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMIMPLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMPROESC">
+      <Name>ERMPROESC</Name>
+      <HintPath>..\..\Aplicacion\ERMPROESC.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMPROLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMPUNLOG">
+      <Name>ERMPUNLOG</Name>
+      <HintPath>..\..\Aplicacion\ERMPUNLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMRUTESC, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMRUTLOG">
+      <Name>ERMRUTLOG</Name>
+      <HintPath>..\..\Aplicacion\ERMRUTLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMSEMLOG, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ERMVENESC">
+      <Name>ERMVENESC</Name>
+      <HintPath>..\..\Aplicacion\ERMVENESC.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMVENLOG">
+      <Name>ERMVENLOG</Name>
+      <HintPath>..\..\Aplicacion\ERMVENLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="ERMVERLOG">
+      <Name>ERMVERLOG</Name>
+      <HintPath>..\..\Aplicacion\ERMVERLOG.dll</HintPath>
+    </Reference>
+    <Reference Include="FormasBase">
+      <Name>FormasBase</Name>
+      <HintPath>..\..\Aplicacion\FormasBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.CalendarCombo.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Schedule.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="LbAcceso, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LbConexion">
+      <Name>LbConexion</Name>
+      <HintPath>..\..\Aplicacion\LbConexion.dll</HintPath>
+    </Reference>
+    <Reference Include="LbControlError, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LbDatos, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LbGeneral, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.4155.17339, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\rafiki\Desarrollo\Route2005\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IMetodosPago.Designer.vb">
+      <DependentUpon>IMetodosPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMetodosPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptFactElecAltenia.vb">
+      <DependentUpon>rptFactElecAltenia.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="IVentas.Designer.vb">
+      <DependentUpon>IVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prueba.vb" />
+    <Compile Include="rptCFDI2.vb">
+      <DependentUpon>rptCFDI2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CtrlTabItem.Designer.vb">
+      <DependentUpon>CtrlTabItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlTabItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatosFiscales.Designer.vb">
+      <DependentUpon>DatosFiscales.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DatosFiscales.vb">
+      <DependentUpon>DatosFiscales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detalle.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle.vb">
+      <DependentUpon>Detalle.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General.vb" />
+    <Compile Include="IDetallePedidos.Designer.vb">
+      <DependentUpon>IDetallePedidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IDetallePedidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IFacturas.Designer.vb">
+      <DependentUpon>IFacturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IFacturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IPedidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MCargas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MFacturasElectronicas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MNotasCredito.Designer.vb">
+      <DependentUpon>MNotasCredito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MNotasCredito.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="NCargas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NFacturasElectronicas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NNotasCredito.Designer.vb">
+      <DependentUpon>NNotasCredito.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NNotasCredito.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NReclasificado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRepCargas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRepCobranza.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRepXML.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRepXMLFiltro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptCargas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCargas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCFDI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCFDI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptFactElectronica.vb">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFactElectronica.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="rptFactElectronica2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFactElectronica2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptFactElectronica3.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFactElectronica3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptFactElectronica4.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFactElectronica4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptResumenCobranza.vb">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResumenCobranza.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="RRepCargas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRepCobranza.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRepFactElectronica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RRepXMLFiltro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VRepXml.Designer.vb">
+      <DependentUpon>VRepXml.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VRepXml.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="IMetodosPago.resx">
+      <DependentUpon>IMetodosPago.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="rptFactElecAltenia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFactElecAltenia.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IVentas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCFDI2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCFDI2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtrlTabItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CtrlTabItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFechas.resx">
+      <DependentUpon>FFechas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDetallePedidos.resx">
+      <DependentUpon>IDetallePedidos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IFacturas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IFacturas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IPedidos.resx">
+      <DependentUpon>IPedidos.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCargas.resx">
+      <DependentUpon>MCargas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MFacturasElectronicas.resx">
+      <DependentUpon>MFacturasElectronicas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MNotasCredito.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MNotasCredito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NCargas.resx">
+      <DependentUpon>NCargas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NFacturasElectronicas.resx">
+      <DependentUpon>NFacturasElectronicas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NNotasCredito.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NNotasCredito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NReclasificado.resx">
+      <DependentUpon>NReclasificado.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRepCargas.resx">
+      <DependentUpon>PRepCargas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRepCobranza.resx">
+      <DependentUpon>PRepCobranza.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRepXML.resx">
+      <DependentUpon>PRepXML.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRepXMLFiltro.resx">
+      <DependentUpon>PRepXMLFiltro.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCargas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCargas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCFDI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCFDI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptFactElectronica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFactElectronica.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptFactElectronica2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFactElectronica2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptFactElectronica3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFactElectronica3.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptFactElectronica4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFactElectronica4.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptResumenCobranza.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResumenCobranza.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRepCargas.resx">
+      <DependentUpon>RRepCargas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRepCobranza.resx">
+      <DependentUpon>RRepCobranza.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRepFactElectronica.resx">
+      <DependentUpon>RRepFactElectronica.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RRepXMLFiltro.resx">
+      <DependentUpon>RRepXMLFiltro.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VRepXml.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VRepXml.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuracion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Configuracion.xsx">
+      <DependentUpon>Configuracion.xsd</DependentUpon>
+    </None>
+    <None Include="RepCFDIAltenia.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepCFDIAltenia.xsx">
+      <DependentUpon>RepCFDIAltenia.xsd</DependentUpon>
+    </None>
+    <None Include="RepCFDI2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepCFDI2.xsx">
+      <DependentUpon>RepCFDI2.xsd</DependentUpon>
+    </None>
+    <None Include="DatosFiscales.xsc">
+      <DependentUpon>DatosFiscales.xsd</DependentUpon>
+    </None>
+    <None Include="DatosFiscales.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>DatosFiscales.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DatosFiscales.xss">
+      <DependentUpon>DatosFiscales.xsd</DependentUpon>
+    </None>
+    <None Include="DatosFiscales.xsx">
+      <DependentUpon>DatosFiscales.xsd</DependentUpon>
+    </None>
+    <None Include="Detalle.xsc">
+      <DependentUpon>Detalle.xsd</DependentUpon>
+    </None>
+    <None Include="Detalle.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Detalle.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Detalle.xss">
+      <DependentUpon>Detalle.xsd</DependentUpon>
+    </None>
+    <None Include="Detalle.xsx">
+      <DependentUpon>Detalle.xsd</DependentUpon>
+    </None>
+    <None Include="Impuestos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Impuestos.xsx">
+      <DependentUpon>Impuestos.xsd</DependentUpon>
+    </None>
+    <None Include="RepCargas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepCargas.xsx">
+      <DependentUpon>RepCargas.xsd</DependentUpon>
+    </None>
+    <None Include="RepCFDI.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepCFDI.xsx">
+      <DependentUpon>RepCFDI.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ERMTRPLOG\ERMTRPLOG.vbproj">
+      <Project>{E68E5369-3BD8-40C2-B3C0-C52346970D1D}</Project>
+      <Name>ERMTRPLOG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RepCargas" targetNamespace="http://tempuri.org/RepCargas.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/RepCargas.xsd" xmlns:mstns="http://tempuri.org/RepCargas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RepCargas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TransProdId" type="xs:string" />
+        <xs:element name="ProductoClave" type="xs:string" />
+        <xs:element name="Cantidad" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Productos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TransProdId" type="xs:string" />
+        <xs:element name="USUClave" type="xs:string" />
+        <xs:element name="VENNombre" type="xs:string" />
+        <xs:element name="DiaClave" type="xs:string" />
+        <xs:element name="Folio" type="xs:string" />
+        <xs:element name="Fase" type="xs:string" />
+        <xs:element name="ProductoClave" type="xs:string" />
+        <xs:element name="Nombre" type="xs:string" />
+        <xs:element name="Factor" type="xs:integer" />
+        <xs:element name="Cantidad" type="xs:integer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
