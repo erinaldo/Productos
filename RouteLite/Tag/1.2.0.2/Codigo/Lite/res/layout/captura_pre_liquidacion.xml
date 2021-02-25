@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#C0C0C0"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:id="@+id/layEncabezado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/lblFechaPre"
+                        style="@style/MisClientes_Cobranza_RedFont"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="Small Text"
+                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+                    <TextView
+                        android:id="@+id/lblTotalaDeposito"
+                        style="@style/MisClientes_Cobranza_RedFont"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="Small Text"
+                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/lblFechaPreRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+                    <TextView
+                        android:id="@+id/lblTotalaDepositoRow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabHost
+                android:id="@android:id/tabhost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:orientation="vertical" >
+
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="#C0C0C0" />
+
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <LinearLayout
+                            android:id="@+id/tab1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:orientation="vertical" >
+
+                            <TableLayout
+                                android:id="@+id/layEfectivo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:stretchColumns="0,1" >
+
+                                <TableRow
+                                    android:id="@+id/tableRow1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <TextView
+                                        android:id="@+id/lblTipo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+                                    <TextView
+                                        android:id="@+id/lblDenominacion"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tableRow2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <Spinner
+                                        android:id="@+id/spTipo"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:focusableInTouchMode="true" />
+
+                                    <Spinner
+                                        android:id="@+id/spDenominacion"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:focusableInTouchMode="true" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tableRow3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <TextView
+                                        android:id="@+id/lblCantidad"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="5dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+                                    <TextView
+                                        android:id="@+id/lblTotal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="5dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tableRow4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <EditText
+                                        android:id="@+id/txtCantidad"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="5dp"
+                                        android:focusableInTouchMode="true"
+                                        android:imeOptions="actionGo"
+                                        android:inputType="numberDecimal"
+                                        android:selectAllOnFocus="true"
+                                        android:singleLine="true" />
+
+                                    <EditText
+                                        android:id="@+id/txtTotal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="5dp"
+                                        android:focusableInTouchMode="false"
+                                        android:imeOptions="actionNext"
+                                        android:singleLine="true" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnAgregarEfectivo"
+                                        style="@style/imageButtonStyle"
+                                        android:layout_width="40dp"
+                                        android:layout_height="35dp"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginRight="20dp"
+                                        android:contentDescription="Agregar"
+                                        android:src="@drawable/ic_input_add" />
+                                </TableRow>
+                            </TableLayout>
+
+                            <ListView
+                                android:id="@+id/lv_efectivo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" >
+                            </ListView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tab2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            android:orientation="vertical" >
+
+                            <TableLayout
+                                android:id="@+id/layDeposito"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:stretchColumns="0,1" >
+
+                                <TableRow
+                                    android:id="@+id/tableRow5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <TextView
+                                        android:id="@+id/lblFecha"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+                                    <TextView
+                                        android:id="@+id/lblBanco"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tableRow6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <TextView
+                                        android:id="@+id/txtFecha"
+                                        style="@style/GeneralEditText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:singleLine="true" />
+
+                                    <Spinner
+                                        android:id="@+id/spBanco"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:focusableInTouchMode="true" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tableRow7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <TextView
+                                        android:id="@+id/lblReferencia"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+                                    <TextView
+                                        android:id="@+id/lblTotalDep"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tableRow8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <EditText
+                                        android:id="@+id/txtReferencia"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:focusableInTouchMode="true"
+                                        android:imeOptions="actionNext"
+                                        android:selectAllOnFocus="true"
+                                        android:singleLine="true" />
+
+                                    <EditText
+                                        android:id="@+id/txtTotalDep"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:focusableInTouchMode="true"
+                                        android:imeOptions="actionNext"
+                                        android:inputType="numberDecimal"
+                                        android:selectAllOnFocus="true"
+                                        android:singleLine="true" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tableRow9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <TextView
+                                        android:id="@+id/lblFicha"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginRight="10dp"
+                                        android:text="Small Text"
+                                        android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:id="@+id/tableRow10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" >
+
+                                    <EditText
+                                        android:id="@+id/txtFicha"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:focusableInTouchMode="true"
+                                        android:imeOptions="actionGo"
+                                        android:selectAllOnFocus="true"
+                                        android:singleLine="true" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnAgregarDeposito"
+                                        style="@style/imageButtonStyle"
+                                        android:layout_width="40dp"
+                                        android:layout_height="35dp"
+                                        android:layout_gravity="left"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginRight="20dp"
+                                        android:contentDescription="Agregar"
+                                        android:src="@drawable/ic_input_add" />
+                                </TableRow>
+                            </TableLayout>
+
+                            <ListView
+                                android:id="@+id/lv_deposito"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" >
+                            </ListView>
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical|center"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btnContinuar"
+            style="@style/buttonSquareStyle"
+            android:layout_width="@dimen/general_button_width"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="Button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/titleBarColor" >
+
+        <TextView
+            android:id="@+id/lblTotalEfectivo"
+            style="@style/MisClientes_Cobranza_RedFont"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Small Text"
+            android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+        <TextView
+            android:id="@+id/lblTotalEfectivoRow"
+            style="@style/MisClientes_Cobranza_RedFont"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+        <TextView
+            android:id="@+id/lblTotalDepositos"
+            style="@style/MisClientes_Cobranza_RedFont"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Small Text"
+            android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+
+        <TextView
+            android:id="@+id/lblTotalDepositosRow"
+            style="@style/MisClientes_Cobranza_RedFont"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/captura_cobranza_det_lbls_textSize" />
+    </LinearLayout>
+
+</LinearLayout>

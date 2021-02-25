@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|fill"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0" >
+
+            <TextView
+                android:id="@+id/txtUnidad"
+                style="@style/RedTextFontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:focusable="false"
+                android:inputType="none"
+                android:text="Small Text"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <TextView
+                android:id="@+id/txtDescripcion"
+                style="@style/RedTextFontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:focusable="false"
+                android:inputType="none"
+                android:maxLines="1"
+                android:text="Small Text"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center|left"
+            android:orientation="horizontal"
+            android:weightSum="1.0" >
+
+            <TextView
+                android:id="@+id/txtSugerido"
+                style="@style/DarkGrayStyleClient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+                android:editable="false"
+                android:focusable="false"
+                android:gravity="left"
+                android:inputType="none"
+                android:text="Small Text"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" />
+
+            <EditText
+                android:id="@+id/npCantidad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".30"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="right"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:textSize="@dimen/captura_pedido_lblListaPrecios_textSize" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

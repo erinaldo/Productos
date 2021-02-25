@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu1" android:title="@string/Void" android:icon="@android:drawable/ic_menu_set_as" android:orderInCategory="1"></item>
+    <item android:id="@+id/menu2" android:title="@string/Void" android:icon="@android:drawable/ic_menu_search" android:orderInCategory="2"></item>
+    <item android:id="@+id/menu3" android:title="@string/Void" android:icon="@android:drawable/ic_menu_agenda"  android:orderInCategory="3"/>
+    <item android:id="@+id/menu4" android:title="@string/Void" android:icon="@android:drawable/ic_menu_upload"  android:orderInCategory="4"></item>
+    <item android:id="@+id/menu5" android:title="@string/Void" android:icon="@drawable/ic_menu_compose" android:orderInCategory="5" />
+    <item android:id="@+id/menu6" android:title="@string/Void" android:icon="@drawable/ic_menu_mail" android:orderInCategory="6"></item>
+    <item android:id="@+id/menu7" android:title="@string/Void" android:icon="@android:drawable/ic_menu_add" android:orderInCategory="7"></item>
+</menu>
