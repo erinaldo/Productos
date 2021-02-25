@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AmesolPrueba</string>
+    <string name="bIngresar">Ingresar</string>
+    <string name="Login">login</string>
+    <string name="Password">password</string>
+    <string name="act_menu">Selecciona una Accion</string>
+    <string name="busqueda_producto">Buscar Producto</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="salir">Salir</string>
+    <string name="act_seleccion_dia">Selecciona el Dia de Trabajo</string>
+    <string name="busqueda_cliente">Buscar Cliente</string>
+    <string name="razon_social">Razon Social</string>
+    <string name="visitar">Visitar</string>
+    <string name="no_visitar">No Visitar</string>
+    <string name="clave">Clave</string>
+    <string name="saldo">Saldo</string>
+    <string name="calle">Calle</string>
+    <string name="domicilio">Domicilio</string>
+    <string name="contacto">Nombre Contacto</string>
+    <string name="agenda">Solicitar Agenda</string>
+    <string name="fecha_inicial">Fecha Inicial</string>
+    <string name="fecha_final">Fecha Final</string>
+
+</resources>
