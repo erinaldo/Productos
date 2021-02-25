@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+	<ConfiguracionSistema>
+	<CadenaConexion> 
+		<ServerSQL>.\SQL2008R2</ServerSQL>
+		<BaseDatos>DonPan</BaseDatos>
+		<Usuario>sa</Usuario>
+		<Contraseña>duxstar123.</Contraseña>
+                <Ruta>C:\BASES\XML</Ruta>
+	</CadenaConexion>	
+	</ConfiguracionSistema>

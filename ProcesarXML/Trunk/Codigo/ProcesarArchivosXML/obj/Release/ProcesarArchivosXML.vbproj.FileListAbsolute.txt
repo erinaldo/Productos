@@ -1,0 +1,178 @@
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ProcesarArchivosXML.exe.config
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ProcesarArchivosXML.exe
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ProcesarArchivosXML.pdb
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ProcesarArchivosXML.xml
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASMENLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMINVLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\LbAcceso.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\LbConexion.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\LbGeneral.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\LbDatos.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\LbControlError.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMPROLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMTRPLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMVENLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASUSULOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMFOLLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMINVESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASVARLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMCONLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Interop.MSDASC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Janus.Windows.GridEX.v3.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Janus.Windows.UI.v3.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Janus.Windows.CalendarCombo.v3.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Janus.Data.v3.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMESQLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMIMPLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMCLILOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMSEMLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\eCloudRoute.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Newtonsoft.Json.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\LbAddenda.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMADDLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\LbTransferencia.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMFOULOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\FormasBase.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMALMLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMPROESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASPERLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASUSUESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMTRPESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMMONLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Janus.Windows.Common.v3.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMSECLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\LbConexionSQL.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Addenda.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Starksoft.Net.Ftp.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMPRELOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMESQESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMIMPESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMPRMLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASMODLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASACTLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMRUTESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMRUTLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\BASPERESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\itextsharp.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMVENESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMDIALOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMCEELOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMFRELOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMCNPLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMPUNLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMVERLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMCAFLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMCLIESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Pdf417lib.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ThoughtWorks.QRCode.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\Starksoft.Net.Proxy.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMDESLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMMOTLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMTERLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMTERESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMMOTESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMMMEESC.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMMMELOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\GMap.NET.WindowsForms.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\GMap.NET.Core.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMZONLOG.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\GMap.NET.WindowsForms.xml
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\GMap.NET.Core.xml
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\bin\Release\ERMTRPLOG.XmlSerializers.dll
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.ProcesadorXML.resources
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.Resources.resources
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.vbproj.GenerateResource.Cache
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.exe
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.xml
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.pdb
+C:\Users\grodriguez.DX\Documents\Visual Studio 2012\Projects\ProcesarArchivosXML\ProcesarArchivosXML\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.vbprojResolveAssemblyReference.cache
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ProcesarArchivosXML.exe.config
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.exe
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.xml
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.pdb
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ProcesarArchivosXML.exe
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ProcesarArchivosXML.pdb
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ProcesarArchivosXML.xml
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMINVLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\LbDatos.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\LbControlError.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASUSULOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASVARLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Janus.Windows.GridEX.v3.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Janus.Windows.UI.v3.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Janus.Windows.CalendarCombo.v3.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Janus.Data.v3.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Janus.Windows.Common.v3.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.ProcesadorXML.resources
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.Resources.resources
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.vbproj.GenerateResource.Cache
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASMENLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\LbAcceso.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\LbConexion.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\LbGeneral.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Interop.MSDASC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMPROLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMTRPLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMFOLLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMINVESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMCONLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMESQLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMIMPLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMCLILOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMSEMLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\eCloudRoute.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Newtonsoft.Json.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\LbAddenda.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMADDLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\LbTransferencia.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMFOULOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\FormasBase.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASPERLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASUSUESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMALMLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMPROESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMTRPESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMMONLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMSECLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\LbConexionSQL.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Addenda.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Starksoft.Net.Ftp.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASMODLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASACTLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMRUTESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMRUTLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\BASPERESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMPRELOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMESQESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMIMPESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMPRMLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMVENLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMVENESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMDIALOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMCEELOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMFRELOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMCNPLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMPUNLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMVERLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMCAFLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMCLIESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\itextsharp.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Pdf417lib.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ThoughtWorks.QRCode.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\Starksoft.Net.Proxy.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMDESLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMMOTLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMTERLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMTERESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMMOTESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMMMEESC.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMMMELOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\GMap.NET.WindowsForms.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\GMap.NET.Core.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMZONLOG.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\GMap.NET.WindowsForms.xml
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\GMap.NET.Core.xml
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\bin\Release\ERMTRPLOG.XmlSerializers.dll
+C:\Duxstar\Productos\ProcesarXML\Trunk\Codigo\ProcesarArchivosXML\obj\Release\ProcesarArchivosXML.vbprojResolveAssemblyReference.cache
