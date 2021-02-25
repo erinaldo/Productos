@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44F2248A-A1C7-4011-87C2-8A96C1539472}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PREMEG</RootNamespace>
+    <AssemblyName>PREMEG</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acceso\AccesarAlSistema.cs" />
+    <Compile Include="Acceso\AdministrarEncuesta.cs" />
+    <Compile Include="Acceso\AdministrarPerfil.cs" />
+    <Compile Include="Acceso\AdministrarUsuarios.cs" />
+    <Compile Include="Acceso\AdministrarVehiculos.cs" />
+    <Compile Include="Acceso\AuditarRecepcionInformacion.cs" />
+    <Compile Include="Acceso\AdministrarSucursalEquipo.cs" />
+    <Compile Include="Acceso\IAdministracionSucursalEquipo.cs" />
+    <Compile Include="Acceso\Dictionary.cs" />
+    <Compile Include="Acceso\GenerarReportes.cs" />
+    <Compile Include="Acceso\IAccesoSistema.cs" />
+    <Compile Include="Acceso\IAdministracionPerfil.cs" />
+    <Compile Include="Acceso\IAdministracionUsuarios.cs" />
+    <Compile Include="Acceso\IAdministracionVehiculos.cs" />
+    <Compile Include="Acceso\IAuditoriaRecepcionInformacion.cs" />
+    <Compile Include="Acceso\IGenerarReporte.cs" />
+    <Compile Include="Acceso\INavegacionEncuesta.cs" />
+    <Compile Include="Acceso\ISite.cs" />
+    <Compile Include="Acceso\SeleccionarActividades.cs" />
+    <Compile Include="Catalogos\AdministrarHerramientasEquipoControlador.cs" />
+    <Compile Include="Catalogos\AdministrarSucursalesControlador.cs" />
+    <Compile Include="Catalogos\AdministrarTerminalesControlador.cs" />
+    <Compile Include="Catalogos\AdministrarConfiguracionesControlador.cs" />
+    <Compile Include="Catalogos\IAdministrarTerminales.cs" />
+    <Compile Include="Catalogos\IAdministrarHerramientasEquipo.cs" />
+    <Compile Include="Catalogos\IAdministrarSucursales.cs" />
+    <Compile Include="Catalogos\IAdministrarConfiguraciones.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\AuditoriaDeCableado.cs" />
+    <Compile Include="Reportes\AuditoriaDeVisitas.cs" />
+    <Compile Include="Reportes\ContratosNoInstalados.cs" />
+    <Compile Include="Reportes\RutaDeCuadrillas.cs" />
+    <Compile Include="Reportes\TiemposYMovimientos.cs" />
+    <Compile Include="Reportes\UbicacionEnTiempoReal.cs" />
+    <Compile Include="Util\objCombo.cs" />
+    <Compile Include="Util\UtilMensaje.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MODMEG\MODMEG.csproj">
+      <Project>{907D4647-7CEB-4A4D-91C1-E5BE892C7532}</Project>
+      <Name>MODMEG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
