@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:UNIT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLPackage" guid="SonHTgO7BkS/LCypVCrS8wAA">
+<XPD:ATTR name="Name" type="string">CL_SIN</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="A7xwRtYkYUynL2Xe1BMc4wAA">
+<XPD:ATTR name="Name" type="string">DCL_SIN</XPD:ATTR>
+<XPD:REF name="Namespace">SonHTgO7BkS/LCypVCrS8wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[1]" type="UMLPackage" guid="xIHg6tZCw0O+GXE1MvfpVwAA">
+<XPD:ATTR name="Name" type="string">Control</XPD:ATTR>
+<XPD:REF name="Namespace">SonHTgO7BkS/LCypVCrS8wAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:UNIT>

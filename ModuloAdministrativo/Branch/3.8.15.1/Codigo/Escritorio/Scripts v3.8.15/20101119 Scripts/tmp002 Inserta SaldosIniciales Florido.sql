@@ -1,0 +1,79 @@
+
+--select * from Configuracion 
+
+-- BORRA DATOS DE SALDOS DEL VENDEDOR
+--select *
+ delete 
+from VendedoresSaldos 
+
+-- INSERTA SALDOS INICIALES
+
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('82' AS INT), '20101114', 0, 1297.75*-1, 0, 1297.75*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('121' AS INT), '20101114', 0, 87518.83*-1, 0, 87518.83*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('127' AS INT), '20101114', 0, 7935.85*-1, 0, 7935.85*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('140' AS INT), '20101114', 0, 10804.59*-1, 0, 10804.59*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('150' AS INT), '20101114', 0, 6441.92*-1, 0, 6441.92*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('169' AS INT), '20101114', 0, 6526.42*-1, 0, 6526.42*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('188' AS INT), '20101114', 0, 27249.08*-1, 0, 27249.08*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('305' AS INT), '20101114', 0, 187875.47*-1, 0, 187875.47*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3359' AS INT), '20101114', 0, 26757.27*-1, 0, 26757.27*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('2563' AS INT), '20101114', 0, 107.480000000001*-1, 0, 107.480000000001*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('2902' AS INT), '20101114', 0, 818.5*-1, 0, 818.5*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('2779' AS INT), '20101114', 0, 28428.6*-1, 0, 28428.6*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3341' AS INT), '20101114', 0, 26335.51*-1, 0, 26335.51*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3644' AS INT), '20101114', 0, 46570.39*-1, 0, 46570.39*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('2785' AS INT), '20101114', 0, 7008.53*-1, 0, 7008.53*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3042' AS INT), '20101114', 0, 21079.58*-1, 0, 21079.58*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3036' AS INT), '20101114', 0, 3456.61*-1, 0, 3456.61*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('2491' AS INT), '20101114', 0, 43.8400000000001*-1, 0, 43.8400000000001*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3256' AS INT), '20101114', 0, 16362.41*-1, 0, 16362.41*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('2658' AS INT), '20101114', 0, 5351.81*-1, 0, 5351.81*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3168' AS INT), '20101114', 0, 9726.55*-1, 0, 9726.55*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3061' AS INT), '20101114', 0, 1282.59*-1, 0, 1282.59*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3251' AS INT), '20101114', 0, 3411.12*-1, 0, 3411.12*-1)
+INSERT INTO VENDEDORESSALDOS VALUES (2, 0, 0, 'EF', CAST('3270' AS INT), '20101114', 0, 20963.3*-1, 0, 20963.3*-1)
+
+declare 
+@IdCedis as bigint,
+@IdVendedor as bigint,
+@IdSurtido as bigint,
+@Fecha as datetime
+	
+DECLARE CursorSaldos CURSOR STATIC
+FOR
+	
+	select Surtidos.IdCedis, SurtidosVendedor.IdVendedor, Surtidos.Fecha, Surtidos.IdSurtido
+	from Surtidos
+	inner join SurtidosVendedor on Surtidos.IdCedis = SurtidosVendedor.IdCedis and Surtidos.IdSurtido = SurtidosVendedor.IdSurtido
+	where Surtidos.Fecha >= '20101115' and Surtidos.Status = 'C'
+	order by Surtidos.IdCedis, SurtidosVendedor.IdVendedor, Surtidos.IdSurtido desc
+				
+OPEN CursorSaldos
+
+FETCH NEXT FROM CursorSaldos INTO @IdCedis, @IdVendedor, @Fecha, @IdSurtido
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	
+	exec up_VendedoresSaldos @IdCedis, @IdSurtido, @IdVendedor, @Fecha, 1
+
+	FETCH NEXT FROM CursorSaldos INTO @IdCedis, @IdVendedor, @Fecha, @IdSurtido
+END
+
+CLOSE CursorSaldos 
+DEALLOCATE CursorSaldos
+
+--select *
+--from SurtidosVendedor 
+--where IdVendedor = 82 and Fecha >= '20101115'
+
+select *
+-- delete 
+from VendedoresSaldos 
+where Saldo > 0
+order by IdVendedor, Fecha 
+
+--select distinct Surtidos.IdCedis, Surtidos.IdSurtido 
+--from Surtidos
+--inner join SurtidosDenominacion on Surtidos.IdCedis = SurtidosDenominacion.IdCedis and Surtidos.IdSurtido = SurtidosDenominacion.IdSurtido 
+--where Surtidos.Fecha >= '20101115' and Surtidos.Status = 'C'

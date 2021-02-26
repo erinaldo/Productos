@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:UNIT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLPackage" guid="RkZ8IjP2UkqXxazyXUyS4AAA">
+<XPD:ATTR name="Name" type="string">CU_MOV</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="NRp0wLJA1k6pZsferBIcywAA">
+<XPD:ATTR name="Name" type="string">DCU_MOV</XPD:ATTR>
+<XPD:REF name="Namespace">RkZ8IjP2UkqXxazyXUyS4AAA</XPD:REF>
+<XPD:ATTR name="#OwnedElements" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLAssociation" guid="WgBi26GDX0y96TBgJI69QQAA">
+<XPD:REF name="Namespace">NRp0wLJA1k6pZsferBIcywAA</XPD:REF>
+<XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="DBitcrvI60GTFZJR3R6nGAAA">
+<XPD:REF name="Association">WgBi26GDX0y96TBgJI69QQAA</XPD:REF>
+<XPD:REF name="Participant" pathname="::Use Case View::Actores::Vendedor">n0xJilHCHkmtnxJUxSSDBwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="jqROL7E0i0yy9eCLUPXlHgAA">
+<XPD:REF name="Association">WgBi26GDX0y96TBgJI69QQAA</XPD:REF>
+<XPD:REF name="Participant" pathname="::Use Case View::Actores::Vendedor">n0xJilHCHkmtnxJUxSSDBwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:UNIT>

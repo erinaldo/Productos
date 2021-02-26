@@ -1,0 +1,10 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{4F174C21-8C12-11D0-8340-0000F80270F8}") = "InterfacesRouteADM", "InterfacesRouteADM\InterfacesRouteADM.dbp", "{41E760C9-3F95-48BC-BDCF-C80443D95989}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

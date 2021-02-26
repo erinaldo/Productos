@@ -1,0 +1,37 @@
+Línea 159: la clase MSComCtl2.DTPicker del control DTPFecha no era una clase de control cargada.
+Línea 390: la clase MSComctlLib.ListView del control LstMovimientos no era una clase de control cargada.
+Línea 422: la clase MSComCtl2.DTPicker del control DTPPeriodo no era una clase de control cargada.
+Línea 551: la clase MSComctlLib.ListView del control LstFacturas no era una clase de control cargada.
+Línea 165: el nombre de la propiedad _ExtentX de DTPFecha no es válido.
+Línea 166: el nombre de la propiedad _ExtentY de DTPFecha no es válido.
+Línea 167: el nombre de la propiedad _Version de DTPFecha no es válido.
+Línea 177: el nombre de la propiedad Format de DTPFecha no es válido.
+Línea 178: el nombre de la propiedad CurrentDate de DTPFecha no es válido.
+Línea 396: el nombre de la propiedad _ExtentX de LstMovimientos no es válido.
+Línea 397: el nombre de la propiedad _ExtentY de LstMovimientos no es válido.
+Línea 398: el nombre de la propiedad View de LstMovimientos no es válido.
+Línea 399: el nombre de la propiedad LabelEdit de LstMovimientos no es válido.
+Línea 400: el nombre de la propiedad LabelWrap de LstMovimientos no es válido.
+Línea 401: el nombre de la propiedad HideSelection de LstMovimientos no es válido.
+Línea 402: el nombre de la propiedad FullRowSelect de LstMovimientos no es válido.
+Línea 403: el nombre de la propiedad _Version de LstMovimientos no es válido.
+Línea 417: el nombre de la propiedad NumItems de LstMovimientos no es válido.
+Línea 420: el nombre de la propiedad ColumnHeader(1) de LstMovimientos no es válido.
+Línea 428: el nombre de la propiedad _ExtentX de DTPPeriodo no es válido.
+Línea 429: el nombre de la propiedad _ExtentY de DTPPeriodo no es válido.
+Línea 430: el nombre de la propiedad _Version de DTPPeriodo no es válido.
+Línea 440: el nombre de la propiedad CustomFormat de DTPPeriodo no es válido.
+Línea 441: el nombre de la propiedad Format de DTPPeriodo no es válido.
+Línea 442: el nombre de la propiedad CurrentDate de DTPPeriodo no es válido.
+Línea 443: el nombre de la propiedad MaxDate de DTPPeriodo no es válido.
+Línea 444: el nombre de la propiedad MinDate de DTPPeriodo no es válido.
+Línea 557: el nombre de la propiedad _ExtentX de LstFacturas no es válido.
+Línea 558: el nombre de la propiedad _ExtentY de LstFacturas no es válido.
+Línea 559: el nombre de la propiedad View de LstFacturas no es válido.
+Línea 560: el nombre de la propiedad LabelEdit de LstFacturas no es válido.
+Línea 561: el nombre de la propiedad LabelWrap de LstFacturas no es válido.
+Línea 562: el nombre de la propiedad HideSelection de LstFacturas no es válido.
+Línea 563: el nombre de la propiedad FullRowSelect de LstFacturas no es válido.
+Línea 564: el nombre de la propiedad _Version de LstFacturas no es válido.
+Línea 578: el nombre de la propiedad NumItems de LstFacturas no es válido.
+Línea 581: el nombre de la propiedad ColumnHeader(1) de LstFacturas no es válido.

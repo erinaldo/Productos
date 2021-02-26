@@ -1,0 +1,66 @@
+Línea 90: la clase MSComctlLib.ListView del control LstFoliosCargas no era una clase de control cargada.
+Línea 220: la clase MSComCtl2.DTPicker del control DTPFecha no era una clase de control cargada.
+Línea 378: la clase MSComctlLib.ListView del control LstDetalleProductos no era una clase de control cargada.
+Línea 550: la clase MSComCtl2.DTPicker del control DTPInicial no era una clase de control cargada.
+Línea 581: la clase MSComCtl2.DTPicker del control DTPFinal no era una clase de control cargada.
+Línea 612: la clase MSComctlLib.ListView del control LstRutas no era una clase de control cargada.
+Línea 734: la clase MSComctlLib.ListView del control LstParametros no era una clase de control cargada.
+Línea 96: el nombre de la propiedad _ExtentX de LstFoliosCargas no es válido.
+Línea 97: el nombre de la propiedad _ExtentY de LstFoliosCargas no es válido.
+Línea 98: el nombre de la propiedad View de LstFoliosCargas no es válido.
+Línea 99: el nombre de la propiedad LabelEdit de LstFoliosCargas no es válido.
+Línea 100: el nombre de la propiedad LabelWrap de LstFoliosCargas no es válido.
+Línea 101: el nombre de la propiedad HideSelection de LstFoliosCargas no es válido.
+Línea 102: el nombre de la propiedad FullRowSelect de LstFoliosCargas no es válido.
+Línea 103: el nombre de la propiedad _Version de LstFoliosCargas no es válido.
+Línea 117: el nombre de la propiedad NumItems de LstFoliosCargas no es válido.
+Línea 120: el nombre de la propiedad ColumnHeader(1) de LstFoliosCargas no es válido.
+Línea 235: el nombre de la propiedad _ExtentX de DTPFecha no es válido.
+Línea 236: el nombre de la propiedad _ExtentY de DTPFecha no es válido.
+Línea 237: el nombre de la propiedad _Version de DTPFecha no es válido.
+Línea 247: el nombre de la propiedad CustomFormat de DTPFecha no es válido.
+Línea 248: el nombre de la propiedad Format de DTPFecha no es válido.
+Línea 249: el nombre de la propiedad CurrentDate de DTPFecha no es válido.
+Línea 384: el nombre de la propiedad _ExtentX de LstDetalleProductos no es válido.
+Línea 385: el nombre de la propiedad _ExtentY de LstDetalleProductos no es válido.
+Línea 386: el nombre de la propiedad View de LstDetalleProductos no es válido.
+Línea 387: el nombre de la propiedad LabelEdit de LstDetalleProductos no es válido.
+Línea 388: el nombre de la propiedad LabelWrap de LstDetalleProductos no es válido.
+Línea 389: el nombre de la propiedad HideSelection de LstDetalleProductos no es válido.
+Línea 390: el nombre de la propiedad FullRowSelect de LstDetalleProductos no es válido.
+Línea 391: el nombre de la propiedad _Version de LstDetalleProductos no es válido.
+Línea 405: el nombre de la propiedad NumItems de LstDetalleProductos no es válido.
+Línea 408: el nombre de la propiedad ColumnHeader(1) de LstDetalleProductos no es válido.
+Línea 565: el nombre de la propiedad _ExtentX de DTPInicial no es válido.
+Línea 566: el nombre de la propiedad _ExtentY de DTPInicial no es válido.
+Línea 567: el nombre de la propiedad _Version de DTPInicial no es válido.
+Línea 577: el nombre de la propiedad CustomFormat de DTPInicial no es válido.
+Línea 578: el nombre de la propiedad Format de DTPInicial no es válido.
+Línea 579: el nombre de la propiedad CurrentDate de DTPInicial no es válido.
+Línea 596: el nombre de la propiedad _ExtentX de DTPFinal no es válido.
+Línea 597: el nombre de la propiedad _ExtentY de DTPFinal no es válido.
+Línea 598: el nombre de la propiedad _Version de DTPFinal no es válido.
+Línea 608: el nombre de la propiedad CustomFormat de DTPFinal no es válido.
+Línea 609: el nombre de la propiedad Format de DTPFinal no es válido.
+Línea 610: el nombre de la propiedad CurrentDate de DTPFinal no es válido.
+Línea 618: el nombre de la propiedad _ExtentX de LstRutas no es válido.
+Línea 619: el nombre de la propiedad _ExtentY de LstRutas no es válido.
+Línea 620: el nombre de la propiedad View de LstRutas no es válido.
+Línea 621: el nombre de la propiedad LabelEdit de LstRutas no es válido.
+Línea 622: el nombre de la propiedad LabelWrap de LstRutas no es válido.
+Línea 623: el nombre de la propiedad HideSelection de LstRutas no es válido.
+Línea 624: el nombre de la propiedad Checkboxes de LstRutas no es válido.
+Línea 625: el nombre de la propiedad FullRowSelect de LstRutas no es válido.
+Línea 626: el nombre de la propiedad _Version de LstRutas no es válido.
+Línea 640: el nombre de la propiedad NumItems de LstRutas no es válido.
+Línea 643: el nombre de la propiedad ColumnHeader(1) de LstRutas no es válido.
+Línea 740: el nombre de la propiedad _ExtentX de LstParametros no es válido.
+Línea 741: el nombre de la propiedad _ExtentY de LstParametros no es válido.
+Línea 742: el nombre de la propiedad View de LstParametros no es válido.
+Línea 743: el nombre de la propiedad LabelEdit de LstParametros no es válido.
+Línea 744: el nombre de la propiedad LabelWrap de LstParametros no es válido.
+Línea 745: el nombre de la propiedad HideSelection de LstParametros no es válido.
+Línea 746: el nombre de la propiedad FullRowSelect de LstParametros no es válido.
+Línea 747: el nombre de la propiedad _Version de LstParametros no es válido.
+Línea 761: el nombre de la propiedad NumItems de LstParametros no es válido.
+Línea 764: el nombre de la propiedad ColumnHeader(1) de LstParametros no es válido.

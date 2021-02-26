@@ -1,0 +1,6 @@
+Para registrar la dll
+
+En el directorio "C:\Windows\Microsoft.NET\Framework\v2.0.50727" se encuentra el archivo regasm.exe
+
+En linea de comando ejecutar lo siguiente:
+	regasm directorio\LbCFDADM.dll /tlb:LbCFDADM.tlb /codebase

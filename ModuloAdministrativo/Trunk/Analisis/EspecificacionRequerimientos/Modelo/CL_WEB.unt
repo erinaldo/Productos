@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:UNIT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLPackage" guid="TxPdQLgy7UqhazFP/vPj9gAA">
+<XPD:ATTR name="Name" type="string">CL_WEB</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="TP4Se4sM+UerGWl4Zko6twAA">
+<XPD:ATTR name="Name" type="string">DCL_WEB</XPD:ATTR>
+<XPD:REF name="Namespace">TxPdQLgy7UqhazFP/vPj9gAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[1]" type="UMLPackage" guid="UlKRjbGi0kyVq07cdCJKxwAA">
+<XPD:ATTR name="Name" type="string">Boundary</XPD:ATTR>
+<XPD:REF name="Namespace">TxPdQLgy7UqhazFP/vPj9gAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[2]" type="UMLPackage" guid="I7do7WQ4dUKSHpVXj0aWuQAA">
+<XPD:ATTR name="Name" type="string">Control</XPD:ATTR>
+<XPD:REF name="Namespace">TxPdQLgy7UqhazFP/vPj9gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:UNIT>

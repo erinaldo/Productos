@@ -1,0 +1,24 @@
+# Microsoft Developer Studio Project File - Database Project
+Begin DataProject = "InterfacesRouteADM"
+   MSDTVersion = "80"
+   Begin Folder = "Change Scripts"
+   End
+   Begin Folder = "Create Scripts"
+      Begin Folder = "Route"
+         Script = "FNValidarCancelacionVentaADM.sql"
+         Script = "FNValidarCancelacionVentasADM.sql"
+         Script = "SP_CancelarVenta.sql"
+         Script = "SP_CancelarVentas.sql"
+         Script = "sp_importVentas.sql"
+         Script = "StoredProcedureExpManagement.sql"
+      End
+      Begin Folder = "RouteADM"
+      End
+      Begin Folder = "RouteCPC"
+      End
+   End
+   Begin DBRefFolder = "Database References"
+   End
+   Begin Folder = "Queries"
+   End
+End

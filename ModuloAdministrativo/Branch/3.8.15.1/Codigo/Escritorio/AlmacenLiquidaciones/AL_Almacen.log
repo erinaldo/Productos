@@ -1,0 +1,80 @@
+Línea 2:no se puede crear la referencia: '{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0'.
+Línea 3:no se puede crear la referencia: '{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0'.
+Línea 4:no se puede crear la referencia: '{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0'.
+Línea 124: la clase TabDlg.SSTab del control SSTab no era una clase de control cargada.
+Línea 199: la clase MSComctlLib.ListView del control LstInvInicial no era una clase de control cargada.
+Línea 301: la clase MSComctlLib.ListView del control LstInvFisico no era una clase de control cargada.
+Línea 421: la clase MSComctlLib.ListView del control LstEntradasProds no era una clase de control cargada.
+Línea 534: la clase MSComctlLib.ListView del control LstEntradas no era una clase de control cargada.
+Línea 647: la clase MSComCtl2.DTPicker del control DTPFecha no era una clase de control cargada.
+Línea 130: el nombre de la propiedad _ExtentX de SSTab no es válido.
+Línea 131: el nombre de la propiedad _ExtentY de SSTab no es válido.
+Línea 132: el nombre de la propiedad _Version de SSTab no es válido.
+Línea 133: el nombre de la propiedad Tab de SSTab no es válido.
+Línea 134: el nombre de la propiedad TabHeight de SSTab no es válido.
+Línea 136: el nombre de la propiedad TabCaption(0) de SSTab no es válido.
+Línea 137: el nombre de la propiedad Tab(0).ControlEnabled de SSTab no es válido.
+Línea 138: el nombre de la propiedad Tab(0).Control(0) de SSTab no es válido.
+Línea 139: el nombre de la propiedad Tab(0).Control(0).Enabled de SSTab no es válido.
+Línea 140: el nombre de la propiedad Tab(0).Control(1) de SSTab no es válido.
+Línea 141: el nombre de la propiedad Tab(0).Control(1).Enabled de SSTab no es válido.
+Línea 142: el nombre de la propiedad Tab(0).ControlCount de SSTab no es válido.
+Línea 143: el nombre de la propiedad TabCaption(1) de SSTab no es válido.
+Línea 144: el nombre de la propiedad Tab(1).ControlEnabled de SSTab no es válido.
+Línea 145: el nombre de la propiedad Tab(1).Control(0) de SSTab no es válido.
+Línea 146: el nombre de la propiedad Tab(1).Control(0).Enabled de SSTab no es válido.
+Línea 147: el nombre de la propiedad Tab(1).Control(1) de SSTab no es válido.
+Línea 148: el nombre de la propiedad Tab(1).Control(1).Enabled de SSTab no es válido.
+Línea 149: el nombre de la propiedad Tab(1).ControlCount de SSTab no es válido.
+Línea 150: el nombre de la propiedad TabCaption(2) de SSTab no es válido.
+Línea 151: el nombre de la propiedad Tab(2).ControlEnabled de SSTab no es válido.
+Línea 152: el nombre de la propiedad Tab(2).Control(0) de SSTab no es válido.
+Línea 153: el nombre de la propiedad Tab(2).Control(0).Enabled de SSTab no es válido.
+Línea 154: el nombre de la propiedad Tab(2).Control(1) de SSTab no es válido.
+Línea 155: el nombre de la propiedad Tab(2).Control(1).Enabled de SSTab no es válido.
+Línea 156: el nombre de la propiedad Tab(2).ControlCount de SSTab no es válido.
+Línea 205: el nombre de la propiedad _ExtentX de LstInvInicial no es válido.
+Línea 206: el nombre de la propiedad _ExtentY de LstInvInicial no es válido.
+Línea 207: el nombre de la propiedad View de LstInvInicial no es válido.
+Línea 208: el nombre de la propiedad LabelEdit de LstInvInicial no es válido.
+Línea 209: el nombre de la propiedad LabelWrap de LstInvInicial no es válido.
+Línea 210: el nombre de la propiedad HideSelection de LstInvInicial no es válido.
+Línea 211: el nombre de la propiedad FullRowSelect de LstInvInicial no es válido.
+Línea 212: el nombre de la propiedad _Version de LstInvInicial no es válido.
+Línea 226: el nombre de la propiedad NumItems de LstInvInicial no es válido.
+Línea 229: el nombre de la propiedad ColumnHeader(1) de LstInvInicial no es válido.
+Línea 307: el nombre de la propiedad _ExtentX de LstInvFisico no es válido.
+Línea 308: el nombre de la propiedad _ExtentY de LstInvFisico no es válido.
+Línea 309: el nombre de la propiedad View de LstInvFisico no es válido.
+Línea 310: el nombre de la propiedad LabelEdit de LstInvFisico no es válido.
+Línea 311: el nombre de la propiedad LabelWrap de LstInvFisico no es válido.
+Línea 312: el nombre de la propiedad HideSelection de LstInvFisico no es válido.
+Línea 313: el nombre de la propiedad FullRowSelect de LstInvFisico no es válido.
+Línea 314: el nombre de la propiedad _Version de LstInvFisico no es válido.
+Línea 328: el nombre de la propiedad NumItems de LstInvFisico no es válido.
+Línea 331: el nombre de la propiedad ColumnHeader(1) de LstInvFisico no es válido.
+Línea 427: el nombre de la propiedad _ExtentX de LstEntradasProds no es válido.
+Línea 428: el nombre de la propiedad _ExtentY de LstEntradasProds no es válido.
+Línea 429: el nombre de la propiedad View de LstEntradasProds no es válido.
+Línea 430: el nombre de la propiedad LabelEdit de LstEntradasProds no es válido.
+Línea 431: el nombre de la propiedad LabelWrap de LstEntradasProds no es válido.
+Línea 432: el nombre de la propiedad HideSelection de LstEntradasProds no es válido.
+Línea 433: el nombre de la propiedad FullRowSelect de LstEntradasProds no es válido.
+Línea 434: el nombre de la propiedad _Version de LstEntradasProds no es válido.
+Línea 448: el nombre de la propiedad NumItems de LstEntradasProds no es válido.
+Línea 451: el nombre de la propiedad ColumnHeader(1) de LstEntradasProds no es válido.
+Línea 540: el nombre de la propiedad _ExtentX de LstEntradas no es válido.
+Línea 541: el nombre de la propiedad _ExtentY de LstEntradas no es válido.
+Línea 542: el nombre de la propiedad View de LstEntradas no es válido.
+Línea 543: el nombre de la propiedad LabelEdit de LstEntradas no es válido.
+Línea 544: el nombre de la propiedad LabelWrap de LstEntradas no es válido.
+Línea 545: el nombre de la propiedad HideSelection de LstEntradas no es válido.
+Línea 546: el nombre de la propiedad FullRowSelect de LstEntradas no es válido.
+Línea 547: el nombre de la propiedad _Version de LstEntradas no es válido.
+Línea 561: el nombre de la propiedad NumItems de LstEntradas no es válido.
+Línea 564: el nombre de la propiedad ColumnHeader(1) de LstEntradas no es válido.
+Línea 653: el nombre de la propiedad _ExtentX de DTPFecha no es válido.
+Línea 654: el nombre de la propiedad _ExtentY de DTPFecha no es válido.
+Línea 655: el nombre de la propiedad _Version de DTPFecha no es válido.
+Línea 665: el nombre de la propiedad Format de DTPFecha no es válido.
+Línea 666: el nombre de la propiedad CurrentDate de DTPFecha no es válido.

@@ -1,0 +1,19 @@
+Línea 29: la clase SHDocVwCtl.WebBrowser del control WebBw no era una clase de control cargada.
+Línea 35: el nombre de la propiedad ExtentX de WebBw no es válido.
+Línea 36: el nombre de la propiedad ExtentY de WebBw no es válido.
+Línea 37: el nombre de la propiedad ViewMode de WebBw no es válido.
+Línea 38: el nombre de la propiedad Offline de WebBw no es válido.
+Línea 39: el nombre de la propiedad Silent de WebBw no es válido.
+Línea 40: el nombre de la propiedad RegisterAsBrowser de WebBw no es válido.
+Línea 41: el nombre de la propiedad RegisterAsDropTarget de WebBw no es válido.
+Línea 42: el nombre de la propiedad AutoArrange de WebBw no es válido.
+Línea 43: el nombre de la propiedad NoClientEdge de WebBw no es válido.
+Línea 44: el nombre de la propiedad AlignLeft de WebBw no es válido.
+Línea 45: el nombre de la propiedad NoWebView de WebBw no es válido.
+Línea 46: el nombre de la propiedad HideFileNames de WebBw no es válido.
+Línea 47: el nombre de la propiedad SingleClick de WebBw no es válido.
+Línea 48: el nombre de la propiedad SingleSelection de WebBw no es válido.
+Línea 49: el nombre de la propiedad NoFolders de WebBw no es válido.
+Línea 50: el nombre de la propiedad Transparent de WebBw no es válido.
+Línea 51: el nombre de la propiedad ViewID de WebBw no es válido.
+Línea 52: el nombre de la propiedad Location de WebBw no es válido.
