@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuxstarService", "CreadorBDVendedores\DuxstarService.csproj", "{D29C9B47-7EA8-4C51-AF47-E675769B4378}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "DuxstarInstalador", "DuxstarInstalador\DuxstarInstalador.isproj", "{73FD55E7-838F-42CE-A8BC-82DBF4744180}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.1.104:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CreadorBDVendedores\\DuxstarService.csproj
+		SccProjectName1 = CreadorBDVendedores
+		SccLocalPath1 = CreadorBDVendedores
+		SccProjectUniqueName2 = DuxstarInstalador\\DuxstarInstalador.isproj
+		SccProjectName2 = DuxstarInstalador
+		SccLocalPath2 = DuxstarInstalador
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{D29C9B47-7EA8-4C51-AF47-E675769B4378}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.Debug|Any CPU.ActiveCfg = DVD-5
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.Debug|Any CPU.Build.0 = DVD-5
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.DVD-5|Any CPU.Build.0 = DVD-5
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.Release|Any CPU.ActiveCfg = SingleImage
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.Release|Any CPU.Build.0 = SingleImage
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{73FD55E7-838F-42CE-A8BC-82DBF4744180}.SingleImage|Any CPU.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
