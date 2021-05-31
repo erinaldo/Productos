@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/impresion_detalle" android:icon="@android:drawable/ic_dialog_dialer"></item>
-    <item android:id="@+id/impresion_general" android:icon="@android:drawable/ic_dialog_map"></item>
-    
-
-</menu>

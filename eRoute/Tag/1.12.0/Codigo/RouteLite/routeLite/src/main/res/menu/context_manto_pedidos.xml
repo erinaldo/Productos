@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/modificar">
-    </item>
-    <item android:id="@+id/cancelar"></item>
-    <item android:id="@+id/surtir"></item>
-    <item android:id="@+id/mostrarqr"></item>
-
-</menu>
