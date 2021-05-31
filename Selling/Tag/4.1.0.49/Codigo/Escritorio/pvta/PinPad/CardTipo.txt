@@ -1,2 +1,0 @@
-CardTipo:1
-CONCENTRADOCARD:0
