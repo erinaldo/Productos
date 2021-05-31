@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="dtEffort">
-  <ConnectionProperties>
-    <Extension>SQL</Extension>
-    <ConnectString>Data Source=MATRIX\SQL2012;Initial Catalog=AdminEffortSCRUM</ConnectString>
-  </ConnectionProperties>
-  <DataSourceID>0f57c190-3def-4c12-8782-1f91722badb8</DataSourceID>
-</RptDataSource>
