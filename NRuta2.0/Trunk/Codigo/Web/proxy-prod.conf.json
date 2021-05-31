@@ -1,9 +1,0 @@
-{
-    "/nruta/api/*": {
-        "target": "http://qanruta.serveftp.com:80",
-        "pathRewrite": { "^/nruta/api": "" },
-        "secure": false,
-        "changeOrigin": true,
-        "logLevel": "debug"
-    }
-}
